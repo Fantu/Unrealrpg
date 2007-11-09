@@ -27,6 +27,7 @@ function CambiaImg(id,bool) {
 <h1>
 <?php echo $game_name; echo" "; echo $game_version; echo" "; echo $game_revision; ?>
 </h1>
+<?php
 if( file_exists('pagine/'.$_GET['pag'].'.php') )
 include('pagine/'.$_GET['pag'].'.php');
 else
