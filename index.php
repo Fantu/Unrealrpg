@@ -1,3 +1,54 @@
 <?php
 require('game/inclusi/valori.php');
 ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title><?php echo $game_name; echo" "; echo $game_version; ?></title>
+<?php include('game/inclusi/meta.php'); ?>
+<script type="text/javascript">
+<!--
+function CambiaImg(id,bool) {
+	var immagine = document.getElementById(id);
+	if( bool == true )
+		percorso = 'immagini/'+id+'_color.gif';
+	else
+		percorso = 'immagini/'+id+'_grigio.gif';
+	immagine.src = percorso;
+}
+// -->
+</script>
+</head>
+<body>
+<table width="750" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+  <td>
+<h1>
+<?php echo $game_name; echo" "; echo $game_version; echo" "; echo $game_revision; ?>
+</h1>
+if( file_exists('pagine/'.$_GET['pag'].'.php') )
+include('pagine/'.$_GET['pag'].'.php');
+else
+include('pagine/home.php');		
+?>
+  </td>
+  </tr>
+</table>
+<div align="center">
+<br /><br />
+<a href="http://validator.w3.org/check?uri=referer" target="_blank">
+	<img id="xhtml" src="immagini/xhtml_grigio.gif" alt="" border="0" onmouseover="CambiaImg('xhtml', true);" onmouseout="CambiaImg('xhtml', false);" />
+</a>&nbsp;
+<a href="http://jigsaw.w3.org/css-validator/check/referer" target="_blank">
+	<img id="css" src="immagini/css_grigio.gif" border="0" alt="" onmouseover="CambiaImg('css', true);" onmouseout="CambiaImg('css', false);" />
+</a>
+<a href="http://www.php.net" target="_blank">
+	<img id="php" src="immagini/php_grigio.gif" alt="" border="0" onmouseover="CambiaImg('php', true);" onmouseout="CambiaImg('php', false);" />
+</a>&nbsp;&nbsp;
+<a href="http://www.mysql.com" target="_blank">
+	<img id="mysql" src="immagini/mysql_grigio.gif" alt="" border="0" onmouseover="CambiaImg('mysql', true);" onmouseout="CambiaImg('mysql', false);" />
+</a>&nbsp;&nbsp;
+</div>
+</body>
+</html>
