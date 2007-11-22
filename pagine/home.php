@@ -86,7 +86,7 @@
 			<select name="server" id="continente">
               <option value="none" selected="selected">--------</option>
               <option value="999">DEV</option>
-            </select>
+            </select></td>
           </tr>
           <tr>
             <td><input name="Submit2" type="submit" value="Registrati" /></td>
