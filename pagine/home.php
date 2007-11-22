@@ -93,7 +93,6 @@
           </tr>
         </table>
 		</form>
-		</div>
     </td>
   </tr>
 </table>

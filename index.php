@@ -40,7 +40,7 @@ include('pagine/home.php');
 </table>
 <div align="center">
 <br /><br />
-LostAge &egrave; un prodotto <a href="http://www.lostgames.net" target="_blank">Lostgames.net</a> &copy; 2007.
+<?php echo $game_name; ?> &egrave; un prodotto <a href="http://www.lostgames.net" target="_blank">Lostgames.net</a> &copy; 2007.
 <br />
 <a href="http://validator.w3.org/check?uri=referer" target="_blank">
 	<img id="xhtml" src="immagini/xhtml_grigio.gif" alt="" border="0" onmouseover="CambiaImg('xhtml', true);" onmouseout="CambiaImg('xhtml', false);" />
