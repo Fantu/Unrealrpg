@@ -24,9 +24,9 @@
 			$server=$_POST['server'];
 			if( $server!=none )
 				$db->database = $server;
-			else 
-				$errore .= "- Non hai selezionato il continente";
-			
+			else{
+				echo "<span>Si sono verificati i seguenti errori:</span><br />";
+				$errore .= "- Non hai selezionato il continente";}
 			if( empty($errore) ) {
 				$a=$db->QuerySelect("SELECT maxutenti AS Max, utenti AS Ut FROM config WHERE id='".$_POST['server']."'");	
 				$a2=$db->QuerySelect("SELECT userid AS Us1 FROM utenti WHERE username='".$_POST['username']."'");
@@ -48,8 +48,9 @@
 					$errore.="- Questo server è al momento troppo affollato, scegline un altro.";
 			}
 			
-			if($errore)
-				echo "<span>".$errore."</span><br /><br />";
+			if($errore){
+				echo "<span>Si sono verificati i seguenti errori:</span><br />";
+				echo "<span>".$errore."</span><br /><br />";}
 			else {
 				$ora=strtotime("now");
 				$ip=$_SERVER['REMOTE_ADDR'];
@@ -60,7 +61,7 @@
 				$intestazione = "From: ".$game_name."<server@lostage.it>\r\n";
 				$messaggio="Ciao,\nPer confermare l'iscrizione a ".$game_name." devi visitare il link sottostante:\n ".$game_link."/conferma.php?t=".$_POST['server']."&cod=$cod \n\nFinchè l'account non verrà confermato non potrai accedere al gioco.\nSaluti,\nLostgames Staff";
 				mail($_POST['email'],"Conferma account ".$game_name,$messaggio,$intestazione);
-				echo "<strong>Account creato con successo!!</strong><br>Prima di poter iniziare a giocare dovrai confermare l'iscrizione visitando il link contenuto nella mail che ti è stata inviata all'indirizzo di posta inserito.<br>Alcuni hanno problemi nella ricezione della mail di conferma, (in particolare hotmail) se non arriva mandate una mail a server@lostage.it con username e continente per la conferma.<br /><br />";
+				echo "<strong>Account creato con successo!!</strong><br>Prima di poter iniziare a giocare dovrai confermare l'iscrizione visitando il link contenuto nella mail che ti è stata inviata all'indirizzo di posta inserito.<br>Se non trovi la mail controlla nella cartella posta indesiderata antispam o simili.<br /><br />";
 			}
 		}	  
 	  	?>
