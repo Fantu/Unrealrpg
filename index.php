@@ -55,5 +55,10 @@ include('pagine/home.php');
 	<img id="mysql" src="immagini/mysql_grigio.gif" alt="" border="0" onmouseover="CambiaImg('mysql', true);" onmouseout="CambiaImg('mysql', false);" />
 </a>&nbsp;&nbsp;
 </div>
+<?php
+include_once("game/inclusi/errori.php"); 
+if($msg)
+	echo "<script language=\"javascript\"> alert('$msg'); </script>";
+?>
 </body>
 </html>

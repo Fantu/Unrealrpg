@@ -57,7 +57,7 @@
 				$pass=md5($_POST['password']);
 				$cod=md5($_POST['username']);
 				$_POST['username']=strip_tags(str_replace("'","\'",$_POST['username']));
-				$db->QueryMod("INSERT INTO utenti (username,password,codice,email,dataiscrizione,ipreg) VALUES ('".$_POST['username']."','".$pass."','".$cod."','".$_POST['email']."','".$ora."','".$ip."')");		
+				$db->QueryMod("INSERT INTO utenti (username,password,codice,email,dataiscrizione,ipreg,server) VALUES ('".$_POST['username']."','".$pass."','".$cod."','".$_POST['email']."','".$ora."','".$ip."','".$_POST['server']."')");		
 				$intestazione = "From: ".$game_name."<server@lostage.it>\r\n";
 				$messaggio="Ciao,\nPer confermare l'iscrizione a ".$game_name." devi visitare il link sottostante:\n ".$game_link."/conferma.php?t=".$_POST['server']."&cod=$cod \n\nFinchè l'account non verrà confermato non potrai accedere al gioco.\nSaluti,\nLostgames Staff";
 				mail($_POST['email'],"Conferma account ".$game_name,$messaggio,$intestazione);
@@ -84,7 +84,7 @@
           <tr>
             <td><div align="right">Server: </div></td>
             <td colspan="2">
-			<select name="server" id="continente">
+			<select name="server" id="server">
               <option value="none" selected="selected">--------</option>
               <option value="999">DEV</option>
             </select></td>
