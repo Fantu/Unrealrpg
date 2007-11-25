@@ -26,7 +26,7 @@ else if($_GET['error']==11) {
 	$msg="Il tuo account è stato momentaneamente bannato".$fino."!\\nPer sapere il motivo del bann ed evitare futuri intoppi, consulta il forum o contatta un admin.";
 }
 else if($_GET['error']==12)
-	$msg="Continente momentaneamente chiuso per manutenzione. Riprova più tardi. Grazie.";	
+	$msg="Server momentaneamente chiuso per manutenzione. Riprova più tardi. Grazie.";	
 else if($_GET['error']==13)
 	$msg="Trovata irregolarità!\\nSembra che da questo pc si sia loggato qualcuno oltre te, e non è specificato nelle opzioni di multi-account.";
 else if($_GET['error']==14)

@@ -5,7 +5,8 @@
 			<td><input name="login_username" type="text" maxlength="25" /></td>
 			<td>Server</td>
 			<td><select name="login_server">
-			  <option value="999">Dev</option>
+			<?php foreach($game_server as $chiave=>$elemento)
+			  echo "<option value=\"$chiave\">$elemento</option>"; ?>
 			</select></td>
 		  </tr>
 		  <tr>
