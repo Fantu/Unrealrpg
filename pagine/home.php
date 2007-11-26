@@ -1,24 +1,3 @@
-		<form action="game/login.php" method="post" name="formlogin">
-		<table width="750" border="0">
-		  <tr>
-			<td>Username</td>
-			<td><input name="login_username" type="text" maxlength="25" /></td>
-			<td>Server</td>
-			<td><select name="login_server">
-			<?php foreach($game_server as $chiave=>$elemento)
-			  echo "<option value=\"$chiave\">$elemento</option>"; ?>
-			</select></td>
-		  </tr>
-		  <tr>
-			<td>Password</td>
-			<td><input name="login_password" type="password" maxlength="25" /></td>
-			<td><input name="Submit" type="submit" value="Login" /></td>
-		  </tr>
-		</table>
-      	</form>
-<table width="750" border="0" align="center">
-  <tr>
-    <td>
 		<?php
 		if( $_POST['step']=="registrazione" ) {
 			$errore="";
@@ -26,7 +5,6 @@
 			if( $server!=none )
 				$db->database = $server;
 			else{
-				echo "<span>Si sono verificati i seguenti errori:</span><br />";
 				$errore .= "- Non hai selezionato il continente";}
 			if( empty($errore) ) {
 				$a=$db->QuerySelect("SELECT maxutenti AS Max, utenti AS Ut FROM config WHERE id='".$_POST['server']."'");	
@@ -50,8 +28,7 @@
 			}
 			
 			if($errore){
-				echo "<span>Si sono verificati i seguenti errori:</span><br />";
-				echo "<span>".$errore."</span><br /><br />";}
+				$outputreg="<span>Si sono verificati i seguenti errori:</span><br /><span>".$errore."</span><br /><br />";}
 			else {
 				$ora=strtotime("now");
 				$ip=$_SERVER['REMOTE_ADDR'];
@@ -62,39 +39,8 @@
 				$intestazione = "From: ".$game_name."<server@lostage.it>\r\n";
 				$messaggio="Ciao,\nPer confermare l'iscrizione a ".$game_name." devi visitare il link sottostante:\n ".$game_link."/conferma.php?t=".$_POST['server']."&cod=$cod \n\nFinchè l'account non verrà confermato non potrai accedere al gioco.\nSaluti,\nLostgames Staff";
 				mail($_POST['email'],"Conferma account ".$game_name,$messaggio,$intestazione);
-				echo "<strong>Account creato con successo!!</strong><br>Prima di poter iniziare a giocare dovrai confermare l'iscrizione visitando il link contenuto nella mail che ti è stata inviata all'indirizzo di posta inserito.<br>Se non trovi la mail controlla nella cartella posta indesiderata antispam o simili.<br /><br />";
+				$outputreg="<strong>Account creato con successo!!</strong><br>Prima di poter iniziare a giocare dovrai confermare l'iscrizione visitando il link contenuto nella mail che ti è stata inviata all'indirizzo di posta inserito.<br>Se non trovi la mail controlla nella cartella posta indesiderata antispam o simili.<br /><br />";
 			}
-		}	  
+		}
+		require('game/template/est_pagina_home.php');	  
 	  	?>
-	    <span>Registrazione</span><br />
-		<form action="index.php" method="post" name="formregistrazione">
-		<input name="step" type="hidden" value="registrazione" />
-	    <table border="0">
-          <tr>
-            <td>Username:</td>
-            <td><input name="username" type="text" id="username" maxlength="20" /></td>
-          </tr>
-          <tr>
-            <td>Password:</td>
-            <td><input name="password" type="password" id="password" maxlength="20" /></td>
-          </tr>
-          <tr>
-            <td>Email:</td>
-            <td><input name="email" type="text" id="email" maxlength="50" /></td>
-          </tr>
-          <tr>
-            <td><div align="right">Server: </div></td>
-            <td colspan="2">
-			<select name="server" id="server">
-              <option value="none" selected="selected">--------</option>
-              <option value="999">DEV</option>
-            </select></td>
-          </tr>
-          <tr>
-            <td><input name="Submit2" type="submit" value="Registrati" /></td>
-          </tr>
-        </table>
-		</form>
-    </td>
-  </tr>
-</table>
