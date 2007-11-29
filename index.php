@@ -1,4 +1,5 @@
 <?php
+$start_time = microtime();
 require('game/inclusi/valori.php');
 require('game/inclusi/funzioni_db.php');
 $db = new ConnessioniMySQL();
@@ -56,9 +57,11 @@ include('pagine/home.php');
 </a>&nbsp;&nbsp;
 </div>
 <?php
-include_once("game/inclusi/errori.php"); 
+require_once("game/inclusi/errori.php"); 
 if($msg)
 	echo "<script language=\"javascript\"> alert('$msg'); </script>";
+$end_time = microtime() - $start_time;
+echo "Tempo di generazione della pagina:" . $end_time;
 ?>
 </body>
 </html>

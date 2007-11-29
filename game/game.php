@@ -1,6 +1,6 @@
-<?php 
-define("_CORRETTO",1);
-
+<?php
+$start_time = microtime();
+require('game/inclusi/valori.php');
 if($_COOKIE['urbglogin'])
 	$lg=explode("|||",$_COOKIE['urbglogin']);
 
@@ -31,15 +31,17 @@ if( $check['chiuso']==1 ) {
 	exit();
 }
 
-include_once('inclusi/myheader.php');
+require_once('inclusi/myheader.php');
 
 if(!$user['userid'])
 	echo "Accesso negato!<br>Hai tentato di entrare in una pagina riservata agli utenti loggati.";
 else if($user['ipattuale']!=$_SERVER['REMOTE_ADDR'])
 	echo "Accesso negato!<br>Il numero IP è cambiato dal momento del login.<br /><a href=\"logout.php\">Clicca qui</a> per tornare indietro e loggarti nuovamente.";	
 else {
+$interno="1";	
 ?>
-Loggato
+Loggato<br />
 <?php
+require_once('template/int_footer.php');
 } //chiuso controllo login
 ?>

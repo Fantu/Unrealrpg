@@ -10,21 +10,21 @@
 				$a=$db->QuerySelect("SELECT maxutenti AS Max, utenti AS Ut FROM config WHERE id='".$_POST['server']."'");	
 				$a2=$db->QuerySelect("SELECT userid AS Us1 FROM utenti WHERE username='".$_POST['username']."'");
 				if(!$_POST['username'])
-					$errore.="- Non hai scritto il tuo username.<br>";
+					$errore.="- Non hai scritto il tuo username.<br />";
 				if( strlen($_POST['username'])<3 )
-					$errore.="- L'username deve essere almeno di 3 caratteri.<br>";					
+					$errore.="- L'username deve essere almeno di 3 caratteri.<br />";					
 				if($a2['Us1'])
-					$errore.="- L'username che hai scelto è già stato preso.<br>";			
+					$errore.="- L'username che hai scelto è già stato preso.<br />";			
 				if(!$_POST['password'])
-					$errore.="- Non hai scritto la password.<br>";
+					$errore.="- Non hai scritto la password.<br />";
 				if(strlen($_POST['password'])<6)
-					$errore.="- La password deve essere lunga almeno 6 caratteri.<br>";
+					$errore.="- La password deve essere lunga almeno 6 caratteri.<br />";
 				if(!$_POST['email'])
-					$errore.="- Non hai scritto l'email.<br>";
+					$errore.="- Non hai scritto l'email.<br />";
 				if(!eregi("^.+@.+\..{2,3}$",$_POST['email']))	
-					$errore.="- L'email inserita non sembra essere corretta.<br>";	
+					$errore.="- L'email inserita non sembra essere corretta.<br />";	
 				if($a['Ut']==$a['Max'])
-					$errore.="- Questo server è al momento troppo affollato, scegline un altro.";
+					$errore.="- Questo server è al momento troppo affollato, scegline un altro.<br />";
 			}
 			
 			if($errore){
@@ -39,7 +39,7 @@
 				$intestazione = "From: ".$game_name."<server@lostage.it>\r\n";
 				$messaggio="Ciao,\nPer confermare l'iscrizione a ".$game_name." devi visitare il link sottostante:\n ".$game_link."/conferma.php?t=".$_POST['server']."&cod=$cod \n\nFinchè l'account non verrà confermato non potrai accedere al gioco.\nSaluti,\nLostgames Staff";
 				mail($_POST['email'],"Conferma account ".$game_name,$messaggio,$intestazione);
-				$outputreg="<strong>Account creato con successo!!</strong><br>Prima di poter iniziare a giocare dovrai confermare l'iscrizione visitando il link contenuto nella mail che ti è stata inviata all'indirizzo di posta inserito.<br>Se non trovi la mail controlla nella cartella posta indesiderata antispam o simili.<br /><br />";
+				$outputreg="<strong>Account creato con successo!!</strong><br />Prima di poter iniziare a giocare dovrai confermare l'iscrizione visitando il link contenuto nella mail che ti è stata inviata all'indirizzo di posta inserito.<br />Se non trovi la mail controlla nella cartella posta indesiderata antispam o simili.<br /><br />";
 			}
 		}
 		require('game/template/est_pagina_home.php');	  
