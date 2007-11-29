@@ -31,7 +31,7 @@ if( $check['chiuso']==1 ) {
 	exit();
 }
 
-require_once('inclusi/myheader.php');
+require_once('inclusi/int_header.php');
 
 if(!$user['userid'])
 	echo "Accesso negato!<br>Hai tentato di entrare in una pagina riservata agli utenti loggati.";
