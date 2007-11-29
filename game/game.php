@@ -1,6 +1,6 @@
 <?php
 $start_time = microtime();
-require('game/inclusi/valori.php');
+require('inclusi/valori.php');
 if($_COOKIE['urbglogin'])
 	$lg=explode("|||",$_COOKIE['urbglogin']);
 
