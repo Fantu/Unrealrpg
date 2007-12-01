@@ -4,8 +4,8 @@ $db = new ConnessioniMySQL();
 
 //if($_GET['t']==999 || $_GET['t']==0)
 $esistenza=0;		
-	foreach($game_server as $key->$elemento){
-	if ($key==$_GET['t']){$esistenza=1;}
+	foreach($game_server as $chiave=>$elemento){
+	if ($chiave==$_GET['t']){$esistenza=1;}
 	}
 if($esistenza==1)
 	$db->database = $_GET['t'];

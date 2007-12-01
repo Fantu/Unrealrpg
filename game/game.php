@@ -8,11 +8,11 @@ require('inclusi/funzioni_db.php');
 $db = new ConnessioniMySQL();
 
 //if( $lg[3]!=0 && $lg[3]!=999 )
-$esistenza="0";		
-	foreach($game_server as $key->$elemento){
-	if ($key==$lg[3]){$esistenza="1";}
+$esistenza=0;		
+	foreach($game_server as $chiave=>$elemento){
+	if ($chiave==$lg[3]){$esistenza=1;}
 	}
-if($esistenza=="0"){
+if($esistenza==0){
 	header("Location: ../index.php?error=3");
 	exit();
 } else
