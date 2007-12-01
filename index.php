@@ -54,7 +54,7 @@ include('pagine/home.php');
 </a>&nbsp;&nbsp;
 <a href="http://www.mysql.com" target="_blank">
 	<img id="mysql" src="immagini/mysql_grigio.gif" alt="" border="0" onmouseover="CambiaImg('mysql', true);" onmouseout="CambiaImg('mysql', false);" />
-</a>&nbsp;&nbsp;
+</a>&nbsp;&nbsp;<br />
 <?php
 require_once("game/inclusi/errori.php"); 
 if($msg)
