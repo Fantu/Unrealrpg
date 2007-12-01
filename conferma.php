@@ -4,7 +4,7 @@ require('game/inclusi/funzioni_db.php');
 $db = new ConnessioniMySQL();
 
 //if($_GET['t']==999 || $_GET['t']==0)
-if(esistenza($game_server,$_GET['t'])=="1")
+if(esistenza_array($game_server,$_GET['t'])=="1")
 	$db->database = $_GET['t'];
 else {
 	header("Location: index.php?error=5");

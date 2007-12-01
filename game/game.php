@@ -9,7 +9,7 @@ require('inclusi/funzioni_db.php');
 $db = new ConnessioniMySQL();
 
 //if( $lg[3]!=0 && $lg[3]!=999 )
-if(esistenza($game_server,$lg[3])=="0"){
+if(esistenza_array($game_server,$lg[3])=="0"){
 	header("Location: ../index.php?error=3");
 	exit();
 } else
