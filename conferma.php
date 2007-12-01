@@ -5,9 +5,12 @@ $db = new ConnessioniMySQL();
 //if($_GET['t']==999 || $_GET['t']==0)
 $esistenza=0;		
 	foreach($game_server as $chiave=>$elemento){
+	echo $chiave."<br/>";
+	echo $_GET['t']."<br/>";
 	if ($chiave==$_GET['t']){$esistenza=1;}
 	}
-if($esistenza==1)
+	echo $esistenza."<br/>";
+/*if($esistenza==1)
 	$db->database = $_GET['t'];
 else {
 	header("Location: index.php?error=5");
@@ -33,5 +36,5 @@ else if($a['conferma']==1) {
 	
 	header("Location: index.php?error=7");
 	exit();
-}
+}*/
 ?>
