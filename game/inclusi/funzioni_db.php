@@ -9,15 +9,8 @@ class ConnessioniMySQL {
 	var $dbuser = "rpg";
 	var $dbpass = "3sWBVeNJN4YbB5MQ";
 
-	function Config () {		
-		switch($this->database) {
-			case 0:
-				$this->dbname = $this->suffix."0";			
-				break;
-			case 999:
-				$this->dbname = $this->suffix."999";	
-				break;
-		}
+	function Config () {
+				$this->dbname = $this->suffix.$this->database;
 		return $dati;
 	}
 	function QuerySelect ($arg) { //$var=$db->QuerySelect("SELECT * FROM table");	

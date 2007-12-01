@@ -55,13 +55,13 @@ include('pagine/home.php');
 <a href="http://www.mysql.com" target="_blank">
 	<img id="mysql" src="immagini/mysql_grigio.gif" alt="" border="0" onmouseover="CambiaImg('mysql', true);" onmouseout="CambiaImg('mysql', false);" />
 </a>&nbsp;&nbsp;
-</div>
 <?php
 require_once("game/inclusi/errori.php"); 
 if($msg)
 	echo "<script language=\"javascript\"> alert('$msg'); </script>";
 $end_time = microtime() - $start_time;
-echo "Tempo di generazione della pagina:" . $end_time;
+echo "Tempo di generazione della pagina: ".$end_time." secondi";
 ?>
+</div>
 </body>
 </html>
