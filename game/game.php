@@ -1,5 +1,6 @@
 <?php
 $start_time = microtime();
+require('inclusi/funzioni.php');
 require('inclusi/valori.php');
 if($_COOKIE['urbglogin'])
 	$lg=explode("|||",$_COOKIE['urbglogin']);
@@ -7,7 +8,8 @@ if($_COOKIE['urbglogin'])
 require('inclusi/funzioni_db.php');
 $db = new ConnessioniMySQL();
 
-if( $lg[3]!=0 && $lg[3]!=999 ) {
+//if( $lg[3]!=0 && $lg[3]!=999 )
+if(esistenza($game_server,$lg[3])=="0"){
 	header("Location: ../index.php?error=3");
 	exit();
 } else

@@ -5,4 +5,5 @@ function esistenza_array ($array,$valore) {
 	if ($elemento==$valore){$esistenza="1";}
 	}
 return $esistenza;
+}
 ?>
