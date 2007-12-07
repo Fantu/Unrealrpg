@@ -1,13 +1,13 @@
 <?php
 $start_time = microtime();
 require('inclusi/valori.php');
+require('language/it.php');
 if($_COOKIE['urbglogin'])
 	$lg=explode("|||",$_COOKIE['urbglogin']);
 
 require('inclusi/funzioni_db.php');
 $db = new ConnessioniMySQL();
 
-//if( $lg[3]!=0 && $lg[3]!=999 )
 $esistenza=0;		
 	foreach($game_server as $chiave=>$elemento){
 	if ($chiave==$lg[3]){$esistenza=1;}
@@ -43,10 +43,14 @@ if(!$user['userid'])
 else if($user['ipattuale']!=$_SERVER['REMOTE_ADDR'])
 	echo "Accesso negato!<br>Il numero IP è cambiato dal momento del login.<br /><a href=\"logout.php\">Clicca qui</a> per tornare indietro e loggarti nuovamente.";	
 else {
-$interno="1";	
+$interno="1";
+if ($user['personaggio']==0){
+	require('creapersonaggio.php');	}
+	else{
 ?>
 Loggato<br />
 <?php
+}
 require_once('template/int_footer.php');
 } //chiuso controllo login
 ?>
