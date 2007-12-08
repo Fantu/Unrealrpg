@@ -47,9 +47,9 @@ $interno="1";
 if ($user['personaggio']==0){
 	require('creapersonaggio.php');	}
 	else{
-?>
-Loggato<br />
-<?php
+if(!$_GET['act'])
+$_GET['act']="situazione";
+require($_GET['act'].'.php'); 
 }
 require_once('template/int_footer.php');
 } //chiuso controllo login
