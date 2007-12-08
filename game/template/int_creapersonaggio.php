@@ -1,3 +1,4 @@
+<?php echo $outputerrori; ?>
 <form action="" method="post" name="creapersonaggio">
 <table border="0">
 <tr>
