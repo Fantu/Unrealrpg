@@ -47,9 +47,47 @@ $interno="1";
 if ($user['personaggio']==0){
 	require('creapersonaggio.php');	}
 	else{
-if(!$_GET['act'])
+?>
+<table width="800" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="125" rowspan="2" valign="top">menu<?php //include('inclusi/menu.php'); ?>
+    </td>
+    <td width="10">&nbsp;</td>
+    <td width="655">&nbsp;</td>
+    <td width="10">&nbsp;</td>
+  </tr>
+  <tr>
+	<td>&nbsp;</td>
+    <td valign="top" align="center">
+		<table width="655" border="0" align="right" cellpadding="1" cellspacing="1">
+		  <tr>
+			<td width="505" valign="top">
+			<div align="right" id="contenuto">		
+<?php if(!$_GET['act'])
 $_GET['act']="situazione";
-require($_GET['act'].'.php'); 
+require($_GET['act'].'.php');
+?>
+			</div> 
+			</td>
+			<td width="20">&nbsp;</td>
+			<td width="120" valign="top">
+				<?php
+				//if($user['plus']==0) {
+				?>
+					<div id="ads" align="right">
+						qui lo sponsor
+					</div>
+				<?php
+				//} //fine if plus
+				?>
+			 </td>
+		  </tr>
+		</table>	
+	</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<?php 
 }
 require_once('template/int_footer.php');
 } //chiuso controllo login
