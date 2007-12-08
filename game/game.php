@@ -50,7 +50,7 @@ if ($user['personaggio']==0){
 ?>
 <table width="800" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
-    <td width="125" rowspan="2" valign="top">menu<?php //include('inclusi/menu.php'); ?>
+    <td width="125" rowspan="2" valign="top"><?php include('inclusi/menu.php'); ?>
     </td>
     <td width="10">&nbsp;</td>
     <td width="655">&nbsp;</td>
@@ -62,7 +62,7 @@ if ($user['personaggio']==0){
 		<table width="655" border="0" align="right" cellpadding="1" cellspacing="1">
 		  <tr>
 			<td width="505" valign="top">
-			<div align="right" id="contenuto">		
+			<div id="contenuto">		
 <?php if(!$_GET['act'])
 $_GET['act']="situazione";
 require($_GET['act'].'.php');

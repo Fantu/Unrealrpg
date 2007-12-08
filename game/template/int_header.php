@@ -6,4 +6,3 @@
 <?php include('inclusi/meta.php'); ?>
 </head>
 <body>
-Prova header<br />
