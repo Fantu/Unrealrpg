@@ -4,9 +4,9 @@ $errore="";
 $razza=$_POST['razza'];
 $classe=$_POST['classe'];
 if ($razza=="none")
-$errore .= "- Non hai selezionato la razza";
+$errore .= "- Non hai selezionato la razza<br />";
 if ($classe=="none")
-$errore .= "- Non hai selezionato la classe";
+$errore .= "- Non hai selezionato la classe<br />";
 
 if($errore){
 	$outputerrori="<span>Si sono verificati i seguenti errori:</span><br /><span>".$errore."</span><br /><br />";}
