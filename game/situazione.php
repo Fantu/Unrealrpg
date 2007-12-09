@@ -1,4 +1,3 @@
 <?php
-//require('template/int_creapersonaggio.php');
+require('template/int_situazione.php');
 ?>
-Situazione<br />
