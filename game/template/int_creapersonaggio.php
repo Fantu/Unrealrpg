@@ -11,6 +11,15 @@ echo "<option value=\"$chiave\">$elemento</option>"; ?>
 </select></td>
 </tr>
 <tr>
+<td><div align="right">Classe: </div></td>
+<td>
+<select name="classe" id="classe">
+<option value="none" selected="selected">--------</option>
+<?php foreach($classi['nome'] as $chiave=>$elemento)
+echo "<option value=\"$chiave\">$elemento</option>"; ?>
+</select></td>
+</tr>
+<tr>
 <td>
 <input type="submit" name="crea" value="Crea" />
 </td>
