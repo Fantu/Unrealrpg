@@ -1,4 +1,4 @@
-Legenda:<br />
+Legenda:
 <p><strong>Versione</strong> (Data di rilascio - Stato)<br />
 + Aggiunte<br />
 - Modifiche<br />

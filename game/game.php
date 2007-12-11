@@ -18,18 +18,6 @@ if($esistenza==0){
 } else
 	$db->database = $lg[3];
 
-/*//prova controllo REF
-$ref = $_SERVER['HTTP_REFERER'];
-$random = rand(1,13);
-$ref_controllo = substr($ref,0,(22+$random));
-$string_rand = "game/game.php";
-$ref_spez = "http://www.lostage.it/".substr($string_rand,0,$random); //http://www.lostage.it/game/game.php
-if( $user['userid'] && $ref_controllo!=$ref_spez ) {
-	header("Location: ../index.php?error=17");
-	exit();
-}
-//fine controllo REF
-*/
 $check = $db->QuerySelect("SELECT chiuso FROM config");
 if( $check['chiuso']==1 ) {
 	header("Location: ../index.php?error=12");
