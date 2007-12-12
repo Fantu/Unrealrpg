@@ -4,7 +4,7 @@ $db = new ConnessioniMySQL();
 $db->database=$_POST['login_server'];
 
 $_POST['login_username']=str_replace("'","\'",$_POST['login_username']);
-$user = $db->QuerySelect("SELECT * FROM utenti WHERE username='".$_POST['login_username']."' AND password='".md5($_POST['login_password'])."'");
+$user = $db->QuerySelect("SELECT * FROM utenti WHERE username='".$_POST['login_username']."' AND password='".md5($_POST['login_password'])."' LIMIT 0,1");
 
 $check = $db->QuerySelect("SELECT chiuso FROM config");
 

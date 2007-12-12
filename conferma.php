@@ -18,7 +18,7 @@ if(!$_GET['cod']) {
 	header("Location: index.php?error=5");
 	exit();
 }
-$a=$db->QuerySelect("SELECT userid,conferma,server FROM utenti WHERE codice='".$_GET['cod']."'");
+$a=$db->QuerySelect("SELECT userid,conferma,server FROM utenti WHERE codice='".$_GET['cod']."' LIMIT 0,1");
 
 if(!$a['userid']) {
 	header("Location: index.php?error=5");
