@@ -15,4 +15,13 @@ $lang['Ladro']='Ladro';
 $lang['desc_guerriero']='Descrizione guerriero';
 $lang['desc_mago']='Descrizione mago';
 $lang['desc_ladro']='Descrizione ladro';
+$lang['Personaggio']='Personaggio';
+$lang['Razza']='Razza';
+$lang['Classe']='Classe';
+$lang['Livello']='Livello';
+$lang['Esperienza']='Esperienza';
+$lang['Salute']='Salute';
+$lang['Energia']='Energia';
+$lang['Situazione']='Situazione';
+$lang['Changelog']='Info versione';
 ?>
