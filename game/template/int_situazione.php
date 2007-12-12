@@ -5,5 +5,5 @@
 <?php echo $lang['Classe']; ?>: <?php echo $classi['nome'][$usercar['classe']]; ?><br />
 <?php echo $lang['Livello']; ?>: <?php echo $usercar['livello']; ?><br />
 <?php echo $lang['Esperienza']; ?>: <?php echo $usercar['exp']; ?><br />
-<?php echo $lang['Salute']; ?>: <?php echo $usercar['salute']; ?><br />
+<?php echo $lang['Salute']; ?>: <?php echo $usercar['saluteattuale']; echo "/"; echo $usercar['salute']; ?><br />
 <?php echo $lang['Energia']; ?>: <?php echo $usercar['energia']; echo "/"; echo $usercar['energiamax']; ?><br />
