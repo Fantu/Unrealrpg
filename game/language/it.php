@@ -22,6 +22,12 @@ $lang['Livello']='Livello';
 $lang['Esperienza']='Esperienza';
 $lang['Salute']='Salute';
 $lang['Energia']='Energia';
+$lang['Agilita']='Agilit&agrave;';
+$lang['Attfisico']='Attacco fisico';
+$lang['Attmagico']='Attacco magico';
+$lang['Diffisica']='Difesa fisica';
+$lang['Difmagica']='Difesa magica';
+$lang['Mana']='Mana';
 $lang['Situazione']='Situazione';
 $lang['Changelog']='Info versione';
 ?>
