@@ -3,6 +3,7 @@ $user=$db->QuerySelect("SELECT * FROM utenti WHERE userid='".$lg[0]."' AND passw
 
 if($user['userid']) {
 $adesso=strtotime("now");
+if($user['personaggio']==1) {
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$user['userid']."' LIMIT 0,1");
 if ($adesso>($usercar['recuperosalute']+3600)){
 	if ($usercar['saluteattuale']<$usercar['salute']){
@@ -14,7 +15,8 @@ if ($adesso>($usercar['recuperosalute']+3600)){
 		$db->QueryMod("UPDATE caratteristiche SET recuperosalute=recuperosalute+'".($ore*3600)."',saluteattuale='".($salute)."' WHERE userid='".$user['userid']."'");
 	}
 	else{$db->QueryMod("UPDATE caratteristiche SET recuperosalute='".$adesso."' WHERE userid='".$user['userid']."'");}
-}
+}//fine recupero salute con tempo
+}//fine se personaggio creato
 require_once('template/int_header.php');
 } //fine if userid
 else {
