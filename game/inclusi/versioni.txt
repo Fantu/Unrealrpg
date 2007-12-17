@@ -16,5 +16,6 @@ Legenda:
 + Inserita pagina changelog<br />
 + Aggiunto recupero salute (1 punto all'ora)<br />
 + Aggiunto recupero energia (1 punto al minuto)<br />
++ Inserita banca<br />
 <br />
 </p>

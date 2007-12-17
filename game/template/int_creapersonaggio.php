@@ -49,6 +49,6 @@ La classe la puoi scegliere tra le seguenti:<br />
 <?php echo $lang['Attmagico']; ?> <?php echo $classi['attmagico'][$chiave]; ?><br />
 <?php echo $lang['Diffisica']; ?> <?php echo $classi['diffisica'][$chiave]; ?><br />
 <?php echo $lang['Difmagica']; ?> <?php echo $classi['difmagica'][$chiave]; ?><br />
-<?php echo $lang['Mana'][$chiave]; ?> <?php echo $classi['mana']; ?><br />
+<?php echo $lang['Mana']; ?> <?php echo $classi['mana'][$chiave]; ?><br />
 <br />
 <?php }?>

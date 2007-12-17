@@ -29,6 +29,7 @@ $lang['Diffisica']='Difesa fisica';
 $lang['Difmagica']='Difesa magica';
 $lang['Mana']='Mana';
 $lang['Situazione']='Situazione';
+$lang['Banca']='Banca';
 $lang['Changelog']='Info versione';
 $lang['Monete']='Monete';
 ?>
