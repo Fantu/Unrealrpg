@@ -16,6 +16,17 @@ if ($adesso>($usercar['recuperosalute']+3600)){
 	}
 	else{$db->QueryMod("UPDATE caratteristiche SET recuperosalute='".$adesso."' WHERE userid='".$user['userid']."'");}
 }//fine recupero salute con tempo
+if ($adesso>($usercar['recuperoenergia']+60)){
+	if ($usercar['energia']<$usercar['energiamax']){
+		$differenzaora=$adesso-$usercar['recuperoenergia'];
+		$ore=floor($differenzaora/60);
+		$energia=$usercar['energia']+$ore;
+		if ($energia>$usercar['energiamax'])
+		$salute=$usercar['energiamax'];
+		$db->QueryMod("UPDATE caratteristiche SET recuperoenergia=recuperoenergia+'".($ore*60)."',energia='".($energia)."' WHERE userid='".$user['userid']."'");
+	}
+	else{$db->QueryMod("UPDATE caratteristiche SET recuperoenergia='".$adesso."' WHERE userid='".$user['userid']."'");}
+}//fine recupero energia con tempo
 }//fine se personaggio creato
 require_once('template/int_header.php');
 } //fine if userid

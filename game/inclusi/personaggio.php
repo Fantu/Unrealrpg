@@ -6,10 +6,10 @@ $razze=array(
 $classi=array(
 'nome'=>array(1=>$lang['Guerriero'],2=>$lang['Mago'],3=>$lang['Ladro']),
 'descrizione'=>array(1=>$lang['desc_guerriero'],2=>$lang['desc_mago'],3=>$lang['desc_ladro']),
-'agilita'=>array(1=>70,2=>30,3=>150),
-'attfisico'=>array(1=>90,2=>10,3=>25),
+'agilita'=>array(1=>70,2=>30,3=>120),
+'attfisico'=>array(1=>90,2=>10,3=>40),
 'attmagico'=>array(1=>10,2=>50,3=>25),
-'diffisica'=>array(1=>90,2=>10,3=>25),
+'diffisica'=>array(1=>90,2=>10,3=>40),
 'difmagica'=>array(1=>10,2=>50,3=>25),
 'mana'=>array(1=>30,2=>150,3=>50)
 );
