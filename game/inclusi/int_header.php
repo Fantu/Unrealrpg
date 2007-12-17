@@ -22,7 +22,7 @@ if ($adesso>($usercar['recuperoenergia']+60)){
 		$ore=floor($differenzaora/60);
 		$energia=$usercar['energia']+$ore;
 		if ($energia>$usercar['energiamax'])
-		$salute=$usercar['energiamax'];
+		$energia=$usercar['energiamax'];
 		$db->QueryMod("UPDATE caratteristiche SET recuperoenergia=recuperoenergia+'".($ore*60)."',energia='".($energia)."' WHERE userid='".$user['userid']."'");
 	}
 	else{$db->QueryMod("UPDATE caratteristiche SET recuperoenergia='".$adesso."' WHERE userid='".$user['userid']."'");}
