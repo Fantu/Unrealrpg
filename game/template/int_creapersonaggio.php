@@ -35,20 +35,20 @@ Inizierai con tali valori fissi per tutti:<br />
 <br /><br />
 La razza la puoi scegliere tra le seguenti:<br />
 <?php foreach($razze['nome'] as $chiave=>$elemento){ ?>
-<?php echo $razze['nome']; ?>:<br />
-<?php echo $razze['descrizione']; ?><br />
+<?php echo $razze['nome'][$chiave]; ?>:<br />
+<?php echo $razze['descrizione'][$chiave]; ?><br />
 <?php }?>
 <br /><br />
 La classe la puoi scegliere tra le seguenti:<br />
 <br />
 <?php foreach($classi['nome'] as $chiave=>$elemento){ ?>
-<?php echo $classi['nome']; ?>:<br />
-<?php echo $classi['descrizione']; ?><br />
-<?php echo $lang['Agilita']; ?> <?php echo $classi['agilita']; ?><br />
-<?php echo $lang['Attfisico']; ?> <?php echo $classi['attfisico']; ?><br />
-<?php echo $lang['Attmagico']; ?> <?php echo $classi['attmagico']; ?><br />
-<?php echo $lang['Diffisica']; ?> <?php echo $classi['diffisica']; ?><br />
-<?php echo $lang['Difmagica']; ?> <?php echo $classi['difmagica']; ?><br />
-<?php echo $lang['Mana']; ?> <?php echo $classi['mana']; ?><br />
+<?php echo $classi['nome'][$chiave]; ?>:<br />
+<?php echo $classi['descrizione'][$chiave]; ?><br />
+<?php echo $lang['Agilita'][$chiave]; ?> <?php echo $classi['agilita']; ?><br />
+<?php echo $lang['Attfisico'][$chiave]; ?> <?php echo $classi['attfisico']; ?><br />
+<?php echo $lang['Attmagico'][$chiave]; ?> <?php echo $classi['attmagico']; ?><br />
+<?php echo $lang['Diffisica'][$chiave]; ?> <?php echo $classi['diffisica']; ?><br />
+<?php echo $lang['Difmagica'][$chiave]; ?> <?php echo $classi['difmagica']; ?><br />
+<?php echo $lang['Mana'][$chiave]; ?> <?php echo $classi['mana']; ?><br />
 <br />
 <?php }?>
