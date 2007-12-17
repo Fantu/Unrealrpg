@@ -1,5 +1,5 @@
 Legenda:
-<p><strong>Versione</strong> (Data di rilascio - Stato)<br />
+<p><strong>Versione</strong> [R. n° revisione ramo DEV] (Data di rilascio - Stato)<br />
 + Aggiunte<br />
 # Modifiche<br />
 - Correzione bug e patch di situazioni non previste<br />
