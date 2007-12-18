@@ -10,7 +10,7 @@
 </tr>
 <tr>
 <td>
-<input name="dadepositare" type="text" value="10" size="4" maxlength="5">
+<input name="dadepositare" type="text" value="10" size="4" maxlength="5" />
 </td>
 </tr>
 <tr>
@@ -31,7 +31,7 @@
 </tr>
 <tr>
 <td>
-<input name="daprelevare" type="text" value="10" size="4" maxlength="5">
+<input name="daprelevare" type="text" value="1" size="4" maxlength="5" />
 </td>
 </tr>
 <tr>
