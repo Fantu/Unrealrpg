@@ -2,7 +2,7 @@
 if (isset($_POST['deposita'])){
 $errore="";
 $dadepositare=$_POST['dadepositare'];
-if (!is_int($dadepositare)){
+if (!is_numeric($dadepositare)){
 $errore .= $lang['banca_errore1'];}
 else{
 if ($dadepositare<10)
@@ -20,7 +20,7 @@ $db->QueryMod("UPDATE config SET banca=banca+'".$dadepositare."'");
 if (isset($_POST['preleva'])){
 $errore="";
 $daprelevare=$_POST['daprelevare'];
-if (!is_int($daprelevare)){
+if (!is_numeric($daprelevare)){
 $errore .= $lang['banca_errore1'];}
 else{
 if ($daprelevare<10)
