@@ -9,7 +9,7 @@ $errore .= $lang['banca_errore2'];
 if ($dadepositare>$user['monete'])
 $errore .= $lang['banca_errore3'];
 if($errore){
-	$outputerrori=$lang['outputerrori'];}
+	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
 else {
 $db->QueryMod("UPDATE banca SET conto=conto+'".$dadepositare."' WHERE userid='".$user['userid']."'");
 $db->QueryMod("UPDATE config SET banca=banca+'".$dadepositare."'");
@@ -28,7 +28,7 @@ $deposito = $db->QuerySelect("SELECT banca FROM config");
 if ($daprelevare>$deposito['banca'])
 $errore .= $lang['banca_errore6'];
 if($errore){
-	$outputerrori=$lang['outputerrori'];}
+	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
 else {
 $db->QueryMod("UPDATE banca SET conto=conto-'".$daprelevare."' WHERE userid='".$user['userid']."'");
 $db->QueryMod("UPDATE config SET banca=banca-'".$daprelevare."'");
