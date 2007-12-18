@@ -32,7 +32,7 @@ $lang['Situazione']='Situazione';
 $lang['Banca']='Banca';
 $lang['Changelog']='Info versione';
 $lang['Monete']='Monete';
-$lang['outputerrori']='<span>Si sono verificati i seguenti errori:</span><br /><span><?php echo $errore; ?></span><br /><br />';
+$lang['outputerrori']='<span>Si sono verificati i seguenti errori:</span><br /><span>$errore</span><br /><br />';
 
 // Inizio Banca
 $lang['depositare']='Puoi depositare le tue monete in banca dove saranno al sicuro';
