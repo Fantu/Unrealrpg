@@ -21,6 +21,7 @@
 </table>
 </form>
 <br />
+<?php echo $lang['saldo_conto']; echo " ".$userbank['conto']; ?><br />
 <br />
 <?php echo $lang['prelevare']; ?>
 <br />
