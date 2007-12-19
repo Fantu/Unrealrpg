@@ -1,3 +1,5 @@
+Per leggere i changelog completi pi&ugrave; aggiornati dell'intero progetto clicca <a href="game.php?act=changelog&amp;completa=1>qui</a><br />
+<br />
 Legenda:
 <p><strong>Versione</strong> [R. n° revisione ramo DEV] (Data di rilascio - Stato)<br />
 + Aggiunte<br />
