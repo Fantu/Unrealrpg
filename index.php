@@ -8,16 +8,16 @@ $db = new ConnessioniMySQL();
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title><?php echo $game_name; echo" "; echo $game_version; ?></title>
+<title><?php echo $game_name; echo" "; echo $game_version; echo" "; echo $game_revision; ?></title>
 <?php include('game/inclusi/meta.php'); ?>
 <script type="text/javascript">
 <!--
 function CambiaImg(id,bool) {
 	var immagine = document.getElementById(id);
 	if( bool == true )
-		percorso = 'immagini/'+id+'_color.gif';
+		percorso = 'game/template/immagini/'+id+'_color.gif';
 	else
-		percorso = 'immagini/'+id+'_grigio.gif';
+		percorso = 'game/template/immagini/'+id+'_grigio.gif';
 	immagine.src = percorso;
 }
 // -->

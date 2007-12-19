@@ -5,9 +5,13 @@ Legenda:
 # Modifiche<br />
 - Correzione bug e patch di situazioni non previste<br />
 <br />
-</p> 
+</p>
 
-<p><strong>0.1</strong> (Non disponibile - In sviluppo)<br />
+<p><strong>0.1.1</strong> (Non disponibile - In sviluppo)<br />
+Niente al momento<br />
+<br />
+</p>
+<p><strong>0.1</strong> [R.68] (19/12/2007 - Beta)<br />
 + Creato sistema di base<br />
 + Creato sistema multiversione<br />
 + Creato sistema multiserver<br />

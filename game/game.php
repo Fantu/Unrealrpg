@@ -63,7 +63,7 @@ require($_GET['act'].'.php');
 				//if($user['plus']==0) {
 				?>
 					<div id="ads" align="right">
-						qui lo sponsor
+						qui banner 120x600
 					</div>
 				<?php
 				//} //fine if plus
