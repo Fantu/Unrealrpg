@@ -39,5 +39,6 @@ $db->QueryMod("UPDATE config SET banca=banca-'".$daprelevare."'");
 }
 }//fine preleva
 $userbank=$db->QuerySelect("SELECT * FROM banca WHERE userid='".$user['userid']."' LIMIT 0,1");
+$user=$db->QuerySelect("SELECT * FROM utenti WHERE userid='".$user['userid']."' LIMIT 0,1");
 require('template/int_banca.php');
 ?>
