@@ -19,6 +19,7 @@ class ConnessioniMySQL {
 	$fp=fopen($file,"a+");
 	fputs($fp,$data."\r\n--------\r\n".$err.": ".$mess."\r\n\r\n");
 	fclose($fp);
+	return($err);
 	}
 	function QuerySelect ($arg) { //$var=$db->QuerySelect("SELECT * FROM table");	
 		$dati=$this->Config();
@@ -37,7 +38,7 @@ class ConnessioniMySQL {
 		$query="$arg";
 		$result=mysql_query($query,$connect);
 		if(isset(mysql_error())){
-			errormysql($arg,mysql_errno(),mysql_error())
+			errormysql($arg,mysql_errno(),mysql_error());
 		}
 		mysql_close($connect);	
 	}	
