@@ -1,4 +1,14 @@
 <?php
+$userbank=$db->QuerySelect("SELECT * FROM banca WHERE userid='".$user['userid']."' LIMIT 0,1");
+if (($userbank['interessi']+86400)>$adesso){
+	$differenzaora=$adesso-$userbank['interessi'];
+	$giorni=floor($differenzaora/86400);
+	$interessi=floor((($userbank['conto']/100)*0.5)*$giorni);
+	if ($interessi>0){
+		$db->QueryMod("UPDATE banca SET conto=conto+'".$interessi."',interessi=interessi+'".(86400*$giorni)."' WHERE userid='".$user['userid']."'");
+	}
+	else{$db->QueryMod("UPDATE banca SET interessi='".$adesso."' WHERE userid='".$user['userid']."'");}
+}
 if (isset($_POST['deposita'])){
 $errore="";
 $dadepositare=$_POST['dadepositare'];
@@ -14,7 +24,7 @@ if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
 else {
 //$db->QueryMod("UPDATE banca,utenti,caratteristiche SET banca.conto=banca.conto+'".$dadepositare."',utenti.monete=utenti.monete-'".$dadepositare."',caratteristiche.energia=caratteristiche.energia-'1' WHERE banca.userid='".$user['userid']."' AND utenti.userid='".$user['userid']."' AND caratteristiche.userid='".$user['userid']."'");
-$db->QueryMod("UPDATE banca t1 JOIN utenti t2 on t1.userid=t2.userid JOIN caratteristiche t3 on t2.userid=t3.userid SET t1.conto=t1.conto+'".$dadepositare."',t2.monete=t2.monete-'".$dadepositare."',t3.energia=t3.energia-'1' WHERE t1.userid='".$user['userid']."'");
+$db->QueryMod("UPDATE banca t1 JOIN utenti t2 on t1.userid=t2.userid JOIN caratteristiche t3 on t2.userid=t3.userid SET t1.conto=t1.conto+'".$dadepositare."',t1.interessi='".$adesso."',t2.monete=t2.monete-'".$dadepositare."',t3.energia=t3.energia-'1' WHERE t1.userid='".$user['userid']."'");
 $db->QueryMod("UPDATE config SET banca=banca+'".$dadepositare."'");
 }
 }//fine deposita

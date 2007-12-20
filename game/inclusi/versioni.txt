@@ -9,6 +9,8 @@ Legenda:
 <p><strong>0.1.2</strong> (Non disponibile - In sviluppo)<br />
 - Corretta la quantità minima da prelevare (ora effettivamente 1) e il suo messaggio di errore<br />
 + Ogni operazione bancaria consuma 1 di energia<br />
++ Aggiunti gli interessi sul conto in banca, 0.5% ogni giorno effettivo, viene mantenuto anche il tempo restante<br />
++ Ogni deposito sul conto azzera il tempo degli interessi<br />
 <br />
 </p>
 <p><strong>0.1.1</strong> [R.74] (19/12/2007 - Beta)<br />
