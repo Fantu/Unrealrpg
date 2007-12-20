@@ -13,13 +13,12 @@ class ConnessioniMySQL {
 				$this->dbname = $this->suffix.$this->database;
 		return $dati;
 	}
-	function errormysql($arg,$err,$mess) {
+	function StampaErroreMysql($arg,$err,$mess) {
 	$data = date("d/m/y - H:i")." ".$arg;
 	$file = "inclusi/log/mysql/error.log";
 	$fp=fopen($file,"a+");
 	fputs($fp,$data."\r\n--------\r\n".$err.": ".$mess."\r\n\r\n");
 	fclose($fp);
-	return($err);
 	}
 	function QuerySelect ($arg) { //$var=$db->QuerySelect("SELECT * FROM table");	
 		$dati=$this->Config();
@@ -37,8 +36,10 @@ class ConnessioniMySQL {
 		mysql_select_db($this->dbname,$connect);
 		$query="$arg";
 		$result=mysql_query($query,$connect);
-		if(isset(mysql_error())){
-			errormysql($arg,mysql_errno(),mysql_error());
+		if(!$result){
+			$error=mysql_error();
+			$errorn=mysql_errno();
+			StampaErroreMysql($arg,$errorn,$error);
 		}
 		mysql_close($connect);	
 	}	
