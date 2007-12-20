@@ -6,8 +6,11 @@ Legenda:
 - Correzione bug e patch di situazioni non previste<br />
 <br />
 </p>
-
-<p><strong>0.1.1</strong> (Non disponibile - In sviluppo)<br />
+<p><strong>0.1.2</strong> (Non disponibile - In sviluppo)<br />
+Niente attualmente<br />
+<br />
+</p>
+<p><strong>0.1.1</strong> [R.74] (19/12/2007 - Beta)<br />
 + Aggiunto il logout<br />
 # Messi al singolare i nomi delle razze<br />
 + Aggiunta nella banca la visualizzazione di quante monete ci sono sul conto<br />
