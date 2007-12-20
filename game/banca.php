@@ -25,6 +25,7 @@ $errore .= $lang['banca_errore1'];}
 else{
 if ($daprelevare<10)
 $errore .= $lang['banca_errore4'];
+$userbank=$db->QuerySelect("SELECT conto FROM banca WHERE userid='".$user['userid']."' LIMIT 0,1");
 if ($daprelevare>$userbank['conto'])
 $errore .= $lang['banca_errore5'];
 $deposito = $db->QuerySelect("SELECT banca FROM config");

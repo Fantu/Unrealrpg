@@ -13,6 +13,7 @@ Legenda:
 + Aggiunta nella banca la visualizzazione di quante monete ci sono sul conto<br />
 + Aggiunta nella banca la visualizzazione di quante monete ha il personaggio<br />
 - Corretto bug nella banca, ora aggiunge e toglie le monete del personaggio correttamente<br />
+- Corretto bug nella banca, ora non da pi&ugrave; errore nel prelevare quando ci sono abbastanza monete sul conto<br />
 <br />
 </p>
 <p><strong>0.1</strong> [R.68] (19/12/2007 - Beta)<br />
