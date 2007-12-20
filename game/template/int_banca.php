@@ -26,6 +26,8 @@
 <br />
 <?php echo $lang['saldo_conto']; echo " ".$userbank['conto']; ?><br />
 <br />
+<?php echo $lang['info_interessi']; echo " ".date("d/m/y - H:i",($userbank['interessi']+86400)); ?><br />
+<br />
 <?php echo $lang['prelevare']; ?>
 <br />
 <form action="" method="post" name="preleva">

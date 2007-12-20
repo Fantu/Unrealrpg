@@ -50,5 +50,6 @@ $lang['banca_errore5']='- Non hai abbastanza monete sul conto<br />';
 $lang['banca_errore6']='- La banca non ha abbastanza monete attualmente<br />';
 $lang['saldo_conto']='Il saldo attuale del tuo conto &egrave;:';
 $lang['saldo_utente']='Le monete che hai con te sono:';
+$lang['info_interessi']='La banca paga gli interessi sulle monete depositate sul conto dello 0.5% al giorno, la prossima volta sar&agrave;:';
 // Fine Banca
 ?>
