@@ -36,7 +36,8 @@ $errore .= $lang['banca_errore6'];
 if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
 else {
-$db->QueryMod("UPDATE banca,utenti,caratteristiche SET banca.conto=banca.conto-'".$daprelevare."',utenti.monete=utenti.monete+'".$daprelevare."',caratteristiche.energia=caratteristiche.energia-'1' WHERE banca.userid='".$user['userid']."' AND utenti.userid='".$user['userid']."' AND caratteristiche.userid='".$user['userid']."'");
+//$db->QueryMod("UPDATE banca,utenti,caratteristiche SET banca.conto=banca.conto-'".$daprelevare."',utenti.monete=utenti.monete+'".$daprelevare."',caratteristiche.energia=caratteristiche.energia-'1' WHERE banca.userid='".$user['userid']."' AND utenti.userid='".$user['userid']."' AND caratteristiche.userid='".$user['userid']."'");
+$db->QueryMod("UPDATE banca t1 JOIN utenti t2 on t1.userid=t2.userid JOIN caratteristiche t3 on t2.userid=t3.userid SET t1.conto=t1.conto-'".$daprelevare."',t2.monete=t2.monete+'".$daprelevare."',t3.energia=t3.energia-'1' WHERE t1.userid='".$user['userid']."'");
 $db->QueryMod("UPDATE config SET banca=banca-'".$daprelevare."'");
 }
 }//fine preleva
