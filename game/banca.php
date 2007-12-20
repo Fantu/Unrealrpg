@@ -13,7 +13,7 @@ $errore .= $lang['banca_errore3'];
 if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
 else {
-$db->QueryMod("UPDATE banca SET conto=conto+'".$dadepositare."' WHERE userid='".$user['userid']."'");
+$db->QueryMod("UPDATE banca,utenti SET banca.conto=banca.conto+'".$dadepositare."',utenti.monete=utenti.monete-'".$dadepositare."' WHERE banca.userid='".$user['userid']."' AND utenti.userid='".$user['userid']."'");
 $db->QueryMod("UPDATE config SET banca=banca+'".$dadepositare."'");
 }
 }//fine deposita
@@ -34,7 +34,7 @@ $errore .= $lang['banca_errore6'];
 if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
 else {
-$db->QueryMod("UPDATE banca SET conto=conto-'".$daprelevare."' WHERE userid='".$user['userid']."'");
+$db->QueryMod("UPDATE banca,utenti SET banca.conto=banca.conto-'".$daprelevare."',utenti.monete=utenti.monete+'".$daprelevare."' WHERE banca.userid='".$user['userid']."' AND utenti.userid='".$user['userid']."'");
 $db->QueryMod("UPDATE config SET banca=banca-'".$daprelevare."'");
 }
 }//fine preleva

@@ -1,6 +1,9 @@
 <center><h2><?php echo $lang['Banca']; ?></h2></center><br />
 <?php echo $outputerrori; ?>
 <br />
+<br />
+<?php echo $lang['saldo_utente']; echo " ".$user['monete']; ?><br />
+<br />
 <?php echo $lang['depositare']; ?>
 <br />
 <form action="" method="post" name="deposita">

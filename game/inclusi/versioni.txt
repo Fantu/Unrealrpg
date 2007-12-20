@@ -11,6 +11,8 @@ Legenda:
 + Aggiunto il logout<br />
 # Messi al singolare i nomi delle razze<br />
 + Aggiunta nella banca la visualizzazione di quante monete ci sono sul conto<br />
++ Aggiunta nella banca la visualizzazione di quante monete ha il personaggio<br />
+- Corretto bug nella banca, ora aggiunge e toglie le monete del personaggio correttamente<br />
 <br />
 </p>
 <p><strong>0.1</strong> [R.68] (19/12/2007 - Beta)<br />
