@@ -15,7 +15,7 @@ $dadepositare=$_POST['dadepositare'];
 if (!is_numeric($dadepositare)){
 $errore .= $lang['banca_errore1'];}
 else{
-if ($dadepositare<10)
+if ($dadepositare<1)
 $errore .= $lang['banca_errore2'];
 if ($dadepositare>$user['monete'])
 $errore .= $lang['banca_errore3'];

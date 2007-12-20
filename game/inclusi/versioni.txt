@@ -11,6 +11,7 @@ Legenda:
 + Ogni operazione bancaria consuma 1 di energia<br />
 + Aggiunti gli interessi sul conto in banca, 0.5% ogni giorno effettivo, viene mantenuto anche il tempo restante<br />
 + Ogni deposito sul conto azzera il tempo degli interessi<br />
+# Modificato il minimo depositabile sul conto, ora &egrave; 1 moneta<br />
 <br />
 </p>
 <p><strong>0.1.1</strong> [R.74] (19/12/2007 - Beta)<br />
