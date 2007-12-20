@@ -23,7 +23,7 @@ $daprelevare=$_POST['daprelevare'];
 if (!is_numeric($daprelevare)){
 $errore .= $lang['banca_errore1'];}
 else{
-if ($daprelevare<10)
+if ($daprelevare<1)
 $errore .= $lang['banca_errore4'];
 $userbank=$db->QuerySelect("SELECT conto FROM banca WHERE userid='".$user['userid']."' LIMIT 0,1");
 if ($daprelevare>$userbank['conto'])
