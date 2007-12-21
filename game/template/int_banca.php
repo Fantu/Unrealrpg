@@ -28,7 +28,7 @@
 <br />
 <?php echo $lang['info_interessi']; echo " ".date("d/m/y - H:i",($userbank['interessi']+86400)); ?><br />
 <br />
-<?php if ($userbank('conto')>0){ 
+<?php if (($userbank('conto'))>0){ 
 echo $lang['prelevare']; ?>
 <br />
 <form action="" method="post" name="preleva">
