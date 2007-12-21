@@ -9,6 +9,7 @@ Legenda:
 <p><strong>0.1.3</strong> (Non disponibile - In sviluppo)<br />
 + Aggiunte le informazioni riguardo agli interessi nella banca e il momento esatto del calcolo successivo<br />
 + Se il conto &egrave; vuoto il prelievo non viene visualizzato<br />
+- Corretto bug nel controllo interessi<br />
 <br />
 </p>
 <p><strong>0.1.2</strong> [R.83] (20/12/2007 - Beta)<br />

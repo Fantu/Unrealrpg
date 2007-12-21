@@ -1,6 +1,6 @@
 <?php
 $userbank=$db->QuerySelect("SELECT * FROM banca WHERE userid='".$user['userid']."' LIMIT 0,1");
-if (($userbank['interessi']+86400)>$adesso){
+if (($userbank['interessi']+86400)<$adesso){
 	$differenzaora=$adesso-$userbank['interessi'];
 	$giorni=floor($differenzaora/86400);
 	$interessi=floor((($userbank['conto']/100)*0.5)*$giorni);
