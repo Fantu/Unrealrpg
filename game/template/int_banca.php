@@ -28,7 +28,8 @@
 <br />
 <?php echo $lang['info_interessi']; echo " ".date("d/m/y - H:i",($userbank['interessi']+86400)); ?><br />
 <br />
-<?php echo $lang['prelevare']; ?>
+<?php if ($userbank('conto')>0){ 
+echo $lang['prelevare']; ?>
 <br />
 <form action="" method="post" name="preleva">
 <table border="0">
@@ -47,3 +48,4 @@
 </tr>
 </table>
 </form>
+<?php }/*fine se il conto non è vuoto*/ ?>
