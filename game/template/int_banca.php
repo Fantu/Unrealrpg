@@ -9,7 +9,7 @@
 <form action="" method="post" name="deposita">
 <table border="0">
 <tr>
-<td><div align="right"><?php echo $lang['quanto_depositare']; ?>: </div></td>
+<td><div align="right"><?php echo $lang['quanto_depositare']; ?></div></td>
 </tr>
 <tr>
 <td>
@@ -33,7 +33,7 @@
 <form action="" method="post" name="preleva">
 <table border="0">
 <tr>
-<td><div align="right"><?php echo $lang['quanto_prelevare']; ?>: </div></td>
+<td><div align="right"><?php echo $lang['quanto_prelevare']; ?></div></td>
 </tr>
 <tr>
 <td>

@@ -38,7 +38,7 @@ $lang['outputerrori']='Si sono verificati i seguenti errori:';
 // Inizio Banca
 $lang['depositare']='Puoi depositare le tue monete in banca dove saranno al sicuro';
 $lang['prelevare']='Puoi prelevare le monete dal tuo conto in banca';
-$lang['quanto_depositare']='Inserisci il numero di monete che vuoi depositare, la somma minima &egrave; 10';
+$lang['quanto_depositare']='Inserisci il numero di monete che vuoi depositare';
 $lang['Deposita']='Deposita';
 $lang['quanto_prelevare']='Inserisci il numero di monete che vuoi prelevare';
 $lang['Preleva']='Preleva';
