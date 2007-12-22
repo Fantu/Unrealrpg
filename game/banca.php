@@ -58,7 +58,7 @@ if (!is_numeric($prestito)){
 $errore .= $lang['banca_errore1'];}
 else{
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$user['userid']."' LIMIT 0,1");
-$prestitopossibile=($user['livello']*100)-$userbank['prestito'];
+$prestitopossibile=($usercar['livello']*100)-$userbank['prestito'];
 if ($prestito<1)
 $errore .= $lang['banca_errore7'];
 $deposito = $db->QuerySelect("SELECT banca FROM config");
