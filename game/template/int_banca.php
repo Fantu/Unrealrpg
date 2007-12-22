@@ -71,13 +71,13 @@ echo $lang['prelevare']; ?>
 </form>
 <br />
 <?php if ($userbank['prestito']>0){
-echo $lang['restituzione_prestito']; ?>
+echo $lang['restituzione_prestito']." ".$prestito; ?>
 <br />
 <form action="" method="post" name="daiprestito">
 <table border="0">
-<tr>
+<!--<tr>
 <td><div align="right"><?php echo $lang['quanto_prestito_dare']; ?></div></td>
-</tr>
+</tr>-->
 <tr>
 <td>
 <input type="submit" name="restituisciprestito" value="<?php echo $lang['Restituisci_prestito']; ?>" />
