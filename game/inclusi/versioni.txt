@@ -10,6 +10,8 @@ Legenda:
 + Aggiunte le informazioni riguardo agli interessi nella banca e il momento esatto del calcolo successivo<br />
 + Se il conto &egrave; vuoto il prelievo non viene visualizzato<br />
 - Corretto bug nel controllo interessi<br />
++ Aggiunta la possibilit&agrave; di richiedere un prestito alla banca<br />
++ Aggiunta la restituzione del prestito visualizzata solo se si &egrave; richiesto il prestito<br />
 <br />
 </p>
 <p><strong>0.1.2</strong> [R.83] (20/12/2007 - Beta)<br />

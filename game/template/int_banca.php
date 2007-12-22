@@ -49,3 +49,41 @@ echo $lang['prelevare']; ?>
 </table>
 </form>
 <?php }/*fine se il conto non è vuoto*/ ?>
+<br />
+<?php echo $lang['desc_prestito']; ?>
+<br />
+<form action="" method="post" name="prendiprestito">
+<table border="0">
+<tr>
+<td><div align="right"><?php echo $lang['quanto_prestito_chiedere']; ?></div></td>
+</tr>
+<tr>
+<td>
+<input name="inprestito" type="text" value="1" size="4" maxlength="5" />
+</td>
+</tr>
+<tr>
+<td>
+<input type="submit" name="chiediprestito" value="<?php echo $lang['Chiedi_prestito']; ?>" />
+</td>
+</tr>
+</table>
+</form>
+<br />
+<?php if ($userbank['prestito']>0){
+echo $lang['restituzione_prestito']; ?>
+<br />
+<form action="" method="post" name="daiprestito">
+<table border="0">
+<tr>
+<td><div align="right"><?php echo $lang['quanto_prestito_dare']; ?></div></td>
+</tr>
+<tr>
+<td>
+<input type="submit" name="restituisciprestito" value="<?php echo $lang['Restituisci_prestito']; ?>" />
+</td>
+</tr>
+</table>
+</form>
+<br />
+<?php }/*fine se ha debiti*/ ?>

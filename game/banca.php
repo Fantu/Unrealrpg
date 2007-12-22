@@ -51,6 +51,41 @@ $db->QueryMod("UPDATE banca t1 JOIN utenti t2 on t1.userid=t2.userid JOIN caratt
 $db->QueryMod("UPDATE config SET banca=banca-'".$daprelevare."'");
 }
 }//fine preleva
+if (isset($_POST['chiediprestito'])){
+$errore="";
+$prestito=$_POST['inprestito'];
+if (!is_numeric($prestito)){
+$errore .= $lang['banca_errore1'];}
+else{
+$prestitopossibile=($user['livello']*100)-$userbank['prestito'];
+if ($prestito<1)
+$errore .= $lang['banca_errore7'];
+$deposito = $db->QuerySelect("SELECT banca FROM config");
+if ($prestito>$deposito['banca'])
+$errore .= $lang['banca_errore6'];
+if ($prestito>$prestitopossibile)
+$errore .= $lang['banca_errore8']." ".$prestitopossibile."<br />";
+}
+if($errore){
+	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
+else {
+$db->QueryMod("UPDATE banca t1 JOIN utenti t2 on t1.userid=t2.userid JOIN caratteristiche t3 on t2.userid=t3.userid SET t1.prestito=t1.prestito+'".$prestito."',t2.monete=t2.monete+'".$prestito."',t3.energia=t3.energia-'1' WHERE t1.userid='".$user['userid']."'");
+$db->QueryMod("UPDATE config SET banca=banca-'".$prestito."'");
+}
+}//fine chiedi prestito
+if (isset($_POST['restituisciprestito'])){
+$errore="";
+$prestito=$userbank['prestito']+(floor(($userbank['prestito']/100)*10);
+if ($user['monete']<$prestito)
+$errore .= $lang['banca_errore3'];
+if($errore){
+	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
+else {
+$db->QueryMod("UPDATE banca t1 JOIN utenti t2 on t1.userid=t2.userid JOIN caratteristiche t3 on t2.userid=t3.userid SET t1.prestito=t1.prestito+'".$prestito."',t2.monete=t2.monete-'".$prestito."',t3.energia=t3.energia-'1' WHERE t1.userid='".$user['userid']."'");
+$db->QueryMod("UPDATE config SET banca=banca+'".$prestito."'");
+}
+}//fine restituisci prestito
+
 $userbank=$db->QuerySelect("SELECT * FROM banca WHERE userid='".$user['userid']."' LIMIT 0,1");
 $user=$db->QuerySelect("SELECT * FROM utenti WHERE userid='".$user['userid']."' LIMIT 0,1");
 require('template/int_banca.php');
