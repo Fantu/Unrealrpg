@@ -6,7 +6,11 @@ Legenda:
 - Correzione bug e patch di situazioni non previste<br />
 <br />
 </p>
-<p><strong>0.1.3</strong> (Non disponibile - In sviluppo)<br />
+<p><strong>0.1.4</strong> (Non disponibile - In sviluppo)<br />
+Niente attualmente<br />
+<br />
+</p>
+<p><strong>0.1.3</strong> [R.96] (22/12/2007 - Beta)<br />
 + Aggiunte le informazioni riguardo agli interessi nella banca e il momento esatto del calcolo successivo<br />
 + Se il conto &egrave; vuoto il prelievo non viene visualizzato<br />
 - Corretto bug nel controllo interessi<br />
