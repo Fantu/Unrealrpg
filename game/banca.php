@@ -75,7 +75,7 @@ $db->QueryMod("UPDATE config SET banca=banca-'".$prestito."'");
 }//fine chiedi prestito
 if (isset($_POST['restituisciprestito'])){
 $errore="";
-$prestito=$userbank['prestito']+(floor(($userbank['prestito']/100)*10);
+$prestito=$userbank['prestito']+(floor(($userbank['prestito']/100)*10));
 if ($user['monete']<$prestito)
 $errore .= $lang['banca_errore3'];
 if($errore){
