@@ -11,12 +11,15 @@ function cambiaclasse(id,newClass) {
 	</tr>
 	<tr>
     <td class="tabmenutd" id="menu2" onmouseover="cambiaclasse(this.id,'tabmenutd2')" onmouseout="cambiaclasse(this.id,'tabmenutd')"><div align="center"><a href="game.php?act=banca"><?php echo $lang['Banca']; ?></a></div></td>
-	</tr>	
-	<tr>
-    <td class="tabmenutd" id="menu3" onmouseover="cambiaclasse(this.id,'tabmenutd2')" onmouseout="cambiaclasse(this.id,'tabmenutd')"><div align="center"><a href="game.php?act=changelog"><?php echo $lang['Changelog']; ?></a></div></td>
 	</tr>
 	<tr>
-    <td class="tabmenutd" id="menu4" onmouseover="cambiaclasse(this.id,'tabmenutd2')" onmouseout="cambiaclasse(this.id,'tabmenutd')"><div align="center"><a href="game.php?act=logout"><?php echo $lang['Logout']; ?></a></div></td>
+    <td class="tabmenutd" id="menu3" onmouseover="cambiaclasse(this.id,'tabmenutd2')" onmouseout="cambiaclasse(this.id,'tabmenutd')"><div align="center"><a href="game.php?act=miniera"><?php echo $lang['Miniera']; ?></a></div></td>
+	</tr>	
+	<tr>
+    <td class="tabmenutd" id="menu4" onmouseover="cambiaclasse(this.id,'tabmenutd2')" onmouseout="cambiaclasse(this.id,'tabmenutd')"><div align="center"><a href="game.php?act=changelog"><?php echo $lang['Changelog']; ?></a></div></td>
+	</tr>
+	<tr>
+    <td class="tabmenutd" id="menu5" onmouseover="cambiaclasse(this.id,'tabmenutd2')" onmouseout="cambiaclasse(this.id,'tabmenutd')"><div align="center"><a href="game.php?act=logout"><?php echo $lang['Logout']; ?></a></div></td>
 	</tr>		
 </table>
 </div>

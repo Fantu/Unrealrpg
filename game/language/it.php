@@ -32,6 +32,7 @@ $lang['Situazione']='Situazione';
 $lang['Banca']='Banca';
 $lang['Changelog']='Info versione';
 $lang['Logout']='Esci';
+$lang['Miniera']='Miniera';
 $lang['Monete']='Monete';
 $lang['outputerrori']='Si sono verificati i seguenti errori:';
 
