@@ -6,7 +6,11 @@ Legenda:
 - Correzione bug e patch di situazioni non previste<br />
 <br />
 </p>
-<p><strong>0.2.0</strong> (Non disponibile - In sviluppo)<br />
+<p><strong>0.2.1</strong> (Non disponibile - In sviluppo)<br />
+Niente attualmente<br />
+<br />
+</p>
+<p><strong>0.2.0</strong> [R.108] (30/12/2007 - Beta)<br />
 + Iniziata creazione della miniera<br />
 + Aggiunta l'abilit&agrave; minatore<br />
 + Aggiunta la visualizzazione dell'abilit&agrave; minatore in situazione<br />
