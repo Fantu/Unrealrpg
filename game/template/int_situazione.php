@@ -14,3 +14,4 @@
 <?php echo $lang['Difmagica']; ?>: <?php echo $classi['difmagica'][$usercar['classe']]; ?><br />
 <?php echo $lang['Mana']; ?>: <?php echo $classi['mana'][$usercar['classe']]; ?><br />
 <?php echo $lang['Monete']; ?>: <?php echo $user['monete']; ?><br />
+<?php echo $lang['ab_minatore']; ?>: <?php echo $usercar['minatore']; ?><br />

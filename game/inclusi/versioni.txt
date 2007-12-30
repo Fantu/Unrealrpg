@@ -8,6 +8,13 @@ Legenda:
 </p>
 <p><strong>0.2.0</strong> (Non disponibile - In sviluppo)<br />
 + Iniziata creazione della miniera<br />
++ Aggiunta l'abilit&agrave; minatore<br />
++ Aggiunta la visualizzazione dell'abilit&agrave; minatore in situazione<br />
++ Creata miniera vecchia in cui lavorare avendo un guadagno fisso di 5 monete ad ora e dell'esperienza per l'abilit&agrave; di minatore<br />
++ Devono passare 6 ore tra un lavoro in miniera ed un altro<br />
++ Vengono consumati 100 di energia per ogni ora di lavoro in miniera<br />
++ Lavorando in miniera si rischia di ferirsi, si perde salute in base ad un range casuale e minore quanto &egrave; pi&ugrave; alta l'esperienza di minatore<br />
++ Aggiunto report preciso sul lavoro in miniera<br />
 <br />
 </p>
 <p><strong>0.1.3</strong> [R.96] (22/12/2007 - Beta)<br />
