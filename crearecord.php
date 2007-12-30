@@ -10,4 +10,5 @@ $db = new ConnessioniMySQL();
 	{
 		$db->QueryMod("INSERT INTO miniera (userid,ultimolavnuova) VALUES ('".$var['userid']."','".$adesso."')");
 	}
+	}// fine per ogni server
 ?>
