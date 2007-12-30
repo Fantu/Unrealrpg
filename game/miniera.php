@@ -26,5 +26,6 @@ $outputerrori="<span>".$lang['report_lavminieranuova']."</span><br /><br />";
 }
 }//fine lavora in miniera nuova
 
+require('language/it/lang_miniera.php');
 require('template/int_miniera.php');
 ?>
