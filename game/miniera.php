@@ -1,4 +1,5 @@
 <?php
+require('language/it/lang_miniera.php');
 if (isset($_POST['lavorainnuova'])){
 $errore="";
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$user['userid']."' LIMIT 0,1");
@@ -22,10 +23,9 @@ $salute=1;
 $exp=rand(10,20);
 $exp+=($exp*$usercar['minatore']);
 $db->QueryMod("UPDATE miniera t1 JOIN utenti t2 on t1.userid=t2.userid JOIN caratteristiche t3 on t2.userid=t3.userid SET t1.ultimolavnuova='".$adesso."',t3.expminatore=t3.expminatore+'".$exp."',t2.monete=t2.monete+'".$paga."',t3.energia=t3.energia-'".$energia."',t3.saluteattuale=t3.saluteattuale-'".$salute."' WHERE t1.userid='".$user['userid']."'");
-$outputerrori="<span>".$lang['report_lavminieranuova']."</span><br /><br />";
+$outputerrori="<span>".sprintf($lang['report_lavminieranuova'],$paga,$energia,$salute)."</span><br /><br />";
 }
 }//fine lavora in miniera nuova
 
-require('language/it/lang_miniera.php');
 require('template/int_miniera.php');
 ?>
