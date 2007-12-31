@@ -7,7 +7,10 @@ Legenda:
 <br />
 </p>
 <p><strong>0.2.1</strong> (Non disponibile - In sviluppo)<br />
-Niente attualmente<br />
++ Ora anche salute ed energia che influenzano il range dell'esperienza di minatore che si guadagna lavorando in miniera<br />
++ Aggiunto nel report del lavoro in miniera la visualizzazione dell'esperienza guadagnata<br />
++ Aggiunto aumento di livello dell'abilit&agrave; minatore se c'&egrave; abbastanza esperienza<br />
++ Aggiunta la barra che mostra la quantit&agrave; di esperienza dell'abilit&agrave; minatore in situazione<br />
 <br />
 </p>
 <p><strong>0.2.0</strong> [R.108] (30/12/2007 - Beta)<br />
