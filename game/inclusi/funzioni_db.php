@@ -1,5 +1,11 @@
 <?php
-
+	function StampaErroreMysql($arg,$err,$mess) {
+	$data = date("d/m/y - H:i")." ".$arg;
+	$file = "inclusi/log/mysql/error.log";
+	$fp=fopen($file,"a+");
+	fputs($fp,$data."\r\n--------\r\n".$err.": ".$mess."\r\n\r\n");
+	fclose($fp);
+	}
 class ConnessioniMySQL {
 
 	var $database; //da settare dopo il require -- $db->database=1;
@@ -12,13 +18,6 @@ class ConnessioniMySQL {
 	function Config () {
 				$this->dbname = $this->suffix.$this->database;
 		return $dati;
-	}
-	function StampaErroreMysql($arg,$err,$mess) {
-	$data = date("d/m/y - H:i")." ".$arg;
-	$file = "inclusi/log/mysql/error.log";
-	$fp=fopen($file,"a+");
-	fputs($fp,$data."\r\n--------\r\n".$err.": ".$mess."\r\n\r\n");
-	fclose($fp);
 	}
 	function QuerySelect ($arg) { //$var=$db->QuerySelect("SELECT * FROM table");	
 		$dati=$this->Config();
