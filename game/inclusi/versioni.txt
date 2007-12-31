@@ -6,7 +6,10 @@ Legenda:
 - Correzione bug e patch di situazioni non previste<br />
 <br />
 </p>
-<p><strong>0.2.1</strong> (Non disponibile - In sviluppo)<br />
+<p><strong>0.2.2</strong> (Non disponibile - In sviluppo)<br />
+Niente attualmente<br />
+</p>
+<p><strong>0.2.1</strong> [R.121] (31/12/2007 - Beta)<br />
 + Ora anche salute ed energia che influenzano il range dell'esperienza di minatore che si guadagna lavorando in miniera<br />
 + Aggiunto nel report del lavoro in miniera la visualizzazione dell'esperienza guadagnata<br />
 + Aggiunto aumento di livello dell'abilit&agrave; minatore se c'&egrave; abbastanza esperienza<br />
