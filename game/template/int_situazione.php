@@ -15,5 +15,5 @@
 <?php echo $lang['Mana']; ?>: <?php echo $classi['mana'][$usercar['classe']]; ?><br />
 <?php echo $lang['Monete']; ?>: <?php echo $user['monete']; ?><br />
 <table><tr><td><?php echo $lang['ab_minatore']; ?>: <?php echo $usercar['minatore']; echo " "; ?></td>
-<td valign="bottom"><table width="100" style="height: 10px"><tr><td width="<?php echo $percmin1; ?>" class="sfondoverde"></td><td width="<?php echo $percmin2; ?>" class="sfondorosso"></td></tr></table><br />
+<td align="center" valign="bottom"><table width="100" style="height: 10px"><tr><td width="<?php echo $percmin1; ?>" class="sfondoverde"></td><td width="<?php echo $percmin2; ?>" class="sfondorosso"></td></tr></table><br />
 </td></tr></table>
