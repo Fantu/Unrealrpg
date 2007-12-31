@@ -15,4 +15,4 @@
 <?php echo $lang['Mana']; ?>: <?php echo $classi['mana'][$usercar['classe']]; ?><br />
 <?php echo $lang['Monete']; ?>: <?php echo $user['monete']; ?><br />
 <?php echo $lang['ab_minatore']; ?>: <?php echo $usercar['minatore']; echo " "; ?>
-<img src=template/immagini/barra_verde.gif alt="" width="<?php echo $percmin1 ?>" /><img src=template/immagini/barra_rossa.gif alt="" width="<?php echo $percmin2 ?>" /><br />
+<table width="100" height="10"><tr><td width="<?php echo $percmin1; ?>" class="sfondoverde"></td><td width="<?php echo $percmin2; ?>" class="sfondorosso"></td></tr><br />

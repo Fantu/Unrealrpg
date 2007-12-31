@@ -4,5 +4,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <title><?php echo $game_name; echo" "; echo $game_version; ?></title>
 <?php include('inclusi/meta.php'); ?>
+<link href="template/stile.css" rel="stylesheet" type="text/css" title="all"></link>
 </head>
 <body>
