@@ -33,6 +33,7 @@ $lang['Banca']='Banca';
 $lang['Changelog']='Info versione';
 $lang['Logout']='Esci';
 $lang['Miniera']='Miniera';
+$lang['Messaggi']='Messaggi';
 $lang['Monete']='Monete';
 $lang['outputerrori']='Si sono verificati i seguenti errori:';
 $lang['ab_minatore']='Abilit&agrave; minatore';

@@ -7,7 +7,8 @@ Legenda:
 <br />
 </p>
 <p><strong>0.2.2</strong> (Non disponibile - In sviluppo)<br />
-Niente attualmente<br />
+# Piccole modifiche nella homepage esterna<br />
++ Iniziata creazione sistema messaggi<br />
 </p>
 <p><strong>0.2.1.1</strong> (31/12/2007 - Beta)<br />
 - Corretto bug nel sistema query<br />

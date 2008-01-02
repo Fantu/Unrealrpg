@@ -1,3 +1,4 @@
+<span>Login</span><br />
 		<form action="game/login.php" method="post" name="formlogin">
 		<table width="750" border="0">
 		  <tr>
@@ -16,6 +17,7 @@
 		  </tr>
 		</table>
       	</form>
+<br /><br />
 <table width="750" border="0" align="center">
   <tr>
     <td>
