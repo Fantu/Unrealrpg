@@ -63,7 +63,7 @@ Informazioni sui server:
 </tr>
 <?php foreach($game_server as $chiave=>$elemento){ ?>
 <tr>
-<td><?php echo $infoserver['nome']; ?></td><td><?php echo $infoserver['utenti']; ?></td><td><?php echo $infoserver['online']; ?></td>
+<td><?php echo $infoserver['nome'][$chiave]; ?></td><td><?php echo $infoserver['utenti'][$chiave]; ?></td><td><?php echo $infoserver['online'][$chiave]; ?></td>
 </tr>
 <?php }/* fine per ogni server*/ ?>
 </table>
