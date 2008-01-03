@@ -52,7 +52,7 @@ if($_GET['do']=="elim") { //cancella mess singolo
 	<?php
 	}
 	echo "<br /><table width=\"505\"  border=\"0\" cellspacing=\"2\" cellpadding=\"2\"><tr>"
-    ."<td align=\"center\"><input name=\"contatore\" type=\"hidden\" value=\"".$i."\"><input name=\"asd\" type=\"submit\" value=\"Cancella i selezionati\" /></td>"
+    ."<td align=\"center\"><input name=\"contatore\" type=\"hidden\" value=\"".$i."\" /><input name=\"asd\" type=\"submit\" value=\"Cancella i selezionati\" /></td>"
 	."</tr></table></form>";
 	$db->QueryMod("UPDATE messaggi SET letto=1 WHERE userid='".$user['userid']."'");
 	}
