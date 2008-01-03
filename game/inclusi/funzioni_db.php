@@ -58,7 +58,7 @@ class ConnessioniMySQL {
 		mysql_select_db($this->dbname,$connect);
 		$query="$arg";
 		$result=mysql_query($query,$connect);
-		if(!$result)
+		//if(!$result)
 			mysql_close($connect);
 		return $result;
 	}

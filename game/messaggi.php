@@ -12,6 +12,10 @@ if($_GET['do']=="elim") { //cancella mess singolo
 	$db->QueryMod("DELETE FROM messaggi WHERE id='".$_GET['id']."'");
 	echo "<script language=\"javascript\">window.location.href='game.php?act=messaggi'</script>";	
 }else { // inizia visualizza messaggi
+	$a=$db->QueryCiclo("SELECT * FROM messaggi WHERE userid='".$user['userid']."' ORDER BY id desc");
+	if (!$a){
+		echo "Non c'&egrave; nessun messaggio";}
+	else{
 	echo "<form action=\"game.php?act=messaggi&do=canc\" method=\"post\" name=\"canctutt\">";
 	$i=0;
 	$a=$db->QueryCiclo("SELECT * FROM messaggi WHERE userid='".$user['userid']."' ORDER BY id desc");
@@ -45,5 +49,6 @@ if($_GET['do']=="elim") { //cancella mess singolo
     ."<td align=\"center\"><input name=\"contatore\" type=\"hidden\" value=\"".$i."\"><input name=\"asd\" type=\"submit\" value=\"Cancella i selezionati\"></td>"
 	."</tr></table></form>";
 	$db->QueryMod("UPDATE messaggi SET letto=1 WHERE userid='".$user['userid']."'");
+	}
 } // fine visualizza messaggi
 ?>
