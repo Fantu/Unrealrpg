@@ -45,7 +45,7 @@
 foreach($game_server as $chiave=>$elemento){
 $infoserver['nome'][$chiave]=$elemento;
 $db->database=$chiave;
-$utenti=$db->QuerySelect("SELECT COUNT(*) AS id FROM utenti);
+$utenti=$db->QuerySelect("SELECT COUNT(*) AS id FROM utenti");
 $infoserver['utenti'][$chiave]=$utenti['id'];
 $seonline=$adesso-600;
 $online=$db->QuerySelect("SELECT COUNT(*) AS id FROM utenti WHERE ultimazione>'".$seonline."'");
