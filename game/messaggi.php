@@ -58,3 +58,4 @@ if($_GET['do']=="elim") { //cancella mess singolo
 	}
 } // fine visualizza messaggi
 ?>
+</div>

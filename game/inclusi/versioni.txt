@@ -13,6 +13,7 @@ Legenda:
 + Inserita cancellazione singoli messaggi<br />
 + Migliorato sistema messaggi nel caso di nessun messaggio<br />
 + Inserita cancellazione di pi&ugrave; messaggi contemporaneamente<br />
++ Il report del lavoro in miniera viene spedito come messaggio<br />
 </p>
 <p><strong>0.2.1.1</strong> (31/12/2007 - Beta)<br />
 - Corretto bug nel sistema query<br />
