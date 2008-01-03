@@ -6,7 +6,10 @@ Legenda:
 - Correzione bug e patch di situazioni non previste<br />
 <br />
 </p>
-<p><strong>0.2.2</strong> (Non disponibile - In sviluppo)<br />
+<p><strong>0.2.3</strong> (Non disponibile - In sviluppo)<br />
+Niente attualmente<br />
+</p>
+<p><strong>0.2.2</strong> [R.131] (3/1/2008 - Beta)<br />
 # Piccole modifiche nella homepage esterna<br />
 + Iniziata creazione sistema messaggi<br />
 + Inserita visualizzazione messaggi<br />
