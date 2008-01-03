@@ -11,14 +11,20 @@ function conteggio() {
 if($_GET['do']=="elim") { //cancella mess singolo
 	$db->QueryMod("DELETE FROM messaggi WHERE id='".$_GET['id']."'");
 	echo "<script language=\"javascript\">window.location.href='game.php?act=messaggi'</script>";	
+} else if($_GET['do']=="canc") { //cancella mess selezionati
+	while($_POST['contatore']>0) {	
+		$db->QueryMod("DELETE FROM messaggi WHERE id='".$_POST['messaggioid'.$_POST['contatore'].'']."'");
+		$_POST['contatore']--;
+	}
+	echo "<script language=\"javascript\">window.location.href='game.php?act=messaggi'</script>";
 }else { // inizia visualizza messaggi
 	$a=$db->QueryCiclo("SELECT * FROM messaggi WHERE userid='".$user['userid']."' ORDER BY id desc");
-	if (!$a){
+	$esistenza=mysql_num_rows($a);
+	if (!$esistenza){
 		echo "Non c'&egrave; nessun messaggio";}
 	else{
 	echo "<form action=\"game.php?act=messaggi&do=canc\" method=\"post\" name=\"canctutt\">";
 	$i=0;
-	$a=$db->QueryCiclo("SELECT * FROM messaggi WHERE userid='".$user['userid']."' ORDER BY id desc");
 	while($mess=$db->QueryCicloResult($a)) {
 		$i++;
 		if ($mess['mittenteid']!=0)
