@@ -3,6 +3,7 @@ $user=$db->QuerySelect("SELECT * FROM utenti WHERE userid='".$lg[0]."' AND passw
 
 if($user['userid']) {
 $adesso=strtotime("now");
+$db->QueryMod("UPDATE utenti SET ultimazione='".$adesso."' WHERE userid='".$user['userid']."'");
 if($user['personaggio']==1) {
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$user['userid']."' LIMIT 0,1");
 if ($adesso>($usercar['recuperosalute']+3600)){

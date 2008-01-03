@@ -1,4 +1,4 @@
-		<?php
+<?php
 		if( $_POST['step']=="registrazione" ) {
 			$errore="";
 			$server=$_POST['server'];
@@ -35,12 +35,21 @@
 				$pass=md5($_POST['password']);
 				$cod=md5($_POST['username']);
 				$_POST['username']=strip_tags(str_replace("'","\'",$_POST['username']));
-				$db->QueryMod("INSERT INTO utenti (username,password,codice,email,dataiscrizione,ipreg,server) VALUES ('".$_POST['username']."','".$pass."','".$cod."','".$_POST['email']."','".$ora."','".$ip."','".$_POST['server']."')");		
+				$db->QueryMod("INSERT INTO utenti (username,password,codice,email,dataiscrizione,ipreg,server,ultimazione) VALUES ('".$_POST['username']."','".$pass."','".$cod."','".$_POST['email']."','".$ora."','".$ip."','".$_POST['server']."','".$ora."')");		
 				$intestazione = "From: ".$game_name."<server@lostage.it>\r\n";
 				$messaggio="Ciao,\nPer confermare l'iscrizione a ".$game_name." devi visitare il link sottostante:\n ".$game_link."/conferma.php?t=".$_POST['server']."&cod=$cod \n\nFinchè l'account non verrà confermato non potrai accedere al gioco.\nSaluti,\nLostgames Staff";
 				mail($_POST['email'],"Conferma account ".$game_name,$messaggio,$intestazione);
 				$outputreg="<strong>Account creato con successo!!</strong><br />Prima di poter iniziare a giocare dovrai confermare l'iscrizione visitando il link contenuto nella mail che ti è stata inviata all'indirizzo di posta inserito.<br />Se non trovi la mail controlla nella cartella posta indesiderata antispam o simili.<br /><br />";
 			}
 		}
-		require('game/template/est_pagina_home.php');	  
-	  	?>
+foreach($game_server as $chiave=>$elemento){
+$infoserver['nome'][$chiave]=$elemento;
+$db->database=$chiave;
+$utenti=$db->QuerySelect("SELECT COUNT(*) AS id FROM utenti);
+$infoserver['utenti'][$chiave]=$utenti['id'];
+$seonline=$adesso-600;
+$online=$db->QuerySelect("SELECT COUNT(*) AS id FROM utenti WHERE ultimazione>'".$seonline."'");
+$infoserver['online'][$chiave]=$online['id'];
+}//fine info server
+require('game/template/est_pagina_home.php');	  
+?>

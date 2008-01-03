@@ -55,3 +55,15 @@
     </td>
   </tr>
 </table>
+<br /><br />
+Informazioni sui server:
+<table width="750" border="0" align="center">
+<tr>
+<td>Nome</td><td>Utenti registrati</td><td>Utenti online</td>
+</tr>
+<?php foreach($game_server as $chiave=>$elemento){ ?>
+<tr>
+<td><?php echo $infoserver['nome']; ?></td><td><?php echo $infoserver['utenti']; ?></td><td><?php echo $infoserver['online']; ?></td>
+</tr>
+<?php }/* fine per ogni server*/ ?>
+</table>

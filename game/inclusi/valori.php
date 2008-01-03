@@ -1,7 +1,7 @@
 <?php
 $game_name="Unreal Rpg - Browser game";
 $game_version="DEV";
-$game_revision="0.2.3 R.132";
+$game_revision="0.2.3 R.133";
 $game_link="http://unrealff.it/rpgdev";
 $game_server=array(999=>"DEV");
 ?>
