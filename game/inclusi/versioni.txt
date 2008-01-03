@@ -7,7 +7,8 @@ Legenda:
 <br />
 </p>
 <p><strong>0.2.3</strong> (Non disponibile - In sviluppo)<br />
-Niente attualmente<br />
++ Aggiunto in situazione se si hanno nuovi messaggi e quanti<br />
++ Vari miglioramenti di sistema<br />
 </p>
 <p><strong>0.2.2</strong> [R.131] (3/1/2008 - Beta)<br />
 # Piccole modifiche nella homepage esterna<br />

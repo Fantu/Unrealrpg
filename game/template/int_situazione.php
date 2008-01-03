@@ -1,5 +1,8 @@
 <center><h2><?php echo $lang['Situazione']; ?></h2></center><br />
 <br />
+<div align="center">
+<?php echo $newmsg; ?><br />
+</div>
 <?php echo $lang['Personaggio']; ?>: <?php echo $user['username']; ?><br />
 <?php echo $lang['Razza']; ?>: <?php echo $razze['nome'][$usercar['razza']]; ?><br />
 <?php echo $lang['Classe']; ?>: <?php echo $classi['nome'][$usercar['classe']]; ?><br />
