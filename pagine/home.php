@@ -47,6 +47,7 @@ $infoserver['nome'][$chiave]=$elemento;
 $db->database=$chiave;
 $utenti=$db->QuerySelect("SELECT COUNT(*) AS id FROM utenti");
 $infoserver['utenti'][$chiave]=$utenti['id'];
+$adesso=strtotime("now");
 $seonline=$adesso-600;
 $online=$db->QuerySelect("SELECT COUNT(*) AS id FROM utenti WHERE ultimazione>'".$seonline."'");
 $infoserver['online'][$chiave]=$online['id'];
