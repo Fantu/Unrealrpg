@@ -23,7 +23,7 @@ if($_GET['do']=="elim") { //cancella mess singolo
 	if (!$esistenza){
 		echo "Non c'&egrave; nessun messaggio";}
 	else{
-	echo "<form action=\"game.php?act=messaggi&do=canc\" method=\"post\" name=\"canctutt\">";
+	echo "<form action=\"game.php?act=messaggi&amp;do=canc\" method=\"post\" name=\"canctutt\">";
 	$i=0;
 	while($mess=$db->QueryCicloResult($a)) {
 		$i++;
@@ -33,26 +33,26 @@ if($_GET['do']=="elim") { //cancella mess singolo
 	?>
 	<table width="505"  border="0" cellspacing="2" cellpadding="2">
 	  <tr>
-		<td width="5%"><?php echo "<input name=\"messaggioid".$i."\" type=\"checkbox\" id=\"messaggioid\" value=\"".$mess['id']."\">"; ?></td>
-		<td width="95%"><div align="center">Messaggio da: <?php if ($mess['mittenteid']!=0){echo "Sistema";}else{echo $mit['username'];} ?> - in data: <?php echo date("d/m/y - H:i",$mess['data']); ?> </div></td>
+		<td width="5%"><?php echo "<input name=\"messaggioid".$i."\" type=\"checkbox\" id=\"messaggioid".$i."\" value=\"".$mess['id']."\" />"; ?></td>
+		<td width="95%"><div align="center">Messaggio da: <?php if ($mess['mittenteid']==0){echo "Sistema";}else{echo $mit['username'];} ?> - in data: <?php echo date("d/m/y - H:i",$mess['data']); ?> </div></td>
 	  </tr>
 	  <tr>
 		<td>&nbsp;</td>
-		<td><?php echo "<strong><span>".$mess['titolo']."</span></strong><br>".$mess['testo']; ?></td>
+		<td><?php echo "<strong><span>".$mess['titolo']."</span></strong><br />".$mess['testo']; ?></td>
 	  </tr>
 	  <tr>
 		<td colspan="2" align="right"> 
 		<?php 
 		if($mess['mittenteid']==0)
-			echo "[ <a href=\"game.php?act=messaggi&do=elim&id=".$mess['id']."\">Elimina</a> ]";
+			echo "[ <a href=\"game.php?act=messaggi&amp;do=elim&amp;id=".$mess['id']."\">Elimina</a> ]";
 		else
-			echo "[ <a href=\"game.php?act=messaggi&do=risp&id=".$mess['id']."\">Rispondi</a> ] - [ <a href=\"game.php?act=messaggi&do=elim&id=".$mess['id']."\">Elimina</a> ]"; ?></td>
+			echo "[ <a href=\"game.php?act=messaggi&amp;do=risp&amp;id=".$mess['id']."\">Rispondi</a> ] - [ <a href=\"game.php?act=messaggi&amp;do=elim&amp;id=".$mess['id']."\">Elimina</a> ]"; ?></td>
 	  </tr>
 	</table>
 	<?php
 	}
-	echo "<br><table width=\"505\"  border=\"0\" cellspacing=\"2\" cellpadding=\"2\"><tr>"
-    ."<td align=\"center\"><input name=\"contatore\" type=\"hidden\" value=\"".$i."\"><input name=\"asd\" type=\"submit\" value=\"Cancella i selezionati\"></td>"
+	echo "<br /><table width=\"505\"  border=\"0\" cellspacing=\"2\" cellpadding=\"2\"><tr>"
+    ."<td align=\"center\"><input name=\"contatore\" type=\"hidden\" value=\"".$i."\"><input name=\"asd\" type=\"submit\" value=\"Cancella i selezionati\" /></td>"
 	."</tr></table></form>";
 	$db->QueryMod("UPDATE messaggi SET letto=1 WHERE userid='".$user['userid']."'");
 	}
