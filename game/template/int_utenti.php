@@ -4,7 +4,7 @@ In sviluppo...<br />
 <br />
 <table width="500" border="1" cellspacing="2" cellpadding="2">
   <tr>
-    <td><div align="center"><?php echo $lang['Personaggio']; ?></div></td>
+    <td><div align="center"><a href="utenti.php?ordine=personaggio"><?php echo $lang['Personaggio']; ?></a></div></td>
     <td><div align="center"><a href="utenti.php?ordine=stato"><?php echo $lang['Stato']; ?></a></div></td>
   </tr>
 <?php foreach($utenti['nome'] as $chiave=>$elemento){ ?>
