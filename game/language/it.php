@@ -37,7 +37,7 @@ $lang['Messaggi']='Messaggi';
 $lang['Monete']='Monete';
 $lang['outputerrori']='Si sono verificati i seguenti errori:';
 $lang['ab_minatore']='Abilit&agrave; minatore';
-
+$lang['Lista_utenti']='Elenco personaggi';
 
 // Inizio Banca
 $lang['depositare']='Puoi depositare le tue monete in banca dove saranno al sicuro';
