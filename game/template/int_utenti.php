@@ -6,7 +6,7 @@ In sviluppo...<br />
   <tr>
     <td><div align="center"><?php echo $lang['Personaggio']; ?></div></td>
   </tr>
-<?php foreach($utenti as $chiave=>$elemento){ ?>
+<?php foreach($utenti['nome'] as $chiave=>$elemento){ ?>
 <tr>
 <td><?php echo $utenti['nome'][$chiave]; ?></td>
 </tr>
