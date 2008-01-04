@@ -8,6 +8,7 @@ Legenda:
 </p>
 <p><strong>0.2.5</strong> (Non disponibile - In sviluppo)<br />
 + Aggiunto lo stato (online, offline) nell'elenco utenti<br />
++ Aggiunto l'ordinamento per stato nell'elenco utenti<br />
 </p>
 <p><strong>0.2.4</strong> [R.144] (4/1/2008 - Beta)<br />
 + Ora anche l'attacco fisico influenza sul lavoro in miniera, pi&ugrave; precisamente l'esperienza guadagnata lavorando in miniera nuova<br />
