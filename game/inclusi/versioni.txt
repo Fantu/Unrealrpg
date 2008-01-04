@@ -7,9 +7,10 @@ Legenda:
 <br />
 </p>
 <p><strong>0.2.4</strong> (Non disponibile - In sviluppo)<br />
-Niente attualmente<br />
++ Ora anche l'attacco fisico influenza sul lavoro in miniera, pi&ugrave; precisamente l'esperienza guadagnata lavorando in miniera nuova<br />
++ Ora anche la difesa fisica influenza sul lavoro in miniera, pi&ugrave; precisamente i danni subiti lavorando in miniera nuova<br />
 </p>
-<p><strong>0.2.3</strong> [R.137] (3/1/2008 - Beta)<br />
+<p><strong>0.2.3</strong> [R.137] (4/1/2008 - Beta)<br />
 + Aggiunto in situazione se si hanno nuovi messaggi e quanti<br />
 + Vari miglioramenti di sistema<br />
 + Aggiunta la memorizzazione dell'ultima azione (per poi determinare se online)<br />
