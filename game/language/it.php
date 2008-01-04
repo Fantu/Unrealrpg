@@ -38,4 +38,8 @@ $lang['Monete']='Monete';
 $lang['outputerrori']='Si sono verificati i seguenti errori:';
 $lang['ab_minatore']='Abilit&agrave; minatore';
 $lang['Lista_utenti']='Elenco personaggi';
+
+//Inizio elenco utenti
+$lang['Stato']='Stato';
+//Fine elenco utenti
 ?>
