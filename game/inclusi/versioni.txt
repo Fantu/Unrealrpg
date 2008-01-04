@@ -6,11 +6,14 @@ Legenda:
 - Correzione bug e patch di situazioni non previste<br />
 <br />
 </p>
-<p><strong>0.2.4</strong> (Non disponibile - In sviluppo)<br />
+<p><strong>0.2.5</strong> (Non disponibile - In sviluppo)<br />
+Niente attualmente<br />
+</p>
+<p><strong>0.2.4</strong> [R.144] (4/1/2008 - Beta)<br />
 + Ora anche l'attacco fisico influenza sul lavoro in miniera, pi&ugrave; precisamente l'esperienza guadagnata lavorando in miniera nuova<br />
 + Ora anche la difesa fisica influenza sul lavoro in miniera, pi&ugrave; precisamente i danni subiti lavorando in miniera nuova<br />
 # Cambiati i nomi di 4 caratteristiche<br />
-+ Iniziata creazione elenco personaggi<br />
++ Iniziata creazione elenco personaggi (non conterr&agrave; solo quello)<br />
 + Vari miglioramenti di sistema<br />
 </p>
 <p><strong>0.2.3</strong> [R.137] (4/1/2008 - Beta)<br />
