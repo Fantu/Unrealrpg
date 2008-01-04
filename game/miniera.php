@@ -17,7 +17,7 @@ $paga=5;
 $energia=100-(5*$usercar['minatore']);
 if ($energia<50)
 $energia=50;
-$salute=(rand(5,20))-(1*$usercar['minatore'])-(rand(0,floor($usercar['diffisica']/20));
+$salute=(rand(5,20))-(1*$usercar['minatore'])-(rand(0,floor($usercar['diffisica']/20)));
 if ($salute<1)
 $salute=1;
 $exp=rand(5,(2+floor($usercar['saluteattuale']/10)+floor($usercar['energia']/100)+floor($usercar['attfisico']/10)));
