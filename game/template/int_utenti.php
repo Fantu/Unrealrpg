@@ -8,7 +8,7 @@ In sviluppo...<br />
   </tr>
 <?php foreach($utenti['nome'] as $chiave=>$elemento){ ?>
 <tr>
-<td><?php echo $utenti['nome'][$chiave]; ?></td>
+<td><div align="center"><?php echo $utenti['nome'][$chiave]; ?></div></td>
 </tr>
 <?php }/* fine per ogni utente della lista*/ ?>
 </table>

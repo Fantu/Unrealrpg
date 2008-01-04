@@ -11,6 +11,7 @@ Legenda:
 + Ora anche la difesa fisica influenza sul lavoro in miniera, pi&ugrave; precisamente i danni subiti lavorando in miniera nuova<br />
 # Cambiati i nomi di 4 caratteristiche<br />
 + Iniziata creazione elenco personaggi<br />
++ Vari miglioramenti di sistema<br />
 </p>
 <p><strong>0.2.3</strong> [R.137] (4/1/2008 - Beta)<br />
 + Aggiunto in situazione se si hanno nuovi messaggi e quanti<br />
