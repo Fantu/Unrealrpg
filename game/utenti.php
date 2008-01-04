@@ -1,11 +1,20 @@
 <?php
-if($_GET['ordine']=="stato"){
+$ordine="ORDER BY userid ASC";
+switch($_GET['ordine']){
+case "stato":
+$ordine="ORDER BY ultimazione DESC";
+break;
+case "personaggio":
+$ordine="ORDER BY username ASC";
+break;
+}
+/*if($_GET['ordine']=="stato"){
 $ordine="ORDER BY ultimazione DESC";
 }elseif($_GET['ordine']=="personaggio"){
 $ordine="ORDER BY username ASC";
 }else{
 $ordine="ORDER BY userid ASC";
-}//fine ordinamenti
+}//fine ordinamenti*/
 $a=$db->QueryCiclo("SELECT userid,username,ultimazione FROM utenti WHERE conferma='1' AND personaggio='1''".$ordine."'");
 $i=0;
 $seonline=$adesso-600;
