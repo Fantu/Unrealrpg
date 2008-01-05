@@ -18,6 +18,7 @@ $seonline=$adesso-600;
 while($chi=$db->QueryCicloResult($utentecercato)) {
 	$i++;
 	$utentit['nome'][$i]=$chi['username'];
+	$utentit['userid'][$i]=$chi['userid'];
 	if ($chi['ultimazione']>$seonline){
 	$utentit['online'][$i]=1;}else
 	{$utentit['online'][$i]=0;}
@@ -46,6 +47,7 @@ $seonline=$adesso-600;
 while($chi=$db->QueryCicloResult($a)) {
 	$i++;
 	$utenti['nome'][$i]=$chi['username'];
+	$utenti['userid'][$i]=$chi['userid'];
 	if ($chi['ultimazione']>$seonline){
 	$utenti['online'][$i]=1;}else
 	{$utenti['online'][$i]=0;}

@@ -10,6 +10,7 @@
   <tr>
     <td><div align="center"><?php echo $lang['Personaggio']; ?></div></td>
     <td><div align="center"><?php echo $lang['Stato']; ?></div></td>
+    <td><div align="center"><?php echo $lang['scrivi_msg']; ?></div></td>
   </tr>
 <?php foreach($utentit['nome'] as $chiave=>$elemento){ ?>
 <tr>
@@ -20,6 +21,7 @@
 <img src="template/immagini/led_rosso.gif" alt="Offline" />
 <?php } ?>
 </div></td>
+<td><div align="center"><a href="game.php?act=messaggi&amp;do=scrivi&amp;id=<?php echo $utentit['userid'][$chiave]; ?>"><img src="template/immagini/mess.gif" alt="<?php echo $lang['scrivi_msg']; ?>" /></a></div></td>
 </tr>
 <?php }/* fine per ogni utente della lista*/ ?>
 </table>
@@ -50,6 +52,7 @@
   <tr>
     <td><div align="center"><a href="utenti.php?ordine=personaggio"><?php echo $lang['Personaggio']; ?></a></div></td>
     <td><div align="center"><a href="utenti.php?ordine=stato"><?php echo $lang['Stato']; ?></a></div></td>
+    <td><div align="center"><?php echo $lang['scrivi_msg']; ?></div></td>
   </tr>
 <?php foreach($utenti['nome'] as $chiave=>$elemento){ ?>
 <tr>
@@ -60,6 +63,7 @@
 <img src="template/immagini/led_rosso.gif" alt="Offline" />
 <?php } ?>
 </div></td>
+<td><div align="center"><a href="game.php?act=messaggi&amp;do=scrivi&amp;id=<?php echo $utentit['userid'][$chiave]; ?>"><img src="template/immagini/mess.gif" alt="<?php echo $lang['scrivi_msg']; ?>" /></a></div></td>
 </tr>
 <?php }/* fine per ogni utente della lista*/ ?>
 </table>

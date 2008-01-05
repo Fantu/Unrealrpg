@@ -13,6 +13,9 @@ Legenda:
 + Aggiunta la ricerca personaggi per nome nell'elenco utenti<br />
 + Nella ricerca personaggi per nome nell'elenco utenti vengono mostrati tutti i personaggi il cui nome contiene la stringa cercata<br />
 + Vari miglioramenti di sistema, in particolare nel sistema messaggi<br />
++ Aggiunto invio messaggi ad altri utenti<br />
++ Aggiunta risposta messaggi di altri utenti<br />
++ Aggiunto l'invio di un messaggio in parte ad ogni utente nell'elenco dei personaggi e nella loro ricerca<br />
 </p>
 <p><strong>0.2.4</strong> [R.144] (4/1/2008 - Beta)<br />
 + Ora anche l'attacco fisico influenza sul lavoro in miniera, pi&ugrave; precisamente l'esperienza guadagnata lavorando in miniera nuova<br />

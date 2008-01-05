@@ -22,6 +22,99 @@ while($_POST['contatore']>0) {
 header("Location: game.php?act=messaggi");
 exit();
 break;
+case "dorisp":// invia risposta
+	$errore="";	
+	if(!$_POST['mymess'])
+		$errore="Non hai scritto il messaggio da inviare!<br>";
+	if(!$_POST['messid'])
+		$errore="Impossibile inviare il messaggio, riprova o contatta l'admin.";
+	if(strlen($_POST['mymess'])>500)
+		$errore="Non puoi inviare messaggi superiori ai 500 caratteri";				
+	if($errore){
+	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";
+	echo $outputerrori;}
+	else {
+		$a=$db->QuerySelect("SELECT titolo,mittenteid FROM messaggi WHERE id='".$_POST['messid']."'");
+		$titolo="RE: ".$a['titolo'];
+		$_POST['mymess']=str_replace("'","&acute;",$_POST['mymess']);
+		$_POST['mymess']=str_replace("\"","&quot;",$_POST['mymess']);		
+		$_POST['mymess']=str_replace("<","&lt;",$_POST['mymess']);		
+		$_POST['mymess']=str_replace(">","&gt;",$_POST['mymess']);
+		$db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$a['mittenteid']."','".$titolo."','".$_POST['mymess']."','".$user['userid']."','".$adesso."')");
+		header("Location: game.php?act=messaggi");
+		exit();		
+	}
+break;
+case "doscrivi":// invia nuovo messaggio
+	$errore="";
+	if(!$_POST['mymess'])
+		$errore="Non hai scritto il messaggio da inviare!<br>";
+	if(!$_POST['titolo'])
+		$errore="Non hai scritto il titolo del messaggio da inviare!<br>";		
+	if(!$_POST['achi'])
+		$errore="Impossibile inviare il messaggio, riprova o contatta l'admin.";
+	if(strlen($_POST['mymess'])>500)
+		$errore="Non puoi inviare messaggi superiori ai 500 caratteri";	
+	if($errore){
+	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";
+	echo $outputerrori;}
+	else {	
+		$_POST['titolo']=str_replace("'","&acute;",$_POST['titolo']);
+		$_POST['titolo']=str_replace("\"","&quot;",$_POST['titolo']);		
+		$_POST['titolo']=str_replace("<","&lt;",$_POST['titolo']);		
+		$_POST['titolo']=str_replace(">","&gt;",$_POST['titolo']);	
+		$_POST['mymess']=str_replace("'","&acute;",$_POST['mymess']);
+		$_POST['mymess']=str_replace("\"","&quot;",$_POST['mymess']);		
+		$_POST['mymess']=str_replace("<","&lt;",$_POST['mymess']);		
+		$_POST['mymess']=str_replace(">","&gt;",$_POST['mymess']);
+		$db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$_POST['achi']."','".$_POST['titolo']."','".$_POST['mymess']."','".$user['userid']."','".$adesso."')");
+		$db->QueryMod("DELETE FROM messaggi WHERE id='".$_GET['id']."'");
+		header("Location: game.php?act=messaggi");
+	}
+exit();
+break;
+case "risp":// scrivi risposta
+?>
+<form action="game.php?act=messaggi&amp;do=dorisp" method="post" name="formrisp">
+<table width="505"  border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td>Scrivi il tuo messaggio e premi il pulsante </td>
+  </tr>
+  <tr>
+    <td><textarea name="mymess" cols="45" rows="4" id="mymess" onkeydown="conteggio()"></textarea>      
+	  <br /><div id="caratteri" name="caratteri">Caratteri disponibili 500</div>
+  </td></tr>
+  <tr>
+    <td><div align="center">
+      <?php echo "<input type=\"hidden\" name=\"messid\" value=\"".$_GET['id']."\" />"; ?>
+      <input type="submit" name="Submit" value="Invia messaggio" />
+    </div></td>
+  </tr>
+</table>
+</form>
+<?php
+break;
+case "scrivi":// scrivi nuovo
+?>
+<form action="game.php?act=messaggi&amp;do=doscrivi" method="post" name="formrisp2">
+<table width="505"  border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td>Scrivi il tuo messaggio e premi il pulsante </td>
+  </tr>
+  <tr><td align="center"><strong>Titolo:</strong><br><input name="titolo" type="text" /></td></tr>
+  <tr>
+    <td align="center"><strong>Messaggio:</strong><br><textarea name="mymess" cols="45" rows="4" id="mymess" onkeydown="conteggio()"></textarea>
+	<br /><div id="caratteri" name="caratteri">Caratteri disponibili 500</div></td></tr>
+  <tr>
+    <td><div align="center">
+      <?php echo "<input type=\"hidden\" name=\"achi\" value=\"".$_GET['id']."\" />"; ?>
+      <input type="submit" name="Submit" value="Invia messaggio">
+    </div></td>
+  </tr>
+</table>
+</form>
+<?php
+break;
 default:// visualizza messaggi	
 $a=$db->QueryCiclo("SELECT * FROM messaggi WHERE userid='".$user['userid']."' ORDER BY id desc");
 	$esistenza=mysql_num_rows($a);
