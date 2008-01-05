@@ -4,7 +4,7 @@ $errore="";
 if(!$_POST['nome'])
 	$errore="Non hai scritto il nome da cercare";
 else {
-	$utentecercato=$db->QueryCiclo("SELECT userid,username,ultimazione FROM utenti WHERE LIKE '%'".$_POST['nome']."'%' AND conferma='1' AND personaggio='1'");
+	$utentecercato=$db->QueryCiclo("SELECT userid,username,ultimazione FROM utenti WHERE username LIKE '%'".$_POST['nome']."'%' AND conferma='1' AND personaggio='1'");
 	if(!$utentecercato['userid'])
 		$errore="Non esiste nessun personaggio con il nome che contiene (".$_POST['nome'].").";
 }
@@ -17,10 +17,10 @@ $i=0;
 $seonline=$adesso-600;
 while($chi=$db->QueryCicloResult($utentecercato)) {
 	$i++;
-	$utenti['nome'][$i]=$chi['username'];
+	$utentit['nome'][$i]=$chi['username'];
 	if ($chi['ultimazione']>$seonline){
-	$utenti['online'][$i]=1;}else
-	{$utenti['online'][$i]=0;}
+	$utentit['online'][$i]=1;}else
+	{$utentit['online'][$i]=0;}
 }
 }//fine mostra risultati
 }else{//inizio se non cerca

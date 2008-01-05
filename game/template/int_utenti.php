@@ -9,10 +9,10 @@
     <td><div align="center"><?php echo $lang['Personaggio']; ?></div></td>
     <td><div align="center"><?php echo $lang['Stato']; ?></div></td>
   </tr>
-<?php foreach($utenti['nome'] as $chiave=>$elemento){ ?>
+<?php foreach($utentit['nome'] as $chiave=>$elemento){ ?>
 <tr>
-<td><div align="center"><?php echo $utenti['nome'][$chiave]; ?></div></td>
-<td><div align="center"><?php if($utenti['online'][$chiave]==1){ ?>
+<td><div align="center"><?php echo $utentit['nome'][$chiave]; ?></div></td>
+<td><div align="center"><?php if($utentit['online'][$chiave]==1){ ?>
 <img src="template/immagini/led_verde.gif" alt="Online" />
 <?php }else{ ?>
 <img src="template/immagini/led_rosso.gif" alt="Offline" />
