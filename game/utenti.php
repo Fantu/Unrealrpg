@@ -5,7 +5,7 @@ if(!$_POST['nome'])
 	$errore="Non hai scritto il nome da cercare";
 else {
 	$utentecercato=$db->QueryCiclo("SELECT userid,username,ultimazione FROM utenti WHERE username LIKE '%'".$_POST['nome']."'%' AND conferma='1' AND personaggio='1'");
-	if(!$utentecercato['userid'])
+	if(!$utentecercato)
 		$errore="Non esiste nessun personaggio con il nome che contiene (".$_POST['nome'].").";
 }
 if($errore){
