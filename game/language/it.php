@@ -38,11 +38,4 @@ $lang['Monete']='Monete';
 $lang['outputerrori']='Si sono verificati i seguenti errori:';
 $lang['ab_minatore']='Abilit&agrave; minatore';
 $lang['Lista_utenti']='Elenco personaggi';
-
-//Inizio elenco utenti
-$lang['Stato']='Stato';
-$lang['risultati_nome_cercato']='Personaggi risultati dalla ricerca';
-$lang['cerca_utente_per_nome']='Cerca personaggio per nome';
-$lang['Cerca']='Cerca';
-//Fine elenco utenti
 ?>

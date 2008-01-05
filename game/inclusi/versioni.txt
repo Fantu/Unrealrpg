@@ -10,6 +10,9 @@ Legenda:<br />
 <p><strong>0.2.6</strong> (Non disponibile - In sviluppo)<br />
 + Aggiunto l'ordinamento per stato nell'elenco utenti<br />
 + Aggiunto l'ordinamento per nome del personaggio nell'elenco utenti<br />
++ Aggiunta cancellazione propri messaggi letti pi&ugrave; vecchi di 2 giorni<br />
++ Vari miglioramenti di sistema<br />
++ Aggiunto il link al forum, per ora è solo un topic<br />
 </p>
 <p><strong>0.2.5</strong> [R.161] (5/1/2008 - Beta)<br />
 + Aggiunto lo stato (online, offline) nell'elenco utenti<br />

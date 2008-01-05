@@ -25,7 +25,10 @@ function cambiaclasse(id,newClass) {
     <td class="tabmenutd" id="menu6" onmouseover="cambiaclasse(this.id,'tabmenutd2')" onmouseout="cambiaclasse(this.id,'tabmenutd')"><div align="center"><a href="game.php?act=changelog"><?php echo $lang['Changelog']; ?></a></div></td>
 	</tr>
 	<tr>
-    <td class="tabmenutd" id="menu7" onmouseover="cambiaclasse(this.id,'tabmenutd2')" onmouseout="cambiaclasse(this.id,'tabmenutd')"><div align="center"><a href="game.php?act=logout"><?php echo $lang['Logout']; ?></a></div></td>
+    <td class="tabmenutd" id="menu7" onmouseover="cambiaclasse(this.id,'tabmenutd2')" onmouseout="cambiaclasse(this.id,'tabmenutd')"><div align="center"><a href="http://www.lostgames.net/forum/showthread.php?t=765">Forum</a></div></td>
+	</tr>
+	<tr>
+    <td class="tabmenutd" id="menu8" onmouseover="cambiaclasse(this.id,'tabmenutd2')" onmouseout="cambiaclasse(this.id,'tabmenutd')"><div align="center"><a href="game.php?act=logout"><?php echo $lang['Logout']; ?></a></div></td>
 	</tr>		
 </table>
 </div>

@@ -1,12 +1,13 @@
 <?php
+require('language/it/lang_utenti.php');
 if (isset($_POST['cercau'])){
 $errore="";
 if(!$_POST['nome'])
-	$errore="Non hai scritto il nome da cercare";
+	$errore=$lang['utenti_error1'];
 else {
 	$utentecercato=$db->QuerySelect("SELECT userid,username,ultimazione FROM utenti WHERE username LIKE '%".$_POST['nome']."%' AND conferma='1' AND personaggio='1'");
 	if(!$utentecercato['userid'])
-		$errore="Non esiste nessun personaggio con il nome che contiene (".$_POST['nome'].").";
+		$errore=sprintf($lang['utenti_error2'],$_POST['nome']);
 }
 if($errore){
 $outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";
@@ -25,7 +26,6 @@ while($chi=$db->QueryCicloResult($utentecercato)) {
 }
 }//fine mostra risultati
 }
-$ordine="ORDER BY userid ASC";
 switch($_GET['ordine']){
 case "stato":
 $ordine="ORDER BY ultimazione DESC";
@@ -33,14 +33,10 @@ break;
 case "personaggio":
 $ordine="ORDER BY username ASC";
 break;
-}
-/*if($_GET['ordine']=="stato"){
-$ordine="ORDER BY ultimazione DESC";
-}elseif($_GET['ordine']=="personaggio"){
-$ordine="ORDER BY username ASC";
-}else{
+default:
 $ordine="ORDER BY userid ASC";
-}//fine ordinamenti*/
+break;
+}
 $a=$db->QueryCiclo("SELECT userid,username,ultimazione FROM utenti WHERE conferma='1' AND personaggio='1' '".$ordine."'");
 $i=0;
 $seonline=$adesso-600;
