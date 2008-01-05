@@ -1,15 +1,18 @@
 <br />
-Legenda:
-<p><strong>Versione</strong> [R. n° revisione ramo DEV] (Data di rilascio - Stato)<br />
+<p>
+Legenda:<br />
+<strong>Versione</strong> [R. n° revisione ramo DEV] (Data di rilascio - Stato)<br />
 + Aggiunte<br />
 # Modifiche<br />
 - Correzione bug e patch di situazioni non previste<br />
 <br />
 </p>
-<p><strong>0.2.5</strong> (Non disponibile - In sviluppo)<br />
-+ Aggiunto lo stato (online, offline) nell'elenco utenti<br />
+<p><strong>0.2.6</strong> (Non disponibile - In sviluppo)<br />
 + Aggiunto l'ordinamento per stato nell'elenco utenti<br />
 + Aggiunto l'ordinamento per nome del personaggio nell'elenco utenti<br />
+</p>
+<p><strong>0.2.5</strong> [R.161] (5/1/2008 - Beta)<br />
++ Aggiunto lo stato (online, offline) nell'elenco utenti<br />
 + Aggiunta la ricerca personaggi per nome nell'elenco utenti<br />
 + Nella ricerca personaggi per nome nell'elenco utenti vengono mostrati tutti i personaggi il cui nome contiene la stringa cercata<br />
 + Vari miglioramenti di sistema, in particolare nel sistema messaggi<br />

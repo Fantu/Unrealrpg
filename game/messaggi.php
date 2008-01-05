@@ -25,7 +25,7 @@ break;
 case "dorisp":// invia risposta
 	$errore="";	
 	if(!$_POST['mymess'])
-		$errore="Non hai scritto il messaggio da inviare!<br>";
+		$errore="Non hai scritto il messaggio da inviare!<br />";
 	if(!$_POST['messid'])
 		$errore="Impossibile inviare il messaggio, riprova o contatta l'admin.";
 	if(strlen($_POST['mymess'])>500)
@@ -48,9 +48,9 @@ break;
 case "doscrivi":// invia nuovo messaggio
 	$errore="";
 	if(!$_POST['mymess'])
-		$errore="Non hai scritto il messaggio da inviare!<br>";
+		$errore="Non hai scritto il messaggio da inviare!<br />";
 	if(!$_POST['titolo'])
-		$errore="Non hai scritto il titolo del messaggio da inviare!<br>";		
+		$errore="Non hai scritto il titolo del messaggio da inviare!<br />";		
 	if(!$_POST['achi'])
 		$errore="Impossibile inviare il messaggio, riprova o contatta l'admin.";
 	if(strlen($_POST['mymess'])>500)
@@ -101,14 +101,14 @@ case "scrivi":// scrivi nuovo
   <tr>
     <td>Scrivi il tuo messaggio e premi il pulsante </td>
   </tr>
-  <tr><td align="center"><strong>Titolo:</strong><br><input name="titolo" type="text" /></td></tr>
+  <tr><td align="center"><strong>Titolo:</strong><br /><input name="titolo" type="text" /></td></tr>
   <tr>
-    <td align="center"><strong>Messaggio:</strong><br><textarea name="mymess" cols="45" rows="4" id="mymess" onkeydown="conteggio()"></textarea>
+    <td align="center"><strong>Messaggio:</strong><br /><textarea name="mymess" cols="45" rows="4" id="mymess" onkeydown="conteggio()"></textarea>
 	<br /><div id="caratteri" name="caratteri">Caratteri disponibili 500</div></td></tr>
   <tr>
     <td><div align="center">
       <?php echo "<input type=\"hidden\" name=\"achi\" value=\"".$_GET['id']."\" />"; ?>
-      <input type="submit" name="Submit" value="Invia messaggio">
+      <input type="submit" name="Submit" value="Invia messaggio" />
     </div></td>
   </tr>
 </table>

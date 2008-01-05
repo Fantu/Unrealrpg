@@ -63,7 +63,7 @@
 <img src="template/immagini/led_rosso.gif" alt="Offline" />
 <?php } ?>
 </div></td>
-<td><div align="center"><a href="game.php?act=messaggi&amp;do=scrivi&amp;id=<?php echo $utentit['userid'][$chiave]; ?>"><img src="template/immagini/mess.gif" alt="<?php echo $lang['scrivi_msg']; ?>" /></a></div></td>
+<td><div align="center"><a href="game.php?act=messaggi&amp;do=scrivi&amp;id=<?php echo $utenti['userid'][$chiave]; ?>"><img src="template/immagini/mess.gif" alt="<?php echo $lang['scrivi_msg']; ?>" /></a></div></td>
 </tr>
 <?php }/* fine per ogni utente della lista*/ ?>
 </table>
