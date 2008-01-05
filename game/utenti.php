@@ -23,7 +23,7 @@ while($chi=$db->QueryCicloResult($utentecercato)) {
 	{$utentit['online'][$i]=0;}
 }
 }//fine mostra risultati
-}else{//inizio se non cerca
+}
 $ordine="ORDER BY userid ASC";
 switch($_GET['ordine']){
 case "stato":
@@ -50,6 +50,5 @@ while($chi=$db->QueryCicloResult($a)) {
 	$utenti['online'][$i]=1;}else
 	{$utenti['online'][$i]=0;}
 }
-}//fine se non cerca
 require('template/int_utenti.php');
 ?>
