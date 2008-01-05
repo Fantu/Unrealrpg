@@ -4,6 +4,8 @@
 <?php if($ricerca==1){/*inizio mostra risultati ricerca*/ ?>
 <br />
 <br />
+<?php echo $lang['risultati_nome_cercato']; ?>
+<br />
 <table width="500" border="1" cellspacing="2" cellpadding="2">
   <tr>
     <td><div align="center"><?php echo $lang['Personaggio']; ?></div></td>
@@ -28,19 +30,21 @@
 <form action="game.php?act=utenti" method="post" name="formcu">
 <table width="250" border="0" cellspacing="2" cellpadding="2" align="center">
   <tr>
-    <td colspan="2"><div align="center">Cerca personaggio per nome</div></td>
+    <td colspan="2"><div align="center"><?php echo $lang['cerca_utente_per_nome']; ?></div></td>
     </tr>
   <tr>
     <td width="50%">
       <div align="right">
         <input name="nome" type="text" id="nome" maxlength="20" />
       </div></td>
-    <td width="50%"><input type="submit" name="cercau" value="Cerca" /></td>
+    <td width="50%"><input type="submit" name="cercau" value="<?php echo $lang['Cerca']; ?>" /></td>
   </tr>
 </table>
 </form>
 </div>
 <br />
+<br />
+<?php echo $lang['Lista_utenti']; ?>
 <br />
 <table width="500" border="1" cellspacing="2" cellpadding="2">
   <tr>
