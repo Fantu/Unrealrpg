@@ -12,6 +12,7 @@ Legenda:
 + Aggiunto l'ordinamento per nome del personaggio nell'elenco utenti<br />
 + Aggiunta la ricerca personaggi per nome nell'elenco utenti<br />
 + Nella ricerca personaggi per nome nell'elenco utenti vengono mostrati tutti i personaggi il cui nome contiene la stringa cercata<br />
++ Vari miglioramenti di sistema, in particolare nel sistema messaggi<br />
 </p>
 <p><strong>0.2.4</strong> [R.144] (4/1/2008 - Beta)<br />
 + Ora anche l'attacco fisico influenza sul lavoro in miniera, pi&ugrave; precisamente l'esperienza guadagnata lavorando in miniera nuova<br />
