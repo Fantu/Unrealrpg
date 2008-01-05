@@ -1,5 +1,5 @@
 <?php
-if (isset($_POST['crea'])){
+if (isset($_POST['cercau'])){
 $errore="";
 if(!$_POST['nome'])
 	$errore="Non hai scritto il nome da cercare";

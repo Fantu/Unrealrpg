@@ -25,7 +25,7 @@
 <br />
 <br />
 <div align="center">
-<form action="game.php?act=utenti&amp;azione=cerca" method="post" name="formcu">
+<form action="game.php?act=utenti" method="post" name="formcu">
 <table width="250" border="0" cellspacing="2" cellpadding="2" align="center">
   <tr>
     <td colspan="2"><div align="center">Cerca personaggio per nome</div></td>
