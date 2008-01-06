@@ -5,8 +5,8 @@ $errore="";
 if(!$_POST['nome'])
 	$errore=$lang['utenti_error1'];
 else {
-	$utentecercato=$db->QuerySelect("SELECT userid,username,ultimazione FROM utenti WHERE username LIKE '%".$_POST['nome']."%' AND conferma='1' AND personaggio='1'");
-	if(!$utentecercato['userid'])
+	$utentecercato=$db->QuerySelect("SELECT t1.userid AS id,t1.username AS nome,t1.ultimazione AS azione,t2.livello AS liv FROM utenti AS t1 JOIN caratteristiche t2 ON t1.userid=t2.userid WHERE t1.username LIKE '%".$_POST['nome']."%' AND t1.conferma='1' AND t1.personaggio='1'");
+	if(!$utentecercato['id'])
 		$errore=sprintf($lang['utenti_error2'],$_POST['nome']);
 }
 if($errore){
@@ -38,14 +38,15 @@ default:
 $ordine="ORDER BY userid ASC";
 break;
 }
-$a=$db->QueryCiclo("SELECT userid,username,ultimazione FROM utenti WHERE conferma='1' AND personaggio='1' '".$ordine."'");
+$a=$db->QueryCiclo("SELECT t1.userid AS id,t1.username AS nome,t1.ultimazione AS azione,t2.livello AS liv FROM utenti AS t1 JOIN caratteristiche t2 ON t1.userid=t2.userid WHERE t1.conferma='1' AND t1.personaggio='1' '".$ordine."'");
 $i=0;
 $seonline=$adesso-600;
 while($chi=$db->QueryCicloResult($a)) {
 	$i++;
-	$utenti['nome'][$i]=$chi['username'];
-	$utenti['userid'][$i]=$chi['userid'];
-	if ($chi['ultimazione']>$seonline){
+	$utenti['nome'][$i]=$chi['nome'];
+	$utenti['userid'][$i]=$chi['id'];
+	$utentit['livello'][$i]=$chi['liv'];
+	if ($chi['azione']>$seonline){
 	$utenti['online'][$i]=1;}else
 	{$utenti['online'][$i]=0;}
 }
