@@ -58,8 +58,12 @@ class ConnessioniMySQL {
 		mysql_select_db($this->dbname,$connect);
 		$query="$arg";
 		$result=mysql_query($query,$connect);
-		//if(!$result)
-			mysql_close($connect);
+		if(!$result){
+			$error=mysql_error();
+			$errorn=mysql_errno();
+			StampaErroreMysql($arg,$errorn,$error);
+		}
+		mysql_close($connect);
 		return $result;
 	}
 	function QueryCicloResult ($result) { //while($var=$db->QueryCicloResult($guarda_bene)) -- collegata a quella di sopra
