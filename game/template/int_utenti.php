@@ -15,7 +15,12 @@
   </tr>
 <?php foreach($utentit['nome'] as $chiave=>$elemento){ ?>
 <tr>
-<td><div align="center"><a href="visualizzautente.php?id=<?php echo $utentit['userid'][$chiave]; ?>"><?php echo $utentit['nome'][$chiave]; ?></a></div></td>
+<td><div align="center">
+<form action="visualizzautente.php" method="post" name="visualizzautente">
+<input type="hidden" name="visualizzaid" value="<?php echo $utentit['userid'][$chiave]; ?>" />
+<input type="submit" name="visualizza" value="<?php echo $utentit['nome'][$chiave]; ?>" />
+</form>
+</div></td>
 <td><div align="center"><?php if($utentit['online'][$chiave]==1){ ?>
 <img src="template/immagini/led_verde.gif" alt="Online" />
 <?php }else{ ?>
