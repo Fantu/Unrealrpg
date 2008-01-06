@@ -58,11 +58,11 @@ class ConnessioniMySQL {
 		mysql_select_db($this->dbname,$connect);
 		$query="$arg";
 		$result=mysql_query($query,$connect);
-		/*if(!$result){
+		if(!$result){
 			$error=mysql_error();
 			$errorn=mysql_errno();
 			StampaErroreMysql($arg,$errorn,$error);
-		}*/
+		}
 		mysql_close($connect);
 		return $result;
 	}
