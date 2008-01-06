@@ -29,16 +29,16 @@ while($chi=$db->QueryCicloResult($utentecercato)) {
 }
 switch($_GET['ordine']){
 case "stato":
-$ordine="ORDER BY ultimazione DESC";
+$ordine="ORDER BY t1.ultimazione DESC";
 break;
 case "personaggio":
-$ordine="ORDER BY username ASC";
+$ordine="ORDER BY t1.username ASC";
 break;
 case "livello":
-$ordine="ORDER BY livello DESC";
+$ordine="ORDER BY t2.livello DESC";
 break;
 default:
-$ordine="ORDER BY userid ASC";
+$ordine="ORDER BY t1.userid ASC";
 break;
 }
 $a=$db->QueryCiclo("SELECT t1.userid AS id,t1.username AS nome,t1.ultimazione AS azione,t2.livello AS liv FROM utenti AS t1 JOIN caratteristiche t2 ON t1.userid=t2.userid WHERE t1.conferma='1' AND t1.personaggio='1' '".$ordine."'");
