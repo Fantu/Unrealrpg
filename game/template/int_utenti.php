@@ -11,6 +11,7 @@
     <td><div align="center"><?php echo $lang['Personaggio']; ?></div></td>
     <td><div align="center"><?php echo $lang['Stato']; ?></div></td>
     <td><div align="center"><?php echo $lang['scrivi_msg']; ?></div></td>
+    <td><div align="center"><?php echo $lang['Livello']; ?></div></td>
   </tr>
 <?php foreach($utentit['nome'] as $chiave=>$elemento){ ?>
 <tr>
@@ -22,6 +23,7 @@
 <?php } ?>
 </div></td>
 <td><div align="center"><a href="game.php?act=messaggi&amp;do=scrivi&amp;id=<?php echo $utentit['userid'][$chiave]; ?>"><img src="template/immagini/mess.gif" alt="<?php echo $lang['scrivi_msg']; ?>" /></a></div></td>
+<td><div align="center"><?php echo $utentit['livello'][$chiave]; ?></div></td>
 </tr>
 <?php }/* fine per ogni utente della lista*/ ?>
 </table>

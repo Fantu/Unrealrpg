@@ -13,13 +13,14 @@ if($errore){
 $outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";
 }else{//inizio mostra risultati
 $ricerca=1;
-$utentecercato=$db->QueryCiclo("SELECT userid,username,ultimazione FROM utenti WHERE username LIKE '%".$_POST['nome']."%' AND conferma='1' AND personaggio='1'");
+$utentecercato=$db->QueryCiclo("SELECT t1.userid,t1.username,t1.ultimazione,t2.livello FROM utenti AS t1 JOIN utenti t2 ON t1.userid=t2.userid WHERE t1.username LIKE '%".$_POST['nome']."%' AND t1.conferma='1' AND t1.personaggio='1'");
 $i=0;
 $seonline=$adesso-600;
 while($chi=$db->QueryCicloResult($utentecercato)) {
 	$i++;
 	$utentit['nome'][$i]=$chi['username'];
 	$utentit['userid'][$i]=$chi['userid'];
+	$utentit['livello'][$i]=$chi['livello'];
 	if ($chi['ultimazione']>$seonline){
 	$utentit['online'][$i]=1;}else
 	{$utentit['online'][$i]=0;}

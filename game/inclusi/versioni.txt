@@ -13,6 +13,7 @@ Legenda:<br />
 + Aggiunta cancellazione propri messaggi letti pi&ugrave; vecchi di 2 giorni<br />
 + Vari miglioramenti di sistema<br />
 + Aggiunto il link al forum, per ora è solo un topic<br />
++ Aggiunto il livello per ogni utente nell'elenco utenti<br />
 </p>
 <p><strong>0.2.5</strong> [R.161] (5/1/2008 - Beta)<br />
 + Aggiunto lo stato (online, offline) nell'elenco utenti<br />
