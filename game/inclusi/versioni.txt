@@ -7,7 +7,10 @@ Legenda:<br />
 - Correzione bug e patch di situazioni non previste<br />
 <br />
 </p>
-<p><strong>0.2.6</strong> (Non disponibile - In sviluppo)<br />
+<p><strong>0.2.7</strong> (Non disponibile - In sviluppo)<br />
+Niente attualmente<br />
+</p>
+<p><strong>0.2.6</strong> [R.190] (6/1/2008 - Beta)<br />
 + Aggiunta cancellazione propri messaggi letti pi&ugrave; vecchi di 2 giorni<br />
 + Vari miglioramenti di sistema<br />
 + Aggiunto il link al forum, per ora è solo un topic<br />
