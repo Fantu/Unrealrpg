@@ -15,7 +15,7 @@
   </tr>
 <?php foreach($utentit['nome'] as $chiave=>$elemento){ ?>
 <tr>
-<td><div align="center"><?php echo $utentit['nome'][$chiave]; ?></div></td>
+<td><div align="center"><a href="visualizzautente.php?id=<?php echo $utentit['userid'][$chiave]; ?>"><?php echo $utentit['nome'][$chiave]; ?></a></div></td>
 <td><div align="center"><?php if($utentit['online'][$chiave]==1){ ?>
 <img src="template/immagini/led_verde.gif" alt="Online" />
 <?php }else{ ?>
@@ -59,7 +59,7 @@
   </tr>
 <?php foreach($utenti['nome'] as $chiave=>$elemento){ ?>
 <tr>
-<td><div align="center"><?php echo $utenti['nome'][$chiave]; ?></div></td>
+<td><div align="center"><a href="visualizzautente.php?id=<?php echo $utenti['userid'][$chiave]; ?>"><?php echo $utenti['nome'][$chiave]; ?></a></div></td>
 <td><div align="center"><?php if($utenti['online'][$chiave]==1){ ?>
 <img src="template/immagini/led_verde.gif" alt="Online" />
 <?php }else{ ?>

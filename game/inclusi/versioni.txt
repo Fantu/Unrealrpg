@@ -7,13 +7,19 @@ Legenda:<br />
 - Correzione bug e patch di situazioni non previste<br />
 <br />
 </p>
-<p><strong>0.2.6</strong> (Non disponibile - In sviluppo)<br />
+<p><strong>Versione non definita</strong> (Non disponibile - In sviluppo)<br />
 + Aggiunto l'ordinamento per stato nell'elenco utenti<br />
 + Aggiunto l'ordinamento per nome del personaggio nell'elenco utenti<br />
++ Aggiunto l'ordinamento per livello nell'elenco utenti<br />
+</p>
+<p><strong>0.2.6</strong> (Non disponibile - In sviluppo)<br />
 + Aggiunta cancellazione propri messaggi letti pi&ugrave; vecchi di 2 giorni<br />
 + Vari miglioramenti di sistema<br />
 + Aggiunto il link al forum, per ora è solo un topic<br />
 + Aggiunto il livello per ogni utente nell'elenco utenti e ricerca<br />
++ Iniziata visualizzazione in dettaglio degli altri personaggi<br />
++ Aggiunto link a informazioni dettagliate per ogni utente nell'elenco utenti e ricerca sul nome<br />
++ Aggiunti razza, classe e livello alla visualizzazione in dettaglio degli altri personaggi<br />
 </p>
 <p><strong>0.2.5</strong> [R.161] (5/1/2008 - Beta)<br />
 + Aggiunto lo stato (online, offline) nell'elenco utenti<br />
