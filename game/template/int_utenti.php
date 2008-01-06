@@ -15,12 +15,7 @@
   </tr>
 <?php foreach($utentit['nome'] as $chiave=>$elemento){ ?>
 <tr>
-<td><div align="center">
-<form action="visualizzautente.php" method="post" name="visualizzautente">
-<input type="hidden" name="visualizzaid" value="<?php echo $utentit['userid'][$chiave]; ?>" />
-<input type="submit" name="visualizza" value="<?php echo $utentit['nome'][$chiave]; ?>" />
-</form>
-</div></td>
+<td><div align="center"><a href="game.php?act=visualizzautente&amp;id=<?php echo $utentit['userid'][$chiave]; ?>"><?php echo $utentit['nome'][$chiave]; ?></a></div></td>
 <td><div align="center"><?php if($utentit['online'][$chiave]==1){ ?>
 <img src="template/immagini/led_verde.gif" alt="Online" />
 <?php }else{ ?>
@@ -57,14 +52,14 @@
 <br />
 <table width="500" border="1" cellspacing="2" cellpadding="2">
   <tr>
-    <td><div align="center"><a href="utenti.php?ordine=personaggio"><?php echo $lang['Personaggio']; ?></a></div></td>
-    <td><div align="center"><a href="utenti.php?ordine=stato"><?php echo $lang['Stato']; ?></a></div></td>
+    <td><div align="center"><a href="game.php?act=utenti&amp;ordine=personaggio"><?php echo $lang['Personaggio']; ?></a></div></td>
+    <td><div align="center"><a href="game.php?act=utenti&amp;ordine=stato"><?php echo $lang['Stato']; ?></a></div></td>
     <td><div align="center"><?php echo $lang['scrivi_msg']; ?></div></td>
-    <td><div align="center"><?php echo $lang['Livello']; ?></div></td>
+    <td><div align="center"><a href="game.php?act=utenti&amp;ordine=livello"><?php echo $lang['Livello']; ?></a></div></td>
   </tr>
 <?php foreach($utenti['nome'] as $chiave=>$elemento){ ?>
 <tr>
-<td><div align="center"><a href="visualizzautente.php?id=<?php echo $utenti['userid'][$chiave]; ?>"><?php echo $utenti['nome'][$chiave]; ?></a></div></td>
+<td><div align="center"><a href="game.php?act=visualizzautente&amp;id=<?php echo $utenti['userid'][$chiave]; ?>"><?php echo $utenti['nome'][$chiave]; ?></a></div></td>
 <td><div align="center"><?php if($utenti['online'][$chiave]==1){ ?>
 <img src="template/immagini/led_verde.gif" alt="Online" />
 <?php }else{ ?>

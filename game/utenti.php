@@ -34,6 +34,9 @@ break;
 case "personaggio":
 $ordine="ORDER BY username ASC";
 break;
+case "livello":
+$ordine="ORDER BY livello DESC";
+break;
 default:
 $ordine="ORDER BY userid ASC";
 break;
