@@ -1,9 +1,10 @@
 <?php
+require('language/it/lang_messaggi.php');
 require('template/int_messaggi.php');
 ?>
 <script type="text/javascript">
 function conteggio() {
-	window.document.getElementById("caratteri").innerHTML="Caratteri disponibili "+(500-window.document.getElementById("mymess").value.length);
+	window.document.getElementById("caratteri").innerHTML=(500-window.document.getElementById("mymess").value.length);
 }
 </script>
 <div align="center">
@@ -29,11 +30,11 @@ break;
 case "dorisp":// invia risposta
 	$errore="";	
 	if(!$_POST['mymess'])
-		$errore="Non hai scritto il messaggio da inviare!<br />";
+		$errore.=$lang['messaggi_error1']."<br />";
 	if(!$_POST['messid'])
-		$errore="Impossibile inviare il messaggio, riprova o contatta l'admin.";
+		$errore.=$lang['messaggi_error2']."<br />";
 	if(strlen($_POST['mymess'])>500)
-		$errore="Non puoi inviare messaggi superiori ai 500 caratteri";				
+		$errore.=$lang['messaggi_error3']."<br />";				
 	if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";
 	echo $outputerrori;}
@@ -52,13 +53,13 @@ break;
 case "doscrivi":// invia nuovo messaggio
 	$errore="";
 	if(!$_POST['mymess'])
-		$errore="Non hai scritto il messaggio da inviare!<br />";
+		$errore.=$lang['messaggi_error1']."<br />";
 	if(!$_POST['titolo'])
-		$errore="Non hai scritto il titolo del messaggio da inviare!<br />";		
+		$errore=$lang['messaggi_error4']."<br />";		
 	if(!$_POST['achi'])
-		$errore="Impossibile inviare il messaggio, riprova o contatta l'admin.";
+		$errore.=$lang['messaggi_error2']."<br />";
 	if(strlen($_POST['mymess'])>500)
-		$errore="Non puoi inviare messaggi superiori ai 500 caratteri";	
+		$errore.=$lang['messaggi_error3']."<br />";	
 	if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";
 	echo $outputerrori;}
@@ -82,16 +83,16 @@ case "risp":// scrivi risposta
 <form action="game.php?act=messaggi&amp;do=dorisp" method="post" name="formrisp">
 <table width="505"  border="0" cellspacing="2" cellpadding="2">
   <tr>
-    <td>Scrivi il tuo messaggio e premi il pulsante </td>
+    <td><?php echo $lang['istruzioni_scrivi_msg']; ?></td>
   </tr>
   <tr>
     <td><textarea name="mymess" cols="45" rows="4" id="mymess" onkeydown="conteggio()"></textarea>      
-	  <br /><div id="caratteri" name="caratteri">Caratteri disponibili 500</div>
+	  <br /><?php echo $lang['caratteri_disponibili']; ?><div id="caratteri" name="caratteri">500</div>
   </td></tr>
   <tr>
     <td><div align="center">
       <?php echo "<input type=\"hidden\" name=\"messid\" value=\"".$_GET['id']."\" />"; ?>
-      <input type="submit" name="Submit" value="Invia messaggio" />
+      <input type="submit" name="Submit" value="<?php echo $lang['invia_messaggio']; ?>" />
     </div></td>
   </tr>
 </table>
@@ -103,16 +104,16 @@ case "scrivi":// scrivi nuovo
 <form action="game.php?act=messaggi&amp;do=doscrivi" method="post" name="formrisp2">
 <table width="505"  border="0" cellspacing="2" cellpadding="2">
   <tr>
-    <td>Scrivi il tuo messaggio e premi il pulsante </td>
+    <td><?php echo $lang['istruzioni_scrivi_msg']; ?></td>
   </tr>
-  <tr><td align="center"><strong>Titolo:</strong><br /><input name="titolo" type="text" /></td></tr>
+  <tr><td align="center"><strong><?php echo $lang['titolo']; ?></strong><br /><input name="titolo" type="text" /></td></tr>
   <tr>
-    <td align="center"><strong>Messaggio:</strong><br /><textarea name="mymess" cols="45" rows="4" id="mymess" onkeydown="conteggio()"></textarea>
-	<br /><div id="caratteri" name="caratteri">Caratteri disponibili 500</div></td></tr>
+    <td align="center"><strong><?php echo $lang['messaggio']; ?></strong><br /><textarea name="mymess" cols="45" rows="4" id="mymess" onkeydown="conteggio()"></textarea>
+	<br /><?php echo $lang['caratteri_disponibili']; ?><div id="caratteri" name="caratteri">500</div></td></tr>
   <tr>
     <td><div align="center">
       <?php echo "<input type=\"hidden\" name=\"achi\" value=\"".$_GET['id']."\" />"; ?>
-      <input type="submit" name="Submit" value="Invia messaggio" />
+      <input type="submit" name="Submit" value="<?php echo $lang['invia_messaggio']; ?>" />
     </div></td>
   </tr>
 </table>
@@ -136,7 +137,7 @@ $a=$db->QueryCiclo("SELECT * FROM messaggi WHERE userid='".$user['userid']."' OR
 	<table width="505"  border="0" cellspacing="2" cellpadding="2">
 	  <tr>
 		<td width="5%"><?php echo "<input name=\"messaggioid".$i."\" type=\"checkbox\" id=\"messaggioid".$i."\" value=\"".$mess['id']."\" />"; ?></td>
-		<td width="95%"><div align="center">Messaggio da: <?php if ($mess['mittenteid']==0){echo "Sistema";}else{echo $mit['username'];} ?> - in data: <?php echo date("d/m/y - H:i",$mess['data']); ?> </div></td>
+		<td width="95%"><div align="center"><?php echo $lang['messaggio_da']; if ($mess['mittenteid']==0){echo "Sistema";}else{echo $mit['username'];} echo $lang['in_data']; echo date("d/m/y - H:i",$mess['data']); ?> </div></td>
 	  </tr>
 	  <tr>
 		<td>&nbsp;</td>
@@ -146,15 +147,15 @@ $a=$db->QueryCiclo("SELECT * FROM messaggi WHERE userid='".$user['userid']."' OR
 		<td colspan="2" align="right"> 
 		<?php 
 		if($mess['mittenteid']==0)
-			echo "[ <a href=\"game.php?act=messaggi&amp;do=elim&amp;id=".$mess['id']."\">Elimina</a> ]";
+			echo "[ <a href=\"game.php?act=messaggi&amp;do=elim&amp;id=".$mess['id']."\">".$lang['elimina']."</a> ]";
 		else
-			echo "[ <a href=\"game.php?act=messaggi&amp;do=risp&amp;id=".$mess['id']."\">Rispondi</a> ] - [ <a href=\"game.php?act=messaggi&amp;do=elim&amp;id=".$mess['id']."\">Elimina</a> ]"; ?></td>
+			echo "[ <a href=\"game.php?act=messaggi&amp;do=risp&amp;id=".$mess['id']."\">".$lang['rispondi']."</a> ] - [ <a href=\"game.php?act=messaggi&amp;do=elim&amp;id=".$mess['id']."\">".$lang['elimina']."</a> ]"; ?></td>
 	  </tr>
 	</table>
 	<?php
 	}
 	echo "<br /><table width=\"505\"  border=\"0\" cellspacing=\"2\" cellpadding=\"2\"><tr>"
-    ."<td align=\"center\"><input name=\"contatore\" type=\"hidden\" value=\"".$i."\" /><input name=\"asd\" type=\"submit\" value=\"Cancella i selezionati\" /></td>"
+    ."<td align=\"center\"><input name=\"contatore\" type=\"hidden\" value=\"".$i."\" /><input name=\"asd\" type=\"submit\" value=\"".$lang['cancella_selezionati']."\" /></td>"
 	."</tr></table></form>";
 	$db->QueryMod("UPDATE messaggi SET letto=1 WHERE userid='".$user['userid']."'");
 	}
