@@ -7,7 +7,13 @@ Legenda:<br />
 - Correzione bug e patch di situazioni non previste<br />
 <br />
 </p>
-<p><strong>0.2.8</strong> (Non disponibile - In sviluppo)<br />
+<p><strong>0.3.0</strong> (Non disponibile - In sviluppo)<br />
++ Iniziata creazione sistema eventi<br />
+</p>
+<p><strong>0.2.9</strong> (Non disponibile - In sviluppo)<br />
+Niente attualmente<br />
+</p>
+<p><strong>0.2.8</strong> [R.198] (8/1/2008 - Beta)<br />
 + Ora il link al forum si apre in un altra pagina e aggiornato con il forum apposito appena creato<br />
 + Vari miglioramenti di sistema<br />
 + Iniziata creazione guida integrata nel gioco e quindi con la possibilità di avere al suo interno parti dinamiche che si modificano quando vengono modificate parti del gioco e integrata nel sistema multilingua del gioco stesso per facilitarne le traduzioni<br />
