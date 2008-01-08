@@ -8,7 +8,7 @@ Legenda:<br />
 <br />
 </p>
 <p><strong>0.2.8</strong> (Non disponibile - In sviluppo)<br />
-+ Ora il link al forum si apre in un altra pagina<br />
++ Ora il link al forum si apre in un altra pagina e aggiornato con il forum apposito appena creato<br />
 + Vari miglioramenti di sistema<br />
 </p>
 <p><strong>0.2.7</strong> [R.194] (7/1/2008 - Beta)<br />
