@@ -8,7 +8,8 @@ Legenda:<br />
 <br />
 </p>
 <p><strong>0.2.8</strong> (Non disponibile - In sviluppo)<br />
-Niente attualmente<br />
++ Ora il link al forum si apre in un altra pagina<br />
++ Vari miglioramenti di sistema<br />
 </p>
 <p><strong>0.2.7</strong> [R.194] (7/1/2008 - Beta)<br />
 - Corretto bug negli ordinamenti dell'elenco utenti<br />
@@ -72,7 +73,7 @@ Niente attualmente<br />
 + Iniziata creazione della miniera<br />
 + Aggiunta l'abilit&agrave; minatore<br />
 + Aggiunta la visualizzazione dell'abilit&agrave; minatore in situazione<br />
-+ Creata miniera vecchia in cui lavorare avendo un guadagno fisso di 5 monete ad ora e dell'esperienza per l'abilit&agrave; di minatore<br />
++ Creata miniera nuova in cui lavorare avendo un guadagno fisso di 5 monete ad ora e dell'esperienza per l'abilit&agrave; di minatore<br />
 + Devono passare 6 ore tra un lavoro in miniera ed un altro<br />
 + Vengono consumati 100 di energia per ogni ora di lavoro in miniera<br />
 + Lavorando in miniera si rischia di ferirsi, si perde salute in base ad un range casuale e minore quanto &egrave; pi&ugrave; alta l'esperienza di minatore<br />

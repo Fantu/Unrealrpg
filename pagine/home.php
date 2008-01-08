@@ -5,7 +5,7 @@
 			if( $server!=none )
 				$db->database = $server;
 			else{
-				$errore .= "- Non hai selezionato il continente";}
+				$errore .= "- Non hai selezionato il server";}
 			if( empty($errore) ) {
 				$a=$db->QuerySelect("SELECT maxutenti AS Max, utenti AS Ut FROM config WHERE id='".$_POST['server']."'");	
 				$a2=$db->QuerySelect("SELECT userid AS Us1 FROM utenti WHERE username='".$_POST['username']."'");

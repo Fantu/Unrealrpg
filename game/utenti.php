@@ -41,7 +41,7 @@ default:
 $ordine="ORDER BY t1.userid ASC";
 break;
 }
-$a=$db->QueryCiclo("SELECT t1.userid AS id,t1.username AS nome,t1.ultimazione AS azione,t2.livello AS liv FROM utenti AS t1 JOIN caratteristiche t2 ON t1.userid=t2.userid WHERE t1.conferma='1' AND t1.personaggio='1' '".$ordine."'");
+$a=$db->QueryCiclo("SELECT t1.userid AS id,t1.username AS nome,t1.ultimazione AS azione,t2.livello AS liv FROM utenti AS t1 JOIN caratteristiche t2 ON t1.userid=t2.userid WHERE t1.conferma='1' AND t1.personaggio='1' ".$ordine."");
 $i=0;
 $seonline=$adesso-600;
 while($chi=$db->QueryCicloResult($a)) {
