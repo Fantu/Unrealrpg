@@ -34,8 +34,19 @@ $lang['Changelog']='Info versione';
 $lang['Logout']='Esci';
 $lang['Miniera']='Miniera';
 $lang['Messaggi']='Messaggi';
+$lang['Guida']='Guida';
 $lang['Monete']='Monete';
 $lang['outputerrori']='Si sono verificati i seguenti errori:';
 $lang['ab_minatore']='Abilit&agrave; minatore';
 $lang['Lista_utenti']='Elenco personaggi';
+
+//creazione personaggio
+$lang['inizio_con_val_fissi']='Inizierai con tali valori fissi per tutti:';
+$lang['inizio_con_razza']='La razza la puoi scegliere tra le seguenti:';
+$lang['inizio_con_classe']='La classe la puoi scegliere tra le seguenti:';
+
+//Guida
+$lang['elenco_razze']='Ci sono le seguenti razze:';
+$lang['val_fissi_iniziali']='Le seguenti caratteristiche sono uguali per tutti inizialmente:';
+$lang['elenco_classi']='Ecco le varie classi con le caratteristiche iniziali differenti per ogniuna:';
 ?>

@@ -10,6 +10,8 @@ Legenda:<br />
 <p><strong>0.2.8</strong> (Non disponibile - In sviluppo)<br />
 + Ora il link al forum si apre in un altra pagina e aggiornato con il forum apposito appena creato<br />
 + Vari miglioramenti di sistema<br />
++ Iniziata creazione guida integrata nel gioco e quindi con la possibilità di avere al suo interno parti dinamiche che si modificano quando vengono modificate parti del gioco e integrata nel sistema multilingua del gioco stesso per facilitarne le traduzioni<br />
++ Inseriti nella guida i valori iniziale delle caratteristiche, le razze e le classi<br />
 </p>
 <p><strong>0.2.7</strong> [R.194] (7/1/2008 - Beta)<br />
 - Corretto bug negli ordinamenti dell'elenco utenti<br />

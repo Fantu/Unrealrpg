@@ -27,19 +27,19 @@ echo "<option value=\"$chiave\">$elemento</option>"; ?>
 </table>
 </form>
 <br /><br /><br />
-Inizierai con tali valori fissi per tutti:<br />
+<?php echo $lang['inizio_con_val_fissi']; ?><br />
 <?php echo $lang['Livello']; ?> 1<br />
 <?php echo $lang['Salute']; ?> 100<br />
 <?php echo $lang['Energia']; ?> 1000<br />
 <?php echo $lang['Monete']; ?> 50<br />
 <br /><br />
-La razza la puoi scegliere tra le seguenti:<br />
+<?php echo $lang['inizio_con_razza']; ?><br />
 <?php foreach($razze['nome'] as $chiave=>$elemento){ ?>
 <?php echo $razze['nome'][$chiave]; ?>:<br />
 <?php echo $razze['descrizione'][$chiave]; ?><br />
 <?php }?>
 <br /><br />
-La classe la puoi scegliere tra le seguenti:<br />
+<?php echo $lang['inizio_con_classe']; ?><br />
 <br />
 <?php foreach($classi['nome'] as $chiave=>$elemento){ ?>
 <?php echo $classi['nome'][$chiave]; ?>:<br />
