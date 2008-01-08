@@ -2,6 +2,9 @@
 	function StampaErroreMysql($arg,$err,$mess) {
 	$data = date("d/m/y - H:i")." ".$arg;
 	$file = "inclusi/log/mysql/error.log";
+	if (!file_exists($filename)) {
+    $file = "game/inclusi/log/mysql/error.log";
+	}
 	$fp=fopen($file,"a+");
 	fputs($fp,$data."\r\n--------\r\n".$err.": ".$mess."\r\n\r\n");
 	fclose($fp);

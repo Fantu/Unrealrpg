@@ -12,6 +12,8 @@ Legenda:<br />
 </p>
 <p><strong>0.2.9</strong> (Non disponibile - In sviluppo)<br />
 + Vari miglioramenti di sistema<br />
+- Corretto bug nel sistema query<br />
++ Iniziata creazione laboratorio<br />
 </p>
 <p><strong>0.2.8</strong> [R.198] (8/1/2008 - Beta)<br />
 + Ora il link al forum si apre in un altra pagina e aggiornato con il forum apposito appena creato<br />

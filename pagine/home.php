@@ -6,15 +6,10 @@
 				$db->database = $server;
 			else{
 				$errore .= "- Non hai selezionato il server";}
-			if( empty($errore) ) {
-				$a=$db->QuerySelect("SELECT maxutenti AS Max, utenti AS Ut FROM config WHERE id='".$_POST['server']."'");	
-				$a2=$db->QuerySelect("SELECT userid AS Us1 FROM utenti WHERE username='".$_POST['username']."'");
 				if(!$_POST['username'])
 					$errore.="- Non hai scritto il tuo username.<br />";
 				if( strlen($_POST['username'])<3 )
-					$errore.="- L'username deve essere almeno di 3 caratteri.<br />";					
-				if($a2['Us1'])
-					$errore.="- L'username che hai scelto è già stato preso.<br />";			
+					$errore.="- L'username deve essere almeno di 3 caratteri.<br />";
 				if(!$_POST['password'])
 					$errore.="- Non hai scritto la password.<br />";
 				if(strlen($_POST['password'])<6)
@@ -22,7 +17,12 @@
 				if(!$_POST['email'])
 					$errore.="- Non hai scritto l'email.<br />";
 				if(!eregi("^.+@.+\..{2,3}$",$_POST['email']))	
-					$errore.="- L'email inserita non sembra essere corretta.<br />";	
+					$errore.="- L'email inserita non sembra essere corretta.<br />";
+			if( empty($errore) ) {
+				$a=$db->QuerySelect("SELECT maxutenti AS Max, utenti AS Ut FROM config WHERE id='".$_POST['server']."'");	
+				$a2=$db->QuerySelect("SELECT userid AS Us1 FROM utenti WHERE username='".$_POST['username']."'");				
+				if($a2['Us1'])
+					$errore.="- L'username che hai scelto è già stato preso.<br />";
 				if($a['Ut']==$a['Max'])
 					$errore.="- Questo server è al momento troppo affollato, scegline un altro.<br />";
 			}
