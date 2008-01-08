@@ -10,7 +10,12 @@ Legenda:<br />
 <p><strong>0.3.0</strong> (Non disponibile - In sviluppo)<br />
 + Iniziata creazione sistema eventi<br />
 </p>
-<p><strong>0.2.9</strong> (Non disponibile - In sviluppo)<br />
+<p><strong>0.2.10</strong> (Non disponibile - In sviluppo)<br />
++ Vari miglioramenti di sistema<br />
+- Corretto bug nel sistema query<br />
++ Iniziata creazione laboratorio<br />
+</p>
+<p><strong>0.2.9</strong> [R.201] (8/1/2008 - Beta)<br />
 + Vari miglioramenti di sistema<br />
 - Corretto bug nel sistema query<br />
 + Iniziata creazione laboratorio<br />

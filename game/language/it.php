@@ -35,6 +35,7 @@ $lang['Logout']='Esci';
 $lang['Miniera']='Miniera';
 $lang['Messaggi']='Messaggi';
 $lang['Guida']='Guida';
+$lang['Laboratorio']='Laboratorio';
 $lang['Monete']='Monete';
 $lang['outputerrori']='Si sono verificati i seguenti errori:';
 $lang['ab_minatore']='Abilit&agrave; minatore';
