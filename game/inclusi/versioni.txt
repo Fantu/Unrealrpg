@@ -10,7 +10,10 @@ Legenda:<br />
 <p><strong>0.3.0</strong> (Non disponibile - In sviluppo)<br />
 + Iniziata creazione sistema eventi<br />
 </p>
-<p><strong>0.2.10</strong> (Non disponibile - In sviluppo)<br />
+<p><strong>0.2.11</strong> (Non disponibile - In sviluppo)<br />
+Niente attualmente<br />
+</p>
+<p><strong>0.2.10</strong> [R.206] (9/1/2008 - Beta)<br />
 + Aggiunta l'abilit&agrave; alchimista<br />
 + Aggiunta la visualizzazione dell'abilit&agrave; alchimista in situazione<br />
 + Creato lavoro come apprendista in laboratorio in cui lavorare avendo un guadagno fisso di 5 monete ad ora e dell'esperienza per l'abilit&agrave; di alchimista<br />
