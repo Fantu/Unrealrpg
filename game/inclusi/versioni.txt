@@ -19,6 +19,8 @@ Legenda:<br />
 + Lavorando in laboratorio si rischia di ferirsi, si perde salute in base ad un range casuale e minore quanto &egrave; pi&ugrave; alta l'esperienza di alchimista<br />
 + Aggiunto report preciso sul lavoro in laboratorio<br />
 + Aggiunto aumento di livello dell'abilit&agrave; alchimista se c'&egrave; abbastanza esperienza<br />
++ Ora anche la resitenza magica influisce sul danno che si riceve lavorando in laboratorio<br />
++ Ora anche la forza magica influisce sull'esperienza che si riceve lavorando in laboratorio<br />
 </p>
 <p><strong>0.2.9</strong> [R.201] (8/1/2008 - Beta)<br />
 + Vari miglioramenti di sistema<br />
