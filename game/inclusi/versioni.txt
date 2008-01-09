@@ -13,6 +13,9 @@ Legenda:<br />
 <p><strong>0.2.11</strong> (Non disponibile - In sviluppo)<br />
 Niente attualmente<br />
 </p>
+<p><strong>0.2.10.1</strong> (Non disponibile - In sviluppo)<br />
+- Corretto un bug nel laboratorio<br />
+</p>
 <p><strong>0.2.10</strong> [R.206] (9/1/2008 - Beta)<br />
 + Aggiunta l'abilit&agrave; alchimista<br />
 + Aggiunta la visualizzazione dell'abilit&agrave; alchimista in situazione<br />

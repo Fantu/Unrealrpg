@@ -8,7 +8,7 @@ if ($usercar['energia']<100)
 $errore .= $lang['lab_errore1'];
 if ($usercar['saluteattuale']<30)
 $errore .= $lang['lab_errore2'];
-if ($adesso<($usermin['ultimolavapp']+21600))
+if ($adesso<($userlab['ultimolavapp']+21600))
 $errore .= $lang['lab_errore3'];
 if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
