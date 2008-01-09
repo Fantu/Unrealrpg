@@ -11,9 +11,14 @@ Legenda:<br />
 + Iniziata creazione sistema eventi<br />
 </p>
 <p><strong>0.2.10</strong> (Non disponibile - In sviluppo)<br />
-+ Vari miglioramenti di sistema<br />
-- Corretto bug nel sistema query<br />
-+ Iniziata creazione laboratorio<br />
++ Aggiunta l'abilit&agrave; alchimista<br />
++ Aggiunta la visualizzazione dell'abilit&agrave; alchimista in situazione<br />
++ Creato lavoro come apprendista in laboratorio in cui lavorare avendo un guadagno fisso di 5 monete ad ora e dell'esperienza per l'abilit&agrave; di alchimista<br />
++ Devono passare 6 ore tra un lavoro in laboratorio ed un altro<br />
++ Vengono consumati 100 di energia per ogni ora di lavoro in laboratorio<br />
++ Lavorando in laboratorio si rischia di ferirsi, si perde salute in base ad un range casuale e minore quanto &egrave; pi&ugrave; alta l'esperienza di alchimista<br />
++ Aggiunto report preciso sul lavoro in laboratorio<br />
++ Aggiunto aumento di livello dell'abilit&agrave; alchimista se c'&egrave; abbastanza esperienza<br />
 </p>
 <p><strong>0.2.9</strong> [R.201] (8/1/2008 - Beta)<br />
 + Vari miglioramenti di sistema<br />

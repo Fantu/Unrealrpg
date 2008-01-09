@@ -39,5 +39,6 @@ $lang['Laboratorio']='Laboratorio';
 $lang['Monete']='Monete';
 $lang['outputerrori']='Si sono verificati i seguenti errori:';
 $lang['ab_minatore']='Abilit&agrave; minatore';
+$lang['ab_alchimista']='Abilit&agrave; alchimista';
 $lang['Lista_utenti']='Elenco personaggi';
 ?>
