@@ -19,7 +19,7 @@
 <?php echo $lang['Monete']; ?>: <?php echo $user['monete']; ?><br />
 <table><tr><td><?php echo $lang['ab_minatore']; ?>: <?php echo $usercar['minatore']; echo " "; ?></td>
 <td width="<?php echo $percmin1; ?>" class="sfondoverde"></td><td width="<?php echo $percmin2; ?>" class="sfondorosso"></td>
-</tr></table><br />
+</tr></table>
 <table><tr><td><?php echo $lang['ab_alchimista']; ?>: <?php echo $usercar['alchimista']; echo " "; ?></td>
 <td width="<?php echo $percmin3; ?>" class="sfondoverde"></td><td width="<?php echo $percmin4; ?>" class="sfondorosso"></td>
 </tr></table><br />

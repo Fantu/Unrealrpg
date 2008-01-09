@@ -15,7 +15,7 @@ $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$user['
 $percmin1=floor((100/$expnewmin)*$usercar['expminatore']);
 $percmin2=100-$percmin1;
 $percmin3=floor((100/$expnewmin2)*$usercar['expalchimista']);
-$percmin4=100-$percmin1;
+$percmin4=100-$percmin3;
 $expnewlevel=$usercar['livello']*100;
 $quantimess=$db->QuerySelect("SELECT COUNT(*) AS id FROM messaggi WHERE userid='".$user['userid']."' AND letto=0");
 if($quantimess['id']==0){
