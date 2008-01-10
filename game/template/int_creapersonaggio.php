@@ -20,6 +20,15 @@ echo "<option value=\"$chiave\">$elemento</option>"; ?>
 </select></td>
 </tr>
 <tr>
+<td><div align="right"><?php echo $lang['Sesso']; ?>: </div></td>
+<td>
+<select name="sesso" id="sesso">
+<option value="0" selected="selected"><?php echo $lang['Non_definito']; ?></option>
+<?php foreach($sessi['nome'] as $chiave=>$elemento)
+echo "<option value=\"$chiave\">$elemento</option>"; ?>
+</select></td>
+</tr>
+<tr>
 <td>
 <input type="submit" name="crea" value="Crea" />
 </td>

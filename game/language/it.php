@@ -41,4 +41,8 @@ $lang['outputerrori']='Si sono verificati i seguenti errori:';
 $lang['ab_minatore']='Abilit&agrave; minatore';
 $lang['ab_alchimista']='Abilit&agrave; alchimista';
 $lang['Lista_utenti']='Elenco personaggi';
+$lang['Non_definito']='Non definito';
+$lang['Maschio']='Maschio';
+$lang['Femmina']='Femmina';
+$lang['Sesso']='Sesso';
 ?>

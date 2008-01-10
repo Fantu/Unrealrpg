@@ -13,4 +13,7 @@ $classi=array(
 'difmagica'=>array(1=>10,2=>50,3=>25),
 'mana'=>array(1=>30,2=>150,3=>50)
 );
+$sessi=array(
+'nome'=>array(0=>$lang['Non_definito'],1=>$lang['Maschio'],2=>$lang['Femmina'])
+);
 ?>
