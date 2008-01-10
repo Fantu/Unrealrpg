@@ -10,7 +10,10 @@ Legenda:<br />
 <p><strong>0.3.0</strong> (Non disponibile - In sviluppo)<br />
 + Iniziata creazione sistema eventi<br />
 </p>
-<p><strong>0.2.11</strong> (Non disponibile - In sviluppo)<br />
+<p><strong>0.2.12</strong> (Non disponibile - In sviluppo)<br />
+Niente attualmente<br />
+</p>
+<p><strong>0.2.11</strong> [R.211] (10/1/2008 - Beta)<br />
 + Aggiunto il sesso tra le caratteristiche<br />
 + Aggiunta la selezione del sesso nella creazione del personaggio, se non selezionato sarà non definito<br />
 + Aggiunta la visualizzazione del sesso in situazione<br />
