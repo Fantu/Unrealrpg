@@ -15,6 +15,11 @@ Legenda:<br />
 + Aggiunta la selezione del sesso nella creazione del personaggio, se non selezionato sarà non definito<br />
 + Aggiunta la visualizzazione del sesso in situazione<br />
 + Aggiunta la visualizzazione del sesso nei dettagli sui peronaggi<br />
++ Aggiunta la possibilit&agrave; di incidenti in laboratorio (esplosione delle pozioni che si stanno creando)<br />
++ Forza magica e livello di alchimia influiscono sulla possibilit&grave; che accadano incidenti in laboratorio<br />
++ Agilit&grave; aumenta la probilit&agrave; di schivare le esplosioni in laboratorio<br />
++ Forza magica aumenta la probilit&agrave; di schivare le esplosioni in laboratorio<br />
++ Resistenza magica diminuisce il danno subito nelle esplosioni in laboratorio<br />
 </p>
 <p><strong>0.2.10.1</strong> (9/1/2008 - Beta)<br />
 - Corretto un bug nel laboratorio<br />
