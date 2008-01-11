@@ -17,8 +17,7 @@ else {
 $db->QueryMod("UPDATE utenti SET personaggio='1' WHERE userid='".$user['userid']."'");
 $db->QueryMod("INSERT INTO caratteristiche (userid,razza,classe,agilita,attfisico,attmagico,diffisica,difmagica,mana,recuperosalute,recuperoenergia,sesso) VALUES ('".$user['userid']."','".$razza."','".$classe."','".$classi['agilita'][$classe]."','".$classi['attfisico'][$classe]."','".$classi['attmagico'][$classe]."','".$classi['diffisica'][$classe]."','".$classi['difmagica'][$classe]."','".$classi['mana'][$classe]."','".$adesso."','".$adesso."','".$sesso."')");
 $db->QueryMod("INSERT INTO banca (userid,interessi) VALUES ('".$user['userid']."','".$adesso."')");
-$db->QueryMod("INSERT INTO miniera (userid) VALUES ('".$user['userid']."')");
-$db->QueryMod("INSERT INTO laboratorio (userid) VALUES ('".$user['userid']."')");
+$db->QueryMod("INSERT INTO lavori (userid) VALUES ('".$user['userid']."')");
 header("Location: game.php?act=situazione");
 exit();
 }

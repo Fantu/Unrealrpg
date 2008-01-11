@@ -4,7 +4,10 @@ $lang['desc_miniera_nuova']='Puoi lavorare in miniera nuova avendo una retribuzi
 $lang['lavora_miniera']='Lavora in miniera';
 $lang['miniera_errore1']='- Sei troppo stanco per poter lavorare in miniera<br />';
 $lang['miniera_errore2']='- Il tuo fisico non pu&ograve; reggere il lavoro in miniera attualmente<br />';
-$lang['miniera_errore3']='- Devono passare almeno 6 ore dall\'ultimo lavoro in miniera<br />';
+$lang['miniera_errore3']='- Devono passare almeno 6 ore dall\'ultimo lavoro<br />';
 $lang['report_lavminieranuova']='Hai lavorato in miniera nuova per 1 ora guadagnando %s monete e %s di esperienza come minatore, il duro lavoro ti ha stancato (hai perso %s di energia) e il tuo fisico ne ha risentito (hai perso %s di salute)';
 $lang['report_lavoro_nuova']='Report lavoro in miniera nuova';
+$lang['report_incidente_miniera']='Imprevisto durante il lavoro in miniera';
+$lang['report_incidente_min1']='Durante il tuo lavoro in miniera &egrave; si &egrave; verificato un incidente ma sei riuscito ad allontanarti in tempo e non ferirti';
+$lang['report_incidente_min2']='Durante il tuo lavoro in miniera &egrave; si &egrave; verificato un incidente, non sei riuscito ad allontanarti in tempo e ti sei ferito (%s di salute persa)';
 ?>

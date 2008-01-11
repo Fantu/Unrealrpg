@@ -11,7 +11,13 @@ Legenda:<br />
 + Iniziata creazione sistema eventi<br />
 </p>
 <p><strong>0.2.12</strong> (Non disponibile - In sviluppo)<br />
-Niente attualmente<br />
++ Ora devono passare 6 ore tra un lavoro ed un altro qualsiasi esso sia<br />
++ Aggiunta la possibilit&agrave; di incidenti in miniera<br />
++ Forza fisica e livello di minatore influiscono sulla possibilit&agrave; che accadano incidenti in laboratorio<br />
++ Agilit&agrave; aumenta la probilit&agrave; di schivare gli incidenti in miniera<br />
++ Forza fisica aumenta la probilit&agrave; di schivare gli incidenti in miniera<br />
++ Resistenza fisica diminuisce il danno subito negli incidenti in miniera<br />
++ Vari miglioramenti di sistema<br />
 </p>
 <p><strong>0.2.11</strong> [R.211] (10/1/2008 - Beta)<br />
 + Aggiunto il sesso tra le caratteristiche<br />
