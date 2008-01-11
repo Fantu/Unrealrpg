@@ -4,7 +4,7 @@
 <?php echo $newmsg; ?><br />
 </div>
 <br />
-<?php echo $evento; ?>
+<?php echo $evento; ?><br />
 <br />
 <?php echo $lang['Personaggio']; ?>: <?php echo $user['username']; ?><br />
 <?php echo $lang['Razza']; ?>: <?php echo $razze['nome'][$usercar['razza']]; ?><br />
