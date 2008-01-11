@@ -46,5 +46,5 @@ $lang['Maschio']='Maschio';
 $lang['Femmina']='Femmina';
 $lang['Sesso']='Sesso';
 $lang['eventi_dettagli1']='Stai lavorando in miniera nuova e finirai: ';
-$lang['nessuno_evento']='Nessun evento in corso';
+$lang['nessun_evento']='Nessun evento in corso';
 ?>
