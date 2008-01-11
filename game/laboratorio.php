@@ -44,6 +44,9 @@ $salute+=$danni;
 $db->QueryMod("UPDATE lavori t1 JOIN utenti t2 on t1.userid=t2.userid JOIN caratteristiche t3 on t2.userid=t3.userid SET t1.ultimolavoro='".$adesso."',t3.expalchimista=t3.expalchimista+'".$exp."',t2.monete=t2.monete+'".$paga."',t3.energia=t3.energia-'".$energia."',t3.saluteattuale=t3.saluteattuale-'".$salute."' WHERE t1.userid='".$user['userid']."'");
 }
 }//fine lavora come apprendista
-
+if($eventi['id']>0){
+require('template/int_eventi_incorso.php');
+}else{
 require('template/int_laboratorio.php');
+}
 ?>

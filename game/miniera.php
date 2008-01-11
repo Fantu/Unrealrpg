@@ -16,6 +16,9 @@ else {
 $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,lavoro) VALUES ('".$user['userid']."','".$adesso."','3600','1','1','1')");	
 }
 }//fine lavora in miniera nuova
-
+if($eventi['id']>0){
+require('template/int_eventi_incorso.php');
+}else{
 require('template/int_miniera.php');
+}
 ?>

@@ -1,0 +1,1 @@
+<?php echo $lang['error_eventi_incorso']; ?><br />

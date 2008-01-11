@@ -30,6 +30,7 @@ if ($adesso>($usercar['recuperoenergia']+60)){
 }//fine recupero energia con tempo
 }//fine se personaggio creato
 require_once('inclusi/controllo_eventi.php');
+$eventi=$db->QuerySelect("SELECT COUNT(*) AS id FROM eventi WHERE userid='".$user['userid']."'");
 require_once('template/int_header.php');
 } //fine if userid
 else {
