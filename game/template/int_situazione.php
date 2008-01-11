@@ -3,6 +3,9 @@
 <div align="center">
 <?php echo $newmsg; ?><br />
 </div>
+<br />
+<?php echo $evento; ?>
+<br />
 <?php echo $lang['Personaggio']; ?>: <?php echo $user['username']; ?><br />
 <?php echo $lang['Razza']; ?>: <?php echo $razze['nome'][$usercar['razza']]; ?><br />
 <?php echo $lang['Classe']; ?>: <?php echo $classi['nome'][$usercar['classe']]; ?><br />
