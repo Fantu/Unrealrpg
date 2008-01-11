@@ -14,6 +14,8 @@ if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
 else {
 $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,lavoro) VALUES ('".$user['userid']."','".$adesso."','3600','1','1','1')");	
+header("Location: game.php?act=situazione");
+exit();
 }
 }//fine lavora in miniera nuova
 if($eventi['id']>0){

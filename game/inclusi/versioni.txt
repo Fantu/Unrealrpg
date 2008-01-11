@@ -14,6 +14,7 @@ Legenda:<br />
 + Aggiunta la visualizzazione dell'evento in corso in situazione, anche se nessuno in corso appare specificato<br />
 + Rifatto il lavoro in miniera nuova in tempo reale<br />
 + Se ci sono eventi in corso non si può fare altro in banca, miniera e laboratorio<br />
++ Vari miglioramenti di sistema<br />
 </p>
 <p><strong>0.2.12</strong> [R.214] (11/1/2008 - Beta)<br />
 + Ora devono passare 6 ore tra un lavoro ed un altro qualsiasi esso sia<br />
