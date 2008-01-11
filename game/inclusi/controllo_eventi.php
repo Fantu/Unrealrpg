@@ -5,7 +5,7 @@ require_once('inclusi/funzioni_eventi.php');
 $evfiniti=$db->QueryCiclo("SELECT * FROM eventi WHERE userid='".$user['userid']."' LIMIT 1");
 while($evento=$db->QueryCicloResult($evfiniti)) {
 
-if( ($evento['datainizio']+$evento['secondi'])<$ora ) {
+if( ($evento['datainizio']+$evento['secondi'])<$adesso ) {
 
 		switch($evento['tipo']){
 		case 1://lavori
