@@ -2,9 +2,9 @@
 <br />
 <div align="center">
 <?php echo $newmsg; ?><br />
-</div>
 <br />
 <?php echo $evento; ?><br />
+</div>
 <br />
 <?php echo $lang['Personaggio']; ?>: <?php echo $user['username']; ?><br />
 <?php echo $lang['Razza']; ?>: <?php echo $razze['nome'][$usercar['razza']]; ?><br />
@@ -24,6 +24,7 @@
 <table border="0" cellspacing="0"><tr><td><?php echo $lang['ab_minatore']; ?>: <?php echo $usercar['minatore']; echo " "; ?></td>
 <td width="<?php echo $percmin1; ?>" class="sfondoverde"></td><td width="<?php echo $percmin2; ?>" class="sfondorosso"></td>
 </tr></table>
+<br />
 <table border="0" cellspacing="0"><tr><td><?php echo $lang['ab_alchimista']; ?>: <?php echo $usercar['alchimista']; echo " "; ?></td>
 <td width="<?php echo $percmin3; ?>" class="sfondoverde"></td><td width="<?php echo $percmin4; ?>" class="sfondorosso"></td>
 </tr></table><br />

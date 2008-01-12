@@ -8,7 +8,7 @@ Legenda:<br />
 <br />
 </p>
 <p><strong>0.3.1</strong> (Non disponibile - In sviluppo)<br />
-Niente attualmente<br />
++ Vari miglioramenti di sistema<br />
 </p>
 <p><strong>0.3.0</strong> [R.223] (12/1/2008 - Beta)<br />
 + Iniziata creazione sistema eventi<br />
