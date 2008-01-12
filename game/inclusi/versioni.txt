@@ -7,15 +7,19 @@ Legenda:<br />
 - Correzione bug e patch di situazioni non previste<br />
 <br />
 </p>
-<p><strong>0.3.0</strong> (Non disponibile - In sviluppo)<br />
+<p><strong>0.3.1</strong> (Non disponibile - In sviluppo)<br />
+Niente attualmente<br />
+</p>
+<p><strong>0.3.0</strong> [R.221] (12/1/2008 - Beta)<br />
 + Iniziata creazione sistema eventi<br />
-+ Ci saranno eventi per tipo e ogni tipo avr&agrave; un funzionamento differente<br />
++ Ci sono eventi per tipo e ogni tipo ha un funzionamento differente<br />
 + Creato il tipo di evento lavoro<br />
 + Aggiunta la visualizzazione dell'evento in corso in situazione, anche se nessuno in corso appare specificato<br />
 + Rifatto il lavoro in miniera nuova in tempo reale<br />
 + Se ci sono eventi in corso non si può fare altro in banca, miniera e laboratorio<br />
 + Vari miglioramenti di sistema<br />
 + Rifatto il lavoro in laboratorio come apprendista in tempo reale<br />
++ Inserito il controllo dei propri eventi e la risoluzione se il tempo dell'evento &egrave; passato in ogni pagina<br />
 </p>
 <p><strong>0.2.12</strong> [R.214] (11/1/2008 - Beta)<br />
 + Ora devono passare 6 ore tra un lavoro ed un altro qualsiasi esso sia<br />
