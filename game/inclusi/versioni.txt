@@ -7,6 +7,9 @@ Legenda:<br />
 - Correzione bug e patch di situazioni non previste<br />
 <br />
 </p>
+<p><strong>0.4.0</strong> (Non disponibile - In sviluppo)<br />
++ Iniziata creazione sistema oggetti<br />
+</p>
 <p><strong>0.3.1</strong> (Non disponibile - In sviluppo)<br />
 + Vari miglioramenti di sistema<br />
 </p>
