@@ -23,7 +23,7 @@ if( $check['chiuso']==1 ) {
 	header("Location: ../index.php?error=12");
 	exit();
 }
-
+$int_security=$game_se_code;
 require_once('inclusi/int_header.php');
 
 if(!$user['userid'])
@@ -51,9 +51,10 @@ if ($user['personaggio']==0){
 		  <tr>
 			<td width="505" valign="top">
 			<div id="contenuto">		
-<?php if(!$_GET['act'])
-$_GET['act']="situazione";
-require($_GET['act'].'.php');
+<?php 
+if(file_exists($_GET['act'].'.php')){
+require($_GET['act'].'.php');}else{
+$_GET['act']="situazione";}
 ?>
 			</div> 
 			</td>
