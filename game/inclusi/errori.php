@@ -56,7 +56,7 @@ break;
 case 17:
 $msg="Controlli interni non superati.\\nHai forse qualche estensione di FireFox che modifica il regolare funzionamento del browser?";
 break;
-case default:
+default:
 $msg="Errore sconosciuto";
 break;
 }
