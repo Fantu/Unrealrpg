@@ -2,14 +2,13 @@
 require('game/inclusi/valori.php');
 require('game/inclusi/funzioni_db.php');
 $db = new ConnessioniMySQL();
-
-//if($_GET['t']==999 || $_GET['t']==0)
+$indb=(int)$_GET['t'];
 $esistenza=0;		
 	foreach($game_server as $chiave=>$elemento){
-	if ($chiave==$_GET['t']){$esistenza=1;}
+	if ($chiave==$indb){$esistenza=1;}
 	}
 if($esistenza==1)
-	$db->database = $_GET['t'];
+	$db->database=$indb;
 else {
 	header("Location: index.php?error=5");
 	exit();

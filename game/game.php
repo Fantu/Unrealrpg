@@ -52,9 +52,9 @@ if ($user['personaggio']==0){
 			<td width="505" valign="top">
 			<div id="contenuto">		
 <?php 
-if(file_exists($_GET['act'].'.php')){
-require($_GET['act'].'.php');}else{
-$_GET['act']="situazione";}
+if(!file_exists($_GET['act'].'.php'))
+$_GET['act']="situazione";
+require($_GET['act'].'.php');
 ?>
 			</div> 
 			</td>

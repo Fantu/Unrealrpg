@@ -1,6 +1,11 @@
 <?php
+if($int_security!=$game_se_code){
+	header("Location: ../index.php?error=16");
+	exit();
+}
 require('language/it/lang_messaggi.php');
 require('template/int_messaggi.php');
+$id=(int)$_GET['id'];
 ?>
 <script type="text/javascript">
 function conteggio() {
@@ -15,7 +20,7 @@ $db->QueryMod("DELETE FROM messaggi WHERE userid='".$user['userid']."' AND letto
 
 switch($_GET['do']){
 case "elim"://cancella msg singolo
-$db->QueryMod("DELETE FROM messaggi WHERE id='".$_GET['id']."'");
+$db->QueryMod("DELETE FROM messaggi WHERE id='".$id."'");
 header("Location: game.php?act=messaggi");
 exit();
 break;
@@ -73,7 +78,7 @@ case "doscrivi":// invia nuovo messaggio
 		$_POST['mymess']=str_replace("<","&lt;",$_POST['mymess']);		
 		$_POST['mymess']=str_replace(">","&gt;",$_POST['mymess']);
 		$db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$_POST['achi']."','".$_POST['titolo']."','".$_POST['mymess']."','".$user['userid']."','".$adesso."')");
-		$db->QueryMod("DELETE FROM messaggi WHERE id='".$_GET['id']."'");
+		$db->QueryMod("DELETE FROM messaggi WHERE id='".$id."'");
 		header("Location: game.php?act=messaggi");
 	}
 exit();
@@ -91,7 +96,7 @@ case "risp":// scrivi risposta
   </td></tr>
   <tr>
     <td><div align="center">
-      <?php echo "<input type=\"hidden\" name=\"messid\" value=\"".$_GET['id']."\" />"; ?>
+      <?php echo "<input type=\"hidden\" name=\"messid\" value=\"".$id."\" />"; ?>
       <input type="submit" name="Submit" value="<?php echo $lang['invia_messaggio']; ?>" />
     </div></td>
   </tr>
@@ -112,7 +117,7 @@ case "scrivi":// scrivi nuovo
 	<br /><?php echo $lang['caratteri_disponibili']; ?><div id="caratteri" name="caratteri">500</div></td></tr>
   <tr>
     <td><div align="center">
-      <?php echo "<input type=\"hidden\" name=\"achi\" value=\"".$_GET['id']."\" />"; ?>
+      <?php echo "<input type=\"hidden\" name=\"achi\" value=\"".$id."\" />"; ?>
       <input type="submit" name="Submit" value="<?php echo $lang['invia_messaggio']; ?>" />
     </div></td>
   </tr>

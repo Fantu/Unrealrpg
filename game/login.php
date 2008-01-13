@@ -34,7 +34,7 @@ if($check['chiuso']==1) {
 	$ora = strtotime("now");
 	$db->QueryMod("UPDATE utenti SET ultimologin='".$ora."',ipattuale='".$_SERVER['REMOTE_ADDR']."' WHERE userid='".$user['userid']."'");
 
-	header("Location: game.php");
+	header("Location: game.php?act=situazione");
 	exit();	
 }
 ?>
