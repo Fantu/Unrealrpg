@@ -3,6 +3,7 @@ $user=$db->QuerySelect("SELECT * FROM utenti WHERE userid='".$lg[0]."' AND passw
 if($user['userid']) {
 $adesso=strtotime("now");
 $db->QueryMod("UPDATE utenti SET ultimazione='".$adesso."' WHERE userid='".$user['userid']."'");
+require_once('inclusi/controllo_eventi.php');
 $eventi=$db->QuerySelect("SELECT COUNT(*) AS id FROM eventi WHERE userid='".$user['userid']."'");
 if($user['personaggio']==1) {
 if($eventi['id']==0) {
@@ -31,7 +32,6 @@ if ($adesso>($usercar['recuperoenergia']+60)){
 }//fine recupero energia con tempo
 }//fine se ci sono eventi in corso
 }//fine se personaggio creato
-require_once('inclusi/controllo_eventi.php');
 require_once('template/int_header.php');
 } //fine if userid
 else {
