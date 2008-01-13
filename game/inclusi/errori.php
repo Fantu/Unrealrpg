@@ -1,5 +1,6 @@
 <?php
-switch($_GET['error']){
+$errore=(int)$_GET['error'];
+switch($errore){
 case 1:
 $msg="Login errato!\\nUsername e/o password non corretti.";
 break;
@@ -31,8 +32,9 @@ case 10:
 $msg="Il tuo account è ora inutilizzabile e verrà a breve cancellato dal sistema.";
 break;
 case 11:
+$tempo=(int)$_GET['t'];
 if($_GET['t']>0) {
-	$fino=" fino al ".date("d/m/y H:i",$_GET['t']);
+	$fino=" fino al ".date("d/m/y H:i",$tempo);
 }
 $msg="Il tuo account è stato momentaneamente bannato".$fino."!\\nPer sapere il motivo del bann ed evitare futuri intoppi, consulta il forum o contatta un admin.";
 break;
@@ -53,5 +55,8 @@ $msg="Link error.\\nPer favore segui i link del gioco per accedere alle varie se
 break;
 case 17:
 $msg="Controlli interni non superati.\\nHai forse qualche estensione di FireFox che modifica il regolare funzionamento del browser?";
+break;
+case default:
+$msg="Errore sconosciuto";
 break;
 }
