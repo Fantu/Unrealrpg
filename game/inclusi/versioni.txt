@@ -10,7 +10,10 @@ Legenda:<br />
 <p><strong>0.4.0</strong> (Non disponibile - In sviluppo)<br />
 + Iniziata creazione sistema oggetti<br />
 </p>
-<p><strong>0.3.1</strong> (Non disponibile - In sviluppo)<br />
+<p><strong>0.3.2</strong> (Non disponibile - In sviluppo)<br />
+Niente attualmente<br />
+</p>
+<p><strong>0.3.1</strong> [R.241] (13/1/2008 - Beta)<br />
 + Vari miglioramenti di sistema<br />
 + Vari miglioramenti di sicurezza<br />
 + Ora il controllo degli eventi in ogni pagina &egrave; su tutti gli eventi di qualsiasi utente che siano e se ce ne sono di completi ne risolve fino a 2<br />
