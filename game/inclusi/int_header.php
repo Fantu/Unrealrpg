@@ -1,10 +1,11 @@
 <?php
 $user=$db->QuerySelect("SELECT * FROM utenti WHERE userid='".$lg[0]."' AND password='".$lg[2]."' AND conferma=1 LIMIT 0,1");
-
 if($user['userid']) {
 $adesso=strtotime("now");
 $db->QueryMod("UPDATE utenti SET ultimazione='".$adesso."' WHERE userid='".$user['userid']."'");
+$eventi=$db->QuerySelect("SELECT COUNT(*) AS id FROM eventi WHERE userid='".$user['userid']."'");
 if($user['personaggio']==1) {
+if($eventi['id']==0) {
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$user['userid']."' LIMIT 0,1");
 if ($adesso>($usercar['recuperosalute']+3600)){
 	if ($usercar['saluteattuale']<$usercar['salute']){
@@ -28,9 +29,9 @@ if ($adesso>($usercar['recuperoenergia']+60)){
 	}
 	else{$db->QueryMod("UPDATE caratteristiche SET recuperoenergia='".$adesso."' WHERE userid='".$user['userid']."'");}
 }//fine recupero energia con tempo
+}//fine se ci sono eventi in corso
 }//fine se personaggio creato
 require_once('inclusi/controllo_eventi.php');
-$eventi=$db->QuerySelect("SELECT COUNT(*) AS id FROM eventi WHERE userid='".$user['userid']."'");
 require_once('template/int_header.php');
 } //fine if userid
 else {

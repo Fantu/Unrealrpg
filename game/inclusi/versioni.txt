@@ -14,6 +14,7 @@ Legenda:<br />
 + Vari miglioramenti di sistema<br />
 + Vari miglioramenti di sicurezza<br />
 + Ora il controllo degli eventi in ogni pagina &egrave; su tutti gli eventi di qualsiasi utente che siano e se ce ne sono di completi ne risolve uno<br />
++ Se ci sono propri eventi in corso (per esempio si sta lavorando) non avvengono i recuperi di salute ed energia, la cosa è ancora imprecisa per il momento e non è possibile farla ben precisa finchè la gestione e risoluzione degli eventi non sar&agrave; svolta in pieno tempo reale<br />
 </p>
 <p><strong>0.3.0</strong> [R.223] (12/1/2008 - Beta)<br />
 + Iniziata creazione sistema eventi<br />
