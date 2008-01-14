@@ -25,3 +25,7 @@
 <?php echo $lang['Mana']; ?> <?php echo $classi['mana'][$chiave]; ?><br />
 <br />
 <?php }?>
+<br />
+<?php echo $lang['recuperi_con_tempo']; ?><br />
+<br />
+<?php echo $lang['consumo_di_energia']; ?><br />
