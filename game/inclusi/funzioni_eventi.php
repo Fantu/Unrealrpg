@@ -38,7 +38,8 @@ function Completalavlabapp($userid) {
 global $db,$adesso;
 require('language/it/lang_laboratorio.php');
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 0,1");
-$paga=5;
+$paga=6;
+$mana=rand(5,10);
 $energia=100-(5*$usercar['alchimista']);
 if ($energia<50)
 $energia=50;
@@ -62,10 +63,10 @@ $testo="<span>".sprintf($lang['report_esplosione_lab2'],$danni)."</span><br /><b
 $titolo=$lang['report_esplosione_laboratorio'];
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");	
 }//fine esplosione
-$testo="<span>".sprintf($lang['report_lavlabapp'],$paga,$exp,$energia,$salute)."</span><br /><br />";
+$testo="<span>".sprintf($lang['report_lavlabapp'],$paga,$exp,$energia,$salute,$mana)."</span><br /><br />";
 $titolo=$lang['report_lavoro_labapp'];
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");
 $salute+=$danni;
-$db->QueryMod("UPDATE lavori t1 JOIN utenti t2 on t1.userid=t2.userid JOIN caratteristiche t3 on t2.userid=t3.userid SET t1.ultimolavoro='".$adesso."',t3.expalchimista=t3.expalchimista+'".$exp."',t2.monete=t2.monete+'".$paga."',t3.energia=t3.energia-'".$energia."',t3.saluteattuale=t3.saluteattuale-'".$salute."',t3.recuperosalute='".$adesso."',t3.recuperoenergia='".$adesso."' WHERE t1.userid='".$userid."'");
+$db->QueryMod("UPDATE lavori t1 JOIN utenti t2 on t1.userid=t2.userid JOIN caratteristiche t3 on t2.userid=t3.userid SET t1.ultimolavoro='".$adesso."',t3.expalchimista=t3.expalchimista+'".$exp."',t2.monete=t2.monete+'".$paga."',t3.energia=t3.energia-'".$energia."',t3.saluteattuale=t3.saluteattuale-'".$salute."',t3.recuperosalute='".$adesso."',t3.recuperoenergia='".$adesso."',t3.mana=t3.mana-'".$mana."' WHERE t1.userid='".$userid."'");
 } //fine Completalavlabapp
 ?>

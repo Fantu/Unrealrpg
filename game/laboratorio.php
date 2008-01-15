@@ -10,6 +10,8 @@ if ($usercar['saluteattuale']<30)
 $errore .= $lang['lab_errore2'];
 if ($adesso<($userlav['ultimolavoro']+21600))
 $errore .= $lang['lab_errore3'];
+if ($usercar['mana']<10)
+$errore .= $lang['lab_errore4'];
 if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
 else {

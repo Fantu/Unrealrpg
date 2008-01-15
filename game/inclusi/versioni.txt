@@ -13,6 +13,8 @@ Legenda:<br />
 <p><strong>0.3.2</strong> (Non disponibile - In sviluppo)<br />
 + Alcune aggiunte nella guida, al momento aggiungo contenuti linearmente poi più avanti li disporr&ograve; e scriver&ograve; meglio<br />
 + Inserito lo stato (online-offline) nella visualizzazione in dettaglio dell'utente<br />
++ Lavorando in laboratorio si consuma anche una piccola quantit&agrave; di mana<br />
+# Ora la paga del lavoro in laboratorio come apprendista è 6 monete ad ora<br />
 </p>
 <p><strong>0.3.1</strong> [R.241] (13/1/2008 - Beta)<br />
 + Vari miglioramenti di sistema<br />
