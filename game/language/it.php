@@ -50,4 +50,5 @@ $lang['eventi_dettagli2']='Stai lavorando in laboratorio come apprendista e fini
 $lang['nessun_evento']='Nessun evento in corso';
 $lang['error_eventi_incorso']='Sei occupato a fare altro';
 $lang['Stato']='Stato';
+$lang['Tempio']='Tempio';
 ?>

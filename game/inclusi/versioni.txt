@@ -11,7 +11,7 @@ Legenda:<br />
 + Iniziata creazione sistema oggetti<br />
 </p>
 <p><strong>0.3.3</strong> (Non disponibile - In sviluppo)<br />
-Niente attualmente<br />
++ Iniziata creazione del tempio<br />
 </p>
 <p><strong>0.3.2</strong> [R.244] (15/1/2008 - Beta)<br />
 + Alcune aggiunte nella guida, al momento aggiungo contenuti linearmente poi più avanti li disporr&ograve; e scriver&ograve; meglio<br />
