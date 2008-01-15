@@ -10,7 +10,10 @@ Legenda:<br />
 <p><strong>0.4.0</strong> (Non disponibile - In sviluppo)<br />
 + Iniziata creazione sistema oggetti<br />
 </p>
-<p><strong>0.3.2</strong> (Non disponibile - In sviluppo)<br />
+<p><strong>0.3.3</strong> (Non disponibile - In sviluppo)<br />
+Niente attualmente<br />
+</p>
+<p><strong>0.3.2</strong> [R.244] (15/1/2008 - Beta)<br />
 + Alcune aggiunte nella guida, al momento aggiungo contenuti linearmente poi più avanti li disporr&ograve; e scriver&ograve; meglio<br />
 + Inserito lo stato (online-offline) nella visualizzazione in dettaglio dell'utente<br />
 + Lavorando in laboratorio si consuma anche una piccola quantit&agrave; di mana<br />

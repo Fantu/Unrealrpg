@@ -1,9 +1,5 @@
 <?php
-if(empty($int_security)){
-	header("Location: ../index.php?error=16");
-	exit();
-}
-if($int_security!=$game_se_code){
+if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	header("Location: ../index.php?error=16");
 	exit();
 }
