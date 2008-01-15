@@ -19,7 +19,7 @@
 <?php echo $lang['Attmagico']; ?>: <?php echo $classi['attmagico'][$usercar['classe']]; ?><br />
 <?php echo $lang['Diffisica']; ?>: <?php echo $classi['diffisica'][$usercar['classe']]; ?><br />
 <?php echo $lang['Difmagica']; ?>: <?php echo $classi['difmagica'][$usercar['classe']]; ?><br />
-<?php echo $lang['Mana']; ?>: <?php echo $classi['mana'][$usercar['classe']]; ?><br />
+<?php echo $lang['Mana']; ?>: <?php echo $usercar['manarimasto']; echo "/"; echo $usercar['mana']; ?><br />
 <?php echo $lang['Monete']; ?>: <?php echo $user['monete']; ?><br />
 <br />
 <table border="0" cellspacing="0"><tr><td><?php echo $lang['ab_minatore']; ?>: <?php echo $usercar['minatore']; echo " "; ?> </td>
