@@ -11,9 +11,10 @@ Legenda:<br />
 + Iniziata creazione sistema oggetti<br />
 </p>
 <p><strong>0.3.4</strong> (Non disponibile - In sviluppo)<br />
-+ Iniziata creazione del tempio<br />
+Niente attualmente<br />
 </p>
-<p><strong>0.3.3</strong> [R.247] (15/1/2008 - Beta)<br />
+<p><strong>0.3.3</strong> [R.248] (15/1/2008 - Beta)<br />
++ Iniziata creazione del tempio<br />
 + Aggiunto il mana rimanente<br />
 + Modificata la visualizzazione del mana in situazione per vedere sia quello rimanente che totale<br />
 - Ora in laboratorio viene scalato il mana rimanente e non quello totale<br />
