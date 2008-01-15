@@ -1,4 +1,8 @@
 <?php
+if((empty($int_security)) OR ($int_security!=$game_se_code)){
+	header("Location: ../index.php?error=16");
+	exit();
+}
 require('language/it/lang_laboratorio.php');
 if (isset($_POST['lavoralabapp'])){
 $errore="";

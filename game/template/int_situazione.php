@@ -29,3 +29,5 @@
 <table border="0" cellspacing="0"><tr><td><?php echo $lang['ab_alchimista']; ?>: <?php echo $usercar['alchimista']; echo " "; ?> </td>
 <td width="<?php echo $percmin3; ?>" class="sfondoverde"></td><td width="<?php echo $percmin4; ?>" class="sfondorosso"></td>
 </tr></table><br />
+<br />
+<?php echo $proxlav; ?><br />

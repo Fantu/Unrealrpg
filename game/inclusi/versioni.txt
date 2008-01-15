@@ -15,6 +15,8 @@ Legenda:<br />
 + Inserito lo stato (online-offline) nella visualizzazione in dettaglio dell'utente<br />
 + Lavorando in laboratorio si consuma anche una piccola quantit&agrave; di mana<br />
 # Ora la paga del lavoro in laboratorio come apprendista è 6 monete ad ora<br />
++ Vari miglioramenti di sicurezza<br />
++ Inserito in situazione quando si potr&agrave; fare il prossimo lavoro<br />
 </p>
 <p><strong>0.3.1</strong> [R.241] (13/1/2008 - Beta)<br />
 + Vari miglioramenti di sistema<br />

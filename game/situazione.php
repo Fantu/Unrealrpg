@@ -31,6 +31,8 @@ if($eventi['id']>0){
 }
 if(!$evento)
 $evento=$lang['nessun_evento'];
+$userlav=$db->QuerySelect("SELECT * FROM lavori WHERE userid='".$user['userid']."' LIMIT 0,1");
+$proxlav=$lang['prossimo_lavoro'].date("d/m/y - H:i",($userlav['ultimolavoro']+21600));
 require('inclusi/personaggio.php');
 require('template/int_situazione.php');
 ?>
