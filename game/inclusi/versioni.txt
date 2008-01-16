@@ -10,7 +10,7 @@ Legenda:<br />
 <p><strong>0.4.0</strong> (Non disponibile - In sviluppo)<br />
 + Iniziata creazione sistema oggetti<br />
 </p>
-<p><strong>0.3.4</strong> [R.255] (16/1/2008 - Beta)<br />
+<p><strong>0.3.4</strong> [R.257] (16/1/2008 - Beta)<br />
 + Se il prossimo lavoro si pu&ograve; gi&agrave; svolgere in situazione al posto della data viene visualizzato adesso<br />
 + Vari miglioramenti di sistema<br />
 + Aggiunta la preghiera nel tempio<br />
@@ -22,6 +22,7 @@ Legenda:<br />
 + Aggiunta una piccola probabilit&agrave; di manifestazione divina durante la preghiera, se si verifica salute, mana ed energia vengono ripristinati completamente<br />
 + La fede influisce sulla probabilit&agrave; di manifestazione divina<br />
 + 1 moneta viene data come offerta durante la preghiera<br />
++ Se stai pregando la lenta diminuzione di fede non avviene<br />
 </p>
 <p><strong>0.3.3</strong> [R.248] (15/1/2008 - Beta)<br />
 + Iniziata creazione del tempio<br />
