@@ -96,7 +96,7 @@ $testo="<span>".$lang['report_manifestazione_divina']."</span><br /><br />";
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");	
 }//fine manifestazione divina
 else{
-$testo="<span>".sprintf($lang['report_preghiera_normale'],$paga,$energiapersa)."</span><br /><br />";
+$testo="<span>".sprintf($lang['report_preghiera_normale'],$dono,$energiapersa)."</span><br /><br />";
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");
 }//fine se niente manifestazione divina
 $db->QueryMod("UPDATE utenti t2 JOIN caratteristiche t3 on t2.userid=t3.userid SET t3.fede=t3.fede+'".$fede."',t2.monete=t2.monete-'".$dono."',t3.energia='".$energia."',t3.saluteattuale='".$salute."',t3.recuperoenergia='".$adesso."',t3.decfede='".$adesso."',t3.manarimasto='".$mana."' WHERE t2.userid='".$userid."'");
