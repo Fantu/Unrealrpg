@@ -21,7 +21,7 @@ $db->QueryMod("DELETE FROM messaggi WHERE userid='".$user['userid']."' AND letto
 switch($_GET['do']){
 case "elim"://cancella msg singolo
 $db->QueryMod("DELETE FROM messaggi WHERE id='".$id."'");
-header("Location: game.php?act=messaggi");
+echo "<script language=\"javascript\">window.location.href='game.php?act=messaggi'</script>";
 exit();
 break;
 case "canc"://cancella mess selezionati
@@ -29,7 +29,8 @@ while($_POST['contatore']>0) {
 	$db->QueryMod("DELETE FROM messaggi WHERE id='".$_POST['messaggioid'.$_POST['contatore'].'']."'");
 	$_POST['contatore']--;
 }
-header("Location: game.php?act=messaggi");
+redirect("Location: game.php?act=messaggi")
+//header("Location: game.php?act=messaggi");
 exit();
 break;
 case "dorisp":// invia risposta
