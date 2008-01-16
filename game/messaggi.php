@@ -29,7 +29,7 @@ while($_POST['contatore']>0) {
 	$db->QueryMod("DELETE FROM messaggi WHERE id='".$_POST['messaggioid'.$_POST['contatore'].'']."'");
 	$_POST['contatore']--;
 }
-redirect("Location: game.php?act=messaggi")
+redirect("Location: game.php?act=messaggi");
 //header("Location: game.php?act=messaggi");
 exit();
 break;
