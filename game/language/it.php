@@ -51,4 +51,5 @@ $lang['nessun_evento']='Nessun evento in corso';
 $lang['error_eventi_incorso']='Sei occupato a fare altro';
 $lang['Stato']='Stato';
 $lang['Tempio']='Tempio';
+$lang['Adesso']='Adesso';
 ?>
