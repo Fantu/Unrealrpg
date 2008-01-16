@@ -10,7 +10,7 @@ Legenda:<br />
 <p><strong>0.4.0</strong> (Non disponibile - In sviluppo)<br />
 + Iniziata creazione sistema oggetti<br />
 </p>
-<p><strong>0.3.4</strong> (Non disponibile - In sviluppo)<br />
+<p><strong>0.3.4</strong> [R.255] (16/1/2008 - Beta)<br />
 + Se il prossimo lavoro si pu&ograve; gi&agrave; svolgere in situazione al posto della data viene visualizzato adesso<br />
 + Vari miglioramenti di sistema<br />
 + Aggiunta la preghiera nel tempio<br />
