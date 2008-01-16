@@ -47,6 +47,7 @@ $lang['Femmina']='Femmina';
 $lang['Sesso']='Sesso';
 $lang['eventi_dettagli1']='Stai lavorando in miniera nuova e finirai: ';
 $lang['eventi_dettagli2']='Stai lavorando in laboratorio come apprendista e finirai: ';
+$lang['eventi_dettagli3']='Sei nel tempio a pregare e finirai: ';
 $lang['nessun_evento']='Nessun evento in corso';
 $lang['error_eventi_incorso']='Sei occupato a fare altro';
 $lang['Stato']='Stato';

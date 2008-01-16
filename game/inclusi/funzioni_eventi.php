@@ -69,4 +69,35 @@ $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES
 $salute+=$danni;
 $db->QueryMod("UPDATE lavori t1 JOIN utenti t2 on t1.userid=t2.userid JOIN caratteristiche t3 on t2.userid=t3.userid SET t1.ultimolavoro='".$adesso."',t3.expalchimista=t3.expalchimista+'".$exp."',t2.monete=t2.monete+'".$paga."',t3.energia=t3.energia-'".$energia."',t3.saluteattuale=t3.saluteattuale-'".$salute."',t3.recuperosalute='".$adesso."',t3.recuperoenergia='".$adesso."',t3.manarimasto=t3.manarimasto-'".$mana."' WHERE t1.userid='".$userid."'");
 } //fine Completalavlabapp
+
+function Completatempioprega($userid) {
+global $db,$adesso;
+require('language/it/lang_tempio.php');
+$usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 0,1");
+$mana=$usercar['mana'];
+if($usercar['manarimasto']!=$usercar['mana']){
+$mana=floor($usercar['mana']/10);
+$mana+=$usercar['manarimasto'];
+if($mana>$usercar['mana'])
+$mana=$usercar['mana'];
+}
+$energia=$usercar['energia']-10;
+$salute=$usercar['saluteattuale'];
+$fede=100;
+$dono=1;
+$miracolo=rand(0,100)-($usercar['fede']/100));
+$titolo=$lang['report_tempio_preghiera'];
+if($miracolo<1){
+$mana=$usercar['mana'];
+$salute=$usercar['salute'];
+$energia=$usercar['energiamax'];
+$testo="<span>".$lang['report_manifestazione_divina']."</span><br /><br />";
+$db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");	
+}//fine manifestazione divina
+else{
+$testo="<span>".sprintf($lang['report_preghiera_normale'],$paga,$energia)."</span><br /><br />";
+$db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");
+}//fine se niente manifestazione divina
+$db->QueryMod("UPDATE utenti t2 JOIN caratteristiche t3 on t1.userid=t3.userid SET t3.fede=t3.fede+'".$fede."',t2.monete=t2.monete-'".$dono."',t3.energia='".$energia."',t3.saluteattuale='".$salute."',t3.recuperoenergia='".$adesso."',t3.manarimasto='".$mana."' WHERE t2.userid='".$userid."'");
+} //fine Completatempioprega
 ?>

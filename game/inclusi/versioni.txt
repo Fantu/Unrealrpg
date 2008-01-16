@@ -12,6 +12,16 @@ Legenda:<br />
 </p>
 <p><strong>0.3.4</strong> (Non disponibile - In sviluppo)<br />
 + Se il prossimo lavoro si pu&ograve; gi&agrave; svolgere in situazione al posto della data viene visualizzato adesso<br />
++ Vari miglioramenti di sistema<br />
++ Aggiunta la preghiera nel tempio<br />
++ Non si pu&ograve; pregare se l'energia &egrave; troppo bassa e non si pu&ograve; accedere al tempio se si sta facendo altro<br />
++ Aggiunta la fede<br />
++ Pregando la fede aumenta<br />
++ Con il passare del tempo la fede diminuisce lentamente<br />
++ Pregare consuma 10 di energia ad ora<br />
++ Aggiunta una piccola probabilit&agrave; di manifestazione divina durante la preghiera, se si verifica salute, mana ed energia vengono ripristinati completamente<br />
++ La fede influisce sulla probabilit&agrave; di manifestazione divina<br />
++ 1 moneta viene data come offerta durante la preghiera<br />
 </p>
 <p><strong>0.3.3</strong> [R.248] (15/1/2008 - Beta)<br />
 + Iniziata creazione del tempio<br />
