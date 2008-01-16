@@ -6,6 +6,17 @@ $db->QueryMod("UPDATE utenti SET ultimazione='".$adesso."' WHERE userid='".$user
 require_once('inclusi/controllo_eventi.php');
 $eventi=$db->QuerySelect("SELECT COUNT(*) AS id FROM eventi WHERE userid='".$user['userid']."'");
 if($user['personaggio']==1) {
+if ($adesso>($usercar['decfede']+3600)){
+	if ($usercar['fede']>0){
+		$differenzaora=$adesso-$usercar['decfede'];
+		$ore=floor($differenzaora/3600);
+		$fede=$usercar['fede']-($ore*10);
+		if ($fede<0)
+		$fede=0;
+		$db->QueryMod("UPDATE caratteristiche SET decfede=decfede+'".($ore*3600)."',fede='".($fede)."' WHERE userid='".$user['userid']."'");
+	}
+	else{$db->QueryMod("UPDATE caratteristiche SET decfede='".$adesso."' WHERE userid='".$user['userid']."'");}
+}//fine decremento fede	
 if($eventi['id']==0) {
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$user['userid']."' LIMIT 0,1");
 if ($adesso>($usercar['recuperosalute']+3600)){
@@ -19,17 +30,6 @@ if ($adesso>($usercar['recuperosalute']+3600)){
 	}
 	else{$db->QueryMod("UPDATE caratteristiche SET recuperosalute='".$adesso."' WHERE userid='".$user['userid']."'");}
 }//fine recupero salute con tempo
-if ($adesso>($usercar['decfede']+3600)){
-	if ($usercar['fede']>0){
-		$differenzaora=$adesso-$usercar['decfede'];
-		$ore=floor($differenzaora/3600);
-		$fede=$usercar['fede']-($ore*10);
-		if ($fede<0)
-		$fede=0;
-		$db->QueryMod("UPDATE caratteristiche SET decfede=decfede+'".($ore*3600)."',fede='".($fede)."' WHERE userid='".$user['userid']."'");
-	}
-	else{$db->QueryMod("UPDATE caratteristiche SET decfede='".$adesso."' WHERE userid='".$user['userid']."'");}
-}//fine decremento fede
 if ($adesso>($usercar['recuperoenergia']+60)){
 	if ($usercar['energia']<$usercar['energiamax']){
 		$differenzaora=$adesso-$usercar['recuperoenergia'];
