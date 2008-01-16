@@ -29,8 +29,7 @@ while($_POST['contatore']>0) {
 	$db->QueryMod("DELETE FROM messaggi WHERE id='".$_POST['messaggioid'.$_POST['contatore'].'']."'");
 	$_POST['contatore']--;
 }
-redirect("Location: game.php?act=messaggi");
-//header("Location: game.php?act=messaggi");
+echo "<script language=\"javascript\">window.location.href='game.php?act=messaggi'</script>";
 exit();
 break;
 case "dorisp":// invia risposta
@@ -52,7 +51,7 @@ case "dorisp":// invia risposta
 		$_POST['mymess']=str_replace("<","&lt;",$_POST['mymess']);		
 		$_POST['mymess']=str_replace(">","&gt;",$_POST['mymess']);
 		$db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$a['mittenteid']."','".$titolo."','".$_POST['mymess']."','".$user['userid']."','".$adesso."')");
-		header("Location: game.php?act=messaggi");
+		echo "<script language=\"javascript\">window.location.href='game.php?act=messaggi'</script>";
 		exit();		
 	}
 break;
@@ -80,7 +79,7 @@ case "doscrivi":// invia nuovo messaggio
 		$_POST['mymess']=str_replace(">","&gt;",$_POST['mymess']);
 		$db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$_POST['achi']."','".$_POST['titolo']."','".$_POST['mymess']."','".$user['userid']."','".$adesso."')");
 		$db->QueryMod("DELETE FROM messaggi WHERE id='".$id."'");
-		header("Location: game.php?act=messaggi");
+		echo "<script language=\"javascript\">window.location.href='game.php?act=messaggi'</script>";
 	}
 exit();
 break;
