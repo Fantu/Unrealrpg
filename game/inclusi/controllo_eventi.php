@@ -15,10 +15,10 @@ if( ($evento['datainizio']+$evento['secondi'])<$adesso ) {
 			case 2://apprendista in laboratorio
 			Completalavlabapp($evento['userid']);
 			break;
-			case 3://prega nel tempio
-			Completatempioprega($evento['userid']);
-			break;
 			}	
+		break;
+		case 2://preghiera
+		Completatempioprega($evento['userid']);
 		break;
 		}
 $db->QueryMod("DELETE FROM eventi WHERE id='".$evento['id']."'");

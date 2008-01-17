@@ -33,7 +33,11 @@ if(!$evento)
 $evento=$lang['nessun_evento'];
 $userlav=$db->QuerySelect("SELECT * FROM lavori WHERE userid='".$user['userid']."' LIMIT 0,1");
 if (($userlav['ultimolavoro']+21600)<$adesso){
-$proxlavdata=$lang['Adesso'];}else
+$proxlavdata=$lang['Adesso'];
+$lavoroincorso=$db->QuerySelect("SELECT COUNT(*) AS id FROM eventi WHERE userid='".$user['userid']."' AND tipo='1'");
+if ($lavoroincorso['id']>0)
+$proxlavdata=$lang['stai_gia_lavorando'];
+}else
 {$proxlavdata=date("d/m/y - H:i",($userlav['ultimolavoro']+21600));}
 $proxlav=$lang['prossimo_lavoro'].$proxlavdata;
 require('inclusi/personaggio.php');

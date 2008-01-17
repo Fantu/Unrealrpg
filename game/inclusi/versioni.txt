@@ -12,6 +12,7 @@ Legenda:<br />
 </p>
 <p><strong>0.3.5</strong> (Non disponibile - In sviluppo)<br />
 + Vari miglioramenti di sistema<br />
++ Se si sta gi&agrave; lavorando in situazione al posto di quando &egrave: possibile fare il prossimo lavoro viene visualizzato che si sta gi&agrave; lavorando<br />
 </p>
 <p><strong>0.3.4</strong> [R.259] (16/1/2008 - Beta)<br />
 + Se il prossimo lavoro si pu&ograve; gi&agrave; svolgere in situazione al posto della data viene visualizzato adesso<br />
