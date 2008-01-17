@@ -10,7 +10,10 @@ Legenda:<br />
 <p><strong>0.4.0</strong> (Non disponibile - In sviluppo)<br />
 + Iniziata creazione sistema oggetti<br />
 </p>
-<p><strong>0.3.5</strong> (Non disponibile - In sviluppo)<br />
+<p><strong>0.3.6</strong> (Non disponibile - In sviluppo)<br />
+Niente attualmente<br />
+</p>
+<p><strong>0.3.5</strong> [R.265] (17/1/2008 - Beta)<br />
 + Vari miglioramenti di sistema<br />
 + Se si sta gi&agrave; lavorando in situazione al posto di quando &egrave: possibile fare il prossimo lavoro viene visualizzato che si sta gi&agrave; lavorando<br />
 + Aggiunta la visualizzazione di news in cima a situazione<br />

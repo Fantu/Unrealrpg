@@ -2,9 +2,9 @@
 <br />
 <?php
 if ($newscom['news']!='0')
-echo "<span>".$lang['news'].$newscom['news']."</span><br />";
+echo "<span><strong>".$lang['news']."</strong>".$newscom['news']."</span><br /><br />";
 if ($newscom['comunicazione']!='0')
-echo "<span>".$lang['comunicazione'].$newscom['comunicazione']."</span><br />";
+echo "<span><strong>".$lang['comunicazione']."</strong>".$newscom['comunicazione']."</span><br /><br />";
 ?>
 <div align="center">
 <?php echo $newmsg; ?><br />
