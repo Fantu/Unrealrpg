@@ -40,6 +40,7 @@ $proxlavdata=$lang['stai_gia_lavorando'];
 }else
 {$proxlavdata=date("d/m/y - H:i",($userlav['ultimolavoro']+21600));}
 $proxlav=$lang['prossimo_lavoro'].$proxlavdata;
+$newscom=$db->QuerySelect("SELECT news,comunicazione FROM config LIMIT 1");
 require('inclusi/personaggio.php');
 require('template/int_situazione.php');
 ?>

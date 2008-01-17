@@ -1,5 +1,11 @@
 <center><h2><?php echo $lang['Situazione']; ?></h2></center><br />
 <br />
+<?php
+if ($newscom['news']!='0')
+echo "<span>".$lang['news'].$newscom['news']."</span><br />";
+if ($newscom['comunicazione']!='0')
+echo "<span>".$lang['comunicazione'].$newscom['comunicazione']."</span><br />";
+?>
 <div align="center">
 <?php echo $newmsg; ?><br />
 <br />
