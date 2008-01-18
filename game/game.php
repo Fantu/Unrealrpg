@@ -51,7 +51,7 @@ if ($user['personaggio']==0){
 		  <tr>
 			<td width="505" valign="top">
 			<div id="contenuto">		
-<?php 
+<?php
 if(!file_exists($_GET['act'].'.php'))
 $_GET['act']="situazione";
 require($_GET['act'].'.php');
