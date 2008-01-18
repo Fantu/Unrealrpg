@@ -12,6 +12,8 @@ Legenda:<br />
 </p>
 <p><strong>0.3.6</strong> (Non disponibile - In sviluppo)<br />
 + Iniziata creazione Opzioni<br />
++ Vari miglioramenti di sistema<br />
++ Vari miglioramenti di sicurezza<br />
 </p>
 <p><strong>0.3.5.1</strong> (17/1/2008 - Beta)<br />
 - Corretto bug nel tempio<br />
