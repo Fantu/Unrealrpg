@@ -1,5 +1,5 @@
 <?php
 setcookie ("lglogin", "", time() - 10800);
-header("Location: ../index.php");
+echo "<script language=\"javascript\">window.location.href='../index.php'</script>";
 exit();
 ?>
