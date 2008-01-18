@@ -29,7 +29,7 @@ echo "<option value=\"$chiave\">$elemento</option>"; ?>
 </tr>
 <tr>
 <td>
-<input type="submit" name="crea" value="Crea" />
+<input type="submit" name="crea" value="<?php echo $lang['Crea']; ?>" />
 </td>
 </tr>
 </table>

@@ -7,9 +7,9 @@ require('inclusi/personaggio.php');
 require('language/it/lang_creapersonaggio.php');
 if (isset($_POST['crea'])){
 $errore="";
-$razza=$_POST['razza'];
-$classe=$_POST['classe'];
-$sesso=$_POST['sesso'];
+$razza=(int)$_POST['razza'];
+$classe=(int)$_POST['classe'];
+$sesso=(int)$_POST['sesso'];
 if ($razza=="none")
 $errore .= $lang['creapg_error1']."<br />";
 if ($classe=="none")
