@@ -53,4 +53,5 @@ $lang['error_eventi_incorso']='Sei occupato a fare altro';
 $lang['Stato']='Stato';
 $lang['Tempio']='Tempio';
 $lang['Adesso']='Adesso';
+$lang['Opzioni']='Opzioni';
 ?>
