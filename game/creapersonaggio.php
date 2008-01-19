@@ -7,13 +7,15 @@ require('inclusi/personaggio.php');
 require('language/it/lang_creapersonaggio.php');
 if (isset($_POST['crea'])){
 $errore="";
-$razza=(int)$_POST['razza'];
-$classe=(int)$_POST['classe'];
-$sesso=(int)$_POST['sesso'];
-if ($razza=="none")
+$razza=$_POST['razza'];
+$classe=$_POST['classe'];
+$sesso=$_POST['sesso'];
+if (!is_numeric($razza))
 $errore .= $lang['creapg_error1']."<br />";
-if ($classe=="none")
+if (!is_numeric($classe))
 $errore .= $lang['creapg_error2']."<br />";
+if (!is_numeric($sesso))
+$errore .= $lang['creapg_error3']."<br />";
 
 if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
