@@ -3,7 +3,7 @@
 <?php
 if (!empty($newscom['news']))
 echo "<span><strong>".$lang['news']."</strong>".$newscom['news']."</span><br /><br />";
-if ($newscom['comunicazione']!='NULL')
+if (!empty($newscom['comunicazione']))
 echo "<span><strong>".$lang['comunicazione']."</strong>".$newscom['comunicazione']."</span><br /><br />";
 ?>
 <div align="center">
