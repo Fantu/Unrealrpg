@@ -6,7 +6,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 require('language/it/lang_opzioni.php');
 if (isset($_POST['cambias'])){
 $errore="";
-$sesso=(int)$_POST['sesso'];
+$sesso=$_POST['sesso'];
 if (!is_numeric($sesso))
 $errore .= $lang['opzioni_error1']."<br />";
 

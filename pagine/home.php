@@ -1,7 +1,7 @@
 <?php
 		if( $_POST['step']=="registrazione" ) {
 			$errore="";
-			$server=$_POST['server'];
+			$server=(int)$_POST['server'];
 			if( $server!=none )
 				$db->database = $server;
 			else{
