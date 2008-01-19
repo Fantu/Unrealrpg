@@ -8,6 +8,9 @@ $eventi=$db->QuerySelect("SELECT COUNT(*) AS id FROM eventi WHERE userid='".$use
 if($user['personaggio']==1) {
 if($eventi['id']==0) {
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$user['userid']."' LIMIT 0,1");	
+if ($usercar['saluteattuale']<1){
+require('inclusi/morte.php');
+}
 if ($adesso>($usercar['decfede']+3600)){
 	if ($usercar['fede']>0){
 		$differenzaora=$adesso-$usercar['decfede'];

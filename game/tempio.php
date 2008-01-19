@@ -19,6 +19,19 @@ echo "<script language=\"javascript\">window.location.href='game.php?act=situazi
 exit();
 }
 }//fine prega
+if (isset($_POST['chierici'])){
+$errore="";
+$paga=100;
+if ($user['monete']<$paga)
+$errore .= $lang['tempio_errore3'];
+if ($user['resuscita']>0)
+$errore .= $lang['tempio_errore4'];
+if($errore){
+	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
+else {
+$db->QueryMod("UPDATE utenti AS t1 SET t1.monete=t1.monete-'".$paga."',t1.resuscita='1' WHERE t1.userid='".$userid."'");
+}
+}//fine chierici
 if($eventi['id']>0){
 require('template/int_eventi_incorso.php');
 }else{

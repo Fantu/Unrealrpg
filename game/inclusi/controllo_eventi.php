@@ -20,6 +20,9 @@ if( ($evento['datainizio']+$evento['secondi'])<$adesso ) {
 		case 2://preghiera
 		Completatempioprega($evento['userid']);
 		break;
+		case 3://resurrezione
+		Completaresurrezione($evento['userid']);
+		break;
 		}
 $db->QueryMod("DELETE FROM eventi WHERE id='".$evento['id']."'");
 } //fine se completato risolvo

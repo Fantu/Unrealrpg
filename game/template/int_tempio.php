@@ -15,3 +15,20 @@
 </tr>
 </table>
 </form>
+<br />
+<br />
+<?php echo $lang['Chierici']; ?>
+<br />
+<?php echo $lang['desc_tempio_chierici']; ?>
+<br />
+<?php if($user['resuscita']=='0'){ ?>
+<form action="" method="post" name="tempiochierici">
+<table border="0">
+<tr>
+<td>
+<input type="submit" name="chierici" value="<?php echo $lang['Paga_chierici']; ?>" />
+</td>
+</tr>
+</table>
+</form>
+<?php }/*fine se chierici non pagati*/ ?>
