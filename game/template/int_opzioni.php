@@ -1,5 +1,6 @@
 <center><h2><?php echo $lang['Opzioni']; ?></h2></center><br />
 <?php echo $outputerrori; ?>
+<?php if($usercar['sesso']==0){ ?>
 <form action="" method="post" name="cambiasesso">
 <table border="0">
 <tr>
@@ -17,3 +18,4 @@ echo "<option value=\"$chiave\">$elemento</option>"; ?>
 </tr>
 </table>
 </form>
+<?php }/*fine cambio sesso*/ ?>

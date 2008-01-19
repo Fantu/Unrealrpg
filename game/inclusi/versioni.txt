@@ -17,6 +17,7 @@ Legenda:<br />
 + Aggiunto l'evento resurrezione<br />
 + Se si muore e non si &egrave; data disposizione ai chierici la resurrezione avviene lo stesso ma impiega 24 ore<br />
 + Se la resurrezione non &egrave; quella previa pagamento ai chierici la fede influisce diminuendo il tempo, anche se la fede fosse astronomica il tempo non diventa minore di 1 ora<br />
++ Il cambio del sesso in Opzioni &egrave; possibile solo se il sesso non &egrave; definito<br />
 </p>
 <p><strong>0.3.6</strong> [R.274] (19/1/2008 - Beta)<br />
 + Iniziata creazione Opzioni<br />
