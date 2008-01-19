@@ -104,15 +104,6 @@ $db->QueryMod("UPDATE utenti t2 JOIN caratteristiche t3 on t2.userid=t3.userid S
 
 function Completaresurrezione($userid) {
 global $db,$adesso;
-require('language/it/lang_tempio.php');
-
-$mana=$usercar['mana'];
-$salute=$usercar['salute'];
-$energia=$usercar['energiamax'];
-$titolo=$lang['report_tempio_preghiera'];
-$testo="<span>".$lang['report_manifestazione_divina']."</span><br /><br />";
-$db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");	
-
-$db->QueryMod("UPDATE utenti t2 JOIN caratteristiche t3 on t2.userid=t3.userid SET t2.resuscita=t'0',t3.energia='".$energia."',t3.saluteattuale='".$salute."',t3.recuperoenergia='".$adesso."',t3.recuperosalute='".$adesso."',t3.decfede='".$adesso."',t3.manarimasto='".$mana."' WHERE t2.userid='".$userid."'");
+$db->QueryMod("UPDATE utenti t2 JOIN caratteristiche t3 on t2.userid=t3.userid SET t2.resuscita=t'0',t3.energia=t3.energiamax,t3.saluteattuale=t3.salute,t3.recuperoenergia='".$adesso."',t3.recuperosalute='".$adesso."',t3.decfede='".$adesso."',t3.manarimasto=t3.mana WHERE t2.userid='".$userid."'");
 } //fine Completaresurrezione
 ?>
