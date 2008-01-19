@@ -1,9 +1,9 @@
 <center><h2><?php echo $lang['Situazione']; ?></h2></center><br />
 <br />
 <?php
-if ($newscom['news']=='NULL')
+if ($newscom['news']!='NULL')
 echo "<span><strong>".$lang['news']."</strong>".$newscom['news']."</span><br /><br />";
-if ($newscom['comunicazione']!='0')
+if ($newscom['comunicazione']!='NULL')
 echo "<span><strong>".$lang['comunicazione']."</strong>".$newscom['comunicazione']."</span><br /><br />";
 ?>
 <div align="center">
