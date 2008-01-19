@@ -29,7 +29,7 @@ $errore .= $lang['tempio_errore4'];
 if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
 else {
-$db->QueryMod("UPDATE utenti AS t1 SET t1.monete=t1.monete-'".$paga."',t1.resuscita='1' WHERE t1.userid='".$userid."'");
+$db->QueryMod("UPDATE utenti SET monete=monete-'".$paga."',resuscita='1' WHERE userid='".$userid."'");
 }
 }//fine chierici
 if($eventi['id']>0){
