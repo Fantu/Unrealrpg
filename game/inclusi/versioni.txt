@@ -10,12 +10,15 @@ Legenda:<br />
 <p><strong>0.4.0</strong> (Non disponibile - In sviluppo)<br />
 + Iniziata creazione sistema oggetti<br />
 </p>
-<p><strong>0.3.6</strong> (Non disponibile - In sviluppo)<br />
+<p><strong>0.3.7</strong> (Non disponibile - In sviluppo)<br />
+Niente attualmente<br />
+</p>
+<p><strong>0.3.6</strong> [R.274] (19/1/2008 - Beta)<br />
 + Iniziata creazione Opzioni<br />
 + Vari miglioramenti di sistema<br />
 + Vari miglioramenti di sicurezza<br />
 + Aggiunto il cambio del sesso in Opzioni<br />
-+ Ora quando si fa il logout si risulta subito offline<br />
++ Ora quando si fa Logout si risulta subito offline<br />
 </p>
 <p><strong>0.3.5.1</strong> (17/1/2008 - Beta)<br />
 - Corretto bug nel tempio<br />
