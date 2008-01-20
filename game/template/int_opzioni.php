@@ -41,7 +41,7 @@ echo $lang['non_puoi_attivare_nessun_plus'];
 <?php }
 if($user['puntiplus']>9){ ?>
 <a href="game.php?act=opzioni&amp;attivaplus=2"><?php echo $lang['attiva_plus_con_punti2']; ?></a>
-<?php } ?>
+<?php }
 if($user['puntiplus']>99){ ?>
 <a href="game.php?act=opzioni&amp;attivaplus=3"><?php echo $lang['attiva_plus_con_punti3']; ?></a>
 <?php } ?>
