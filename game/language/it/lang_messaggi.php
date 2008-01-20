@@ -3,6 +3,7 @@ $lang['messaggi_error1']='Non hai scritto il messaggio da inviare!';
 $lang['messaggi_error2']='Impossibile inviare il messaggio, riprova o contatta l\'admin';
 $lang['messaggi_error3']='Non puoi inviare messaggi superiori ai 500 caratteri';
 $lang['messaggi_error4']='Non hai scritto il titolo del messaggio da inviare!';
+$lang['messaggi_error5']='Non puoi inviare messaggi superiori ai 10000 caratteri';
 $lang['istruzioni_scrivi_msg']='Scrivi il tuo messaggio e premi il pulsante ';
 $lang['caratteri_disponibili']='Caratteri disponibili: ';
 $lang['titolo']='Titolo:';

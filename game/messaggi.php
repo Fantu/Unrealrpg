@@ -9,7 +9,7 @@ $id=(int)$_GET['id'];
 ?>
 <script type="text/javascript">
 function conteggio() {
-	window.document.getElementById("caratteri").innerHTML=(500-window.document.getElementById("mymess").value.length);
+	window.document.getElementById("caratteri").innerHTML=(<?php if($user['plus']==0) echo "500"; else echo "10000";?>-window.document.getElementById("mymess").value.length);
 }
 </script>
 <div align="center">
@@ -38,8 +38,10 @@ case "dorisp":// invia risposta
 		$errore.=$lang['messaggi_error1']."<br />";
 	if(!$_POST['messid'])
 		$errore.=$lang['messaggi_error2']."<br />";
-	if(strlen($_POST['mymess'])>500)
-		$errore.=$lang['messaggi_error3']."<br />";				
+	if($user['plus']==0 && strlen($_POST['mymess'])>500)
+		$errore.=$lang['messaggi_error3']."<br />";
+	if($user['plus']>0 && strlen($_POST['mymess'])>10000)
+		$errore.=$lang['messaggi_error5']."<br />";					
 	if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";
 	echo $outputerrori;}
@@ -63,8 +65,10 @@ case "doscrivi":// invia nuovo messaggio
 		$errore=$lang['messaggi_error4']."<br />";		
 	if(!$_POST['achi'])
 		$errore.=$lang['messaggi_error2']."<br />";
-	if(strlen($_POST['mymess'])>500)
+	if($user['plus']==0 && strlen($_POST['mymess'])>500)
 		$errore.=$lang['messaggi_error3']."<br />";	
+	if($user['plus']>0 && strlen($_POST['mymess'])>10000)
+		$errore.=$lang['messaggi_error5']."<br />";
 	if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";
 	echo $outputerrori;}
@@ -92,7 +96,7 @@ case "risp":// scrivi risposta
   </tr>
   <tr>
     <td><textarea name="mymess" cols="45" rows="4" id="mymess" onkeydown="conteggio()"></textarea>      
-	  <br /><?php echo $lang['caratteri_disponibili']; ?><div id="caratteri" name="caratteri">500</div>
+	  <br /><?php echo $lang['caratteri_disponibili']; ?><div id="caratteri" name="caratteri"><?php if($user['plus']==0) echo "500"; else echo "10000";?></div>
   </td></tr>
   <tr>
     <td><div align="center">
@@ -114,7 +118,7 @@ case "scrivi":// scrivi nuovo
   <tr><td align="center"><strong><?php echo $lang['titolo']; ?></strong><br /><input name="titolo" type="text" /></td></tr>
   <tr>
     <td align="center"><strong><?php echo $lang['messaggio']; ?></strong><br /><textarea name="mymess" cols="45" rows="4" id="mymess" onkeydown="conteggio()"></textarea>
-	<br /><?php echo $lang['caratteri_disponibili']; ?><div id="caratteri" name="caratteri">500</div></td></tr>
+	<br /><?php echo $lang['caratteri_disponibili']; ?><div id="caratteri" name="caratteri"><?php if($user['plus']==0) echo "500"; else echo "10000";?></div></td></tr>
   <tr>
     <td><div align="center">
       <?php echo "<input type=\"hidden\" name=\"achi\" value=\"".$id."\" />"; ?>

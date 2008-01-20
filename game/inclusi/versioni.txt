@@ -12,6 +12,13 @@ Legenda:<br />
 </p>
 <p><strong>0.3.8</strong> (Non disponibile - In sviluppo)<br />
 + Vari miglioramenti di sistema<br />
++ Iniziata creazione account plus<br />
++ Inserito azzeramento account plus se scaduto<br />
++ Aggiunta visualizzazione della scadenza dell'account plus in Opzioni<br />
++ Iniziata creazione dei punti plus<br />
++ Aggiunta visualizzazione dei punti plus in Opzioni<br />
++ Se il plus &egrave; attivo il banner non viene visualizzato<br />
++ Se il plus &egrave; attivo i caratteri massimi dei messaggi sono 10000<br />
 </p>
 <p><strong>0.3.7</strong> [R.286] (20/1/2008 - Beta)<br />
 + Vari miglioramenti di sistema<br />

@@ -61,13 +61,13 @@ require($_GET['act'].'.php');
 			<td width="20">&nbsp;</td>
 			<td width="120" valign="top">
 				<?php
-				//if($user['plus']==0) {
+				if($user['plus']==0) {
 				?>
 					<div id="ads" align="right">
 						qui banner 120x600
 					</div>
 				<?php
-				//} //fine if plus
+				} //fine if plus
 				?>
 			 </td>
 		  </tr>
