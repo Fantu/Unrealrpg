@@ -19,6 +19,8 @@ Legenda:<br />
 + Aggiunta visualizzazione dei punti plus in Opzioni<br />
 + Se il plus &egrave; attivo il banner non viene visualizzato<br />
 + Se il plus &egrave; attivo i caratteri massimi dei messaggi sono 10000<br />
++ Aggiunta attivazione plus con i punti plus in Opzioni<br />
+- Patch: ora il cambio del sesso in Opzioni viene visualizzato solo se non definito in ogni situazione<br />
 </p>
 <p><strong>0.3.7</strong> [R.286] (20/1/2008 - Beta)<br />
 + Vari miglioramenti di sistema<br />

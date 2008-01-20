@@ -22,12 +22,26 @@ echo "<option value=\"$chiave\">$elemento</option>"; ?>
 <?php if($user['plus']>0){ ?>
 <br />
 <br />
-<span><?php echo $lang['plus_fino_a'].date("d/m/y - H:i",$user['plus']); ?></span><br />
+<?php echo $lang['plus_fino_a'].date("d/m/y - H:i",$user['plus']); ?><br />
 <?php }else{ ?>
 <br />
 <br />
-<span><?php echo $lang['plus_non_attivo']; ?></span><br />
+<?php echo $lang['plus_non_attivo']; ?><br />
 <?php }/*fine scadenza account plus*/ ?>
 <br />
 <br />
-<span><?php echo sprintf($lang['quanti_punti_plus'],$user['puntiplus']); ?></span><br />
+<?php echo sprintf($lang['quanti_punti_plus'],$user['puntiplus']); ?><br />
+<br />
+<?php echo $lang['desc_attivare_plus_con_punti']; ?>
+<br />
+<?php if($user['puntiplus']<3){
+echo $lang['non_puoi_attivare_nessun_plus'];	
+}else{ ?>
+<a href="game.php?act=opzioni&amp;attivaplus=1"><?php echo $lang['attiva_plus_con_punti1']; ?></a>
+<?php }
+if($user['puntiplus']>9){ ?>
+<a href="game.php?act=opzioni&amp;attivaplus=2"><?php echo $lang['attiva_plus_con_punti2']; ?></a>
+<?php } ?>
+if($user['puntiplus']>99){ ?>
+<a href="game.php?act=opzioni&amp;attivaplus=3"><?php echo $lang['attiva_plus_con_punti3']; ?></a>
+<?php } ?>

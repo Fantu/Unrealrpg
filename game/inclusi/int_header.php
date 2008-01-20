@@ -8,7 +8,7 @@ $eventi=$db->QuerySelect("SELECT COUNT(*) AS id FROM eventi WHERE userid='".$use
 if($user['personaggio']==1) {
 if($user['plus']<$adesso){
 $db->QueryMod("UPDATE utenti SET plus='0' WHERE userid='".$user['userid']."'");
-$user=$db->QuerySelect("SELECT * FROM utenti WHERE userid='".$user['userid']."' LIMIT 0,1");
+$user=$db->QuerySelect("SELECT * FROM utenti WHERE userid='".$user['userid']."' LIMIT 1");
 }	
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$user['userid']."' LIMIT 0,1");	
 if($eventi['id']==0) {	
