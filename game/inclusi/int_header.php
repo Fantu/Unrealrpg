@@ -6,8 +6,8 @@ $db->QueryMod("UPDATE utenti SET ultimazione='".$adesso."' WHERE userid='".$user
 require_once('inclusi/controllo_eventi.php');
 $eventi=$db->QuerySelect("SELECT COUNT(*) AS id FROM eventi WHERE userid='".$user['userid']."'");
 if($user['personaggio']==1) {
-if($eventi['id']==0) {
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$user['userid']."' LIMIT 0,1");	
+if($eventi['id']==0) {	
 if ($usercar['saluteattuale']<1){
 require('inclusi/morte.php');
 }
