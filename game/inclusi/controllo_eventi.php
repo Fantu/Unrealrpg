@@ -1,7 +1,8 @@
 <?php
 require_once('inclusi/funzioni_eventi.php');
-//controllo ultimo evento
-//$evfiniti=$db->QueryCiclo("SELECT * FROM eventi WHERE userid='".$user['userid']."' LIMIT 1");
+$evfiniti=$db->QuerySelect("SELECT COUNT(*) AS id FROM eventi WHERE ((datainizio+secondi)<'".$adesso."')");
+if ($evfiniti['id']>0){
+//controllo eventi finiti
 $evfiniti=$db->QueryCiclo("SELECT * FROM eventi WHERE ((datainizio+secondi)<'".$adesso."') LIMIT 2");
 //$evfiniti=$db->QueryCiclo("SELECT * FROM eventi ORDER BY datainizio ASC LIMIT 2");
 while($evento=$db->QueryCicloResult($evfiniti)) {
@@ -27,4 +28,5 @@ while($evento=$db->QueryCicloResult($evfiniti)) {
 $db->QueryMod("DELETE FROM eventi WHERE id='".$evento['id']."'");
 //} //fine se completato risolvo
 }//fine controllo eventi
+}//fine se ci sono eventi finiti
 ?>
