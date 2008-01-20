@@ -11,4 +11,5 @@ $lang['attiva_plus_con_punti1']='Attiva plus di 1 settimana';
 $lang['attiva_plus_con_punti2']='Attiva plus di 1 mese';
 $lang['attiva_plus_con_punti3']='Attiva plus di 1 anno';
 $lang['opzioni_error2']='- Non hai abbastanza punti';
+$lang['desc_link_refer']='Gli utenti che visiteranno %s ed entro 1 settimana si iscriveranno e saranno ben attivi ti faranno guadagnare un punto plus e se continueranno a giocare normalmente 1 punto ogni mese, attualmente tale sistema è valido solo per iscrizione alla stesso server, nel tuo caso il server %s';
 ?>

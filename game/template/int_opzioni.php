@@ -45,3 +45,7 @@ if($user['puntiplus']>9){ ?>
 if($user['puntiplus']>99){ ?>
 <a href="game.php?act=opzioni&amp;attivaplus=3"><?php echo $lang['attiva_plus_con_punti3']; ?></a>
 <?php } ?>
+<br />
+<br />
+<?php echo sprintf($lang['desc_link_refer'],$game_name,$game_server['$user['server']']); ?><br />
+<?php echo $linkref; ?><br />
