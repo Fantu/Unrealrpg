@@ -11,7 +11,7 @@ Legenda:<br />
 + Iniziata creazione sistema oggetti<br />
 </p>
 <p><strong>0.3.8</strong> (Non disponibile - In sviluppo)<br />
-Niente attualmente<br />
++ Vari miglioramenti di sistema<br />
 </p>
 <p><strong>0.3.7</strong> [R.286] (20/1/2008 - Beta)<br />
 + Vari miglioramenti di sistema<br />
