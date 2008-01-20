@@ -1,12 +1,9 @@
 <?php
 require_once('inclusi/funzioni_eventi.php');
 $evfiniti=$db->QuerySelect("SELECT COUNT(*) AS id FROM eventi WHERE ((datainizio+secondi)<'".$adesso."')");
-if ($evfiniti['id']>0){
-//controllo eventi finiti
+if ($evfiniti['id']>0){//controllo gli eventi finiti
 $evfiniti=$db->QueryCiclo("SELECT * FROM eventi WHERE ((datainizio+secondi)<'".$adesso."') LIMIT 2");
-//$evfiniti=$db->QueryCiclo("SELECT * FROM eventi ORDER BY datainizio ASC LIMIT 2");
 while($evento=$db->QueryCicloResult($evfiniti)) {
-//if( ($evento['datainizio']+$evento['secondi'])<$adesso ) {
 		switch($evento['tipo']){
 		case 1://lavori
 			switch($evento['lavoro']){
@@ -26,7 +23,6 @@ while($evento=$db->QueryCicloResult($evfiniti)) {
 		break;
 		}
 $db->QueryMod("DELETE FROM eventi WHERE id='".$evento['id']."'");
-//} //fine se completato risolvo
 }//fine controllo eventi
 }//fine se ci sono eventi finiti
 ?>
