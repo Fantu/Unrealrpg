@@ -40,9 +40,9 @@ if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
 else {
 if($user['plus']==0){
-$db->QueryMod("UPDATE utenti SET plus='".$adesso."' WHERE userid='".$user['userid']."'");
+$db->QueryMod("UPDATE utenti SET plus=('".$adesso."'+'".$tattivazioneplus."'),puntiplus=puntiplus-'".$punti."' WHERE userid='".$user['userid']."'");
 }else{
-$db->QueryMod("UPDATE utenti SET plus=plus+'".$tattivazioneplus."' WHERE userid='".$user['userid']."'");	
+$db->QueryMod("UPDATE utenti SET plus=plus+'".$tattivazioneplus."',puntiplus=puntiplus-'".$punti."' WHERE userid='".$user['userid']."'");	
 }
 $user=$db->QuerySelect("SELECT * FROM utenti WHERE userid='".$user['userid']."' LIMIT 1");
 }
