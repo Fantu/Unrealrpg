@@ -5,7 +5,7 @@ $db->QueryMod("UPDATE utenti SET ultimazione='".$adesso."' WHERE userid='".$user
 require_once('inclusi/controllo_eventi.php');
 $eventi=$db->QuerySelect("SELECT COUNT(*) AS id FROM eventi WHERE userid='".$user['userid']."'");
 if($user['personaggio']==1) {
-if($user['refertime']<$adesso){
+if($user['refertime']!=0 AND ($user['refertime']<$adesso)){
 $refercheck=explode("|",$user['refer']);
 	if($user['server']==$refercheck[1]){
 	$refercheck=$db->QuerySelect("SELECT COUNT(*) AS id FROM utenti WHERE userid='".$refercheck[0]."'");
