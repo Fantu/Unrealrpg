@@ -34,8 +34,14 @@
 				$ip=$_SERVER['REMOTE_ADDR'];
 				$pass=md5($_POST['password']);
 				$cod=md5($_POST['username']);
+				$refer=0;
+				$refertime=0;
+				if($_COOKIE['urbgrefer']){
+				$refer=htmlentities($_COOKIE['urbgrefer']);
+				$refertime=$adesso+172800;
+				}
 				$_POST['username']=strip_tags(str_replace("'","\'",$_POST['username']));
-				$db->QueryMod("INSERT INTO utenti (username,password,codice,email,dataiscrizione,ipreg,server,ultimazione) VALUES ('".$_POST['username']."','".$pass."','".$cod."','".$_POST['email']."','".$ora."','".$ip."','".$_POST['server']."','".$ora."')");		
+				$db->QueryMod("INSERT INTO utenti (username,password,codice,email,dataiscrizione,ipreg,server,ultimazione,refer,reftime) VALUES ('".$_POST['username']."','".$pass."','".$cod."','".$_POST['email']."','".$ora."','".$ip."','".$_POST['server']."','".$ora."','".$refer."','".$refertime."')");		
 				$intestazione = "From: ".$game_name."<server@lostage.it>\r\n";
 				$messaggio="Ciao,\nPer confermare l'iscrizione a ".$game_name." devi visitare il link sottostante:\n ".$game_link."/conferma.php?t=".$_POST['server']."&cod=$cod \n\nFinchè l'account non verrà confermato non potrai accedere al gioco.\nSaluti,\nLostgames Staff";
 				mail($_POST['email'],"Conferma account ".$game_name,$messaggio,$intestazione);

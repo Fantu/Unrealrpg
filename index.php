@@ -4,8 +4,10 @@ require('game/inclusi/valori.php');
 require('game/inclusi/funzioni_db.php');
 $db = new ConnessioniMySQL();
 if(!empty($_GET['refer'])){
-if(is_numeric($_GET['refer']) AND is_numeric($_GET['server']))
-setcookie ("urbgrefer", $_GET['refer']."|".$_GET['server'],time()+604800);
+$refer=htmlentities($_GET['refer']);
+$server=htmlentities($_GET['server']);
+if(is_numeric($refer) AND is_numeric($server))
+setcookie ("urbgrefer", $refer."|".$server,time()+604800);
 }
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
