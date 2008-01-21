@@ -8,6 +8,8 @@ if($user['personaggio']==1) {
 if(($user['refertime']!=0) AND ($user['refertime']<$adesso)){
 	$refercheck=explode("|",$user['refer']);
 	echo $refercheck[0]." ".$refercheck[1];
+	$refercheck[0]=(int)$refercheck[0];
+	$refercheck[1]=(int)$refercheck[1];
 	//if($user['server']==$refercheck[1]){
 	//$refercheck2=$db->QuerySelect("SELECT COUNT(*) AS id FROM utenti WHERE userid='".$refercheck[0]."'");
 	//if($refercheck2['id']>0){
