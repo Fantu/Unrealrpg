@@ -6,7 +6,8 @@ require_once('inclusi/controllo_eventi.php');
 $eventi=$db->QuerySelect("SELECT COUNT(*) AS id FROM eventi WHERE userid='".$user['userid']."'");
 if($user['personaggio']==1) {
 if(($user['refertime']!=0) AND ($user['refertime']<$adesso)){
-$refercheck=explode("|",$user['refer']);
+	$refercheck=explode("|",$user['refer']);
+	echo $refercheck[0]." ".$refercheck[0];
 	if($user['server']==$refercheck[1]){
 	$refercheck=$db->QuerySelect("SELECT COUNT(*) AS id FROM utenti WHERE userid='".$refercheck[0]."'");
 	if($refercheck['id']>0){
