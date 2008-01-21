@@ -48,7 +48,7 @@ $user=$db->QuerySelect("SELECT * FROM utenti WHERE userid='".$user['userid']."' 
 }
 }//fine attivazione plus con punti plus
 
-$linkref=$game_link."/index.php?refer=".$user['userid'];
+$linkref=$game_link."/index.php?refer=".$user['userid']."&amp;server=".$user['server'];
 
 require('inclusi/personaggio.php');
 require('template/int_opzioni.php');
