@@ -3,8 +3,8 @@ $start_time = microtime();
 require('inclusi/valori.php');
 require('language/it.php');
 if($_COOKIE['urbglogin'])
-	$lg=explode("|||",$_COOKIE['urbglogin']);
-
+	{$lg=explode("|||",$_COOKIE['urbglogin']);}else{header("Location: ../index.php?error=3");}
+$adesso=strtotime("now");
 require('inclusi/funzioni_db.php');
 $db = new ConnessioniMySQL();
 

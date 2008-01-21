@@ -3,6 +3,7 @@ $start_time = microtime();
 require('game/inclusi/valori.php');
 require('game/inclusi/funzioni_db.php');
 $db = new ConnessioniMySQL();
+$adesso=strtotime("now");
 if(!empty($_GET['refer'])){
 $refer=htmlentities($_GET['refer']);
 $server=htmlentities($_GET['server']);
