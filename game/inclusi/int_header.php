@@ -8,13 +8,13 @@ if($user['personaggio']==1) {
 if(($user['refertime']!=0) AND ($user['refertime']<$adesso)){
 	$refercheck=explode("|",$user['refer']);
 	echo $refercheck[0]." ".$refercheck[1];
-	if($user['server']==$refercheck[1]){
+	//if($user['server']==$refercheck[1]){
 	$refercheck2=$db->QuerySelect("SELECT COUNT(*) AS id FROM utenti WHERE userid='".$refercheck[0]."'");
 	if($refercheck2['id']>0){
 	$revisit=$adesso+2592000;
 	$db->QueryMod("UPDATE utenti SET puntiplus=puntiplus+'1',refertime='".$revisit."' WHERE userid='".$refercheck[0]."'");	
 	}//fine se referente esiste
-	}//fine se server è lo stesso
+	//}//fine se server è lo stesso
 }//fine se ora del controllo ref
 if($user['plus']<$adesso){
 $db->QueryMod("UPDATE utenti SET plus='0' WHERE userid='".$user['userid']."'");
