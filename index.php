@@ -3,7 +3,7 @@ $start_time = microtime();
 require('game/inclusi/valori.php');
 require('game/inclusi/funzioni_db.php');
 $db = new ConnessioniMySQL();
-if(!empty($GET['refer'])){
+if(!empty($_GET['refer'])){
 if(is_numeric($_GET['refer']) AND is_numeric($_GET['server']))
 setcookie ("urbgrefer", $_GET['refer']."|".$_GET['server'],time()+604800);
 }
