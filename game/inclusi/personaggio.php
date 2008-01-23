@@ -11,7 +11,10 @@ $classi=array(
 'attmagico'=>array(1=>10,2=>50,3=>25),
 'diffisica'=>array(1=>90,2=>10,3=>40),
 'difmagica'=>array(1=>10,2=>50,3=>25),
-'mana'=>array(1=>30,2=>150,3=>50)
+'mana'=>array(1=>0,2=>0,3=>0),
+'velocita'=>array(1=>0,2=>0,3=>0),
+'intelligenza'=>array(1=>0,2=>0,3=>0),
+'destrezza'=>array(1=>0,2=>0,3=>0)
 );
 $sessi=array(
 'nome'=>array(0=>$lang['Non_definito'],1=>$lang['Maschio'],2=>$lang['Femmina'])
