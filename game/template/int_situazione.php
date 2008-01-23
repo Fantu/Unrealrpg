@@ -24,7 +24,7 @@ echo "<span><strong>".$lang['comunicazione']."</strong>".$newscom['comunicazione
 <?php echo $lang['Attfisico']; ?>: <?php echo $usercar['attfisico']; ?><br />
 <?php echo $lang['Attmagico']; ?>: <?php echo $usercar['attmagico']; ?><br />
 <?php echo $lang['Diffisica']; ?>: <?php echo $usercar['diffisica']; ?><br />
-<?php echo $lang['Difmagica']; ?>: <?php echo $$usercar['difmagica']; ?><br />
+<?php echo $lang['Difmagica']; ?>: <?php echo $usercar['difmagica']; ?><br />
 <?php echo $lang['Velocita']; ?>: <?php echo $usercar['velocita']; ?><br />
 <?php echo $lang['Intelligenza']; ?>: <?php echo $usercar['intelligenza']; ?><br />
 <?php echo $lang['Destrezza']; ?>: <?php echo $$usercar['destrezza']; ?><br />
