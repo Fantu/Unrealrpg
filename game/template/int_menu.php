@@ -22,25 +22,31 @@ function cambiaclasse(id,newClass) {
     <td class="tabmenutd" id="menu5" onmouseover="cambiaclasse(this.id,'tabmenutd2')" onmouseout="cambiaclasse(this.id,'tabmenutd')"><div align="center"><a href="game.php?act=tempio"><?php echo $lang['Tempio']; ?></a></div></td>
 	</tr>
 	<tr>
-    <td class="tabmenutd" id="menu6" onmouseover="cambiaclasse(this.id,'tabmenutd2')" onmouseout="cambiaclasse(this.id,'tabmenutd')"><div align="center"><a href="game.php?act=messaggi"><?php echo $lang['Messaggi']; ?></a></div></td>
+    <td class="tabmenutd" id="menu6" onmouseover="cambiaclasse(this.id,'tabmenutd2')" onmouseout="cambiaclasse(this.id,'tabmenutd')"><div align="center"><a href="game.php?act=mercato"><?php echo $lang['Mercato']; ?></a></div></td>
 	</tr>
 	<tr>
-    <td class="tabmenutd" id="menu7" onmouseover="cambiaclasse(this.id,'tabmenutd2')" onmouseout="cambiaclasse(this.id,'tabmenutd')"><div align="center"><a href="game.php?act=utenti"><?php echo $lang['Lista_utenti']; ?></a></div></td>
+    <td class="tabmenutd" id="menu7" onmouseover="cambiaclasse(this.id,'tabmenutd2')" onmouseout="cambiaclasse(this.id,'tabmenutd')"><div align="center"><a href="game.php?act=inventario"><?php echo $lang['Inventario']; ?></a></div></td>
 	</tr>
 	<tr>
-    <td class="tabmenutd" id="menu8" onmouseover="cambiaclasse(this.id,'tabmenutd2')" onmouseout="cambiaclasse(this.id,'tabmenutd')"><div align="center"><a href="game.php?act=guida"><?php echo $lang['Guida']; ?></a></div></td>
+    <td class="tabmenutd" id="menu8" onmouseover="cambiaclasse(this.id,'tabmenutd2')" onmouseout="cambiaclasse(this.id,'tabmenutd')"><div align="center"><a href="game.php?act=messaggi"><?php echo $lang['Messaggi']; ?></a></div></td>
+	</tr>
+	<tr>
+    <td class="tabmenutd" id="menu9" onmouseover="cambiaclasse(this.id,'tabmenutd2')" onmouseout="cambiaclasse(this.id,'tabmenutd')"><div align="center"><a href="game.php?act=utenti"><?php echo $lang['Lista_utenti']; ?></a></div></td>
+	</tr>
+	<tr>
+    <td class="tabmenutd" id="menu10" onmouseover="cambiaclasse(this.id,'tabmenutd2')" onmouseout="cambiaclasse(this.id,'tabmenutd')"><div align="center"><a href="game.php?act=guida"><?php echo $lang['Guida']; ?></a></div></td>
 	</tr>				
 	<tr>
-    <td class="tabmenutd" id="menu9" onmouseover="cambiaclasse(this.id,'tabmenutd2')" onmouseout="cambiaclasse(this.id,'tabmenutd')"><div align="center"><a href="game.php?act=changelog"><?php echo $lang['Changelog']; ?></a></div></td>
+    <td class="tabmenutd" id="menu11" onmouseover="cambiaclasse(this.id,'tabmenutd2')" onmouseout="cambiaclasse(this.id,'tabmenutd')"><div align="center"><a href="game.php?act=changelog"><?php echo $lang['Changelog']; ?></a></div></td>
 	</tr>
 	<tr>
-    <td class="tabmenutd" id="menu10" onmouseover="cambiaclasse(this.id,'tabmenutd2')" onmouseout="cambiaclasse(this.id,'tabmenutd')"><div align="center"><a href="game.php?act=opzioni"><?php echo $lang['Opzioni']; ?></a></div></td>
+    <td class="tabmenutd" id="menu12" onmouseover="cambiaclasse(this.id,'tabmenutd2')" onmouseout="cambiaclasse(this.id,'tabmenutd')"><div align="center"><a href="game.php?act=opzioni"><?php echo $lang['Opzioni']; ?></a></div></td>
 	</tr>
 	<tr>
-    <td class="tabmenutd" id="menu11" onmouseover="cambiaclasse(this.id,'tabmenutd2')" onmouseout="cambiaclasse(this.id,'tabmenutd')"><div align="center"><a href="http://www.lostgames.net/forum/forumdisplay.php?f=33" target="_blank">Forum</a></div></td>
+    <td class="tabmenutd" id="menu13" onmouseover="cambiaclasse(this.id,'tabmenutd2')" onmouseout="cambiaclasse(this.id,'tabmenutd')"><div align="center"><a href="http://www.lostgames.net/forum/forumdisplay.php?f=33" target="_blank">Forum</a></div></td>
 	</tr>
 	<tr>
-    <td class="tabmenutd" id="menu12" onmouseover="cambiaclasse(this.id,'tabmenutd2')" onmouseout="cambiaclasse(this.id,'tabmenutd')"><div align="center"><a href="game.php?act=logout"><?php echo $lang['Logout']; ?></a></div></td>
+    <td class="tabmenutd" id="menu14" onmouseover="cambiaclasse(this.id,'tabmenutd2')" onmouseout="cambiaclasse(this.id,'tabmenutd')"><div align="center"><a href="game.php?act=logout"><?php echo $lang['Logout']; ?></a></div></td>
 	</tr>		
 </table>
 </div>

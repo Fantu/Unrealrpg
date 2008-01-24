@@ -12,6 +12,8 @@ $lang['Logout']='Esci';
 $lang['Messaggi']='Messaggi';
 $lang['Guida']='Guida';
 $lang['Lista_utenti']='Elenco personaggi';
+$lang['Mercato']='Mercato';
+$lang['Inventario']='Inventario';
 //fine menu
 
 //inizio razze

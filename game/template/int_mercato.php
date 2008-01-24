@@ -1,0 +1,1 @@
+<center><h2><?php echo $lang['Mercato']; ?></h2></center><br />

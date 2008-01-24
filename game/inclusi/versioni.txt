@@ -10,6 +10,8 @@ Legenda:<br />
 <p><strong>0.4.0</strong> (Non disponibile - In sviluppo)<br />
 + Iniziata creazione sistema oggetti<br />
 - Corretto un link<br />
++ Iniziata creazione Mercato<br />
++ Iniziata creazione Inventario<br />
 </p>
 <p><strong>0.3.9</strong> [R.317] (24/1/2008 - Beta)<br />
 + Aggiunte le caratteristiche agilit&agrave;, destrezza e intelligenza<br />
