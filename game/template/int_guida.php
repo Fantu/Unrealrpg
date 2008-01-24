@@ -23,6 +23,9 @@
 <?php echo $lang['Diffisica']; ?> <?php echo $classi['diffisica'][$chiave]; ?><br />
 <?php echo $lang['Difmagica']; ?> <?php echo $classi['difmagica'][$chiave]; ?><br />
 <?php echo $lang['Mana']; ?> <?php echo $classi['mana'][$chiave]; ?><br />
+<?php echo $lang['Velocita']; ?> <?php echo $classi['velocita'][$chiave]; ?><br />
+<?php echo $lang['Intelligenza']; ?> <?php echo $classi['intelligenza'][$chiave]; ?><br />
+<?php echo $lang['Destrezza']; ?> <?php echo $classi['destrezza'][$chiave]; ?><br />
 <br />
 <?php }?>
 <br />

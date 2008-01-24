@@ -14,6 +14,8 @@ Legenda:<br />
 + Vari miglioramenti<br />
 + Aggiunte le caratteristiche agilit&agrave;, destrezza e intelligenza<br />
 + Aggiunta in Situazione la visualizzazione delle nuove caratteristiche<br />
++ Aggiunta nella creazione del personaggio la visualizzazione delle nuove caratteristiche<br />
++ Aggiunta nella Guida la visualizzazione delle nuove caratteristiche<br />
 </p>
 <p><strong>0.3.8</strong> [R.311] (21/1/2008 - Beta)<br />
 + Vari miglioramenti di sistema<br />
