@@ -11,12 +11,15 @@ Legenda:<br />
 + Iniziata creazione sistema oggetti<br />
 </p>
 <p><strong>0.3.9</strong> (Non disponibile - In sviluppo)<br />
-+ Vari miglioramenti<br />
 + Aggiunte le caratteristiche agilit&agrave;, destrezza e intelligenza<br />
 + Aggiunta in Situazione la visualizzazione delle nuove caratteristiche<br />
 + Aggiunta nella creazione del personaggio la visualizzazione delle nuove caratteristiche<br />
 + Aggiunta nella Guida la visualizzazione delle nuove caratteristiche<br />
 # Modificate le caratteristiche differenziate per le classi esistenti e aggiornati i personaggi<br />
++ Vari miglioramenti di sistema<br />
++ Vari miglioramenti di sicurezza<br />
++ Altri vari miglioramenti<br />
+- Corretto un link<br />
 </p>
 <p><strong>0.3.8</strong> [R.311] (21/1/2008 - Beta)<br />
 + Vari miglioramenti di sistema<br />

@@ -69,6 +69,16 @@ $lang['eventi_dettagli3']='Sei nel tempio a pregare e finirai: ';
 $lang['eventi_dettagli4']='Resurrezione in corso, tornerai in vita: ';
 //fine dettagli eventi
 
+//inizio visualizzautente
+$lang['pessima']='Pessima';
+$lang['molto_bassa']='Molto bassa';
+$lang['bassa']='Bassa';
+$lang['media']='Media';
+$lang['alta']='Alta';
+$lang['molto_alta']='Molto alta';
+$lang['perfetta']='Perfetta';
+//fine visualizzautente
+
 $lang['outputerrori']='Si sono verificati i seguenti errori:';
 $lang['nessun_evento']='Nessun evento in corso';
 $lang['error_eventi_incorso']='Sei occupato a fare altro';
