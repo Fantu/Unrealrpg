@@ -29,7 +29,7 @@ require_once('inclusi/int_header.php');
 if(!$user['userid'])
 	echo "Accesso negato!<br>Hai tentato di entrare in una pagina riservata agli utenti loggati.";
 else if($user['ipattuale']!=$_SERVER['REMOTE_ADDR'])
-	echo "Accesso negato!<br>Il numero IP è cambiato dal momento del login.<br /><a href=\"game.php?act=logout\">Clicca qui</a> per tornare indietro e loggarti nuovamente.";	
+	echo "Accesso negato!<br>Il numero IP è cambiato dal momento del login.<br /><a href=\"../index.php\">Clicca qui</a> per tornare indietro e loggarti nuovamente.";	
 else {
 $interno="1";
 if ($user['personaggio']==0){
