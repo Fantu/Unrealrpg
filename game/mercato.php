@@ -25,7 +25,7 @@ break;
 default:
 foreach($catoggetti_nome as $chiave=>$elemento){
 $i++;
-$catoggetti[$i]="<a href=\"game.php?act=mercato&amp;step=1&amp;categoria=".$chiave."\">"$lang['tipo'.$chiave]."</a>";
+$catoggetti[$i]="<a href=\"game.php?act=mercato&amp;step=1&amp;categoria=".$chiave."\">".$lang['tipo'.$chiave]."</a>";
 }
 break;
 }
