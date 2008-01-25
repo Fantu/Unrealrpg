@@ -13,8 +13,7 @@ $categoria=(int)$_GET['categoria'];
 if(is_array($catoggetti_nome[$categoria])){
 foreach($catoggetti_nome[$categoria] as $chiave=>$elemento){
 $i++;
-$langcatsel="categoria".$categoria."-".$chiave;
-$catoggetti[$i]="<a href=\"game.php?act=mercato&amp;step=2&amp;categoria=".$chiave."\">"$lang[$langcatsel]."</a>";
+$catoggetti[$i]="<a href=\"game.php?act=mercato&amp;step=2&amp;categoria=".$chiave."\">".$lang['categoria'.$categoria.'-'.$chiave]."</a>";
 }
 }//fine se ci sono sottocategorie
 else
