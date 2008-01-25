@@ -13,7 +13,7 @@ $categoria=(int)$_GET['categoria'];
 if(is_array($catoggetti_nome[$categoria])){
 foreach($catoggetti_nome[$categoria] as $chiave=>$elemento){
 $i++;
-$catoggetti[$i]="<a href=\"game.php?act=mercato&amp;step=2&amp;categoria=".$chiave."\">".$lang['categoria'.$categoria.'-'.$elemento]."</a>";
+$catoggetti[$i]="<a href=\"game.php?act=mercato&amp;step=2&amp;categoria=".$categoria."&amp;sottocategoria=".$elemento."\">".$lang['categoria'.$categoria.'-'.$elemento]."</a>";
 }
 }//fine se ci sono sottocategorie
 else
@@ -21,6 +21,11 @@ else
 $sottocat=0;
 $mostraogg=1;
 }
+break;
+case 2:
+$categoria=(int)$_GET['categoria'];
+$sottocat=(int)$_GET['sottocategoria'];
+$mostraogg=1;
 break;
 default:
 foreach($catoggetti_nome as $chiave=>$elemento){
@@ -39,7 +44,7 @@ require('language/it/lang_oggetti_nomi.php');
 $oggposseduti=$db->QueryCiclo("SELECT oggid AS numero FROM oggetti WHERE tipo='".$categoria."' AND categoria='".$sottocat."'");
 while($ogg=$db->QueryCicloResult($oggposseduti)) {
 $i++;
-$oggetti['nome'][$i]=$lang['oggetto'.$ogg['oggid'].'_nome'];
+$oggetti[$i]=$lang['oggetto'.$ogg['oggid'].'_nome'];
 }
 }
 }

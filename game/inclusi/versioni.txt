@@ -17,6 +17,7 @@ Legenda:<br />
 + In Inventario se non si hanno oggetti viene mostrata la frase specifica<br />
 + Aggiunta la lista delle categorie di oggetti nel Mercato<br />
 + Nel Mercato ora ogni categoria &egrave; cliccabile e porta all'elenco di tutte le sottocategorie, se presenti<br />
++ Quando si apre una sottocategoria o categoria senza sottocategoria vengono mostrati tutti gli oggetti al proprio interno<br />
 </p>
 <p><strong>0.3.9</strong> [R.317] (24/1/2008 - Beta)<br />
 + Aggiunte le caratteristiche agilit&agrave;, destrezza e intelligenza<br />
