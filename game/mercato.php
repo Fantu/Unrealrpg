@@ -12,7 +12,7 @@ default:
 break;
 }*/
 foreach($catoggetti_nome as $chiave=>$elemento){
-echo $lang['tipo'.$elemento]."<br />";
+echo $lang['tipo'.$chiave]."<br />";
 }
 if($eventi['id']>0){
 require('template/int_eventi_incorso.php');
