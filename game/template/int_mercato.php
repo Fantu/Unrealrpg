@@ -3,10 +3,14 @@
 if($mostraogg==1){
 	if ($seoggetti['id']==0){
 	echo $nessunogg."<br />";
-	}else{
-	foreach($oggetti as $chiave=>$elemento){
-	echo $oggetti[$chiave]."<br />";}
-	}
+	}else{?>
+	<table border="0">
+	<tr><td><?php echo $lang['Nome']; ?></td></tr><tr><td><?php echo $lang['Costo']; ?></td></tr>
+	<?php foreach($oggetti['nome'] as $chiave=>$elemento){?>
+	<tr><td><?php echo $oggetti['nome'][$chiave]; ?></td></tr><tr><td><?php echo $oggetti['costo'][$chiave]; ?></td></tr>
+	<?php }/*fine ogni oggetto*/ ?>
+	</table>
+	<?php}//fine mostra oggetti
 }else{
 foreach($catoggetti as $chiave=>$elemento){
 echo $catoggetti[$chiave]."<br />";}	
