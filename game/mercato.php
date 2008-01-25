@@ -41,10 +41,10 @@ if ($seoggetti['id']==0){
 $nessunogg=$lang['nessun_oggetto_esistente'];
 }else{
 require('language/it/lang_oggetti_nomi.php');	
-$oggposseduti=$db->QueryCiclo("SELECT oggid AS numero FROM oggetti WHERE tipo='".$categoria."' AND categoria='".$sottocat."'");
+$oggposseduti=$db->QueryCiclo("SELECT id FROM oggetti WHERE tipo='".$categoria."' AND categoria='".$sottocat."'");
 while($ogg=$db->QueryCicloResult($oggposseduti)) {
 $i++;
-$oggetti[$i]=$lang['oggetto'.$ogg['oggid'].'_nome'];
+$oggetti[$i]=$lang['oggetto'.$ogg['id'].'_nome'];
 }
 }
 }
