@@ -81,6 +81,10 @@ $lang['molto_alta']='Molto alta';
 $lang['perfetta']='Perfetta';
 //fine visualizzautente
 
+//inizio inventario
+$lang['nessun_oggetto_posseduto']='Non hai nessun oggetto attualmente';
+//fine inventario
+
 $lang['outputerrori']='Si sono verificati i seguenti errori:';
 $lang['nessun_evento']='Nessun evento in corso';
 $lang['error_eventi_incorso']='Sei occupato a fare altro';

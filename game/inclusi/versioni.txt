@@ -12,6 +12,9 @@ Legenda:<br />
 - Corretto un link<br />
 + Iniziata creazione Mercato<br />
 + Iniziata creazione Inventario<br />
++ Aggiunta la lista di oggetti che si possiedono in Inventario<br />
++ Ogni oggetto che si possiede viene mostrato singolarmente anche se ce n'&egrave; pi&ugrave; di 1 uguale, in parte ad ogni oggetto viene mostrata la quantit&agrave;<br />
++ In Inventario se non si hanno oggetti viene mostrata la frase specifica<br />
 </p>
 <p><strong>0.3.9</strong> [R.317] (24/1/2008 - Beta)<br />
 + Aggiunte le caratteristiche agilit&agrave;, destrezza e intelligenza<br />
