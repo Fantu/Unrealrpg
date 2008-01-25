@@ -44,6 +44,7 @@ require('language/it/lang_oggetti_nomi.php');
 $oggposseduti=$db->QueryCiclo("SELECT id,costo FROM oggetti WHERE tipo='".$categoria."' AND categoria='".$sottocat."'");
 while($ogg=$db->QueryCicloResult($oggposseduti)) {
 $i++;
+$oggetti['id'][$i]=$ogg['id'];
 $oggetti['nome'][$i]=$lang['oggetto'.$ogg['id'].'_nome'];
 $oggetti['costo'][$i]=$ogg['costo'];
 }

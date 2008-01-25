@@ -19,6 +19,7 @@ Legenda:<br />
 + Nel Mercato ora ogni categoria &egrave; cliccabile e porta all'elenco di tutte le sottocategorie, se presenti<br />
 + Quando si apre una sottocategoria o categoria senza sottocategoria vengono mostrati tutti gli oggetti al proprio interno<br />
 + Nel Mercato ora per ogni oggetto viene mostrato anche il costo<br />
++ Aggiunta la selezione di un oggetto, la quantit&agrave; e la possibilit&agrave; di acquisto<br />
 </p>
 <p><strong>0.3.9</strong> [R.317] (24/1/2008 - Beta)<br />
 + Aggiunte le caratteristiche agilit&agrave;, destrezza e intelligenza<br />
