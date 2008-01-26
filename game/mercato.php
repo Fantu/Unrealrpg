@@ -5,6 +5,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 }
 require('language/it/lang_mercato.php');
 require('language/it/lang_oggetti_categorie.php');
+require('language/it/lang_oggetti_nomi.php');
 require('inclusi/funzioni_oggetti.php');
 $step=(int)$_GET['step'];
 switch($_GET['step']){
@@ -39,8 +40,7 @@ if($mostraogg==1){
 $seoggetti=$db->QuerySelect("SELECT COUNT(*) AS id FROM oggetti WHERE tipo='".$categoria."' AND categoria='".$sottocat."'");
 if ($seoggetti['id']==0){
 $nessunogg=$lang['nessun_oggetto_esistente'];
-}else{
-require('language/it/lang_oggetti_nomi.php');	
+}else{	
 $oggposseduti=$db->QueryCiclo("SELECT id,costo FROM oggetti WHERE tipo='".$categoria."' AND categoria='".$sottocat."'");
 while($ogg=$db->QueryCicloResult($oggposseduti)) {
 $i++;
@@ -62,6 +62,7 @@ $errore .= $lang['mercato_errore1'];
 if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
 else {
+$outputerrori=sprintf($lang['report_compera'],$quanti,$lang['oggetto'.$oggselect.'_nome'],$prezzo);
 $db->QueryMod("UPDATE utente SET monete=monete-'".$prezzo."' WHERE userid='".$user['userid']."'");	
 for($i=1; $i<=$quanti; $i++){
 $db->QueryMod("INSERT INTO inoggetti (oggid,userid) VALUES ('".$oggselect."','".$user['userid']."')");
