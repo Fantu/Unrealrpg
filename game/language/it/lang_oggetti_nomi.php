@@ -9,7 +9,9 @@ $lang['oggetto7_nome']='Rubini';
 $lang['oggetto8_nome']='Smeraldi';
 $lang['oggetto9_nome']='Diamanti';
 $lang['oggetto10_nome']='Mithrill';
-$lang['oggetto11_nome']='Piccone arrugginito di rame';
+$lang['oggetto11_nome']='Piccone ossidato di rame';
 $lang['oggetto12_nome']='Piccone scadente di rame';
 $lang['oggetto13_nome']='Piccone normale di rame';
+$lang['oggetto14_nome']='Piccone di ferro arrugginito';
+$lang['oggetto15_nome']='Piccone di ferro mediocre';
 ?>
