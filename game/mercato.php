@@ -59,6 +59,10 @@ $costoogg=$db->QuerySelect("SELECT costo FROM oggetti WHERE id='".$oggselect."' 
 $prezzo=$costoogg['costo']*$quanti;
 if ($user['monete']<$prezzo)
 $errore .= $lang['mercato_errore1'];
+if ($oggselect<1)
+$errore .= $lang['mercato_errore2'];
+if ($quanti<1)
+$errore .= $lang['mercato_errore3'];
 if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
 else {

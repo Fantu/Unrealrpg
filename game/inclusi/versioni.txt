@@ -10,6 +10,10 @@ Legenda:<br />
 <p><strong>0.4.1</strong> (Non disponibile - In sviluppo)<br />
 Niente attualmente<br />
 </p>
+<p><strong>0.4.0.1</strong> (Non disponibile - In sviluppo)<br />
++ Miglioramenti nel mercato<br />
+- Evitate alcune situazioni impreviste nel mercato<br />
+</p>
 <p><strong>0.4.0</strong> [R.348] (26/1/2008 - Beta)<br />
 + Iniziata creazione sistema oggetti<br />
 - Corretto un link<br />
