@@ -2,7 +2,7 @@
 function Completalavminnuova($userid) {
 global $db,$adesso;
 require('language/it/lang_miniera.php');
-$usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 0,1");	
+$usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");	
 $paga=5;
 $energia=100-(5*$usercar['minatore']);
 if ($energia<50)
@@ -37,7 +37,7 @@ $db->QueryMod("UPDATE lavori t1 JOIN utenti t2 on t1.userid=t2.userid JOIN carat
 function Completalavlabapp($userid) {
 global $db,$adesso;
 require('language/it/lang_laboratorio.php');
-$usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 0,1");
+$usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");
 $paga=6;
 $mana=rand(5,10);
 $energia=100-(5*$usercar['alchimista']);
@@ -73,7 +73,7 @@ $db->QueryMod("UPDATE lavori t1 JOIN utenti t2 on t1.userid=t2.userid JOIN carat
 function Completatempioprega($userid) {
 global $db,$adesso;
 require('language/it/lang_tempio.php');
-$usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 0,1");
+$usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");
 $mana=$usercar['mana'];
 if($usercar['manarimasto']!=$usercar['mana']){
 $mana=floor($usercar['mana']/10);
@@ -86,7 +86,7 @@ $energia=$usercar['energia']-$energiapersa;
 $salute=$usercar['saluteattuale'];
 $fede=100;
 $dono=1;
-$miracolo=rand(0,100)-($usercar['fede']/100);
+$miracolo=rand(0,1000)-($usercar['fede']/100);
 $titolo=$lang['report_tempio_preghiera'];
 if($miracolo<1){
 $mana=$usercar['mana'];

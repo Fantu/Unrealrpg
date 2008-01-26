@@ -13,6 +13,7 @@ Legenda:<br />
 + Aggiunti 3 picconi di rame negli oggetti<br />
 + Aggiunti 2 picconi di ferro negli oggetti<br />
 + Creato sistema di controllo usura e rottura degli oggetti per ogni volta che vengono utilizzati oggetti<br />
+# Rivista la preghiera nel Tempio, resa pi&ugrave; equilibrata<br />
 </p>
 <p><strong>0.4.0.1</strong> [R.350] (26/1/2008 - Beta)<br />
 + Miglioramenti nel mercato<br />
