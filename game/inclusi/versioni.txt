@@ -8,7 +8,7 @@ Legenda:<br />
 <br />
 </p>
 <p><strong>0.4.1</strong> (Non disponibile - In sviluppo)<br />
-Niente attualmente<br />
++ Ora Inventario si pu&ograve; guardare anche mentre il personaggio sta facendo altro<br />
 </p>
 <p><strong>0.4.0.1</strong> [R.350] (26/1/2008 - Beta)<br />
 + Miglioramenti nel mercato<br />

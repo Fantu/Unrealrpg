@@ -15,9 +15,5 @@ $oggetti['numero'][$i]=$ogg['numero'];
 $oggetti['nome'][$i]=$lang['oggetto'.$ogg['oggid'].'_nome'];
 }
 }
-if($eventi['id']>0){
-require('template/int_eventi_incorso.php');
-}else{
 require('template/int_inventario.php');
-}
 ?>
