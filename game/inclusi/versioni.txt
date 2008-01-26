@@ -10,6 +10,7 @@ Legenda:<br />
 <p><strong>0.4.1</strong> (Non disponibile - In sviluppo)<br />
 + Ora Inventario si pu&ograve; guardare anche mentre il personaggio sta facendo altro<br />
 + Aggiunti 9 minerali negli oggetti<br />
++ Aggiunti 3 picconi negli oggetti<br />
 </p>
 <p><strong>0.4.0.1</strong> [R.350] (26/1/2008 - Beta)<br />
 + Miglioramenti nel mercato<br />
