@@ -15,3 +15,10 @@
 </tr>
 </table>
 </form>
+<br />
+<br />
+<?php echo $lang['miniera_vecchia']; ?>
+<br />
+<?php echo $lang['desc_miniera_vecchia']; ?>
+<br />
+In sviluppo...<br />
