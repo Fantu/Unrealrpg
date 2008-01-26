@@ -1,4 +1,5 @@
 <center><h2><?php echo $lang['Mercato']; ?></h2></center><br />
+<div align="center">
 <?php
 if($mostraogg==1){
 	if ($seoggetti['id']==0){
@@ -19,3 +20,4 @@ if($mostraogg==1){
 foreach($catoggetti as $chiave=>$elemento){
 echo $catoggetti[$chiave]."<br />";}
 }?>
+</div>

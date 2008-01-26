@@ -68,7 +68,18 @@ if($msg)
 	echo "<script language=\"javascript\"> alert('$msg'); </script>";
 $end_time = microtime() - $start_time;
 echo "Tempo di generazione della pagina: ".$end_time." secondi";
-?>
+?><br />
+<script type="text/javascript"><!--
+google_ad_client = "pub-0644240535082356";
+//468x60, creato il 26/01/08
+google_ad_slot = "7260256335";
+google_ad_width = 468;
+google_ad_height = 60;
+google_cpa_choice = ""; // on file
+//--></script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
 </div>
 </body>
 </html>
