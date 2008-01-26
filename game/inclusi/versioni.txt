@@ -7,7 +7,10 @@ Legenda:<br />
 - Correzione bug e patch di situazioni non previste<br />
 <br />
 </p>
-<p><strong>0.4.0</strong> (Non disponibile - In sviluppo)<br />
+<p><strong>0.4.1</strong> (Non disponibile - In sviluppo)<br />
+Niente attualmente<br />
+</p>
+<p><strong>0.4.0</strong> [R.348] (26/1/2008 - Beta)<br />
 + Iniziata creazione sistema oggetti<br />
 - Corretto un link<br />
 + Iniziata creazione Mercato<br />
