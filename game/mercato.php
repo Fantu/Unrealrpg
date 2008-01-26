@@ -49,7 +49,25 @@ $oggetti['nome'][$i]=$lang['oggetto'.$ogg['id'].'_nome'];
 $oggetti['costo'][$i]=$ogg['costo'];
 }
 }
+}//fine mostra lista oggetti
+
+if (isset($_POST['compra'])){
+$errore="";
+$quanti=(int)$_POST['quanti'];
+$oggselect=(int)$_POST['oggselect'];
+$costoogg=$db->QuerySelect("SELECT costo FROM oggetti WHERE id='".$oggselect."' LIMIT 1");
+$prezzo=$costoogg['costo']*$quanti;
+if ($user['monete']<$prezzo)
+$errore .= $lang['mercato_errore1'];
+if($errore){
+	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
+else {
+$db->QueryMod("UPDATE utente SET monete=monete-'".$prezzo."' WHERE userid='".$user['userid']."'");	
+for($i=1; $i<=$quanti; $i++){
+$db->QueryMod("INSERT INTO inoggetti (oggid,userid) VALUES ('".$oggselect."','".$user['userid']."')");
 }
+}
+}//fine compra
 
 if($eventi['id']>0){
 require('template/int_eventi_incorso.php');

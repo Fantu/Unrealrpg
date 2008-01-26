@@ -6,7 +6,7 @@ if($mostraogg==1){
 	echo $nessunogg."<br />";
 	}else{ ?>
 	<form action="" method="post" name="formcompra">
-	<table border="0" align="center" border="1">
+	<table align="center" border="1">
 	<tr><td><?php echo $lang['Nome']; ?></td><td><?php echo $lang['Costo']; ?></td></tr>
 	<?php foreach($oggetti['nome'] as $chiave=>$elemento){?>
 	<tr><td><input type="radio" name="oggselect" value="<?php echo $oggetti['id'][$chiave]; ?>" /><?php echo $oggetti['nome'][$chiave]; ?></td><td><?php echo $oggetti['costo'][$chiave]; ?></td></tr>
