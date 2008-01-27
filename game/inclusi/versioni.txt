@@ -10,6 +10,7 @@ Legenda:<br />
 <p><strong>0.4.3</strong> (Non disponibile - In sviluppo)<br />
 # Rivisti i lavori, ora sono pi&ugrave; equilibrati<br />
 + Vari miglioramenti<br />
+- Corretto un bug nella Miniera vecchia<br />
 <p>
 <p><strong>0.4.2</strong> [R.388] (27/1/2008 - Beta)<br />
 + Vari miglioramenti di sistema<br />
