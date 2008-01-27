@@ -42,8 +42,8 @@ if ($torcia['id']<1)
 $errore .= $lang['miniera_errore4'];
 $piccone=(int)$_POST['piccone'];
 echo $piccone;
-if ($piccone<1)
-$errore .= $lang['miniera_errore5'];
+if ($piccone<1){
+$errore .= $lang['miniera_errore5'];}
 if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
 else {
