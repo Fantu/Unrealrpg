@@ -143,12 +143,12 @@ $trovare=rand(0,10000)-$efficenza;
 if($trovare<10){
 $trovato=1;}else{
 $trovato=0;}
-$testo=sprintf($lang['report_lavminieravecchia'],$exp,$energia,$salute)."<br />;
+$testo=sprintf($lang['report_lavminieravecchia'],$exp,$energia,$salute)."<br />";
 if($trovato==0){
-$testo.=$lang['report_lavminieravecchia_materiali_no']."<br />;
+$testo.=$lang['report_lavminieravecchia_materiali_no']."<br />";
 }else{
 $minerale="prova";
-$testo.=sprintf($lang['report_lavminieravecchia_materiali_si'],$minerale)."<br />;}
+$testo.=sprintf($lang['report_lavminieravecchia_materiali_si'],$minerale)."<br />";}
 Checkusurarottura($userid);
 $testo="<span>".$testo."</span><br /><br />";
 $titolo=$lang['report_lavoro_nuova'];
