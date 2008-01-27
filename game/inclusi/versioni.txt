@@ -10,6 +10,7 @@ Legenda:<br />
 <p><strong>0.4.2</strong> (Non disponibile - In sviluppo)<br />
 + Vari miglioramenti di sistema<br />
 + Vari miglioramenti di sicurezza<br />
++ Terminata bozza Miniera vecchia<br />
 <p>
 <strong>0.4.1</strong> [R.362] (27/1/2008 - Beta)<br />
 + Ora Inventario si pu&ograve; guardare anche mentre il personaggio sta facendo altro<br />

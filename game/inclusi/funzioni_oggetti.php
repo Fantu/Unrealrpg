@@ -22,7 +22,7 @@ $rottura=floor($oggetto['probrottura']/$oggetto['usura']*$usura);
 $prob=rand(1,10000);
 if($prob<$rottura){
 $rotto=1;
-$testo.=$testo.="Oggetto ".$lang['oggetto'.$ogg['oggid'].'_nome']." rotto";;
+$testo.="Oggetto ".$lang['oggetto'.$ogg['oggid'].'_nome']." rotto";
 }
 }
 if($rotto==1){
