@@ -1,5 +1,5 @@
 <?php
-require('inclusi/funzioni_oggetti.php');
+require_once('inclusi/funzioni_oggetti.php');
 
 function Completalavminnuova($userid) {
 global $db,$adesso;
