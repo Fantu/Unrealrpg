@@ -7,11 +7,11 @@ $paga=5;
 $energia=100-(5*$usercar['minatore']);
 if ($energia<50)
 $energia=50;
-$salute=(rand(2,10))-($usercar['minatore'])-(rand(0,floor($usercar['diffisica']/20)));
+$salute=(rand(5,15))-($usercar['minatore'])-(rand(0,floor($usercar['diffisica']/20)));
 if ($salute<1)
 $salute=1;
 $exp=rand(5,(2+floor($usercar['saluteattuale']/10)+floor($usercar['energia']/100)+floor($usercar['attfisico']/10)));
-$exp+=(5*(rand(0,(1+$usercar['minatore']))));
+$exp+=(3*$usercar['minatore']);
 $esplosione=rand(10,100)-($usercar['minatore']*5)-($usercar['attfisico']/2);
 $danni=0;
 if($esplosione>10){
@@ -19,7 +19,7 @@ $esplosione=rand(10,100)-($usercar['agilita']/5)-($usercar['attfisico']/2);
 if($esplosione<10){
 $testo="<span>".$lang['report_incidente_min1']."</span><br /><br />";
 }else{
-$danni=rand(5,30)-rand(0,floor($usercar['diffisica']/10));
+$danni=rand(10,30)-rand(0,floor($usercar['diffisica']/10));
 if ($danni<1)
 $danni=1;	
 $testo="<span>".sprintf($lang['report_incidente_min2'],$danni)."</span><br /><br />";	
@@ -47,7 +47,7 @@ $salute=(rand(2,10))-($usercar['alchimista'])-(rand(0,floor($usercar['difmagica'
 if ($salute<1)
 $salute=1;
 $exp=rand(5,(2+floor($usercar['saluteattuale']/10)+floor($usercar['energia']/100)+floor($usercar['attmagico']/10)));
-$exp+=(5*(rand(0,$usercar['alchimista'])));
+$exp+=(3*$usercar['alchimista']);
 $esplosione=rand(10,100)-($usercar['alchimista']*5)-($usercar['attmagico']/2);
 $danni=0;
 if($esplosione>10){
@@ -55,7 +55,7 @@ $esplosione=rand(10,100)-($usercar['agilita']/5)-($usercar['attmagico']/2);
 if($esplosione<10){
 $testo="<span>".$lang['report_esplosione_lab1']."</span><br /><br />";
 }else{
-$danni=rand(5,30)-rand(0,floor($usercar['difmagica']/10));
+$danni=rand(10,30)-rand(0,floor($usercar['difmagica']/10));
 if ($danni<1)
 $danni=1;	
 $testo="<span>".sprintf($lang['report_esplosione_lab2'],$danni)."</span><br /><br />";	
@@ -106,4 +106,38 @@ function Completaresurrezione($userid) {
 global $db,$adesso;
 $db->QueryMod("UPDATE utenti t2 JOIN caratteristiche t3 on t2.userid=t3.userid SET t2.resuscita='0',t3.energia=t3.energiamax,t3.saluteattuale=t3.salute,t3.recuperoenergia='".$adesso."',t3.recuperosalute='".$adesso."',t3.decfede='".$adesso."',t3.manarimasto=t3.mana WHERE t2.userid='".$userid."'");
 } //fine Completaresurrezione
+
+function Completalavminvecchia($userid) {
+global $db,$adesso;
+require('language/it/lang_miniera.php');
+$usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");	
+$energia=100-(5*$usercar['minatore']);
+if ($energia<50)
+$energia=50;
+$salute=(rand(5,15))-($usercar['minatore'])-(rand(0,floor($usercar['diffisica']/20)));
+if ($salute<1)
+$salute=1;
+$exp=rand(5,(2+floor($usercar['saluteattuale']/10)+floor($usercar['energia']/100)+floor($usercar['attfisico']/10)));
+$exp+=(3*$usercar['minatore']);
+$esplosione=rand(10,100)-($usercar['minatore']*5)-($usercar['attfisico']/2);
+$danni=0;
+if($esplosione>10){
+$esplosione=rand(10,100)-($usercar['agilita']/5)-($usercar['attfisico']/2);
+if($esplosione<10){
+$testo="<span>".$lang['report_incidente_min1']."</span><br /><br />";
+}else{
+$danni=rand(10,30)-rand(0,floor($usercar['diffisica']/10));
+if ($danni<1)
+$danni=1;	
+$testo="<span>".sprintf($lang['report_incidente_min2'],$danni)."</span><br /><br />";	
+}
+$titolo=$lang['report_incidente_miniera'];
+$db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");	
+}//fine incidente
+$testo="<span>".sprintf($lang['report_lavminieranuova'],$paga,$exp,$energia,$salute)."</span><br /><br />";
+$titolo=$lang['report_lavoro_nuova'];
+$db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");
+$salute+=$danni;
+$db->QueryMod("UPDATE lavori t1 JOIN utenti t2 on t1.userid=t2.userid JOIN caratteristiche t3 on t2.userid=t3.userid SET t1.ultimolavoro='".$adesso."',t3.expminatore=t3.expminatore+'".$exp."',t3.energia=t3.energia-'".$energia."',t3.saluteattuale=t3.saluteattuale-'".$salute."',t3.recuperosalute='".$adesso."',t3.recuperoenergia='".$adesso."' WHERE t1.userid='".$userid."'");
+} //fine Completalavminvecchia
 ?>
