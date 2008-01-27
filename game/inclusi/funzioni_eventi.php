@@ -149,7 +149,7 @@ $testo.=$lang['report_lavminieravecchia_materiali_no']."<br />";
 }else{
 $minerale="prova";
 $testo.=sprintf($lang['report_lavminieravecchia_materiali_si'],$minerale)."<br />";}
-Checkusurarottura($userid);
+$testo=Checkusurarottura($userid);
 $testo="<span>".$testo."</span><br /><br />";
 $titolo=$lang['report_lavoro_nuova'];
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");
