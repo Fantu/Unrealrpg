@@ -29,5 +29,5 @@ $db->QueryMod("DELETE FROM inoggetti WHERE id='".$ogg['id']."'");
 $db->QueryMod("UPDATE inoggetti SET usura=usura+'1',inuso='0' WHERE id='".$ogg['id']."'");
 }
 }//fine per ogni oggetto usato
-}//fine Checkusurarottura
+}/*fine Checkusurarottura*/
 ?>
