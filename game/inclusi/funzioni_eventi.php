@@ -15,7 +15,7 @@ $exp+=(3*$usercar['minatore']);
 $esplosione=rand(10,100)-($usercar['minatore']*5)-($usercar['attfisico']/20);
 $danni=0;
 if($esplosione>10){
-$esplosione=rand(10,100)-($usercar['agilita']/5)-($usercar['attfisico']/2);
+$esplosione=rand(10,100)-($usercar['agilita']/20)-($usercar['attfisico']/10);
 if($esplosione<10){
 $testo="<span>".$lang['report_incidente_min1']."</span><br /><br />";
 }else{
@@ -51,7 +51,7 @@ $exp+=(3*$usercar['alchimista']);
 $esplosione=rand(10,100)-($usercar['alchimista']*5)-($usercar['attmagico']/20);
 $danni=0;
 if($esplosione>10){
-$esplosione=rand(10,100)-($usercar['agilita']/5)-($usercar['attmagico']/2);
+$esplosione=rand(10,100)-($usercar['agilita']/20)-($usercar['attmagico']/10);
 if($esplosione<10){
 $testo="<span>".$lang['report_esplosione_lab1']."</span><br /><br />";
 }else{
@@ -122,7 +122,7 @@ $exp+=(3*$usercar['minatore']);
 $esplosione=rand(10,100)-($usercar['minatore']*5)-($usercar['attfisico']/20);
 $danni=0;
 if($esplosione>10){
-$esplosione=rand(10,100)-($usercar['agilita']/5)-($usercar['attfisico']/2);
+$esplosione=rand(10,100)-($usercar['agilita']/20)-($usercar['attfisico']/10);
 if($esplosione<10){
 $testo="<span>".$lang['report_incidente_min1']."</span><br /><br />";
 }else{
