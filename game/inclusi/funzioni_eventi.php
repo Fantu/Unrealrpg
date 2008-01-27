@@ -149,9 +149,9 @@ $testo.=$lang['report_lavminieravecchia_materiali_no']."<br />";
 }else{
 $minerale="prova";
 $testo.=sprintf($lang['report_lavminieravecchia_materiali_si'],$minerale)."<br />";}
-$testo=Checkusurarottura($userid);
-$testo="<span>".$testo."</span><br /><br />";
-$titolo=$lang['report_lavoro_nuova'];
+$oggpersi=Checkusurarottura($userid);
+$testo="<span>".$testo."<br />".$oggpersi."</span><br /><br />";
+$titolo=$lang['report_lavoro_vecchia'];
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");
 $salute+=$danni;
 $db->QueryMod("UPDATE lavori t1 JOIN utenti t2 on t1.userid=t2.userid JOIN caratteristiche t3 on t2.userid=t3.userid SET t1.ultimolavoro='".$adesso."',t3.expminatore=t3.expminatore+'".$exp."',t3.energia=t3.energia-'".$energia."',t3.saluteattuale=t3.saluteattuale-'".$salute."',t3.recuperosalute='".$adesso."',t3.recuperoenergia='".$adesso."' WHERE t1.userid='".$userid."'");

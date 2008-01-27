@@ -8,7 +8,7 @@ $catoggetti_nome=array(
 );
 
 function Checkusurarottura($userid) {
-global $db,$testo;
+global $db;
 $oggusati=$db->QueryCiclo("SELECT * FROM inoggetti WHERE userid='".$userid."' AND inuso='1'");
 while($ogg=$db->QueryCicloResult($oggusati)) {
 $oggetto=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$ogg['oggid']."' LIMIT 1");
@@ -16,13 +16,13 @@ $rotto=0;
 $usura=$ogg['usura']+1;
 if($usura==$oggetto['usura']){
 $rotto=1;
-$testo.="Oggetto ".$lang['oggetto'.$ogg['oggid'].'_nome']." usurato";
+$oggpersi.="Oggetto ".$lang['oggetto'.$ogg['oggid'].'_nome']." usurato";
 }else{
 $rottura=floor($oggetto['probrottura']/$oggetto['usura']*$usura);
 $prob=rand(1,10000);
 if($prob<$rottura){
 $rotto=1;
-$testo.="Oggetto ".$lang['oggetto'.$ogg['oggid'].'_nome']." rotto";
+$oggpersi.="Oggetto ".$lang['oggetto'.$ogg['oggid'].'_nome']." rotto";
 }
 }
 if($rotto==1){
@@ -31,6 +31,6 @@ $db->QueryMod("DELETE FROM inoggetti WHERE id='".$ogg['id']."'");
 $db->QueryMod("UPDATE inoggetti SET usura=usura+'1',inuso='0' WHERE id='".$ogg['id']."'");
 }
 }//fine per ogni oggetto usato
-return $testo;
+return $oggpersi;
 }/*fine Checkusurarottura*/
 ?>
