@@ -2,15 +2,16 @@
 require('inclusi/funzioni_db.php');
 require('inclusi/valori.php');
 $db = new ConnessioniMySQL();
-$esistenza=0;		
+$esistenza=0;
+$server=(int)$_POST['login_server'];		
 	foreach($game_server as $chiave=>$elemento){
-	if ($chiave==$_POST['login_server']){$esistenza=1;}
+	if ($chiave==$server){$esistenza=1;}
 	}
 if($esistenza==0){
 	header("Location: ../index.php?error=3");
 	exit();
 } else{
-$db->database=(int)$_POST['login_server'];	
+$db->database=$server;	
 $_POST['login_username']=str_replace("'","\'",$_POST['login_username']);
 $user = $db->QuerySelect("SELECT * FROM utenti WHERE username='".$_POST['login_username']."' AND password='".md5($_POST['login_password'])."' LIMIT 0,1");
 }
