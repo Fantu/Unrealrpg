@@ -38,12 +38,11 @@ $errore .= $lang['miniera_errore2'];
 if ($adesso<($userlav['ultimolavoro']+21600))
 $errore .= $lang['miniera_errore3'];
 $torcia=$db->QuerySelect("SELECT count(*) AS numero FROM inoggetti WHERE userid='".$user['userid']."' AND oggid='1' LIMIT 1");
-if ($torcia['id']<1)
+if ($torcia['numero']<1)
 $errore .= $lang['miniera_errore4'];
 $piccone=(int)$_POST['piccone'];
-echo $piccone;
-if ($piccone<1){
-$errore .= $lang['miniera_errore5'];}
+if ($piccone<1)
+$errore .= $lang['miniera_errore5'];
 if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
 else {
