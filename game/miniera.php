@@ -41,6 +41,7 @@ $torcia=$db->QuerySelect("SELECT count(*) AS numero FROM inoggetti WHERE userid=
 if ($torcia['id']<1)
 $errore .= $lang['miniera_errore4'];
 $piccone=(int)$_POST['piccone'];
+echo $piccone;
 if ($piccone<1)
 $errore .= $lang['miniera_errore5'];
 if($errore){
