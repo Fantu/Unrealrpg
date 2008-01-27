@@ -16,13 +16,13 @@ $rotto=0;
 $usura=$ogg['usura']+1;
 if($usura==$oggetto['usura']){
 $rotto=1;
-$oggpersi.="Oggetto ".$lang['oggetto'.$ogg['oggid'].'_nome']." usurato";
+$oggpersi.=sprintf($lang['oggetto_usurato'],$lang['oggetto'.$ogg['oggid'].'_nome'])."<br />;
 }else{
 $rottura=floor($oggetto['probrottura']/$oggetto['usura']*$usura);
 $prob=rand(1,10000);
 if($prob<$rottura){
 $rotto=1;
-$oggpersi.="Oggetto ".$lang['oggetto'.$ogg['oggid'].'_nome']." rotto";
+$oggpersi.=sprintf($lang['oggetto_rotto'],$lang['oggetto'.$ogg['oggid'].'_nome'])."<br />;
 }
 }
 if($rotto==1){
