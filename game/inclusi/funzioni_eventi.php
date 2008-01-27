@@ -1,4 +1,6 @@
 <?php
+require('inclusi/funzioni_oggetti');
+
 function Completalavminnuova($userid) {
 global $db,$adesso;
 require('language/it/lang_miniera.php');
@@ -134,7 +136,21 @@ $testo="<span>".sprintf($lang['report_incidente_min2'],$danni)."</span><br /><br
 $titolo=$lang['report_incidente_miniera'];
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");	
 }//fine incidente
-$testo="<span>".sprintf($lang['report_lavminieranuova'],$paga,$exp,$energia,$salute)."</span><br /><br />";
+$piccone=$db->QuerySelect("SELECT * FROM inoggetti WHERE userid='".$userid."' AND tipo='2' AND categoria='1' AND inuso='1' LIMIT 1");
+$efficenza=($usercar['minatore']*100)+$usercar['attfisico'];
+$efficenza+=($efficenza/100*$piccone['bonuseff']);
+$trovare=rand(0,10000)-$efficenza;
+if($trovare<10){
+$trovato=0;}else{
+$trovato=1;}
+$testo=sprintf($lang['report_lavminieravecchia'],$exp,$energia,$salute);
+if($trovato==0){
+$testo.=$lang['report_lavminieravecchia_materiali_no'];
+}else{
+$minerale="prova";
+$testo.=sprintf($lang['report_lavminieravecchia_materiali_si'],$minerale);}
+Checkusurarottura($userid);
+$testo="<span>".$testo."</span><br /><br />";
 $titolo=$lang['report_lavoro_nuova'];
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");
 $salute+=$danni;

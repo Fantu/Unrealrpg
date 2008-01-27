@@ -6,7 +6,7 @@ $catoggetti_nome=array(
 );
 
 function Checkusurarottura($userid) {
-global $db;
+global $db,$testo;
 $oggusati=$db->QueryCiclo("SELECT * FROM inoggetti WHERE userid='".$userid."' AND inuso='1'");
 while($ogg=$db->QueryCicloResult($oggusati)) {
 $oggetto=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$ogg['oggid']."' LIMIT 1");
@@ -14,11 +14,13 @@ $rotto=0;
 $usura=$ogg['usura']+1;
 if($usura==$oggetto['usura']){
 $rotto=1;
+$testo.="Oggetto ".$ogg['oggid']." usurato";
 }else{
 $rottura=floor($oggetto['probrottura']/$oggetto['usura']*$usura);
 $prob=rand(1,10000);
 if($prob<$rottura){
 $rotto=1;
+$testo.=$testo.="Oggetto ".$ogg['oggid']." rotto";;
 }
 }
 if($rotto==1){

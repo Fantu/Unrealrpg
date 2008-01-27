@@ -21,4 +21,21 @@
 <br />
 <?php echo $lang['desc_miniera_vecchia']; ?>
 <br />
-In sviluppo...<br />
+<form action="" method="post" name="lavminvecchia">
+<table border="0">
+<tr>
+<td>
+<?php echo $lang['seleziona_piccone']; ?> <select name="piccone" id="piccone">
+<option value="0" selected="selected">--------</option>
+<?php foreach($picconi as $chiave=>$elemento)
+echo "<option value=\"$chiave\">$elemento</option>"; ?>
+</select>
+</td>
+</tr>
+<tr>
+<td>
+<input type="submit" name="lavorainvecchia" value="<?php echo $lang['lavora_miniera']; ?>" />
+</td>
+</tr>
+</table>
+</form>
