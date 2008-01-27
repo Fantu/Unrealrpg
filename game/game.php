@@ -3,7 +3,7 @@ $start_time = microtime();
 require('inclusi/valori.php');
 require('language/it.php');
 if($_COOKIE['urbglogin'])
-	{$lg=explode("|||",$_COOKIE['urbglogin']);}else{header("Location: ../index.php?error=3");}
+	{$lg=explode("|||",$_COOKIE['urbglogin']);}else{header("Location: ../index.php?error=3"); exit(); }
 $adesso=strtotime("now");
 require('inclusi/funzioni_db.php');
 $db = new ConnessioniMySQL();
@@ -15,8 +15,8 @@ $esistenza=0;
 if($esistenza==0){
 	header("Location: ../index.php?error=3");
 	exit();
-} else
-	$db->database = $lg[3];
+} else{
+	$db->database = $lg[3];}
 
 $check = $db->QuerySelect("SELECT chiuso FROM config");
 if( $check['chiuso']==1 ) {

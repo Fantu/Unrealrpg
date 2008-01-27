@@ -1,4 +1,8 @@
 <?php
+if((empty($int_security)) OR ($int_security!=$game_se_code)){
+	header("Location: ../index.php?error=16");
+	exit();
+}
 $user=$db->QuerySelect("SELECT * FROM utenti WHERE userid='".$lg[0]."' AND password='".$lg[2]."' AND conferma=1 LIMIT 0,1");
 if($user['userid']) {
 $db->QueryMod("UPDATE utenti SET ultimazione='".$adesso."' WHERE userid='".$user['userid']."'");
