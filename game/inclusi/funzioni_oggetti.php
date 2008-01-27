@@ -1,4 +1,6 @@
 <?php
+require_once('language/it/lang_oggetti_nomi.php');
+
 $catoggetti_nome=array(
 1=>array(1),
 2=>array(1),
@@ -14,13 +16,13 @@ $rotto=0;
 $usura=$ogg['usura']+1;
 if($usura==$oggetto['usura']){
 $rotto=1;
-$testo.="Oggetto ".$ogg['oggid']." usurato";
+$testo.="Oggetto ".$lang['oggetto'.$ogg['oggid'].'_nome']." usurato";
 }else{
 $rottura=floor($oggetto['probrottura']/$oggetto['usura']*$usura);
 $prob=rand(1,10000);
 if($prob<$rottura){
 $rotto=1;
-$testo.=$testo.="Oggetto ".$ogg['oggid']." rotto";;
+$testo.=$testo.="Oggetto ".$lang['oggetto'.$ogg['oggid'].'_nome']." rotto";;
 }
 }
 if($rotto==1){
@@ -29,5 +31,6 @@ $db->QueryMod("DELETE FROM inoggetti WHERE id='".$ogg['id']."'");
 $db->QueryMod("UPDATE inoggetti SET usura=usura+'1',inuso='0' WHERE id='".$ogg['id']."'");
 }
 }//fine per ogni oggetto usato
+return $testo;
 }/*fine Checkusurarottura*/
 ?>
