@@ -4,9 +4,9 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	exit();
 }
 require('language/it/lang_mercato.php');
-require('language/it/lang_oggetti_categorie.php');
-require('language/it/lang_oggetti_nomi.php');
-require('inclusi/funzioni_oggetti.php');
+require_once('language/it/lang_oggetti_categorie.php');
+require_once('language/it/lang_oggetti_nomi.php');
+require_once('inclusi/funzioni_oggetti.php');
 $step=(int)$_GET['step'];
 switch($_GET['step']){
 case 1:
