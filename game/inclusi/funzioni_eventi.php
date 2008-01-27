@@ -12,7 +12,7 @@ if ($salute<1)
 $salute=1;
 $exp=rand(5,(2+floor($usercar['saluteattuale']/10)+floor($usercar['energia']/100)+floor($usercar['attfisico']/10)));
 $exp+=(3*$usercar['minatore']);
-$esplosione=rand(10,100)-($usercar['minatore']*5)-($usercar['attfisico']/2);
+$esplosione=rand(10,100)-($usercar['minatore']*5)-($usercar['attfisico']/20);
 $danni=0;
 if($esplosione>10){
 $esplosione=rand(10,100)-($usercar['agilita']/5)-($usercar['attfisico']/2);
@@ -48,7 +48,7 @@ if ($salute<1)
 $salute=1;
 $exp=rand(5,(2+floor($usercar['saluteattuale']/10)+floor($usercar['energia']/100)+floor($usercar['attmagico']/10)));
 $exp+=(3*$usercar['alchimista']);
-$esplosione=rand(10,100)-($usercar['alchimista']*5)-($usercar['attmagico']/2);
+$esplosione=rand(10,100)-($usercar['alchimista']*5)-($usercar['attmagico']/20);
 $danni=0;
 if($esplosione>10){
 $esplosione=rand(10,100)-($usercar['agilita']/5)-($usercar['attmagico']/2);
@@ -119,7 +119,7 @@ if ($salute<1)
 $salute=1;
 $exp=rand(5,(2+floor($usercar['saluteattuale']/10)+floor($usercar['energia']/100)+floor($usercar['attfisico']/10)));
 $exp+=(3*$usercar['minatore']);
-$esplosione=rand(10,100)-($usercar['minatore']*5)-($usercar['attfisico']/2);
+$esplosione=rand(10,100)-($usercar['minatore']*5)-($usercar['attfisico']/20);
 $danni=0;
 if($esplosione>10){
 $esplosione=rand(10,100)-($usercar['agilita']/5)-($usercar['attfisico']/2);
