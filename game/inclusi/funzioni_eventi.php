@@ -150,7 +150,7 @@ $testo.=$lang['report_lavminieravecchia_materiali_no']."<br />";
 $minerale="prova";
 $testo.=sprintf($lang['report_lavminieravecchia_materiali_si'],$minerale)."<br />";}
 $oggpersi=Checkusurarottura($userid);
-$testo="<span>".$testo."<br />".$oggpersi."</span><br /><br />";
+$testo="<span>".$testo.$oggpersi."</span><br /><br />";
 $titolo=$lang['report_lavoro_vecchia'];
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");
 $salute+=$danni;

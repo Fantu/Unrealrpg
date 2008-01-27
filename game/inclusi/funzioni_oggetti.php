@@ -8,7 +8,7 @@ $catoggetti_nome=array(
 );
 
 function Checkusurarottura($userid) {
-global $db;
+global $db,$lang;
 $oggusati=$db->QueryCiclo("SELECT * FROM inoggetti WHERE userid='".$userid."' AND inuso='1'");
 while($ogg=$db->QueryCicloResult($oggusati)) {
 $oggetto=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$ogg['oggid']."' LIMIT 1");
