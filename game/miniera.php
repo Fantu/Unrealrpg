@@ -6,8 +6,8 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 require('language/it/lang_miniera.php');
 require('language/it/lang_oggetti_nomi.php');
 $oggpicconi=$db->QueryCiclo("SELECT oggid,count(*) AS numero FROM inoggetti WHERE userid='".$user['userid']."' AND tipo='2' AND categoria='1' GROUP BY oggid");
-while($evento=$db->QueryCicloResult($oggpicconi)) {
-$picconi[$oggpicconi['oggid']]=$lang['oggetto'.$oggpicconi['oggid'].'_nome'];
+while($oggpiccone=$db->QueryCicloResult($oggpicconi)) {
+$picconi[$oggpiccone['oggid']]=$lang['oggetto'.$oggpiccone['oggid'].'_nome'];
 }
 if (isset($_POST['lavorainnuova'])){
 $errore="";
