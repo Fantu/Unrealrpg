@@ -150,7 +150,7 @@ $testo.=$lang['report_lavminieravecchia_materiali_no']."<br />";
 }else{
 $trovare=rand(0,10000);
 $numeromin=0;
-$oggminerali=$db->QueryCiclo("SELECT * FROM oggetti WHERE tipo='1' AND categoria='1' AND ");
+$oggminerali=$db->QueryCiclo("SELECT * FROM oggetti WHERE tipo='1' AND categoria='1' AND probtrovare>'".$trovare."'");
 while($oggminerale=$db->QueryCicloResult($oggminerali)) {
 $numeromin++;	
 $picconi['id'][$numeromin]=$oggminerale['id'];
