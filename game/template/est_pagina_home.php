@@ -59,11 +59,11 @@
 Informazioni sui server:
 <table width="750" border="0" align="center">
 <tr>
-<td>Nome</td><td>Utenti registrati</td><td>Utenti online</td>
+<td>Nome</td><td>Utenti registrati</td><td>Utenti online</td><td>Ultimo giorno</td>
 </tr>
 <?php foreach($game_server as $chiave=>$elemento){ ?>
 <tr>
-<td><?php echo $infoserver['nome'][$chiave]; ?></td><td><?php echo $infoserver['utenti'][$chiave]; ?></td><td><?php echo $infoserver['online'][$chiave]; ?></td>
+<td><?php echo $infoserver['nome'][$chiave]; ?></td><td><?php echo $infoserver['utenti'][$chiave]; ?></td><td><?php echo $infoserver['online'][$chiave]; ?></td><td><?php echo $infoserver['online24'][$chiave]; ?></td>
 </tr>
 <?php }/* fine per ogni server*/ ?>
 </table>

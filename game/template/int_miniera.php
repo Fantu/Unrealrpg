@@ -27,8 +27,9 @@
 <td>
 <?php echo $lang['seleziona_piccone']; ?> <select name="piccone" id="piccone">
 <option value="0" selected="selected">--------</option>
-<?php foreach($picconi as $chiave=>$elemento)
-echo "<option value=\"$chiave\">$elemento</option>"; ?>
+<?php if($picconi){
+foreach($picconi as $chiave=>$elemento)
+echo "<option value=\"$chiave\">$elemento</option>";} ?>
 </select>
 </td>
 </tr>

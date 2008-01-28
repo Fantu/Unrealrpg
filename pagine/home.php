@@ -56,6 +56,9 @@ $adesso=strtotime("now");
 $seonline=$adesso-600;
 $online=$db->QuerySelect("SELECT COUNT(*) AS id FROM utenti WHERE ultimazione>'".$seonline."'");
 $infoserver['online'][$chiave]=$online['id'];
+$seonline=$adesso-86400;
+$online=$db->QuerySelect("SELECT COUNT(*) AS id FROM utenti WHERE ultimazione>'".$seonline."'");
+$infoserver['online24'][$chiave]=$online['id'];
 }//fine info server
 require('game/template/est_pagina_home.php');	  
 ?>

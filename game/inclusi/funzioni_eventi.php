@@ -13,11 +13,11 @@ $salute=(rand(5,15))-($usercar['minatore'])-(rand(0,floor($usercar['diffisica']/
 if ($salute<1)
 $salute=1;
 $exp=rand(5,(2+floor($usercar['saluteattuale']/10)+floor($usercar['energia']/100)+floor($usercar['attfisico']/10)));
-$exp+=(3*$usercar['minatore']);
-$esplosione=rand(10,100)-($usercar['minatore']*5)-($usercar['attfisico']/20);
+$exp+=(5*$usercar['minatore']);
+$esplosione=rand(30,100)-($usercar['minatore']*5)-($usercar['attfisico']/20);
 $danni=0;
 if($esplosione>10){
-$esplosione=rand(10,100)-($usercar['agilita']/20)-($usercar['attfisico']/10);
+$esplosione=rand(30,100)-($usercar['agilita']/20)-($usercar['attfisico']/10);
 if($esplosione<10){
 $testo="<span>".$lang['report_incidente_min1']."</span><br /><br />";
 }else{
@@ -49,11 +49,11 @@ $salute=(rand(2,10))-($usercar['alchimista'])-(rand(0,floor($usercar['difmagica'
 if ($salute<1)
 $salute=1;
 $exp=rand(5,(2+floor($usercar['saluteattuale']/10)+floor($usercar['energia']/100)+floor($usercar['attmagico']/10)));
-$exp+=(3*$usercar['alchimista']);
-$esplosione=rand(10,100)-($usercar['alchimista']*5)-($usercar['attmagico']/20);
+$exp+=(5*$usercar['alchimista']);
+$esplosione=rand(30,100)-($usercar['alchimista']*5)-($usercar['attmagico']/20);
 $danni=0;
 if($esplosione>10){
-$esplosione=rand(10,100)-($usercar['agilita']/20)-($usercar['attmagico']/10);
+$esplosione=rand(30,100)-($usercar['agilita']/20)-($usercar['attmagico']/10);
 if($esplosione<10){
 $testo="<span>".$lang['report_esplosione_lab1']."</span><br /><br />";
 }else{
@@ -120,11 +120,11 @@ $salute=(rand(5,15))-($usercar['minatore'])-(rand(0,floor($usercar['diffisica']/
 if ($salute<1)
 $salute=1;
 $exp=rand(5,(2+floor($usercar['saluteattuale']/10)+floor($usercar['energia']/100)+floor($usercar['attfisico']/10)));
-$exp+=(3*$usercar['minatore']);
-$esplosione=rand(10,100)-($usercar['minatore']*5)-($usercar['attfisico']/20);
+$exp+=(5*$usercar['minatore']);
+$esplosione=rand(30,100)-($usercar['minatore']*5)-($usercar['attfisico']/20);
 $danni=0;
 if($esplosione>10){
-$esplosione=rand(10,100)-($usercar['agilita']/20)-($usercar['attfisico']/10);
+$esplosione=rand(30,100)-($usercar['agilita']/20)-($usercar['attfisico']/10);
 if($esplosione<10){
 $testo="<span>".$lang['report_incidente_min1']."</span><br /><br />";
 }else{

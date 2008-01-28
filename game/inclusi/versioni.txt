@@ -10,7 +10,8 @@ Legenda:<br />
 <p><strong>0.4.3</strong> (Non disponibile - In sviluppo)<br />
 # Rivisti i lavori, ora sono pi&ugrave; equilibrati<br />
 + Vari miglioramenti<br />
-- Corretti 2 bug nella Miniera vecchia<br />
+- Corretti 3 bug nella Miniera vecchia<br />
++ Aggiunto nella parte esterna per ogni server quanti utenti ci sono stati online nelle ultime 24 ore<br />
 <p>
 <p><strong>0.4.2</strong> [R.388] (27/1/2008 - Beta)<br />
 + Vari miglioramenti di sistema<br />
