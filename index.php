@@ -1,5 +1,6 @@
 <?php
 $start_time = microtime();
+$numquery=0;
 require('game/inclusi/valori.php');
 require('game/inclusi/funzioni_db.php');
 $db = new ConnessioniMySQL();
@@ -67,7 +68,7 @@ require_once("game/inclusi/errori.php");
 if($msg)
 	echo "<script language=\"javascript\"> alert('$msg'); </script>";
 $end_time = microtime() - $start_time;
-echo "Tempo di generazione della pagina: ".$end_time." secondi";
+echo "Tempo di generazione della pagina: ".$end_time." secondi - Query: ".$numquery;
 ?><br />
 <script type="text/javascript"><!--
 google_ad_client = "pub-0644240535082356";

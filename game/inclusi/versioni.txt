@@ -10,6 +10,7 @@ Legenda:<br />
 <p><strong>0.4.4</strong> (Non disponibile - In sviluppo)<br />
 + Vari miglioramenti di sistema<br />
 + Vari miglioramenti di sicurezza<br />
++ Aggiunto il numero di query eseguite per ogni pagina<br />
 <p>
 <p><strong>0.4.3.1</strong> [R.399] (28/1/2008 - Beta)<br />
 - Corretto bug nella registrazione<br />

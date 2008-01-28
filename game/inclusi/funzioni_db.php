@@ -28,6 +28,8 @@ class ConnessioniMySQL {
 		mysql_select_db($this->dbname,$connect);
 		$query="$arg";
 		$result=mysql_query($query,$connect);
+		if($numquery)
+		$numquery++;
 		if(!$result){
 			$error=mysql_error();
 			$errorn=mysql_errno();
@@ -48,6 +50,8 @@ class ConnessioniMySQL {
 		mysql_select_db($this->dbname,$connect);
 		$query="$arg";
 		$result=mysql_query($query,$connect);
+		if($numquery)
+		$numquery++;
 		if(!$result){
 			$error=mysql_error();
 			$errorn=mysql_errno();
@@ -61,6 +65,8 @@ class ConnessioniMySQL {
 		mysql_select_db($this->dbname,$connect);
 		$query="$arg";
 		$result=mysql_query($query,$connect);
+		if($numquery)
+		$numquery++;
 		if(!$result){
 			$error=mysql_error();
 			$errorn=mysql_errno();

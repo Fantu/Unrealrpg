@@ -1,5 +1,6 @@
 <?php
 $start_time = microtime();
+$numquery=0;
 require('inclusi/valori.php');
 require('language/it.php');
 if($_COOKIE['urbglogin'])
