@@ -2,7 +2,7 @@
 		if( $_POST['step']=="registrazione" ) {
 			$errore="";
 			$server=(int)$_POST['server'];
-			if( $server!=none )
+			if( $server!=0 )
 				$db->database = $server;
 			else{
 				$errore .= "- Non hai selezionato il server";}

@@ -11,7 +11,7 @@ $lang['messaggio']='Messaggio:';
 $lang['invia_messaggio']='Invia messaggio';
 $lang['messaggio_da']='Messaggio da: ';
 $lang['in_data']=' - in data: ';
-$lang['elimina']='Elimina';
+$lang['elimina']='Cancella';
 $lang['rispondi']='Rispondi';
 $lang['cancella_selezionati']='Cancella i selezionati';
 ?>
