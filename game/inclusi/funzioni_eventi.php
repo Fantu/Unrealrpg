@@ -2,7 +2,7 @@
 require_once('inclusi/funzioni_oggetti.php');
 
 function Completalavminnuova($userid) {
-global $db,$adesso;
+global $db,$adesso,$lang;
 require_once('language/it/lang_miniera.php');
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");	
 $paga=5;
@@ -37,7 +37,7 @@ $db->QueryMod("UPDATE lavori t1 JOIN utenti t2 on t1.userid=t2.userid JOIN carat
 } //fine Completalavminnuova
 
 function Completalavlabapp($userid) {
-global $db,$adesso;
+global $db,$adesso,$lang;
 require_once('language/it/lang_laboratorio.php');
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");
 $paga=6;
@@ -73,7 +73,7 @@ $db->QueryMod("UPDATE lavori t1 JOIN utenti t2 on t1.userid=t2.userid JOIN carat
 } //fine Completalavlabapp
 
 function Completatempioprega($userid) {
-global $db,$adesso;
+global $db,$adesso,$lang;
 require_once('language/it/lang_tempio.php');
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");
 $mana=$usercar['mana'];
