@@ -9,6 +9,7 @@ $oggpicconi=$db->QueryCiclo("SELECT t1.oggid AS oggid FROM inoggetti AS t1 JOIN 
 while($oggpiccone=$db->QueryCicloResult($oggpicconi)) {
 $picconi[$oggpiccone['oggid']]=$lang['oggetto'.$oggpiccone['oggid'].'_nome'];
 }
+if($user['plus']==0){$tempoproxlav=$game_proxlav_normal;}else{$tempoproxlav=$game_proxlav_plus;}
 if (isset($_POST['lavorainnuova'])){
 $errore="";
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$user['userid']."' LIMIT 1");
@@ -17,7 +18,7 @@ if ($usercar['energia']<100)
 $errore .= $lang['miniera_errore1'];
 if ($usercar['saluteattuale']<30)
 $errore .= $lang['miniera_errore2'];
-if ($adesso<($userlav['ultimolavoro']+21600))
+if ($adesso<($userlav['ultimolavoro']+$tempoproxlav))
 $errore .= $lang['miniera_errore3'];
 if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
@@ -35,7 +36,7 @@ if ($usercar['energia']<200)
 $errore .= $lang['miniera_errore1'];
 if ($usercar['saluteattuale']<30)
 $errore .= $lang['miniera_errore2'];
-if ($adesso<($userlav['ultimolavoro']+21600))
+if ($adesso<($userlav['ultimolavoro']+$tempoproxlav))
 $errore .= $lang['miniera_errore3'];
 $torcia=$db->QuerySelect("SELECT count(*) AS numero FROM inoggetti WHERE userid='".$user['userid']."' AND oggid='1' LIMIT 1");
 if ($torcia['numero']<1)

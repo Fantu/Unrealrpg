@@ -12,7 +12,8 @@ if ($usercar['energia']<100)
 $errore .= $lang['lab_errore1'];
 if ($usercar['saluteattuale']<30)
 $errore .= $lang['lab_errore2'];
-if ($adesso<($userlav['ultimolavoro']+21600))
+if($user['plus']==0){$tempoproxlav=$game_proxlav_normal;}else{$tempoproxlav=$game_proxlav_plus;}
+if ($adesso<($userlav['ultimolavoro']+$tempoproxlav))
 $errore .= $lang['lab_errore3'];
 if ($usercar['mana']<10)
 $errore .= $lang['lab_errore4'];
