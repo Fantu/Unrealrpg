@@ -13,6 +13,7 @@ Legenda:<br />
 - Corretti 3 bug nella Miniera vecchia<br />
 + Aggiunto nella parte esterna per ogni server quanti utenti ci sono stati online nelle ultime 24 ore<br />
 + Riduzione di 1 ora di tempo all'attesa del prossimo lavoro per chi ha l'Account Plus, applicato a tutti i lavori e a situazione (mostra quando prossimo lavoro)<br />
++ Tempo di resurrezione ridotto di 1 ora per gli Account Plus<br />
 <p>
 <p><strong>0.4.2</strong> [R.388] (27/1/2008 - Beta)<br />
 + Vari miglioramenti di sistema<br />
