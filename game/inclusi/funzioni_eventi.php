@@ -144,11 +144,10 @@ if($trovare<10){
 $trovato=1;}else{
 $trovato=0;}
 $testo=sprintf($lang['report_lavminieravecchia'],$exp,$energia,$salute)."<br />";
-$trovato=1;//prova minerali
 if($trovato==0){
 $testo.=$lang['report_lavminieravecchia_materiali_no']."<br />";
 }else{
-$trovare=rand(0,10000);
+$trovare=rand(0,9999);
 $numeromin=0;
 $oggminerali=$db->QueryCiclo("SELECT * FROM oggetti WHERE tipo='1' AND categoria='1' AND probtrovare>'".$trovare."'");
 while($oggminerale=$db->QueryCicloResult($oggminerali)) {
