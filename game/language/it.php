@@ -65,11 +65,11 @@ $lang['Monete']='Monete';
 //fine caratteristiche
 
 //inizio dettagli eventi
-$lang['eventi_dettagli1']='Stai lavorando in miniera nuova e finirai: ';
-$lang['eventi_dettagli2']='Stai lavorando in laboratorio come apprendista e finirai: ';
-$lang['eventi_dettagli3']='Sei nel tempio a pregare e finirai: ';
+$lang['eventi_dettagli1']='Stai lavorando in Miniera nuova e finirai: ';
+$lang['eventi_dettagli2']='Stai lavorando in Laboratorio come apprendista e finirai: ';
+$lang['eventi_dettagli3']='Sei nel Tempio a pregare e finirai: ';
 $lang['eventi_dettagli4']='Resurrezione in corso, tornerai in vita: ';
-$lang['eventi_dettagli5']='Stai lavorando in miniera vecchia e finirai: ';
+$lang['eventi_dettagli5']='Stai lavorando in Miniera vecchia e finirai: ';
 //fine dettagli eventi
 
 //inizio visualizzautente

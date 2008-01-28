@@ -20,10 +20,10 @@ Niente attualmente<br />
 - Corretto bug nella visualizzazione prossimo lavoro in Situazione con Account Plus<br />
 + Aggiunto nella parte esterna per ogni server quanti utenti si sono registrati nell'ultima settimana<br />
 + Aggiunto 1 piccone di ferro negli oggetti<br />
-<p>
+</p>
 <p><strong>0.4.3.1</strong> [R.399] (28/1/2008 - Beta)<br />
 - Corretto bug nella registrazione<br />
-<p>
+</p>
 <p><strong>0.4.3</strong> [R.398] (28/1/2008 - Beta)<br />
 # Rivisti i lavori, ora sono pi&ugrave; equilibrati<br />
 + Vari miglioramenti<br />
@@ -31,12 +31,12 @@ Niente attualmente<br />
 + Aggiunto nella parte esterna per ogni server quanti utenti ci sono stati online nelle ultime 24 ore<br />
 + Riduzione di 1 ora di tempo all'attesa del prossimo lavoro per chi ha l'Account Plus, applicato a tutti i lavori e a situazione (mostra quando prossimo lavoro)<br />
 + Tempo di resurrezione ridotto di 1 ora per gli Account Plus<br />
-<p>
+</p>
 <p><strong>0.4.2</strong> [R.388] (27/1/2008 - Beta)<br />
 + Vari miglioramenti di sistema<br />
 + Vari miglioramenti di sicurezza<br />
 + Terminata bozza Miniera vecchia<br />
-<p>
+</p>
 <strong>0.4.1</strong> [R.362] (27/1/2008 - Beta)<br />
 + Ora Inventario si pu&ograve; guardare anche mentre il personaggio sta facendo altro<br />
 + Aggiunti 9 minerali negli oggetti<br />
