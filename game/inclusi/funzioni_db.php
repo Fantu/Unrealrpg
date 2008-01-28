@@ -29,7 +29,7 @@ class ConnessioniMySQL {
 		$query="$arg";
 		$result=mysql_query($query,$connect);
 		if($numquery)
-		$GLOBALS[$numquery]++;
+		$GLOBALS['numquery']++;
 		if(!$result){
 			$error=mysql_error();
 			$errorn=mysql_errno();
