@@ -23,13 +23,14 @@ class ConnessioniMySQL {
 		return $dati;
 	}
 	function QuerySelect ($arg) { //$var=$db->QuerySelect("SELECT * FROM table");	
+		global $numquery;
 		$dati=$this->Config();
 		$connect=mysql_connect($this->server,$this->dbuser,$this->dbpass);
 		mysql_select_db($this->dbname,$connect);
 		$query="$arg";
 		$result=mysql_query($query,$connect);
 		if($numquery)
-		$GLOBALS['numquery']++;
+		$numquery++;
 		if(!$result){
 			$error=mysql_error();
 			$errorn=mysql_errno();
