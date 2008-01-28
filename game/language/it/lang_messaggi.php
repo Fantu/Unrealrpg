@@ -9,9 +9,9 @@ $lang['caratteri_disponibili']='Caratteri disponibili: ';
 $lang['titolo']='Titolo:';
 $lang['messaggio']='Messaggio:';
 $lang['invia_messaggio']='Invia messaggio';
-$lang['messaggio_da']='Messaggio da: ';
+$lang['messaggio_da']='Messaggio inviato da: ';
 $lang['in_data']=' - in data: ';
 $lang['elimina']='Cancella';
 $lang['rispondi']='Rispondi';
-$lang['cancella_selezionati']='Cancella i selezionati';
+$lang['cancella_selezionati']='Cancella messaggi selezionati';
 ?>

@@ -9,6 +9,7 @@ $lang['miniera_errore2']='- Il tuo fisico non pu&ograve; reggere il lavoro in mi
 $lang['miniera_errore3']='- Devono passare almeno 6 ore dall\'ultimo lavoro<br />';
 $lang['miniera_errore4']='- Non hai una torcia<br />';
 $lang['miniera_errore5']='- Non hai un piccone o non l\'hai selezionato<br />';
+$lang['miniera_errore6']='- Non hai abbastanza forza per utilizzare questo piccone<br />';
 $lang['report_lavminieranuova']='Hai lavorato in miniera nuova per 1 ora guadagnando %s monete e %s di esperienza come minatore, il duro lavoro ti ha stancato (hai perso %s di energia) e il tuo fisico ne ha risentito (hai perso %s di salute)';
 $lang['report_lavminieravecchia']='Hai lavorato in miniera vecchia per 1 ora guadagnando %s di esperienza come minatore, il duro lavoro ti ha stancato (hai perso %s di energia) e il tuo fisico ne ha risentito (hai perso %s di salute)';
 $lang['report_lavoro_nuova']='Report lavoro in miniera nuova';

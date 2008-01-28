@@ -10,7 +10,11 @@ Legenda:<br />
 <p><strong>0.4.4</strong> (Non disponibile - In sviluppo)<br />
 + Vari miglioramenti di sistema<br />
 + Vari miglioramenti di sicurezza<br />
++ Altri vari miglioramenti<br />
 + Aggiunto il numero di query eseguite per ogni pagina<br />
++ Aggiunto il controllo della forza fisica necessaria per utilizzare un determinato piccone in Miniera vecchia<br />
++ Aggiunto il consumo di energia supplementare in base al piccone in Miniera vecchia<br />
+- Corretto bug nella visualizzazione prossimo lavoro in Situazione con Account Plus<br />
 <p>
 <p><strong>0.4.3.1</strong> [R.399] (28/1/2008 - Beta)<br />
 - Corretto bug nella registrazione<br />
