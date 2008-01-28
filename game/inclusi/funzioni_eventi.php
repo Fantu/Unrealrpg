@@ -3,7 +3,7 @@ require_once('inclusi/funzioni_oggetti.php');
 
 function Completalavminnuova($userid) {
 global $db,$adesso;
-require('language/it/lang_miniera.php');
+require_once('language/it/lang_miniera.php');
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");	
 $paga=5;
 $energia=100-(5*$usercar['minatore']);
@@ -38,7 +38,7 @@ $db->QueryMod("UPDATE lavori t1 JOIN utenti t2 on t1.userid=t2.userid JOIN carat
 
 function Completalavlabapp($userid) {
 global $db,$adesso;
-require('language/it/lang_laboratorio.php');
+require_once('language/it/lang_laboratorio.php');
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");
 $paga=6;
 $mana=rand(5,10);
@@ -74,7 +74,7 @@ $db->QueryMod("UPDATE lavori t1 JOIN utenti t2 on t1.userid=t2.userid JOIN carat
 
 function Completatempioprega($userid) {
 global $db,$adesso;
-require('language/it/lang_tempio.php');
+require_once('language/it/lang_tempio.php');
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");
 $mana=$usercar['mana'];
 if($usercar['manarimasto']!=$usercar['mana']){
@@ -110,8 +110,8 @@ $db->QueryMod("UPDATE utenti t2 JOIN caratteristiche t3 on t2.userid=t3.userid S
 } //fine Completaresurrezione
 
 function Completalavminvecchia($userid) {
-global $db,$adesso;
-require('language/it/lang_miniera.php');
+global $db,$adesso,$lang;
+require_once('language/it/lang_miniera.php');
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");	
 $energia=100-(5*$usercar['minatore']);
 if ($energia<50)
@@ -144,10 +144,21 @@ if($trovare<10){
 $trovato=1;}else{
 $trovato=0;}
 $testo=sprintf($lang['report_lavminieravecchia'],$exp,$energia,$salute)."<br />";
+$trovato=1;//prova minerali
 if($trovato==0){
 $testo.=$lang['report_lavminieravecchia_materiali_no']."<br />";
 }else{
-$minerale="prova";
+$trovare=rand(0,10000);
+$numeromin=0;
+$oggminerali=$db->QueryCiclo("SELECT * FROM oggetti WHERE tipo='1' AND categoria='1' AND ");
+while($oggminerale=$db->QueryCicloResult($oggminerali)) {
+$numeromin++;	
+$picconi['id'][$numeromin]=$oggminerale['id'];
+$picconi['nome'][$numeromin]=$lang['oggetto'.$oggminerale['id'].'_nome'];
+}
+$numeromin=rand(1,$numeromin);
+$minerale=$picconi['nome'][$numeromin];
+$db->QueryMod("INSERT INTO inoggetti (oggid,userid) VALUES ('".$picconi['id'][$numeromin]."','".$userid."')");
 $testo.=sprintf($lang['report_lavminieravecchia_materiali_si'],$minerale)."<br />";}
 $oggpersi=Checkusurarottura($userid);
 $testo="<span>".$testo.$oggpersi."</span><br /><br />";
