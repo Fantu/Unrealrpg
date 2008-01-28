@@ -42,7 +42,7 @@
             <td><div align="right">Server: </div></td>
             <td colspan="2">
 			<select name="server" id="server">
-              <option value="0" selected="selected">--------</option>
+              <option value="-1" selected="selected">--------</option>
               <?php foreach($game_server as $chiave=>$elemento)
 			  echo "<option value=\"$chiave\">$elemento</option>"; ?>
             </select></td>

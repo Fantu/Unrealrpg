@@ -2,8 +2,11 @@
 		if( $_POST['step']=="registrazione" ) {
 			$errore="";
 			$server=(int)$_POST['server'];
-			if( $server!=0 )
-				$db->database = $server;
+			foreach($game_server as $chiave=>$elemento){
+			if ($chiave==$server){$esistenza=1;}
+			}
+			if($esistenza==1){
+			$db->database=$server;}
 			else{
 				$errore .= "- Non hai selezionato il server";}
 				if(!$_POST['username'])
