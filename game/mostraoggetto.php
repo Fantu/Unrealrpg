@@ -25,6 +25,9 @@ $oggetti['costo']=$oggetto['costo'];
 $oggetti['usura']=$oggetto['usura'];
 $oggetti['energia']=$oggetto['energia'];
 $oggetti['forzafisica']=$oggetto['forzafisica'];
+$oggetti['bonuseff']=$oggetto['bonuseff'];
+$oggetti['probtrovare']=$oggetto['probtrovare'];
+$oggetti['probrottura']=$oggetto['probrottura'];
 
 require('template/int_mostraoggetto.php');
 ?>
