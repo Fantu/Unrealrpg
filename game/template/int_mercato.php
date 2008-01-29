@@ -6,6 +6,8 @@
 <div align="center">
 <?php echo $linkindietro; ?>
 <br />
+<br />
+<br />
 <?php
 if($mostraogg==1){
 	if ($seoggetti['id']==0){
