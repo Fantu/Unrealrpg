@@ -10,7 +10,7 @@ require_once('inclusi/funzioni_oggetti.php');
 $step=(int)$_GET['step'];
 switch($_GET['step']){
 case 1:
-$linkindietro="<a href=\"game.php?act=mercato\">".$lang['Mercato']"</a>";
+$linkindietro="<a href=\"game.php?act=mercato\">".$lang['Mercato']."</a>";
 $categoria=(int)$_GET['categoria'];
 if(is_array($catoggetti_nome[$categoria])){
 foreach($catoggetti_nome[$categoria] as $chiave=>$elemento){
