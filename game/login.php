@@ -34,7 +34,11 @@ if($check['chiuso']==1) {
 	setcookie ("urbglogin", $user['userid']."|||".md5($user['username'])."|||".$user['password']."|||".$user['server'],time()+10800);
 	$ora = strtotime("now");
 	$db->QueryMod("UPDATE utenti SET ultimologin='".$ora."',ipattuale='".$_SERVER['REMOTE_ADDR']."' WHERE userid='".$user['userid']."'");
-
+	$scaduto=$ora-2592000;
+	$quantimess=$db->QuerySelect("SELECT COUNT(*) AS id FROM messaggi WHERE data<'".$scaduto."'");
+	if($quantimess['id']>0){
+	$db->QueryMod("DELETE FROM messaggi WHERE data<'".$scaduto."'");
+	}
 	header("Location: game.php?act=situazione");
 	exit();	
 }

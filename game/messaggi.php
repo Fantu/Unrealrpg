@@ -15,7 +15,10 @@ function conteggio() {
 <div align="center">
 <?php
 //cancello messaggi vecchi
-$scaduto=strtotime("now")-172800;
+if($user['plus']==0)
+	$scaduto=strtotime("now")-172800;
+else
+	$scaduto=strtotime("now")-432000;
 $db->QueryMod("DELETE FROM messaggi WHERE userid='".$user['userid']."' AND letto='1' AND data<'".$scaduto."'");
 
 switch($_GET['do']){
