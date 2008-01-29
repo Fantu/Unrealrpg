@@ -12,7 +12,7 @@ $oggposseduti=$db->QueryCiclo("SELECT oggid,count(*) AS numero FROM inoggetti WH
 while($ogg=$db->QueryCicloResult($oggposseduti)) {
 $i++;
 $oggetti['numero'][$i]=$ogg['numero'];
-$oggetti['nome'][$i]="<a href=\"mostraoggetto.php?ogg=".$ogg['oggid']."&amp;da=inventario\">".$lang['oggetto'.$ogg['oggid'].'_nome']."</a>";
+$oggetti['nome'][$i]="<a href=\"game.php?act=mostraoggetto&amp;ogg=".$ogg['oggid']."&amp;da=inventario\">".$lang['oggetto'.$ogg['oggid'].'_nome']."</a>";
 }
 }
 require('template/int_inventario.php');
