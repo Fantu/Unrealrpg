@@ -8,7 +8,7 @@ Legenda:<br />
 <br />
 </p>
 <p><strong>0.4.6</strong> (Non disponibile - In sviluppo)<br />
-Niente attualmente<br />
+# Rivisto il lavoro in Miniera vecchia, ora &egrave; pi&ugrave; equilibrato<br />
 <p>
 <p><strong>0.4.5</strong> [R.429] (29/1/2008 - Beta)<br />
 + Aggiunti 1 piccone di rame e 1 piccone di ferro negli oggetti<br />

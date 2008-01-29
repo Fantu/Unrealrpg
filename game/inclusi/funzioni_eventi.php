@@ -137,7 +137,7 @@ $titolo=$lang['report_incidente_miniera'];
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");	
 }//fine incidente
 $piccone=$db->QuerySelect("SELECT t1.oggid AS oggid,t2.bonuseff AS bonuseff,t2.energia AS energia FROM inoggetti AS t1 JOIN oggetti t2 ON t1.oggid=t2.id WHERE t1.userid='".$userid."' AND t2.tipo='2' AND t2.categoria='1'  AND t1.inuso='1' LIMIT 1");
-$efficenza=($usercar['minatore']*100)+$usercar['attfisico'];
+$efficenza=($usercar['minatore']*500)+$usercar['attfisico'];
 $efficenza+=($efficenza/100*$piccone['bonuseff']);
 $energia+=$piccone['energia'];
 $trovare=rand(0,10000)-$efficenza;
