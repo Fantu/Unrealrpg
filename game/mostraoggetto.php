@@ -3,6 +3,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	header("Location: ../index.php?error=16");
 	exit();
 }
+require_once('language/it/lang_mostraoggetto.php');
 require_once('language/it/lang_oggetti_nomi.php');
 require_once('language/it/lang_oggetti_categorie.php');
 $da=htmlentities($_GET['da']);
@@ -20,6 +21,7 @@ $indietro="<a href=\"game.php?act=mercato&amp;step=2&amp;categoria=".$cat."&amp;
 $oggid=(int)$_GET['ogg'];
 $oggetto=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$oggid."' LIMIT 1");
 $oggetti['nome']=$lang['oggetto'.$oggetto['id'].'_nome'];
+$oggetti['costo']=$oggetto['costo'];
 
 require('template/int_mostraoggetto.php');
 ?>
