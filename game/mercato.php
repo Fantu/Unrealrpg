@@ -47,7 +47,7 @@ $oggposseduti=$db->QueryCiclo("SELECT id,costo FROM oggetti WHERE tipo='".$categ
 while($ogg=$db->QueryCicloResult($oggposseduti)) {
 $i++;
 $oggetti['id'][$i]=$ogg['id'];
-$oggetti['nome'][$i]=$lang['oggetto'.$ogg['id'].'_nome'];
+$oggetti['nome'][$i]="<a href=\"game.php?act=mostraoggetto&amp;ogg=".$ogg['oggid']."&amp;da=mercato&amp;cat=".$categoria."&amp;scat=".$sottocat."\">".$lang['oggetto'.$ogg['id'].'_nome']."</a>";
 $oggetti['costo'][$i]=$ogg['costo'];
 }
 }

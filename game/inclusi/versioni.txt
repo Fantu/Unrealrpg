@@ -15,6 +15,7 @@ Legenda:<br />
 + Aggiunto link alla sezione precedente nel mercato<br />
 + Iniziata creazione del mostra caratteristiche dell'oggetto<br />
 + Aggiunto in Inventario per ogni oggetto il link alle caratteristiche<br />
++ Aggiunto in Mercato per ogni oggetto il link alle caratteristiche<br />
 <p>
 <p><strong>0.4.4</strong> [R.415] (28/1/2008 - Beta)<br />
 + Vari miglioramenti di sistema<br />
