@@ -23,10 +23,10 @@
 					$errore.="- L'email inserita non sembra essere corretta.<br />";
 			if( empty($errore) ) {
 				$a=$db->QuerySelect("SELECT maxutenti AS Max, utenti AS Ut FROM config WHERE id='".$_POST['server']."'");	
-				$a2=$db->QuerySelect("SELECT userid AS Us1 FROM utenti WHERE username='".$_POST['username']."'");				
-				if($a2['Us1'])
+				$a2=$db->QuerySelect("SELECT COUNT(*) AS Us1 FROM utenti WHERE username='".$_POST['username']."'");				
+				if($a2['Us1']>0)
 					$errore.="- L'username che hai scelto è già stato preso.<br />";
-				if($a['Ut']==$a['Max'])
+				if($a['Ut']>=$a['Max'])
 					$errore.="- Questo server è al momento troppo affollato, scegline un altro.<br />";
 			}
 			

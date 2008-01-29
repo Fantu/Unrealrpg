@@ -9,7 +9,10 @@ Legenda:<br />
 </p>
 <p><strong>0.4.5</strong> (Non disponibile - In sviluppo)<br />
 + Aggiunti 1 piccone di rame e 1 piccone di ferro negli oggetti<br />
-+ Vari miglioramenti<br />
++ Vari miglioramenti di sistema<br />
++ Vari miglioramenti di sicurezza<br />
++ Altri vari miglioramenti<br />
++ Aggiunto link alla sezione precedente nel mercato<br />
 <p>
 <p><strong>0.4.4</strong> [R.415] (28/1/2008 - Beta)<br />
 + Vari miglioramenti di sistema<br />

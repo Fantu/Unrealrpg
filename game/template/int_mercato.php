@@ -4,6 +4,8 @@
 <br />
 <br />
 <div align="center">
+<?php echo $linkindietro; ?>
+<br />
 <?php
 if($mostraogg==1){
 	if ($seoggetti['id']==0){
