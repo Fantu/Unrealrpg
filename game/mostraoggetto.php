@@ -24,6 +24,7 @@ $oggetti['nome']=$lang['oggetto'.$oggetto['id'].'_nome'];
 $oggetti['costo']=$oggetto['costo'];
 $oggetti['usura']=$oggetto['usura'];
 $oggetti['energia']=$oggetto['energia'];
+$oggetti['forzafisica']=$oggetto['forzafisica'];
 
 require('template/int_mostraoggetto.php');
 ?>
