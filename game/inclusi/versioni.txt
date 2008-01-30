@@ -11,6 +11,8 @@ Legenda:<br />
 # Rivisto il lavoro in Miniera vecchia, ora &egrave; pi&ugrave; equilibrato<br />
 + Ora i messaggi letti di chi ha Account Plus vengono cancellati dopo 5 giorni anziche 2<br />
 + Ora i messaggi letti o non letti pi&ugrave; vecchi di 30 giorni vengono cancellati in qualsiasi caso<br />
++ Vari miglioramenti di sistema<br />
++ Vari miglioramenti di sicurezza<br />
 <p>
 <p><strong>0.4.5</strong> [R.429] (29/1/2008 - Beta)<br />
 + Aggiunti 1 piccone di rame e 1 piccone di ferro negli oggetti<br />

@@ -28,6 +28,7 @@ echo "<script language=\"javascript\">window.location.href='game.php?act=messagg
 exit();
 break;
 case "canc"://cancella mess selezionati
+$_POST['contatore']=(int)$_POST['contatore'];
 while($_POST['contatore']>0) {	
 	$db->QueryMod("DELETE FROM messaggi WHERE id='".$_POST['messaggioid'.$_POST['contatore'].'']."'");
 	$_POST['contatore']--;
@@ -49,13 +50,11 @@ case "dorisp":// invia risposta
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";
 	echo $outputerrori;}
 	else {
-		$a=$db->QuerySelect("SELECT titolo,mittenteid FROM messaggi WHERE id='".$_POST['messid']."'");
+		$msgid=(int)$_POST['messid'];
+		$a=$db->QuerySelect("SELECT titolo,mittenteid FROM messaggi WHERE id='".$msgid."'");
 		$titolo="RE: ".$a['titolo'];
-		$_POST['mymess']=str_replace("'","&acute;",$_POST['mymess']);
-		$_POST['mymess']=str_replace("\"","&quot;",$_POST['mymess']);		
-		$_POST['mymess']=str_replace("<","&lt;",$_POST['mymess']);		
-		$_POST['mymess']=str_replace(">","&gt;",$_POST['mymess']);
-		$db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$a['mittenteid']."','".$titolo."','".$_POST['mymess']."','".$user['userid']."','".$adesso."')");
+		$messaggio=htmlentities($_POST['mymess']);
+		$db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$a['mittenteid']."','".$titolo."','".$messaggio."','".$user['userid']."','".$adesso."')");
 		echo "<script language=\"javascript\">window.location.href='game.php?act=messaggi'</script>";
 		exit();		
 	}
@@ -75,16 +74,11 @@ case "doscrivi":// invia nuovo messaggio
 	if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";
 	echo $outputerrori;}
-	else {	
-		$_POST['titolo']=str_replace("'","&acute;",$_POST['titolo']);
-		$_POST['titolo']=str_replace("\"","&quot;",$_POST['titolo']);		
-		$_POST['titolo']=str_replace("<","&lt;",$_POST['titolo']);		
-		$_POST['titolo']=str_replace(">","&gt;",$_POST['titolo']);	
-		$_POST['mymess']=str_replace("'","&acute;",$_POST['mymess']);
-		$_POST['mymess']=str_replace("\"","&quot;",$_POST['mymess']);		
-		$_POST['mymess']=str_replace("<","&lt;",$_POST['mymess']);		
-		$_POST['mymess']=str_replace(">","&gt;",$_POST['mymess']);
-		$db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$_POST['achi']."','".$_POST['titolo']."','".$_POST['mymess']."','".$user['userid']."','".$adesso."')");
+	else {
+		$titolo=htmlentities($_POST['titolo']);
+		$messaggio=htmlentities($_POST['mymess']);
+		$achi=(int)$_POST['achi'];
+		$db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$achi."','".$titolo."','".$messaggio."','".$user['userid']."','".$adesso."')");
 		$db->QueryMod("DELETE FROM messaggi WHERE id='".$id."'");
 		echo "<script language=\"javascript\">window.location.href='game.php?act=messaggi'</script>";
 	}
