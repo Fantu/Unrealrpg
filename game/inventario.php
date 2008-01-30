@@ -20,7 +20,7 @@ if($errore){
 else {
 $cogg=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$oggselect."' ORDER BY usura DESC LIMIT 1");	
 if($cogg['usura']>1){
-$monete=floor(($cogg['costo']/2)/$numogg['usura']*($numogg['usura']-$cogg['usura']));
+$monete=floor(($cogg['costo']/2)/$cogg['usura']*($cogg['usura']-$numogg['usura']));
 }else{
 $monete=floor($cogg['costo']/2);
 }
