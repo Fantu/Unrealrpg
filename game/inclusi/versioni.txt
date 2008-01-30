@@ -7,7 +7,10 @@ Legenda:<br />
 - Correzione bug e patch di situazioni non previste<br />
 <br />
 </p>
-<p><strong>0.4.6</strong> (Non disponibile - In sviluppo)<br />
+<p><strong>0.4.7</strong> (Non disponibile - In sviluppo)<br />
+Niente attualmente<br />
+<p>
+<p><strong>0.4.6</strong> [R.442] (30/1/2008 - Beta)<br />
 # Rivisto il lavoro in Miniera vecchia, ora &egrave; pi&ugrave; equilibrato<br />
 + Ora i messaggi letti di chi ha Account Plus vengono cancellati dopo 5 giorni anziche 2<br />
 + Ora i messaggi letti o non letti pi&ugrave; vecchi di 30 giorni vengono cancellati in qualsiasi caso<br />
