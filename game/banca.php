@@ -12,7 +12,7 @@ if (($userbank['interessi']+86400)<$adesso){
 }
 if (isset($_POST['deposita'])){
 $errore="";
-$dadepositare=$_POST['dadepositare'];
+$dadepositare=(int)$_POST['dadepositare'];
 if (!is_numeric($dadepositare)){
 $errore .= $lang['banca_errore1'];}
 else{
@@ -31,7 +31,7 @@ $db->QueryMod("UPDATE config SET banca=banca+'".$dadepositare."'");
 }//fine deposita
 if (isset($_POST['preleva'])){
 $errore="";
-$daprelevare=$_POST['daprelevare'];
+$daprelevare=(int)$_POST['daprelevare'];
 if (!is_numeric($daprelevare)){
 $errore .= $lang['banca_errore1'];}
 else{
@@ -54,7 +54,7 @@ $db->QueryMod("UPDATE config SET banca=banca-'".$daprelevare."'");
 }//fine preleva
 if (isset($_POST['chiediprestito'])){
 $errore="";
-$prestito=$_POST['inprestito'];
+$prestito=(int)$_POST['inprestito'];
 if (!is_numeric($prestito)){
 $errore .= $lang['banca_errore1'];}
 else{

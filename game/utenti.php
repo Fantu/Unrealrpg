@@ -27,7 +27,8 @@ while($chi=$db->QueryCicloResult($utentecercato)) {
 }
 }//fine mostra risultati
 }
-switch($_GET['ordine']){
+$cheordine=htmlentities($_GET['ordine']);
+switch($cheordine){
 case "stato":
 $ordine="ORDER BY t1.ultimazione DESC";
 break;
