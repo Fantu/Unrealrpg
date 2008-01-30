@@ -1,4 +1,9 @@
 <center><h2><?php echo $lang['Inventario']; ?></h2></center><br />
+<br />
+<?php echo $outputerrori; ?>
+<br />
+<br />
+<div align="center">
 <?php if(!empty($nessunogg)){ echo $nessunogg."<br />";}else{ ?>
 <form action="" method="post" name="formvendi">
 <table align="center" border="1">	
@@ -13,3 +18,4 @@ foreach($oggetti['nome'] as $chiave=>$elemento){?>
 <input type="submit" name="vendi" value="<?php echo $lang['Vendi']; ?>" />
 </form>
 <?php }/*fine se ci sono oggetti*/ ?>
+</div>
