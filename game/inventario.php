@@ -22,22 +22,22 @@ if (isset($_POST['vendi'])){
 $errore="";
 $quanti=(int)$_POST['quanti'];
 $oggselect=(int)$_POST['oggselect'];
-$ogg=$db->QuerySelect("SELECT costo FROM oggetti WHERE id='".$oggselect."' LIMIT 1");
-$prezzo=$costoogg['costo']*$quanti;
-if ($user['monete']<$prezzo)
-$errore .= $lang['mercato_errore1'];
+$numogg=$db->QuerySelect("SELECT oggid,count(*) AS numero FROM inoggetti WHERE userid='".$user['userid']."' AND oggid='".$oggselect."' GROUP BY oggid");
 if ($oggselect<1)
-$errore .= $lang['mercato_errore2'];
+$errore .= $lang['inventario_errore1'];
 if ($quanti<1)
-$errore .= $lang['mercato_errore3'];
+$errore .= $lang['inventario_errore2'];
+if ($quanti>$numogg['numero'])
+$errore .= $lang['inventario_errore3'];
 if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
 else {
+$monete=$costoogg['costo']*$quanti;	
 $outputerrori=sprintf($lang['report_compera'],$quanti,$lang['oggetto'.$oggselect.'_nome'],$prezzo);
 $db->QueryMod("UPDATE utenti SET monete=monete-'".$prezzo."' WHERE userid='".$user['userid']."'");	
-for($i=1; $i<=$quanti; $i++){
+
 $db->QueryMod("INSERT INTO inoggetti (oggid,userid) VALUES ('".$oggselect."','".$user['userid']."')");
-}
+
 }
 }//fine vendi
 

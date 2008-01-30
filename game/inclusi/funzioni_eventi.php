@@ -147,7 +147,7 @@ $trovato=0;}
 $testo=sprintf($lang['report_lavminieravecchia'],$exp,$energia,$salute)."<br />";
 if($trovato==0){
 $testo.=$lang['report_lavminieravecchia_materiali_no']."<br />";
-}else{
+}else{//inizio trovato minerale
 $trovare=rand(0,9999);
 $numeromin=0;
 $oggminerali=$db->QueryCiclo("SELECT * FROM oggetti WHERE tipo='1' AND categoria='1' AND probtrovare>'".$trovare."'");
@@ -158,8 +158,12 @@ $picconi['nome'][$numeromin]=$lang['oggetto'.$oggminerale['id'].'_nome'];
 }
 $numeromin=rand(1,$numeromin);
 $minerale=$picconi['nome'][$numeromin];
+$quantimin=rand(1,2+floor($usercar['minatore']/3));
+for($i=1; $i<=$quantimin; $i++){
 $db->QueryMod("INSERT INTO inoggetti (oggid,userid) VALUES ('".$picconi['id'][$numeromin]."','".$userid."')");
-$testo.=sprintf($lang['report_lavminieravecchia_materiali_si'],$minerale)."<br />";}
+}
+$testo.=sprintf($lang['report_lavminieravecchia_materiali_si'],$quantimin,$minerale)."<br />";
+}//fine trovato minerale
 $oggpersi=Checkusurarottura($userid);
 $testo="<span>".$testo.$oggpersi."</span><br /><br />";
 $titolo=$lang['report_lavoro_vecchia'];

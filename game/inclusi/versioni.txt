@@ -13,6 +13,7 @@ Legenda:<br />
 + Ora i messaggi letti o non letti pi&ugrave; vecchi di 30 giorni vengono cancellati in qualsiasi caso<br />
 + Vari miglioramenti di sistema<br />
 + Vari miglioramenti di sicurezza<br />
++ Aggiunta la possibilit&agrave; di trovare pi&ugrave; pezzi di minerale alla volta, ogni 3 livelli di abilit&agrave; il massimo aumenta di 1<br />
 <p>
 <p><strong>0.4.5</strong> [R.429] (29/1/2008 - Beta)<br />
 + Aggiunti 1 piccone di rame e 1 piccone di ferro negli oggetti<br />

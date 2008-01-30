@@ -18,6 +18,6 @@ $lang['report_incidente_miniera']='Imprevisto durante il lavoro in miniera';
 $lang['report_incidente_min1']='Durante il tuo lavoro in miniera si &egrave; verificato un incidente ma sei riuscito ad allontanarti in tempo e non ferirti';
 $lang['report_incidente_min2']='Durante il tuo lavoro in miniera si &egrave; verificato un incidente, non sei riuscito ad allontanarti in tempo e ti sei ferito (%s di salute persa)';
 $lang['report_lavminieravecchia_materiali_no']='Non hai trovato minerali';
-$lang['report_lavminieravecchia_materiali_si']='Hai trovato %s';
+$lang['report_lavminieravecchia_materiali_si']='Hai trovato %s di %s';
 $lang['seleziona_piccone']='Seleziona un piccone';
 ?>
