@@ -35,6 +35,8 @@ else {
 if($numogg['usura']>1){
 $cogg=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$oggselect."' ORDER BY usura DESC LIMIT 1");
 $monete=floor(($cogg['costo']/2)/$numogg['usura']*($numogg['usura']-$cogg['usura']));
+}else{
+$monete=floor($cogg['costo']/2);
 }
 if($quanti>1){
 $quanti--;
