@@ -4,20 +4,6 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	exit();
 }
 require('language/it/lang_inventario.php');
-$seoggetti=$db->QuerySelect("SELECT COUNT(*) AS id FROM inoggetti WHERE userid='".$user['userid']."'");
-if ($seoggetti['id']==0){
-$nessunogg=$lang['nessun_oggetto_posseduto'];
-}else{
-require('language/it/lang_oggetti_nomi.php');	
-$oggposseduti=$db->QueryCiclo("SELECT oggid,count(*) AS numero FROM inoggetti WHERE userid='".$user['userid']."' GROUP BY oggid");
-while($ogg=$db->QueryCicloResult($oggposseduti)) {
-$i++;
-$oggetti['id'][$i]=$ogg['oggid'];
-$oggetti['numero'][$i]=$ogg['numero'];
-$oggetti['nome'][$i]="<a href=\"game.php?act=mostraoggetto&amp;ogg=".$ogg['oggid']."&amp;da=inventario\">".$lang['oggetto'.$ogg['oggid'].'_nome']."</a>";
-}
-}//fine mostra oggetti
-
 if (isset($_POST['vendi'])){
 $errore="";
 $quanti=(int)$_POST['quanti'];
@@ -47,6 +33,20 @@ $db->QueryMod("UPDATE utenti SET monete=monete+'".$monete."' WHERE userid='".$us
 $db->QueryMod("DELETE FROM inoggetti WHERE userid='".$user['userid']."' AND oggid='".$oggselect."' LIMIT ".$quanti);
 }
 }//fine vendi
+
+$seoggetti=$db->QuerySelect("SELECT COUNT(*) AS id FROM inoggetti WHERE userid='".$user['userid']."'");
+if ($seoggetti['id']==0){
+$nessunogg=$lang['nessun_oggetto_posseduto'];
+}else{
+require('language/it/lang_oggetti_nomi.php');	
+$oggposseduti=$db->QueryCiclo("SELECT oggid,count(*) AS numero FROM inoggetti WHERE userid='".$user['userid']."' GROUP BY oggid");
+while($ogg=$db->QueryCicloResult($oggposseduti)) {
+$i++;
+$oggetti['id'][$i]=$ogg['oggid'];
+$oggetti['numero'][$i]=$ogg['numero'];
+$oggetti['nome'][$i]="<a href=\"game.php?act=mostraoggetto&amp;ogg=".$ogg['oggid']."&amp;da=inventario\">".$lang['oggetto'.$ogg['oggid'].'_nome']."</a>";
+}
+}//fine mostra oggetti
 
 require('template/int_inventario.php');
 ?>
