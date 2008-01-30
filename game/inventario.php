@@ -32,12 +32,11 @@ $errore .= $lang['inventario_errore3'];
 if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
 else {
-$monete=$costoogg['costo']*$quanti;	
-$outputerrori=sprintf($lang['report_compera'],$quanti,$lang['oggetto'.$oggselect.'_nome'],$prezzo);
-$db->QueryMod("UPDATE utenti SET monete=monete-'".$prezzo."' WHERE userid='".$user['userid']."'");	
+$monete=1;	
+$outputerrori=sprintf($lang['report_vendita'],$quanti,$lang['oggetto'.$oggselect.'_nome'],$monete);
+$db->QueryMod("UPDATE utenti SET monete=monete+'".$monete."' WHERE userid='".$user['userid']."'");	
 
-$db->QueryMod("INSERT INTO inoggetti (oggid,userid) VALUES ('".$oggselect."','".$user['userid']."')");
-
+$db->QueryMod("DELETE FROM inoggetti WHERE userid='".$userid."' AND oggid='".$oggselect."' LIMIT ".$quanti);
 }
 }//fine vendi
 

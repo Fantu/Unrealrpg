@@ -5,4 +5,5 @@ $lang['Quanti']='Quantit&agrave;';
 $lang['inventario_errore1']='- Non hai selezionato l\'oggetto da vendere<br />';
 $lang['inventario_errore2']='- Non hai selezionato la quantit&agrave;<br />';
 $lang['inventario_errore3']='- Non hai abbastanza oggetti<br />';
+$lang['report_vendita']='Hai venduto %s di %s ricavando in totale %s monete';
 ?>
