@@ -8,7 +8,7 @@ Legenda:<br />
 <br />
 </p>
 <p><strong>0.4.7</strong> (Non disponibile - In sviluppo)<br />
-Niente attualmente<br />
+# Rivisto il lavoro in Miniera vecchia, ora &egrave; pi&ugrave; equilibrato<br />
 <p>
 <p><strong>0.4.6</strong> [R.442] (30/1/2008 - Beta)<br />
 # Rivisto il lavoro in Miniera vecchia, ora &egrave; pi&ugrave; equilibrato<br />

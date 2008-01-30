@@ -25,9 +25,6 @@ break;
 case 8:
 $msg="Multi-account individuato!\\nSe vuoi accedere a Lostage con un secondo account, specificalo nelle opzioni.";
 break;
-case 9:
-$msg="Spiacente, ma dalla tua ultima operazione non puoi effettuare più di un login ogni 40 minuti.";
-break;
 case 10:
 $msg="Il tuo account è ora inutilizzabile e verrà a breve cancellato dal sistema.";
 break;
@@ -39,7 +36,7 @@ if($_GET['t']>0) {
 $msg="Il tuo account è stato momentaneamente bannato".$fino."!\\nPer sapere il motivo del bann ed evitare futuri intoppi, consulta il forum o contatta un admin.";
 break;
 case 12:
-$msg="Server momentaneamente chiuso per manutenzione. Riprova più tardi. Grazie.";
+$msg="Server momentaneamente chiuso per installazione aggiornamento o manutenzione. Riprova più tardi. Grazie.";
 break;
 case 13:
 $msg="Trovata irregolarità!\\nSembra che da questo pc si sia loggato qualcuno oltre te, e non è specificato nelle opzioni di multi-account.";
