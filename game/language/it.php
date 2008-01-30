@@ -82,10 +82,6 @@ $lang['molto_alta']='Molto alta';
 $lang['perfetta']='Perfetta';
 //fine visualizzautente
 
-//inizio inventario
-$lang['nessun_oggetto_posseduto']='Non hai nessun oggetto attualmente';
-//fine inventario
-
 //inizio funz_ogg
 $lang['oggetto_usurato']='%s gettato in quanto usurato';
 $lang['oggetto_rotto']='%s gettato in quanto rotto';
