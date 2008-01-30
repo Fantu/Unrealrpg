@@ -22,7 +22,7 @@ if (isset($_POST['vendi'])){
 $errore="";
 $quanti=(int)$_POST['quanti'];
 $oggselect=(int)$_POST['oggselect'];
-$numogg=$db->QuerySelect("SELECT oggid,count(*) AS numero FROM inoggetti WHERE userid='".$user['userid']."' AND oggid='".$oggselect."' GROUP BY oggid");
+$numogg=$db->QuerySelect("SELECT oggid,usura,count(*) AS numero FROM inoggetti WHERE userid='".$user['userid']."' AND oggid='".$oggselect."' GROUP BY oggid");
 if ($oggselect<1)
 $errore .= $lang['inventario_errore1'];
 if ($quanti<1)
@@ -32,11 +32,15 @@ $errore .= $lang['inventario_errore3'];
 if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
 else {
-$monete=1;	
+$cogg=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$oggselect."' ORDER BY usura DESC LIMIT 1");
+$monete=floor(($cogg['costo']/2)/$cogg['usura']*($cogg['usura']-$numogg['usura']));
+if($quanti>1){
+$quanti--;
+$monete+=floor($quanti*($cogg['costo']/2));
+}
 $outputerrori=sprintf($lang['report_vendita'],$quanti,$lang['oggetto'.$oggselect.'_nome'],$monete);
 $db->QueryMod("UPDATE utenti SET monete=monete+'".$monete."' WHERE userid='".$user['userid']."'");	
-
-$db->QueryMod("DELETE FROM inoggetti WHERE userid='".$userid."' AND oggid='".$oggselect."' LIMIT ".$quanti);
+$db->QueryMod("DELETE FROM inoggetti WHERE userid='".$user['userid']."' AND oggid='".$oggselect."' LIMIT ".$quanti);
 }
 }//fine vendi
 
