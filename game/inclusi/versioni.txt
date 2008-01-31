@@ -9,6 +9,9 @@ Legenda:<br />
 </p>
 <p><strong>0.4.8</strong> (Non disponibile - In sviluppo)<br />
 + Creata la suddivisione di tot utenti per pagina nell'elenco, compatibile anche con gli ordinamenti e per il momento impostata a 20<br />
+# Rivisti i picconi, resi pi&ugrave; equilibrati<br />
++ Avviso via mail settimanale agli utenti inattivi da oltre 2 settimane<br />
++ Cancellazione utenti con personaggio inattivi da oltre 30 giorni<br />
 </p>
 <p><strong>0.4.7</strong> [R.454] (31/1/2008 - Beta)<br />
 # Rivisto il lavoro in Miniera vecchia, ora &egrave; pi&ugrave; equilibrato<br />
