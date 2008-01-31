@@ -15,6 +15,8 @@ Legenda:<br />
 + Cancellazione utenti che non hanno creato un personaggio entro 72 ore<br />
 + Vari miglioramenti di sistema<br />
 + Vari miglioramenti di sicurezza<br />
++ Aggiunti 4 picconi di acciaio negli oggetti<br />
+# Rivisti i picconi, resi pi&ugrave; equilibrati<br />
 </p>
 <p><strong>0.4.6.1</strong> (30/1/2008 - Beta)<br />
 - Corretto bug nella vendita di oggetti<br />

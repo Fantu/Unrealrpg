@@ -17,4 +17,8 @@ $lang['oggetto15_nome']='Piccone di ferro mediocre';
 $lang['oggetto16_nome']='Piccone di ferro discreto';
 $lang['oggetto17_nome']='Piccone di rame buono';
 $lang['oggetto18_nome']='Piccone di ferro buono';
+$lang['oggetto19_nome']='Piccone di acciaio arrugginito';
+$lang['oggetto20_nome']='Piccone di acciaio mediocre';
+$lang['oggetto21_nome']='Piccone di acciaio discreto';
+$lang['oggetto22_nome']='Piccone di acciaio buono';
 ?>
