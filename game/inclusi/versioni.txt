@@ -9,6 +9,7 @@ Legenda:<br />
 </p>
 <p><strong>0.4.7</strong> (Non disponibile - In sviluppo)<br />
 # Rivisto il lavoro in Miniera vecchia, ora &egrave; pi&ugrave; equilibrato<br />
+- Corretto bug nella creazione del personaggio<br />
 </p>
 <p><strong>0.4.6.1</strong> (30/1/2008 - Beta)<br />
 - Corretto bug nella vendita di oggetti<br />
@@ -31,7 +32,7 @@ Legenda:<br />
 + Iniziata creazione del mostra caratteristiche dell'oggetto<br />
 + Aggiunto in Inventario per ogni oggetto il link alle caratteristiche<br />
 + Aggiunto in Mercato per ogni oggetto il link alle caratteristiche<br />
-+ Al mostra caratteristiche degli oggetti aggiunta la visualizzazione delle seguenti: costo,usura,energia necessaria,forza fisica necessaria, bonus di efficenza, probabilit&agrave di trovare, massima probabilit&agrave di rottura<br />
++ Al mostra caratteristiche degli oggetti aggiunta la visualizzazione delle seguenti: costo,usura,energia necessaria,forza fisica necessaria, bonus di efficenza, probabilit&agrave; di trovare, massima probabilit&agrave; di rottura<br />
 </p>
 <p><strong>0.4.4</strong> [R.415] (28/1/2008 - Beta)<br />
 + Vari miglioramenti di sistema<br />
