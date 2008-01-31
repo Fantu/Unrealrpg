@@ -8,7 +8,7 @@ Legenda:<br />
 <br />
 </p>
 <p><strong>0.4.8</strong> (Non disponibile - In sviluppo)<br />
-Niente attualmente<br />
++ Creata la suddivisione di tot utenti per pagina nell'elenco, compatibile anche con gli ordinamenti e per il momento impostata a 20<br />
 </p>
 <p><strong>0.4.7</strong> [R.454] (31/1/2008 - Beta)<br />
 # Rivisto il lavoro in Miniera vecchia, ora &egrave; pi&ugrave; equilibrato<br />

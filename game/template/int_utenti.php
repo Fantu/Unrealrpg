@@ -48,7 +48,7 @@
 </div>
 <br />
 <br />
-<?php echo $prec; ?> - <?php echo $prox; ?>
+<?php echo $prec; ?>  <?php echo $prox; ?>
 <br />
 <table width="500" border="1" cellspacing="2" cellpadding="2">
   <tr>
