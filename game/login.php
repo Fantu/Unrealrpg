@@ -1,6 +1,7 @@
 <?php
 require('inclusi/funzioni_db.php');
 require('inclusi/valori.php');
+$adesso=strtotime("now");
 $db = new ConnessioniMySQL();
 $esistenza=0;
 $server=(int)$_POST['login_server'];		
@@ -30,15 +31,16 @@ $check = $db->QuerySelect("SELECT chiuso FROM config");
 if($check['chiuso']==1) {
 	header("Location: ../index.php?error=12");
 	exit();
-} else {      
+} else {
+	$int_security=$game_se_code;      
 	setcookie ("urbglogin", $user['userid']."|||".md5($user['username'])."|||".$user['password']."|||".$user['server'],time()+10800);
-	$ora = strtotime("now");
-	$db->QueryMod("UPDATE utenti SET ultimologin='".$ora."',ipattuale='".$_SERVER['REMOTE_ADDR']."' WHERE userid='".$user['userid']."'");
+	$db->QueryMod("UPDATE utenti SET ultimologin='".$adesso."',ipattuale='".$_SERVER['REMOTE_ADDR']."' WHERE userid='".$user['userid']."'");
 	$scaduto=$ora-2592000;
 	$quantimess=$db->QuerySelect("SELECT COUNT(*) AS id FROM messaggi WHERE data<'".$scaduto."'");
 	if($quantimess['id']>0){
 	$db->QueryMod("DELETE FROM messaggi WHERE data<'".$scaduto."'");
 	}
+	require('inclusi/cancellazione.php');
 	header("Location: game.php?act=situazione");
 	exit();	
 }
