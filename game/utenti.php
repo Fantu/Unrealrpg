@@ -49,16 +49,16 @@ if($num['id']<($perpag+1)){
 $iniziale=0;
 }else{
 $inizio=(int)$_GET['inizio'];
-if($inizio>0){
+if($inizio<1){
 $iniziale=0;}else{
 $iniziale=$inizio;
 }
 if($num['id']>($iniziale+$perpag)){
 $prox=$iniziale+$perpag;
-$prox="<a href=\"game.php?act=utenti&amp;ordine=".$cheordine."&amp;inizio=".$prox."\"".$lang['seguenti']."</a>";}
+$prox="<a href=\"game.php?act=utenti&amp;ordine=".$cheordine."&amp;inizio=".$prox."\">".$lang['seguenti']."</a>";}
 if($iniziale!=0){
 $prec=$iniziale-$perpag;
-$prec="<a href=\"game.php?act=utenti&amp;ordine=".$cheordine."&amp;inizio=".$prec."\"".$lang['precedenti']."</a>";}
+$prec="<a href=\"game.php?act=utenti&amp;ordine=".$cheordine."&amp;inizio=".$prec."\">".$lang['precedenti']."</a>";}
 
 }//fine se maggiore di per pagina
 $a=$db->QueryCiclo("SELECT t1.userid AS id,t1.username AS nome,t1.ultimazione AS azione,t2.livello AS liv FROM utenti AS t1 JOIN caratteristiche t2 ON t1.userid=t2.userid WHERE t1.conferma='1' AND t1.personaggio='1' ".$ordine." LIMIT ".$iniziale.",".$perpag);
