@@ -13,6 +13,8 @@ Legenda:<br />
 + Ora per lavorare in miniera vecchia il livello dell'abilit&agrave; deve essere almeno 1<br />
 + Cancellazione utenti non confermati entro 48 ore<br />
 + Cancellazione utenti che non hanno creato un personaggio entro 72 ore<br />
++ Vari miglioramenti di sistema<br />
++ Vari miglioramenti di sicurezza<br />
 </p>
 <p><strong>0.4.6.1</strong> (30/1/2008 - Beta)<br />
 - Corretto bug nella vendita di oggetti<br />

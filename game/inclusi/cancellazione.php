@@ -16,5 +16,6 @@ $dacanc=$db->QueryCiclo("SELECT * FROM utenti WHERE dataiscrizione<'".$tempo."' 
 while($chi=$db->QueryCicloResult($dacanc)) {
 mail($chi['email'],"Account cancellato","Ciao ".$chi['username'].",\nSiamo spiacenti di informarti che il tuo account su ".$game_name." sul server ".$game_server[$chi['server']]." &egrave; stato cancellato perch&egrave; non &egrave; stato creato un personaggio entro 72 ore.\nSaluti,\nLostgames Staff");
 $db->QueryMod("DELETE FROM utenti WHERE userid='".$chi['userid']."'");
+$db->QueryMod("UPDATE config SET utenti=utenti-'1' WHERE id='".$chi['server']."'");
 }
 ?>

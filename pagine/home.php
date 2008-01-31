@@ -42,10 +42,10 @@
 				$refer=htmlentities($_COOKIE['urbgrefer']);
 				$refertime=$adesso+172800;
 				}
-				$_POST['username']=strip_tags(str_replace("'","\'",$_POST['username']));
-				$db->QueryMod("INSERT INTO utenti (username,password,codice,email,dataiscrizione,ipreg,server,ultimazione,refer,refertime) VALUES ('".$_POST['username']."','".$pass."','".$cod."','".$_POST['email']."','".$adesso."','".$ip."','".$_POST['server']."','".$adesso."','".$refer."','".$refertime."')");		
+				$username=htmlentities($_POST['username']);
+				$db->QueryMod("INSERT INTO utenti (username,password,codice,email,dataiscrizione,ipreg,server,ultimazione,refer,refertime) VALUES ('".$username."','".$pass."','".$cod."','".$_POST['email']."','".$adesso."','".$ip."','".$server."','".$adesso."','".$refer."','".$refertime."')");		
 				$intestazione = "From: ".$game_name."<server@lostage.it>\r\n";
-				$messaggio="Ciao,\nPer confermare l'iscrizione a ".$game_name." devi visitare il link sottostante:\n ".$game_link."/conferma.php?t=".$_POST['server']."&cod=$cod \n\nFinchè l'account non verrà confermato non potrai accedere al gioco.\nSaluti,\nLostgames Staff";
+				$messaggio="Ciao,\nPer confermare l'iscrizione a ".$game_name." devi visitare il link sottostante:\n ".$game_link."/conferma.php?t=".$server."&cod=$cod \n\nFinchè l'account non verrà confermato non potrai accedere al gioco.\nSaluti,\nLostgames Staff";
 				mail($_POST['email'],"Conferma account ".$game_name,$messaggio,$intestazione);
 				$outputreg="<strong>Account creato con successo!!</strong><br />Prima di poter iniziare a giocare dovrai confermare l'iscrizione visitando il link contenuto nella mail che ti è stata inviata all'indirizzo di posta inserito.<br />Se non trovi la mail controlla nella cartella posta indesiderata antispam o simili.<br /><br />";
 			}
