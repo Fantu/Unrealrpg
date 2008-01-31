@@ -56,7 +56,7 @@ $iniziale=$inizio;
 if($num['id']>($iniziale+$perpag)){
 $prox=$iniziale+$perpag;
 $prox="<a href=\"game.php?act=utenti&amp;ordine=".$cheordine."&amp;inizio=".$prox."\"".$lang['seguenti']."</a>";}
-if($iniziale!=0)){
+if($iniziale!=0){
 $prec=$iniziale-$perpag;
 $prec="<a href=\"game.php?act=utenti&amp;ordine=".$cheordine."&amp;inizio=".$prec."\"".$lang['precedenti']."</a>";}
 
