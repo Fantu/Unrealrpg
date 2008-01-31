@@ -43,7 +43,7 @@ $cheordine="none";
 $ordine="ORDER BY t1.userid ASC";
 break;
 }
-$perpag=1;
+$perpag=20;
 $num=$db->QuerySelect("SELECT count(userid) AS id FROM utenti WHERE conferma='1' AND personaggio='1'");
 if($num['id']<($perpag+1)){
 $iniziale=0;
