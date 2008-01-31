@@ -47,6 +47,8 @@ $errore .= $lang['miniera_errore5'];
 $picconesel=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$piccone."' LIMIT 1");
 if ($usercar['attfisico']<$picconesel['forzafisica'])
 $errore .= $lang['miniera_errore6'];
+if ($usercar['minatore']<1)
+$errore .= $lang['miniera_errore7'];
 if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
 else {

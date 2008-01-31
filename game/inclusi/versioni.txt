@@ -10,6 +10,7 @@ Legenda:<br />
 <p><strong>0.4.7</strong> (Non disponibile - In sviluppo)<br />
 # Rivisto il lavoro in Miniera vecchia, ora &egrave; pi&ugrave; equilibrato<br />
 - Corretto bug nella creazione del personaggio<br />
++ Ora per lavorare in miniera vecchia il livello dell'abilit&agrave; deve essere almeno 1<br />
 </p>
 <p><strong>0.4.6.1</strong> (30/1/2008 - Beta)<br />
 - Corretto bug nella vendita di oggetti<br />
