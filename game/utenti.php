@@ -48,7 +48,8 @@ $num=$db->QueryCiclo("SELECT count(userid) AS id FROM utenti WHERE conferma='1' 
 if($num['id']<($perpag+1)){
 $iniziale=0;
 }else{
-$inizio=(int)$_GET['inizio'];
+//$inizio=(int)$_GET['inizio'];
+$inizio=0;
 if($inizio<1){
 $iniziale=0;}else{
 $iniziale=$inizio;
