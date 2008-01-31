@@ -50,6 +50,7 @@ $iniziale=0;
 }else{
 //$inizio=(int)$_GET['inizio'];
 $inizio=0;
+echo "prova";
 if($inizio<1){
 $iniziale=0;}else{
 $iniziale=$inizio;
