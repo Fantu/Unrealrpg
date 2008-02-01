@@ -14,6 +14,7 @@ Legenda:<br />
 + Cancellazione utenti con personaggio inattivi da oltre 30 giorni<br />
 + Vari miglioramenti di sistema<br />
 + Vari miglioramenti di sicurezza<br />
++ Ora la stringa di ricerca di un utente deve essere di almeno 3 caratteri<br />
 </p>
 <p><strong>0.4.7</strong> [R.454] (31/1/2008 - Beta)<br />
 # Rivisto il lavoro in Miniera vecchia, ora &egrave; pi&ugrave; equilibrato<br />

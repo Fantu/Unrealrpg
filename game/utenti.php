@@ -2,11 +2,12 @@
 require('language/it/lang_utenti.php');
 if (isset($_POST['cercau'])){
 $errore="";
-if(!$_POST['nome'])
-	$errore=$lang['utenti_error1'];
-else {
+if(!$_POST['nome']){
+	$errore=$lang['utenti_error1'];}elseif(strlen($_POST['nome'])<3){
+	$errore=$lang['utenti_error3'];
+	}else {
 	$nomdacercare=htmlentities($_POST['nome']);
-	$utentecercato=$db->QuerySelect("SELECT count(userid) FROM utenti WHERE username LIKE '%".$nomdacercare."%' AND conferma='1' AND personaggio='1'");
+	$utentecercato=$db->QuerySelect("SELECT count(userid) AS id FROM utenti WHERE username LIKE '%".$nomdacercare."%' AND conferma='1' AND personaggio='1'");
 	if($utentecercato['id']==0)
 		$errore=sprintf($lang['utenti_error2'],$nomdacercare);
 }
@@ -14,7 +15,7 @@ if($errore){
 $outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";
 }else{//inizio mostra risultati
 $ricerca=1;
-$utentecercato=$db->QueryCiclo("SELECT t1.userid AS id,t1.username AS nome,t1.ultimazione AS azione,t2.livello AS liv FROM utenti AS t1 JOIN caratteristiche t2 ON t1.userid=t2.userid WHERE t1.username LIKE '%".$_POST['nome']."%' AND t1.conferma='1' AND t1.personaggio='1'");
+$utentecercato=$db->QueryCiclo("SELECT t1.userid AS id,t1.username AS nome,t1.ultimazione AS azione,t2.livello AS liv FROM utenti AS t1 JOIN caratteristiche t2 ON t1.userid=t2.userid WHERE t1.username LIKE '%".$nomdacercare."%' AND t1.conferma='1' AND t1.personaggio='1'");
 $i=0;
 $seonline=$adesso-600;
 while($chi=$db->QueryCicloResult($utentecercato)) {
