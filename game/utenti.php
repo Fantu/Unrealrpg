@@ -5,9 +5,10 @@ $errore="";
 if(!$_POST['nome'])
 	$errore=$lang['utenti_error1'];
 else {
-	$utentecercato=$db->QuerySelect("SELECT t1.userid AS id,t1.username AS nome,t1.ultimazione AS azione,t2.livello AS liv FROM utenti AS t1 JOIN caratteristiche t2 ON t1.userid=t2.userid WHERE t1.username LIKE '%".$_POST['nome']."%' AND t1.conferma='1' AND t1.personaggio='1'");
-	if(!$utentecercato['id'])
-		$errore=sprintf($lang['utenti_error2'],$_POST['nome']);
+	$nomdacercare=htmlentities($_POST['nome']);
+	$utentecercato=$db->QuerySelect("SELECT count(userid) FROM utenti WHERE username LIKE '%".$nomdacercare."%' AND conferma='1' AND personaggio='1'");
+	if($utentecercato['id']==0)
+		$errore=sprintf($lang['utenti_error2'],$nomdacercare);
 }
 if($errore){
 $outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";

@@ -12,6 +12,8 @@ Legenda:<br />
 # Rivisti i picconi, resi pi&ugrave; equilibrati<br />
 + Avviso via mail settimanale agli utenti inattivi da oltre 2 settimane<br />
 + Cancellazione utenti con personaggio inattivi da oltre 30 giorni<br />
++ Vari miglioramenti di sistema<br />
++ Vari miglioramenti di sicurezza<br />
 </p>
 <p><strong>0.4.7</strong> [R.454] (31/1/2008 - Beta)<br />
 # Rivisto il lavoro in Miniera vecchia, ora &egrave; pi&ugrave; equilibrato<br />
