@@ -9,7 +9,9 @@ Legenda:<br />
 </p>
 <p><strong>0.4.9</strong> (Non disponibile - In sviluppo)<br />
 + Aggiunta la classe ranger<br />
-+ Vari miglioramenti<br />
++ Vari miglioramenti di sistema<br />
++ Vari miglioramenti di sicurezza<br />
++ Altri vari miglioramenti<br />
 </p>
 <p><strong>0.4.8</strong> [R.469] (1/2/2008 - Beta)<br />
 + Creata la suddivisione di tot utenti per pagina nell'elenco, compatibile anche con gli ordinamenti e per il momento impostata a 20<br />
