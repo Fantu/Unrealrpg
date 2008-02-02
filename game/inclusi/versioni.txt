@@ -12,6 +12,7 @@ Legenda:<br />
 + Vari miglioramenti di sistema<br />
 + Vari miglioramenti di sicurezza<br />
 + Altri vari miglioramenti<br />
++ Aggiunto 1 piccone di ferro e 1 piccone di acciaio negli oggetti<br />
 </p>
 <p><strong>0.4.8</strong> [R.469] (1/2/2008 - Beta)<br />
 + Creata la suddivisione di tot utenti per pagina nell'elenco, compatibile anche con gli ordinamenti e per il momento impostata a 20<br />

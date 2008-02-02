@@ -22,4 +22,6 @@ $lang['oggetto20_nome']='Piccone di acciaio mediocre';
 $lang['oggetto21_nome']='Piccone di acciaio discreto';
 $lang['oggetto22_nome']='Piccone di acciaio buono';
 $lang['oggetto23_nome']='Piccone di rame ottimo';
+$lang['oggetto24_nome']='Piccone di ferro ottimo';
+$lang['oggetto25_nome']='Piccone di acciaio ottimo';
 ?>
