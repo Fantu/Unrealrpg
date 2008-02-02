@@ -1,4 +1,8 @@
 <?php
+if((empty($int_security)) OR ($int_security!=$game_se_code)){
+	header("Location: ../index.php?error=16");
+	exit();
+}
 require('language/it/lang_banca.php');
 $userbank=$db->QuerySelect("SELECT * FROM banca WHERE userid='".$user['userid']."' LIMIT 0,1");
 if (($userbank['interessi']+86400)<$adesso){
