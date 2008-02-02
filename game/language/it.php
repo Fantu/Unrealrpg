@@ -33,9 +33,11 @@ $lang['desc_nani']='Descrizione nani';
 $lang['Guerriero']='Guerriero';
 $lang['Mago']='Mago';
 $lang['Ladro']='Ladro';
+$lang['Ranger']='Guerriero';
 $lang['desc_guerriero']='Descrizione guerriero';
 $lang['desc_mago']='Descrizione mago';
 $lang['desc_ladro']='Descrizione ladro';
+$lang['desc_ranger']='Descrizione ranger';
 //fine classi
 
 //inizio caratteristiche
