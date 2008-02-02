@@ -21,7 +21,7 @@ if($mostraogg==1){
 	<?php }/*fine ogni oggetto*/ ?>
 	</table>
 	<br />
-	<?php echo $lang['Quanti']; ?> <input name="quanti" type="text" maxlength="2" size="3" />
+	<?php echo $lang['Quanti']; ?> <input name="quanti" type="text" maxlength="2" size="3" value="1" />
 	<input type="submit" name="compra" value="<?php echo $lang['Compra']; ?>" />
 	</form>
 	<?php }//fine mostra oggetti

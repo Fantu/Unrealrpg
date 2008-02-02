@@ -14,7 +14,7 @@ foreach($oggetti['nome'] as $chiave=>$elemento){?>
 } ?>
 </table>
 <br />
-<?php echo $lang['Quanti']; ?> <input name="quanti" type="text" maxlength="2" size="3" />
+<?php echo $lang['Quanti']; ?> <input name="quanti" type="text" maxlength="2" size="3" value="1" />
 <input type="submit" name="vendi" value="<?php echo $lang['Vendi']; ?>" />
 </form>
 <?php }/*fine se ci sono oggetti*/ ?>
