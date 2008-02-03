@@ -25,8 +25,8 @@ $monete=floor(($cogg['costo']/2)/$cogg['usura']*($cogg['usura']-$numogg['usura']
 $monete=floor($cogg['costo']/2);
 }
 if($quanti>1){
-$quanti--;
-$monete+=floor($quanti*($cogg['costo']/2));
+$quantit=$quanti--;
+$monete+=floor($quantit*($cogg['costo']/2));
 }
 $outputerrori=sprintf($lang['report_vendita'],$quanti,$lang['oggetto'.$oggselect.'_nome'],$monete);
 $db->QueryMod("UPDATE utenti SET monete=monete+'".$monete."' WHERE userid='".$user['userid']."'");	
