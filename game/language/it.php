@@ -85,8 +85,8 @@ $lang['perfetta']='Perfetta';
 //fine visualizzautente
 
 //inizio funz_ogg
-$lang['oggetto_usurato']='%s gettato in quanto usurato';
-$lang['oggetto_rotto']='%s gettato in quanto rotto';
+$lang['oggetto_usurato']='Oggetto %s gettato in quanto usurato';
+$lang['oggetto_rotto']='Oggetto %s gettato in quanto rotto';
 //fine funz_ogg
 
 //inizio errori globali
