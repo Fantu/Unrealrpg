@@ -11,6 +11,8 @@ if ($usercar['energia']<100)
 $errore .= $lang['tempio_errore1'];
 if ($user['monete']<1)
 $errore .= $lang['tempio_errore2'];
+if ($eventi['id']>0)
+$errore .= $lang['global_errore1'];
 if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
 else {
