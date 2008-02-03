@@ -17,6 +17,8 @@ if ($adesso<($userlav['ultimolavoro']+$tempoproxlav))
 $errore .= $lang['lab_errore3'];
 if ($usercar['mana']<10)
 $errore .= $lang['lab_errore4'];
+if ($eventi['id']>0)
+$errore .= $lang['global_errore1'];
 if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
 else {

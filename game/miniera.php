@@ -20,6 +20,8 @@ if ($usercar['saluteattuale']<30)
 $errore .= $lang['miniera_errore2'];
 if ($adesso<($userlav['ultimolavoro']+$tempoproxlav))
 $errore .= $lang['miniera_errore3'];
+if ($eventi['id']>0)
+$errore .= $lang['global_errore1'];
 if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
 else {
@@ -49,6 +51,8 @@ if ($usercar['attfisico']<$picconesel['forzafisica'])
 $errore .= $lang['miniera_errore6'];
 if ($usercar['minatore']<1)
 $errore .= $lang['miniera_errore7'];
+if ($eventi['id']>0)
+$errore .= $lang['global_errore1'];
 if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
 else {

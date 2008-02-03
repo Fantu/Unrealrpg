@@ -89,6 +89,10 @@ $lang['oggetto_usurato']='%s gettato in quanto usurato';
 $lang['oggetto_rotto']='%s gettato in quanto rotto';
 //fine funz_ogg
 
+//inizio errori globali
+$lang['global_errore1']='- Stai facendo altro<br />';
+//fine errori globali
+
 $lang['outputerrori']='Si sono verificati i seguenti errori:';
 $lang['nessun_evento']='Nessun evento in corso';
 $lang['error_eventi_incorso']='Sei occupato a fare altro';

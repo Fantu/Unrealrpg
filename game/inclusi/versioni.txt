@@ -7,6 +7,12 @@ Legenda:<br />
 - Correzione bug e patch di situazioni non previste<br />
 <br />
 </p>
+<p><strong>0.5.0</strong> (Non disponibile - In sviluppo)<br />
++ Inizio creazione sistema di utilizzo oggetti autonomo (per utilizzo di oggetti nei combattimenti e al di fuori dei lavori)<br />
+</p>
+<p><strong>0.4.10</strong> (Non disponibile - In sviluppo)<br />
+Niente attualmente<br />
+</p>
 <p><strong>0.4.9</strong> (Non disponibile - In sviluppo)<br />
 + Aggiunta la classe ranger<br />
 + Vari miglioramenti di sistema<br />
@@ -14,6 +20,7 @@ Legenda:<br />
 + Altri vari miglioramenti<br />
 + Aggiunto 1 piccone di ferro e 1 piccone di acciaio negli oggetti<br />
 - Corretto bug nella vendita di oggetti<br />
+- Patch: ora l'esecuzione di ogni lavoro e la preghiera non sono disponibili in nessun caso quando si sta facendo altro<br />
 </p>
 <p><strong>0.4.8</strong> [R.469] (1/2/2008 - Beta)<br />
 + Creata la suddivisione di tot utenti per pagina nell'elenco, compatibile anche con gli ordinamenti e per il momento impostata a 20<br />

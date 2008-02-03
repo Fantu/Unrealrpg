@@ -26,6 +26,8 @@ if ($user['monete']<$paga)
 $errore .= $lang['tempio_errore3'];
 if ($user['resuscita']>0)
 $errore .= $lang['tempio_errore4'];
+if ($eventi['id']>0)
+$errore .= $lang['global_errore1'];
 if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
 else {
