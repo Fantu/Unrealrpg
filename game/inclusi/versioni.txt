@@ -13,7 +13,7 @@ Legenda:<br />
 <p><strong>0.4.10</strong> (Non disponibile - In sviluppo)<br />
 Niente attualmente<br />
 </p>
-<p><strong>0.4.9</strong> (Non disponibile - In sviluppo)<br />
+<p><strong>0.4.9</strong> [R.480] (3/2/2008 - Beta)<br />
 + Aggiunta la classe ranger<br />
 + Vari miglioramenti di sistema<br />
 + Vari miglioramenti di sicurezza<br />
