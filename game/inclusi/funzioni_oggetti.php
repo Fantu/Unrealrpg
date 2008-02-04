@@ -5,6 +5,7 @@ $catoggetti_nome=array(
 1=>array(1),
 2=>array(1),
 3,
+4=>array(1,2),
 );
 
 function Checkusurarottura($userid) {

@@ -12,6 +12,7 @@ Legenda:<br />
 </p>
 <p><strong>0.4.10</strong> (Non disponibile - In sviluppo)<br />
 + Vari miglioramenti<br />
++ Aggiunta la categoria Pozioni normali agli oggetti con le sottocategorie Pozioni curative e Pozioni energetiche<br />
 </p>
 <p><strong>0.4.9</strong> [R.480] (3/2/2008 - Beta)<br />
 + Aggiunta la classe ranger<br />
