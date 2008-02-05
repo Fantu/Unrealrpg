@@ -1,7 +1,7 @@
 <?php
 $lang['miniera_nuova']='Miniera nuova';
 $lang['miniera_vecchia']='Miniera vecchia';
-$lang['desc_miniera_nuova']='Puoi lavorare in miniera nuova avendo una retribuzione fissa di 5 monete ad ora e guadagnare esperienza per l\'abilit&agrave; di minatore utile per avere risultati migliori con meno fatica e meno danni';
+$lang['desc_miniera_nuova']='Puoi lavorare in miniera nuova avendo una retribuzione fissa di 6 monete ad ora e guadagnare esperienza per l\'abilit&agrave; di minatore utile per avere risultati migliori con meno fatica e meno danni';
 $lang['desc_miniera_vecchia']='Puoi lavorare in Miniera vecchia un ora, cercando di trovare minerali. Per fare ci&ograve;, sono necessari un piccone e una torcia.';
 $lang['lavora_miniera']='Lavora in miniera';
 $lang['miniera_errore1']='- Sei troppo stanco per poter lavorare in miniera<br />';

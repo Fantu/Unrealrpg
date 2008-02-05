@@ -5,7 +5,7 @@ function Completalavminnuova($userid) {
 global $db,$adesso,$lang;
 require_once('language/it/lang_miniera.php');
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");	
-$paga=5;
+$paga=6;
 $energia=100-(5*$usercar['minatore']);
 if ($energia<50)
 $energia=50;
