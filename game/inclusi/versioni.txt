@@ -9,6 +9,8 @@ Legenda:<br />
 </p>
 <p><strong>0.5.0</strong> (Non disponibile - In sviluppo)<br />
 + Inizio creazione sistema di utilizzo oggetti autonomo (per utilizzo di oggetti nei combattimenti e al di fuori dei lavori)<br />
++ Iniziata la creazione di Fucina<br />
++ Creata l'abilit&agrave; Fabbro<br />
 </p>
 <p><strong>0.4.10</strong> (Non disponibile - In sviluppo)<br />
 + Vari miglioramenti<br />

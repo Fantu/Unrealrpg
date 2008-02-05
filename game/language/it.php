@@ -14,6 +14,7 @@ $lang['Guida']='Guida';
 $lang['Lista_utenti']='Elenco personaggi';
 $lang['Mercato']='Mercato';
 $lang['Inventario']='Inventario';
+$lang['Fucina']='Fucina';
 //fine menu
 
 //inizio razze
@@ -72,6 +73,7 @@ $lang['eventi_dettagli2']='Stai lavorando in Laboratorio come apprendista e fini
 $lang['eventi_dettagli3']='Sei nel Tempio a pregare e finirai: ';
 $lang['eventi_dettagli4']='Resurrezione in corso, tornerai in vita: ';
 $lang['eventi_dettagli5']='Stai lavorando in Miniera vecchia e finirai: ';
+$lang['eventi_dettagli6']='Stai lavorando in Fabbro come apprendista e finirai: ';
 //fine dettagli eventi
 
 //inizio visualizzautente
