@@ -16,7 +16,6 @@ while($evento=$db->QueryCicloResult($evfiniti)) {
 			case 3://miniera vecchia
 			Completalavminvecchia($evento['userid']);
 			break;
-			}
 			case 4://apprendista fabbro
 			Completalavfucapp($evento['userid']);
 			break;
