@@ -28,6 +28,7 @@ $oggetti['forzafisica']=$oggetto['forzafisica'];
 $oggetti['bonuseff']=$oggetto['bonuseff'];
 $oggetti['probtrovare']=$oggetto['probtrovare'];
 $oggetti['probrottura']=$oggetto['probrottura'];
+$oggetti['recsalute']=$oggetto['recsalute'];
 
 require('template/int_mostraoggetto.php');
 ?>

@@ -24,4 +24,9 @@ $lang['oggetto22_nome']='Piccone di acciaio buono';
 $lang['oggetto23_nome']='Piccone di rame eccellente';
 $lang['oggetto24_nome']='Piccone di ferro eccellente';
 $lang['oggetto25_nome']='Piccone di acciaio eccellente';
+$lang['oggetto26_nome']='Pozione curativa per ferite superficiali';
+$lang['oggetto27_nome']='Pozione curativa per ferite medie';
+$lang['oggetto28_nome']='Pozione curativa per ferite profonde';
+$lang['oggetto29_nome']='Pozione curativa per ferite gravi';
+$lang['oggetto30_nome']='Pozione curativa per ferite critiche';
 ?>
