@@ -35,10 +35,14 @@ $lang['Guerriero']='Guerriero';
 $lang['Mago']='Mago';
 $lang['Ladro']='Ladro';
 $lang['Ranger']='Ranger';
+$lang['Ninja']='Ninja';
+$lang['Berserk']='Berserk';
 $lang['desc_guerriero']='Descrizione guerriero';
 $lang['desc_mago']='Descrizione mago';
 $lang['desc_ladro']='Descrizione ladro';
 $lang['desc_ranger']='Descrizione ranger';
+$lang['desc_ninja']='Descrizione ninja';
+$lang['desc_berserk']='Descrizione berserk';
 //fine classi
 
 //inizio caratteristiche

@@ -21,6 +21,7 @@ Legenda:<br />
 # Portata la paga del lavoro in Miniera nuova a 6 monete ad ora<br />
 + Aggiunte 5 pozioni energetiche negli oggetti<br />
 + Aggiunta la visualizzazione del recupero energia nei dettagli degli oggetti<br />
++ Aggiunte le classi Ninja e Berserk<br />
 </p>
 <p><strong>0.4.9</strong> [R.480] (3/2/2008 - Beta)<br />
 + Aggiunta la classe ranger<br />
