@@ -7,4 +7,5 @@ $lang['bonuseff']='Bonus di efficenza';
 $lang['probtrovare']='Probabilit&agrave di trovare';
 $lang['probrottura']='Probabilit&agrave di rottura massima';
 $lang['recsalute']='Salute che ripristina';
+$lang['recenergia']='Energia che ripristina';
 ?>

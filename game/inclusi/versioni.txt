@@ -15,10 +15,12 @@ Legenda:<br />
 <p><strong>0.4.10</strong> (Non disponibile - In sviluppo)<br />
 + Vari miglioramenti di sicurezza<br />
 + Altri vari miglioramenti<br />
-+ Aggiunta la categoria Pozioni normali agli oggetti con le sottocategorie Pozioni curative e Pozioni energetiche<br />
++ Aggiunta la categoria Pozioni generiche agli oggetti con le sottocategorie Pozioni curative e Pozioni energetiche<br />
 + Aggiunte 5 pozioni curative negli oggetti<br />
 + Aggiunta la visualizzazione del recupero salute nei dettagli degli oggetti<br />
 # Portata la paga del lavoro in Miniera nuova a 6 monete ad ora<br />
++ Aggiunte 5 pozioni energetiche negli oggetti<br />
++ Aggiunta la visualizzazione del recupero energia nei dettagli degli oggetti<br />
 </p>
 <p><strong>0.4.9</strong> [R.480] (3/2/2008 - Beta)<br />
 + Aggiunta la classe ranger<br />

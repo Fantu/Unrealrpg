@@ -29,6 +29,7 @@ $oggetti['bonuseff']=$oggetto['bonuseff'];
 $oggetti['probtrovare']=$oggetto['probtrovare'];
 $oggetti['probrottura']=$oggetto['probrottura'];
 $oggetti['recsalute']=$oggetto['recsalute'];
+$oggetti['recenergia']=$oggetto['recenergia'];
 
 require('template/int_mostraoggetto.php');
 ?>
