@@ -11,7 +11,7 @@ $lang['report_lavoro_labapp']='Completato lavoro in laboratorio come apprendista
 $lang['report_esplosione_laboratorio']='Imprevisto durante il lavoro in laboratorio';
 $lang['report_esplosione_lab1']='Durante il tuo lavoro in laboratorio &egrave; esplosa una pozione ma sei riuscito ad allontanarti in tempo e non ferirti';
 $lang['report_esplosione_lab2']='Durante il tuo lavoro in laboratorio &egrave; esplosa una pozione, non sei riuscito ad allontanarti in tempo e ti sei ferito (%s di salute persa)';
-$lang['lav_apprendista']='Lavora come alchimista';
-$lang['desc_lav_apprendista']='Puoi lavorare in Laboratorio come alchimista cercando di creare delle pozioni, potrai cercare di creare determinate pozioni in base alla tua abilit&agrave, e non &egrave; certa la riuscita';
+$lang['lav_alchimista']='Lavora come alchimista';
+$lang['desc_lav_alchimista']='Puoi lavorare in Laboratorio come alchimista cercando di creare delle pozioni, potrai cercare di creare determinate pozioni in base alla tua abilit&agrave, e non &egrave; certa la riuscita';
 $lang['nessuna_pozione_poss']='Non sei abbastanza esperto per nessuna pozione';
 ?>
