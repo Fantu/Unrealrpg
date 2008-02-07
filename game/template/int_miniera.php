@@ -27,7 +27,7 @@
 <td>
 <?php echo $lang['seleziona_piccone']; ?> <select name="piccone" id="piccone">
 <option value="0" selected="selected">--------</option>
-<?php if($picconi){
+<?php if($seoggpicconi['id']>0){
 foreach($picconi as $chiave=>$elemento)
 echo "<option value=\"$chiave\">$elemento</option>";} ?>
 </select>
