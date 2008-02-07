@@ -15,6 +15,8 @@ if ($quanti<1)
 $errore .= $lang['inventario_errore2'];
 if ($quanti>$numogg['numero'])
 $errore .= $lang['inventario_errore3'];
+if ($eventi['id']>0)
+$errore .= $lang['global_errore1'];
 if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
 else {

@@ -24,6 +24,7 @@ Legenda:<br />
 + Aggiunte le classi Ninja e Berserk<br />
 + Aggiunta fiala negli oggetti<br />
 - Corretto bug nella creazione del personaggio<br />
++ Ora non si pu&ograve; pi&ugrave; vendere oggetti mentre si sta lavorando, pregando o facendo altro<br />
 </p>
 <p><strong>0.4.9</strong> [R.480] (3/2/2008 - Beta)<br />
 + Aggiunta la classe ranger<br />
