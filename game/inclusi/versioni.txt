@@ -17,6 +17,7 @@ Legenda:<br />
 # Rifatte le formule del guadagno di esperienza in tutti i lavori, ora la casualità influisce molto di meno<br />
 + Iniziata la creazione della seconda parte di Laboratorio<br />
 + Vari miglioramenti di sistema<br />
++ Vari miglioramenti di sicurezza<br />
 </p>
 <p><strong>0.4.10</strong> [R.493] (7/2/2008 - Beta)<br />
 + Vari miglioramenti di sicurezza<br />
