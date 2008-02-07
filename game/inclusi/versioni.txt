@@ -14,6 +14,7 @@ Legenda:<br />
 </p>
 <p><strong>0.4.11</strong> (Non disponibile - In sviluppo)<br />
 # Rivisto il lavoro in Miniera vecchia, ora &egrave; pi&ugrave; equilibrato<br />
+# Rifatte le formule del guadagno di esperienza in tutti i lavori, ora la casualità influisce molto di meno<br />
 </p>
 <p><strong>0.4.10</strong> [R.493] (7/2/2008 - Beta)<br />
 + Vari miglioramenti di sicurezza<br />

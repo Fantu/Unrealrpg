@@ -12,7 +12,8 @@ $energia=50;
 $salute=(rand(5,15))-($usercar['minatore'])-(rand(0,floor($usercar['diffisica']/20)));
 if ($salute<1)
 $salute=1;
-$exp=rand(5,(2+floor($usercar['saluteattuale']/10)+floor($usercar['energia']/100)+floor($usercar['attfisico']/10)));
+$exp=2+floor($usercar['saluteattuale']/10)+floor($usercar['energia']/100)+floor($usercar['attfisico']/10);
+$exp=floor(rand($exp/2,$exp));
 $exp+=(5*$usercar['minatore']);
 $esplosione=rand(30,100)-($usercar['minatore']*5)-($usercar['attfisico']/20);
 $danni=0;
@@ -48,7 +49,8 @@ $energia=50;
 $salute=(rand(2,10))-($usercar['alchimista'])-(rand(0,floor($usercar['difmagica']/10)));
 if ($salute<1)
 $salute=1;
-$exp=rand(5,(2+floor($usercar['saluteattuale']/10)+floor($usercar['energia']/100)+floor($usercar['attmagico']/10)));
+$exp=2+floor($usercar['saluteattuale']/10)+floor($usercar['energia']/100)+floor($usercar['attmagico']/10);
+$exp=floor(rand($exp/2,$exp));
 $exp+=(5*$usercar['alchimista']);
 $esplosione=rand(30,100)-($usercar['alchimista']*5)-($usercar['attmagico']/20);
 $danni=0;
@@ -119,7 +121,8 @@ $energia=50;
 $salute=(rand(5,15))-($usercar['minatore'])-(rand(0,floor($usercar['diffisica']/20)));
 if ($salute<1)
 $salute=1;
-$exp=rand(5,(2+floor($usercar['saluteattuale']/10)+floor($usercar['energia']/100)+floor($usercar['attfisico']/10)));
+$exp=2+floor($usercar['saluteattuale']/10)+floor($usercar['energia']/100)+floor($usercar['attfisico']/10);
+$exp=floor(rand($exp/2,$exp));
 $exp+=(5*$usercar['minatore']);
 $esplosione=rand(30,100)-($usercar['minatore']*5)-($usercar['attfisico']/20);
 $danni=0;
@@ -186,7 +189,8 @@ $energia=50;
 $salute=(rand(5,15))-($usercar['minatore'])-(rand(0,floor($usercar['diffisica']/20)));
 if ($salute<1)
 $salute=1;
-$exp=rand(5,(2+floor($usercar['saluteattuale']/10)+floor($usercar['energia']/100)+floor($usercar['attfisico']/10)));
+$exp=2+floor($usercar['saluteattuale']/10)+floor($usercar['energia']/100)+floor($usercar['attfisico']/10);
+$exp=floor(rand($exp/2,$exp));
 $exp+=(5*$usercar['minatore']);
 $esplosione=rand(30,100)-($usercar['minatore']*5)-($usercar['attfisico']/20);
 $danni=0;
