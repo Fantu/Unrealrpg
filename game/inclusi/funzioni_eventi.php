@@ -137,7 +137,7 @@ $titolo=$lang['report_incidente_miniera'];
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");	
 }//fine incidente
 $piccone=$db->QuerySelect("SELECT t1.oggid AS oggid,t2.bonuseff AS bonuseff,t2.energia AS energia FROM inoggetti AS t1 JOIN oggetti t2 ON t1.oggid=t2.id WHERE t1.userid='".$userid."' AND t2.tipo='2' AND t2.categoria='1'  AND t1.inuso='1' LIMIT 1");
-$efficenza=($usercar['minatore']*500)+($usercar['attfisico']*2);
+$efficenza=($usercar['minatore']*600)+($usercar['attfisico']*2);
 $efficenza+=($efficenza/100*$piccone['bonuseff']);
 $energia+=$piccone['energia'];
 $trovare=rand(0,10000)-$efficenza;
@@ -148,7 +148,10 @@ $testo=sprintf($lang['report_lavminieravecchia'],$exp,$energia,$salute)."<br />"
 if($trovato==0){
 $testo.=$lang['report_lavminieravecchia_materiali_no']."<br />";
 }else{//inizio trovato minerale
-$trovare=rand(0,9999);
+$efficenza=rand(0,1+($usercar['minatore']*500));
+if($efficenza>9000)
+$efficenza=9000;
+$trovare=rand(0,9999)-$efficenza;
 $numeromin=0;
 $oggminerali=$db->QueryCiclo("SELECT * FROM oggetti WHERE tipo='1' AND categoria='1' AND probtrovare>'".$trovare."'");
 while($oggminerale=$db->QueryCicloResult($oggminerali)) {

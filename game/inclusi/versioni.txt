@@ -25,6 +25,8 @@ Legenda:<br />
 + Aggiunta fiala negli oggetti<br />
 - Corretto bug nella creazione del personaggio<br />
 + Ora non si pu&ograve; pi&ugrave; vendere oggetti mentre si sta lavorando, pregando o facendo altro<br />
+# Rivisto il lavoro in Miniera vecchia, ora &egrave; pi&ugrave; equilibrato<br />
++ Ora l'abilit&agrave; minatore influisce anche sulla probabilit&agrave; del minerale che si trova in Miniera vecchia, ovviamente non in modo matematico assoluto quindi si possono trovare sempre anche i minerali meno rari<br />
 </p>
 <p><strong>0.4.9</strong> [R.480] (3/2/2008 - Beta)<br />
 + Aggiunta la classe ranger<br />
