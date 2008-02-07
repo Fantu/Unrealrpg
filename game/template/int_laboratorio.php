@@ -26,13 +26,14 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <?php echo $lang['lav_alchimista']; ?>
 <br />
 <?php echo $lang['desc_lav_alchimista'];
+echo "<br />";
 if($pozioni){ ?>
 <br />
 <form action="" method="post" name="lavlabalc">
 <table border="0">
 <tr>
 <td>
-<?php echo $lang['seleziona_pozione']; ?> <select name="piccone" id="piccone">
+<?php echo $lang['seleziona_pozione']; ?> <select name="pozione" id="pozione">
 <option value="0" selected="selected">--------</option>
 <?php
 foreach($pozioni as $chiave=>$elemento)

@@ -8,7 +8,7 @@ if($user['plus']==0){$tempoproxlav=$game_proxlav_normal;}else{$tempoproxlav=$gam
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$user['userid']."' LIMIT 0,1");
 $oggpozioni=$db->QuerySelect("SELECT count(id) FROM oggetti WHERE tipo='4' AND abalchimista<='".$usercar['alchimista']."'");
 if($oggpozioni['id']>0){
-$oggpozioni=$db->QueryCiclo("SELECT count(id) FROM oggetti WHERE tipo='4' AND abalchimista<='".$usercar['alchimista']."'");
+$oggpozioni=$db->QueryCiclo("SELECT id FROM oggetti WHERE tipo='4' AND abalchimista<='".$usercar['alchimista']."'");
 while($oggpozione=$db->QueryCicloResult($oggpozioni)) {
 $pozioni[$oggpozione['id']]=$lang['oggetto'.$oggpozione['id'].'_nome'];
 }
