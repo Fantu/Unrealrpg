@@ -56,7 +56,7 @@ if($errore){
 else {
 $pozione=(int)$_POST['pozione'];
 $db->QueryMod("UPDATE inoggetti SET inuso='1' WHERE userid='".$user['userid']."' AND oggid='36' ORDER BY usura DESC LIMIT 1");
-$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,lavoro,oggid) VALUES ('".$user['userid']."','".$adesso."','3600','2','1','2','".$pozione."')");	
+$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,lavoro,oggid) VALUES ('".$user['userid']."','".$adesso."','3600','7','1','5','".$pozione."')");	
 echo "<script language=\"javascript\">window.location.href='game.php?act=situazione'</script>";
 exit();	
 }

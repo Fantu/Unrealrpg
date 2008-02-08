@@ -19,6 +19,10 @@ while($evento=$db->QueryCicloResult($evfiniti)) {
 			case 4://apprendista fabbro
 			Completalavfucapp($evento['userid']);
 			break;
+			}
+			case 5://alchimista in laboratorio
+			Completalavlabalc($evento['userid'],$evento['oggid']);
+			break;
 			}	
 		break;
 		case 2://preghiera

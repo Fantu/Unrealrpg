@@ -8,7 +8,7 @@ $tempor=86400-$usercar['fede'];
 }else{
 $tempor=36000;	
 }
-if($user['plus']!=0){$tempor-=3600}
+if($user['plus']!=0){$tempor-=3600;}
 if ($tempor<3600)
 $tempor=3600;
 $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo) VALUES ('".$user['userid']."','".$adesso."','".$tempor."','4','3')");
