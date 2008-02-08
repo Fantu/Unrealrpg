@@ -19,6 +19,9 @@ Legenda:<br />
 + Vari miglioramenti di sistema<br />
 + Vari miglioramenti di sicurezza<br />
 </p>
+<p><strong>0.4.10.1</strong> (8/2/2008 - Beta)<br />
+- Patch: ora non succede pi&ugrave; che si viene cancellati appena registrati<br />
+</p>
 <p><strong>0.4.10</strong> [R.493] (7/2/2008 - Beta)<br />
 + Vari miglioramenti di sicurezza<br />
 + Altri vari miglioramenti<br />
