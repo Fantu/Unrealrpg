@@ -36,6 +36,7 @@ exit();
 }//fine lavora come apprendista
 if (isset($_POST['lavoralabalc'])){
 $errore="";
+$poziones=(int)$_POST['pozione'];
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$user['userid']."' LIMIT 0,1");
 $userlav=$db->QuerySelect("SELECT * FROM lavori WHERE userid='".$user['userid']."' LIMIT 0,1");
 if ($usercar['energia']<100)
@@ -51,12 +52,16 @@ $errore .= $lang['global_errore1'];
 $fiala=$db->QuerySelect("SELECT count(*) AS numero FROM inoggetti WHERE userid='".$user['userid']."' AND oggid='36' LIMIT 1");
 if ($fiala['numero']<1)
 $errore .= $lang['lab_errore5'];
+$pozione=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$poziones."' LIMIT 1");
+if ($user['monete']<floor($pozione['costo']/5))
+$errore .= $lang['lab_errore6'];
+if ($usercar['alchimista']<$pozione['abilitanec'])
+$errore .= $lang['lab_errore7'];
 if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
 else {
-$pozione=(int)$_POST['pozione'];
 $db->QueryMod("UPDATE inoggetti SET inuso='1' WHERE userid='".$user['userid']."' AND oggid='36' ORDER BY usura DESC LIMIT 1");
-$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,lavoro,oggid) VALUES ('".$user['userid']."','".$adesso."','3600','7','1','5','".$pozione."')");	
+$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,lavoro,oggid) VALUES ('".$user['userid']."','".$adesso."','3600','7','1','5','".$poziones."')");	
 echo "<script language=\"javascript\">window.location.href='game.php?act=situazione'</script>";
 exit();	
 }

@@ -218,8 +218,9 @@ function Completalavlabalc($userid,$pozionesel) {
 global $db,$adesso,$lang;
 require_once('language/it/lang_laboratorio.php');
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");
+$pozione=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$pozionesel."' LIMIT 1");
 $mana=rand(5,10);
-$costo=0;
+$costo=floor($pozione['costo']/5);
 $energia=100-(5*$usercar['alchimista']);
 if ($energia<50)
 $energia=50;
@@ -229,27 +230,35 @@ $salute=1;
 $exp=2+floor($usercar['saluteattuale']/10)+floor($usercar['energia']/100)+floor($usercar['attmagico']/10)+floor($usercar['intelligenza']/20);
 $exp=floor(rand($exp/2,$exp));
 $exp+=(5*$usercar['alchimista']);
-$esplosione=rand(30,100)-($usercar['alchimista']*5)-($usercar['attmagico']/20);
+$testo=sprintf($lang['report_lavlabalc'],$exp,$energia,$salute,$mana,$costo)."<br />";
+$bonusabilita=$usercar['alchimista']-$pozione['abilitanec'];
+if($bonusabilita>0)
+$bonusabilita=$bonusabilita*20;
+$esplosione=rand(30,100)-$bonusabilita-($usercar['attmagico']/20)-$usercar['intelligenza']/20;
 $danni=0;
 if($esplosione>10){
 $esplosione=rand(30,100)-($usercar['alchimista']*5)-($usercar['agilita']/20)-($usercar['attmagico']/10)-($usercar['velocita']/50);
 if($esplosione<10){
-$testo="<span>".$lang['report_esplosione_lab1']."</span><br /><br />";
+$testo2="<span>".$lang['report_esplosione_lab1']."</span><br /><br />";
 }else{
 $danni=rand(20,30)-rand(0,floor($usercar['difmagica']/10));
 if ($danni<1)
 $danni=1;	
-$testo="<span>".sprintf($lang['report_esplosione_lab2'],$danni)."</span><br /><br />";	
+$testo2="<span>".sprintf($lang['report_esplosione_lab2'],$danni)."</span><br /><br />";	
 }
 $titolo=$lang['report_esplosione_laboratorio'];
-$db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");	
-$riuscita=0;
-}/*fine esplosione*/else{$riuscita=1;
+$db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo2."','0','".$adesso."')");	
+$testo.=$lang['report_lavlab_pozione_no']."<br />";
+}/*fine esplosione*/else{
+$db->QueryMod("INSERT INTO inoggetti (oggid,userid) VALUES ('".$pozione['id']."','".$userid."')");
+$nomepozione=$lang['oggetto'.$pozione['id'].'_nome'];
+$testo.=sprintf($lang['report_lavlab_pozione_si'],$nomepozione)."<br />";
 }//fine pozione riuscita
-$testo="<span>".sprintf($lang['report_lavlabapp'],$costo,$exp,$energia,$salute,$mana)."</span><br /><br />";
-$titolo=$lang['report_lavoro_labapp'];
+$oggpersi=Checkusurarottura($userid);
+$testo="<span>".$testo.$oggpersi."</span><br /><br />";
+$titolo=$lang['report_lavoro_labalc'];
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");
 $salute+=$danni;
-$db->QueryMod("UPDATE lavori t1 JOIN utenti t2 on t1.userid=t2.userid JOIN caratteristiche t3 on t2.userid=t3.userid SET t1.ultimolavoro='".$adesso."',t3.expalchimista=t3.expalchimista+'".$exp."',t3.energia=t3.energia-'".$energia."',t3.saluteattuale=t3.saluteattuale-'".$salute."',t3.recuperosalute='".$adesso."',t3.recuperoenergia='".$adesso."',t3.manarimasto=t3.manarimasto-'".$mana."' WHERE t1.userid='".$userid."'");
+$db->QueryMod("UPDATE lavori t1 JOIN utenti t2 on t1.userid=t2.userid JOIN caratteristiche t3 on t2.userid=t3.userid SET t1.ultimolavoro='".$adesso."',t3.expalchimista=t3.expalchimista+'".$exp."',t2.monete=t2.monete-'".$costo."',t3.energia=t3.energia-'".$energia."',t3.saluteattuale=t3.saluteattuale-'".$salute."',t3.recuperosalute='".$adesso."',t3.recuperoenergia='".$adesso."',t3.manarimasto=t3.manarimasto-'".$mana."' WHERE t1.userid='".$userid."'");
 } //fine Completalavlabalc
 ?>
