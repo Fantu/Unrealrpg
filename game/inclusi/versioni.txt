@@ -20,6 +20,7 @@ Legenda:<br />
 + Vari miglioramenti di sicurezza<br />
 # Rivista la probabilit&agrave; di schivare gli incidenti nei lavori, ora le caratteristiche e abilit&agrave; influiscono leggermente di pi&ugrave;<br />
 + Ora anche l'intelligenza influisce sul lavoro in Laboratorio<br />
++ Ora anche la velocit&agrave; influisce leggermente sulla probabilit&agrave; di schivare gli incidenti nei lavori<br />
 </p>
 <p><strong>0.4.10.2</strong> (8/2/2008 - Beta)<br />
 - Corretto bug nella morte<br />
