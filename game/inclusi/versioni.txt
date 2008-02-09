@@ -12,7 +12,10 @@ Legenda:<br />
 + Iniziata la creazione di Fucina<br />
 + Creata l'abilit&agrave; Fabbro<br />
 </p>
-<p><strong>0.4.11</strong> (Non disponibile - In sviluppo)<br />
+<p><strong>0.4.12</strong> (Non disponibile - In sviluppo)<br />
+Niente attualmente<br />
+</p>
+<p><strong>0.4.11</strong> [R.512] (7/2/2008 - Beta)<br />
 # Rivisto il lavoro in Miniera vecchia, ora &egrave; pi&ugrave; equilibrato<br />
 # Rifatte le formule del guadagno di esperienza in tutti i lavori, ora la casualità influisce molto di meno<br />
 + Iniziata la creazione della seconda parte di Laboratorio<br />
