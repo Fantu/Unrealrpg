@@ -34,5 +34,5 @@ $lang['oggetto32_nome']='Pozione energetica2';
 $lang['oggetto33_nome']='Pozione energetica3';
 $lang['oggetto34_nome']='Pozione energetica4';
 $lang['oggetto35_nome']='Pozione energetica5';
-$lang['oggetto36_nome']='Fiala';
+$lang['oggetto36_nome']='Ampolla';
 ?>
