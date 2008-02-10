@@ -47,7 +47,7 @@ switch($oggetto['tipo']){
 		case 4://pozioni generiche
 			switch($oggetto['categoria']){
 			case 1://pozioni curative
-			$db->QueryMod("UPDATE inoggetti SET inuso='1' WHERE userid='".$userid."' AND oggid='$oggid' ORDER BY usura DESC LIMIT 1");
+			$db->QueryMod("UPDATE inoggetti SET inuso='1' WHERE userid='".$userid."' AND oggid='".$oggid."' ORDER BY usura DESC LIMIT 1");
 			$car=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");
 			$salute=$car['saluteattuale']+$oggetto['recsalute'];
 			if($salute>$car['salute'])
@@ -56,7 +56,7 @@ switch($oggetto['tipo']){
 			$output="Hai utilizzato ".$nomeogg." e recuperato ".$oggetto['recsalute']." di salute;
 			break;
 			case 2://pozioni energetiche
-			$db->QueryMod("UPDATE inoggetti SET inuso='1' WHERE userid='".$userid."' AND oggid='$oggid' ORDER BY usura DESC LIMIT 1");
+			$db->QueryMod("UPDATE inoggetti SET inuso='1' WHERE userid='".$userid."' AND oggid='".$oggid."' ORDER BY usura DESC LIMIT 1");
 			$car=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");
 			$energia=$car['energia']+$oggetto['recenergia'];
 			if($energia>$car['energiamax'])
