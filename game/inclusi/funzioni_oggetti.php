@@ -62,7 +62,7 @@ switch($oggetto['tipo']){
 			if($energia>$car['energiamax'])
 			$energia=$car['energiamax'];
 			$db->QueryMod("UPDATE caratteristiche SET energia='".$energia."' WHERE userid='".$userid."'");
-			$output="Hai utilizzato ".$nomeogg." e recuperato ".$oggetto['recenergia']." di energia;
+			$output="Hai utilizzato ".$nomeogg." e recuperato ".$oggetto['recenergia']." di energia";
 			break;
 			default:
 			$output=sprintf($lang['errore_sistema_utilizzo_ogg'],$nomeogg);
