@@ -14,6 +14,8 @@ Legenda:<br />
 </p>
 <p><strong>0.4.12</strong> (Non disponibile - In sviluppo)<br />
 + Lavoro come alchimista in Laboratorio: ora se si riesce a fare la pozione con successo l'esperienza è doppia altrimenti è dimezzata<br />
++ Vari miglioramenti di sistema<br />
++ Altri vari miglioramenti<br />
 </p>
 <p><strong>0.4.11</strong> [R.512] (9/2/2008 - Beta)<br />
 # Rivisto il lavoro in Miniera vecchia, ora &egrave; pi&ugrave; equilibrato<br />

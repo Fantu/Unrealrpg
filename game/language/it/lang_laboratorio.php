@@ -14,10 +14,10 @@ $lang['report_esplosione_laboratorio']='Imprevisto durante il lavoro in laborato
 $lang['report_esplosione_lab1']='Durante il tuo lavoro in laboratorio &egrave; esplosa una pozione ma sei riuscito ad allontanarti in tempo e non ferirti';
 $lang['report_esplosione_lab2']='Durante il tuo lavoro in laboratorio &egrave; esplosa una pozione, non sei riuscito ad allontanarti in tempo e ti sei ferito (%s di salute persa)';
 $lang['lav_alchimista']='Lavora come alchimista';
-$lang['desc_lav_alchimista']='Puoi lavorare in Laboratorio come alchimista cercando di creare delle pozioni, potrai cercare di creare determinate pozioni in base alla tua abilit&agrave, e non &egrave; certa la riuscita';
-$lang['nessuna_pozione_poss']='Non sei abbastanza esperto per nessuna pozione';
+$lang['desc_lav_alchimista']='Puoi lavorare in Laboratorio come alchimista cercando di distillare delle pozioni, potrai cercare di distillare determinate pozioni in base alla tua abilit&agrave, e non &egrave; certa la riuscita';
+$lang['nessuna_pozione_poss']='Non sei abbastanza esperto per distillare nessuna pozione';
 $lang['report_lavlabalc']='Hai lavorato in laboratorio come alchimista per 1 ora guadagnando %s di esperienza, il lavoro ti ha stancato (hai perso %s di energia), il tuo fisico ne ha risentito (hai perso %s di salute) e hai consumato %s di mana \n Hai speso %s per comprare gli ingrendienti necessari';
 $lang['report_lavoro_labalc']='Completato lavoro in laboratorio come alchimista';
-$lang['report_lavlab_pozione_no']='Non sei riuscito a fare la pozione voluta';
-$lang['report_lavlab_pozione_si']='Sei riuscito a fare %s';
+$lang['report_lavlab_pozione_no']='Non sei riuscito a distillare la pozione voluta';
+$lang['report_lavlab_pozione_si']='Sei riuscito a distillare %s';
 ?>
