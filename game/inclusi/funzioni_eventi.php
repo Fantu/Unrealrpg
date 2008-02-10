@@ -237,7 +237,7 @@ $exp+=(5*$usercar['alchimista']);
 $testo=sprintf($lang['report_lavlabalc'],$exp,$energia,$salute,$mana,$costo)."<br />";
 $bonusabilita=$usercar['alchimista']-$pozione['abilitanec'];
 if($bonusabilita>0)
-$bonusabilita=$bonusabilita*20;
+$bonusabilita=$bonusabilita*30;
 $esplosione=rand(30,100)-$bonusabilita-($usercar['attmagico']/20)-$usercar['intelligenza']/20;
 $danni=0;
 if($esplosione>10){

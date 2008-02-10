@@ -16,12 +16,16 @@ Legenda:<br />
 + Aggiunto l'utilizzo degli oggetti nell'Inventario<br />
 + Aggiunto l'ultilizzo delle pozioni generiche nell'Inventario<br />
 + Non si possono usare oggetti mentre si sta facendo altro<br />
++ Iniziata la creazione della Rocca dell'arcano<br />
++ Creata l'abilit&agrave; Sapienza magica<br />
++ Iniziata la creazione del Libro degli incantesimi<br />
 </p>
 <p><strong>0.4.12</strong> (Non disponibile - In sviluppo)<br />
 + Lavoro come alchimista in Laboratorio: ora se si riesce a fare la pozione con successo l'esperienza è doppia altrimenti è dimezzata<br />
 + Vari miglioramenti di sistema<br />
 + Altri vari miglioramenti<br />
 # Rifatte le formule dei danni negli incidenti in tutti i lavori, ora la casualità influisce molto di meno<br />
+# Rivista la probabilit&agrave; di riuscire a distillare le pozioni, ora l'abilit&agrave; influisce maggiormente<br />
 </p>
 <p><strong>0.4.11</strong> [R.512] (9/2/2008 - Beta)<br />
 # Rivisto il lavoro in Miniera vecchia, ora &egrave; pi&ugrave; equilibrato<br />
