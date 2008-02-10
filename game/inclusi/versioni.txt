@@ -11,6 +11,11 @@ Legenda:<br />
 + Inizio creazione sistema di utilizzo oggetti autonomo (per utilizzo di oggetti nei combattimenti e al di fuori dei lavori)<br />
 + Iniziata la creazione di Fucina<br />
 + Creata l'abilit&agrave; Fabbro<br />
++ Aggiunte le pozioni curative al sistema di utilizzo degli oggetti<br />
++ Aggiunte le pozioni energetiche al sistema di utilizzo degli oggetti<br />
++ Aggiunto l'utilizzo degli oggetti nell'Inventario<br />
++ Aggiunto l'ultilizzo delle pozioni generiche nell'Inventario<br />
++ Non si possono usare oggetti mentre si sta facendo altro<br />
 </p>
 <p><strong>0.4.12</strong> (Non disponibile - In sviluppo)<br />
 + Lavoro come alchimista in Laboratorio: ora se si riesce a fare la pozione con successo l'esperienza è doppia altrimenti è dimezzata<br />

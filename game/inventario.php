@@ -20,7 +20,7 @@ $errore .= $lang['global_errore1'];
 if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
 else {
-$cogg=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$oggselect."' ORDER BY usura DESC LIMIT 1");	
+$cogg=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$oggselect."' LIMIT 1");	
 if($cogg['usura']>1){
 $monete=floor(($cogg['costo']/2)/$cogg['usura']*($cogg['usura']-$numogg['usura']));
 }else{
@@ -35,6 +35,26 @@ $db->QueryMod("UPDATE utenti SET monete=monete+'".$monete."' WHERE userid='".$us
 $db->QueryMod("DELETE FROM inoggetti WHERE userid='".$user['userid']."' AND oggid='".$oggselect."' LIMIT ".$quanti);
 }
 }//fine vendi
+
+if (isset($_POST['usa'])){
+$errore="";
+$oggselect=(int)$_POST['oggselect'];
+if ($oggselect<1)
+$errore .= $lang['inventario_errore4'];
+if ($eventi['id']>0)
+$errore .= $lang['global_errore1'];
+if($errore){
+	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
+else {
+$cogg=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$oggselect."' LIMIT 1");	
+if($cogg['tipo']==4){
+$outputerrori.=Usaoggetto($user['userid'],$oggselect);
+$outputerrori.=Checkusurarottura($user['userid']);
+}else{
+$outputerrori=sprintf($lang['impossibile_usare_oggetto'],$lang['oggetto'.$oggselect.'_nome']);}
+
+}
+}//fine usa
 
 $seoggetti=$db->QuerySelect("SELECT COUNT(*) AS id FROM inoggetti WHERE userid='".$user['userid']."'");
 if ($seoggetti['id']==0){
