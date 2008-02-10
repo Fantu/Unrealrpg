@@ -1,7 +1,7 @@
 <?php
-$lang['depositare']='Puoi depositare le tue monete in banca dove saranno al sicuro';
-$lang['prelevare']='Puoi prelevare le monete dal tuo conto in banca';
-$lang['quanto_depositare']='Inserisci il numero di monete che vuoi depositare';
+$lang['depositare']='Puoi depositare le tue monete in Banca dove saranno al sicuro';
+$lang['prelevare']='Puoi prelevare le monete dal tuo conto in Banca';
+$lang['quanto_depositare']='Inserisci il numero di monete che vuoi depositare:';
 $lang['Deposita']='Deposita';
 $lang['quanto_prelevare']='Inserisci il numero di monete che vuoi prelevare';
 $lang['Preleva']='Preleva';
@@ -15,7 +15,7 @@ $lang['banca_errore7']='- Devi chiedere in prestito almeno 1 moneta<br />';
 $lang['banca_errore8']='- Non puoi chiedere cos&igrave; tante monete ma massimo';
 $lang['saldo_conto']='Il saldo attuale del tuo conto &egrave;:';
 $lang['saldo_utente']='Le monete che hai con te sono:';
-$lang['info_interessi']='La banca paga gli interessi sulle monete depositate sul conto dello 0.5% al giorno, la prossima volta sar&agrave;:';
+$lang['info_interessi']='La Banca paga gli interessi sulle monete depositate sul conto dello 0.5% al giorno, la prossima volta sar&agrave;:';
 $lang['desc_prestito']='Puoi chiedere un prestito alla banca, al massimo 100 monete per ogni livello del personaggio, l\'interesse sul prestito &egrave; fisso del 10%';
 $lang['quanto_prestito_chiedere']='Inserisci quante monete vuoi chiedere in prestito';
 $lang['restituzione_prestito']='Le monete che devi restituire alla banca interessi inclusi sono:';
