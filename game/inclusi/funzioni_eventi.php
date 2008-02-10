@@ -22,7 +22,8 @@ $esplosione=rand(30,100)-($usercar['minatore']*5)-($usercar['agilita']/20)-($use
 if($esplosione<10){
 $testo="<span>".$lang['report_incidente_min1']."</span><br /><br />";
 }else{
-$danni=rand(20,30)-rand(0,floor($usercar['diffisica']/10));
+$resistenza=$usercar['diffisica']/10;
+$danni=rand(20,30)-rand(floor($resistenza/2),floor($resistenza));
 if ($danni<1)
 $danni=1;	
 $testo="<span>".sprintf($lang['report_incidente_min2'],$danni)."</span><br /><br />";	
@@ -59,7 +60,8 @@ $esplosione=rand(30,100)-($usercar['alchimista']*5)-($usercar['agilita']/20)-($u
 if($esplosione<10){
 $testo="<span>".$lang['report_esplosione_lab1']."</span><br /><br />";
 }else{
-$danni=rand(20,30)-rand(0,floor($usercar['difmagica']/10));
+$resistenza=$usercar['difmagica']/10;
+$danni=rand(20,30)-rand(floor($resistenza/2),floor($resistenza));
 if ($danni<1)
 $danni=1;	
 $testo="<span>".sprintf($lang['report_esplosione_lab2'],$danni)."</span><br /><br />";	
@@ -131,7 +133,8 @@ $esplosione=rand(30,100)-($usercar['minatore']*5)-($usercar['agilita']/20)-($use
 if($esplosione<10){
 $testo="<span>".$lang['report_incidente_min1']."</span><br /><br />";
 }else{
-$danni=rand(20,30)-rand(0,floor($usercar['diffisica']/10));
+$resistenza=$usercar['diffisica']/10;
+$danni=rand(20,30)-rand(floor($resistenza/2),floor($resistenza));
 if ($danni<1)
 $danni=1;	
 $testo="<span>".sprintf($lang['report_incidente_min2'],$danni)."</span><br /><br />";	
@@ -199,7 +202,8 @@ $esplosione=rand(30,100)-($usercar['minatore']*5)-($usercar['agilita']/20)-($use
 if($esplosione<10){
 $testo="<span>".$lang['report_incidente_min1']."</span><br /><br />";
 }else{
-$danni=rand(20,30)-rand(0,floor($usercar['diffisica']/10));
+$resistenza=$usercar['diffisica']/10;
+$danni=rand(20,30)-rand(floor($resistenza/2),floor($resistenza));
 if ($danni<1)
 $danni=1;	
 $testo="<span>".sprintf($lang['report_incidente_min2'],$danni)."</span><br /><br />";	
@@ -241,7 +245,8 @@ $esplosione=rand(30,100)-($usercar['alchimista']*5)-($usercar['agilita']/20)-($u
 if($esplosione<10){
 $testo2="<span>".$lang['report_esplosione_lab1']."</span><br /><br />";
 }else{
-$danni=rand(20,30)-rand(0,floor($usercar['difmagica']/10));
+$resistenza=$usercar['difmagica']/10;
+$danni=rand(20,30)-rand(floor($resistenza/2),floor($resistenza));
 if ($danni<1)
 $danni=1;	
 $testo2="<span>".sprintf($lang['report_esplosione_lab2'],$danni)."</span><br /><br />";	
