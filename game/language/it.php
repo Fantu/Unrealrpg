@@ -108,4 +108,5 @@ $lang['error_eventi_incorso']='Sei occupato a fare altro';
 $lang['Stato']='Stato';
 $lang['Adesso']='Adesso';
 $lang['Indietro']='Indietro';
+$lang['dataora']='il d/m/y alle H:i';
 ?>

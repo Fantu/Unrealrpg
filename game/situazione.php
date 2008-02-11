@@ -43,7 +43,7 @@ $lavoroincorso=$db->QuerySelect("SELECT COUNT(*) AS id FROM eventi WHERE userid=
 if ($lavoroincorso['id']>0)
 $proxlavdata=$lang['stai_gia_lavorando'];
 }else
-{$proxlavdata=date("d/m/y - H:i",($userlav['ultimolavoro']+$tempoproxlav));}
+{$proxlavdata=date($lang['dataora'],($userlav['ultimolavoro']+$tempoproxlav));}
 $proxlav=$lang['prossimo_lavoro'].$proxlavdata;
 $newscom=$db->QuerySelect("SELECT news,comunicazione FROM config LIMIT 1");
 require('inclusi/personaggio.php');

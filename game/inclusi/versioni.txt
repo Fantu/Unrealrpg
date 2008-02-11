@@ -28,6 +28,8 @@ Legenda:<br />
 # Rifatte le formule dei danni negli incidenti in tutti i lavori, ora la casualità influisce molto di meno<br />
 # Rivista la probabilit&agrave; di riuscire a distillare le pozioni, ora l'abilit&agrave; influisce maggiormente<br />
 + Aggiunto link indietro che mantiene anche ordine e pagina nella visualizzazione dettagliata dei personaggi<br />
++ Creata una nuova visualizzazione di data ed ora integrata nel sistema multilingua<br />
+# Modificata la visualizzazione di data e ora al prossimo lavoro in Situazione, nel sistema eventi e nel sistema messaggi<br />
 </p>
 <p><strong>0.4.11</strong> [R.512] (9/2/2008 - Beta)<br />
 # Rivisto il lavoro in Miniera vecchia, ora &egrave; pi&ugrave; equilibrato<br />
