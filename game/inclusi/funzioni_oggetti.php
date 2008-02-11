@@ -42,7 +42,7 @@ return $oggpersi;
 function Usaoggetto($userid,$oggid) {
 global $db,$lang;
 $oggetto=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$oggid."' LIMIT 1");
-$nomeogg=$lang['oggetto'.$oggetto['oggid'].'_nome'];
+$nomeogg=$lang['oggetto'.$oggetto['id'].'_nome'];
 switch($oggetto['tipo']){
 		case 4://pozioni generiche
 			switch($oggetto['categoria']){
