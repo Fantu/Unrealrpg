@@ -1,3 +1,9 @@
+<?php
+if((empty($int_security)) OR ($int_security!=$game_se_code)){
+	header("Location: ../index.php?error=16");
+	exit();
+}
+?>
 <center><h2><?php echo $lang['Lista_utenti']; ?></h2></center><br />
 <br />
 <?php echo $outputerrori; ?>
@@ -59,7 +65,7 @@
   </tr>
 <?php foreach($utenti['nome'] as $chiave=>$elemento){ ?>
 <tr>
-<td><div align="center"><a href="game.php?act=visualizzautente&amp;id=<?php echo $utenti['userid'][$chiave]; ?>"><?php echo $utenti['nome'][$chiave]; ?></a></div></td>
+<td><div align="center"><a href="<?php echo $utenti['link'][$chiave]; ?>"><?php echo $utenti['nome'][$chiave]; ?></a></div></td>
 <td><div align="center"><?php if($utenti['online'][$chiave]==1){ ?>
 <img src="template/immagini/led_verde.gif" alt="Online" />
 <?php }else{ ?>

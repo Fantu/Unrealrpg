@@ -74,6 +74,7 @@ while($chi=$db->QueryCicloResult($a)) {
 	$i++;
 	$utenti['nome'][$i]=$chi['nome'];
 	$utenti['userid'][$i]=$chi['id'];
+	$utenti['link'][$i]="game.php?act=visualizzautente&amp;id=".$chi['id']."&amp;ordine=".$cheordine."&amp;inizio=".$iniziale;
 	$utentit['livello'][$i]=$chi['liv'];
 	if ($chi['azione']>$seonline){
 	$utenti['online'][$i]=1;}else
