@@ -27,7 +27,7 @@ break;
 case 2:
 $categoria=(int)$_GET['categoria'];
 $sottocat=(int)$_GET['sottocategoria'];
-$linkindietro="<a href=\"game.php?act=mercato&amp;step=1&amp;categoria=".$categoria."\">".$lang['tipo'.$categoria]."</a>";
+$linkindietro="<a href=\"game.php?act=mercato\">".$lang['Mercato']."</a> - <a href=\"game.php?act=mercato&amp;step=1&amp;categoria=".$categoria."\">".$lang['tipo'.$categoria]."</a>";
 $mostraogg=1;
 break;
 default:
