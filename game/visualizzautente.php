@@ -40,7 +40,7 @@ $energia=$lang['perfetta'];
 }
 $cheordine=htmlentities($_GET['ordine']);
 $iniziale=(int)$_GET['inizio'];
-$linkindietro="game.php?act=utenti&amp;ordine=".$cheordine."&amp;inizio=".$iniziale";
+$linkindietro="game.php?act=utenti&amp;ordine=".$cheordine."&amp;inizio=".$iniziale;
 
 require('template/int_visualizzautente.php');
 ?>
