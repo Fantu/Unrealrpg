@@ -31,7 +31,7 @@ $newmsg="<a href=\"game.php?act=messaggi\">".sprintf($lang['nuovi_msg'],$quantim
 }//fine nuovi msg
 if($eventi['id']>0){
 	$eventi=$db->QuerySelect("SELECT * FROM eventi WHERE userid='".$user['userid']."' LIMIT 1");
-	$evento=$lang['eventi_dettagli'.$eventi['dettagli']].date("d/m/y - H:i",($eventi['datainizio']+$eventi['secondi']));
+	$evento=$lang['eventi_dettagli'.$eventi['dettagli']].date($lang['dataora'],($eventi['datainizio']+$eventi['secondi']));
 }
 if(!$evento)
 $evento=$lang['nessun_evento'];

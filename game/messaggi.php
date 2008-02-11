@@ -143,7 +143,7 @@ $a=$db->QueryCiclo("SELECT * FROM messaggi WHERE userid='".$user['userid']."' OR
 	<table width="505"  border="0" cellspacing="2" cellpadding="2">
 	  <tr>
 		<td width="5%"><?php echo "<input name=\"messaggioid".$i."\" type=\"checkbox\" id=\"messaggioid".$i."\" value=\"".$mess['id']."\" />"; ?></td>
-		<td width="95%"><div align="center"><?php echo $lang['messaggio_da']; if ($mess['mittenteid']==0){echo "Sistema";}else{echo $mit['username'];} echo $lang['in_data']; echo date("d/m/y - H:i",$mess['data']); ?> </div></td>
+		<td width="95%"><div align="center"><?php echo $lang['messaggio_da']; if ($mess['mittenteid']==0){echo "Sistema";}else{echo $mit['username'];} echo " "; echo date($lang['dataora'],$mess['data']); ?> </div></td>
 	  </tr>
 	  <tr>
 		<td>&nbsp;</td>
