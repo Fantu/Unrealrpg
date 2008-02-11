@@ -37,11 +37,11 @@ echo "<span><strong>".$lang['comunicazione']."</strong>".$newscom['comunicazione
 <br />
 <table border="0" cellspacing="0"><tr><td><?php echo $lang['ab_alchimista']; ?>: <?php echo $usercar['alchimista']; echo " "; ?> </td>
 <td width="<?php echo $percmin3; ?>" class="sfondoverde"></td><td width="<?php echo $percmin4; ?>" class="sfondorosso"></td>
-</tr></table><br />
+</tr></table>
 <br />
 <table border="0" cellspacing="0"><tr><td><?php echo $lang['ab_fabbro']; ?>: <?php echo $usercar['fabbro']; echo " "; ?> </td>
 <td width="<?php echo $percmin5; ?>" class="sfondoverde"></td><td width="<?php echo $percmin6; ?>" class="sfondorosso"></td>
-</tr></table><br />
+</tr></table>
 <br />
 <table border="0" cellspacing="0"><tr><td><?php echo $lang['ab_magica']; ?>: <?php echo $usercar['magica']; echo " "; ?> </td>
 <td width="<?php echo $percmin7; ?>" class="sfondoverde"></td><td width="<?php echo $percmin8; ?>" class="sfondorosso"></td>

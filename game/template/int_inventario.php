@@ -22,6 +22,7 @@ foreach($oggetti['nome'] as $chiave=>$elemento){?>
 <br />
 <?php echo $lang['Quanti']; ?> <input name="quanti" type="text" maxlength="2" size="3" value="1" />
 <input type="submit" name="vendi" value="<?php echo $lang['Vendi']; ?>" />
+<input type="submit" name="usa" value="<?php echo $lang['Usa']; ?>" />
 </form>
 <?php }/*fine se ci sono oggetti*/ ?>
 </div>
