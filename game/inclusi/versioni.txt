@@ -20,7 +20,7 @@ Legenda:<br />
 + Creata l'abilit&agrave; Sapienza magica<br />
 + Iniziata la creazione del Libro degli incantesimi<br />
 </p>
-<p><strong>0.4.12</strong> [R.531] (11/2/2008 - Beta)<br />
+<p><strong>0.4.12</strong> [R.532] (11/2/2008 - Beta)<br />
 + Lavoro come alchimista in Laboratorio: ora se si riesce a fare la pozione con successo l'esperienza è doppia altrimenti è dimezzata<br />
 + Vari miglioramenti di sistema<br />
 + Vari miglioramenti di sicurezza<br />
