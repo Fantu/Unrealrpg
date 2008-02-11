@@ -15,6 +15,8 @@ $lang['Lista_utenti']='Elenco personaggi';
 $lang['Mercato']='Mercato';
 $lang['Inventario']='Inventario';
 $lang['Fucina']='Fucina';
+$lang['Rocca_arcano']='Rocca dell\'Arcano';
+$lang['Libro_incantesimi']='Libro degli incantesimi';
 //fine menu
 
 //inizio razze
