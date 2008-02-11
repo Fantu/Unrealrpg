@@ -68,10 +68,10 @@ $lang['Non_definito']='Non definito';
 $lang['Maschio']='Maschio';
 $lang['Femmina']='Femmina';
 $lang['Sesso']='Sesso';
-$lang['Elenco_ab']='Abilit&agrave;';
-$lang['ab_minatore']='Abilit&agrave; minatore';
-$lang['ab_alchimista']='Abilit&agrave; alchimista';
-$lang['ab_fabbro']='Abilit&agrave; fabbro';
+$lang['elenco_ab']='Abilit&agrave;';
+$lang['ab_minatore']='Minatore';
+$lang['ab_alchimista']='Alchimista';
+$lang['ab_fabbro']='Fabbro';
 $lang['ab_magica']='Sapienza magica';
 $lang['Monete']='Monete';
 //fine caratteristiche
