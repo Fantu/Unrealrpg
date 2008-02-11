@@ -26,7 +26,7 @@
 <br />
 <?php echo $lang['saldo_conto']; echo " ".$userbank['conto']; ?><br />
 <br />
-<?php echo $lang['info_interessi']; echo " ".date("d/m/y - H:i",($userbank['interessi']+86400)); ?><br />
+<?php echo $lang['info_interessi']; echo " ".date($lang['dataora'],($userbank['interessi']+86400)); ?><br />
 <br />
 <?php if ($userbank['conto']>0){ 
 echo $lang['prelevare']; ?>
