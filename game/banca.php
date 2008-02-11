@@ -14,6 +14,7 @@ if (($userbank['interessi']+86400)<$adesso){
 	}
 	else{$db->QueryMod("UPDATE banca SET interessi='".$adesso."' WHERE userid='".$user['userid']."'");}
 }
+$infointeressi=$lang['info_interessi']." ".date($lang['dataora'],($userbank['interessi']+86400));
 if (isset($_POST['deposita'])){
 $errore="";
 $dadepositare=(int)$_POST['dadepositare'];
