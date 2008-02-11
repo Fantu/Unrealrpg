@@ -98,6 +98,8 @@ $lang['oggetto_usurato']='Oggetto %s gettato in quanto usurato';
 $lang['oggetto_rotto']='Oggetto %s gettato in quanto rotto';
 $lang['nessuno_gettato']='Nessuno oggetto gettato';
 $lang['errore_sistema_utilizzo_ogg']='Errore di sistema: impossibile utilizzare %s';
+$lang['utilizzato_4_1']='Hai utilizzato %s e recuperato %s di salute';
+$lang['utilizzato_4_2']='Hai utilizzato %s e recuperato %s di energia';
 //fine funz_ogg
 
 //inizio errori globali

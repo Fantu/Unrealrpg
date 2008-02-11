@@ -53,7 +53,7 @@ switch($oggetto['tipo']){
 			if($salute>$car['salute'])
 			$salute=$car['salute'];
 			$db->QueryMod("UPDATE caratteristiche SET saluteattuale='".$salute."' WHERE userid='".$userid."'");
-			$output="Hai utilizzato ".$nomeogg." e recuperato ".$oggetto['recsalute']." di salute";
+			$output=sprintf($lang['utilizzato_4_1'],$nomeogg,$oggetto['recsalute']);
 			break;
 			case 2://pozioni energetiche
 			$db->QueryMod("UPDATE inoggetti SET inuso='1' WHERE userid='".$userid."' AND oggid='".$oggid."' ORDER BY usura DESC LIMIT 1");
@@ -62,7 +62,7 @@ switch($oggetto['tipo']){
 			if($energia>$car['energiamax'])
 			$energia=$car['energiamax'];
 			$db->QueryMod("UPDATE caratteristiche SET energia='".$energia."' WHERE userid='".$userid."'");
-			$output="Hai utilizzato ".$nomeogg." e recuperato ".$oggetto['recenergia']." di energia";
+			$output=sprintf($lang['utilizzato_4_2'],$nomeogg,$oggetto['recenergia']);
 			break;
 			default:
 			$output=sprintf($lang['errore_sistema_utilizzo_ogg'],$nomeogg);
