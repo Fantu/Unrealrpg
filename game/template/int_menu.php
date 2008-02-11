@@ -1,5 +1,5 @@
 <div id="menu">
-<table width="122"  border="1" cellspacing="1" cellpadding="1" class="tabmenu">		  
+<table width="142"  border="1" cellspacing="1" cellpadding="1" class="tabmenu">		  
 	<tr>
     <td><div align="center"><a href="game.php?act=situazione"><?php echo $lang['Situazione']; ?></a></div></td>
 	</tr>

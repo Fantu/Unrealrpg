@@ -37,20 +37,20 @@ if ($user['personaggio']==0){
 	require('creapersonaggio.php');	}
 	else{
 ?>
-<table width="800" border="0" align="center" cellpadding="0" cellspacing="0">
+<table width="900" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
-    <td width="125" rowspan="2" valign="top"><?php include('inclusi/menu.php'); ?>
+    <td width="145" rowspan="2" valign="top"><?php include('inclusi/menu.php'); ?>
     </td>
-    <td width="10">&nbsp;</td>
-    <td width="655">&nbsp;</td>
-    <td width="10">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="715">&nbsp;</td>
+    <td width="20">&nbsp;</td>
   </tr>
   <tr>
 	<td>&nbsp;</td>
     <td valign="top" align="center">
-		<table width="655" border="0" align="right" cellpadding="1" cellspacing="1">
+		<table width="715" border="0" align="right" cellpadding="1" cellspacing="1">
 		  <tr>
-			<td width="505" valign="top">
+			<td width="565" valign="top">
 			<div id="contenuto">		
 <?php
 if(!file_exists($_GET['act'].'.php'))
@@ -59,7 +59,7 @@ require($_GET['act'].'.php');
 ?>
 			</div> 
 			</td>
-			<td width="20">&nbsp;</td>
+			<td width="30">&nbsp;</td>
 			<td width="120" valign="top">
 				<?php
 				if($user['plus']==0) {
