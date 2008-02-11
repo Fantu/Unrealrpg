@@ -5,7 +5,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 }
 require('language/it/lang_utenti.php');
 $totutenti=$db->QuerySelect("SELECT COUNT(userid) AS numero FROM utenti");
-$utentireg=$utenti['numero'];
+$utentireg=$totutenti['numero'];
 $seonline=$adesso-600;
 $online=$db->QuerySelect("SELECT COUNT(userid) AS numero FROM utenti WHERE ultimazione>'".$seonline."'");
 $utentionline=$online['numero'];
