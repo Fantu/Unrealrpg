@@ -21,6 +21,8 @@ Legenda:<br />
 + Iniziata la creazione del Libro degli incantesimi<br />
 + Aggiunta in Situazione la visualizzazione dell'abilit&agrave; fabbro e di sapienza magica<br />
 + Vari miglioramenti di sistema<br />
++ Vari miglioramenti di sicurezza<br />
++ Altri vari miglioramenti<br />
 </p>
 <p><strong>0.4.12</strong> [R.533] (11/2/2008 - Beta)<br />
 + Lavoro come alchimista in Laboratorio: ora se si riesce a fare la pozione con successo l'esperienza è doppia altrimenti è dimezzata<br />
