@@ -38,6 +38,7 @@ echo "<span><strong>".$lang['comunicazione']."</strong>".$newscom['comunicazione
 <?php echo $lang['Monete']; ?>: <?php echo $user['monete']; ?><br />
 <br />
 <table align="center" border="1" cellspacing="1">
+<tr><td colspan="2"><?php echo $usercar['elenco_ab']; ?></td></tr>
 <tr><td><?php echo $lang['ab_minatore']; ?>: <?php echo $usercar['minatore']; ?></td>
 <td><table align="center" border="0" cellspacing="0"><tr><td width="<?php echo $percmin1; ?>" class="sfondoverde"></td><td width="<?php echo $percmin2; ?>" class="sfondorosso"></td></tr>
 </table></tr>
