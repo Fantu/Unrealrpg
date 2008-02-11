@@ -36,6 +36,9 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <?php }/*fine mostra risultati ricerca*/ ?>
 <br />
 <br />
+<?php echo $infoutenti; ?><br />
+<br />
+<br />
 <div align="center">
 <form action="game.php?act=utenti" method="post" name="formcu">
 <table width="250" border="0" cellspacing="2" cellpadding="2" align="center">

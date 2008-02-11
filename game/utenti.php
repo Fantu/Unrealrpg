@@ -4,6 +4,14 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	exit();
 }
 require('language/it/lang_utenti.php');
+$totutenti=$db->QuerySelect("SELECT COUNT(userid) AS numero FROM utenti");
+$utentireg=$utenti['numero'];
+$seonline=$adesso-600;
+$online=$db->QuerySelect("SELECT COUNT(userid) AS numero FROM utenti WHERE ultimazione>'".$seonline."'");
+$utentionline=$online['numero'];
+$totpersonaggi=$db->QuerySelect("SELECT COUNT(userid) AS numero FROM utenti WHERE personaggio='1'");
+$personaggi=$totpersonaggi['numero'];
+$infoutenti=sprintf($lang['info_utenti_server',$utentireg,$personaggi,$utentionline);
 if (isset($_POST['cercau'])){
 $errore="";
 if(!$_POST['nome']){

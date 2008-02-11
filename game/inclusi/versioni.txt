@@ -20,7 +20,7 @@ Legenda:<br />
 + Creata l'abilit&agrave; Sapienza magica<br />
 + Iniziata la creazione del Libro degli incantesimi<br />
 </p>
-<p><strong>0.4.12</strong> [R.530] (11/2/2008 - Beta)<br />
+<p><strong>0.4.12</strong> [R.531] (11/2/2008 - Beta)<br />
 + Lavoro come alchimista in Laboratorio: ora se si riesce a fare la pozione con successo l'esperienza è doppia altrimenti è dimezzata<br />
 + Vari miglioramenti di sistema<br />
 + Vari miglioramenti di sicurezza<br />
@@ -30,6 +30,7 @@ Legenda:<br />
 + Aggiunto link indietro che mantiene anche ordine e pagina nella visualizzazione dettagliata dei personaggi<br />
 + Creata una nuova visualizzazione di data ed ora integrata nel sistema multilingua<br />
 # Modificata la visualizzazione di data e ora al prossimo lavoro in Situazione, nel sistema eventi, nel sistema messaggi e prossimi interessi in Banca<br />
++ Aggiunte in Elenco dei personaggio la visualizzazione di quanti utenti ci sono nel server, quanti personaggi creati e quanti utenti online<br />
 </p>
 <p><strong>0.4.11</strong> [R.512] (9/2/2008 - Beta)<br />
 # Rivisto il lavoro in Miniera vecchia, ora &egrave; pi&ugrave; equilibrato<br />

@@ -8,4 +8,5 @@ $lang['scrivi_msg']='Scrivi messaggio';
 $lang['utenti_error1']='Non hai scritto il nome da cercare';
 $lang['utenti_error2']='Non esiste nessun personaggio con il nome che contiene %s';
 $lang['utenti_error3']='La stringa di ricerca deve essere di almeno 3 caratteri';
+$lang['info_utenti_server']='In questo server attualmente ci sono %s utenti registrati, %s personaggi creati e %s utenti online';
 ?>
