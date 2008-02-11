@@ -68,6 +68,8 @@ $lang['Femmina']='Femmina';
 $lang['Sesso']='Sesso';
 $lang['ab_minatore']='Abilit&agrave; minatore';
 $lang['ab_alchimista']='Abilit&agrave; alchimista';
+$lang['ab_fabbro']='Abilit&agrave; fabbro';
+$lang['ab_magica']='Sapienza magica';
 $lang['Monete']='Monete';
 //fine caratteristiche
 
