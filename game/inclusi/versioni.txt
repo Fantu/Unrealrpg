@@ -7,7 +7,10 @@ Legenda:<br />
 - Correzione bug e patch di situazioni non previste<br />
 <br />
 </p>
-<p><strong>0.5.0</strong> (Non disponibile - In sviluppo)<br />
+<p><strong>0.5.1</strong> (Non disponibile - In sviluppo)<br />
+Niente attualmente<br />
+</p>
+<p><strong>0.5.0</strong> [R.559] (12/2/2008 - Beta)<br />
 + Inizio creazione sistema di utilizzo oggetti autonomo (per utilizzo di oggetti nei combattimenti e al di fuori dei lavori)<br />
 + Iniziata la creazione di Fucina<br />
 + Creata l'abilit&agrave; Fabbro<br />
