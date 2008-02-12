@@ -13,13 +13,15 @@ if($esistenza==0){
 	exit();
 } else{
 $db->database=$server;	
-$_POST['login_username']=str_replace("'","\'",$_POST['login_username']);
-$user = $db->QuerySelect("SELECT * FROM utenti WHERE username='".$_POST['login_username']."' AND password='".md5($_POST['login_password'])."' LIMIT 0,1");
+$username=htmlentities($_POST['login_username']);
+$password=htmlentities($_POST['login_password']);
+$user=$db->QuerySelect("SELECT count(userid) AS numero FROM utenti WHERE username='".$username."' AND password='".md5($password)."' LIMIT 1");
 }
-if(!$user['userid']) {
+if($user['numero']==0) {
 	header("Location: ../index.php?error=1");
 	exit();
 }
+$user=$db->QuerySelect("SELECT * FROM utenti WHERE username='".$username."' AND password='".md5($password)."' LIMIT 1");
 if($user['conferma']==0) {
 	header("Location: ../index.php?error=2");
 	exit();
