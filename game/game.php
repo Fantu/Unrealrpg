@@ -2,7 +2,7 @@
 $start_time = microtime();
 $numquery=0;
 require('inclusi/valori.php');
-require('language/it.php');
+require('language/it/lang_interno.php');
 if($_COOKIE['urbglogin'])
 	{$lg=explode("|||",$_COOKIE['urbglogin']);}else{header("Location: ../index.php?error=3"); exit(); }
 $adesso=strtotime("now");
