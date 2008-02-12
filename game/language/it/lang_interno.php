@@ -97,8 +97,8 @@ $lang['perfetta']='Perfetta';
 //fine visualizzautente
 
 //inizio funz_ogg
-$lang['oggetto_usurato']='Oggetto %s gettato in quanto usurato';
-$lang['oggetto_rotto']='Oggetto %s gettato in quanto rotto';
+$lang['oggetto_usurato']='Oggetto %s gettato, in quanto usurato';
+$lang['oggetto_rotto']='Oggetto %s gettato, in quanto rotto';
 $lang['nessuno_gettato']='Nessuno oggetto gettato';
 $lang['errore_sistema_utilizzo_ogg']='Errore di sistema: impossibile utilizzare %s';
 $lang['utilizzato_4_1']='Hai utilizzato %s e recuperato %s di salute';
