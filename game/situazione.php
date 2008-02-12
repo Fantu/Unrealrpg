@@ -16,13 +16,13 @@ if($usercar['expalchimista']>99) {
 	$db->QueryMod("UPDATE caratteristiche t1 SET t1.alchimista=t1.alchimista+'1',t1.expalchimista=t1.expalchimista-'".$expnewmin2."' WHERE t1.userid='".$user['userid']."'");
 }//fine controllo aumento liv alchimista
 $expnewmin3=100+($usercar['fabbro']*500);
-if($usercar['expalchimista']>99) {
-	if($usercar['expalchimista']>=$expnewmin3)
+if($usercar['expfabbro']>99) {
+	if($usercar['expfabbro']>=$expnewmin3)
 	$db->QueryMod("UPDATE caratteristiche t1 SET t1.fabbro=t1.fabbro+'1',t1.expfabbro=t1.expfabbro-'".$expnewmin3."' WHERE t1.userid='".$user['userid']."'");
 }//fine controllo aumento liv fabbro
 $expnewmin4=100+($usercar['magica']*500);
-if($usercar['expalchimista']>99) {
-	if($usercar['expalchimista']>=$expnewmin4)
+if($usercar['expmagica']>99) {
+	if($usercar['expmagica']>=$expnewmin4)
 	$db->QueryMod("UPDATE caratteristiche t1 SET t1.magica=t1.magica+'1',t1.expmagica=t1.expmagica-'".$expnewmin4."' WHERE t1.userid='".$user['userid']."'");
 }//fine controllo aumento liv magica
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$user['userid']."' LIMIT 0,1");
