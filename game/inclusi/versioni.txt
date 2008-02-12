@@ -10,6 +10,9 @@ Legenda:<br />
 <p><strong>0.5.1</strong> (Non disponibile - In sviluppo)<br />
 + Vari miglioramenti di sistema<br />
 </p>
+<p><strong>0.5.0.1</strong> (12/2/2008 - Beta)<br />
+- Corretto bug nella fucina<br />
+</p>
 <p><strong>0.5.0</strong> [R.559] (12/2/2008 - Beta)<br />
 + Inizio creazione sistema di utilizzo oggetti autonomo (per utilizzo di oggetti nei combattimenti e al di fuori dei lavori)<br />
 + Iniziata la creazione di Fucina<br />
