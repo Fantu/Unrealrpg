@@ -27,6 +27,7 @@ Legenda:<br />
 + Completata la bozza della prima parte di Fucina<br />
 + Ora anche la destrezza influisce nel lavoro e nella probabilit&agrave; di incidenti in fucina<br />
 + Ora anche l'intelligenza influisce leggermente nel lavoro in fucina<br />
++ Aggiunta al login la cancellazione dei messaggi letti di chiunque pi&ugrave; vecchi di una settimana<br />
 </p>
 <p><strong>0.4.12</strong> [R.533] (11/2/2008 - Beta)<br />
 + Lavoro come alchimista in Laboratorio: ora se si riesce a fare la pozione con successo l'esperienza è doppia altrimenti è dimezzata<br />
