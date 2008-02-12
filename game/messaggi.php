@@ -126,14 +126,12 @@ case "scrivi":// scrivi nuovo
 </form>
 <?php
 break;
-default:// visualizza messaggi	
-$a=$db->QueryCiclo("SELECT * FROM messaggi WHERE userid='".$user['userid']."' ORDER BY id desc");
-	$esistenza=mysql_num_rows($a);
-	if (!$esistenza){
-		echo "Non c'&egrave; nessun messaggio";}
-	else{
+default:// visualizza messaggi
+$semsg=$db->QuerySelect("SELECT count(id) AS numero FROM messaggi WHERE userid='".$user['userid']."'");
+	if($semsg['numero']>0){
 	echo "<form action=\"game.php?act=messaggi&amp;do=canc\" method=\"post\" name=\"canctutt\">";
 	$i=0;
+	$a=$db->QuerySelect("SELECT * FROM messaggi WHERE userid='".$user['userid']."' ORDER BY id desc");
 	while($mess=$db->QueryCicloResult($a)) {
 		$i++;
 		if ($mess['mittenteid']!=0)
@@ -166,6 +164,6 @@ $a=$db->QueryCiclo("SELECT * FROM messaggi WHERE userid='".$user['userid']."' OR
 	$db->QueryMod("UPDATE messaggi SET letto=1 WHERE userid='".$user['userid']."'");
 	}
 break;
-}
+}else{echo $lang['nessun_messaggio'];}
 ?>
 </div>

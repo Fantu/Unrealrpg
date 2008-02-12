@@ -13,4 +13,5 @@ $lang['messaggio_da']='Messaggio inviato da ';
 $lang['elimina']='Cancella';
 $lang['rispondi']='Rispondi';
 $lang['cancella_selezionati']='Cancella messaggi selezionati';
+$lang['nessun_messaggio']='Non c\'&egrave; nessun messaggio';
 ?>
