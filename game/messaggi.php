@@ -131,7 +131,7 @@ $semsg=$db->QuerySelect("SELECT count(id) AS numero FROM messaggi WHERE userid='
 	if($semsg['numero']>0){
 	echo "<form action=\"game.php?act=messaggi&amp;do=canc\" method=\"post\" name=\"canctutt\">";
 	$i=0;
-	$a=$db->QuerySelect("SELECT * FROM messaggi WHERE userid='".$user['userid']."' ORDER BY id desc");
+	$a=$db->QueryCiclo("SELECT * FROM messaggi WHERE userid='".$user['userid']."' ORDER BY id desc");
 	while($mess=$db->QueryCicloResult($a)) {
 		$i++;
 		if ($mess['mittenteid']!=0)
