@@ -92,7 +92,7 @@ case "risp":// scrivi risposta
     <td><?php echo $lang['istruzioni_scrivi_msg']; ?></td>
   </tr>
   <tr>
-    <td><textarea name="mymess" cols="45" rows="4" id="mymess" onkeypress="conteggio()"></textarea>      
+    <td><textarea name="mymess" cols="45" rows="4" id="mymess" onkeyup="conteggio()"></textarea>      
 	  <br /><?php echo $lang['caratteri_disponibili']; ?><div id="caratteri" name="caratteri"><?php if($user['plus']==0) echo "500"; else echo "10000";?></div>
   </td></tr>
   <tr>
@@ -114,7 +114,7 @@ case "scrivi":// scrivi nuovo
   </tr>
   <tr><td align="center"><strong><?php echo $lang['titolo']; ?></strong><br /><input name="titolo" type="text" /></td></tr>
   <tr>
-    <td align="center"><strong><?php echo $lang['messaggio']; ?></strong><br /><textarea name="mymess" cols="45" rows="4" id="mymess" onkeypress="conteggio()"></textarea>
+    <td align="center"><strong><?php echo $lang['messaggio']; ?></strong><br /><textarea name="mymess" cols="45" rows="4" id="mymess" onkeyup="conteggio()"></textarea>
 	<br /><?php echo $lang['caratteri_disponibili']; ?><div id="caratteri" name="caratteri"><?php if($user['plus']==0) echo "500"; else echo "10000";?></div></td></tr>
   <tr>
     <td><div align="center">
