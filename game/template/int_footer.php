@@ -1,7 +1,7 @@
 <br /><div align="center" id="tempogenpag">
 <?php
 $end_time = microtime() - $start_time;
-echo "Tempo di generazione della pagina: ".$end_time." secondi - Query: ".$numquery;
+echo sprintf($lang['tempo_gen_pagina'],$end_time,$numquery);
 ?>
 </div>
 </body>
