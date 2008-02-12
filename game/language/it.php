@@ -115,5 +115,5 @@ $lang['error_eventi_incorso']='Sei occupato a fare altro';
 $lang['Stato']='Stato';
 $lang['Adesso']='Adesso';
 $lang['Indietro']='Indietro';
-$lang['dataora']='\i\l g\iorno d/m/y \a\l\l\e or\e H:i'; //questo non è semplice testo html in variabile php...vedere funzione date
+$lang['dataora']='\i\l \g\i\o\r\n\o d/m/y \a\l\l\e \o\r\e H:i'; //questo non è semplice testo html in variabile php...vedere funzione date
 ?>
