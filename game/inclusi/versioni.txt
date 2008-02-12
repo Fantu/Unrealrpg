@@ -10,6 +10,7 @@ Legenda:<br />
 <p><strong>0.5.1</strong> (Non disponibile - In sviluppo)<br />
 + Vari miglioramenti di sistema<br />
 + Altri vari miglioramenti<br />
+- Patch: ora il conteggio dei caratteri nella scrittura dei messaggi viene conteggiato giustamente dopo ogni modifica<br />
 </p>
 <p><strong>0.5.0.2</strong> (12/2/2008 - Beta)<br />
 - Corretti i bug nell'incremento di livello delle abilit&agrave; fabbro e sapienza magica<br />
