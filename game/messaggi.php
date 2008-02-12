@@ -92,7 +92,7 @@ case "risp":// scrivi risposta
     <td><?php echo $lang['istruzioni_scrivi_msg']; ?></td>
   </tr>
   <tr>
-    <td><textarea name="mymess" cols="45" rows="4" id="mymess" onkeydown="conteggio()"></textarea>      
+    <td><textarea name="mymess" cols="45" rows="4" id="mymess" onchange="conteggio()"></textarea>      
 	  <br /><?php echo $lang['caratteri_disponibili']; ?><div id="caratteri" name="caratteri"><?php if($user['plus']==0) echo "500"; else echo "10000";?></div>
   </td></tr>
   <tr>
