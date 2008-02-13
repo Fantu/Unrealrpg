@@ -25,7 +25,6 @@ if( $check['chiuso']==1 ) {
 }
 $int_security=$game_se_code;
 require_once('inclusi/int_header.php');
-$language=$user['language'];
 require('language/'.$language.'/lang_interno.php');
 
 if(!$user['userid'])
