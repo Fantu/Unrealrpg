@@ -15,6 +15,7 @@ Legenda:<br />
 # Modificata l'esperienza guadagnata lavorando in Laboratorio, resa pi&ugrave; equilibrata<br />
 # Modificato il consumo di base nella miniera vecchia, ora &egrave; 70 con diminuizione di 5 ogni livello di minatore fino ad un minimo di 30<br />
 - Patch: ora il conteggio dei caratteri nella scrittura dei messaggi viene conteggiato giustamente dopo ogni modifica<br />
+- Patch: in Laboratorio come alchimista se non selezioni una pozione ora non procede e visualizza errore<br />
 </p>
 <p><strong>0.5.0.2</strong> (12/2/2008 - Beta)<br />
 - Corretti i bug nell'incremento di livello delle abilit&agrave; fabbro e sapienza magica<br />
