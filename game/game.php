@@ -2,7 +2,6 @@
 $start_time = microtime();
 $numquery=0;
 require('inclusi/valori.php');
-require('language/it/lang_interno.php');
 if($_COOKIE['urbglogin'])
 	{$lg=explode("|||",$_COOKIE['urbglogin']);}else{header("Location: ../index.php?error=3"); exit(); }
 $adesso=strtotime("now");
@@ -26,6 +25,8 @@ if( $check['chiuso']==1 ) {
 }
 $int_security=$game_se_code;
 require_once('inclusi/int_header.php');
+$language=$user['language'];
+require('language/'.$language.'/lang_interno.php');
 
 if(!$user['userid'])
 	echo "Accesso negato!<br>Hai tentato di entrare in una pagina riservata agli utenti loggati.";
