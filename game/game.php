@@ -8,6 +8,7 @@ $adesso=strtotime("now");
 require('inclusi/funzioni_db.php');
 $db = new ConnessioniMySQL();
 $language=htmlentities($lg[4]);
+require('language/'.$language.'/lang_interno.php');
 
 $esistenza=0;		
 	foreach($game_server as $chiave=>$elemento){
@@ -26,7 +27,6 @@ if( $check['chiuso']==1 ) {
 }
 $int_security=$game_se_code;
 require_once('inclusi/int_header.php');
-require('language/'.$language.'/lang_interno.php');
 
 if(!$user['userid'])
 	echo "Accesso negato!<br>Hai tentato di entrare in una pagina riservata agli utenti loggati.";
