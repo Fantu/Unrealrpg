@@ -9,6 +9,7 @@ Legenda:<br />
 </p>
 <p><strong>0.5.1</strong> (Non disponibile - In sviluppo)<br />
 + Vari miglioramenti di sistema<br />
++ Vari miglioramenti di sicurezza<br />
 + Altri vari miglioramenti<br />
 # Modificata l'esperienza guadagnata lavorando in Fucina, resa pi&ugrave; equilibrata<br />
 # Modificata l'esperienza guadagnata lavorando in Laboratorio, resa pi&ugrave; equilibrata<br />

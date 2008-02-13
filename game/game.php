@@ -7,6 +7,7 @@ if($_COOKIE['urbglogin'])
 $adesso=strtotime("now");
 require('inclusi/funzioni_db.php');
 $db = new ConnessioniMySQL();
+$language=htmlentities($lg[4]);
 
 $esistenza=0;		
 	foreach($game_server as $chiave=>$elemento){
