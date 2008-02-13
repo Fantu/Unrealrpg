@@ -193,7 +193,7 @@ $resistenza=$usercar['diffisica']/20;
 $salute=rand(5,15)-($usercar['fabbro'])-rand(floor($resistenza/2),floor($resistenza));
 if ($salute<1)
 $salute=1;
-$exp=2+floor($usercar['saluteattuale']/10+$usercar['energia']/100+$usercar['attfisico']/20)+($usercar['destrezza']/10)+($usercar['intelligenza']/20);
+$exp=floor($usercar['saluteattuale']/10+$usercar['energia']/100+$usercar['attfisico']/20)+($usercar['destrezza']/15)+($usercar['intelligenza']/20);
 $exp=floor(rand($exp/2,$exp));
 $exp+=(5*$usercar['minatore']);
 $esplosione=rand(30,100)-($usercar['fabbro']*5)-($usercar['attfisico']/20)-($usercar['destrezza']/10);
