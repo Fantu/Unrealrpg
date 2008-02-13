@@ -13,6 +13,7 @@ Legenda:<br />
 + Altri vari miglioramenti<br />
 # Modificata l'esperienza guadagnata lavorando in Fucina, resa pi&ugrave; equilibrata<br />
 # Modificata l'esperienza guadagnata lavorando in Laboratorio, resa pi&ugrave; equilibrata<br />
+# Modificato il consumo di base nella miniera vecchia, ora &egrave; 70 con diminuizione di 5 ogni livello di minatore fino ad un minimo di 30<br />
 - Patch: ora il conteggio dei caratteri nella scrittura dei messaggi viene conteggiato giustamente dopo ogni modifica<br />
 </p>
 <p><strong>0.5.0.2</strong> (12/2/2008 - Beta)<br />

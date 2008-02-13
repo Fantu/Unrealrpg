@@ -117,9 +117,9 @@ function Completalavminvecchia($userid) {
 global $db,$adesso,$lang,$language;
 require_once('language/'.$language.'/lang_miniera.php');
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");	
-$energia=100-(5*$usercar['minatore']);
-if ($energia<50)
-$energia=50;
+$energia=70-(5*$usercar['minatore']);
+if ($energia<30)
+$energia=30;
 $resistenza=$usercar['diffisica']/20;
 $salute=rand(5,15)-($usercar['minatore'])-rand(floor($resistenza/2),floor($resistenza));
 if ($salute<1)
