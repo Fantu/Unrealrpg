@@ -3,7 +3,7 @@ require_once('inclusi/funzioni_oggetti.php');
 
 function Completalavminnuova($userid) {
 global $db,$adesso,$lang;
-require_once('language/it/lang_miniera.php');
+require_once('language/'.$language.'/lang_miniera.php');
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");	
 $paga=6;
 $energia=100-(5*$usercar['minatore']);
@@ -40,7 +40,7 @@ $db->QueryMod("UPDATE lavori t1 JOIN utenti t2 on t1.userid=t2.userid JOIN carat
 
 function Completalavlabapp($userid) {
 global $db,$adesso,$lang;
-require_once('language/it/lang_laboratorio.php');
+require_once('language/'.$language.'/lang_laboratorio.php');
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");
 $paga=6;
 $mana=rand(5,10);
@@ -51,7 +51,7 @@ $resistenza=$usercar['difmagica']/20;
 $salute=rand(2,10)-($usercar['alchimista'])-rand(floor($resistenza/2),floor($resistenza));
 if ($salute<1)
 $salute=1;
-$exp=2+floor($usercar['saluteattuale']/10+$usercar['energia']/100+$usercar['attmagico']/10+$usercar['intelligenza']/20);
+$exp=floor($usercar['saluteattuale']/10+$usercar['energia']/100+$usercar['attmagico']/10+$usercar['intelligenza']/20);
 $exp=floor(rand($exp/2,$exp));
 $exp+=(5*$usercar['alchimista']);
 $esplosione=rand(30,100)-($usercar['alchimista']*5)-($usercar['attmagico']/20);
@@ -78,7 +78,7 @@ $db->QueryMod("UPDATE lavori t1 JOIN utenti t2 on t1.userid=t2.userid JOIN carat
 
 function Completatempioprega($userid) {
 global $db,$adesso,$lang;
-require_once('language/it/lang_tempio.php');
+require_once('language/'.$language.'/lang_tempio.php');
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");
 $mana=$usercar['mana'];
 if($usercar['manarimasto']!=$usercar['mana']){
@@ -115,7 +115,7 @@ $db->QueryMod("UPDATE utenti t2 JOIN caratteristiche t3 on t2.userid=t3.userid S
 
 function Completalavminvecchia($userid) {
 global $db,$adesso,$lang;
-require_once('language/it/lang_miniera.php');
+require_once('language/'.$language.'/lang_miniera.php');
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");	
 $energia=100-(5*$usercar['minatore']);
 if ($energia<50)
@@ -183,7 +183,7 @@ $db->QueryMod("UPDATE lavori t1 JOIN utenti t2 on t1.userid=t2.userid JOIN carat
 
 function Completalavfucapp($userid) {
 global $db,$adesso,$lang;
-require_once('language/it/lang_fucina.php');
+require_once('language/'.$language.'/lang_fucina.php');
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");	
 $paga=6;
 $energia=100-(5*$usercar['fabbro']);
@@ -220,7 +220,7 @@ $db->QueryMod("UPDATE lavori t1 JOIN utenti t2 on t1.userid=t2.userid JOIN carat
 
 function Completalavlabalc($userid,$pozionesel) {
 global $db,$adesso,$lang;
-require_once('language/it/lang_laboratorio.php');
+require_once('language/'.$language.'/lang_laboratorio.php');
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");
 $pozione=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$pozionesel."' LIMIT 1");
 $mana=rand(5,10);
@@ -232,7 +232,7 @@ $resistenza=$usercar['difmagica']/20;
 $salute=rand(2,10)-($usercar['alchimista'])-rand(floor($resistenza/2),floor($resistenza));
 if ($salute<1)
 $salute=1;
-$exp=2+floor($usercar['saluteattuale']/10+$usercar['energia']/100+$usercar['attmagico']/10+$usercar['intelligenza']/20);
+$exp=floor($usercar['saluteattuale']/10+$usercar['energia']/100+$usercar['attmagico']/10+$usercar['intelligenza']/20);
 $exp=floor(rand($exp/2,$exp));
 $exp+=(5*$usercar['alchimista']);
 $testo=sprintf($lang['report_lavlabalc'],$exp,$energia,$salute,$mana,$costo)."<br />";
