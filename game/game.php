@@ -17,7 +17,7 @@ if($esistenza==0){
 	header("Location: ../index.php?error=3");
 	exit();
 } else{
-	$db->database = $lg[3];}
+	$db->database=(int)$lg[3];}
 
 $check = $db->QuerySelect("SELECT chiuso FROM config");
 if( $check['chiuso']==1 ) {

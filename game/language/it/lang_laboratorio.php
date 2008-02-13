@@ -8,6 +8,7 @@ $lang['lab_errore4']='- Hai troppo poco mana<br />';
 $lang['lab_errore5']='- Non ha una ampolla<br />';
 $lang['lab_errore6']='- Non hai abbastanza monete per comprare gli ingredienti necessari<br />';
 $lang['lab_errore7']='- Non sei abbastanza abile per questa pozione<br />';
+$lang['lab_errore8']='- Pozione non selezionata<br />';
 $lang['report_lavlabapp']='Hai lavorato in laboratorio come apprendista per 1 ora guadagnando %s monete e %s di esperienza, il lavoro ti ha stancato (hai perso %s di energia), il tuo fisico ne ha risentito (hai perso %s di salute) e hai consumato %s di mana';
 $lang['report_lavoro_labapp']='Completato lavoro in laboratorio come apprendista';
 $lang['report_esplosione_laboratorio']='Imprevisto durante il lavoro in laboratorio';

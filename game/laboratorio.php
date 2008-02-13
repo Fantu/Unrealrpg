@@ -47,6 +47,8 @@ if ($adesso<($userlav['ultimolavoro']+$tempoproxlav))
 $errore .= $lang['lab_errore3'];
 if ($usercar['mana']<10)
 $errore .= $lang['lab_errore4'];
+if ($poziones<1)
+$errore .= $lang['lab_errore8'];
 if ($eventi['id']>0)
 $errore .= $lang['global_errore1'];
 $fiala=$db->QuerySelect("SELECT count(*) AS numero FROM inoggetti WHERE userid='".$user['userid']."' AND oggid='36' LIMIT 1");
