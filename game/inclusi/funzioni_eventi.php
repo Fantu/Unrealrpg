@@ -2,7 +2,7 @@
 require_once('inclusi/funzioni_oggetti.php');
 
 function Completalavminnuova($userid) {
-global $db,$adesso,$lang;
+global $db,$adesso,$lang,$language;
 require_once('language/'.$language.'/lang_miniera.php');
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");	
 $paga=6;
@@ -39,7 +39,7 @@ $db->QueryMod("UPDATE lavori t1 JOIN utenti t2 on t1.userid=t2.userid JOIN carat
 } //fine Completalavminnuova
 
 function Completalavlabapp($userid) {
-global $db,$adesso,$lang;
+global $db,$adesso,$lang,$language;
 require_once('language/'.$language.'/lang_laboratorio.php');
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");
 $paga=6;
@@ -77,7 +77,7 @@ $db->QueryMod("UPDATE lavori t1 JOIN utenti t2 on t1.userid=t2.userid JOIN carat
 } //fine Completalavlabapp
 
 function Completatempioprega($userid) {
-global $db,$adesso,$lang;
+global $db,$adesso,$lang,$language;
 require_once('language/'.$language.'/lang_tempio.php');
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");
 $mana=$usercar['mana'];
@@ -114,7 +114,7 @@ $db->QueryMod("UPDATE utenti t2 JOIN caratteristiche t3 on t2.userid=t3.userid S
 } //fine Completaresurrezione
 
 function Completalavminvecchia($userid) {
-global $db,$adesso,$lang;
+global $db,$adesso,$lang,$language;
 require_once('language/'.$language.'/lang_miniera.php');
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");	
 $energia=100-(5*$usercar['minatore']);
@@ -182,7 +182,7 @@ $db->QueryMod("UPDATE lavori t1 JOIN utenti t2 on t1.userid=t2.userid JOIN carat
 } //fine Completalavminvecchia
 
 function Completalavfucapp($userid) {
-global $db,$adesso,$lang;
+global $db,$adesso,$lang,$language;
 require_once('language/'.$language.'/lang_fucina.php');
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");	
 $paga=6;
@@ -219,7 +219,7 @@ $db->QueryMod("UPDATE lavori t1 JOIN utenti t2 on t1.userid=t2.userid JOIN carat
 } //fine Completalavfucapp
 
 function Completalavlabalc($userid,$pozionesel) {
-global $db,$adesso,$lang;
+global $db,$adesso,$lang,$language;
 require_once('language/'.$language.'/lang_laboratorio.php');
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");
 $pozione=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$pozionesel."' LIMIT 1");
