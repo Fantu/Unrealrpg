@@ -8,15 +8,11 @@ require('template/int_messaggi.php');
 $id=(int)$_GET['id'];
 ?>
 <script type="text/javascript">
-function cambiaseltuttimsg(formogg, escludi, imposta)
+function cambiaseltuttimsg(formogg, imposta)
 {
 	for (var i =0; i < formogg.elements.length; i++)
 	{
-		var elm = formogg.elements[i];
-		if (PHP.in_array(elm.name, escludi, false) == -1)
-		{
-					elm.checked = imposta;
-		}
+	elm.checked = imposta;
 	}
 }
 function conteggio() {
@@ -170,7 +166,7 @@ $semsg=$db->QuerySelect("SELECT count(id) AS numero FROM messaggi WHERE userid='
 	<?php
 	}
 	echo "<br /><table width=\"505\"  border=\"0\" cellspacing=\"2\" cellpadding=\"2\"><tr>"
-    ."<td align=\"center\"><input name=\"contatore\" type=\"hidden\" value=\"".$i."\" /><input type=\"checkbox\" name=\"tuttimsg\" id=\"selezionatutti\" onclick=\"cambiaseltuttimsg(this.form, 'tuttimsg', this.form.tuttimsg.checked);\" /> Seleziona o deseleziona tutti <input name=\"asd\" type=\"submit\" value=\"".$lang['cancella_selezionati']."\" /></td>"
+    ."<td align=\"center\"><input name=\"contatore\" type=\"hidden\" value=\"".$i."\" /><input type=\"checkbox\" name=\"tuttimsg\" id=\"selezionatutti\" onclick=\"cambiaseltuttimsg(this.form, this.form.tuttimsg.checked);\" /> Seleziona o deseleziona tutti <input name=\"asd\" type=\"submit\" value=\"".$lang['cancella_selezionati']."\" /></td>"
 	."</tr></table></form>";
 	$db->QueryMod("UPDATE messaggi SET letto=1 WHERE userid='".$user['userid']."'");
 	}else{echo $lang['nessun_messaggio'];}
