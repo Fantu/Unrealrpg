@@ -13,7 +13,7 @@ function cambiaseltuttimsg(formogg, escludi, imposta)
 	for (var i =0; i < formogg.elements.length; i++)
 	{
 		var elm = formogg.elements[i];
-		if (elm.type == formtype && PHP.in_array(elm.name, escludi, false) == -1)
+		if (PHP.in_array(elm.name, escludi, false) == -1)
 		{
 					elm.checked = imposta;
 		}
