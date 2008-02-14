@@ -12,6 +12,7 @@ function cambiaseltuttimsg(formogg, imposta)
 {
 	for (var i =0; i < formogg.elements.length; i++)
 	{
+	var elm = formogg.elements[i];
 	elm.checked = imposta;
 	}
 }
