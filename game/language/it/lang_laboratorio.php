@@ -1,8 +1,8 @@
 <?php
 $lang['lav_apprendista']='Lavora come apprendista';
 $lang['desc_lav_apprendista']='Puoi lavorare in Laboratorio come apprendista, avendo una retribuzione fissa di 6 monete ad ora e guadagnare esperienza per l\'abilit&agrave; di alchimista, utile per avere risultati migliori con meno fatica e meno danni.';
-$lang['lab_errore1']='- Sei troppo stanco per poter lavorare in miniera<br />';
-$lang['lab_errore2']='- Il tuo fisico non pu&ograve; reggere il lavoro in miniera attualmente<br />';
+$lang['lab_errore1']='- Sei troppo stanco per poter lavorare in Laboratorio<br />';
+$lang['lab_errore2']='- Il tuo fisico non pu&ograve; reggere il lavoro in Laboratorio attualmente<br />';
 $lang['lab_errore3']='- Devono passare almeno 6 ore dall\'ultimo lavoro<br />';
 $lang['lab_errore4']='- Hai troppo poco mana<br />';
 $lang['lab_errore5']='- Non ha una ampolla<br />';
