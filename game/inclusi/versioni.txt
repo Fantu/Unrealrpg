@@ -7,14 +7,17 @@ Legenda:<br />
 - Correzione bug e patch di situazioni non previste<br />
 <br />
 </p>
-<p><strong>0.5.1</strong> (Non disponibile - In sviluppo)<br />
+<p><strong>0.5.2</strong> (Non disponibile - In sviluppo)<br />
+Niente attualmente<br />
+</p>
+<p><strong>0.5.1</strong> [R.590] (14/2/2008 - Beta)<br />
 + Sistema messaggi: aggiunta la selezione/deselezione di tutti i messaggi<br />
 + Vari miglioramenti di sistema<br />
 + Vari miglioramenti di sicurezza<br />
 + Altri vari miglioramenti<br />
 # Modificata l'esperienza guadagnata lavorando in Fucina, resa pi&ugrave; equilibrata<br />
 # Modificata l'esperienza guadagnata lavorando in Laboratorio, resa pi&ugrave; equilibrata<br />
-# Modificato il consumo di base nella miniera vecchia, ora &egrave; 70 con diminuizione di 5 ogni livello di minatore fino ad un minimo di 30<br />
+# Modificato il consumo di energia base nella miniera vecchia, ora &egrave; 70 con diminuizione di 5 ogni livello di minatore fino ad un minimo di 30<br />
 - Patch: ora il conteggio dei caratteri nella scrittura dei messaggi viene conteggiato giustamente dopo ogni modifica<br />
 - Patch: in Laboratorio come alchimista se non selezioni una pozione ora non procede e visualizza errore<br />
 </p>
