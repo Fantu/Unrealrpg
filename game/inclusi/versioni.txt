@@ -8,6 +8,7 @@ Legenda:<br />
 <br />
 </p>
 <p><strong>0.5.1</strong> (Non disponibile - In sviluppo)<br />
++ Sistema messaggi: aggiunta la selezione/deselezione di tutti i messaggi<br />
 + Vari miglioramenti di sistema<br />
 + Vari miglioramenti di sicurezza<br />
 + Altri vari miglioramenti<br />

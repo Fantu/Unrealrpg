@@ -14,4 +14,5 @@ $lang['elimina']='Cancella';
 $lang['rispondi']='Rispondi';
 $lang['cancella_selezionati']='Cancella messaggi selezionati';
 $lang['nessun_messaggio']='Non c\'&egrave; nessun messaggio';
+$lang['sel_desel_tutti']='Seleziona o deseleziona tutti';
 ?>
