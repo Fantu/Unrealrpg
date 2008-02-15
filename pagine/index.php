@@ -64,7 +64,7 @@ include('pagine/home.php');
 	<img id="mysql" src="game/template/immagini/mysql_grigio.gif" alt="" border="0" onmouseover="CambiaImg('mysql', true);" onmouseout="CambiaImg('mysql', false);" />
 </a>&nbsp;&nbsp;<br />
 <?php
-if(!empty($GET['error'])){
+if($GET['error']){
 echo "debug ok";//debug
 require_once("game/inclusi/errori.php");}
 $end_time = microtime() - $start_time;

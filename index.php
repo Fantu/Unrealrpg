@@ -10,7 +10,7 @@ setcookie ("urbgrefer", $refer."|".$server,time()+604800);
 if($_COOKIE['urbglanguage']){
 $language=htmlentities($_COOKIE['urbglanguage']);
 $link="index_".$language.".php";
-if(!empty($GET['error'])){
+if($GET['error']){
 $errore=(int)$GET['error'];
 $errore="?error=".$errore;
 }
