@@ -46,7 +46,7 @@ $newmsg="<a href=\"game.php?act=messaggi\">".sprintf($lang['nuovi_msg'],$quantim
 if($eventi['id']>0){
 	$eventi=$db->QuerySelect("SELECT * FROM eventi WHERE userid='".$user['userid']."' LIMIT 1");
 	$evento=$lang['eventi_dettagli'.$eventi['dettagli']].date($lang['dataora'],($eventi['datainizio']+$eventi['secondi']));
-	if($eventi['datainizio']<($adesso-600) AND $eventi['tipo']!=3){
+	if(($eventi['datainizio']+600)>$adesso AND $eventi['tipo']!=3){
 	if($_GET['annullaevento']==1){
 	$db->QueryMod("DELETE FROM eventi WHERE userid='".$user['userid']."'");
 	$db->QueryMod("UPDATE inoggetti SET inuso=0 WHERE userid='".$user['userid']."'");
