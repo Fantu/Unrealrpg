@@ -11,8 +11,8 @@ if($_COOKIE['urbglanguage']){
 $language=htmlentities($_COOKIE['urbglanguage']);
 $link="index_".$language.".php";
 if($GET['error']){
-$errore=(int)$GET['error'];
-$errore="?error=".$errore;
+//$errore=(int)$GET['error'];
+$errore="?error=".$GET['error'];
 }
 if(file_exists($link)){
 header("Location: ".$link.$errore);
