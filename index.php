@@ -18,7 +18,7 @@ exit();
 if($_COOKIE['urbglanguage']){
 $language=htmlentities($_COOKIE['urbglanguage']);
 $link="index_".$language.".php";
-if(file_exists($link.))
+if(file_exists($link))
 header("Location: ".$link);
 exit();
 }
