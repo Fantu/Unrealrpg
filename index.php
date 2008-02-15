@@ -10,9 +10,9 @@ setcookie ("urbgrefer", $refer."|".$server,time()+604800);
 if($_COOKIE['urbglanguage']){
 $language=htmlentities($_COOKIE['urbglanguage']);
 $link="index_".$language.".php";
-if($GET['error']){
-//$errore=(int)$GET['error'];
-$errore="?error=".$GET['error'];
+if($_GET['error']){
+$errore=(int)$_GET['error'];
+$errore="?error=".$errore;
 }
 if(file_exists($link)){
 header("Location: ".$link.$errore);

@@ -64,8 +64,7 @@ include('pagine/home.php');
 	<img id="mysql" src="game/template/immagini/mysql_grigio.gif" alt="" border="0" onmouseover="CambiaImg('mysql', true);" onmouseout="CambiaImg('mysql', false);" />
 </a>&nbsp;&nbsp;<br />
 <?php
-if($GET['error']){
-echo "debug ok";//debug
+if($_GET['error']){
 require("game/inclusi/errori.php");}
 $end_time = microtime() - $start_time;
 echo "Tempo di generazione della pagina: ".$end_time." secondi - Query: ".$numquery;
