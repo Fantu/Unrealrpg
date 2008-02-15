@@ -11,16 +11,16 @@ if(!empty($GET['error'])){
 $errore=(int)$GET['error'];
 $language=htmlentities($_COOKIE['urbglanguage']);
 $link="index_".$language.".php";
-if(file_exists($link))
+if(file_exists($link)){
 header("Location: ".$link."?error=".$errore);
-exit();
+exit();}
 }
 if($_COOKIE['urbglanguage']){
 $language=htmlentities($_COOKIE['urbglanguage']);
 $link="index_".$language.".php";
-if(file_exists($link))
+if(file_exists($link)){
 header("Location: ".$link);
-exit();
+exit();}
 }
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -43,6 +43,7 @@ function CambiaImg(id,bool) {
 </script>
 </head>
 <body>
+<div align="center">
 <h1>
 <?php echo $game_name; echo" "; echo $game_version; echo" "; echo $game_revision; ?>
 <br /><br /><br />
@@ -50,7 +51,6 @@ function CambiaImg(id,bool) {
 <br /><br />
 English
 </h1>
-<div align="center">
 <br /><br />
 <?php echo $game_name; ?> &copy; 2007 Powered by <a href="http://www.lostgames.net" target="_blank">Lostgames.net</a>
 <br />
