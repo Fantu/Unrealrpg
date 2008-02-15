@@ -15,6 +15,7 @@ Legenda:<br />
 + Vari miglioramenti di sistema<br />
 + Vari miglioramenti di sicurezza<br />
 # Ora il tempo fra un lavoro e un altro &egrave; di 3 ore e 2 per gli account plus<br />
+- Banca: ora quando vengono calcolati gli interessi per pi&ugrave; giorni contemporaneamente vengono calcolati un giorno per volta<br />
 </p>
 <p><strong>0.5.1</strong> [R.590] (14/2/2008 - Beta)<br />
 + Sistema messaggi: aggiunta la selezione/deselezione di tutti i messaggi<br />

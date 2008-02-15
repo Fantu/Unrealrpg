@@ -8,7 +8,9 @@ $userbank=$db->QuerySelect("SELECT * FROM banca WHERE userid='".$user['userid'].
 if (($userbank['interessi']+86400)<$adesso){
 	$differenzaora=$adesso-$userbank['interessi'];
 	$giorni=floor($differenzaora/86400);
-	$interessi=floor((($userbank['conto']/100)*0.5)*$giorni);
+	$interessi=floor(($userbank['conto']/100)*0.5);
+	if($interessi>0)
+	$interessi=$interessi*$giorni;
 	if ($interessi>0){
 		$db->QueryMod("UPDATE banca SET conto=conto+'".$interessi."',interessi=interessi+'".(86400*$giorni)."' WHERE userid='".$user['userid']."'");
 	}
