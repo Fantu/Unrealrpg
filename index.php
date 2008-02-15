@@ -11,14 +11,14 @@ if(!empty($GET['errore'])){
 $errore=(int)$GET['errore'];
 echo "?error=".$errore;
 $link="index_".$language.".php";
-if(file_exists($link.'.php'))
+if(file_exists($link))
 header("Location: ".$link."?error=".$errore);
 exit();
 }
 if($_COOKIE['urbglanguage']){
 $language=htmlentities($_COOKIE['urbglanguage']);
 $link="index_".$language.".php";
-if(file_exists($link.'.php'))
+if(file_exists($link.))
 header("Location: ".$link);
 exit();
 }
