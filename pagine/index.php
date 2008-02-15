@@ -4,6 +4,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	exit();
 }
 $numquery=0;
+require('game/language/'.$language.'/lang_esterno.php');
 require('game/inclusi/funzioni_db.php');
 $db = new ConnessioniMySQL();
 $adesso=strtotime("now");
@@ -69,7 +70,7 @@ include('pagine/home.php');
 if($_GET['error']){
 require("game/inclusi/errori.php");}
 $end_time = microtime() - $start_time;
-echo "Tempo di generazione della pagina: ".$end_time." secondi - Query: ".$numquery;
+echo sprintf($lang['tempo_gen_pagina'],$end_time,$numquery);
 ?><br />
 <script type="text/javascript"><!--
 google_ad_client = "pub-0644240535082356";
