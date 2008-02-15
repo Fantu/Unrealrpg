@@ -12,7 +12,7 @@ $language=htmlentities($_COOKIE['urbglanguage']);
 $link="index_".$language.".php";
 if(!empty($GET['error'])){
 $errore=(int)$GET['error'];
-$errore="?error=".$errore);
+$errore="?error=".$errore;
 }
 if(file_exists($link)){
 header("Location: ".$link.$errore);
