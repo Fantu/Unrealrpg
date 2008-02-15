@@ -1,7 +1,9 @@
 <?php
-$start_time = microtime();
+if((empty($int_security)) OR ($int_security!=$game_se_code)){
+	header("Location: ../index.php?error=16");
+	exit();
+}
 $numquery=0;
-require('game/inclusi/valori.php');
 require('game/inclusi/funzioni_db.php');
 $db = new ConnessioniMySQL();
 $adesso=strtotime("now");

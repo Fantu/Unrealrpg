@@ -9,6 +9,9 @@ Legenda:<br />
 </p>
 <p><strong>0.5.2</strong> (Non disponibile - In sviluppo)<br />
 + Aggiunta la possibilit&agrave; di annullare un lavoro o preghiera entro 10 minuti dall'inizio<br />
++ Rifatta la struttura di base esterna per piena compatibilit&agrave; con sistema multilingua e ottimizzazione per l'indicizzazione<br />
++ Aggiunta base esterna per italiano<br />
++ Iniziata integrazione dei testi della parte esterna nel sistema multilingua<br />
 + Vari miglioramenti di sistema<br />
 + Vari miglioramenti di sicurezza<br />
 </p>
