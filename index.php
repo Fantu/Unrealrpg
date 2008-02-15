@@ -9,7 +9,7 @@ setcookie ("urbgrefer", $refer."|".$server,time()+604800);
 }
 if(!empty($GET['errore'])){
 $errore=(int)$GET['errore'];
-echo "?error=".$errore;
+$language=htmlentities($_COOKIE['urbglanguage']);
 $link="index_".$language.".php";
 if(file_exists($link))
 header("Location: ".$link."?error=".$errore);
