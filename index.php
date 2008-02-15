@@ -7,19 +7,15 @@ $server=htmlentities($_GET['server']);
 if(is_numeric($refer) AND is_numeric($server))
 setcookie ("urbgrefer", $refer."|".$server,time()+604800);
 }
-if(!empty($GET['error'])){
-$errore=(int)$GET['error'];
-$language=htmlentities($_COOKIE['urbglanguage']);
-$link="index_".$language.".php";
-if(file_exists($link)){
-header("Location: ".$link."?error=".$errore);
-exit();}
-}
 if($_COOKIE['urbglanguage']){
 $language=htmlentities($_COOKIE['urbglanguage']);
 $link="index_".$language.".php";
+if(!empty($GET['error'])){
+$errore=(int)$GET['error'];
+$errore="?error=".$errore);
+}
 if(file_exists($link)){
-header("Location: ".$link);
+header("Location: ".$link.$errore);
 exit();}
 }
 ?>
