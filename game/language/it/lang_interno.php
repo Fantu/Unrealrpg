@@ -117,4 +117,5 @@ $lang['Adesso']='Adesso';
 $lang['Indietro']='Indietro';
 $lang['dataora']='\i\l \g\i\o\r\n\o d/m/y \a\l\l\e \o\r\e H:i'; //questo non è semplice testo html in variabile php...vedere funzione date
 $lang['tempo_gen_pagina']='Tempo di generazione della pagina: %s secondi - Query eseguite: %s';
+$lang['Annulla']='Annulla';
 ?>
