@@ -7,8 +7,8 @@ $server=htmlentities($_GET['server']);
 if(is_numeric($refer) AND is_numeric($server))
 setcookie ("urbgrefer", $refer."|".$server,time()+604800);
 }
-if(!empty($GET['errore'])){
-$errore=(int)$GET['errore'];
+if(!empty($GET['error'])){
+$errore=(int)$GET['error'];
 $language=htmlentities($_COOKIE['urbglanguage']);
 $link="index_".$language.".php";
 if(file_exists($link))
