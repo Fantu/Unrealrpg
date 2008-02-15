@@ -51,6 +51,7 @@ if($eventi['id']>0){
 	$db->QueryMod("DELETE FROM eventi WHERE userid='".$user['userid']."'");
 	$db->QueryMod("UPDATE inoggetti SET inuso=0 WHERE userid='".$user['userid']."'");
 	header("Location: game.php?act=situazione");
+	exit();
 	}
 	$evento.=" <a href=\"game.php?act=situazione&amp;annullaevento=1\">".$lang['Annulla']."</a>";}
 }

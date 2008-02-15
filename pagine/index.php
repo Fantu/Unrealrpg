@@ -1,26 +1,15 @@
 <?php
+$start_time = microtime();
+$numquery=0;
 require('game/inclusi/valori.php');
+require('game/inclusi/funzioni_db.php');
+$db = new ConnessioniMySQL();
 $adesso=strtotime("now");
 if(!empty($_GET['refer'])){
 $refer=htmlentities($_GET['refer']);
 $server=htmlentities($_GET['server']);
 if(is_numeric($refer) AND is_numeric($server))
 setcookie ("urbgrefer", $refer."|".$server,time()+604800);
-}
-if(!empty($GET['errore'])){
-$errore=(int)$GET['errore'];
-echo "?error=".$errore;
-$link="index_".$language.".php";
-if(file_exists($link.'.php'))
-header("Location: ".$link."?error=".$errore);
-exit();
-}
-if($_COOKIE['urbglanguage']){
-$language=htmlentities($_COOKIE['urbglanguage']);
-$link="index_".$language.".php";
-if(file_exists($link.'.php'))
-header("Location: ".$link);
-exit();
 }
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -43,13 +32,21 @@ function CambiaImg(id,bool) {
 </script>
 </head>
 <body>
+<table width="750" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+  <td>
 <h1>
 <?php echo $game_name; echo" "; echo $game_version; echo" "; echo $game_revision; ?>
-<br /><br /><br />
-<a href="index_it.php">Italiano</a>
-<br /><br />
-English
 </h1>
+<?php
+if( file_exists('pagine/'.$_GET['pag'].'.php') )
+include('pagine/'.$_GET['pag'].'.php');
+else
+include('pagine/home.php');		
+?>
+  </td>
+  </tr>
+</table>
 <div align="center">
 <br /><br />
 <?php echo $game_name; ?> &copy; 2007 Powered by <a href="http://www.lostgames.net" target="_blank">Lostgames.net</a>
@@ -66,7 +63,23 @@ English
 <a href="http://www.mysql.com" target="_blank">
 	<img id="mysql" src="game/template/immagini/mysql_grigio.gif" alt="" border="0" onmouseover="CambiaImg('mysql', true);" onmouseout="CambiaImg('mysql', false);" />
 </a>&nbsp;&nbsp;<br />
-<br />
+<?php
+if(!empty($GET['errore']))
+require_once("game/inclusi/errori.php");
+$end_time = microtime() - $start_time;
+echo "Tempo di generazione della pagina: ".$end_time." secondi - Query: ".$numquery;
+?><br />
+<script type="text/javascript"><!--
+google_ad_client = "pub-0644240535082356";
+//468x60, creato il 26/01/08
+google_ad_slot = "7260256335";
+google_ad_width = 468;
+google_ad_height = 60;
+google_cpa_choice = ""; // on file
+//--></script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
 </div>
 </body>
 </html>

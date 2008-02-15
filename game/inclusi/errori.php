@@ -30,7 +30,7 @@ $msg="Il tuo account è ora inutilizzabile e verrà a breve cancellato dal sistema
 break;
 case 11:
 $tempo=(int)$_GET['t'];
-if($_GET['t']>0) {
+if($tempo>0) {
 	$fino=" fino al ".date("d/m/y H:i",$tempo);
 }
 $msg="Il tuo account è stato momentaneamente bannato".$fino."!\\nPer sapere il motivo del bann ed evitare futuri intoppi, consulta il forum o contatta un admin.";
@@ -54,3 +54,5 @@ case 17:
 $msg="Controlli interni non superati.\\nHai forse qualche estensione di FireFox che modifica il regolare funzionamento del browser?";
 break;
 }
+if($msg)
+	echo "<script language=\"javascript\"> alert('$msg'); </script>";
