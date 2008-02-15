@@ -3,8 +3,8 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	header("Location: ../index.php?error=16");
 	exit();
 }
-require('language/it/lang_situazione.php');
-$usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$user['userid']."' LIMIT 0,1");
+require('language/'.$language.'/lang_situazione.php');
+$usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$user['userid']."' LIMIT 1");
 $expnewmin=100+($usercar['minatore']*500);
 if($usercar['expminatore']>99) {
 	if($usercar['expminatore']>=$expnewmin)
@@ -25,7 +25,7 @@ if($usercar['expmagica']>99) {
 	if($usercar['expmagica']>=$expnewmin4)
 	$db->QueryMod("UPDATE caratteristiche t1 SET t1.magica=t1.magica+'1',t1.expmagica=t1.expmagica-'".$expnewmin4."' WHERE t1.userid='".$user['userid']."'");
 }//fine controllo aumento liv magica
-$usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$user['userid']."' LIMIT 0,1");
+$usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$user['userid']."' LIMIT 1");
 $percmin1=floor((100/$expnewmin)*$usercar['expminatore']);
 $percmin2=100-$percmin1;
 $percmin3=floor((100/$expnewmin2)*$usercar['expalchimista']);
@@ -46,10 +46,17 @@ $newmsg="<a href=\"game.php?act=messaggi\">".sprintf($lang['nuovi_msg'],$quantim
 if($eventi['id']>0){
 	$eventi=$db->QuerySelect("SELECT * FROM eventi WHERE userid='".$user['userid']."' LIMIT 1");
 	$evento=$lang['eventi_dettagli'.$eventi['dettagli']].date($lang['dataora'],($eventi['datainizio']+$eventi['secondi']));
+	if($eventi['datainizio']<($adesso-600) AND $eventi['tipo']!=3){
+	if($_GET['annullaevento']==1){
+	$db->QueryMod("DELETE FROM eventi WHERE userid='".$user['userid']."'");
+	$db->QueryMod("UPDATE inoggetti SET inuso=0 WHERE userid='".$user['userid']."'");
+	header("Location: game.php?act=situazione");
+	}
+	$evento.=" <a href=\"game.php?act=situazione&amp;annullaevento=1\">".$lang['Annulla']."</a>";}
 }
 if(!$evento)
 $evento=$lang['nessun_evento'];
-$userlav=$db->QuerySelect("SELECT * FROM lavori WHERE userid='".$user['userid']."' LIMIT 0,1");
+$userlav=$db->QuerySelect("SELECT * FROM lavori WHERE userid='".$user['userid']."' LIMIT 1");
 if($user['plus']==0){$tempoproxlav=$game_proxlav_normal;}else{$tempoproxlav=$game_proxlav_plus;}
 if (($userlav['ultimolavoro']+$tempoproxlav)<$adesso){
 $proxlavdata=$lang['Adesso'];

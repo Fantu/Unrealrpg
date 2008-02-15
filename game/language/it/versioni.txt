@@ -8,6 +8,7 @@ Legenda:<br />
 <br />
 </p>
 <p><strong>0.5.2</strong> (Non disponibile - In sviluppo)<br />
++ Aggiunta la possibilit&agrave; di annullare un lavoro o preghiera entro 10 minuti dall'inizio<br />
 + Vari miglioramenti di sistema<br />
 + Vari miglioramenti di sicurezza<br />
 </p>
