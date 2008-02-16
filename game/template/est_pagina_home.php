@@ -22,7 +22,7 @@
   <tr>
     <td>
     	<?php echo $outputreg; ?>
-	    <span>Registrazione</span><br />
+	    <span><?php echo $lang['Registrazione']; ?></span><br />
 		<form action="" method="post" name="formregistrazione">
 		<input name="step" type="hidden" value="registrazione" />
 	    <table border="0">

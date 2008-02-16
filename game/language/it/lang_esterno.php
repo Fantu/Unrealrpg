@@ -12,6 +12,7 @@ $lang['Ultima_settimana']='Ultima settimana';
 $lang['Utenti_online']='Utenti online';
 $lang['Ultimo_giorno']='Ultimo giorno';
 $lang['Entra']='Entra';
+$lang['Registrazione']='Registrazione';
 $lang['Registrati']='Registrati';
 $lang['outputerrori']='Si sono verificati i seguenti errori:';
 $lang['account_creato_ok']='<strong>Account creato con successo!!</strong><br />Prima di poter iniziare a giocare dovrai confermare l\'iscrizione visitando il link contenuto nella mail che ti &egrave; stata inviata all\'indirizzo di posta inserito.<br />Se non trovi la mail controlla nella cartella posta indesiderata antispam o simili.<br /><br />';
