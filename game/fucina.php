@@ -27,9 +27,6 @@ exit();
 }
 }//fine lavora in Fabbro come apprendista
 
-if($eventi['id']>0){
-require('template/int_eventi_incorso.php');
-}else{
 require('template/int_fucina.php');
 }
 ?>

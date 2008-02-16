@@ -66,9 +66,6 @@ echo "<script language=\"javascript\">window.location.href='game.php?act=situazi
 exit();
 }
 }//fine lavora in miniera vecchia
-if($eventi['id']>0){
-require('template/int_eventi_incorso.php');
-}else{
 require('template/int_miniera.php');
 }
 ?>

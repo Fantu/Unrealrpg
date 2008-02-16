@@ -24,6 +24,8 @@ $dadepositare=(int)$_POST['dadepositare'];
 if (!is_numeric($dadepositare)){
 $errore .= $lang['banca_errore1'];}
 else{
+if ($eventi['id']>0)
+$errore .= $lang['global_errore1'];
 if ($dadepositare<1)
 $errore .= $lang['banca_errore2'];
 if ($dadepositare>$user['monete'])
@@ -43,6 +45,8 @@ $daprelevare=(int)$_POST['daprelevare'];
 if (!is_numeric($daprelevare)){
 $errore .= $lang['banca_errore1'];}
 else{
+if ($eventi['id']>0)
+$errore .= $lang['global_errore1'];
 if ($daprelevare<1)
 $errore .= $lang['banca_errore4'];
 $userbank=$db->QuerySelect("SELECT conto FROM banca WHERE userid='".$user['userid']."' LIMIT 1");
@@ -68,6 +72,8 @@ $errore .= $lang['banca_errore1'];}
 else{
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$user['userid']."' LIMIT 1");
 $prestitopossibile=($usercar['livello']*100)-$userbank['prestito'];
+if ($eventi['id']>0)
+$errore .= $lang['global_errore1'];
 if ($prestito<1)
 $errore .= $lang['banca_errore7'];
 $deposito = $db->QuerySelect("SELECT banca FROM config");
@@ -99,9 +105,6 @@ $db->QueryMod("UPDATE config SET banca=banca+'".$prestito."'");
 $userbank=$db->QuerySelect("SELECT * FROM banca WHERE userid='".$user['userid']."' LIMIT 1");
 $prestito=$userbank['prestito']+(floor(($userbank['prestito']/100)*10));
 $user=$db->QuerySelect("SELECT * FROM utenti WHERE userid='".$user['userid']."' LIMIT 1");
-if($eventi['id']>0){
-require('template/int_eventi_incorso.php');
-}else{
 require('template/int_banca.php');
 }
 ?>
