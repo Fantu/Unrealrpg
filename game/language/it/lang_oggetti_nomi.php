@@ -29,10 +29,10 @@ $lang['oggetto27_nome']='Pozione curativa per ferite medie';
 $lang['oggetto28_nome']='Pozione curativa per ferite profonde';
 $lang['oggetto29_nome']='Pozione curativa per ferite gravi';
 $lang['oggetto30_nome']='Pozione curativa per ferite critiche';
-$lang['oggetto31_nome']='Pozione energetica1';
-$lang['oggetto32_nome']='Pozione energetica2';
-$lang['oggetto33_nome']='Pozione energetica3';
-$lang['oggetto34_nome']='Pozione energetica4';
-$lang['oggetto35_nome']='Pozione energetica5';
+$lang['oggetto31_nome']='Pozione energetica debole';
+$lang['oggetto32_nome']='Pozione energetica media';
+$lang['oggetto33_nome']='Pozione energetica forte';
+$lang['oggetto34_nome']='Pozione energetica intensa';
+$lang['oggetto35_nome']='Pozione energetica pura';
 $lang['oggetto36_nome']='Ampolla';
 ?>

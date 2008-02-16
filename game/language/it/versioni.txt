@@ -14,6 +14,7 @@ Legenda:<br />
 + Iniziata integrazione dei testi della parte esterna nel sistema multilingua<br />
 + Vari miglioramenti di sistema<br />
 + Vari miglioramenti di sicurezza<br />
++ Altri vari miglioramenti<br />
 # Ora il tempo fra un lavoro e un altro &egrave; di 3 ore e 2 per gli account plus<br />
 - Banca: ora quando vengono calcolati gli interessi per pi&ugrave; giorni contemporaneamente vengono calcolati un giorno per volta<br />
 - Banca: ora vengono visualizzati i dati aggiornati anche quando esegue il calcolo degli interessi<br />
