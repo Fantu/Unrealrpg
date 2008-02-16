@@ -45,7 +45,15 @@
 				}
 				$db->QueryMod("INSERT INTO utenti (username,password,codice,email,dataiscrizione,ipreg,server,ultimazione,refer,refertime,ultimologin) VALUES ('".$username."','".$pass."','".$cod."','".$_POST['email']."','".$adesso."','".$ip."','".$server."','".$adesso."','".$refer."','".$refertime."','".$adesso."')");		
 				//$intestazione = "From: ".$game_name."<server@lostage.it>\r\n";
-				$intestazione=array('MIME-Version' => "1.0", 'Content-type' => "text/html; charset=iso-8859-1;", 'From' => 'From: '.$game_name.'<server@lostage.it>');
+				$intestazione="MIME-Version: 1.0\r\nContent-Type: text/html; charset=\"iso-8859-1\"\r\nFrom: ".$game_name."<server@lostage.it>\r\n";
+				$eol="\r\n";
+  				$intestazione.="From: ".$game_name."<server@lostage.it>".$eol;
+  				$intestazione.="Reply-To: ".$game_name."<server@lostage.it>".$eol;
+  				$intestazione.="Return-Path: ".$game_name."<server@lostage.it>".$eol;
+  				$intestazione.="Message-ID: <".time()."-server@lostage.it>".$eol;
+  				$intestazione.="X-Mailer: PHP v".phpversion().$eol;
+  				$intestazione.='MIME-Version: 1.0'.$eol.$eol;
+  				$intestazione.="Content-Type: text/html; charset=iso-8859-1".$eol;
 				$messaggio=sprintf($lang['testo_mail_conferma'],$game_name,$game_link,$server,$cod,$game_name);
 				mail($_POST['email'],$lang['Conferma_account'].$game_name,$messaggio,$intestazione);
 				$outputreg=$lang['account_creato_ok'];
