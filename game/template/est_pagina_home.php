@@ -1,17 +1,17 @@
-<span>Login</span><br />
+<span><?php echo $lang['Login']; ?></span><br />
 		<form action="game/login.php" method="post" name="formlogin">
 		<table width="750" border="0">
 		  <tr>
-			<td>Username</td>
+			<td><?php echo $lang['Username']; ?></td>
 			<td><input name="login_username" type="text" maxlength="25" /></td>
-			<td>Server</td>
+			<td><?php echo $lang['Server']; ?></td>
 			<td><select name="login_server">
 			<?php foreach($game_server as $chiave=>$elemento)
 			  echo "<option value=\"$chiave\">$elemento</option>"; ?>
 			</select></td>
 		  </tr>
 		  <tr>
-			<td>Password</td>
+			<td><?php echo $lang['Password']; ?></td>
 			<td><input name="login_password" type="password" maxlength="25" /></td>
 			<td><input name="Submit" type="submit" value="Login" /></td>
 		  </tr>
@@ -27,20 +27,20 @@
 		<input name="step" type="hidden" value="registrazione" />
 	    <table border="0">
           <tr>
-            <td>Username:</td>
+            <td><?php echo $lang['Username']; ?></td>
             <td><input name="username" type="text" id="username" maxlength="20" /></td>
           </tr>
           <tr>
-            <td>Password:</td>
+            <td><?php echo $lang['Password']; ?></td>
             <td><input name="password" type="password" id="password" maxlength="20" /></td>
           </tr>
           <tr>
-            <td>Email:</td>
+            <td><?php echo $lang['Email']; ?></td>
             <td><input name="email" type="text" id="email" maxlength="50" /></td>
           </tr>
           <tr>
-            <td><div align="right">Server: </div></td>
-            <td colspan="2">
+            <td><?php echo $lang['Server']; ?></td>
+            <td>
 			<select name="server" id="server">
               <option value="-1" selected="selected">--------</option>
               <?php foreach($game_server as $chiave=>$elemento)
@@ -56,10 +56,10 @@
   </tr>
 </table>
 <br /><br />
-Informazioni sui server:
+<?php echo $lang['Informazioni_sui_server']; ?>
 <table width="750" border="0" align="center">
 <tr>
-<td>Nome</td><td>Utenti registrati</td><td>Ultima settimana</td><td>Utenti online</td><td>Ultimo giorno</td>
+<td><?php echo $lang['Nome']; ?></td><td><?php echo $lang['Utenti_registrati']; ?></td><td><?php echo $lang['Ultima_settimana']; ?></td><td><?php echo $lang['Utenti_online']; ?></td><td><?php echo $lang['Ultimo_giorno']; ?></td>
 </tr>
 <?php foreach($game_server as $chiave=>$elemento){ ?>
 <tr>
