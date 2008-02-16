@@ -11,6 +11,7 @@ Legenda:<br />
 + Vari miglioramenti di sistema<br />
 + Vari miglioramenti di sicurezza<br />
 + Altri vari miglioramenti<br />
+- Patch: ora energia e salute vengono ripristinati correttamente fino al massimo in ogni situazione in cui devono nel recupero col passare del tempo<br />
 </p>
 <p><strong>0.5.2</strong> [R.617] (16/2/2008 - Beta)<br />
 + Aggiunta la possibilit&agrave; di annullare un lavoro o preghiera entro 10 minuti dall'inizio<br />

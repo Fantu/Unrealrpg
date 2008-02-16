@@ -43,7 +43,7 @@ if ($adesso>($usercar['decfede']+3600)){
 	else{$db->QueryMod("UPDATE caratteristiche SET decfede='".$adesso."' WHERE userid='".$user['userid']."'");}
 }//fine decremento fede	
 if ($adesso>($usercar['recuperosalute']+3600)){
-	if ($usercar['saluteattuale']<$usercar['salute']){
+	if ($usercar['saluteattuale']<=$usercar['salute']){
 		$differenzaora=$adesso-$usercar['recuperosalute'];
 		$ore=floor($differenzaora/3600);
 		$salute=$usercar['saluteattuale']+$ore;
@@ -54,7 +54,7 @@ if ($adesso>($usercar['recuperosalute']+3600)){
 	else{$db->QueryMod("UPDATE caratteristiche SET recuperosalute='".$adesso."' WHERE userid='".$user['userid']."'");}
 }//fine recupero salute con tempo
 if ($adesso>($usercar['recuperoenergia']+60)){
-	if ($usercar['energia']<$usercar['energiamax']){
+	if ($usercar['energia']<=$usercar['energiamax']){
 		$differenzaora=$adesso-$usercar['recuperoenergia'];
 		$ore=floor($differenzaora/60);
 		$energia=$usercar['energia']+$ore;
