@@ -23,7 +23,7 @@
     <td>
     	<?php echo $outputreg; ?>
 	    <span>Registrazione</span><br />
-		<form action="index.php" method="post" name="formregistrazione">
+		<form action="" method="post" name="formregistrazione">
 		<input name="step" type="hidden" value="registrazione" />
 	    <table border="0">
           <tr>
