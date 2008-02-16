@@ -22,8 +22,9 @@
 				if(!eregi("^.+@.+\..{2,3}$",$_POST['email']))	
 					$errore.=$lang['reg_error7'];
 			if( empty($errore) ) {
+				$username=htmlentities($_POST['username']);
 				$a=$db->QuerySelect("SELECT maxutenti AS Max, utenti AS Ut FROM config WHERE id='".$server."'");	
-				$a2=$db->QuerySelect("SELECT COUNT(*) AS Us1 FROM utenti WHERE username='".$_POST['username']."'");				
+				$a2=$db->QuerySelect("SELECT COUNT(*) AS Us1 FROM utenti WHERE username='".$username."'");				
 				if($a2['Us1']>0)
 					$errore.=$lang['reg_error8'];
 				if($a['Ut']>=$a['Max'])
@@ -42,12 +43,11 @@
 				$refer=htmlentities($_COOKIE['urbgrefer']);
 				$refertime=$adesso+172800;
 				}
-				$username=htmlentities($_POST['username']);
 				$db->QueryMod("INSERT INTO utenti (username,password,codice,email,dataiscrizione,ipreg,server,ultimazione,refer,refertime,ultimologin) VALUES ('".$username."','".$pass."','".$cod."','".$_POST['email']."','".$adesso."','".$ip."','".$server."','".$adesso."','".$refer."','".$refertime."','".$adesso."')");		
 				$intestazione = "From: ".$game_name."<server@lostage.it>\r\n";
-				$messaggio="Ciao,\nPer confermare l'iscrizione a ".$game_name." devi visitare il link sottostante:\n ".$game_link."/conferma.php?t=".$server."&cod=$cod \n\nFinchè l'account non verrà confermato non potrai accedere al gioco.\nSaluti,\n".$game_name." Staff";
-				mail($_POST['email'],"Conferma account ".$game_name,$messaggio,$intestazione);
-				$outputreg="<strong>Account creato con successo!!</strong><br />Prima di poter iniziare a giocare dovrai confermare l'iscrizione visitando il link contenuto nella mail che ti è stata inviata all'indirizzo di posta inserito.<br />Se non trovi la mail controlla nella cartella posta indesiderata antispam o simili.<br /><br />";
+				$messaggio=sprintf($lang['testo_mail_conferma'],$game_name,$game_link,$server,$cod,$game_name);
+				mail($_POST['email'],$lang['Conferma_account'].$game_name,$messaggio,$intestazione);
+				$outputreg=$lang['account_creato_ok'];
 			}
 		}
 foreach($game_server as $chiave=>$elemento){
