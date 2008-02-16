@@ -47,6 +47,7 @@ if($check['chiuso']==1) {
 	if($quantimess['id']>0){
 	$db->QueryMod("DELETE FROM messaggi WHERE data<'".$scaduto."' AND letto='1'");
 	}
+	$language=$user['language'];
 	require('inclusi/cancellazione.php');
 	header("Location: game.php?act=situazione");
 	exit();	
