@@ -13,7 +13,7 @@
 		  <tr>
 			<td><?php echo $lang['Password']; ?></td>
 			<td><input name="login_password" type="password" maxlength="25" /></td>
-			<td><input name="Submit" type="submit" value="Login" /></td>
+			<td><input name="Submit" type="submit" value="<?php echo $lang['Entra']; ?>" /></td>
 		  </tr>
 		</table>
       	</form>
@@ -48,7 +48,7 @@
             </select></td>
           </tr>
           <tr>
-            <td><input name="Submit2" type="submit" value="Registrati" /></td>
+            <td><input name="Submit2" type="submit" value="<?php echo $lang['Registrati']; ?>" /></td>
           </tr>
         </table>
 		</form>

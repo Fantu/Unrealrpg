@@ -8,30 +8,30 @@
 			if($esistenza==1){
 			$db->database=$server;}
 			else{
-				$errore .= "- Non hai selezionato il server";}
+				$errore.=$lang['reg_error1'];}
 				if(!$_POST['username'])
-					$errore.="- Non hai scritto il tuo username.<br />";
+					$errore.=$lang['reg_error2'];
 				if( strlen($_POST['username'])<3 )
-					$errore.="- L'username deve essere almeno di 3 caratteri.<br />";
+					$errore.=$lang['reg_error3'];
 				if(!$_POST['password'])
-					$errore.="- Non hai scritto la password.<br />";
+					$errore.=$lang['reg_error4'];
 				if(strlen($_POST['password'])<6)
-					$errore.="- La password deve essere lunga almeno 6 caratteri.<br />";
+					$errore.=$lang['reg_error5'];
 				if(!$_POST['email'])
-					$errore.="- Non hai scritto l'email.<br />";
+					$errore.=$lang['reg_error6'];
 				if(!eregi("^.+@.+\..{2,3}$",$_POST['email']))	
-					$errore.="- L'email inserita non sembra essere corretta.<br />";
+					$errore.=$lang['reg_error7'];
 			if( empty($errore) ) {
-				$a=$db->QuerySelect("SELECT maxutenti AS Max, utenti AS Ut FROM config WHERE id='".$_POST['server']."'");	
+				$a=$db->QuerySelect("SELECT maxutenti AS Max, utenti AS Ut FROM config WHERE id='".$server."'");	
 				$a2=$db->QuerySelect("SELECT COUNT(*) AS Us1 FROM utenti WHERE username='".$_POST['username']."'");				
 				if($a2['Us1']>0)
-					$errore.="- L'username che hai scelto è già stato preso.<br />";
+					$errore.=$lang['reg_error8'];
 				if($a['Ut']>=$a['Max'])
-					$errore.="- Questo server è al momento troppo affollato, scegline un altro.<br />";
+					$errore.=$lang['reg_error9'];
 			}
 			
 			if($errore){
-				$outputreg="<span>Si sono verificati i seguenti errori:</span><br /><span>".$errore."</span><br /><br />";}
+				$outputreg="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
 			else {
 				$ip=$_SERVER['REMOTE_ADDR'];
 				$pass=md5($_POST['password']);
