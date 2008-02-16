@@ -28,5 +28,4 @@ exit();
 }//fine lavora in Fabbro come apprendista
 
 require('template/int_fucina.php');
-}
 ?>

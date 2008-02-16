@@ -67,5 +67,4 @@ exit();
 }
 }//fine lavora in miniera vecchia
 require('template/int_miniera.php');
-}
 ?>

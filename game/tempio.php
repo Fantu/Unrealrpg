@@ -37,5 +37,4 @@ $db->QueryMod("UPDATE utenti SET monete=monete-'".$paga."',resuscita='1' WHERE u
 }
 }//fine chierici
 require('template/int_tempio.php');
-}
 ?>

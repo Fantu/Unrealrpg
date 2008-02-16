@@ -69,5 +69,4 @@ exit();
 }
 }//fine lavora come alchimista
 require('template/int_laboratorio.php');
-}
 ?>
