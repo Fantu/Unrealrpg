@@ -7,7 +7,10 @@ Legenda:<br />
 - Correzione bug e patch di situazioni non previste<br />
 <br />
 </p>
-<p><strong>0.5.2</strong> (Non disponibile - In sviluppo)<br />
+<p><strong>0.5.3</strong> (Non disponibile - In sviluppo)<br />
+Niente attualmente<br />
+</p>
+<p><strong>0.5.2</strong> [R.617] (16/2/2008 - Beta)<br />
 + Aggiunta la possibilit&agrave; di annullare un lavoro o preghiera entro 10 minuti dall'inizio<br />
 + Rifatta la struttura di base esterna per piena compatibilit&agrave; con sistema multilingua e ottimizzazione per l'indicizzazione<br />
 + Aggiunta base esterna per italiano<br />
