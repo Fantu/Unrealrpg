@@ -38,9 +38,9 @@ function CambiaImg(id,bool) {
 <table width="750" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
   <td>
-<h1>
+<center><h1>
 <?php echo $game_name; echo" "; echo $game_version; echo" "; echo $game_revision; ?>
-</h1>
+</h1></center>
 <?php
 if( file_exists('pagine/'.$_GET['pag'].'.php') )
 include('pagine/'.$_GET['pag'].'.php');
