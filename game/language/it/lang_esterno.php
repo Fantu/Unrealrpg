@@ -17,7 +17,7 @@ $lang['Registrati']='Registrati';
 $lang['outputerrori']='Si sono verificati i seguenti errori:';
 $lang['account_creato_ok']='<strong>Account creato con successo!!</strong><br />Prima di poter iniziare a giocare dovrai confermare l\'iscrizione visitando il link contenuto nella mail che ti &egrave; stata inviata all\'indirizzo di posta inserito.<br />Se non trovi la mail controlla nella cartella posta indesiderata antispam o simili.<br /><br />';
 $lang['Conferma_account']='Conferma account ';
-$lang['testo_mail_conferma']='Ciao,<br />Per confermare l\'iscrizione a %s devi visitare il link sottostante:\n %s/conferma.php?t=%s&cod=%s \n\nFinchè l\'account non verrà confermato non potrai accedere al gioco.\nSaluti,\n%s Staff';//questo è testo normale e non html
+$lang['testo_mail_conferma']='Ciao,<br />Per confermare l\'iscrizione a %s devi visitare il link sottostante:<br /> %s/conferma.php?t=%s&cod=%s <br /><br />Finch&egrave: l\'account non verr&agrave; confermato non potrai accedere al gioco.<br />Saluti,<br />%s Staff';//questo è testo normale e non html
 
 $lang['reg_error1']='- Non hai selezionato il server<br />';
 $lang['reg_error2']='- Non hai scritto il tuo username.<br />';
