@@ -8,6 +8,7 @@ Legenda:<br />
 <br />
 </p>
 <p><strong>0.5.3</strong> (Non disponibile - In sviluppo)<br />
++ Rifatto il sistema di spedizione mail dal gioco, ora sono fatte molto bene e gli antispam decenti non dovrebbero dare problemi<br />
 + Vari miglioramenti di sistema<br />
 + Vari miglioramenti di sicurezza<br />
 + Altri vari miglioramenti<br />

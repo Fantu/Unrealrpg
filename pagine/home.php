@@ -43,18 +43,9 @@
 				$refer=htmlentities($_COOKIE['urbgrefer']);
 				$refertime=$adesso+172800;
 				}
-				$db->QueryMod("INSERT INTO utenti (username,password,codice,email,dataiscrizione,ipreg,server,ultimazione,refer,refertime,ultimologin) VALUES ('".$username."','".$pass."','".$cod."','".$_POST['email']."','".$adesso."','".$ip."','".$server."','".$adesso."','".$refer."','".$refertime."','".$adesso."')");		
-				//$intestazione = "From: ".$game_name."<server@lostage.it>\r\n";
-				//$intestazione="MIME-Version: 1.0\r\nContent-Type: text/html; charset=\"iso-8859-1\"\r\nFrom: ".$game_name."<server@lostage.it>\r\n";
-				$eol="\r\n";
-  				$intestazione.="From: ".$game_name."<server@lostage.it>".$eol;
-  				$intestazione.="Reply-To: ".$game_name."<server@lostage.it>".$eol;
-  				$intestazione.="Message-ID: <".time()."-server@lostage.it>".$eol;
-  				$intestazione.="X-Mailer: PHP v".phpversion().$eol;
-  				$intestazione.='MIME-Version: 1.0'.$eol;
-  				$intestazione.="Content-Type: text/html; charset=iso-8859-1".$eol;
+				$db->QueryMod("INSERT INTO utenti (username,password,codice,email,dataiscrizione,ipreg,server,ultimazione,refer,refertime,ultimologin) VALUES ('".$username."','".$pass."','".$cod."','".$_POST['email']."','".$adesso."','".$ip."','".$server."','".$adesso."','".$refer."','".$refertime."','".$adesso."')");
 				$messaggio=sprintf($lang['testo_mail_conferma'],$game_name,$game_link,$server,$cod,$game_name);
-				mail($_POST['email'],$lang['Conferma_account'].$game_name,$messaggio,$intestazione);
+				mail($_POST['email'],$lang['Conferma_account'].$game_name,$messaggio,$game_intestazione_mail);
 				$outputreg=$lang['account_creato_ok'];
 			}
 		}
