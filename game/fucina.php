@@ -3,7 +3,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	header("Location: ../index.php?error=16");
 	exit();
 }
-require('language/it/lang_fucina.php');
+require('language/'.$language.'/lang_fucina.php');
 
 if($user['plus']==0){$tempoproxlav=$game_proxlav_normal;}else{$tempoproxlav=$game_proxlav_plus;}
 if (isset($_POST['lavorafucapp'])){

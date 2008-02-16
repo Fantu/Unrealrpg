@@ -3,9 +3,9 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	header("Location: ../index.php?error=16");
 	exit();
 }
-require('language/it/lang_mercato.php');
-require_once('language/it/lang_oggetti_categorie.php');
-require_once('language/it/lang_oggetti_nomi.php');
+require('language/'.$language.'/lang_mercato.php');
+require_once('language/'.$language.'/lang_oggetti_categorie.php');
+require_once('language/'.$language.'/lang_oggetti_nomi.php');
 require_once('inclusi/funzioni_oggetti.php');
 $step=(int)$_GET['step'];
 switch($_GET['step']){
@@ -59,6 +59,8 @@ $quanti=(int)$_POST['quanti'];
 $oggselect=(int)$_POST['oggselect'];
 $costoogg=$db->QuerySelect("SELECT costo FROM oggetti WHERE id='".$oggselect."' LIMIT 1");
 $prezzo=$costoogg['costo']*$quanti;
+if ($eventi['id']>0)
+$errore .= $lang['global_errore1'];
 if ($user['monete']<$prezzo)
 $errore .= $lang['mercato_errore1'];
 if ($oggselect<1)
@@ -76,9 +78,5 @@ $db->QueryMod("INSERT INTO inoggetti (oggid,userid) VALUES ('".$oggselect."','".
 }
 }//fine compra
 
-if($eventi['id']>0){
-require('template/int_eventi_incorso.php');
-}else{
 require('template/int_mercato.php');
-}
 ?>

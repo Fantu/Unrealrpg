@@ -3,7 +3,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	header("Location: ../index.php?error=16");
 	exit();
 }
-require('language/it/lang_laboratorio.php');
+require('language/'.$language.'/lang_laboratorio.php');
 if($user['plus']==0){$tempoproxlav=$game_proxlav_normal;}else{$tempoproxlav=$game_proxlav_plus;}
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$user['userid']."' LIMIT 0,1");
 $oggpozioni=$db->QuerySelect("SELECT count(id) AS id FROM oggetti WHERE tipo='4' AND abilitanec<='".$usercar['alchimista']."'");

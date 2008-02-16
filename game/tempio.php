@@ -3,7 +3,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	header("Location: ../index.php?error=16");
 	exit();
 }
-require('language/it/lang_tempio.php');
+require('language/'.$language.'/lang_tempio.php');
 if (isset($_POST['prega'])){
 $errore="";
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$user['userid']."' LIMIT 0,1");
