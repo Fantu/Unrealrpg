@@ -5,22 +5,22 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 }
 require('language/'.$language.'/lang_situazione.php');
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$user['userid']."' LIMIT 1");
-$expnewmin=100+($usercar['minatore']*500);
+$expnewmin=100+($usercar['minatore']*1000);
 if($usercar['expminatore']>99) {
 	if($usercar['expminatore']>=$expnewmin)
 	$db->QueryMod("UPDATE caratteristiche t1 SET t1.minatore=t1.minatore+'1',t1.expminatore=t1.expminatore-'".$expnewmin."' WHERE t1.userid='".$user['userid']."'");
 }//fine controllo aumento liv minatore
-$expnewmin2=100+($usercar['alchimista']*500);
+$expnewmin2=100+($usercar['alchimista']*1000);
 if($usercar['expalchimista']>99) {
 	if($usercar['expalchimista']>=$expnewmin2)
 	$db->QueryMod("UPDATE caratteristiche t1 SET t1.alchimista=t1.alchimista+'1',t1.expalchimista=t1.expalchimista-'".$expnewmin2."' WHERE t1.userid='".$user['userid']."'");
 }//fine controllo aumento liv alchimista
-$expnewmin3=100+($usercar['fabbro']*500);
+$expnewmin3=100+($usercar['fabbro']*1000);
 if($usercar['expfabbro']>99) {
 	if($usercar['expfabbro']>=$expnewmin3)
 	$db->QueryMod("UPDATE caratteristiche t1 SET t1.fabbro=t1.fabbro+'1',t1.expfabbro=t1.expfabbro-'".$expnewmin3."' WHERE t1.userid='".$user['userid']."'");
 }//fine controllo aumento liv fabbro
-$expnewmin4=100+($usercar['magica']*500);
+$expnewmin4=100+($usercar['magica']*1000);
 if($usercar['expmagica']>99) {
 	if($usercar['expmagica']>=$expnewmin4)
 	$db->QueryMod("UPDATE caratteristiche t1 SET t1.magica=t1.magica+'1',t1.expmagica=t1.expmagica-'".$expnewmin4."' WHERE t1.userid='".$user['userid']."'");
