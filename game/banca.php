@@ -3,8 +3,8 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	header("Location: ../index.php?error=16");
 	exit();
 }
-require('language/it/lang_banca.php');
-$userbank=$db->QuerySelect("SELECT * FROM banca WHERE userid='".$user['userid']."' LIMIT 0,1");
+require('language/'.$language.'/lang_banca.php');
+$userbank=$db->QuerySelect("SELECT * FROM banca WHERE userid='".$user['userid']."' LIMIT 1");
 if (($userbank['interessi']+86400)<$adesso){
 	$differenzaora=$adesso-$userbank['interessi'];
 	$giorni=floor($differenzaora/86400);
@@ -15,6 +15,7 @@ if (($userbank['interessi']+86400)<$adesso){
 		$db->QueryMod("UPDATE banca SET conto=conto+'".$interessi."',interessi=interessi+'".(86400*$giorni)."' WHERE userid='".$user['userid']."'");
 	}
 	else{$db->QueryMod("UPDATE banca SET interessi='".$adesso."' WHERE userid='".$user['userid']."'");}
+	$userbank=$db->QuerySelect("SELECT * FROM banca WHERE userid='".$user['userid']."' LIMIT 1");
 }
 $infointeressi=$lang['info_interessi']." ".date($lang['dataora'],($userbank['interessi']+86400));
 if (isset($_POST['deposita'])){
@@ -44,7 +45,7 @@ $errore .= $lang['banca_errore1'];}
 else{
 if ($daprelevare<1)
 $errore .= $lang['banca_errore4'];
-$userbank=$db->QuerySelect("SELECT conto FROM banca WHERE userid='".$user['userid']."' LIMIT 0,1");
+$userbank=$db->QuerySelect("SELECT conto FROM banca WHERE userid='".$user['userid']."' LIMIT 1");
 if ($daprelevare>$userbank['conto'])
 $errore .= $lang['banca_errore5'];
 $deposito = $db->QuerySelect("SELECT banca FROM config");
@@ -65,7 +66,7 @@ $prestito=(int)$_POST['inprestito'];
 if (!is_numeric($prestito)){
 $errore .= $lang['banca_errore1'];}
 else{
-$usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$user['userid']."' LIMIT 0,1");
+$usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$user['userid']."' LIMIT 1");
 $prestitopossibile=($usercar['livello']*100)-$userbank['prestito'];
 if ($prestito<1)
 $errore .= $lang['banca_errore7'];
@@ -95,9 +96,9 @@ $db->QueryMod("UPDATE config SET banca=banca+'".$prestito."'");
 }
 }//fine restituisci prestito
 
-$userbank=$db->QuerySelect("SELECT * FROM banca WHERE userid='".$user['userid']."' LIMIT 0,1");
+$userbank=$db->QuerySelect("SELECT * FROM banca WHERE userid='".$user['userid']."' LIMIT 1");
 $prestito=$userbank['prestito']+(floor(($userbank['prestito']/100)*10));
-$user=$db->QuerySelect("SELECT * FROM utenti WHERE userid='".$user['userid']."' LIMIT 0,1");
+$user=$db->QuerySelect("SELECT * FROM utenti WHERE userid='".$user['userid']."' LIMIT 1");
 if($eventi['id']>0){
 require('template/int_eventi_incorso.php');
 }else{
