@@ -1,4 +1,8 @@
 <?php
+if((empty($int_security)) OR ($int_security!=$game_se_code)){
+	header("Location: ../../index.php?error=16");
+	exit();
+}
 require_once('inclusi/funzioni_eventi.php');
 $evfiniti=$db->QuerySelect("SELECT COUNT(*) AS id FROM eventi WHERE ((datainizio+secondi)<'".$adesso."')");
 if ($evfiniti['id']>0){//controllo gli eventi finiti

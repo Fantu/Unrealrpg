@@ -1,5 +1,9 @@
 <?php
-require_once('language/it/lang_oggetti_nomi.php');
+if((empty($int_security)) OR ($int_security!=$game_se_code)){
+	header("Location: ../../index.php?error=16");
+	exit();
+}
+require_once('language/'.$language.'/lang_oggetti_nomi.php');
 
 $catoggetti_nome=array(
 1=>array(1),
