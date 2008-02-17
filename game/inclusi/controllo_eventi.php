@@ -27,7 +27,7 @@ while($evento=$db->QueryCicloResult($evfiniti)) {
 			Completalavlabalc($evento['userid'],$evento['oggid']);
 			break;
 			case 6://studia in rocca
-			Completaroccastudia($evento['userid'],$evento['oggid']);
+			Completaroccastudia($evento['userid'],$evento['oggid'],$evento['ore']);
 			break;
 			}	
 		break;

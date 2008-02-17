@@ -15,6 +15,15 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <table border="0">
 <tr>
 <td>
+<?php echo $lang['seleziona_ore_lavoro']; ?> <select name="ore" id="ore">
+<option value="1" selected="selected">1</option>
+<option value="2" selected="selected">2</option>
+<option value="3" selected="selected">3</option>
+</select>
+</td>
+</tr>
+<tr>
+<td>
 <?php echo $lang['seleziona_elemento']; ?> <select name="elemento" id="elemento">
 <option value="0" selected="selected">--------</option>
 <?php

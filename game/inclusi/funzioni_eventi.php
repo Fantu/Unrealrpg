@@ -274,7 +274,7 @@ $salute+=$danni;
 $db->QueryMod("UPDATE lavori t1 JOIN utenti t2 on t1.userid=t2.userid JOIN caratteristiche t3 on t2.userid=t3.userid SET t1.ultimolavoro='".$adesso."',t1.oreultimolav='1',t3.expalchimista=t3.expalchimista+'".$exp."',t2.monete=t2.monete-'".$costo."',t3.energia=t3.energia-'".$energia."',t3.saluteattuale=t3.saluteattuale-'".$salute."',t3.recuperosalute='".$adesso."',t3.recuperoenergia='".$adesso."',t3.manarimasto=t3.manarimasto-'".$mana."' WHERE t1.userid='".$userid."'");
 } //fine Completalavlabalc
 
-function Completaroccastudia($userid,$elementosel) {
+function Completaroccastudia($userid,$elementosel,$ore) {
 global $db,$adesso,$lang,$language;
 require_once('language/'.$language.'/lang_rocca.php');
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");
@@ -288,6 +288,10 @@ $testo="<span>".sprintf($lang['report_lavstudiorocca'],$exp,$elementi[$elementos
 $titolo=$lang['report_lavoro_roccastudio'];
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");
 $salute+=$danni;
-$db->QueryMod("UPDATE lavori t1 JOIN caratteristiche t3 on t1.userid=t3.userid SET t1.ultimolavoro='".$adesso."',t1.oreultimolav='1',t3.expmagica=t3.expmagica+'".$exp."',t3.expelmagico".$elementosel."=t3.expelmagico".$elementosel."+'".$exp."',t3.energia=t3.energia-'".$energia."',t3.recuperosalute='".$adesso."',t3.recuperoenergia='".$adesso."' WHERE t1.userid='".$userid."'");
+$db->QueryMod("UPDATE lavori t1 JOIN caratteristiche t3 on t1.userid=t3.userid SET t1.ultimolavoro='".$adesso."',t1.oreultimolav=t1.oreultimolav+'1',t3.expmagica=t3.expmagica+'".$exp."',t3.expelmagico".$elementosel."=t3.expelmagico".$elementosel."+'".$exp."',t3.energia=t3.energia-'".$energia."',t3.recuperosalute='".$adesso."',t3.recuperoenergia='".$adesso."' WHERE t1.userid='".$userid."'");
+if($ore>1){
+$ore--;
+$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,lavoro,oggid,ore) VALUES ('".$userid."','".$adesso."','3600','8','1','6','".$elementosel."','".$ore."')");
+}//fine se deve lavorare ancora
 } //fine Completaroccastudia
 ?>

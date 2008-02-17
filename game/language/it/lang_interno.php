@@ -108,6 +108,7 @@ $lang['utilizzato_4_2']='Hai utilizzato %s e recuperato %s di energia';
 
 //inizio errori globali
 $lang['global_errore1']='- Stai facendo altro<br />';
+$lang['global_errore2']='- Le ore di lavoro devono essere minimo 1 e massimo 3<br />';
 //fine errori globali
 
 //inizio mail cancellazione/inattività
@@ -128,4 +129,5 @@ $lang['Indietro']='Indietro';
 $lang['dataora']='\i\l \g\i\o\r\n\o d/m/y \a\l\l\e \o\r\e H:i'; //questo non è semplice testo html in variabile php...vedere funzione date
 $lang['tempo_gen_pagina']='Tempo di generazione della pagina: %s secondi - Query eseguite: %s';
 $lang['Annulla']='Annulla';
+$lang['seleziona_ore_lavoro']='Seleziona quante ore';
 ?>
