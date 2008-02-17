@@ -18,7 +18,7 @@ $salute=rand(5,15)-($usercar['minatore'])-rand(floor($resistenza/2),floor($resis
 if ($salute<1)
 $salute=1;
 $exp=floor($usercar['saluteattuale']/8+$usercar['energia']/80+$usercar['attfisico']/4);
-$exp=floor(rand($exp/2,$exp));
+$exp=floor(rand(($exp/100*75),$exp));
 $exp+=(5*$usercar['minatore']);
 $esplosione=rand(30,100)-($usercar['minatore']*5)-($usercar['attfisico']/20);
 $danni=0;
@@ -56,7 +56,7 @@ $salute=rand(2,10)-($usercar['alchimista'])-rand(floor($resistenza/2),floor($res
 if ($salute<1)
 $salute=1;
 $exp=floor($usercar['saluteattuale']/10+$usercar['energia']/100+$usercar['attmagico']/5+$usercar['intelligenza']/15);
-$exp=floor(rand($exp/2,$exp));
+$exp=floor(rand(($exp/100*75),$exp));
 $exp+=(5*$usercar['alchimista']);
 $esplosione=rand(30,100)-($usercar['alchimista']*5)-($usercar['attmagico']/20);
 $danni=0;
@@ -129,7 +129,7 @@ $salute=rand(5,15)-($usercar['minatore'])-rand(floor($resistenza/2),floor($resis
 if ($salute<1)
 $salute=1;
 $exp=floor($usercar['saluteattuale']/8+$usercar['energia']/80+$usercar['attfisico']/4);
-$exp=floor(rand($exp/2,$exp));
+$exp=floor(rand(($exp/100*75),$exp));
 $exp+=(5*$usercar['minatore']);
 $esplosione=rand(30,100)-($usercar['minatore']*5)-($usercar['attfisico']/20);
 $danni=0;
@@ -198,7 +198,7 @@ $salute=rand(5,15)-($usercar['fabbro'])-rand(floor($resistenza/2),floor($resiste
 if ($salute<1)
 $salute=1;
 $exp=floor($usercar['saluteattuale']/10+$usercar['energia']/100+$usercar['attfisico']/15)+($usercar['destrezza']/10)+($usercar['intelligenza']/20);
-$exp=floor(rand($exp/2,$exp));
+$exp=floor(rand(($exp/100*75),$exp));
 $exp+=(5*$usercar['minatore']);
 $esplosione=rand(30,100)-($usercar['fabbro']*5)-($usercar['attfisico']/20)-($usercar['destrezza']/10);
 $danni=0;
@@ -237,7 +237,7 @@ $salute=rand(2,10)-($usercar['alchimista'])-rand(floor($resistenza/2),floor($res
 if ($salute<1)
 $salute=1;
 $exp=floor($usercar['saluteattuale']/10+$usercar['energia']/100+$usercar['attmagico']/5+$usercar['intelligenza']/15);
-$exp=floor(rand($exp/2,$exp));
+$exp=floor(rand(($exp/100*75),$exp));
 $exp+=(5*$usercar['alchimista']);
 $testo=sprintf($lang['report_lavlabalc'],$exp,$energia,$salute,$mana,$costo)."<br />";
 $bonusabilita=$usercar['alchimista']-$pozione['abilitanec'];
