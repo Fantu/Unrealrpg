@@ -130,4 +130,5 @@ $lang['dataora']='\i\l \g\i\o\r\n\o d/m/y \a\l\l\e \o\r\e H:i'; //questo non è s
 $lang['tempo_gen_pagina']='Tempo di generazione della pagina: %s secondi - Query eseguite: %s';
 $lang['Annulla']='Annulla';
 $lang['seleziona_ore_lavoro']='Seleziona quante ore';
+$lang['ore_in_coda']='(%s ore in coda)';
 ?>
