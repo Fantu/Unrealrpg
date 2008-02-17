@@ -285,7 +285,6 @@ $exp=floor($usercar['saluteattuale']/10+$usercar['energia']/100+$usercar['attmag
 $exp=floor(rand(($exp/100*75),$exp));
 $exp+=(5*$usercar['magica']);
 $testo="<span>".sprintf($lang['report_lavstudiorocca'],$exp,$elementi[$elementosel],$energia)."</span>";
-$testo=htmlentities($testo);
 $titolo=$lang['report_lavoro_roccastudio'];
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");
 $salute+=$danni;
