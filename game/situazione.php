@@ -59,6 +59,7 @@ if(!$evento)
 $evento=$lang['nessun_evento'];
 $userlav=$db->QuerySelect("SELECT * FROM lavori WHERE userid='".$user['userid']."' LIMIT 1");
 if($user['plus']==0){$tempoproxlav=$game_proxlav_normal;}else{$tempoproxlav=$game_proxlav_plus;}
+$tempoproxlav=$tempoproxlav*$userlav['oreultimolav'];
 if (($userlav['ultimolavoro']+$tempoproxlav)<$adesso){
 $proxlavdata=$lang['Adesso'];
 $lavoroincorso=$db->QuerySelect("SELECT COUNT(*) AS id FROM eventi WHERE userid='".$user['userid']."' AND tipo='1'");

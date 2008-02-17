@@ -8,7 +8,8 @@ Legenda:<br />
 <br />
 </p>
 <p><strong>0.5.4</strong> (Non disponibile - In sviluppo)<br />
-Niente attualmente<br />
++ Rifatto il sistema di tempo fra un lavoro ed un altro per renderlo compatibile con pi&ugrave; ore di lavoro contemporaneamente<br />
++ Aggiunti gli elementi magici acqua, terra, aria e fuoco con esperienza propria per ogniuno<br />
 </p>
 <p><strong>0.5.3</strong> [R.638] (17/2/2008 - Beta)<br />
 + Banca, Fucina, Tempio, Laboratorio, Miniera, Rocca dell'Arcano e Mercato ora sono visibili anche mentre il personaggio sta facendo altro, ovviamente per&ograve; non sar&agrave; possibile fare azioni<br />
@@ -196,7 +197,7 @@ Niente attualmente<br />
 + Vari miglioramenti di sicurezza<br />
 + Terminata bozza Miniera vecchia<br />
 </p>
-<strong>0.4.1</strong> [R.362] (27/1/2008 - Beta)<br />
+<p><strong>0.4.1</strong> [R.362] (27/1/2008 - Beta)<br />
 + Ora Inventario si pu&ograve; guardare anche mentre il personaggio sta facendo altro<br />
 + Aggiunti 9 minerali negli oggetti<br />
 + Aggiunti 3 picconi di rame negli oggetti<br />

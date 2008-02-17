@@ -12,7 +12,9 @@ while($oggpiccone=$db->QueryCicloResult($oggpicconi)) {
 $picconi[$oggpiccone['oggid']]=$lang['oggetto'.$oggpiccone['oggid'].'_nome'];
 }
 }//fine se ha almeno un piccone
+$userlav=$db->QuerySelect("SELECT * FROM lavori WHERE userid='".$user['userid']."' LIMIT 1");
 if($user['plus']==0){$tempoproxlav=$game_proxlav_normal;}else{$tempoproxlav=$game_proxlav_plus;}
+$tempoproxlav=$tempoproxlav*$userlav['oreultimolav'];
 if (isset($_POST['lavorainnuova'])){
 $errore="";
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$user['userid']."' LIMIT 1");
