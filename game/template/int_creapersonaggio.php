@@ -1,3 +1,8 @@
+<?php
+if((empty($int_security)) OR ($int_security!=$game_se_code)){
+	header("Location: ../../index.php?error=16");
+	exit();
+}?>
 <?php echo $outputerrori; ?>
 <form action="" method="post" name="creapersonaggio">
 <table border="0">

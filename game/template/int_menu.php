@@ -1,3 +1,8 @@
+<?php
+if((empty($int_security)) OR ($int_security!=$game_se_code)){
+	header("Location: ../../index.php?error=16");
+	exit();
+}?>
 <div id="menu">
 <table width="142"  border="1" cellspacing="1" cellpadding="1" class="tabmenu">		  
 	<tr>

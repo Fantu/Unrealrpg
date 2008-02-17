@@ -1,3 +1,8 @@
+<?php
+if((empty($int_security)) OR ($int_security!=$game_se_code)){
+	header("Location: ../../index.php?error=16");
+	exit();
+}?>
 <span><?php echo $lang['Login']; ?></span><br />
 		<form action="game/login.php" method="post" name="formlogin">
 		<table width="750" border="0">
