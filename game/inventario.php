@@ -3,7 +3,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	header("Location: ../index.php?error=16");
 	exit();
 }
-require('language/it/lang_inventario.php');
+require('language/'.$language.'/lang_inventario.php');
 if (isset($_POST['vendi'])){
 $errore="";
 $quanti=(int)$_POST['quanti'];

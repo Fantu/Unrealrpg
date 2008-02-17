@@ -4,7 +4,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	exit();
 }
 require('inclusi/personaggio.php');
-require('language/it/lang_creapersonaggio.php');
+require('language/'.$language.'/lang_creapersonaggio.php');
 if (isset($_POST['crea'])){
 $errore="";
 $razza=$_POST['razza'];

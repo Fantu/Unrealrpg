@@ -3,9 +3,9 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	header("Location: ../index.php?error=16");
 	exit();
 }
-require_once('language/it/lang_mostraoggetto.php');
-require_once('language/it/lang_oggetti_nomi.php');
-require_once('language/it/lang_oggetti_categorie.php');
+require_once('language/'.$language.'/lang_mostraoggetto.php');
+require_once('language/'.$language.'/lang_oggetti_nomi.php');
+require_once('language/'.$language.'/lang_oggetti_categorie.php');
 $da=htmlentities($_GET['da']);
 if($da=='inventario'){
 $indietro="<a href=\"game.php?act=inventario\">".$lang['Inventario']."</a>";

@@ -3,7 +3,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	header("Location: ../index.php?error=16");
 	exit();
 }
-require('language/it/lang_messaggi.php');
+require('language/'.$language.'/lang_messaggi.php');
 require('template/int_messaggi.php');
 $id=(int)$_GET['id'];
 ?>

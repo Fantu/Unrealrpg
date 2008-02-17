@@ -3,7 +3,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	header("Location: ../index.php?error=16");
 	exit();
 }
-require('language/it/lang_opzioni.php');
+require('language/'.$language.'/lang_opzioni.php');
 if (isset($_POST['cambias'])){
 $errore="";
 $sesso=$_POST['sesso'];
