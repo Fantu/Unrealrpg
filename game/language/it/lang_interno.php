@@ -84,6 +84,7 @@ $lang['eventi_dettagli4']='Resurrezione in corso, tornerai in vita ';
 $lang['eventi_dettagli5']='Stai lavorando in Miniera vecchia e finirai ';
 $lang['eventi_dettagli6']='Stai lavorando in Fabbro come apprendista e finirai ';
 $lang['eventi_dettagli7']='Stai lavorando in Laboratorio come alchimista e finirai ';
+$lang['eventi_dettagli8']='Stai studiando in Rocca dell\'Arcano e finirai ';
 //fine dettagli eventi
 
 //inizio visualizzautente

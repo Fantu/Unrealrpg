@@ -10,6 +10,7 @@ Legenda:<br />
 <p><strong>0.5.4</strong> (Non disponibile - In sviluppo)<br />
 + Rifatto il sistema di tempo fra un lavoro ed un altro per renderlo compatibile con pi&ugrave; ore di lavoro contemporaneamente<br />
 + Aggiunti gli elementi magici acqua, terra, aria e fuoco con esperienza propria per ogniuno<br />
++ Inizio creazione prima parte Rocca dell'Arcano<br />
 # Dimezzata l'influenza casuale nell'esperienza in tutti i lavori<br />
 </p>
 <p><strong>0.5.3</strong> [R.638] (17/2/2008 - Beta)<br />
