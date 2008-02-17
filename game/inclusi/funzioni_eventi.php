@@ -279,15 +279,16 @@ global $db,$adesso,$lang,$language;
 require_once('language/'.$language.'/lang_rocca.php');
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");
 $energia=100-(5*$usercar['magica']);
-if ($energia<50)
+if($energia<50)
 $energia=50;
 $exp=floor($usercar['saluteattuale']/10+$usercar['energia']/100+$usercar['attmagico']/8+$usercar['intelligenza']/9);
 $exp=floor(rand(($exp/100*75),$exp));
 $exp+=(5*$usercar['magica']);
 $testo="<span>".sprintf($lang['report_lavstudiorocca'],$exp,$elementi[$elementosel],$energia)."</span>";
+$testo=htmlentities($testo);
 $titolo=$lang['report_lavoro_roccastudio'];
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");
 $salute+=$danni;
-$db->QueryMod("UPDATE lavori t1 JOIN caratteristiche t3 on t1.userid=t3.userid SET t1.ultimolavoro='".$adesso."',t1.oreultimolav='1',t3.expmagica=t3.expmagica+'".$exp."',t3.expelmagico'".$elementosel."'=t3.expelmagico'".$elementosel."'+'".$exp."',t3.energia=t3.energia-'".$energia."',t3.recuperosalute='".$adesso."',t3.recuperoenergia='".$adesso."' WHERE t1.userid='".$userid."'");
+$db->QueryMod("UPDATE lavori t1 JOIN caratteristiche t3 on t1.userid=t3.userid SET t1.ultimolavoro='".$adesso."',t1.oreultimolav='1',t3.expmagica=t3.expmagica+'".$exp."',t3.expelmagico".$elementosel."=t3.expelmagico".$elementosel."+'".$exp."',t3.energia=t3.energia-'".$energia."',t3.recuperosalute='".$adesso."',t3.recuperoenergia='".$adesso."' WHERE t1.userid='".$userid."'");
 } //fine Completaroccastudia
 ?>
