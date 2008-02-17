@@ -17,8 +17,8 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <td>
 <?php echo $lang['seleziona_ore_lavoro']; ?> <select name="ore" id="ore">
 <option value="1" selected="selected">1</option>
-<option value="2" selected="selected">2</option>
-<option value="3" selected="selected">3</option>
+<option value="2">2</option>
+<option value="3">3</option>
 </select>
 </td>
 </tr>
