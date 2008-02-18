@@ -64,11 +64,11 @@ if($user['plus']==0){$tempoproxlav=$game_proxlav_normal;}else{$tempoproxlav=$gam
 $tempoproxlav=$tempoproxlav*$userlav['oreultimolav'];
 if (($userlav['ultimolavoro']+$tempoproxlav)<$adesso){
 $proxlavdata=$lang['Adesso'];
+}else
+{$proxlavdata=date($lang['dataora'],($userlav['ultimolavoro']+$tempoproxlav));}
 $lavoroincorso=$db->QuerySelect("SELECT COUNT(*) AS id FROM eventi WHERE userid='".$user['userid']."' AND tipo='1'");
 if ($lavoroincorso['id']>0)
 $proxlavdata=$lang['stai_gia_lavorando'];
-}else
-{$proxlavdata=date($lang['dataora'],($userlav['ultimolavoro']+$tempoproxlav));}
 $proxlav=$lang['prossimo_lavoro'].$proxlavdata;
 $newscom=$db->QuerySelect("SELECT news,comunicazione FROM config LIMIT 1");
 require('inclusi/personaggio.php');
