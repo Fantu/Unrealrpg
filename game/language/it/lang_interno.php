@@ -15,7 +15,7 @@ $lang['Lista_utenti']='Elenco personaggi';
 $lang['Mercato']='Mercato';
 $lang['Inventario']='Inventario';
 $lang['Fucina']='Fucina';
-$lang['Rocca_arcano']='Rocca dell\'Arcano';
+$lang['Rocca_arcano']='Rocca dell`Arcano';
 $lang['Libro_incantesimi']='Libro degli incantesimi';
 //fine menu
 
@@ -84,7 +84,7 @@ $lang['eventi_dettagli4']='Resurrezione in corso, tornerai in vita ';
 $lang['eventi_dettagli5']='Stai lavorando in Miniera vecchia e finirai ';
 $lang['eventi_dettagli6']='Stai lavorando in Fabbro come apprendista e finirai ';
 $lang['eventi_dettagli7']='Stai lavorando in Laboratorio come alchimista e finirai ';
-$lang['eventi_dettagli8']='Stai studiando in Rocca dell\'Arcano e finirai ';
+$lang['eventi_dettagli8']='Stai studiando in Rocca dell`Arcano e finirai ';
 //fine dettagli eventi
 
 //inizio visualizzautente
@@ -116,7 +116,7 @@ $lang['Account_cancellato']='Account cancellato';
 $lang['Account_inutilizzato']='Account inutilizzato';
 $lang['mail_cancellato_noconferma']='Ciao %s,<br />Siamo spiacenti di informarti che il tuo account su %s sul server %s &egrave; stato cancellato perch&egrave; non confermato entro 48 ore.<br />Saluti,<br />%s Staff';
 $lang['mail_cancellato_nopersonaggio']='Ciao %s,<br />Siamo spiacenti di informarti che il tuo account su %s sul server %s &egrave; stato cancellato perch&egrave; non &egrave; stato creato un personaggio entro 72 ore.<br />Saluti,<br />%s Staff';
-$lang['mail_avviso_inattivita']='Ciao %s,<br />Ti scriviamo per informarti che il tuo account su %s server %s risulta inattivo da più di 2 settimane.<br />Se questa inattivit&agrave; dovesse raggiungere i 30 giorni, l\'account verr&agrave; automaticamente cancellato dal sistema.<br />Saluti,<br />%s Staff';
+$lang['mail_avviso_inattivita']='Ciao %s,<br />Ti scriviamo per informarti che il tuo account su %s server %s risulta inattivo da più di 2 settimane.<br />Se questa inattivit&agrave; dovesse raggiungere i 30 giorni, l`account verr&agrave; automaticamente cancellato dal sistema.<br />Saluti,<br />%s Staff';
 $lang['mail_cancellato_inattivita']='Ciao %s<br />Siamo spiacenti di informarti che il tuo account su %s sul server %s &egrave; stato cancellato perch&egrave; inattivo da oltre 30 giorni.<br />Saluti,<br />%s Staff';
 //fine errori cancellazione/inattività
 
@@ -126,7 +126,7 @@ $lang['error_eventi_incorso']='Sei occupato a fare altro';
 $lang['Stato']='Stato';
 $lang['Adesso']='Adesso';
 $lang['Indietro']='Indietro';
-$lang['dataora']='\i\l \g\i\o\r\n\o d/m/y \a\l\l\e \o\r\e H:i'; //questo non è semplice testo html in variabile php...vedere funzione date
+$lang['dataora']='\i\l \g\i\o\r\n\o d/m/y \a\l\l\e \o\r\e H:i'; //questo non &egrave; semplice testo html in variabile php...vedere funzione date
 $lang['tempo_gen_pagina']='Tempo di generazione della pagina: %s secondi - Query eseguite: %s';
 $lang['Annulla']='Annulla';
 $lang['seleziona_ore_lavoro']='Seleziona quante ore';
