@@ -26,6 +26,6 @@ $lang['reg_error4']='- non hai scritto la password.<br />';
 $lang['reg_error5']='- La password deve essere lunga almeno 6 caratteri.<br />';
 $lang['reg_error6']='- Non hai scritto l\'email.<br />';
 $lang['reg_error7']='- L\'email inserita non sembra essere corretta.<br />';
-$lang['reg_error8']='- L\'username che hai scelto è già stato preso.<br />';
+$lang['reg_error8']='- L\'username che hai scelto &egrave; gi&agrave; stato preso.<br />';
 $lang['reg_error9']='- Questo server &egrave; al momento troppo affollato, scegline un altro.<br />';
 ?>

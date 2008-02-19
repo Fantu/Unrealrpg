@@ -275,7 +275,7 @@ $db->QueryMod("UPDATE lavori t1 JOIN utenti t2 on t1.userid=t2.userid JOIN carat
 } //fine Completalavlabalc
 
 function Completaroccastudia($userid,$elementosel,$ore) {
-global $db,$adesso,$lang,$language;
+global $db,$adesso,$lang,$language,$elementi;
 require_once('language/'.$language.'/lang_rocca.php');
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");
 $energia=100-(5*$usercar['magica']);
