@@ -7,12 +7,15 @@ Legenda:<br />
 - Correzione bug e patch di situazioni non previste<br />
 <br />
 </p>
-<p><strong>0.5.4</strong> (Non disponibile - In sviluppo)<br />
+<p><strong>0.5.5</strong> (Non disponibile - In sviluppo)<br />
+Niente attualmente<br />
+</p>
+<p><strong>0.5.4</strong> [R.653] (19/2/2008 - Beta)<br />
 + Rifatto il sistema di tempo fra un lavoro ed un altro per renderlo compatibile con pi&ugrave; ore di lavoro contemporaneamente<br />
 + Aggiunti gli elementi magici acqua, terra, aria e fuoco con esperienza propria per ogniuno<br />
 + Creata prima parte Rocca dell'Arcano con possibilit&agrave; di lavoro per pi&ugrave; ore<br />
 + Aggiunta in Situazione nel dettaglio dell'evento le ore in coda in caso di lavoro di oltre 1 ora<br />
-+ Adattatt ai lavori di pi&ugrave; ore il tempo al prossimo lavoro in Situazione<br />
++ Adattatto ai lavori di pi&ugrave; ore il tempo al prossimo lavoro in Situazione<br />
 + Vari miglioramenti di sistema<br />
 + Altri vari miglioramenti<br />
 # Dimezzata l'influenza casuale nell'esperienza in tutti i lavori<br />
