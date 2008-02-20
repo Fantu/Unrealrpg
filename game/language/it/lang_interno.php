@@ -111,14 +111,14 @@ $lang['global_errore1']='- Stai facendo altro<br />';
 $lang['global_errore2']='- Le ore di lavoro devono essere minimo 1 e massimo 3<br />';
 //fine errori globali
 
-//inizio mail cancellazione/inattività
+//inizio mail cancellazione/inattivit&agrave;
 $lang['Account_cancellato']='Account cancellato';
 $lang['Account_inutilizzato']='Account inutilizzato';
 $lang['mail_cancellato_noconferma']='Ciao %s,<br />Siamo spiacenti di informarti che il tuo account su %s sul server %s &egrave; stato cancellato perch&egrave; non confermato entro 48 ore.<br />Saluti,<br />%s Staff';
 $lang['mail_cancellato_nopersonaggio']='Ciao %s,<br />Siamo spiacenti di informarti che il tuo account su %s sul server %s &egrave; stato cancellato perch&egrave; non &egrave; stato creato un personaggio entro 72 ore.<br />Saluti,<br />%s Staff';
-$lang['mail_avviso_inattivita']='Ciao %s,<br />Ti scriviamo per informarti che il tuo account su %s server %s risulta inattivo da più di 2 settimane.<br />Se questa inattivit&agrave; dovesse raggiungere i 30 giorni, l`account verr&agrave; automaticamente cancellato dal sistema.<br />Saluti,<br />%s Staff';
+$lang['mail_avviso_inattivita']='Ciao %s,<br />Ti scriviamo per informarti che il tuo account su %s server %s risulta inattivo da pi&ugrave; di 2 settimane.<br />Se questa inattivit&agrave; dovesse raggiungere i 30 giorni, l`account verr&agrave; automaticamente cancellato dal sistema.<br />Saluti,<br />%s Staff';
 $lang['mail_cancellato_inattivita']='Ciao %s<br />Siamo spiacenti di informarti che il tuo account su %s sul server %s &egrave; stato cancellato perch&egrave; inattivo da oltre 30 giorni.<br />Saluti,<br />%s Staff';
-//fine errori cancellazione/inattività
+//fine errori cancellazione/inattivit&agrave;
 
 $lang['outputerrori']='Si sono verificati i seguenti errori:';
 $lang['nessun_evento']='Nessun evento in corso';
