@@ -107,9 +107,8 @@ if ($eventi['id']>0)
 $errore .= $lang['global_errore1'];
 if($userbank['conto']<1)
 $errore.=$lang['banca_errore9'];
-if($userbank['lotteria']>0
+if($userbank['lotteria']>0)
 $errore.=$lang['banca_errore10'];
-)
 if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
 else {
