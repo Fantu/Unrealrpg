@@ -93,7 +93,7 @@ echo $lang['restituzione_prestito']." ".$prestito; ?>
 <br />
 <?php echo $lang['Lotteria']; ?><br />
 <?php echo $lang['desc_lotteria']; ?><br />
-<?php if ($userbank['lotteria']>0){ ?>
+<?php if ($userbank['lotteria']==0){ ?>
 <form action="" method="post" name="lotteria">
 <table border="0">
 <tr>
