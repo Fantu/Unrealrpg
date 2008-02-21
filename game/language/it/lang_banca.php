@@ -22,6 +22,7 @@ $lang['desc_prestito']='Puoi chiedere un prestito alla Banca, per un massimo di 
 $lang['quanto_prestito_chiedere']='Inserisci quante monete vuoi chiedere in prestito:';
 $lang['restituzione_prestito']='Le monete che devi restituire alla banca interessi inclusi sono:';
 $lang['Restituisci_prestito']='Restituisci prestito';
+$lang['Chiedi_prestito']='Chiedi prestito';
 $lang['Lotteria']='Lotteria';
 $lang['desc_lotteria']='La lotteria &egrave; organizzata dalla banca, puoi comprare un biglietto ogni estrazione pagando 1 moneta dal conto e l`estrazione avviene 1 volta a settimana, maggiori sono i partecipanti e maggiore sono le monete in palio fino ad un massimo di 100';
 $lang['Compra_biglietto']='Compra un biglietto';
