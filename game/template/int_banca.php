@@ -105,5 +105,5 @@ echo $lang['restituzione_prestito']." ".$prestito; ?>
 </form>
 <br />
 <?php }else{/*fine se non ha il biglietto*/
-$lang['hai_gia_biglietto'];} ?>
+echo $lang['hai_gia_biglietto'];} ?>
 <br />
