@@ -80,9 +80,6 @@ echo $lang['restituzione_prestito']." ".$prestito; ?>
 <br />
 <form action="" method="post" name="daiprestito">
 <table border="0">
-<!--<tr>
-<td><div align="right"><?php echo $lang['quanto_prestito_dare']; ?></div></td>
-</tr>-->
 <tr>
 <td>
 <input type="submit" name="restituisciprestito" value="<?php echo $lang['Restituisci_prestito']; ?>" />
@@ -92,3 +89,21 @@ echo $lang['restituzione_prestito']." ".$prestito; ?>
 </form>
 <br />
 <?php }/*fine se ha debiti*/ ?>
+<br />
+<br />
+<?php echo $lang['Lotteria']; ?><br />
+<?php echo $lang['desc_lotteria']; ?><br />
+<?php if ($userbank['lotteria']>0){ ?>
+<form action="" method="post" name="lotteria">
+<table border="0">
+<tr>
+<td>
+<input type="submit" name="comprabiglietto" value="<?php echo $lang['Compra_biglietto']; ?>" />
+</td>
+</tr>
+</table>
+</form>
+<br />
+<?php }else{/*fine se non ha il biglietto*/
+$lang['hai_gia_biglietto'];} ?>
+<br />
