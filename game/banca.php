@@ -15,7 +15,7 @@ $estratto=rand(0,($partecipanti['num']-1));
 $vincitore=$db->QuerySelect("SELECT userid FROM banca WHERE lotteria>0 LIMIT ".$estratto.",1");
 $db->QueryMod("UPDATE config SET lotteria='".$adesso."'");
 $db->QueryMod("UPDATE banca SET lotteria='0'");
-$db->QueryMod("UPDATE banca SET conto=conto+'".$partecipanti['num']."' WHERE userid='".$vincitore."'");
+$db->QueryMod("UPDATE banca SET conto=conto+'".$partecipanti['num']."' WHERE userid='".$vincitore['userid']."'");
 }//se c'è almeno un partecipante
 }//fine estrazione
 }//fine controllo se estrazione
