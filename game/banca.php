@@ -5,7 +5,20 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 }
 require('language/'.$language.'/lang_banca.php');
 $checklotteria = $db->QuerySelect("SELECT lotteria FROM config");
-if($checklotteria['lotteria']==0){$checklotteria['lotteria']=$adesso;}//else{}
+if($checklotteria['lotteria']==0){$db->QueryMod("UPDATE config SET lotteria='".$adesso."'");}else{
+if($checklotteria['lotteria']<($adesso+604800)){
+$partecipanti=$db->QuerySelect("SELECT COUNT(userid) AS num FROM banca WHERE lotteria>0");
+if($partecipanti['num']>0){
+$estratto=0;
+if($partecipanti['num']>1)
+$estratto=rand(0,($partecipanti['num']-1));
+$vincitore=$db->QuerySelect("SELECT userid FROM banca WHERE lotteria>0 LIMIT ".$estratto.",1");
+$db->QueryMod("UPDATE config SET lotteria='".$adesso."'");
+$db->QueryMod("UPDATE banca SET lotteria='0'");
+$db->QueryMod("UPDATE banca SET conto=conto+'".$partecipanti['num']."' WHERE userid='".$vincitore."'");
+}//se c'è almeno un partecipante
+}//fine estrazione
+}//fine controllo se estrazione
 $userbank=$db->QuerySelect("SELECT * FROM banca WHERE userid='".$user['userid']."' LIMIT 1");
 if (($userbank['interessi']+86400)<$adesso){
 	$differenzaora=$adesso-$userbank['interessi'];

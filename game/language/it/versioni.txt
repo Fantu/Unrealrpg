@@ -8,6 +8,7 @@ Legenda:<br />
 <br />
 </p>
 <p><strong>0.5.5</strong> (Non disponibile - In sviluppo)<br />
++ Aggiunta la lotteria<br />
 + Vari miglioramenti di sistema<br />
 + Altri vari miglioramenti<br />
 </p>
