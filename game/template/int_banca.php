@@ -93,6 +93,8 @@ echo $lang['restituzione_prestito']." ".$prestito; ?>
 <br />
 <?php echo $lang['Lotteria']; ?><br />
 <?php echo $lang['desc_lotteria']; ?><br />
+<?php echo $infopartecipanti; ?><br />
+<?php echo $infovincitore; ?><br />
 <?php if ($userbank['lotteria']==0){ ?>
 <form action="" method="post" name="lotteria">
 <table border="0">
@@ -106,7 +108,4 @@ echo $lang['restituzione_prestito']." ".$prestito; ?>
 <br />
 <?php }else{/*fine se non ha il biglietto*/
 echo $lang['hai_gia_biglietto'];} ?>
-<br />
-<?php echo $infopartecipanti; ?><br />
-<?php echo $infovincitore; ?><br />
 <br />
