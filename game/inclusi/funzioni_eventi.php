@@ -43,11 +43,12 @@ $salute+=$danni;
 $db->QueryMod("UPDATE lavori t1 JOIN utenti t2 on t1.userid=t2.userid JOIN caratteristiche t3 on t2.userid=t3.userid SET t1.ultimolavoro='".$adesso."',t1.oreultimolav='1',t3.expminatore=t3.expminatore+'".$exp."',t2.monete=t2.monete+'".$paga."',t3.energia=t3.energia-'".$energia."',t3.saluteattuale=t3.saluteattuale-'".$salute."',t3.recuperosalute='".$adesso."',t3.recuperoenergia='".$adesso."' WHERE t1.userid='".$userid."'");
 $db->QueryMod("UPDATE lavori t1 JOIN caratteristiche t3 on t1.userid=t3.userid SET t1.ultimolavoro='".$adesso."',t1.oreultimolav=t1.oreultimolav+'1',t3.expmagica=t3.expmagica+'".$exp."',t3.expelmagico".$elementosel."=t3.expelmagico".$elementosel."+'".$exp."',t3.energia=t3.energia-'".$energia."',t3.recuperosalute='".$adesso."',t3.recuperoenergia='".$adesso."' WHERE t1.userid='".$userid."'");
 if($ore>1){
+$errore="";
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");
 if ($usercar['energia']<100)
-$errore .= $lang['miniera_errore1'];
+$errore.=$lang['miniera_errore1'];
 if ($usercar['saluteattuale']<30)
-$errore .= $lang['miniera_errore2'];
+$errore.=$lang['miniera_errore2'];
 if($errore){
 $testo=$lang['Impossibile_lavorare_ancora']."<br />".$errore;
 $titolo=$lang['report_lavoro_nuova'];
