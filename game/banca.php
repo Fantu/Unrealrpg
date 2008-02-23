@@ -134,8 +134,9 @@ $db->QueryMod("UPDATE config SET banca=banca+'1'");
 }//fine compra biglietto lotteria
 $partecipanti=$db->QuerySelect("SELECT COUNT(userid) AS num FROM banca WHERE lotteria>0");
 $infopartecipanti=printf($lang['info_partecipanti'],$partecipanti['num']);
-$vincitore=$db->QuerySelect("SELECT COUNT(userid),userid AS num FROM banca WHERE vincitore>0 LIMIT 1");
+$vincitore=$db->QuerySelect("SELECT COUNT(userid) AS num FROM banca WHERE vincitore>0 LIMIT 1");
 if($vincitore['num']>0){
+$vincitore=$db->QuerySelect("SELECT userid AS num FROM banca WHERE vincitore>0 LIMIT 1");
 $vincitore=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$vincitore['userid']."' LIMIT 1");
 $nomevincitore=$vincitore['username'];}else
 {$nomevincitore=$lang['nessuno'];}
