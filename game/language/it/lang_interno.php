@@ -121,6 +121,8 @@ $lang['mail_cancellato_inattivita']='Ciao %s<br />Siamo spiacenti di informarti 
 //fine errori cancellazione/inattivit&agrave;
 
 $lang['outputerrori']='Si sono verificati i seguenti errori:';
+$lang['outputerrori_continualav']='Non &egrave; stato possibile continuare a lavorare per i seguenti motivi:';
+$lang['Impossibile_lavorare_ancora']='Impossibile_lavorare_ancora';
 $lang['nessun_evento']='Nessun evento in corso';
 $lang['error_eventi_incorso']='Sei occupato a fare altro';
 $lang['Stato']='Stato';
