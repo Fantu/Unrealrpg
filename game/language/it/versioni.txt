@@ -12,6 +12,7 @@ Legenda:<br />
 + Rifatto con possibilit&agrave; di lavorare fino a 3 ore di seguito il lavoro in Miniera nuova<br />
 + Vari miglioramenti di sistema<br />
 + Altri vari miglioramenti<br />
+- Corretti bug minori<br />
 </p>
 <p><strong>0.5.4</strong> [R.653] (19/2/2008 - Beta)<br />
 + Rifatto il sistema di tempo fra un lavoro ed un altro per renderlo compatibile con pi&ugrave; ore di lavoro contemporaneamente<br />
