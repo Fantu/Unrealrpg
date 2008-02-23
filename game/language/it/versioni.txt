@@ -1,7 +1,7 @@
 <br />
 <p>
 Legenda:<br />
-<strong>Versione</strong> [R. n° revisione ramo DEV] (Data di rilascio - Stato)<br />
+<strong>Versione</strong> [R. n&deg; revisione ramo DEV] (Data di rilascio - Stato)<br />
 + Aggiunte<br />
 # Modifiche<br />
 - Correzione bug e patch di situazioni non previste<br />
@@ -77,18 +77,18 @@ Legenda:<br />
 + Vari miglioramenti di sistema<br />
 + Vari miglioramenti di sicurezza<br />
 + Altri vari miglioramenti<br />
-# Rifatte le formule della salute persa in tutti i lavori, ora la casualità influisce molto di meno<br />
+# Rifatte le formule della salute persa in tutti i lavori, ora la casualit&agrave; influisce molto di meno<br />
 + Completata la bozza della prima parte di Fucina<br />
 + Ora anche la destrezza influisce nel lavoro e nella probabilit&agrave; di incidenti in fucina<br />
 + Ora anche l'intelligenza influisce leggermente nel lavoro in fucina<br />
 + Aggiunta al login la cancellazione dei messaggi letti di chiunque pi&ugrave; vecchi di una settimana<br />
 </p>
 <p><strong>0.4.12</strong> [R.533] (11/2/2008 - Beta)<br />
-+ Lavoro come alchimista in Laboratorio: ora se si riesce a fare la pozione con successo l'esperienza è doppia altrimenti è dimezzata<br />
++ Lavoro come alchimista in Laboratorio: ora se si riesce a fare la pozione con successo l'esperienza &egrave; doppia altrimenti &egrave; dimezzata<br />
 + Vari miglioramenti di sistema<br />
 + Vari miglioramenti di sicurezza<br />
 + Altri vari miglioramenti<br />
-# Rifatte le formule dei danni negli incidenti in tutti i lavori, ora la casualità influisce molto di meno<br />
+# Rifatte le formule dei danni negli incidenti in tutti i lavori, ora la casualit&agrave; influisce molto di meno<br />
 # Rivista la probabilit&agrave; di riuscire a distillare le pozioni, ora l'abilit&agrave; influisce maggiormente<br />
 + Aggiunto link indietro che mantiene anche ordine e pagina nella visualizzazione dettagliata dei personaggi<br />
 + Creata una nuova visualizzazione di data ed ora integrata nel sistema multilingua<br />
@@ -97,7 +97,7 @@ Legenda:<br />
 </p>
 <p><strong>0.4.11</strong> [R.512] (9/2/2008 - Beta)<br />
 # Rivisto il lavoro in Miniera vecchia, ora &egrave; pi&ugrave; equilibrato<br />
-# Rifatte le formule del guadagno di esperienza in tutti i lavori, ora la casualità influisce molto di meno<br />
+# Rifatte le formule del guadagno di esperienza in tutti i lavori, ora la casualit&agrave; influisce molto di meno<br />
 + Iniziata la creazione della seconda parte di Laboratorio<br />
 + Vari miglioramenti di sistema<br />
 + Vari miglioramenti di sicurezza<br />
@@ -311,10 +311,10 @@ Legenda:<br />
 - Ora in laboratorio viene scalato il mana rimanente e non quello totale<br />
 </p>
 <p><strong>0.3.2</strong> [R.245] (15/1/2008 - Beta)<br />
-+ Alcune aggiunte nella guida, al momento aggiungo contenuti linearmente poi più avanti li disporr&ograve; e scriver&ograve; meglio<br />
++ Alcune aggiunte nella guida, al momento aggiungo contenuti linearmente poi pi&ugrave; avanti li disporr&ograve; e scriver&ograve; meglio<br />
 + Inserito lo stato (online-offline) nella visualizzazione in dettaglio dell'utente<br />
 + Lavorando in laboratorio si consuma anche una piccola quantit&agrave; di mana<br />
-# Ora la paga del lavoro in laboratorio come apprendista è 6 monete ad ora<br />
+# Ora la paga del lavoro in laboratorio come apprendista &egrave; 6 monete ad ora<br />
 + Vari miglioramenti di sicurezza<br />
 + Inserito in situazione quando si potr&agrave; fare il prossimo lavoro<br />
 </p>
@@ -322,7 +322,7 @@ Legenda:<br />
 + Vari miglioramenti di sistema<br />
 + Vari miglioramenti di sicurezza<br />
 + Ora il controllo degli eventi in ogni pagina &egrave; su tutti gli eventi di qualsiasi utente che siano e se ce ne sono di completi ne risolve fino a 2<br />
-+ Se ci sono propri eventi in corso (per esempio si sta lavorando) non avvengono i recuperi di salute ed energia, la cosa è ancora imprecisa per il momento e non è possibile farla ben precisa finchè la gestione e risoluzione degli eventi non sar&agrave; svolta in pieno tempo reale<br />
++ Se ci sono propri eventi in corso (per esempio si sta lavorando) non avvengono i recuperi di salute ed energia, la cosa &egrave; ancora imprecisa per il momento e non &egrave; possibile farla ben precisa finch&egrave; la gestione e risoluzione degli eventi non sar&agrave; svolta in pieno tempo reale<br />
 </p>
 <p><strong>0.3.0</strong> [R.223] (12/1/2008 - Beta)<br />
 + Iniziata creazione sistema eventi<br />
@@ -330,7 +330,7 @@ Legenda:<br />
 + Creato il tipo di evento lavoro<br />
 + Aggiunta la visualizzazione dell'evento in corso in situazione, anche se nessuno in corso appare specificato<br />
 + Rifatto il lavoro in miniera nuova in tempo reale<br />
-+ Se ci sono eventi in corso non si può fare altro in banca, miniera e laboratorio<br />
++ Se ci sono eventi in corso non si pu&ograve; fare altro in banca, miniera e laboratorio<br />
 + Vari miglioramenti di sistema<br />
 + Rifatto il lavoro in laboratorio come apprendista in tempo reale<br />
 + Inserito il controllo dei propri eventi e la risoluzione se il tempo dell'evento &egrave; passato in ogni pagina<br />
@@ -346,7 +346,7 @@ Legenda:<br />
 </p>
 <p><strong>0.2.11</strong> [R.211] (10/1/2008 - Beta)<br />
 + Aggiunto il sesso tra le caratteristiche<br />
-+ Aggiunta la selezione del sesso nella creazione del personaggio, se non selezionato sarà non definito<br />
++ Aggiunta la selezione del sesso nella creazione del personaggio, se non selezionato sar&agrave; non definito<br />
 + Aggiunta la visualizzazione del sesso in situazione<br />
 + Aggiunta la visualizzazione del sesso nei dettagli sui personaggi<br />
 + Aggiunta la possibilit&agrave; di incidenti in laboratorio (esplosione delle pozioni che si stanno creando)<br />
@@ -378,7 +378,7 @@ Legenda:<br />
 <p><strong>0.2.8</strong> [R.198] (8/1/2008 - Beta)<br />
 + Ora il link al forum si apre in un altra pagina e aggiornato con il forum apposito appena creato<br />
 + Vari miglioramenti di sistema<br />
-+ Iniziata creazione guida integrata nel gioco e quindi con la possibilità di avere al suo interno parti dinamiche che si modificano quando vengono modificate parti del gioco e integrata nel sistema multilingua del gioco stesso per facilitarne le traduzioni<br />
++ Iniziata creazione guida integrata nel gioco e quindi con la possibilit&agrave; di avere al suo interno parti dinamiche che si modificano quando vengono modificate parti del gioco e integrata nel sistema multilingua del gioco stesso per facilitarne le traduzioni<br />
 + Inseriti nella guida i valori iniziale delle caratteristiche, le razze e le classi<br />
 </p>
 <p><strong>0.2.7</strong> [R.194] (7/1/2008 - Beta)<br />
@@ -389,7 +389,7 @@ Legenda:<br />
 <p><strong>0.2.6</strong> [R.190] (6/1/2008 - Beta)<br />
 + Aggiunta cancellazione propri messaggi letti pi&ugrave; vecchi di 2 giorni<br />
 + Vari miglioramenti di sistema<br />
-+ Aggiunto il link al forum, per ora è solo un topic<br />
++ Aggiunto il link al forum, per ora &egrave; solo un topic<br />
 + Aggiunto il livello per ogni utente nell'elenco utenti e ricerca<br />
 + Iniziata visualizzazione in dettaglio degli altri personaggi<br />
 + Aggiunto link a informazioni dettagliate per ogni utente nell'elenco utenti e ricerca sul nome<br />
@@ -459,7 +459,7 @@ Legenda:<br />
 <br />
 </p>
 <p><strong>0.1.2</strong> [R.83] (20/12/2007 - Beta)<br />
-- Corretta la quantità minima da prelevare (ora effettivamente 1) e il suo messaggio di errore<br />
+- Corretta la quantit&agrave; minima da prelevare (ora effettivamente 1) e il suo messaggio di errore<br />
 + Ogni operazione bancaria consuma 1 di energia<br />
 + Aggiunti gli interessi sul conto in banca, 0.5% ogni giorno effettivo, viene mantenuto anche il tempo restante<br />
 + Ogni deposito sul conto azzera il tempo degli interessi<br />

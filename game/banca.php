@@ -12,10 +12,13 @@ if($partecipanti['num']>0){
 $estratto=0;
 if($partecipanti['num']>1)
 $estratto=rand(0,($partecipanti['num']-1));
+$vincita=$partecipanti['num'];
+if($vincita>100)
+$vincita=100;
 $vincitore=$db->QuerySelect("SELECT userid FROM banca WHERE lotteria>0 LIMIT ".$estratto.",1");
-$db->QueryMod("UPDATE config SET lotteria='".$adesso."'");
-$db->QueryMod("UPDATE banca SET lotteria='0'");
-$db->QueryMod("UPDATE banca SET conto=conto+'".$partecipanti['num']."' WHERE userid='".$vincitore['userid']."'");
+$db->QueryMod("UPDATE config SET lotteria='".$adesso."', banca=banca-'".$vincita."'");
+$db->QueryMod("UPDATE banca SET lotteria='0',vincitore='0'");
+$db->QueryMod("UPDATE banca SET conto=conto+'".$vincita."',vincitore='1' WHERE userid='".$vincitore['userid']."'");
 }//se c'è almeno un partecipante
 }//fine estrazione
 }//fine controllo se estrazione
@@ -126,9 +129,17 @@ if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
 else {
 $db->QueryMod("UPDATE banca t1 JOIN caratteristiche t3 on t1.userid=t3.userid SET t1.conto=t1.conto-'1',t1.lotteria='1',t3.energia=t3.energia-'1' WHERE t1.userid='".$user['userid']."'");
+$db->QueryMod("UPDATE config SET banca=banca+'1'");
 }
 }//fine compra biglietto lotteria
-
+$partecipanti=$db->QuerySelect("SELECT COUNT(userid) AS num FROM banca WHERE lotteria>0");
+$infopartecipanti=printf($lang['info_partecipanti'],$partecipanti['num']);
+$vincitore=$db->QuerySelect("SELECT COUNT(userid),userid AS num FROM banca WHERE vincitore>0 LIMIT 1");
+if($vincitore['num']>0){
+$vincitore=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$vincitore['userid']."' LIMIT 1");
+$nomevincitore=$vincitore['username'];}else
+{$nomevincitore=$lang['nessuno'];}
+$infovincitore=printf($lang['info_vincitore'],$nomevincitore);
 $userbank=$db->QuerySelect("SELECT * FROM banca WHERE userid='".$user['userid']."' LIMIT 1");
 $prestito=$userbank['prestito']+(floor(($userbank['prestito']/100)*10));
 $user=$db->QuerySelect("SELECT * FROM utenti WHERE userid='".$user['userid']."' LIMIT 1");

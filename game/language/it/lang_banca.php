@@ -27,4 +27,6 @@ $lang['Lotteria']='Lotteria';
 $lang['desc_lotteria']='La lotteria &egrave; organizzata dalla banca, puoi comprare un biglietto ogni estrazione pagando 1 moneta dal conto e l`estrazione avviene 1 volta a settimana, maggiori sono i partecipanti e maggiore sono le monete in palio fino ad un massimo di 100';
 $lang['Compra_biglietto']='Compra un biglietto';
 $lang['hai_gia_biglietto']='Hai gi&agrave; un biglietto';
+$lang['info_partecipanti']='Ci sono %s partecipanti';
+$lang['info_vincitore']='Il vincitore della scorsa estrazione &egrave;: %s';
 ?>
