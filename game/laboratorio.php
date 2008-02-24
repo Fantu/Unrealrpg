@@ -17,6 +17,7 @@ $pozioni[$oggpozione['id']]=$lang['oggetto'.$oggpozione['id'].'_nome'];
 }//fine può tentare di produrre almeno 1 pozione
 if (isset($_POST['lavoralabapp'])){
 $errore="";
+$ore=(int)$_POST['ore'];
 $userlav=$db->QuerySelect("SELECT * FROM lavori WHERE userid='".$user['userid']."' LIMIT 0,1");
 if ($usercar['energia']<100)
 $errore .= $lang['lab_errore1'];
@@ -28,10 +29,13 @@ if ($usercar['mana']<10)
 $errore .= $lang['lab_errore4'];
 if ($eventi['id']>0)
 $errore .= $lang['global_errore1'];
+if($ore<1 OR $ore>3)
+$errore.=$lang['global_errore2'];
 if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
 else {
-$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,lavoro) VALUES ('".$user['userid']."','".$adesso."','3600','2','1','2')");	
+$db->QueryMod("UPDATE lavori SET oreultimolav='0' WHERE userid='".$user['userid']."' LIMIT 1");
+$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,lavoro,ore) VALUES ('".$user['userid']."','".$adesso."','3600','2','1','2','".$ore."')");	
 echo "<script language=\"javascript\">window.location.href='game.php?act=situazione'</script>";
 exit();	
 }

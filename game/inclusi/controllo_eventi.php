@@ -15,13 +15,13 @@ while($evento=$db->QueryCicloResult($evfiniti)) {
 			Completalavminnuova($evento['userid'],$evento['ore']);
 			break;
 			case 2://apprendista in laboratorio
-			Completalavlabapp($evento['userid']);
+			Completalavlabapp($evento['userid'],$evento['ore']);
 			break;
 			case 3://miniera vecchia
 			Completalavminvecchia($evento['userid']);
 			break;
 			case 4://apprendista fabbro
-			Completalavfucapp($evento['userid']);
+			Completalavfucapp($evento['userid'],$evento['ore']);
 			break;
 			case 5://alchimista in laboratorio
 			Completalavlabalc($evento['userid'],$evento['oggid']);

@@ -60,7 +60,7 @@ $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,lavor
 }//fine se la coda ha almeno un altra ora
 } //fine Completalavminnuova
 
-function Completalavlabapp($userid) {
+function Completalavlabapp($userid,$ore) {
 global $db,$adesso,$lang,$language;
 require_once('language/'.$language.'/lang_laboratorio.php');
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");
@@ -96,6 +96,25 @@ $titolo=$lang['report_lavoro_labapp'];
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");
 $salute+=$danni;
 $db->QueryMod("UPDATE lavori t1 JOIN utenti t2 on t1.userid=t2.userid JOIN caratteristiche t3 on t2.userid=t3.userid SET t1.ultimolavoro='".$adesso."',t1.oreultimolav='1',t3.expalchimista=t3.expalchimista+'".$exp."',t2.monete=t2.monete+'".$paga."',t3.energia=t3.energia-'".$energia."',t3.saluteattuale=t3.saluteattuale-'".$salute."',t3.recuperosalute='".$adesso."',t3.recuperoenergia='".$adesso."',t3.manarimasto=t3.manarimasto-'".$mana."' WHERE t1.userid='".$userid."'");
+if($ore>1){
+$errore="";
+$usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");
+if ($usercar['energia']<100)
+$errore .= $lang['lab_errore1'];
+if ($usercar['saluteattuale']<30)
+$errore .= $lang['lab_errore2'];
+if ($usercar['mana']<10)
+$errore .= $lang['lab_errore4'];
+if($errore){
+$testo=$lang['Impossibile_lavorare_ancora']."<br />".$errore;
+$titolo=$lang['report_lavoro_nuova'];
+$db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");
+}
+else {
+$ore--;
+$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,lavoro,ore) VALUES ('".$userid."','".$adesso."','3600','2','1','2','".$ore."')");
+}//fine continua lavoro
+}//fine se la coda ha almeno un altra ora
 } //fine Completalavlabapp
 
 function Completatempioprega($userid) {
@@ -203,7 +222,7 @@ $salute+=$danni;
 $db->QueryMod("UPDATE lavori t1 JOIN utenti t2 on t1.userid=t2.userid JOIN caratteristiche t3 on t2.userid=t3.userid SET t1.ultimolavoro='".$adesso."',t1.oreultimolav='1',t3.expminatore=t3.expminatore+'".$exp."',t3.energia=t3.energia-'".$energia."',t3.saluteattuale=t3.saluteattuale-'".$salute."',t3.recuperosalute='".$adesso."',t3.recuperoenergia='".$adesso."' WHERE t1.userid='".$userid."'");
 } //fine Completalavminvecchia
 
-function Completalavfucapp($userid) {
+function Completalavfucapp($userid,$ore) {
 global $db,$adesso,$lang,$language;
 require_once('language/'.$language.'/lang_fucina.php');
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");	
@@ -237,7 +256,7 @@ $testo="<span>".sprintf($lang['report_lav_fuc_app'],$paga,$exp,$energia,$salute)
 $titolo=$lang['report_lavoro_fucina_app'];
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");
 $salute+=$danni;
-$db->QueryMod("UPDATE lavori t1 JOIN utenti t2 on t1.userid=t2.userid JOIN caratteristiche t3 on t2.userid=t3.userid SET t1.ultimolavoro='".$adesso."',t1.oreultimolav='1',t3.expfabbro=t3.expfabbro+'".$exp."',t2.monete=t2.monete+'".$paga."',t3.energia=t3.energia-'".$energia."',t3.saluteattuale=t3.saluteattuale-'".$salute."',t3.recuperosalute='".$adesso."',t3.recuperoenergia='".$adesso."' WHERE t1.userid='".$userid."'");
+$db->QueryMod("UPDATE lavori t1 JOIN utenti t2 on t1.userid=t2.userid JOIN caratteristiche t3 on t2.userid=t3.userid SET t1.ultimolavoro='".$adesso."',t1.oreultimolav=t1.oreultimolav+'1',t3.expfabbro=t3.expfabbro+'".$exp."',t2.monete=t2.monete+'".$paga."',t3.energia=t3.energia-'".$energia."',t3.saluteattuale=t3.saluteattuale-'".$salute."',t3.recuperosalute='".$adesso."',t3.recuperoenergia='".$adesso."' WHERE t1.userid='".$userid."'");
 } //fine Completalavfucapp
 
 function Completalavlabalc($userid,$pozionesel) {
