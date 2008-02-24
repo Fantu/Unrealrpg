@@ -49,8 +49,8 @@ $errore.=$lang['miniera_errore1'];
 if ($usercar['saluteattuale']<30)
 $errore.=$lang['miniera_errore2'];
 if($errore){
-$testo=$lang['Impossibile_lavorare_ancora']."<br />".$errore;
-$titolo=$lang['report_lavoro_nuova'];
+$testo=$lang['outputerrori_continualav']."<br />".$errore;
+$titolo=$lang['Impossibile_lavorare_ancora'];
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");
 }
 else {
@@ -106,8 +106,8 @@ $errore .= $lang['lab_errore2'];
 if ($usercar['mana']<10)
 $errore .= $lang['lab_errore4'];
 if($errore){
-$testo=$lang['Impossibile_lavorare_ancora']."<br />".$errore;
-$titolo=$lang['report_lavoro_nuova'];
+$testo=$lang['outputerrori_continualav']."<br />".$errore;
+$titolo=$lang['Impossibile_lavorare_ancora'];
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");
 }
 else {
