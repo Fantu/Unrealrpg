@@ -43,8 +43,8 @@ exit();
 if (isset($_POST['lavoralabalc'])){
 $errore="";
 $poziones=(int)$_POST['pozione'];
-$usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$user['userid']."' LIMIT 0,1");
-$userlav=$db->QuerySelect("SELECT * FROM lavori WHERE userid='".$user['userid']."' LIMIT 0,1");
+$usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$user['userid']."' LIMIT 1");
+$userlav=$db->QuerySelect("SELECT * FROM lavori WHERE userid='".$user['userid']."' LIMIT 1");
 if ($usercar['energia']<100)
 $errore .= $lang['lab_errore1'];
 if ($usercar['saluteattuale']<30)
