@@ -12,6 +12,7 @@ Legenda:<br />
 + Rifatto con possibilit&agrave; di lavorare fino a 3 ore di seguito il lavoro in Fucina come apprendista<br />
 + Vari miglioramenti di sistema<br />
 + Miglioramenti ai testi<br />
+- Patch nel sistema messaggi: risolto un caso imprevisto che impediva la spedizione dei messaggi nonostante erano giusti<br />
 - Corretti bug minori<br />
 </p>
 <p><strong>0.5.5.1</strong> (23/2/2008 - Beta)<br />
