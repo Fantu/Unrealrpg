@@ -9,6 +9,7 @@ $user=$db->QuerySelect("SELECT * FROM utenti WHERE userid='".$lg[0]."' AND passw
 if($user['userid']) {
 $db->QueryMod("UPDATE utenti SET ultimazione='".$adesso."' WHERE userid='".$user['userid']."'");
 require_once('inclusi/controllo_eventi.php');
+Controllaeventi(2);
 $eventi=$db->QuerySelect("SELECT COUNT(*) AS id FROM eventi WHERE userid='".$user['userid']."'");
 if($user['personaggio']==1) {
 if(($user['refertime']!=0) AND ($user['refertime']<$adesso)){
