@@ -7,7 +7,10 @@ Legenda:<br />
 - Correzione bug e patch di situazioni non previste<br />
 <br />
 </p>
-<p><strong>0.5.6</strong> (Non disponibile - In sviluppo)<br />
+<p><strong>0.5.7</strong> (25/2/2008 - Beta)<br />
+Niente attualmente<br />
+</p>
+<p><strong>0.5.6</strong> [R.693] (Non disponibile - In sviluppo)<br />
 + Rifatto con possibilit&agrave; di lavorare fino a 3 ore di seguito il lavoro in Laboratorio come apprendista<br />
 + Rifatto con possibilit&agrave; di lavorare fino a 3 ore di seguito il lavoro in Fucina come apprendista<br />
 + Ogni server &egrave; impostato per un unica lingua definita alla creazione di tale<br />
