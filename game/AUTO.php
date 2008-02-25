@@ -1,0 +1,15 @@
+<?php
+if($_GET['code']!='autourbg'){
+	header("Location: index.php?error=16");
+	exit();}
+require('inclusi/valori.php');
+require('inclusi/funzioni_db.php');
+$db = new ConnessioniMySQL();
+$int_security=$game_se_code;
+foreach($game_server as $chiave=>$elemento){
+$language=$game_server_lang[$chiave];
+require('language/'.$language.'/lang_interno.php');
+require_once('inclusi/controllo_eventi.php');
+Controllaeventi(3);
+}//fine ogni server
+?>

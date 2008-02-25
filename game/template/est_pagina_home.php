@@ -11,8 +11,9 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 			<td><input name="login_username" type="text" maxlength="25" /></td>
 			<td><?php echo $lang['Server']; ?></td>
 			<td><select name="login_server">
-			<?php foreach($game_server as $chiave=>$elemento)
-			  echo "<option value=\"$chiave\">$elemento</option>"; ?>
+			<?php foreach($game_server as $chiave=>$elemento){
+				if($language==$game_server_lang[$chiave])
+			  	echo "<option value=\"$chiave\">$elemento</option>";} ?>
 			</select></td>
 		  </tr>
 		  <tr>
@@ -48,8 +49,9 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
             <td>
 			<select name="server" id="server">
               <option value="-1" selected="selected">--------</option>
-              <?php foreach($game_server as $chiave=>$elemento)
-			  echo "<option value=\"$chiave\">$elemento</option>"; ?>
+              <?php foreach($game_server as $chiave=>$elemento){
+	          if($language==$game_server_lang[$chiave])
+			  echo "<option value=\"$chiave\">$elemento</option>";} ?>
             </select></td>
           </tr>
           <tr>

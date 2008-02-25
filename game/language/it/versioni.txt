@@ -10,6 +10,9 @@ Legenda:<br />
 <p><strong>0.5.6</strong> (Non disponibile - In sviluppo)<br />
 + Rifatto con possibilit&agrave; di lavorare fino a 3 ore di seguito il lavoro in Laboratorio come apprendista<br />
 + Rifatto con possibilit&agrave; di lavorare fino a 3 ore di seguito il lavoro in Fucina come apprendista<br />
++ Ogni server &egrave; impostato per un unica lingua definita alla creazione di tale<br />
++ Ora vengono mostrati solo i server della ligua selezionata<br />
++ Creato sistema di risoluzione automatica degli eventi, impostato a 3 eventi per server ogni richiamo e richiamato per ora 1 volta ad ora<br />
 + Vari miglioramenti di sistema<br />
 + Miglioramenti ai testi<br />
 - Patch nel sistema messaggi: risolto un caso imprevisto che impediva la spedizione dei messaggi nonostante fossero giusti<br />
