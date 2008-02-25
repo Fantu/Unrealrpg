@@ -8,7 +8,7 @@ function Controllaeventi($numeventi) {
 global $db,$adesso;
 $evfiniti=$db->QuerySelect("SELECT COUNT(*) AS id FROM eventi WHERE ((datainizio+secondi)<'".$adesso."')");
 if ($evfiniti['id']>0){//controllo gli eventi finiti
-$evfiniti=$db->QueryCiclo("SELECT * FROM eventi WHERE ((datainizio+secondi)<'".$adesso."') LIMIT '".$numeventi."'");
+$evfiniti=$db->QueryCiclo("SELECT * FROM eventi WHERE ((datainizio+secondi)<'".$adesso."') LIMIT ".$numeventi);
 while($evento=$db->QueryCicloResult($evfiniti)) {
 		switch($evento['tipo']){
 		case 1://lavori
