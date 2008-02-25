@@ -26,7 +26,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 				if(!eregi("^.+@.+\..{2,3}$",$_POST['email']))	
 					$errore.=$lang['reg_error7'];
 			if( empty($errore) ) {
-				$username=htmlentities($_POST['username']);
+				$username=htmlspecialchars($_POST['username']);
 				$a=$db->QuerySelect("SELECT maxutenti AS Max, utenti AS Ut FROM config WHERE id='".$server."'");	
 				$a2=$db->QuerySelect("SELECT COUNT(*) AS Us1 FROM utenti WHERE username='".$username."'");				
 				if($a2['Us1']>0)
@@ -44,7 +44,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 				$refer=0;
 				$refertime=0;
 				if($_COOKIE['urbgrefer']){
-				$refer=htmlentities($_COOKIE['urbgrefer']);
+				$refer=htmlspecialchars($_COOKIE['urbgrefer']);
 				$refertime=$adesso+172800;
 				}
 				$db->QueryMod("INSERT INTO utenti (username,password,codice,email,dataiscrizione,ipreg,server,ultimazione,refer,refertime,ultimologin) VALUES ('".$username."','".$pass."','".$cod."','".$_POST['email']."','".$adesso."','".$ip."','".$server."','".$adesso."','".$refer."','".$refertime."','".$adesso."')");

@@ -17,7 +17,7 @@ Niente attualmente<br />
 + Rifatto con possibilit&agrave; di lavorare fino a 3 ore di seguito il lavoro in Laboratorio come apprendista<br />
 + Rifatto con possibilit&agrave; di lavorare fino a 3 ore di seguito il lavoro in Fucina come apprendista<br />
 + Ogni server &egrave; impostato per un unica lingua definita alla creazione di tale<br />
-+ Ora vengono mostrati solo i server della ligua selezionata<br />
++ Ora vengono mostrati solo i server della lingua selezionata<br />
 + Creato sistema di risoluzione automatica degli eventi, impostato a 3 eventi per server ogni richiamo e richiamato per ora 1 volta ad ora<br />
 + Vari miglioramenti di sistema<br />
 + Miglioramenti ai testi<br />

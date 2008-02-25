@@ -13,8 +13,8 @@ if($esistenza==0){
 	exit();
 } else{
 $db->database=$server;	
-$username=htmlentities($_POST['login_username']);
-$password=htmlentities($_POST['login_password']);
+$username=htmlspecialchars($_POST['login_username']);
+$password=htmlspecialchars($_POST['login_password']);
 $user=$db->QuerySelect("SELECT count(userid) AS numero FROM utenti WHERE username='".$username."' AND password='".md5($password)."' LIMIT 1");
 }
 if($user['numero']==0) {

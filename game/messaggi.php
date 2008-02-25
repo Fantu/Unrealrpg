@@ -62,7 +62,7 @@ case "dorisp":// invia risposta
 		$a=$db->QuerySelect("SELECT titolo,mittenteid FROM messaggi WHERE id='".$msgid."'");
 		$titolo="RE: ".$a['titolo'];
 		$messaggio=htmlspecialchars($_POST['mymess']);
-		$messaggio=str_replace("'","`",$messaggio);
+		//$messaggio=str_replace("'","`",$messaggio);
 		$db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$a['mittenteid']."','".$titolo."','".$messaggio."','".$user['userid']."','".$adesso."')");
 		echo "<script language=\"javascript\">window.location.href='game.php?act=messaggi'</script>";
 		exit();		
@@ -85,9 +85,9 @@ case "doscrivi":// invia nuovo messaggio
 	echo $outputerrori;}
 	else {
 		$titolo=htmlspecialchars($_POST['titolo']);
-		$titolo=str_replace("'","`",$titolo);
+		//$titolo=str_replace("'","`",$titolo);
 		$messaggio=htmlspecialchars($_POST['mymess']);
-		$messaggio=str_replace("'","`",$messaggio);
+		//$messaggio=str_replace("'","`",$messaggio);
 		$achi=(int)$_POST['achi'];
 		$db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$achi."','".$titolo."','".$messaggio."','".$user['userid']."','".$adesso."')");
 		$db->QueryMod("DELETE FROM messaggi WHERE id='".$id."'");
