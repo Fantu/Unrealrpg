@@ -7,6 +7,7 @@ require('inclusi/funzioni_db.php');
 $db = new ConnessioniMySQL();
 $int_security=$game_se_code;
 foreach($game_server as $chiave=>$elemento){
+$db->database=$chiave;
 $language=$game_server_lang[$chiave];
 require('language/'.$language.'/lang_interno.php');
 require_once('inclusi/controllo_eventi.php');
