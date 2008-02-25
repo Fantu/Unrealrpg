@@ -15,6 +15,7 @@ Legenda:<br />
 + Creato sistema di risoluzione automatica degli eventi, impostato a 3 eventi per server ogni richiamo e richiamato per ora 1 volta ad ora<br />
 + Vari miglioramenti di sistema<br />
 + Miglioramenti ai testi<br />
+# Modificata la codifica da latin1 a utf-8<br />
 - Patch nel sistema messaggi: risolto un caso imprevisto che impediva la spedizione dei messaggi nonostante fossero giusti<br />
 - Corretti bug minori<br />
 </p>
