@@ -293,7 +293,6 @@ $salute=1;
 $exp=floor($usercar['saluteattuale']/10+$usercar['energia']/100+$usercar['attmagico']/5+$usercar['intelligenza']/15);
 $exp=floor(rand(($exp/100*75),$exp));
 $exp+=(5*$usercar['alchimista']);
-$testo=sprintf($lang['report_lavlabalc'],$exp,$energia,$salute,$mana,$costo)."<br />";
 $bonusabilita=$usercar['alchimista']-$pozione['abilitanec'];
 if($bonusabilita>0)
 $bonusabilita=$bonusabilita*30;
@@ -311,14 +310,16 @@ $testo2="<span>".sprintf($lang['report_esplosione_lab2'],$danni)."</span>";
 }
 $titolo=$lang['report_esplosione_laboratorio'];
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo2."','0','".$adesso."')");	
-$testo.=$lang['report_lavlab_pozione_no']."<br />";
+$testo3=$lang['report_lavlab_pozione_no']."<br />";
 $exp=floor($exp/2);
 }/*fine esplosione*/else{
 $exp=$exp*2;
 $db->QueryMod("INSERT INTO inoggetti (oggid,userid) VALUES ('".$pozione['id']."','".$userid."')");
 $nomepozione=$lang['oggetto'.$pozione['id'].'_nome'];
-$testo.=sprintf($lang['report_lavlab_pozione_si'],$nomepozione)."<br />";
+$testo3=sprintf($lang['report_lavlab_pozione_si'],$nomepozione)."<br />";
 }//fine pozione riuscita
+$testo=sprintf($lang['report_lavlabalc'],$exp,$energia,$salute,$mana,$costo)."<br />";
+$testo.=$testo3;
 $oggpersi=Checkusurarottura($userid);
 $testo="<span>".$testo.$oggpersi."</span>";
 $titolo=$lang['report_lavoro_labalc'];
