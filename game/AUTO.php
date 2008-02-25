@@ -5,6 +5,7 @@ if($_GET['code']!='autourbg'){
 require('inclusi/valori.php');
 require('inclusi/funzioni_db.php');
 $db = new ConnessioniMySQL();
+$adesso=strtotime("now");
 $int_security=$game_se_code;
 foreach($game_server as $chiave=>$elemento){
 $db->database=$chiave;
