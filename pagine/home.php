@@ -55,8 +55,8 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 			}
 		}
 foreach($game_server as $chiave=>$elemento){
-$infoserver['nome'][$chiave]=$elemento;
 if($language==$game_server_lang[$chiave]){
+$infoserver['nome'][$chiave]=$elemento;
 $db->database=$chiave;
 $utenti=$db->QuerySelect("SELECT COUNT(*) AS id FROM utenti");
 $infoserver['utenti'][$chiave]=$utenti['id'];
