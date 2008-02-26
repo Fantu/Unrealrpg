@@ -8,7 +8,10 @@ Legenda:<br />
 <br />
 </p>
 <p><strong>0.5.7</strong> (Non disponibile - In sviluppo)<br />
-Niente attualmente<br />
++ Aggiunta la visualizzazione della data della prossima estrazione della lotteria<br />
++ Controllo eventi in automatico ogni mezz'ora al posto di 1 ora<br />
++ Vari miglioramenti di sistema<br />
++ Vari miglioramenti di sicurezza<br />
 </p>
 <p><strong>0.5.6.1</strong> (25/2/2008 - Beta)<br />
 - Patch nel sistema messaggi: ora non ci dovrebbero pi&egrave; essere problemi di codifica<br />

@@ -9,8 +9,8 @@ require('game/inclusi/funzioni_db.php');
 $db = new ConnessioniMySQL();
 $adesso=strtotime("now");
 if(!empty($_GET['refer'])){
-$refer=htmlentities($_GET['refer']);
-$server=htmlentities($_GET['server']);
+$refer=htmlspecialchars($_GET['refer'],ENT_QUOTES);
+$server=htmlspecialchars($_GET['server'],ENT_QUOTES);
 if(is_numeric($refer) AND is_numeric($server))
 setcookie ("urbgrefer", $refer."|".$server,time()+604800);
 }

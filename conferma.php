@@ -17,7 +17,7 @@ if(!$_GET['cod']) {
 	header("Location: index.php?error=5");
 	exit();
 }
-$code=htmlentities($_GET['cod']);
+$code=htmlspecialchars($_GET['cod'],ENT_QUOTES);
 $a=$db->QuerySelect("SELECT userid,conferma,server FROM utenti WHERE codice='".$code."' LIMIT 1");
 
 if(!$a['userid']) {

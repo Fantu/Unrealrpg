@@ -2,13 +2,13 @@
 require('game/inclusi/valori.php');
 $adesso=strtotime("now");
 if(!empty($_GET['refer'])){
-$refer=htmlentities($_GET['refer']);
-$server=htmlentities($_GET['server']);
+$refer=htmlspecialchars($_GET['refer'],ENT_QUOTES);
+$server=htmlspecialchars($_GET['server'],ENT_QUOTES);
 if(is_numeric($refer) AND is_numeric($server))
 setcookie ("urbgrefer", $refer."|".$server,time()+604800);
 }
 if($_COOKIE['urbglanguage']){
-$language=htmlentities($_COOKIE['urbglanguage']);
+$language=htmlspecialchars($_COOKIE['urbglanguage'],ENT_QUOTES);
 $link="index_".$language.".php";
 if($_GET['error']){
 $errore=(int)$_GET['error'];
