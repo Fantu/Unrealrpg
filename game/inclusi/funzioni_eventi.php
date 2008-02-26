@@ -185,10 +185,10 @@ $testo="<span>".sprintf($lang['report_incidente_min2'],$danni)."</span>";
 $titolo=$lang['report_incidente_miniera'];
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");	
 }//fine incidente
-$piccone=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$piccone."' LIMIT 1");
+$piccone2=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$piccone."' LIMIT 1");
 $efficenza=($usercar['minatore']*1000)+($usercar['attfisico']*2);
-$efficenza+=($efficenza/100*$piccone['bonuseff']);
-$energia+=$piccone['energia'];
+$efficenza+=($efficenza/100*$piccone2['bonuseff']);
+$energia+=$piccone2['energia'];
 $trovare=rand(0,10000)-$efficenza;
 if($trovare<10){
 $trovato=1;}else{
@@ -239,7 +239,7 @@ $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES
 }
 else {
 $ore--;
-$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,lavoro,ore,oggid) VALUES ('".$userid."','".$adesso."','3600','5','1','3','".$ore."','".$piccone."')");
+$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,lavoro,oggid,ore) VALUES ('".$userid."','".$adesso."','3600','5','1','3','".$piccone."','".$ore."')");
 }//fine continua lavoro
 }//fine se la coda ha almeno un altra ora
 } //fine Completalavminvecchia
