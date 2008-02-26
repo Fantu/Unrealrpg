@@ -56,6 +56,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 		}
 foreach($game_server as $chiave=>$elemento){
 $infoserver['nome'][$chiave]=$elemento;
+if($language==$game_server_lang[$chiave]){
 $db->database=$chiave;
 $utenti=$db->QuerySelect("SELECT COUNT(*) AS id FROM utenti");
 $infoserver['utenti'][$chiave]=$utenti['id'];
@@ -69,6 +70,7 @@ $infoserver['online'][$chiave]=$online['id'];
 $seonline=$adesso-86400;
 $online=$db->QuerySelect("SELECT COUNT(*) AS id FROM utenti WHERE ultimazione>'".$seonline."'");
 $infoserver['online24'][$chiave]=$online['id'];
+}
 }//fine info server
 require('game/template/est_pagina_home.php');	  
 ?>
