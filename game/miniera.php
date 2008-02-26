@@ -42,6 +42,7 @@ exit();
 }//fine lavora in miniera nuova
 if (isset($_POST['lavorainvecchia'])){
 $errore="";
+$ore=(int)$_POST['ore'];
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$user['userid']."' LIMIT 1");
 $userlav=$db->QuerySelect("SELECT * FROM lavori WHERE userid='".$user['userid']."' LIMIT 1");
 if ($usercar['energia']<200)
@@ -50,8 +51,8 @@ if ($usercar['saluteattuale']<30)
 $errore .= $lang['miniera_errore2'];
 if ($adesso<($userlav['ultimolavoro']+$tempoproxlav))
 $errore .= $lang['miniera_errore3'];
-$torcia=$db->QuerySelect("SELECT count(*) AS numero FROM inoggetti WHERE userid='".$user['userid']."' AND oggid='1' LIMIT 1");
-if ($torcia['numero']<1)
+$torcia=$db->QuerySelect("SELECT count(*) AS numero FROM inoggetti WHERE userid='".$user['userid']."' AND oggid='1'");
+if ($torcia['numero']<$ore)
 $errore .= $lang['miniera_errore4'];
 $piccone=(int)$_POST['piccone'];
 if ($piccone<1)
@@ -63,12 +64,12 @@ if ($usercar['minatore']<1)
 $errore .= $lang['miniera_errore7'];
 if ($eventi['id']>0)
 $errore .= $lang['global_errore1'];
+if($ore<1 OR $ore>3)
+$errore.=$lang['global_errore2'];
 if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
 else {
-$db->QueryMod("UPDATE inoggetti SET inuso='1' WHERE userid='".$user['userid']."' AND oggid='".$piccone."' ORDER BY usura DESC LIMIT 1");	
-$db->QueryMod("UPDATE inoggetti SET inuso='1' WHERE userid='".$user['userid']."' AND oggid='1' ORDER BY usura DESC LIMIT 1");
-$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,lavoro) VALUES ('".$user['userid']."','".$adesso."','3600','5','1','3')");	
+$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,lavoro,oggid,ore) VALUES ('".$user['userid']."','".$adesso."','3600','5','1','3','".$piccone."','".$ore."')");	
 echo "<script language=\"javascript\">window.location.href='game.php?act=situazione'</script>";
 exit();
 }

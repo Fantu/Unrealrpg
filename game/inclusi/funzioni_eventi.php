@@ -154,8 +154,10 @@ global $db,$adesso;
 $db->QueryMod("UPDATE utenti t2 JOIN caratteristiche t3 on t2.userid=t3.userid SET t2.resuscita='0',t3.energia=t3.energiamax,t3.saluteattuale=t3.salute,t3.recuperoenergia='".$adesso."',t3.recuperosalute='".$adesso."',t3.decfede='".$adesso."',t3.manarimasto=t3.mana WHERE t2.userid='".$userid."'");
 } //fine Completaresurrezione
 
-function Completalavminvecchia($userid) {
+function Completalavminvecchia($userid,$piccone,$ore) {
 global $db,$adesso,$lang,$language;
+$db->QueryMod("UPDATE inoggetti SET inuso='1' WHERE userid='".$userid."' AND oggid='".$piccone."' ORDER BY usura DESC LIMIT 1");	
+$db->QueryMod("UPDATE inoggetti SET inuso='1' WHERE userid='".$userid."' AND oggid='1' ORDER BY usura DESC LIMIT 1");
 require_once('language/'.$language.'/lang_miniera.php');
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");	
 $energia=70-(5*$usercar['minatore']);
@@ -183,7 +185,7 @@ $testo="<span>".sprintf($lang['report_incidente_min2'],$danni)."</span>";
 $titolo=$lang['report_incidente_miniera'];
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");	
 }//fine incidente
-$piccone=$db->QuerySelect("SELECT t1.oggid AS oggid,t2.bonuseff AS bonuseff,t2.energia AS energia FROM inoggetti AS t1 JOIN oggetti t2 ON t1.oggid=t2.id WHERE t1.userid='".$userid."' AND t2.tipo='2' AND t2.categoria='1'  AND t1.inuso='1' LIMIT 1");
+$piccone=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$piccone."' LIMIT 1");
 $efficenza=($usercar['minatore']*1000)+($usercar['attfisico']*2);
 $efficenza+=($efficenza/100*$piccone['bonuseff']);
 $energia+=$piccone['energia'];
@@ -220,6 +222,26 @@ $titolo=$lang['report_lavoro_vecchia'];
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");
 $salute+=$danni;
 $db->QueryMod("UPDATE lavori t1 JOIN utenti t2 on t1.userid=t2.userid JOIN caratteristiche t3 on t2.userid=t3.userid SET t1.ultimolavoro='".$adesso."',t1.oreultimolav='1',t3.expminatore=t3.expminatore+'".$exp."',t3.energia=t3.energia-'".$energia."',t3.saluteattuale=t3.saluteattuale-'".$salute."',t3.recuperosalute='".$adesso."',t3.recuperoenergia='".$adesso."' WHERE t1.userid='".$userid."'");
+if($ore>1){
+$errore="";
+$usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");
+if ($usercar['energia']<200)
+$errore .= $lang['miniera_errore1'];
+if ($usercar['saluteattuale']<30)
+$errore .= $lang['miniera_errore2'];
+$picconesel=$db->QuerySelect("SELECT COUNT(id) AS num FROM inoggetti WHERE oggid='".$piccone."' AND userid='".$userid."'");
+if ($picconesel['num']<1)
+$errore.=$lang['miniera_errore5'];
+if($errore){
+$testo=$lang['outputerrori_continualav']."<br />".$errore;
+$titolo=$lang['Impossibile_lavorare_ancora'];
+$db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");
+}
+else {
+$ore--;
+$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,lavoro,ore,oggid) VALUES ('".$userid."','".$adesso."','3600','5','1','3','".$ore."','".$piccone."')");
+}//fine continua lavoro
+}//fine se la coda ha almeno un altra ora
 } //fine Completalavminvecchia
 
 function Completalavfucapp($userid,$ore) {

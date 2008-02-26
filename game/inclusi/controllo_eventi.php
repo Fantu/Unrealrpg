@@ -20,7 +20,7 @@ while($evento=$db->QueryCicloResult($evfiniti)) {
 			Completalavlabapp($evento['userid'],$evento['ore']);
 			break;
 			case 3://miniera vecchia
-			Completalavminvecchia($evento['userid']);
+			Completalavminvecchia($evento['userid'],$evento['oggid'],$evento['ore']);
 			break;
 			case 4://apprendista fabbro
 			Completalavfucapp($evento['userid'],$evento['ore']);
