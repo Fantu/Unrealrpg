@@ -1,0 +1,33 @@
+<?php
+$lang['depositare']='You can deposit your money in Bank where they`ll be in safety';
+$lang['prelevare']='You can draw money from your Bank account';
+$lang['quanto_depositare']='Insert the number of money (that) you will deposit';
+$lang['Deposita']='Deposit';
+$lang['quanto_prelevare']='Insert the number of money (that) you will draw';
+$lang['Preleva']='Draw';
+$lang['banca_errore1']='- You`ve got to insert a integer<br />';
+$lang['banca_errore2']='- You`ve got to deposit at least 1 piece<br />';
+$lang['banca_errore3']='- You haven`t got enough money<br />';
+$lang['banca_errore4']='- You`ve got to draw at least 1 piece<br />';
+$lang['banca_errore5']='- You haven`t enough money in account<br />';
+$lang['banca_errore6']='- The bank haven`t got enough money for the time being<br />';
+$lang['banca_errore7']='- You`ve got to ask for a loan at least 1 piece<br />';
+$lang['banca_errore8']='- You can`t ask so much pieces but at most';
+$lang['banca_errore9']='- You don`t have enough money on your account to buy a ticket<br />';
+$lang['banca_errore10']='- You already have a ticket';
+$lang['saldo_conto']='The present settlement of your account is:';
+$lang['saldo_utente']='The pieces (that) you have with you are:';
+$lang['info_interessi']='This bank account gives you 0,5% interests every day, the next time will be; ';
+$lang['desc_prestito']='You can ask the Bank for a loan with a 10% interest rate (max loan = 100 coin every level).';
+$lang['quanto_prestito_chiedere']='Insert here the amount of money you want to ask for:';
+$lang['restituzione_prestito']='The amount of coins you owe to the bank is:';
+$lang['Restituisci_prestito']='Pay back the loan';
+$lang['Chiedi_prestito']='Ask for a loan';
+$lang['Lotteria']='Lottery';
+$lang['desc_lotteria']='The lottery is organised by the bank, you can buy a ticket for every round  by paying 1 coin from your account. The extraction happens one time every week and the more are the players, the more are the coins that can be won ( for a maximum of 100)';
+$lang['Compra_biglietto']='Buy a ticket';
+$lang['hai_gia_biglietto']='You already have a ticket';
+$lang['info_partecipanti']='There are %s participants';
+$lang['info_vincitore']='The winner of the last round is: %s';
+$lang['data_estrazione']='La prossima estrazione della lotteria è ';
+?>
