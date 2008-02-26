@@ -41,7 +41,7 @@ if($pozioni){ ?>
 <table border="0">
 <tr>
 <td>
-<?php echo $lang['seleziona_ore_lavoro']; ?> <select name="ore" id="ore">
+<?php echo $lang['seleziona_ore_lavoro']; ?> <select name="ore2" id="ore2">
 <option value="1" selected="selected">1</option>
 <option value="2">2</option>
 <option value="3">3</option>

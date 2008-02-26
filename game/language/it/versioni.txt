@@ -16,6 +16,7 @@ Legenda:<br />
 + Controllo eventi in automatico ogni mezz'ora al posto di 1 ora<br />
 + Vari miglioramenti di sistema<br />
 + Vari miglioramenti di sicurezza<br />
++ Altri vari miglioramenti<br />
 </p>
 <p><strong>0.5.6.1</strong> (25/2/2008 - Beta)<br />
 - Patch nel sistema messaggi: ora non ci dovrebbero pi&egrave; essere problemi di codifica<br />

@@ -42,7 +42,7 @@ exit();
 }//fine lavora come apprendista
 if (isset($_POST['lavoralabalc'])){
 $errore="";
-$ore=(int)$_POST['ore'];
+$ore=(int)$_POST['ore2'];
 $poziones=(int)$_POST['pozione'];
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$user['userid']."' LIMIT 1");
 $userlav=$db->QuerySelect("SELECT * FROM lavori WHERE userid='".$user['userid']."' LIMIT 1");
