@@ -8,7 +8,10 @@ Legenda:<br />
 <br />
 </p>
 <p><strong>0.5.7</strong> (Non disponibile - In sviluppo)<br />
++ Rifatto con possibilit&agrave; di lavorare fino a 3 ore di seguito il lavoro in Laboratorio come alchimista<br />
 + Aggiunta la visualizzazione della data della prossima estrazione della lotteria<br />
++ Completata base del sistema multilingua<br />
++ Aggiunta pagina esterna per l'inglese propria ottimizzata per l'indicizzazione<br />
 + Controllo eventi in automatico ogni mezz'ora al posto di 1 ora<br />
 + Vari miglioramenti di sistema<br />
 + Vari miglioramenti di sicurezza<br />

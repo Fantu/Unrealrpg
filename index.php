@@ -24,7 +24,11 @@ exit();}
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title><?php echo $game_name; echo" "; echo $game_version; echo" "; echo $game_revision; ?></title>
-<?php include('game/inclusi/meta.php'); ?>
+<meta name="author" content="Fantoni Fabio"></meta>
+<meta name="language" content="it,en"></meta>
+<meta name="revisit-after" content="7 days"></meta>
+<meta name="copyright" content="Fantoni Fabio"></meta>
+<meta name="content-language" content="it,en"></meta>
 <script type="text/javascript">
 <!--
 function CambiaImg(id,bool) {
@@ -45,7 +49,7 @@ function CambiaImg(id,bool) {
 <br /><br /><br />
 <a href="index_it.php">Italiano</a>
 <br /><br />
-English
+<a href="index_en.php">English</a>
 </h1>
 <br /><br />
 <?php echo $game_name; ?> &copy; 2007 Powered by <a href="http://www.lostgames.net" target="_blank">Lostgames.net</a>
