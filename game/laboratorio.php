@@ -72,7 +72,7 @@ if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
 else {
 $db->QueryMod("UPDATE lavori SET oreultimolav='0' WHERE userid='".$user['userid']."' LIMIT 1");
-$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,lavoro,oggid) VALUES ('".$user['userid']."','".$adesso."','3600','7','1','5','".$poziones."')");	
+$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,lavoro,oggid,ore) VALUES ('".$user['userid']."','".$adesso."','3600','7','1','5','".$poziones."','".$ore."')");	
 echo "<script language=\"javascript\">window.location.href='game.php?act=situazione'</script>";
 exit();	
 }
