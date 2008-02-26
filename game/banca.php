@@ -143,6 +143,7 @@ $nomevincitore=$vincitore['username'];}else
 $infovincitore=sprintf($lang['info_vincitore'],$nomevincitore);
 $userbank=$db->QuerySelect("SELECT * FROM banca WHERE userid='".$user['userid']."' LIMIT 1");
 $prestito=$userbank['prestito']+(floor(($userbank['prestito']/100)*10));
+$proxestrazionedata=date($lang['dataora'],($checklotteria['lotteria']+604800));
 $user=$db->QuerySelect("SELECT * FROM utenti WHERE userid='".$user['userid']."' LIMIT 1");
 require('template/int_banca.php');
 ?>

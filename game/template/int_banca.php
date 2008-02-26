@@ -95,6 +95,7 @@ echo $lang['restituzione_prestito']." ".$prestito; ?>
 <?php echo $lang['desc_lotteria']; ?><br />
 <?php echo $infopartecipanti; ?><br />
 <?php echo $infovincitore; ?><br />
+<?php echo $lang['data_estrazione'].$proxestrazionedata; ?><br />
 <?php if ($userbank['lotteria']==0){ ?>
 <form action="" method="post" name="lotteria">
 <table border="0">

@@ -29,4 +29,5 @@ $lang['Compra_biglietto']='Compra un biglietto';
 $lang['hai_gia_biglietto']='Hai gi&agrave; un biglietto';
 $lang['info_partecipanti']='Ci sono %s partecipanti';
 $lang['info_vincitore']='Il vincitore della scorsa estrazione &egrave;: %s';
+$lang['data_estrazione']='La prossima estrazione della lotteria è ';
 ?>
