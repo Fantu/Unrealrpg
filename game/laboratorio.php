@@ -64,7 +64,7 @@ $fiala=$db->QuerySelect("SELECT count(*) AS numero FROM inoggetti WHERE userid='
 if ($fiala['numero']<$ore)
 $errore .= $lang['lab_errore5'];
 $pozione=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$poziones."' LIMIT 1");
-if ($user['monete']<floor($pozione['costo']/5))
+if ($user['monete']<(floor($pozione['costo']/5)*$ore))
 $errore .= $lang['lab_errore6'];
 if ($usercar['alchimista']<$pozione['abilitanec'])
 $errore .= $lang['lab_errore7'];

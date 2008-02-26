@@ -343,7 +343,7 @@ $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES
 }
 else {
 $ore--;
-$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,lavoro,ore,oggid) VALUES ('".$userid."','".$adesso."','3600','7','1','5','".$ore."','".$poziones."')");
+$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,lavoro,ore,oggid) VALUES ('".$userid."','".$adesso."','3600','7','1','5','".$ore."','".$pozionesel."')");
 }//fine continua lavoro
 }//fine se la coda ha almeno un altra ora
 } //fine Completalavlabalc
