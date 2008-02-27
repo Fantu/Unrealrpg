@@ -15,5 +15,5 @@ $game_intestazione_mail.="Reply-To: ".$game_name."<server@lostage.it>\r\n";
 $game_intestazione_mail.="Message-ID: <".time()."-server@lostage.it>\r\n";
 $game_intestazione_mail.="X-Mailer: PHP v".phpversion()."\r\n";
 $game_intestazione_mail.="MIME-Version: 1.0\r\n";
-$game_intestazione_mail.="Content-Type: text/html; charset=iso-8859-1\r\n";
+$game_intestazione_mail.="Content-Type: text/html; charset=utf8\r\n";
 ?>
