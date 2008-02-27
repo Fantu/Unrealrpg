@@ -46,10 +46,9 @@ function CambiaImg(id,bool) {
 <div align="center">
 <h1>
 <?php echo $game_name; echo" "; echo $game_version; echo" "; echo $game_revision; ?>
-<br /><br /><br />
-<a href="index_it.php">Italiano</a>
-<br /><br />
-<a href="index_en.php">English</a>
+<br />
+<?php foreach($game_language as $chiave=>$elemento) 
+echo "<br /><br /><a href=\"index_".$chiave.".php\">".$elemento."</a>" ?>
 </h1>
 <br /><br />
 <?php echo $game_name; ?> &copy; 2007 Powered by <a href="http://www.lostgames.net" target="_blank">Lostgames.net</a>

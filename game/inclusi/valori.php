@@ -4,6 +4,7 @@ $game_version="DEV";
 $game_revision="0.5.7";
 $game_link="http://unrealff.it/rpgdev";
 $game_server=array(999=>"DEV",998=>"DEV");
+$game_language=array("it"=>"Italiano","en"=>"English");
 $game_server_lang=array(999=>"it",998=>"en");
 $game_se_code="f87d5gf945fhut";
 $game_proxlav_normal=10800;

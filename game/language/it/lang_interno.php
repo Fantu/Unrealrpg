@@ -99,39 +99,39 @@ $lang['perfetta']='Perfetta';
 
 //inizio funz_ogg
 $lang['oggetto_usurato']='Oggetto %s gettato, in quanto usurato';
-$lang['oggetto_rotto']='Oggetto %s gettato, in quanto rotto';
-$lang['nessuno_gettato']='Nessuno oggetto gettato';
-$lang['errore_sistema_utilizzo_ogg']='Errore di sistema: impossibile utilizzare %s';
-$lang['utilizzato_4_1']='Hai utilizzato %s e recuperato %s di salute';
-$lang['utilizzato_4_2']='Hai utilizzato %s e recuperato %s di energia';
+$lang['oggetto_rotto']='Oggetto %s gettato, in quanto rotto.';
+$lang['nessuno_gettato']='Nessuno oggetto gettato.';
+$lang['errore_sistema_utilizzo_ogg']='Errore di sistema: impossibile utilizzare %s!';
+$lang['utilizzato_4_1']='Hai utilizzato %s e recuperato %s di salute.';
+$lang['utilizzato_4_2']='Hai utilizzato %s e recuperato %s di energia.';
 //fine funz_ogg
 
 //inizio errori globali
-$lang['global_errore1']='- Stai facendo altro<br />';
-$lang['global_errore2']='- Le ore di lavoro devono essere minimo 1 e massimo 3<br />';
+$lang['global_errore1']='- Stai facendo altro!<br />';
+$lang['global_errore2']='- Le ore di lavoro devono essere minimo di 1 e massimo di 3!<br />';
 //fine errori globali
 
 //inizio mail cancellazione/inattivit&agrave;
 $lang['Account_cancellato']='Account cancellato';
 $lang['Account_inutilizzato']='Account inutilizzato';
-$lang['mail_cancellato_noconferma']='Ciao %s,<br />Siamo spiacenti di informarti che il tuo account su %s sul server %s &egrave; stato cancellato perch&egrave; non confermato entro 48 ore.<br />Saluti,<br />%s Staff';
-$lang['mail_cancellato_nopersonaggio']='Ciao %s,<br />Siamo spiacenti di informarti che il tuo account su %s sul server %s &egrave; stato cancellato perch&egrave; non &egrave; stato creato un personaggio entro 72 ore.<br />Saluti,<br />%s Staff';
-$lang['mail_avviso_inattivita']='Ciao %s,<br />Ti scriviamo per informarti che il tuo account su %s server %s risulta inattivo da pi&ugrave; di 2 settimane.<br />Se questa inattivit&agrave; dovesse raggiungere i 30 giorni, l`account verr&agrave; automaticamente cancellato dal sistema.<br />Saluti,<br />%s Staff';
-$lang['mail_cancellato_inattivita']='Ciao %s<br />Siamo spiacenti di informarti che il tuo account su %s sul server %s &egrave; stato cancellato perch&egrave; inattivo da oltre 30 giorni.<br />Saluti,<br />%s Staff';
+$lang['mail_cancellato_noconferma']='Ciao %s,<br />Siamo spiacenti di informarti che il tuo account su %s sul server %s &egrave; stato cancellato perch&egrave; non confermato entro le 48 ore.<br /> Saluti,<br />%s lo Staff.';
+$lang['mail_cancellato_nopersonaggio']='Ciao %s,<br />Siamo spiacenti di informarti che il tuo account su %s sul server %s &egrave; stato cancellato perch&egrave; non &egrave; stato creato un personaggio entro le 72 ore.<br /> Saluti,<br />%s lo Staff.';
+$lang['mail_avviso_inattivita']='Ciao, %s!<br />Ti scriviamo per informarti che il tuo account su %s server %s risulta inattivo da pi&ugrave; di 2 settimane.<br />Se questa inattivit&agrave; dovesse raggiungere i 30 giorni, l`account verr&agrave; automaticamente cancellato dal sistema.<br />Saluti,<br />%s lo Staff.';
+$lang['mail_cancellato_inattivita']='Ciao, %s<br />! Siamo spiacenti di informarti che il tuo account su %s sul server %s &egrave; stato cancellato perch&egrave; inattivo da oltre 30 giorni.<br />Saluti,<br />%s lo Staff.';
 //fine errori cancellazione/inattivit&agrave;
 
 $lang['outputerrori']='Si sono verificati i seguenti errori:';
 $lang['outputerrori_continualav']='Non &egrave; stato possibile continuare a lavorare per i seguenti motivi:';
-$lang['Impossibile_lavorare_ancora']='Impossibile lavorare ancora';
-$lang['nessun_evento']='Nessun evento in corso';
-$lang['error_eventi_incorso']='Sei occupato a fare altro';
+$lang['Impossibile_lavorare_ancora']='Impossibile lavorare ancora!';
+$lang['nessun_evento']='Nessun evento in corso.';
+$lang['error_eventi_incorso']='Sei occupato a fare altro!';
 $lang['Stato']='Stato';
 $lang['Adesso']='Adesso';
 $lang['Indietro']='Indietro';
 $lang['dataora']='\i\l \g\i\o\r\n\o d/m/y \a\l\l\e \o\r\e H:i';
 $lang['tempo_gen_pagina']='Tempo di generazione della pagina: %s secondi - Query eseguite: %s';
 $lang['Annulla']='Annulla';
-$lang['seleziona_ore_lavoro']='Seleziona quante ore';
+$lang['seleziona_ore_lavoro']='Seleziona quante ore:';
 $lang['ore_in_coda']='(%s ore in coda)';
 $lang['nessuno']='Nessuno';
 ?>
