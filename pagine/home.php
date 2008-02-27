@@ -74,7 +74,7 @@ $infoserver['online24'][$chiave]=$online['id'];
 }//fine info server
 foreach($game_language as $chiave=>$elemento){
 if($chiave!=$anguage)
-$lingue[$chiave]="<a href=\"index_".$chiave.".php\">".$elemento."</a> "}
+$lingue[$chiave]="<a href=\"index_".$chiave.".php\">".$elemento."</a> ";
 }//fine per ogni lingua
 require('game/template/est_pagina_home.php');	  
 ?>
