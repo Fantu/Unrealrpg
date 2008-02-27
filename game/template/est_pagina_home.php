@@ -75,4 +75,4 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <?php }/* fine per ogni server*/ ?>
 </table>
 <br /><br />
-<?php echo $lang['altre_lingue']; foreach($lingue as $chiave=>$elemento) echo $lingue[$chiave]; ?>
+<?php echo sprintf($lang['altre_lingue'],$game_name); foreach($lingue as $chiave=>$elemento) echo $lingue[$chiave]; ?>
