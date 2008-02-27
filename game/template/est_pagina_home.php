@@ -74,3 +74,5 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 </tr>
 <?php }/* fine per ogni server*/ ?>
 </table>
+<br /><br />
+<?php echo $lang['altre_lingue']; foreach($lingue as $chiave=>$elemento) echo $lingue[$chiave]; ?>

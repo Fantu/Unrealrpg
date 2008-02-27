@@ -8,6 +8,7 @@ Legenda:<br />
 <br />
 </p>
 <p><strong>0.5.8</strong> (Non disponibile - In sviluppo)<br />
++ Aggiunto in home il collegamento alle altre lingue<br />
 + Vari miglioramenti di sistema<br />
 + Miglioramenti ai testi in italiano<br />
 </p>
