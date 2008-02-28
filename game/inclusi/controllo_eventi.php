@@ -31,6 +31,9 @@ while($evento=$db->QueryCicloResult($evfiniti)) {
 			case 6://studia in rocca
 			Completaroccastudia($evento['userid'],$evento['oggid'],$evento['ore']);
 			break;
+			case 7://fabbro in fucina
+			Completalavfucfab($evento['userid'],$evento['oggid'],$evento['ore']);
+			break;
 			}	
 		break;
 		case 2://preghiera

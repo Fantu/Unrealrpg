@@ -3,9 +3,9 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	header("Location: ../../index.php?error=16");
 	exit();
 }
-$username=htmlentities($lg[0]);
-$password=htmlentities($lg[2]);
-$user=$db->QuerySelect("SELECT * FROM utenti WHERE userid='".$lg[0]."' AND password='".$lg[2]."' AND conferma=1 LIMIT 1");
+$username=htmlspecialchars($lg[0],ENT_QUOTES);
+$password=htmlspecialchars($lg[2],ENT_QUOTES);
+$user=$db->QuerySelect("SELECT * FROM utenti WHERE userid='".$username."' AND password='".$password."' AND conferma=1 LIMIT 1");
 if($user['userid']) {
 $db->QueryMod("UPDATE utenti SET ultimazione='".$adesso."' WHERE userid='".$user['userid']."'");
 require_once('inclusi/controllo_eventi.php');
@@ -15,11 +15,12 @@ if($user['personaggio']==1) {
 if(($user['refertime']!=0) AND ($user['refertime']<$adesso)){
 	$refercheck=explode("|",$user['refer']);
 	if($user['server']==$refercheck[1]){
-	$refercheck2=$db->QuerySelect("SELECT COUNT(*) AS id FROM utenti WHERE userid='".$refercheck[0]."'");
+	$referuserid=(int)$refercheck[0];
+	$refercheck2=$db->QuerySelect("SELECT COUNT(*) AS id FROM utenti WHERE userid='".$referuserid."'");
 	if($refercheck2['id']>0){
 	$revisit=$adesso+2592000;
 	$db->QueryMod("UPDATE utenti SET refertime='".$revisit."' WHERE userid='".$user['userid']."'");
-	$db->QueryMod("UPDATE utenti SET puntiplus=puntiplus+'1' WHERE userid='".$refercheck[0]."'");	
+	$db->QueryMod("UPDATE utenti SET puntiplus=puntiplus+'1' WHERE userid='".$referuserid."'");	
 	}//fine se referente esiste
 	}//fine se server è lo stesso
 }//fine se ora del controllo ref
@@ -70,7 +71,7 @@ if ($adesso>($usercar['recuperoenergia']+60)){
 require_once('template/int_header.php');
 } //fine if userid
 else {
-	header("Location: ../index.php?error=4");
+	header("Location: ../index.php?error=13");
 	exit();
 }
 ?>

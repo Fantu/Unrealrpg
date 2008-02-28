@@ -13,6 +13,7 @@ Legenda:<br />
 <p><strong>0.5.8</strong> (Non disponibile - In sviluppo)<br />
 + Aggiunto in home il collegamento alle altre lingue<br />
 + Vari miglioramenti di sistema<br />
++ Vari miglioramenti di sicurezza<br />
 + Miglioramenti ai testi in italiano<br />
 # Modificato il decremento di fede con il passare del tempo, reso pi&ugrave; equilibrato<br />
 # Modificata la probabilit&agrave; di miracolo durante la preghiera, resa pi&ugrave; equilibrata<br />
