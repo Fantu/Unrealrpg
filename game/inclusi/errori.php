@@ -36,6 +36,12 @@ break;*/
 case 12:
 $msg=$lang['ext_error12'];
 break;
+case 13:
+$msg=$lang['ext_error13'];
+break;
+case 14:
+$msg=$lang['ext_error14'];
+break;
 case 16:
 $msg=$lang['ext_error16'];
 break;

@@ -37,5 +37,7 @@ $lang['ext_error5']='Impossibile confermare questo account!\\nLink errato, contr
 $lang['ext_error6']='Impossibile confermare questo account!\\nQuesto account è già stato confermato.';
 $lang['ext_error7']='Account confermato!\\nAdesso puoi entrare e iniziare a giocare.';
 $lang['ext_error12']='Server momentaneamente chiuso per installazione aggiornamenti o manutenzione. Riprova più tardi. Grazie.';
+$lang['ext_error13']='Accesso negato!\\nHai tentato di entrare in una pagina riservata agli utenti loggati.';
+$lang['ext_error14']='Accesso negato!\\nIl tuo IP è cambiato dal momento del login.\\nLoggati nuovamente.';
 $lang['ext_error16']='Link errato.\\nPer favore segui i link del gioco.';
 ?>
