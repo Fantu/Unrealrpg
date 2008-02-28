@@ -51,7 +51,6 @@ if($eventi['id']>0){
 	if(($eventi['datainizio']+600)>$adesso AND $eventi['tipo']!=3){
 	if($_GET['annullaevento']==1){
 	$db->QueryMod("DELETE FROM eventi WHERE userid='".$user['userid']."'");
-	$db->QueryMod("UPDATE inoggetti SET inuso=0 WHERE userid='".$user['userid']."'");
 	header("Location: game.php?act=situazione");
 	exit();
 	}
