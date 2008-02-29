@@ -34,9 +34,6 @@ else if($user['ipattuale']!=$_SERVER['REMOTE_ADDR'])
 	echo "<script language=\"javascript\">window.location.href='../index.php?error=14'</script>";
 else {
 $interno="1";
-if ($user['personaggio']==0){
-	require('creapersonaggio.php');	}
-	else{
 ?>
 <table width="900" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
@@ -54,9 +51,13 @@ if ($user['personaggio']==0){
 			<td width="565" valign="top">
 			<div id="contenuto">		
 <?php
-if(!file_exists($_GET['act'].'.php'))
-$_GET['act']="situazione";
-require($_GET['act'].'.php');
+if ($user['personaggio']==0){
+	require('creapersonaggio.php');	}
+	else{
+		if(!file_exists($_GET['loc'].'.php'))
+		$_GET['loc']="situazione";
+		require($_GET['loc'].'.php');
+		}
 ?>
 			</div> 
 			</td>
@@ -78,8 +79,7 @@ require($_GET['act'].'.php');
     <td>&nbsp;</td>
   </tr>
 </table>
-<?php 
-}
+<?php
 require_once('template/int_footer.php');
 } //chiuso controllo login
 ?>
