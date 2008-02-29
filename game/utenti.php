@@ -18,7 +18,7 @@ if(!$_POST['nome']){
 	$errore=$lang['utenti_error1'];}elseif(strlen($_POST['nome'])<3){
 	$errore=$lang['utenti_error3'];
 	}else {
-	$nomdacercare=htmlentities($_POST['nome']);
+	$nomdacercare=htmlspecialchars($_POST['nome'],ENT_QUOTES);
 	$utentecercato=$db->QuerySelect("SELECT count(userid) AS id FROM utenti WHERE username LIKE '%".$nomdacercare."%' AND conferma='1' AND personaggio='1'");
 	if($utentecercato['id']==0)
 		$errore=sprintf($lang['utenti_error2'],$nomdacercare);
@@ -41,7 +41,7 @@ while($chi=$db->QueryCicloResult($utentecercato)) {
 }
 }//fine mostra risultati
 }
-$cheordine=htmlentities($_GET['ordine']);
+$cheordine=htmlspecialchars($_GET['ordine'],ENT_QUOTES);
 switch($cheordine){
 case "stato":
 $ordine="ORDER BY t1.ultimazione DESC";
