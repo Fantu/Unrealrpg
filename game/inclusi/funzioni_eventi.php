@@ -412,7 +412,7 @@ $salute=1;
 $exp=floor($usercar['saluteattuale']/10+$usercar['energia']/100+$usercar['attfisico']/15)+($usercar['destrezza']/10)+($usercar['intelligenza']/20);
 $exp=floor(rand(($exp/100*75),$exp));
 $exp+=(5*$usercar['fabbro']);
-$testo=sprintf($lang['report_lav_fuc_fab'],$exp,$energia,$salute);
+$testo=sprintf($lang['report_lav_fuc_fab'],$exp,$energia,$salute)."<br />";
 $bonusabilita=$usercar['fabbro']-$oggettodf['abilitanec'];
 if($bonusabilita>0)
 $bonusabilita=$bonusabilita*30;
