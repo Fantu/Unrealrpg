@@ -18,6 +18,7 @@ Legenda:<br />
 + Miglioramenti ai testi in italiano<br />
 # Modificato il decremento di fede con il passare del tempo, reso più equilibrato<br />
 # Modificata la probabilità di miracolo durante la preghiera, resa più equilibrata<br />
+# Modificato 1 piccone, reso più equilibrato<br />
 - Corretti bug minori<br />
 </p>
 <p><strong>0.5.7</strong> [R.712] (26/2/2008 - Beta)<br />
