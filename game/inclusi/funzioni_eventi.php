@@ -399,9 +399,9 @@ $oggettodf=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$oggdf."' LIMIT 1
 if($oggettodf['carbone']>0)
 $db->QueryMod("UPDATE inoggetti SET inuso='1' WHERE userid='".$userid."' AND oggid='2' LIMIT ".$oggettodf['carbone']);
 if($oggettodf['rame']>0)
-$db->QueryMod("UPDATE inoggetti SET inuso='1' WHERE userid='".$userid."' AND oggid='2' LIMIT ".$oggettodf['rame']);
+$db->QueryMod("UPDATE inoggetti SET inuso='1' WHERE userid='".$userid."' AND oggid='3' LIMIT ".$oggettodf['rame']);
 if($oggettodf['ferro']>0)
-$db->QueryMod("UPDATE inoggetti SET inuso='1' WHERE userid='".$userid."' AND oggid='2' LIMIT ".$oggettodf['ferro']);
+$db->QueryMod("UPDATE inoggetti SET inuso='1' WHERE userid='".$userid."' AND oggid='4' LIMIT ".$oggettodf['ferro']);
 $energia=100-(5*$usercar['fabbro']);
 if ($energia<50)
 $energia=50;
@@ -412,7 +412,7 @@ $salute=1;
 $exp=floor($usercar['saluteattuale']/10+$usercar['energia']/100+$usercar['attfisico']/15)+($usercar['destrezza']/10)+($usercar['intelligenza']/20);
 $exp=floor(rand(($exp/100*75),$exp));
 $exp+=(5*$usercar['fabbro']);
-$testo="<span>".sprintf($lang['report_lav_fuc_fab'],$exp,$energia,$salute)."</span>";
+$testo=sprintf($lang['report_lav_fuc_fab'],$exp,$energia,$salute);
 $bonusabilita=$usercar['fabbro']-$oggettodf['abilitanec'];
 if($bonusabilita>0)
 $bonusabilita=$bonusabilita*30;
@@ -431,11 +431,13 @@ $testo2="<span>".sprintf($lang['report_incidente_fuc2'],$danni)."</span>";
 $titolo2=$lang['report_incidente_fucina'];
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo2."','".$testo2."','0','".$adesso."')");	
 $testo.=$lang['report_lavfuc_forgia_no']."<br />";
-}/*fine incidente*/{//inizio forgia riuscita
+}/*fine incidente*/else{//inizio forgia riuscita
 $db->QueryMod("INSERT INTO inoggetti (oggid,userid) VALUES ('".$oggettodf['id']."','".$userid."')");
 $nomeoggetto=$lang['oggetto'.$oggettodf['id'].'_nome'];
 $testo.=sprintf($lang['report_lavfuc_forgia_si'],$nomeoggetto)."<br />";
 }//fine forgia riuscita
+$oggpersi=Checkusurarottura($userid);
+$testo="<span>".$testo.$oggpersi."</span>";
 $titolo=$lang['report_lavoro_fucina_fab'];
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");
 $salute+=$danni;
