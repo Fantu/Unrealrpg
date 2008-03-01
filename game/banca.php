@@ -6,7 +6,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 require('language/'.$language.'/lang_banca.php');
 $checklotteria = $db->QuerySelect("SELECT lotteria FROM config");
 if($checklotteria['lotteria']==0){$db->QueryMod("UPDATE config SET lotteria='".$adesso."'");}else{
-if($checklotteria['lotteria']>($adesso+604800)){
+if(($checklotteria['lotteria']+604800)>$adesso){
 $partecipanti=$db->QuerySelect("SELECT COUNT(userid) AS num FROM banca WHERE lotteria>0");
 if($partecipanti['num']>0){
 $estratto=0;
