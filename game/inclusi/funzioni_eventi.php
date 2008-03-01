@@ -258,7 +258,7 @@ if ($salute<1)
 $salute=1;
 $exp=floor($usercar['saluteattuale']/10+$usercar['energia']/100+$usercar['attfisico']/15)+($usercar['destrezza']/10)+($usercar['intelligenza']/20);
 $exp=floor(rand(($exp/100*75),$exp));
-$exp+=(5*$usercar['minatore']);
+$exp+=(5*$usercar['fabbro']);
 $esplosione=rand(30,100)-($usercar['fabbro']*5)-($usercar['attfisico']/20)-($usercar['destrezza']/10);
 $danni=0;
 if($esplosione>10){
@@ -391,11 +391,17 @@ $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,lavor
 }//fine se deve lavorare ancora
 } //fine Completaroccastudia
 
-function Completalavfucfab($userid,$oggid,$ore) {
+function Completalavfucfab($userid,$oggdf,$ore) {
 global $db,$adesso,$lang,$language;
 require_once('language/'.$language.'/lang_fucina.php');
-$usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");	
-$paga=6;
+$usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");
+$oggettodf=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$oggdf."' LIMIT 1");
+if($oggettodf['carbone']>0)
+$db->QueryMod("UPDATE inoggetti SET inuso='1' WHERE userid='".$userid."' AND oggid='2' LIMIT ".$oggettodf['carbone']);
+if($oggettodf['rame']>0)
+$db->QueryMod("UPDATE inoggetti SET inuso='1' WHERE userid='".$userid."' AND oggid='2' LIMIT ".$oggettodf['rame']);
+if($oggettodf['ferro']>0)
+$db->QueryMod("UPDATE inoggetti SET inuso='1' WHERE userid='".$userid."' AND oggid='2' LIMIT ".$oggettodf['ferro']);
 $energia=100-(5*$usercar['fabbro']);
 if ($energia<50)
 $energia=50;
@@ -405,34 +411,42 @@ if ($salute<1)
 $salute=1;
 $exp=floor($usercar['saluteattuale']/10+$usercar['energia']/100+$usercar['attfisico']/15)+($usercar['destrezza']/10)+($usercar['intelligenza']/20);
 $exp=floor(rand(($exp/100*75),$exp));
-$exp+=(5*$usercar['minatore']);
-$esplosione=rand(30,100)-($usercar['fabbro']*5)-($usercar['attfisico']/20)-($usercar['destrezza']/10);
+$exp+=(5*$usercar['fabbro']);
+$testo="<span>".sprintf($lang['report_lav_fuc_fab'],$exp,$energia,$salute)."</span>";
+$bonusabilita=$usercar['fabbro']-$oggettodf['abilitanec'];
+if($bonusabilita>0)
+$bonusabilita=$bonusabilita*30;
+$esplosione=rand(30,100)-$bonusabilita-($usercar['attfisico']/20)-($usercar['destrezza']/10);
 $danni=0;
 if($esplosione>10){
 $esplosione=rand(30,100)-($usercar['fabbro']*5)-($usercar['agilita']/20)-($usercar['attfisico']/10)-($usercar['velocita']/50);
 if($esplosione<10){
-$testo="<span>".$lang['report_incidente_fuc1']."</span>";
+$testo2="<span>".$lang['report_incidente_fuc1']."</span>";
 }else{
 $danni=rand(20,30)-rand(floor($resistenza/2),floor($resistenza));
 if ($danni<1)
 $danni=1;	
-$testo="<span>".sprintf($lang['report_incidente_fuc2'],$danni)."</span>";	
+$testo2="<span>".sprintf($lang['report_incidente_fuc2'],$danni)."</span>";	
 }
-$titolo=$lang['report_incidente_fucina'];
-$db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");	
-}//fine incidente
-$testo="<span>".sprintf($lang['report_lav_fuc_app'],$paga,$exp,$energia,$salute)."</span>";
-$titolo=$lang['report_lavoro_fucina_app'];
+$titolo2=$lang['report_incidente_fucina'];
+$db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo2."','".$testo2."','0','".$adesso."')");	
+$testo.=$lang['report_lavfuc_forgia_no']."<br />";
+}/*fine incidente*/{//inizio forgia riuscita
+$db->QueryMod("INSERT INTO inoggetti (oggid,userid) VALUES ('".$oggettodf['id']."','".$userid."')");
+$nomeoggetto=$lang['oggetto'.$oggettodf['id'].'_nome'];
+$testo.=sprintf($lang['report_lavfuc_forgia_si'],$nomeoggetto)."<br />";
+}//fine forgia riuscita
+$titolo=$lang['report_lavoro_fucina_fab'];
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");
 $salute+=$danni;
-$db->QueryMod("UPDATE lavori t1 JOIN utenti t2 on t1.userid=t2.userid JOIN caratteristiche t3 on t2.userid=t3.userid SET t1.ultimolavoro='".$adesso."',t1.oreultimolav=t1.oreultimolav+'1',t3.expfabbro=t3.expfabbro+'".$exp."',t2.monete=t2.monete+'".$paga."',t3.energia=t3.energia-'".$energia."',t3.saluteattuale=t3.saluteattuale-'".$salute."',t3.recuperosalute='".$adesso."',t3.recuperoenergia='".$adesso."' WHERE t1.userid='".$userid."'");
+$db->QueryMod("UPDATE lavori t1 JOIN utenti t2 on t1.userid=t2.userid JOIN caratteristiche t3 on t2.userid=t3.userid SET t1.ultimolavoro='".$adesso."',t1.oreultimolav=t1.oreultimolav+'1',t3.expfabbro=t3.expfabbro+'".$exp."',t2.monete=t2.monete-'1',t3.energia=t3.energia-'".$energia."',t3.saluteattuale=t3.saluteattuale-'".$salute."',t3.recuperosalute='".$adesso."',t3.recuperoenergia='".$adesso."' WHERE t1.userid='".$userid."'");
 if($ore>1){
 $errore="";
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");
 if ($usercar['energia']<100)
-$errore .= $lang['fucina_errore1'];
+$errore.=$lang['fucina_errore1'];
 if ($usercar['saluteattuale']<30)
-$errore .= $lang['fucina_errore2'];
+$errore.=$lang['fucina_errore2'];
 if($errore){
 $testo=$lang['outputerrori_continualav']."<br />".$errore;
 $titolo=$lang['Impossibile_lavorare_ancora'];
@@ -440,7 +454,7 @@ $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES
 }
 else {
 $ore--;
-$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,lavoro,ore) VALUES ('".$userid."','".$adesso."','3600','6','1','4','".$ore."')");
+$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,lavoro,ore,oggid) VALUES ('".$userid."','".$adesso."','3600','9','1','7','".$ore."','".$oggdf."')");
 }//fine continua lavoro
 }//fine se la coda ha almeno un altra ora
 } //fine Completalavfucfab

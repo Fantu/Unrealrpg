@@ -11,13 +11,14 @@ Legenda:<br />
 + Iniziato rifacimento sistema di base interno<br />
 </p>
 <p><strong>0.5.8</strong> (Non disponibile - In sviluppo)<br />
-+ Iniziata creazione della seconda parte di Fucina<br />
++ Creata bozza della seconda parte di Fucina<br />
 + Aggiunto in home il collegamento alle altre lingue<br />
 + Vari miglioramenti di sistema<br />
 + Vari miglioramenti di sicurezza<br />
 + Miglioramenti ai testi in italiano<br />
 # Modificato il decremento di fede con il passare del tempo, reso pi&ugrave; equilibrato<br />
 # Modificata la probabilit&agrave; di miracolo durante la preghiera, resa pi&ugrave; equilibrata<br />
+- Corretti bug minori<br />
 </p>
 <p><strong>0.5.7</strong> [R.712] (26/2/2008 - Beta)<br />
 + Rifatto con possibilit&agrave; di lavorare fino a 3 ore di seguito il lavoro in Laboratorio come alchimista<br />
