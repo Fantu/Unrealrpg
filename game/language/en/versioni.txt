@@ -7,8 +7,22 @@ Legenda:<br />
 - Correzione bug e patch di situazioni non previste<br />
 <br />
 </p>
-<p><strong>0.5.8</strong> (Non disponibile - In sviluppo)<br />
+<p><strong>0.6.0</strong> (Non disponibile - In sviluppo)<br />
++ Iniziato rifacimento sistema di base interno<br />
+</p>
+<p><strong>0.5.9</strong> (Non disponibile - In sviluppo)<br />
 Niente attualmente<br />
+</p>
+<p><strong>0.5.8</strong> [R.735] (1/3/2008 - Beta)<br />
++ Creata bozza della seconda parte di Fucina<br />
++ Aggiunto in home il collegamento alle altre lingue<br />
++ Vari miglioramenti di sistema<br />
++ Vari miglioramenti di sicurezza<br />
++ Miglioramenti ai testi in italiano<br />
+# Modificato il decremento di fede con il passare del tempo, reso più equilibrato<br />
+# Modificata la probabilità di miracolo durante la preghiera, resa più equilibrata<br />
+# Modificato 1 piccone, reso più equilibrato<br />
+- Corretti bug minori<br />
 </p>
 <p><strong>0.5.7</strong> [R.712] (26/2/2008 - Beta)<br />
 + Rifatto con possibilit&agrave; di lavorare fino a 3 ore di seguito il lavoro in Laboratorio come alchimista<br />
@@ -24,7 +38,7 @@ Niente attualmente<br />
 + Altri vari miglioramenti<br />
 </p>
 <p><strong>0.5.6.1</strong> (25/2/2008 - Beta)<br />
-- Patch nel sistema messaggi: ora non ci dovrebbero pi&egrave; essere problemi di codifica<br />
+- Patch nel sistema messaggi: ora non ci dovrebbero pi&ugrave; essere problemi di codifica<br />
 </p>
 <p><strong>0.5.6</strong> [R.693] (25/2/2008 - Beta)<br />
 + Rifatto con possibilit&agrave; di lavorare fino a 3 ore di seguito il lavoro in Laboratorio come apprendista<br />
