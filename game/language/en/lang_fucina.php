@@ -1,13 +1,25 @@
 <?php
 $lang['fucina_app']='Work as an apprentice';
-$lang['desc_fucina_app']='You can work at the Forge as an apprentice, beeing paid 6 gold per hour, earning experience as a blacksmith. This allows you to have better results with less effort and avoid beeing hurt.';
+$lang['desc_fucina_app']='Puoi lavorare in Fucina come apprendista, avendo una retribuzione fissa di 6 monete ad ora e guadagnare esperienza per l\'abilit&agrave; di fabbro, utile per avere risultati migliori con meno fatica e meno danni.';
 $lang['lavora_fucina']='Work at the Forge';
-$lang['fucina_errore1']='- You are too weak to work at the Forge<br />';
-$lang['fucina_errore2']='- Your body can`t withstand working at the Forge at the moment<br />';
-$lang['fucina_errore3']='- You have to wait 3 hours per each working hour, starting from your last job<br />';
-$lang['report_lav_fuc_app']='You have worked at the Forge for an hour, earning %s gold and %s experience as blacksmith. The job has weakened you (you have lost %s energy) and your body needs rest (you have lost %s health)';
+$lang['fucina_errore1']='- Sei troppo stanco per poter lavorare in Fucina!<br />';
+$lang['fucina_errore2']='- Attualmente il tuo fisico non &egrave; in grado di reggere il lavoro in Fucina!<br />';
+$lang['fucina_errore3']='- Devono passare 3 ore per ogni ora di lavoro dall\'ultimo effettuato!<br />';
+$lang['fucina_errore4']='- Non sei abbastanza abile per poter forgiare questo oggetto<br />';
+$lang['fucina_errore5']='- Non hai selezionato l`oggetto da forgiare<br />';
+$lang['fucina_errore6']='- Non hai %s di carbone che ti serve<br />';
+$lang['fucina_errore7']='- Non hai %s di rame che ti serve<br />';
+$lang['fucina_errore8']='- Non hai %s di ferro che ti serve<br />';
+$lang['report_lav_fuc_app']='Hai lavorato in Fucina come apprendista per 1 ora, guadagnando %s monete e %s di esperienza come fabbro. Il duro lavoro ti ha stancato (hai perso %s di energia)e il tuo fisico ne ha risentito (hai perso %s di salute).';
 $lang['report_lavoro_fucina_app']='You have completed your job as an apprentice at the Forge';
-$lang['report_incidente_fucina']='Something unexpected has happened while working at the Forge';
-$lang['report_incidente_fuc1']='An accident occurred while working at the Forge, but you managed to escape without beeing hurt';
-$lang['report_incidente_fuc2']='An accident occurred while working at the forge: you couldn`t get away in time, and got hurt (you lost %s health)';
+$lang['report_incidente_fucina']='Imprevisto durante il lavoro in Fucina!';
+$lang['report_incidente_fuc1']='Durante il tuo lavoro in Fucina si &egrave; verificato un incidente ma, sei riuscito ad allontanarti in tempo e non ferirti.';
+$lang['report_incidente_fuc2']='Durante il tuo lavoro in Fucina si &egrave; verificato un incidente! Non sei riuscito ad allontanarti in tempo e ti sei ferito (%s di salute persa)!';
+$lang['seleziona_oggetto_da_forgiare']='Seleziona l`oggetto da forgiare';
+$lang['fucina_fab']='Lavora come fabbro';
+$lang['desc_fucina_fab']='Puoi lavorare in Fucina come fabbro, tentando di forgiare utensili, armi o armature, pagando 1 moneta per poter utilizzare la fucina e ciò che è al suo interno tranne i minerali necessari che devi avere con te.';
+$lang['report_lav_fuc_fab']='Hai lavorato in Fucina come fabbro per 1 ora guadagnando %s di esperienza come fabbro, il duro lavoro ti ha stancato (hai perso %s di energia) e il tuo fisico ne ha risentito (hai perso %s di salute)';
+$lang['report_lavoro_fucina_fab']='Completato lavoro in Fucina come fabbro';
+$lang['report_lavfuc_forgia_no']='Non sei riuscito a forgiare l`oggetto desiderato';
+$lang['report_lavfuc_forgia_si']='Sei riuscito a forgiare %s';
 ?>

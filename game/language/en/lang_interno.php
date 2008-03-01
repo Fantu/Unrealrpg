@@ -85,6 +85,7 @@ $lang['eventi_dettagli5']='You are working at the Old Mine,you`ll finish at ';
 $lang['eventi_dettagli6']='You are working at the Forge as apprentice,you`ll finish at ';
 $lang['eventi_dettagli7']='You are working at the Laboratory as alchemist,you`ll finish at ';
 $lang['eventi_dettagli8']='You are studying at the Mage Tower,you`ll finish at ';
+$lang['eventi_dettagli9']='Stai lavorando in Fucina come fabbro e finirai ';
 //fine dettagli eventi
 
 //inizio visualizzautente
@@ -99,39 +100,39 @@ $lang['perfetta']='Perfect';
 
 //inizio funz_ogg
 $lang['oggetto_usurato']='Object %s thrown away,because it has been used';
-$lang['oggetto_rotto']='Object %s thrown away, because it\'s broken';
-$lang['nessuno_gettato']='No object has been thrown away';
-$lang['errore_sistema_utilizzo_ogg']='System error: It\'s impossible to use %s';
-$lang['utilizzato_4_1']='You have used %s and recovered %s health';
-$lang['utilizzato_4_2']='You have used %s and recovered %s energy';
+$lang['oggetto_rotto']='Oggetto %s gettato, in quanto rotto.';
+$lang['nessuno_gettato']='Nessuno oggetto gettato.';
+$lang['errore_sistema_utilizzo_ogg']='Errore di sistema: impossibile utilizzare %s!';
+$lang['utilizzato_4_1']='Hai utilizzato %s e recuperato %s di salute.';
+$lang['utilizzato_4_2']='Hai utilizzato %s e recuperato %s di energia.';
 //fine funz_ogg
 
 //inizio errori globali
-$lang['global_errore1']='- You`re doing something else<br />';
-$lang['global_errore2']='- The work hours must be between 1 and 3<br />';
+$lang['global_errore1']='- Stai facendo altro!<br />';
+$lang['global_errore2']='- Le ore di lavoro devono essere minimo di 1 e massimo di 3!<br />';
 //fine errori globali
 
 //inizio mail cancellazione/inattivit&agrave;
 $lang['Account_cancellato']='Account deleted';
 $lang['Account_inutilizzato']='Account unused';
-$lang['mail_cancellato_noconferma']='Hi %s,<br />We are sorry to tell you that your account on %s on server %s has been deleted because it hasn`t been confirmed in 48 hours.<br />Regards,<br />%s Staff';
-$lang['mail_cancellato_nopersonaggio']='Hi %s,<br />We are sorry to tell you that your account on %s on server %s has been deleted because no character has been created in 72 hours.<br />Regards,<br />%s Staff';
-$lang['mail_avviso_inattivita']='Hi %s,<br />We are writing  this mail to inform you that your account on %s on server %s is inactive from 2 weeks.<br />If this inactivity reaches the 30 days, your account will be deleted from the system.<br />Regards,<br />%s Staff';
-$lang['mail_cancellato_inattivita']='Hi %s<br />We are sorry to tell you that your account on %s on server %s has been deleted for 30 days inactivity.<br />Regards,<br />%s Staff';
+$lang['mail_cancellato_noconferma']='Ciao %s,<br />Siamo spiacenti di informarti che il tuo account su %s sul server %s &egrave; stato cancellato perch&egrave; non confermato entro le 48 ore.<br /> Saluti,<br />%s lo Staff.';
+$lang['mail_cancellato_nopersonaggio']='Ciao %s,<br />Siamo spiacenti di informarti che il tuo account su %s sul server %s &egrave; stato cancellato perch&egrave; non &egrave; stato creato un personaggio entro le 72 ore.<br /> Saluti,<br />%s lo Staff.';
+$lang['mail_avviso_inattivita']='Ciao, %s!<br />Ti scriviamo per informarti che il tuo account su %s server %s risulta inattivo da pi&ugrave; di 2 settimane.<br />Se questa inattivit&agrave; dovesse raggiungere i 30 giorni, l`account verr&agrave; automaticamente cancellato dal sistema.<br />Saluti,<br />%s lo Staff.';
+$lang['mail_cancellato_inattivita']='Ciao, %s<br />! Siamo spiacenti di informarti che il tuo account su %s sul server %s &egrave; stato cancellato perch&egrave; inattivo da oltre 30 giorni.<br />Saluti,<br />%s lo Staff.';
 //fine errori cancellazione/inattivit&agrave;
 
 $lang['outputerrori']='The following errors have occurred:';
 $lang['outputerrori_continualav']='You weren\'t able to go on working due to the following reasons:';
-$lang['Impossibile_lavorare_ancora']='It is impossible to work another time';
-$lang['nessun_evento']='No event happening';
-$lang['error_eventi_incorso']='You are busy doing something else';
+$lang['Impossibile_lavorare_ancora']='Impossibile lavorare ancora!';
+$lang['nessun_evento']='Nessun evento in corso.';
+$lang['error_eventi_incorso']='Sei occupato a fare altro!';
 $lang['Stato']='Status';
 $lang['Adesso']='Now';
 $lang['Indietro']='Back';
 $lang['dataora']='\i\l \g\i\o\r\n\o d/m/y \a\l\l\e \o\r\e H:i';
 $lang['tempo_gen_pagina']='Page loaded in: %s seconds - Done queries : %s';
 $lang['Annulla']='Cancel';
-$lang['seleziona_ore_lavoro']='Choose how many hours';
+$lang['seleziona_ore_lavoro']='Seleziona quante ore:';
 $lang['ore_in_coda']='(%s hours remaining)';
 $lang['nessuno']='Nobody';
 ?>
