@@ -6,4 +6,6 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 require_once('language/'.$language.'/lang_magia.php');
 
 $elementi=array(1=>$lang['Acqua'],2=>$lang['Aria'],3=>$lang['Terra'],4=>$lang['Fuoco']);
+
+$tipimagia=array(1=>$lang['Offensivi'],2=>$lang['Difensivi']);
 ?>

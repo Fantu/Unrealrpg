@@ -6,7 +6,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 require_once('language/'.$language.'/lang_mostraoggetto.php');
 require_once('language/'.$language.'/lang_oggetti_nomi.php');
 require_once('language/'.$language.'/lang_oggetti_categorie.php');
-$da=htmlentities($_GET['da']);
+$da=htmlspecialchars($_GET['da'],ENT_QUOTES);
 if($da=='inventario'){
 $indietro="<a href=\"game.php?act=inventario\">".$lang['Inventario']."</a>";
 }else{
