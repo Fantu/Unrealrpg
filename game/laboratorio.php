@@ -44,30 +44,32 @@ if (isset($_POST['lavoralabalc'])){
 $errore="";
 $ore=(int)$_POST['ore2'];
 $poziones=(int)$_POST['pozione'];
+if ($poziones<1)
+$errore.=$lang['lab_errore8'];
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$user['userid']."' LIMIT 1");
 $userlav=$db->QuerySelect("SELECT * FROM lavori WHERE userid='".$user['userid']."' LIMIT 1");
 if ($usercar['energia']<100)
-$errore .= $lang['lab_errore1'];
+$errore.=$lang['lab_errore1'];
 if ($usercar['saluteattuale']<30)
-$errore .= $lang['lab_errore2'];
+$errore.=$lang['lab_errore2'];
 if ($adesso<($userlav['ultimolavoro']+$tempoproxlav))
-$errore .= $lang['lab_errore3'];
+$errore.=$lang['lab_errore3'];
 if ($usercar['mana']<10)
-$errore .= $lang['lab_errore4'];
-if ($poziones<1)
-$errore .= $lang['lab_errore8'];
+$errore.=$lang['lab_errore4'];
 if ($eventi['id']>0)
-$errore .= $lang['global_errore1'];
+$errore.=$lang['global_errore1'];
 if($ore<1 OR $ore>3)
 $errore.=$lang['global_errore2'];
 $fiala=$db->QuerySelect("SELECT count(*) AS numero FROM inoggetti WHERE userid='".$user['userid']."' AND oggid='36'");
 if ($fiala['numero']<$ore)
-$errore .= $lang['lab_errore5'];
+$errore.=$lang['lab_errore5'];
+if($errore!=""){
 $pozione=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$poziones."' LIMIT 1");
 if ($user['monete']<(floor($pozione['costo']/5)*$ore))
-$errore .= $lang['lab_errore6'];
+$errore.=$lang['lab_errore6'];
 if ($usercar['alchimista']<$pozione['abilitanec'])
-$errore .= $lang['lab_errore7'];
+$errore.=$lang['lab_errore7'];
+}//se è stata selezionata una pozione controllo altri errori
 if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
 else {

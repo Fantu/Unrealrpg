@@ -21,7 +21,7 @@ while($ogg=$db->QueryCicloResult($oggusati)) {
 $oggetto=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$ogg['oggid']."' LIMIT 1");
 $rotto=0;
 $usura=$ogg['usura']+1;
-if($usura==$oggetto['usura']){
+if($usura>=$oggetto['usura']){
 $rotto=1;
 $oggpersi.=sprintf($lang['oggetto_usurato'],$lang['oggetto'.$ogg['oggid'].'_nome'])."<br />";
 }else{
