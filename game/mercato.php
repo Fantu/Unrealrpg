@@ -57,16 +57,18 @@ if (isset($_POST['compra'])){
 $errore="";
 $quanti=(int)$_POST['quanti'];
 $oggselect=(int)$_POST['oggselect'];
+if ($oggselect<1)
+$errore.=$lang['mercato_errore2'];
+if($errore==""){
 $costoogg=$db->QuerySelect("SELECT costo FROM oggetti WHERE id='".$oggselect."' LIMIT 1");
 $prezzo=$costoogg['costo']*$quanti;
 if ($eventi['id']>0)
-$errore .= $lang['global_errore1'];
+$errore.=$lang['global_errore1'];
 if ($user['monete']<$prezzo)
-$errore .= $lang['mercato_errore1'];
-if ($oggselect<1)
-$errore .= $lang['mercato_errore2'];
+$errore.=$lang['mercato_errore1'];
 if ($quanti<1)
-$errore .= $lang['mercato_errore3'];
+$errore.=$lang['mercato_errore3'];
+}//controllo altri errori
 if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
 else {

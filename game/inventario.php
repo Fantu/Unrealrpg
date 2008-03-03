@@ -52,8 +52,7 @@ $outputerrori.=Usaoggetto($user['userid'],$oggselect)."<br />";
 $outputerrori.=Checkusurarottura($user['userid']);
 }else{
 $outputerrori=sprintf($lang['impossibile_usare_oggetto'],$lang['oggetto'.$oggselect.'_nome']);}
-
-}
+}//fine niente errori esegui
 }//fine usa
 
 $seoggetti=$db->QuerySelect("SELECT COUNT(*) AS id FROM inoggetti WHERE userid='".$user['userid']."'");
