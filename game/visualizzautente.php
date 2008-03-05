@@ -7,7 +7,9 @@ require('inclusi/personaggio.php');
 $utente=(int)$_GET['id'];
 $datiutente=$db->QuerySelect("SELECT t1.userid AS userid,t1.username AS username,t1.ultimazione AS ultimazione,t2.livello AS livello,t2.razza AS razza,t2.classe AS classe,t2.sesso AS sesso,t2.salute AS salute,t2.energiamax AS energiamax,t2.saluteattuale AS saluteattuale,t2.energia AS energia FROM utenti AS t1 JOIN caratteristiche t2 ON t1.userid=t2.userid WHERE t1.userid='".$utente."' LIMIT 1");
 $percsalute=100/$datiutente['salute']*$datiutente['saluteattuale'];
-if ($percsalute<10){
+if ($percsalute<1){
+$salute=$lang['morto'];
+}elseif ($percsalute>=1 AND $percsalute<10){
 $salute=$lang['pessima'];
 }elseif ($percsalute>=10 AND $percsalute<20){
 $salute=$lang['molto_bassa'];

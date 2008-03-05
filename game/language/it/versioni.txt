@@ -14,6 +14,8 @@ Legenda:<br />
 + Iniziata creazione sistemi per le magie<br />
 + Creati i tipi di magie, per ora offensive e difensive<br />
 + Aggiunte 8 magie<br />
++ Creata bozza Libro degli incantesimi<br />
++ Aggiunto alla visualizzazione dettagliata dei personaggi se morto nello stato della salute<br />
 + Vari miglioramenti di sistema<br />
 + Vari miglioramenti di sicurezza<br />
 # Rivisto il lavoro in Laboratorio come alchimista, ora è più equilibrato<br />
