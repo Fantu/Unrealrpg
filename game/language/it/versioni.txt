@@ -13,6 +13,7 @@ Legenda:<br />
 <p><strong>0.5.9</strong> (Non disponibile - In sviluppo)<br />
 + Iniziata creazione sistemi per le magie<br />
 + Creati i tipi di magie, per ora offensive e difensive<br />
++ Aggiunte 8 magie<br />
 + Vari miglioramenti di sistema<br />
 + Vari miglioramenti di sicurezza<br />
 # Rivisto il lavoro in Laboratorio come alchimista, ora è più equilibrato<br />

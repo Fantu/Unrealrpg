@@ -1,6 +1,6 @@
 <?php
 if($_GET['code']!='updateurbg'){
-	header("Location: index.php?error=16");
+	header("Location: ../index.php?error=16");
 	exit();}
 require('game/inclusi/valori.php');
 require('game/inclusi/funzioni_db.php');
