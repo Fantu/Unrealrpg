@@ -7,7 +7,10 @@ $semagie=0;
 $inmagie=$db->QuerySelect("SELECT COUNT(id) AS num FROM inmagia WHERE userid='".$user['userid']."'");
 if($inmagie['num']>0){
 $semagie=1;
-$inmagie=$db->QuerySelect("SELECT * FROM inmagia WHERE userid='".$user['userid']."'");
+$inmagieq=$db->QueryCiclo("SELECT * FROM inmagia WHERE userid='".$user['userid']."'");
+while($chem=$db->QueryCicloResult($inmagieq)) {
+	$inmagie[$chem['id']]=$chem['stato'];
+}//fine mostra risultati
 $magieq=$db->QueryCiclo("SELECT * FROM magia");
 while($chem=$db->QueryCicloResult($magieq)) {
 	$magie[$chem['id']]['tipo']=$chem['tipo'];
