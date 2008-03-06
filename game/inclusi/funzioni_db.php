@@ -3,9 +3,9 @@
 	$data = date("d/m/y - H:i")." ".$arg;
 	$file="inclusi/log/mysql/error.log";
 	if (!file_exists($file)){
-    $file = "game/inclusi/log/mysql/error.log";}
-    elseif (!file_exists($file)){
-    $file="../game/inclusi/log/mysql/error.log";}
+    $file = "game/inclusi/log/mysql/error.log";
+    if (!file_exists($file)){
+    $file="../game/inclusi/log/mysql/error.log";}}
 	$fp=fopen($file,"a+");
 	fputs($fp,$data."\r\n--------\r\n".$err.": ".$mess."\r\n\r\n");
 	fclose($fp);
