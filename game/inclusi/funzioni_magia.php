@@ -10,6 +10,7 @@ $elementi=array(1=>$lang['Acqua'],2=>$lang['Aria'],3=>$lang['Terra'],4=>$lang['F
 $tipimagia=array(1=>$lang['Offensivi'],2=>$lang['Difensivi']);
 
 function Controllamagieconosciute($userid,$elemento) {
+global $db;
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");
 $semagie=$db->QuerySelect("SELECT COUNT(id) AS num FROM magia WHERE elemento='".$elemento."' AND abilitanec<='".$usercar['magica']."' AND expnec<='".$usercar['expelmagico'.$elemento]."'");
 if($semagie['num']>0){
