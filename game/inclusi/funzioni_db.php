@@ -1,8 +1,11 @@
 <?php
 	function StampaErroreMysql($arg,$err,$mess) {
 	$data = date("d/m/y - H:i")." ".$arg;
-	$file = "inclusi/log/mysql/error.log";
-	if (!file_exists($file)) {
+	if($pathbase==1){
+	$file=$percorsobase."inclusi/log/mysql/error.log";
+	}else{
+	$file="inclusi/log/mysql/error.log";
+	if (!file_exists($file))
     $file = "game/inclusi/log/mysql/error.log";
 	}
 	$fp=fopen($file,"a+");

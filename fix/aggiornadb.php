@@ -3,6 +3,8 @@ if($_GET['code']!='updateurbg'){
 	header("Location: ../index.php?error=16");
 	exit();}
 $adesso=strtotime("now");
+$pathbase=1;
+$percorsobase="../game/";
 require('../game/inclusi/valori.php');
 require('../game/inclusi/funzioni_db.php');
 $db = new ConnessioniMySQL();
