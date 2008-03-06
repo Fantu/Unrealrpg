@@ -1,7 +1,7 @@
 <?php
 	function StampaErroreMysql($arg,$err,$mess) {
 	$data = date("d/m/y - H:i")." ".$arg;
-	if($pathbase==1){
+	if($pbase==1){
 	$file=$percorsobase."inclusi/log/mysql/error.log";
 	}else{
 	$file="inclusi/log/mysql/error.log";
