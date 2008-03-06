@@ -27,7 +27,7 @@ while($chem=$db->QueryCicloResult($inmagieq)) {
 }//fine se ci sono magie
 foreach($magie as $chiave=>$el){
 if(!isset($inmagie[$chiave]))
-$db->QueryMod("INSERT INTO eventi (magid,userid) VALUES ('".$chiave."','".$userid."')");
+$db->QueryMod("INSERT INTO inmagia (magid,userid) VALUES ('".$chiave."','".$userid."')");
 }//per ogni magia
 }//se ci sono magie
 }//fine Controllamagieconosciute
