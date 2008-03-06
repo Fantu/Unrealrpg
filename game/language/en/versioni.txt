@@ -10,8 +10,25 @@ Legenda:<br />
 <p><strong>0.6.0</strong> (Non disponibile - In sviluppo)<br />
 + Iniziato rifacimento sistema di base interno<br />
 </p>
-<p><strong>0.5.9</strong> (Non disponibile - In sviluppo)<br />
+<p><strong>0.5.10</strong> (Non disponibile - In sviluppo)<br />
 Niente attualmente<br />
+</p>
+<p><strong>0.5.9</strong> [R.761] (6/3/2008 - Beta)<br />
++ Iniziata creazione sistemi per le magie<br />
++ Creati i tipi di magie, per ora offensive e difensive<br />
++ Aggiunte 8 magie<br />
++ Creata bozza Libro degli incantesimi<br />
++ Aggiunto alla visualizzazione dettagliata dei personaggi se morto nello stato della salute<br />
++ Creato controllo conoscenza magie<br />
++ Aggiunto il controllo di conoscenza magie alla risoluzione dello studio in Rocca<br />
++ Vari miglioramenti di sistema<br />
++ Vari miglioramenti di sicurezza<br />
++ Miglioramenti ai testi in italiano<br />
+# Rivisto il lavoro in Laboratorio come alchimista, ora è più equilibrato<br />
+# Rivisto il lavoro in Miniera vecchia, ora è più equilibrato<br />
+</p>
+<p><strong>0.5.8.1</strong> (1/3/2008 - Beta)<br />
+- Corretto bug nella lotteria<br />
 </p>
 <p><strong>0.5.8</strong> [R.735] (1/3/2008 - Beta)<br />
 + Creata bozza della seconda parte di Fucina<br />

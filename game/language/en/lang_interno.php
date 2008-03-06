@@ -96,6 +96,7 @@ $lang['media']='Normal';
 $lang['alta']='High';
 $lang['molto_alta']='Very high';
 $lang['perfetta']='Perfect';
+$lang['morto']='Morto';
 //fine visualizzautente
 
 //inizio funz_ogg
@@ -112,14 +113,18 @@ $lang['global_errore1']='- Stai facendo altro!<br />';
 $lang['global_errore2']='- Le ore di lavoro devono essere minimo di 1 e massimo di 3!<br />';
 //fine errori globali
 
-//inizio mail cancellazione/inattivit&agrave;
+//inizio mail cancellazione/inattività
 $lang['Account_cancellato']='Account deleted';
 $lang['Account_inutilizzato']='Account unused';
 $lang['mail_cancellato_noconferma']='Ciao %s,<br />Siamo spiacenti di informarti che il tuo account su %s sul server %s &egrave; stato cancellato perch&egrave; non confermato entro le 48 ore.<br /> Saluti,<br />%s lo Staff.';
 $lang['mail_cancellato_nopersonaggio']='Ciao %s,<br />Siamo spiacenti di informarti che il tuo account su %s sul server %s &egrave; stato cancellato perch&egrave; non &egrave; stato creato un personaggio entro le 72 ore.<br /> Saluti,<br />%s lo Staff.';
 $lang['mail_avviso_inattivita']='Ciao, %s!<br />Ti scriviamo per informarti che il tuo account su %s server %s risulta inattivo da pi&ugrave; di 2 settimane.<br />Se questa inattivit&agrave; dovesse raggiungere i 30 giorni, l`account verr&agrave; automaticamente cancellato dal sistema.<br />Saluti,<br />%s lo Staff.';
 $lang['mail_cancellato_inattivita']='Ciao, %s<br />! Siamo spiacenti di informarti che il tuo account su %s sul server %s &egrave; stato cancellato perch&egrave; inattivo da oltre 30 giorni.<br />Saluti,<br />%s lo Staff.';
-//fine errori cancellazione/inattivit&agrave;
+//fine errori cancellazione/inattività
+
+//inizio libro
+$lang['nessuna_magia_presente']='Non conosci nessun incantesimo';
+//fine libro
 
 $lang['outputerrori']='The following errors have occurred:';
 $lang['outputerrori_continualav']='You weren\'t able to go on working due to the following reasons:';
