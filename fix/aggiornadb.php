@@ -3,8 +3,8 @@ if($_GET['code']!='updateurbg'){
 	header("Location: ../index.php?error=16");
 	exit();}
 $adesso=strtotime("now");
-require('game/inclusi/valori.php');
-require('game/inclusi/funzioni_db.php');
+require('../game/inclusi/valori.php');
+require('../game/inclusi/funzioni_db.php');
 $db = new ConnessioniMySQL();
 foreach($game_server as $chiave=>$elemento){
 if($chiave!=999){
