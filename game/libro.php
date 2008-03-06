@@ -9,7 +9,7 @@ if($inmagie['num']>0){
 $semagie=1;
 $inmagieq=$db->QueryCiclo("SELECT * FROM inmagia WHERE userid='".$user['userid']."'");
 while($chem=$db->QueryCicloResult($inmagieq)) {
-	$inmagie[$chem['id']]=$chem['stato'];
+	$inmagie[$chem['magid']]=$chem['stato'];
 }//fine mostra risultati
 $magieq=$db->QueryCiclo("SELECT * FROM magia");
 while($chem=$db->QueryCicloResult($magieq)) {

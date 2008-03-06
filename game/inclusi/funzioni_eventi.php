@@ -385,6 +385,7 @@ $titolo=$lang['report_lavoro_roccastudio'];
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");
 $salute+=$danni;
 $db->QueryMod("UPDATE lavori t1 JOIN caratteristiche t3 on t1.userid=t3.userid SET t1.ultimolavoro='".$adesso."',t1.oreultimolav=t1.oreultimolav+'1',t3.expmagica=t3.expmagica+'".$exp."',t3.expelmagico".$elementosel."=t3.expelmagico".$elementosel."+'".$exp."',t3.energia=t3.energia-'".$energia."',t3.recuperosalute='".$adesso."',t3.recuperoenergia='".$adesso."' WHERE t1.userid='".$userid."'");
+Controllamagieconosciute($userid,$elementosel);
 if($ore>1){
 $ore--;
 $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,lavoro,oggid,ore) VALUES ('".$userid."','".$adesso."','3600','8','1','6','".$elementosel."','".$ore."')");

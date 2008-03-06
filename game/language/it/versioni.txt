@@ -16,6 +16,8 @@ Legenda:<br />
 + Aggiunte 8 magie<br />
 + Creata bozza Libro degli incantesimi<br />
 + Aggiunto alla visualizzazione dettagliata dei personaggi se morto nello stato della salute<br />
++ Creato controllo conoscenza magie<br />
++ Aggiunto il controllo di conoscenza magie alla risoluzione dello studio in Rocca<br />
 + Vari miglioramenti di sistema<br />
 + Vari miglioramenti di sicurezza<br />
 + Miglioramenti ai testi in italiano<br />
