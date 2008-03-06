@@ -8,6 +8,7 @@ require('../game/inclusi/funzioni_db.php');
 $db = new ConnessioniMySQL();
 foreach($game_server as $chiave=>$elemento){
 if($chiave!=999){
+$db->database = $chiave;
 $db->QueryMod("ALTER TABLE `messaggi` CHANGE `testo` `testo` VARCHAR( 11000 ) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL");
 $db->QueryMod("ALTER TABLE `oggetti` CHANGE `tipo` `tipo` TINYINT( 1 ) UNSIGNED NOT NULL");
 $db->QueryMod("ALTER TABLE `oggetti` CHANGE `categoria` `categoria` TINYINT( 1 ) UNSIGNED NOT NULL DEFAULT '0'");
