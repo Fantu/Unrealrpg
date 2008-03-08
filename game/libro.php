@@ -17,5 +17,18 @@ while($chem=$db->QueryCicloResult($magieq)) {
 	$magie[$chem['id']]['elemento']=$chem['elemento'];
 }//fine mostra risultati
 }//fine se ci sono magie
+
+if($semagie==1){
+foreach($elementi as $chiaveel=>$elementoel){
+foreach($tipimagia as $chiavetm=>$elementotm){
+foreach($inmagie as $chiave=>$elemento){
+if($magie[$chiave]['tipo']==$chiavetm AND $magie[$chiave]['elemento']==$chiaveel){
+$outputmagie[$elementoel][$elementotm][$chiave]=$elemento;
+}//se corrispondente
+}//mostra ogni magia
+}//per ogni tipo 
+}//per ogni elemento
+}/*fine mostra incantesimi*/
+
 require('template/int_libro.php');
 ?>

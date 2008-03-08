@@ -11,7 +11,7 @@ Legenda:<br />
 + Iniziato rifacimento sistema di base interno<br />
 </p>
 <p><strong>0.5.10</strong> (Non disponibile - In sviluppo)<br />
-Niente attualmente<br />
++ Rifatto il Libro degli incantesimi<br />
 </p>
 <p><strong>0.5.9</strong> [R.761] (6/3/2008 - Beta)<br />
 + Iniziata creazione sistemi per le magie<br />
