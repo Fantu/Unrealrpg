@@ -12,6 +12,7 @@ Legenda:<br />
 </p>
 <p><strong>0.5.10</strong> (Non disponibile - In sviluppo)<br />
 + Rifatto il Libro degli incantesimi<br />
+# Nel lavoro in Laboratorio come alchimista l'esperienza in caso di riuscita distillazione o meno non raddoppia o dimezza ma aumenta o diminuisce del 50%<br />
 </p>
 <p><strong>0.5.9</strong> [R.761] (6/3/2008 - Beta)<br />
 + Iniziata creazione sistemi per le magie<br />
