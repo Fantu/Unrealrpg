@@ -9,12 +9,13 @@ $db = new ConnessioniMySQL();
 foreach($game_server as $chiave=>$elemento){
 if($chiave!=999){
 $db->database = $chiave;
-$db->QueryMod("ALTER TABLE `messaggi` CHANGE `testo` `testo` VARCHAR( 11000 ) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL");
-$db->QueryMod("ALTER TABLE `oggetti` CHANGE `tipo` `tipo` TINYINT( 1 ) UNSIGNED NOT NULL");
-$db->QueryMod("ALTER TABLE `oggetti` CHANGE `categoria` `categoria` TINYINT( 1 ) UNSIGNED NOT NULL DEFAULT '0'");
-$db->QueryMod("ALTER TABLE `oggetti` ADD INDEX ( `tipo` )");
-$db->QueryMod("ALTER TABLE `oggetti` ADD INDEX ( `categoria` )");
-echo "Aggiornato db server ".$chiave." alla 0.5.9<br />";
+$db->QueryMod("ALTER TABLE `eventi` CHANGE `dettagli` `dettagli` TINYINT UNSIGNED NOT NULL");
+$db->QueryMod("ALTER TABLE `caratteristiche` CHANGE `sesso` `sesso` TINYINT( 1 ) UNSIGNED NOT NULL DEFAULT '0'");
+$db->QueryMod("ALTER TABLE `caratteristiche` CHANGE `minatore` `minatore` TINYINT UNSIGNED NOT NULL DEFAULT '0'");
+$db->QueryMod("ALTER TABLE `caratteristiche` CHANGE `alchimista` `alchimista` TINYINT UNSIGNED NOT NULL DEFAULT '0'");
+$db->QueryMod("ALTER TABLE `caratteristiche` CHANGE `fabbro` `fabbro` TINYINT UNSIGNED NOT NULL DEFAULT '0'");
+$db->QueryMod("ALTER TABLE `caratteristiche` CHANGE `magica` `magica` TINYINT UNSIGNED NOT NULL DEFAULT '0'");
+echo "Aggiornato db server ".$chiave." alla 0.5.10<br />";
 }//se non è quello di sviluppo principale
 }//fine per ogni server	
 	/* //creazione record per tab con 1 record per utente
