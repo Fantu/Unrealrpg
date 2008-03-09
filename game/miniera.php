@@ -5,11 +5,11 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 }
 require('language/'.$language.'/lang_miniera.php');
 require_once('language/'.$language.'/lang_oggetti_nomi.php');
-$oggpicconi=$db->QuerySelect("SELECT * FROM oggetti WHERE tipo='2' AND categoria='1'");
+$oggpicconi=$db->QueryCiclo("SELECT * FROM oggetti WHERE tipo='2' AND categoria='1'");
 while($oggpiccone=$db->QueryCicloResult($oggpicconi)) {
 $picconit[$oggpiccone['oggid']]=$oggpiccone['oggid'];
 }
-$oggpicconi=$db->QuerySelect("SELECT * FROM inoggetti WHERE userid='".$user['userid']."' GROUP BY oggid");
+$oggpicconi=$db->QueryCiclo("SELECT * FROM inoggetti WHERE userid='".$user['userid']."' GROUP BY oggid");
 while($oggpiccone=$db->QueryCicloResult($oggpicconi)) {
 if(isset($picconit['oggid']))
 $picconi[$oggpiccone['oggid']]=$lang['oggetto'.$oggpiccone['oggid'].'_nome'];
