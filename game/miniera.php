@@ -5,15 +5,18 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 }
 require('language/'.$language.'/lang_miniera.php');
 require_once('language/'.$language.'/lang_oggetti_nomi.php');
+$seoggpicconi=$db->QuerySelect("SELECT count(id) AS id FROM inoggetti WHERE userid='".$user['userid']."' GROUP BY oggid");
+if($seoggpicconi['id']>0){
 $oggpicconi=$db->QueryCiclo("SELECT * FROM oggetti WHERE tipo='2' AND categoria='1'");
 while($oggpiccone=$db->QueryCicloResult($oggpicconi)) {
 $picconit[$oggpiccone['id']]=$oggpiccone['id'];
 }
-$oggpicconi=$db->QueryCiclo("SELECT * FROM inoggetti WHERE userid='".$user['userid']."' GROUP BY oggid");
-while($oggpiccone=$db->QueryCicloResult($oggpicconi)) {
-if(isset($picconit['oggid']))
-$picconi[$oggpiccone['oggid']]=$lang['oggetto'.$oggpiccone['oggid'].'_nome'];
+$oggpicconi2=$db->QueryCiclo("SELECT oggid FROM inoggetti WHERE userid='".$user['userid']."' GROUP BY oggid");
+while($oggpiccone2=$db->QueryCicloResult($oggpicconi2)) {
+if(isset($picconit[$oggpiccone2['oggid']]))
+$picconi[$oggpiccone2['oggid']]=$lang['oggetto'.$oggpiccone2['oggid'].'_nome'];
 }
+}//se ci sono picconi
 /*$seoggpicconi=$db->QuerySelect("SELECT count(t1.oggid) AS id FROM inoggetti AS t1 JOIN oggetti t2 ON t1.oggid=t2.id WHERE t1.userid='".$user['userid']."' AND t2.tipo='2' AND t2.categoria='1' GROUP BY t1.oggid");
 if($seoggpicconi['id']>0){
 $oggpicconi=$db->QueryCiclo("SELECT t1.oggid AS oggid FROM inoggetti AS t1 JOIN oggetti t2 ON t1.oggid=t2.id WHERE t1.userid='".$user['userid']."' AND t2.tipo='2' AND t2.categoria='1' GROUP BY t1.oggid");
