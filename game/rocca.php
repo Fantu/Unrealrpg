@@ -31,6 +31,33 @@ $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,lavor
 echo "<script language=\"javascript\">window.location.href='game.php?act=situazione'</script>";
 exit();	
 }
-}//fine lavora come apprendista
+}//fine studia
+if (isset($_POST['roccapratica'])){
+$errore="";
+$elementosel=(int)$_POST['elemento2'];
+$tiposel=(int)$_POST['tipo'];
+$ore=(int)$_POST['ore2'];
+$userlav=$db->QuerySelect("SELECT * FROM lavori WHERE userid='".$user['userid']."' LIMIT 1");
+if ($usercar['energia']<(100+(100*$ore)))
+$errore.=$lang['rocca_errore1'];
+if ($adesso<($userlav['ultimolavoro']+$tempoproxlav))
+$errore.=$lang['rocca_errore2'];
+if ($elementosel<1)
+$errore.=$lang['rocca_errore3'];
+if ($tiposel<1)
+$errore.=$lang['rocca_errore4'];
+if($ore<1 OR $ore>3)
+$errore.=$lang['global_errore2'];
+if ($eventi['id']>0)
+$errore.=$lang['global_errore1'];
+if($errore){
+	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
+else {
+$db->QueryMod("UPDATE lavori SET oreultimolav='0' WHERE userid='".$user['userid']."' LIMIT 1");
+$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,lavoro,oggid,ore) VALUES ('".$user['userid']."','".$adesso."','3600','8','1','6','".$elementosel."','".$ore."')");	
+echo "<script language=\"javascript\">window.location.href='game.php?act=situazione'</script>";
+exit();	
+}
+}//fine pratica
 require('template/int_rocca.php');
 ?>
