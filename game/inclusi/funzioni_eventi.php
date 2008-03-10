@@ -504,7 +504,7 @@ $esplosione=rand(60,100)-$bonusabilita-($usercar['attmagico']/20)-$usercar['inte
 if($esplosione<10){
 $riuscito=1;
 $db->QueryMod("UPDATE inmagia SET stato='1' WHERE userid='".$userid."' AND magid='".$magiasel."'");
-$testo3="<br />".sprintf($lang['report_lavroc_magia_si'],$lang['magia'.$magiasel];
+$testo3="<br />".sprintf($lang['report_lavroc_magia_si'],$lang['magia'.$magiasel]);
 }//se riuscito
 }//se trovata una magia
 if($riuscito==0){
