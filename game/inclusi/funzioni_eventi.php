@@ -490,10 +490,12 @@ $trovato=1;
 $magiasel=$elemento;
 }//se corrispondente
 }//mostra ogni magia
+if($trovato==0){
 foreach($inmagie as $chiave=>$elemento){
 $trovato=1;
 $magiasel=$elemento;
 }//mostra ogni magia
+}//se nn ha già trovato
 }//fine se ci sono magie
 if($trovato==1){
 $magia=$db->QueryCiclo("SELECT * FROM magia WHERE id='".$magiasel."'");
