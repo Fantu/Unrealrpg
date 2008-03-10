@@ -12,7 +12,8 @@ Legenda:<br />
 </p>
 <p><strong>0.5.10</strong> (Non disponibile - In sviluppo)<br />
 + Rifatto il Libro degli incantesimi<br />
-+ Iniziata creazione seconda parte della Rocca<br />
++ Creata bozza della seconda parte della Rocca<br />
++ Aggiunto in parte ad ogni incantesimo del Libro se appreso<br />
 + Vari miglioramenti di sistema<br />
 + Miglioramenti ai testi in italiano<br />
 + Altri vari miglioramenti<br />

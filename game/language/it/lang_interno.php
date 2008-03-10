@@ -125,6 +125,7 @@ $lang['mail_cancellato_inattivita']='Ciao, %s<br />! Siamo spiacenti di informar
 
 //inizio libro
 $lang['nessuna_magia_presente']='Non conosci nessun incantesimo';
+$lang['appreso']='Appreso';
 //fine libro
 
 $lang['outputerrori']='Si sono verificati i seguenti errori:';

@@ -383,7 +383,6 @@ $exp+=(5*$usercar['magica']);
 $testo="<span>".sprintf($lang['report_lavstudiorocca'],$exp,$elementi[$elementosel],$energia)."</span>";
 $titolo=$lang['report_lavoro_roccastudio'];
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");
-$salute+=$danni;
 $db->QueryMod("UPDATE lavori t1 JOIN caratteristiche t3 on t1.userid=t3.userid SET t1.ultimolavoro='".$adesso."',t1.oreultimolav=t1.oreultimolav+'1',t3.expmagica=t3.expmagica+'".$exp."',t3.expelmagico".$elementosel."=t3.expelmagico".$elementosel."+'".$exp."',t3.energia=t3.energia-'".$energia."',t3.recuperosalute='".$adesso."',t3.recuperoenergia='".$adesso."' WHERE t1.userid='".$userid."'");
 Controllamagieconosciute($userid,$elementosel);
 if($ore>1){
@@ -461,4 +460,87 @@ $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,lavor
 }//fine continua lavoro
 }//fine se la coda ha almeno un altra ora
 } //fine Completalavfucfab
+
+function Completaroccapratica($userid,$elementosel,$ore,$tiposel) {
+global $db,$adesso,$lang,$language,$elementi,$tipimagia;
+require_once('language/'.$language.'/lang_rocca.php');
+$usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");
+$energia=100-(5*$usercar['magica']);
+if($energia<50)
+$energia=50;
+$exp=floor($usercar['saluteattuale']/10+$usercar['energia']/100+$usercar['attmagico']/8+$usercar['intelligenza']/9);
+$exp=floor(rand(($exp/100*75),$exp));
+$exp+=(5*$usercar['magica']);
+$trovato=0;
+$riuscito=0;
+$danni=0;
+$inmagie=$db->QuerySelect("SELECT COUNT(id) AS num FROM inmagia WHERE userid='".$userid."' AND stato='0'");
+if($inmagie['num']>0){
+$inmagieq=$db->QueryCiclo("SELECT * FROM inmagia WHERE userid='".$userid."' AND stato='0'");
+while($chem=$db->QueryCicloResult($inmagieq)) {
+	$inmagie[$chem['magid']]=$chem['magid'];
+}//fine mostra risultati
+$magieq=$db->QueryCiclo("SELECT * FROM magia WHERE elemento='".$elementosel."'");
+while($chem=$db->QueryCicloResult($magieq)) {
+	$magie[$chem['id']]=$chem['tipo'];
+}//fine mostra risultati
+foreach($inmagie as $chiave=>$elemento){
+if($magie[$chiave]['tipo']==$tiposel){
+$trovato=1;
+$magiasel=$elemento;
+}//se corrispondente
+}//mostra ogni magia
+foreach($inmagie as $chiave=>$elemento){
+$trovato=1;
+$magiasel=$elemento;
+}//mostra ogni magia
+}//fine se ci sono magie
+if($trovato==1){
+$magia=$db->QueryCiclo("SELECT * FROM magia WHERE id='".$magiasel."'");
+$bonusabilita=$usercar['magica']-$magia['abilitanec'];
+if($bonusabilita>0)
+$bonusabilita=$bonusabilita*30;
+$esplosione=rand(60,100)-$bonusabilita-($usercar['attmagico']/20)-$usercar['intelligenza']/20;
+if($esplosione<10){
+$riuscito=1;
+$db->QueryMod("UPDATE inmagia SET stato='1' WHERE userid='".$userid."' AND magid='".$magiasel."'");
+$testo3="<br />".sprintf($lang['report_lavroc_magia_si'],$lang['magia'.$magiasel];
+}//se riuscito
+}//se trovata una magia
+if($riuscito==0){
+$esplosione=rand(30,100)-($usercar['magica']*5)-($usercar['agilita']/20)-($usercar['attmagico']/10);
+if($esplosione<10){
+$testo2="<span>".$lang['report_esplosione_roc1']."</span>";
+}else{
+$danni=rand(20,30)-rand(floor($resistenza/2),floor($resistenza));
+if ($danni<1)
+$danni=1;	
+$testo2="<span>".sprintf($lang['report_esplosione_roc2'],$danni)."</span>";	
+}
+$titolo=$lang['report_esplosione_rocca'];
+$db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo2."','0','".$adesso."')");	
+$testo3="<br />".$lang['report_lavroc_magia_no'];
+}
+
+$testo="<span>".sprintf($lang['report_lavpraticarocca'],$exp,$elementi[$elementosel],$energia).$testo3."</span>";
+$titolo=$lang['report_lavoro_roccapratica'];
+$db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");
+$db->QueryMod("UPDATE lavori t1 JOIN caratteristiche t3 on t1.userid=t3.userid SET t1.ultimolavoro='".$adesso."',t3.saluteattuale=t3.saluteattuale-'".$danni."',t1.oreultimolav=t1.oreultimolav+'1',t3.expmagica=t3.expmagica+'".$exp."',t3.expelmagico".$elementosel."=t3.expelmagico".$elementosel."+'".$exp."',t3.energia=t3.energia-'".$energia."',t3.recuperosalute='".$adesso."',t3.recuperoenergia='".$adesso."' WHERE t1.userid='".$userid."'");
+Controllamagieconosciute($userid,$elementosel);
+if($ore>1){
+$errore="";
+$usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");
+if ($usercar['saluteattuale']<30)
+$errore.=$lang['rocca_errore5'];
+if($errore){
+$testo=$lang['outputerrori_continualav']."<br />".$errore;
+$titolo=$lang['Impossibile_lavorare_ancora'];
+$db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");
+}
+else {
+$ore--;
+$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,lavoro,oggid,ore,type) VALUES ('".$userid."','".$adesso."','3600','10','1','8','".$elementosel."','".$ore."','".$tiposel."')");
+}//fine continua lavoro
+}//fine se deve lavorare ancora
+} //fine Completaroccapratica
 ?>

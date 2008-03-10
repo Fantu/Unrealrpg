@@ -46,6 +46,8 @@ if ($elementosel<1)
 $errore.=$lang['rocca_errore3'];
 if ($tiposel<1)
 $errore.=$lang['rocca_errore4'];
+if ($usercar['saluteattuale']<30)
+$errore.=$lang['rocca_errore5'];
 if($ore<1 OR $ore>3)
 $errore.=$lang['global_errore2'];
 if ($eventi['id']>0)
@@ -54,7 +56,7 @@ if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
 else {
 $db->QueryMod("UPDATE lavori SET oreultimolav='0' WHERE userid='".$user['userid']."' LIMIT 1");
-$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,lavoro,oggid,ore) VALUES ('".$user['userid']."','".$adesso."','3600','10','1','6','".$elementosel."','".$ore."')");	
+$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,lavoro,oggid,ore,type) VALUES ('".$user['userid']."','".$adesso."','3600','10','1','8','".$elementosel."','".$ore."','".$tiposel."')");	
 echo "<script language=\"javascript\">window.location.href='game.php?act=situazione'</script>";
 exit();	
 }

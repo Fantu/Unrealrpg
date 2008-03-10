@@ -13,7 +13,10 @@ foreach($tipimagia as $chiavetm=>$elementotm){
 if(is_array($outputmagie[$elementoel][$elementotm])){
 echo $elementotm."<br />";
 foreach($outputmagie[$elementoel][$elementotm] as $chiave=>$elemento){
-echo $lang['magia'.$chiave]." - ".$lang['dmagia'.$chiave]."<br />";
+echo $lang['magia'.$chiave]." - ".$lang['dmagia'.$chiave];
+if($elemento==1)
+echo " - ".$lang['appreso'];
+echo "<br />";
 }//mostra ogni magia
 }//se qualche magia per tipo
 }//per ogni tipo 
