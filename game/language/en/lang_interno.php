@@ -55,12 +55,12 @@ $lang['Livello']='Level';
 $lang['Esperienza']='Experience';
 $lang['Salute']='Health';
 $lang['Energia']='Energy';
-$lang['Agilita']='Agility';
+$lang['Agilita']='Agilità';
 $lang['Attfisico']='Physical force';
 $lang['Attmagico']='Magical force';
 $lang['Diffisica']='Physical resistance';
 $lang['Difmagica']='Magical resistance';
-$lang['Velocita']='Velocity';
+$lang['Velocita']='Velocità';
 $lang['Intelligenza']='Intelligence';
 $lang['Destrezza']='Dexterity';
 $lang['Mana']='Mana';
@@ -68,7 +68,7 @@ $lang['Non_definito']='Undefined';
 $lang['Maschio']='Male';
 $lang['Femmina']='Female';
 $lang['Sesso']='Sex';
-$lang['elenco_ab']='Abilities';
+$lang['elenco_ab']='Abilità';
 $lang['ab_minatore']='Miner';
 $lang['ab_alchimista']='Alchemist';
 $lang['ab_fabbro']='Smith';
@@ -86,6 +86,7 @@ $lang['eventi_dettagli6']='You are working at the Forge as apprentice,you`ll fin
 $lang['eventi_dettagli7']='You are working at the Laboratory as alchemist,you`ll finish at ';
 $lang['eventi_dettagli8']='You are studying at the Mage Tower,you`ll finish at ';
 $lang['eventi_dettagli9']='Stai lavorando in Fucina come fabbro e finirai ';
+$lang['eventi_dettagli10']='Stai facendo pratica in Rocca dell`Arcano e finirai ';
 //fine dettagli eventi
 
 //inizio visualizzautente
@@ -116,18 +117,19 @@ $lang['global_errore2']='- Le ore di lavoro devono essere minimo di 1 e massimo 
 //inizio mail cancellazione/inattività
 $lang['Account_cancellato']='Account deleted';
 $lang['Account_inutilizzato']='Account unused';
-$lang['mail_cancellato_noconferma']='Ciao %s,<br />Siamo spiacenti di informarti che il tuo account su %s sul server %s &egrave; stato cancellato perch&egrave; non confermato entro le 48 ore.<br /> Saluti,<br />%s lo Staff.';
-$lang['mail_cancellato_nopersonaggio']='Ciao %s,<br />Siamo spiacenti di informarti che il tuo account su %s sul server %s &egrave; stato cancellato perch&egrave; non &egrave; stato creato un personaggio entro le 72 ore.<br /> Saluti,<br />%s lo Staff.';
-$lang['mail_avviso_inattivita']='Ciao, %s!<br />Ti scriviamo per informarti che il tuo account su %s server %s risulta inattivo da pi&ugrave; di 2 settimane.<br />Se questa inattivit&agrave; dovesse raggiungere i 30 giorni, l`account verr&agrave; automaticamente cancellato dal sistema.<br />Saluti,<br />%s lo Staff.';
-$lang['mail_cancellato_inattivita']='Ciao, %s<br />! Siamo spiacenti di informarti che il tuo account su %s sul server %s &egrave; stato cancellato perch&egrave; inattivo da oltre 30 giorni.<br />Saluti,<br />%s lo Staff.';
+$lang['mail_cancellato_noconferma']='Ciao %s,<br />Siamo spiacenti di informarti che il tuo account su %s sul server %s è stato cancellato perchè non confermato entro le 48 ore.<br /> Saluti,<br />%s lo Staff.';
+$lang['mail_cancellato_nopersonaggio']='Ciao %s,<br />Siamo spiacenti di informarti che il tuo account su %s sul server %s è stato cancellato perchè non è stato creato un personaggio entro le 72 ore.<br /> Saluti,<br />%s lo Staff.';
+$lang['mail_avviso_inattivita']='Ciao, %s!<br />Ti scriviamo per informarti che il tuo account su %s server %s risulta inattivo da pi&ugrave; di 2 settimane.<br />Se questa inattività dovesse raggiungere i 30 giorni, l`account verrà automaticamente cancellato dal sistema.<br />Saluti,<br />%s lo Staff.';
+$lang['mail_cancellato_inattivita']='Ciao, %s<br />! Siamo spiacenti di informarti che il tuo account su %s sul server %s è stato cancellato perchè inattivo da oltre 30 giorni.<br />Saluti,<br />%s lo Staff.';
 //fine errori cancellazione/inattività
 
 //inizio libro
 $lang['nessuna_magia_presente']='Non conosci nessun incantesimo';
+$lang['appreso']='Appreso';
 //fine libro
 
 $lang['outputerrori']='The following errors have occurred:';
-$lang['outputerrori_continualav']='You weren\'t able to go on working due to the following reasons:';
+$lang['outputerrori_continualav']='Non è stato possibile continuare a lavorare per i seguenti motivi:';
 $lang['Impossibile_lavorare_ancora']='Impossibile lavorare ancora!';
 $lang['nessun_evento']='Nessun evento in corso.';
 $lang['error_eventi_incorso']='Sei occupato a fare altro!';

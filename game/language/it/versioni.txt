@@ -10,7 +10,7 @@ Legenda:<br />
 <p><strong>0.6.0</strong> (Non disponibile - In sviluppo)<br />
 + Iniziato rifacimento sistema di base interno<br />
 </p>
-<p><strong>0.5.10</strong> (Non disponibile - In sviluppo)<br />
+<p><strong>0.5.10</strong> [R.775] (10/3/2008 - Beta)<br />
 + Rifatto il Libro degli incantesimi<br />
 + Creata bozza della seconda parte della Rocca<br />
 + Aggiunto in parte ad ogni incantesimo del Libro se appreso<br />
