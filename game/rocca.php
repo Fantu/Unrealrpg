@@ -28,7 +28,7 @@ if($errore){
 else {
 $db->QueryMod("UPDATE lavori SET oreultimolav='0' WHERE userid='".$user['userid']."' LIMIT 1");
 $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,lavoro,oggid,ore) VALUES ('".$user['userid']."','".$adesso."','3600','8','1','6','".$elementosel."','".$ore."')");	
-echo "<script language=\"javascript\">window.location.href='game.php?act=situazione'</script>";
+echo "<script language=\"javascript\">window.location.href='index.php?loc=situazione'</script>";
 exit();	
 }
 }//fine studia
@@ -57,7 +57,7 @@ if($errore){
 else {
 $db->QueryMod("UPDATE lavori SET oreultimolav='0' WHERE userid='".$user['userid']."' LIMIT 1");
 $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,lavoro,oggid,ore,type) VALUES ('".$user['userid']."','".$adesso."','3600','10','1','8','".$elementosel."','".$ore."','".$tiposel."')");	
-echo "<script language=\"javascript\">window.location.href='game.php?act=situazione'</script>";
+echo "<script language=\"javascript\">window.location.href='index.php?loc=situazione'</script>";
 exit();	
 }
 }//fine pratica

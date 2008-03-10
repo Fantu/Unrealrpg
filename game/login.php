@@ -49,7 +49,7 @@ if($check['chiuso']==1) {
 	}
 	$language=$user['language'];
 	require('inclusi/cancellazione.php');
-	header("Location: game.php?act=situazione");
+	header("Location: index.php?loc=situazione");
 	exit();	
 }
 ?>

@@ -35,7 +35,7 @@ if($errore){
 else {
 $db->QueryMod("UPDATE lavori SET oreultimolav='0' WHERE userid='".$user['userid']."' LIMIT 1");
 $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,lavoro,ore) VALUES ('".$user['userid']."','".$adesso."','3600','6','1','4','".$ore."')");	
-echo "<script language=\"javascript\">window.location.href='game.php?act=situazione'</script>";
+echo "<script language=\"javascript\">window.location.href='index.php?loc=situazione'</script>";
 exit();
 }
 }//fine lavora in Fucina come apprendista
@@ -75,7 +75,7 @@ if($errore){
 else {
 $db->QueryMod("UPDATE lavori SET oreultimolav='0' WHERE userid='".$user['userid']."' LIMIT 1");
 $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,lavoro,ore,oggid) VALUES ('".$user['userid']."','".$adesso."','3600','9','1','7','".$ore."','".$oggettodaforgiare."')");	
-echo "<script language=\"javascript\">window.location.href='game.php?act=situazione'</script>";
+echo "<script language=\"javascript\">window.location.href='index.php?loc=situazione'</script>";
 exit();
 }
 }//fine lavora in Fucina come fabbro

@@ -10,12 +10,12 @@ require_once('inclusi/funzioni_oggetti.php');
 $step=(int)$_GET['step'];
 switch($_GET['step']){
 case 1:
-$linkindietro="<a href=\"game.php?act=mercato\">".$lang['Mercato']."</a>";
+$linkindietro="<a href=\"index.php?loc=mercato\">".$lang['Mercato']."</a>";
 $categoria=(int)$_GET['categoria'];
 if(is_array($catoggetti_nome[$categoria])){
 foreach($catoggetti_nome[$categoria] as $chiave=>$elemento){
 $i++;
-$catoggetti[$i]="<a href=\"game.php?act=mercato&amp;step=2&amp;categoria=".$categoria."&amp;sottocategoria=".$elemento."\">".$lang['categoria'.$categoria.'-'.$elemento]."</a>";
+$catoggetti[$i]="<a href=\"index.php?loc=mercato&amp;step=2&amp;categoria=".$categoria."&amp;sottocategoria=".$elemento."\">".$lang['categoria'.$categoria.'-'.$elemento]."</a>";
 }
 }//fine se ci sono sottocategorie
 else
@@ -27,13 +27,13 @@ break;
 case 2:
 $categoria=(int)$_GET['categoria'];
 $sottocat=(int)$_GET['sottocategoria'];
-$linkindietro="<a href=\"game.php?act=mercato\">".$lang['Mercato']."</a> - <a href=\"game.php?act=mercato&amp;step=1&amp;categoria=".$categoria."\">".$lang['tipo'.$categoria]."</a>";
+$linkindietro="<a href=\"index.php?loc=mercato\">".$lang['Mercato']."</a> - <a href=\"index.php?loc=mercato&amp;step=1&amp;categoria=".$categoria."\">".$lang['tipo'.$categoria]."</a>";
 $mostraogg=1;
 break;
 default:
 foreach($catoggetti_nome as $chiave=>$elemento){
 $i++;
-$catoggetti[$i]="<a href=\"game.php?act=mercato&amp;step=1&amp;categoria=".$chiave."\">".$lang['tipo'.$chiave]."</a>";
+$catoggetti[$i]="<a href=\"index.php?loc=mercato&amp;step=1&amp;categoria=".$chiave."\">".$lang['tipo'.$chiave]."</a>";
 }
 break;
 }
@@ -47,7 +47,7 @@ $oggposseduti=$db->QueryCiclo("SELECT id,costo FROM oggetti WHERE tipo='".$categ
 while($ogg=$db->QueryCicloResult($oggposseduti)) {
 $i++;
 $oggetti['id'][$i]=$ogg['id'];
-$oggetti['nome'][$i]="<a href=\"game.php?act=mostraoggetto&amp;ogg=".$ogg['id']."&amp;da=mercato&amp;cat=".$categoria."&amp;scat=".$sottocat."\">".$lang['oggetto'.$ogg['id'].'_nome']."</a>";
+$oggetti['nome'][$i]="<a href=\"index.php?loc=mostraoggetto&amp;ogg=".$ogg['id']."&amp;da=mercato&amp;cat=".$categoria."&amp;scat=".$sottocat."\">".$lang['oggetto'.$ogg['id'].'_nome']."</a>";
 $oggetti['costo'][$i]=$ogg['costo'];
 }
 }

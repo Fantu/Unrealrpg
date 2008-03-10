@@ -42,7 +42,7 @@ $energia=$lang['perfetta'];
 }
 $cheordine=htmlspecialchars($_GET['ordine'],ENT_QUOTES);
 $iniziale=(int)$_GET['inizio'];
-$linkindietro="game.php?act=utenti&amp;ordine=".$cheordine."&amp;inizio=".$iniziale;
+$linkindietro="index.php?loc=utenti&amp;ordine=".$cheordine."&amp;inizio=".$iniziale;
 
 require('template/int_visualizzautente.php');
 ?>

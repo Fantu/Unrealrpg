@@ -65,7 +65,7 @@ while($ogg=$db->QueryCicloResult($oggposseduti)) {
 $i++;
 $oggetti['id'][$i]=$ogg['oggid'];
 $oggetti['numero'][$i]=$ogg['numero'];
-$oggetti['nome'][$i]="<a href=\"game.php?act=mostraoggetto&amp;ogg=".$ogg['oggid']."&amp;da=inventario\">".$lang['oggetto'.$ogg['oggid'].'_nome']."</a>";
+$oggetti['nome'][$i]="<a href=\"index.php?loc=mostraoggetto&amp;ogg=".$ogg['oggid']."&amp;da=inventario\">".$lang['oggetto'.$ogg['oggid'].'_nome']."</a>";
 }
 }//fine mostra oggetti
 

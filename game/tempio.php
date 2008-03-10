@@ -17,7 +17,7 @@ if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
 else {
 $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo) VALUES ('".$user['userid']."','".$adesso."','3600','3','2')");	
-echo "<script language=\"javascript\">window.location.href='game.php?act=situazione'</script>";
+echo "<script language=\"javascript\">window.location.href='index.php?loc=situazione'</script>";
 exit();
 }
 }//fine prega

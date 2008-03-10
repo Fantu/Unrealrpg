@@ -8,14 +8,14 @@ require_once('language/'.$language.'/lang_oggetti_nomi.php');
 require_once('language/'.$language.'/lang_oggetti_categorie.php');
 $da=htmlspecialchars($_GET['da'],ENT_QUOTES);
 if($da=='inventario'){
-$indietro="<a href=\"game.php?act=inventario\">".$lang['Inventario']."</a>";
+$indietro="<a href=\"index.php?loc=inventario\">".$lang['Inventario']."</a>";
 }else{
 $cat=(int)$_GET['cat'];
 $scat=(int)$_GET['scat'];
 if($scat==0){
-$indietro="<a href=\"game.php?act=mercato&amp;step=1&amp;categoria=".$cat."\">".$lang['tipo'.$cat]."</a>";
+$indietro="<a href=\"index.php?loc=mercato&amp;step=1&amp;categoria=".$cat."\">".$lang['tipo'.$cat]."</a>";
 }else{
-$indietro="<a href=\"game.php?act=mercato&amp;step=2&amp;categoria=".$cat."&amp;sottocategoria=".$scat."\">".$lang['categoria'.$cat.'-'.$scat]."</a>";
+$indietro="<a href=\"index.php?loc=mercato&amp;step=2&amp;categoria=".$cat."&amp;sottocategoria=".$scat."\">".$lang['categoria'.$cat.'-'.$scat]."</a>";
 }
 }
 $oggid=(int)$_GET['ogg'];

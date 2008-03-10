@@ -47,7 +47,7 @@ if($errore){
 else {
 $db->QueryMod("UPDATE lavori SET oreultimolav='0' WHERE userid='".$user['userid']."' LIMIT 1");
 $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,lavoro,ore) VALUES ('".$user['userid']."','".$adesso."','3600','1','1','1','".$ore."')");	
-echo "<script language=\"javascript\">window.location.href='game.php?act=situazione'</script>";
+echo "<script language=\"javascript\">window.location.href='index.php?loc=situazione'</script>";
 exit();
 }
 }//fine lavora in miniera nuova
@@ -82,7 +82,7 @@ if($errore){
 else {
 $db->QueryMod("UPDATE lavori SET oreultimolav='0' WHERE userid='".$user['userid']."' LIMIT 1");
 $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,lavoro,oggid,ore) VALUES ('".$user['userid']."','".$adesso."','3600','5','1','3','".$piccone."','".$ore."')");	
-echo "<script language=\"javascript\">window.location.href='game.php?act=situazione'</script>";
+echo "<script language=\"javascript\">window.location.href='index.php?loc=situazione'</script>";
 exit();
 }
 }//fine lavora in miniera vecchia

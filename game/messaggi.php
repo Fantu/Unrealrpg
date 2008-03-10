@@ -32,7 +32,7 @@ $db->QueryMod("DELETE FROM messaggi WHERE userid='".$user['userid']."' AND letto
 switch($_GET['do']){
 case "elim"://cancella msg singolo
 $db->QueryMod("DELETE FROM messaggi WHERE id='".$id."'");
-echo "<script language=\"javascript\">window.location.href='game.php?act=messaggi'</script>";
+echo "<script language=\"javascript\">window.location.href='index.php?loc=messaggi'</script>";
 exit();
 break;
 case "canc"://cancella mess selezionati
@@ -41,7 +41,7 @@ while($_POST['contatore']>0) {
 	$db->QueryMod("DELETE FROM messaggi WHERE id='".$_POST['messaggioid'.$_POST['contatore'].'']."'");
 	$_POST['contatore']--;
 }
-echo "<script language=\"javascript\">window.location.href='game.php?act=messaggi'</script>";
+echo "<script language=\"javascript\">window.location.href='index.php?loc=messaggi'</script>";
 exit();
 break;
 case "dorisp":// invia risposta
@@ -63,7 +63,7 @@ case "dorisp":// invia risposta
 		$titolo="RE: ".$a['titolo'];
 		$messaggio=htmlspecialchars($_POST['mymess'],ENT_QUOTES);
 		$db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$a['mittenteid']."','".$titolo."','".$messaggio."','".$user['userid']."','".$adesso."')");
-		echo "<script language=\"javascript\">window.location.href='game.php?act=messaggi'</script>";
+		echo "<script language=\"javascript\">window.location.href='index.php?loc=messaggi'</script>";
 		exit();		
 	}
 break;
@@ -88,13 +88,13 @@ case "doscrivi":// invia nuovo messaggio
 		$achi=(int)$_POST['achi'];
 		$db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$achi."','".$titolo."','".$messaggio."','".$user['userid']."','".$adesso."')");
 		$db->QueryMod("DELETE FROM messaggi WHERE id='".$id."'");
-		echo "<script language=\"javascript\">window.location.href='game.php?act=messaggi'</script>";
+		echo "<script language=\"javascript\">window.location.href='index.php?loc=messaggi'</script>";
 	}
 exit();
 break;
 case "risp":// scrivi risposta
 ?>
-<form action="game.php?act=messaggi&amp;do=dorisp" method="post" name="formrisp">
+<form action="index.php?loc=messaggi&amp;do=dorisp" method="post" name="formrisp">
 <table width="505"  border="0" cellspacing="2" cellpadding="2">
   <tr>
     <td><?php echo $lang['istruzioni_scrivi_msg']; ?></td>
@@ -115,7 +115,7 @@ case "risp":// scrivi risposta
 break;
 case "scrivi":// scrivi nuovo
 ?>
-<form action="game.php?act=messaggi&amp;do=doscrivi" method="post" name="formrisp2">
+<form action="index.php?loc=messaggi&amp;do=doscrivi" method="post" name="formrisp2">
 <table width="505"  border="0" cellspacing="2" cellpadding="2">
   <tr>
     <td><?php echo $lang['istruzioni_scrivi_msg']; ?></td>
@@ -137,7 +137,7 @@ break;
 default:// visualizza messaggi
 $semsg=$db->QuerySelect("SELECT count(id) AS numero FROM messaggi WHERE userid='".$user['userid']."'");
 	if($semsg['numero']>0){
-	echo "<form action=\"game.php?act=messaggi&amp;do=canc\" method=\"post\" name=\"canctutt\">";
+	echo "<form action=\"index.php?loc=messaggi&amp;do=canc\" method=\"post\" name=\"canctutt\">";
 	$i=0;
 	$a=$db->QueryCiclo("SELECT * FROM messaggi WHERE userid='".$user['userid']."' ORDER BY id desc");
 	while($mess=$db->QueryCicloResult($a)) {
@@ -159,9 +159,9 @@ $semsg=$db->QuerySelect("SELECT count(id) AS numero FROM messaggi WHERE userid='
 		<td colspan="2" align="right"> 
 		<?php 
 		if($mess['mittenteid']==0)
-			echo "[ <a href=\"game.php?act=messaggi&amp;do=elim&amp;id=".$mess['id']."\">".$lang['elimina']."</a> ]";
+			echo "[ <a href=\"index.php?loc=messaggi&amp;do=elim&amp;id=".$mess['id']."\">".$lang['elimina']."</a> ]";
 		else
-			echo "[ <a href=\"game.php?act=messaggi&amp;do=risp&amp;id=".$mess['id']."\">".$lang['rispondi']."</a> ] - [ <a href=\"game.php?act=messaggi&amp;do=elim&amp;id=".$mess['id']."\">".$lang['elimina']."</a> ]"; ?></td>
+			echo "[ <a href=\"index.php?loc=messaggi&amp;do=risp&amp;id=".$mess['id']."\">".$lang['rispondi']."</a> ] - [ <a href=\"index.php?loc=messaggi&amp;do=elim&amp;id=".$mess['id']."\">".$lang['elimina']."</a> ]"; ?></td>
 	  </tr>
 	</table>
 	<?php

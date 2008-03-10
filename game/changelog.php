@@ -10,7 +10,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
     <td>Changelog:</td>
   </tr>
   <tr>
-    <td>Per leggere i changelog completi pi&ugrave; aggiornati dell'intero progetto clicca <a href="game.php?act=changelog&amp;completa=1">qui</a></td>
+    <td>Per leggere i changelog completi pi&ugrave; aggiornati dell'intero progetto clicca <a href="index.php?loc=changelog&amp;completa=1">qui</a></td>
   </tr>  
   <tr>
     <td><?php if($_GET['completa']==1){include('/var/www/web5/web/rpgdev/game/language/'.$language.'/versioni.txt');}else{include('language/'.$language.'/versioni.txt');} ?></td>

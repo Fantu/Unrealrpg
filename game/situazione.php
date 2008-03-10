@@ -39,9 +39,9 @@ $quantimess=$db->QuerySelect("SELECT COUNT(*) AS id FROM messaggi WHERE userid='
 if($quantimess['id']==0){
 $newmsg=$lang['nessun_nuovo_msg'];
 } elseif($quantimess['id']==1){
-$newmsg="<a href=\"game.php?act=messaggi\">".$lang['un_nuovo_msg']."</a>";
+$newmsg="<a href=\"index.php?loc=messaggi\">".$lang['un_nuovo_msg']."</a>";
 }else{
-$newmsg="<a href=\"game.php?act=messaggi\">".sprintf($lang['nuovi_msg'],$quantimess['id'])."</a>";
+$newmsg="<a href=\"index.php?loc=messaggi\">".sprintf($lang['nuovi_msg'],$quantimess['id'])."</a>";
 }//fine nuovi msg
 if($eventi['id']>0){
 	$eventi=$db->QuerySelect("SELECT * FROM eventi WHERE userid='".$user['userid']."' LIMIT 1");
@@ -51,10 +51,10 @@ if($eventi['id']>0){
 	if(($eventi['datainizio']+600)>$adesso AND $eventi['tipo']!=3){
 	if($_GET['annullaevento']==1){
 	$db->QueryMod("DELETE FROM eventi WHERE userid='".$user['userid']."'");
-	header("Location: game.php?act=situazione");
+	header("Location: index.php?loc=situazione");
 	exit();
 	}
-	$evento.=" <a href=\"game.php?act=situazione&amp;annullaevento=1\">".$lang['Annulla']."</a>";}
+	$evento.=" <a href=\"index.php?loc=situazione&amp;annullaevento=1\">".$lang['Annulla']."</a>";}
 }
 if(!$evento)
 $evento=$lang['nessun_evento'];
