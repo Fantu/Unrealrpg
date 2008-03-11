@@ -8,8 +8,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <form action="" method="post" name="creapersonaggio">
 <table border="0">
 <tr>
-<td><?php echo $lang['Razza']; ?>: </td>
-<td>
+<td><?php echo $lang['Razza']; ?>: 
 <select name="razza" id="razza">
 <option value="none" selected="selected">--------</option>
 <?php foreach($razze['nome'] as $chiave=>$elemento)
@@ -17,8 +16,7 @@ echo "<option value=\"$chiave\">$elemento</option>"; ?>
 </select></td>
 </tr>
 <tr>
-<td><?php echo $lang['Classe']; ?>: </td>
-<td>
+<td><?php echo $lang['Classe']; ?>: 
 <select name="classe" id="classe">
 <option value="none" selected="selected">--------</option>
 <?php foreach($classi['nome'] as $chiave=>$elemento)
@@ -26,8 +24,7 @@ echo "<option value=\"$chiave\">$elemento</option>"; ?>
 </select></td>
 </tr>
 <tr>
-<td><?php echo $lang['Sesso']; ?>: </td>
-<td>
+<td><?php echo $lang['Sesso']; ?>: 
 <select name="sesso" id="sesso">
 <?php foreach($sessi['nome'] as $chiave=>$elemento)
 echo "<option value=\"$chiave\">$elemento</option>"; ?>
