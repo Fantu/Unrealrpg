@@ -47,9 +47,10 @@ require_once('inclusi/int_header.php');
 if ($user['personaggio']==0){
 	require('creapersonaggio.php');	}
 	else{
-		if(!file_exists($_GET['loc'].'.php'))
-		$_GET['loc']="situazione";
-		require($_GET['loc'].'.php');
+		$location=htmlspecialchars($_GET['loc'],ENT_QUOTES);
+		if(!file_exists($location.'.php'))
+		$location="situazione";
+		require($location.'.php');
 		}
 ?>
 			</div> 

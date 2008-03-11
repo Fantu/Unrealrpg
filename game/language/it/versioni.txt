@@ -9,6 +9,11 @@ Legenda:<br />
 </p>
 <p><strong>0.6.0</strong> (Non disponibile - In sviluppo)<br />
 + Iniziato rifacimento sistema di base interno<br />
++ Aggiunta la reputazione fra le caratteristiche<br />
++ Aggiunta la visualizzazione della reputazione in Situazione<br />
++ Aggiunta la visualizzazione della reputazione nella visualizzazione dettagliata dei personaggi<br />
++ Vari miglioramenti di sistema<br />
++ Vari miglioramenti di sicurezza<br />
 # Modificati tutti i link interni<br />
 </p>
 <p><strong>0.5.10.1</strong> (11/3/2008 - Beta)<br />
