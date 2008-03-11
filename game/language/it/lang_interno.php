@@ -74,6 +74,7 @@ $lang['ab_alchimista']='Alchimista';
 $lang['ab_fabbro']='Fabbro';
 $lang['ab_magica']='Sapienza magica';
 $lang['Monete']='Monete';
+$lang['Reputazione']='Reputazione';
 //fine caratteristiche
 
 //inizio dettagli eventi
