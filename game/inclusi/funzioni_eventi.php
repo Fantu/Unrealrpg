@@ -485,15 +485,17 @@ while($chem=$db->QueryCicloResult($magieq)) {
 	$magie[$chem['id']]=$chem['tipo'];
 }//fine mostra risultati
 foreach($inmagie as $chiave=>$elemento){
-if($magie[$chiave]['tipo']==$tiposel){
+if($magie[$chiave]==$tiposel AND isset($magie[$chiave])){
 $trovato=1;
 $magiasel=$elemento;
 }//se corrispondente
 }//mostra ogni magia
 if($trovato==0){
 foreach($inmagie as $chiave=>$elemento){
+if(isset($magie[$chiave])){
 $trovato=1;
 $magiasel=$elemento;
+}//se stesso elemento
 }//mostra ogni magia
 }//se nn ha già trovato
 }//fine se ci sono magie
