@@ -28,12 +28,7 @@ if( $check['chiuso']==1 ) {
 $int_security=$game_se_code;
 require_once('inclusi/int_header.php');
 
-if(!$user['userid'])
-	echo "<script language=\"javascript\">window.location.href='../index.php?error=13'</script>";
-else if($user['ipattuale']!=$_SERVER['REMOTE_ADDR'])
-	echo "<script language=\"javascript\">window.location.href='../index.php?error=14'</script>";
-else {
-$interno="1";
+//$interno="1";
 ?>
 <table width="900" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
@@ -81,5 +76,4 @@ if ($user['personaggio']==0){
 </table>
 <?php
 require_once('template/int_footer.php');
-} //chiuso controllo login
 ?>

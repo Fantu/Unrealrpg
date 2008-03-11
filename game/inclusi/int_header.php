@@ -7,6 +7,10 @@ $username=htmlspecialchars($lg[0],ENT_QUOTES);
 $password=htmlspecialchars($lg[2],ENT_QUOTES);
 $user=$db->QuerySelect("SELECT * FROM utenti WHERE userid='".$username."' AND password='".$password."' AND conferma=1 LIMIT 1");
 if($user['userid']) {
+if($user['ipattuale']!=$_SERVER['REMOTE_ADDR']){
+echo "<script language=\"javascript\">window.location.href='../index.php?error=14'</script>";
+exit();
+}//se ip non corrisponde
 $db->QueryMod("UPDATE utenti SET ultimazione='".$adesso."' WHERE userid='".$user['userid']."'");
 require_once('inclusi/controllo_eventi.php');
 Controllaeventi(2);
