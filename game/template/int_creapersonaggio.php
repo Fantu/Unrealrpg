@@ -3,11 +3,12 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	header("Location: ../../index.php?error=16");
 	exit();
 }?>
+<center><h2><?php echo $lang['Crea']; ?></h2></center><br />
 <?php echo $outputerrori; ?>
 <form action="" method="post" name="creapersonaggio">
 <table border="0">
 <tr>
-<td><div align="right"><?php echo $lang['Razza']; ?>: </div></td>
+<td><?php echo $lang['Razza']; ?>: </td>
 <td>
 <select name="razza" id="razza">
 <option value="none" selected="selected">--------</option>
@@ -16,7 +17,7 @@ echo "<option value=\"$chiave\">$elemento</option>"; ?>
 </select></td>
 </tr>
 <tr>
-<td><div align="right"><?php echo $lang['Classe']; ?>: </div></td>
+<td><?php echo $lang['Classe']; ?>: </td>
 <td>
 <select name="classe" id="classe">
 <option value="none" selected="selected">--------</option>
@@ -25,7 +26,7 @@ echo "<option value=\"$chiave\">$elemento</option>"; ?>
 </select></td>
 </tr>
 <tr>
-<td><div align="right"><?php echo $lang['Sesso']; ?>: </div></td>
+<td><?php echo $lang['Sesso']; ?>: </td>
 <td>
 <select name="sesso" id="sesso">
 <?php foreach($sessi['nome'] as $chiave=>$elemento)

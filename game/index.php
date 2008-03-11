@@ -27,8 +27,6 @@ if( $check['chiuso']==1 ) {
 }
 $int_security=$game_se_code;
 require_once('inclusi/int_header.php');
-
-//$interno="1";
 ?>
 <table width="900" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
