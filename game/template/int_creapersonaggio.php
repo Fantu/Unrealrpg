@@ -6,7 +6,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <center><h2><?php echo $lang['Crea']; ?></h2></center><br />
 <?php echo $outputerrori; ?>
 <form action="" method="post" name="creapersonaggio">
-<table border="0">
+<table border="0" align="center">
 <tr>
 <td><?php echo $lang['Razza']; ?>: 
 <select name="razza" id="razza">
