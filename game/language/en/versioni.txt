@@ -9,6 +9,10 @@ Legenda:<br />
 </p>
 <p><strong>0.6.0</strong> (Non disponibile - In sviluppo)<br />
 + Iniziato rifacimento sistema di base interno<br />
+# Modificati tutti i link interni<br />
+</p>
+<p><strong>0.5.10.1</strong> (11/3/2008 - Beta)<br />
+- Corretto bug nella seconda parte della Rocca<br />
 </p>
 <p><strong>0.5.10</strong> [R.775] (10/3/2008 - Beta)<br />
 + Rifatto il Libro degli incantesimi<br />
