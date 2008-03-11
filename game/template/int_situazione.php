@@ -25,16 +25,16 @@ echo "<span><strong>".$lang['comunicazione']."</strong>".$newscom['comunicazione
 <?php echo $lang['Esperienza']; ?>: <?php echo $usercar['exp']; echo "/"; echo $expnewlevel; ?><br />
 <?php echo $lang['Salute']; ?>: <?php echo $usercar['saluteattuale']; echo "/"; echo $usercar['salute']; ?><br />
 <?php echo $lang['Energia']; ?>: <?php echo $usercar['energia']; echo "/"; echo $usercar['energiamax']; ?><br />
-<?php echo $lang['Agilita']; ?>: <?php echo $usercar['agilita']; ?><br />
+<?php echo $lang['Mana']; ?>: <?php echo $usercar['manarimasto']; echo "/"; echo $usercar['mana']; ?><br />
+<?php echo $lang['Monete']; ?>: <?php echo $user['monete']; ?><br />
 <?php echo $lang['Attfisico']; ?>: <?php echo $usercar['attfisico']; ?><br />
 <?php echo $lang['Attmagico']; ?>: <?php echo $usercar['attmagico']; ?><br />
 <?php echo $lang['Diffisica']; ?>: <?php echo $usercar['diffisica']; ?><br />
 <?php echo $lang['Difmagica']; ?>: <?php echo $usercar['difmagica']; ?><br />
 <?php echo $lang['Velocita']; ?>: <?php echo $usercar['velocita']; ?><br />
+<?php echo $lang['Agilita']; ?>: <?php echo $usercar['agilita']; ?><br />
 <?php echo $lang['Intelligenza']; ?>: <?php echo $usercar['intelligenza']; ?><br />
 <?php echo $lang['Destrezza']; ?>: <?php echo $usercar['destrezza']; ?><br />
-<?php echo $lang['Mana']; ?>: <?php echo $usercar['manarimasto']; echo "/"; echo $usercar['mana']; ?><br />
-<?php echo $lang['Monete']; ?>: <?php echo $user['monete']; ?><br />
 <br />
 <table border="0" cellspacing="1">
 <tr><td colspan="2"><?php echo $lang['elenco_ab']; ?></td></tr>
