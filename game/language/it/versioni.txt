@@ -15,6 +15,7 @@ Legenda:<br />
 + Vari miglioramenti di sistema<br />
 + Vari miglioramenti di sicurezza<br />
 # Modificati tutti i link interni<br />
+# Modificato il decremento di fede con il passare del tempo, reso più equilibrato<br />
 </p>
 <p><strong>0.5.10.1</strong> (11/3/2008 - Beta)<br />
 - Corretto bug nella seconda parte della Rocca<br />

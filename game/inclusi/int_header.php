@@ -41,7 +41,7 @@ if ($adesso>($usercar['decfede']+3600)){
 	if ($usercar['fede']>0){
 		$differenzaora=$adesso-$usercar['decfede'];
 		$ore=floor($differenzaora/3600);
-		$fede=$usercar['fede']-($ore*20);
+		$fede=$usercar['fede']-($ore*10);
 		if ($fede<0)
 		$fede=0;
 		$db->QueryMod("UPDATE caratteristiche SET decfede=decfede+'".($ore*3600)."',fede='".($fede)."' WHERE userid='".$user['userid']."'");
