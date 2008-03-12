@@ -19,6 +19,9 @@ $vincitore=$db->QuerySelect("SELECT userid FROM banca WHERE lotteria>0 LIMIT ".$
 $db->QueryMod("UPDATE config SET lotteria='".$adesso."', banca=banca-'".$vincita."'");
 $db->QueryMod("UPDATE banca SET lotteria='0',vincitore='0'");
 $db->QueryMod("UPDATE banca SET conto=conto+'".$vincita."',vincitore='1' WHERE userid='".$vincitore['userid']."'");
+$testo=sprintf($lang['hai_vinto_lotteria'],$vincita);
+$titolo=$lang['Lotteria'];
+$db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$vincitore['userid']."','".$titolo."','".$testo."','0','".$adesso."')");
 }//se c'è almeno un partecipante
 }//fine estrazione
 }//fine controllo se estrazione

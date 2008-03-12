@@ -12,6 +12,7 @@ Legenda:<br />
 + Aggiunta la reputazione fra le caratteristiche<br />
 + Aggiunta la visualizzazione della reputazione in Situazione<br />
 + Aggiunta la visualizzazione della reputazione nella visualizzazione dettagliata dei personaggi<br />
++ Lotteria: ora quando viene fatta l'estrazione il vincitore riceve un messaggio che segnala la vincita<br />
 + Vari miglioramenti di sistema<br />
 + Vari miglioramenti di sicurezza<br />
 # Modificati tutti i link interni<br />
