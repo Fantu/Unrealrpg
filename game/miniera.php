@@ -5,7 +5,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 }
 require('language/'.$language.'/lang_miniera.php');
 require_once('language/'.$language.'/lang_oggetti_nomi.php');
-$seoggpicconi=$db->QuerySelect("SELECT count(id) AS id FROM inoggetti WHERE userid='".$user['userid']."' GROUP BY oggid");
+$seoggpicconi=$db->QuerySelect("SELECT count(id) AS id FROM inoggetti WHERE userid='".$user['userid']."'");
 if($seoggpicconi['id']>0){
 $oggpicconi=$db->QueryCiclo("SELECT * FROM oggetti WHERE tipo='2' AND categoria='1'");
 while($oggpiccone=$db->QueryCicloResult($oggpicconi)) {

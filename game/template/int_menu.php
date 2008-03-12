@@ -30,6 +30,9 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
     <td><div align="center"><a href="index.php?loc=libro"><?php echo $lang['Libro_incantesimi']; ?></a></div></td>
 	</tr>
 	<tr>
+    <td><div align="center"><a href="index.php?loc=combact"><?php echo $lang['Combattimenti']; ?></a></div></td>
+	</tr>
+	<tr>
     <td><div align="center"><a href="index.php?loc=mercato"><?php echo $lang['Mercato']; ?></a></div></td>
 	</tr>
 	<tr>
