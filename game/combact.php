@@ -20,8 +20,8 @@ $errore.=$lang['combact_errore2'];
 if($errore){
 	$outputerrori="<span>".$lang['outputerrorisfida']."</span><br /><span>".$errore."</span><br /><br />";}
 else {
-$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,type) VALUES ('".$user['userid']."','".$adesso."','1800','11','1','1')");
-$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,type) VALUES ('".$idp."','".$adesso."','1800','12','1','2')");
+$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,type) VALUES ('".$user['userid']."','".$adesso."','1800','11','4','1')");
+$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,type) VALUES ('".$idp."','".$adesso."','1800','12','4','2')");
 echo "<script language=\"javascript\">window.location.href='index.php?loc=situazione'</script>";
 exit();	
 }
