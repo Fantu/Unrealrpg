@@ -336,7 +336,7 @@ $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES
 $testo3=$lang['report_lavlab_pozione_no']."<br />";
 $exp-=floor($exp/2);
 }/*fine esplosione*/else{
-$exp+=floor($exp*2);
+$exp+=floor($exp/2);
 $db->QueryMod("INSERT INTO inoggetti (oggid,userid) VALUES ('".$pozione['id']."','".$userid."')");
 $nomepozione=$lang['oggetto'.$pozione['id'].'_nome'];
 $testo3=sprintf($lang['report_lavlab_pozione_si'],$nomepozione)."<br />";

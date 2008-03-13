@@ -19,6 +19,9 @@ Legenda:<br />
 # Modificati tutti i link interni<br />
 # Modificato il decremento di fede con il passare del tempo, reso più equilibrato<br />
 </p>
+<p><strong>0.5.10.2</strong> (13/3/2008 - Beta)<br />
+- Corretto bug nel lavoro in Laboratorio come alchimista<br />
+</p>
 <p><strong>0.5.10.1</strong> (11/3/2008 - Beta)<br />
 - Corretto bug nella seconda parte della Rocca<br />
 </p>
