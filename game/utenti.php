@@ -83,7 +83,7 @@ while($chi=$db->QueryCicloResult($a)) {
 	$utenti['nome'][$i]=$chi['nome'];
 	$utenti['userid'][$i]=$chi['id'];
 	$utenti['link'][$i]="index.php?loc=visualizzautente&amp;id=".$chi['id']."&amp;ordine=".$cheordine."&amp;inizio=".$iniziale;
-	$utentit['livello'][$i]=$chi['liv'];
+	$utenti['livello'][$i]=$chi['liv'];
 	if ($chi['azione']>$seonline){
 	$utenti['online'][$i]=1;}else
 	{$utenti['online'][$i]=0;}
