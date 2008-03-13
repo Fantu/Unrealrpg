@@ -16,18 +16,20 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
     <td><div align="center"><?php echo $lang['Personaggio']; ?></div></td>
     <td><div align="center"><?php echo $lang['Stato']; ?></div></td>
     <td><div align="center"><?php echo $lang['scrivi_msg']; ?></div></td>
+    <td><div align="center"><?php echo $lang['sfida']; ?></div></td>
     <td><div align="center"><?php echo $lang['Livello']; ?></div></td>
   </tr>
 <?php foreach($utentit['nome'] as $chiave=>$elemento){ ?>
 <tr>
-<td><div align="center"><a href="game.php?act=visualizzautente&amp;id=<?php echo $utentit['userid'][$chiave]; ?>"><?php echo $utentit['nome'][$chiave]; ?></a></div></td>
+<td><div align="center"><a href="index.php?loc=visualizzautente&amp;id=<?php echo $utentit['userid'][$chiave]; ?>"><?php echo $utentit['nome'][$chiave]; ?></a></div></td>
 <td><div align="center"><?php if($utentit['online'][$chiave]==1){ ?>
 <img src="template/immagini/led_verde.gif" alt="Online" />
 <?php }else{ ?>
 <img src="template/immagini/led_rosso.gif" alt="Offline" />
 <?php } ?>
 </div></td>
-<td><div align="center"><a href="game.php?act=messaggi&amp;do=scrivi&amp;id=<?php echo $utentit['userid'][$chiave]; ?>"><img src="template/immagini/mess.gif" alt="<?php echo $lang['scrivi_msg']; ?>" /></a></div></td>
+<td><div align="center"><a href="index.php?loc=messaggi&amp;do=scrivi&amp;id=<?php echo $utentit['userid'][$chiave]; ?>"><img src="template/immagini/mess.gif" alt="<?php echo $lang['scrivi_msg']; ?>" /></a></div></td>
+<td><div align="center"><?php if($utentit['online'][$chiave]==1){ ?><a href="index.php?loc=combact&amp;id=<?php echo $utentit['userid'][$chiave]; ?>"><?php echo $lang['sfida']; ?></a><?php } ?></div></td>
 <td><div align="center"><?php echo $utentit['livello'][$chiave]; ?></div></td>
 </tr>
 <?php }/* fine per ogni utente della lista*/ ?>
@@ -39,7 +41,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <br />
 <br />
 <div align="center">
-<form action="game.php?act=utenti" method="post" name="formcu">
+<form action="index.php?loc=utenti" method="post" name="formcu">
 <table width="250" border="0" cellspacing="2" cellpadding="2" align="center">
   <tr>
     <td colspan="2"><div align="center"><?php echo $lang['cerca_utente_per_nome']; ?></div></td>
@@ -60,10 +62,11 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <br />
 <table width="500" border="1" cellspacing="2" cellpadding="2">
   <tr>
-    <td><div align="center"><a href="game.php?act=utenti&amp;ordine=personaggio"><?php echo $lang['Personaggio']; ?></a></div></td>
-    <td><div align="center"><a href="game.php?act=utenti&amp;ordine=stato"><?php echo $lang['Stato']; ?></a></div></td>
+    <td><div align="center"><a href="index.php?loc=utenti&amp;ordine=personaggio"><?php echo $lang['Personaggio']; ?></a></div></td>
+    <td><div align="center"><a href="index.php?loc=utenti&amp;ordine=stato"><?php echo $lang['Stato']; ?></a></div></td>
     <td><div align="center"><?php echo $lang['scrivi_msg']; ?></div></td>
-    <td><div align="center"><a href="game.php?act=utenti&amp;ordine=livello"><?php echo $lang['Livello']; ?></a></div></td>
+    <td><div align="center"><?php echo $lang['sfida']; ?></div></td>
+    <td><div align="center"><a href="index.php?loc=utenti&amp;ordine=livello"><?php echo $lang['Livello']; ?></a></div></td>
   </tr>
 <?php foreach($utenti['nome'] as $chiave=>$elemento){ ?>
 <tr>
@@ -74,7 +77,8 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <img src="template/immagini/led_rosso.gif" alt="Offline" />
 <?php } ?>
 </div></td>
-<td><div align="center"><a href="game.php?act=messaggi&amp;do=scrivi&amp;id=<?php echo $utenti['userid'][$chiave]; ?>"><img src="template/immagini/mess.gif" alt="<?php echo $lang['scrivi_msg']; ?>" /></a></div></td>
+<td><div align="center"><a href="index.php?loc=messaggi&amp;do=scrivi&amp;id=<?php echo $utenti['userid'][$chiave]; ?>"><img src="template/immagini/mess.gif" alt="<?php echo $lang['scrivi_msg']; ?>" /></a></div></td>
+<td><div align="center"><?php if($utentit['online'][$chiave]==1){ ?><a href="index.php?loc=combact&amp;id=<?php echo $utentit['userid'][$chiave]; ?>"><?php echo $lang['sfida']; ?></a><?php } ?></div></td>
 <td><div align="center"><?php echo $utentit['livello'][$chiave]; ?></div></td>
 </tr>
 <?php }/* fine per ogni utente della lista*/ ?>

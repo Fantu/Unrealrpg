@@ -14,6 +14,7 @@ Legenda:<br />
 + Aggiunta la visualizzazione della reputazione nella visualizzazione dettagliata dei personaggi<br />
 + Lotteria: ora quando viene fatta l'estrazione il vincitore riceve un messaggio che segnala la vincita<br />
 + Iniziata creazione sistema di combattimento<br />
++ Aggiunto link di sfida nell'elenco e ricerca personaggi, visibile se il personaggio è online<br />
 + Vari miglioramenti di sistema<br />
 + Vari miglioramenti di sicurezza<br />
 # Modificati tutti i link interni<br />

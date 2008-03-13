@@ -42,13 +42,13 @@ echo "<option value=\"$chiave\">$elemento</option>"; ?>
 <?php if($user['puntiplus']<3){
 echo $lang['non_puoi_attivare_nessun_plus'];	
 }else{ ?>
-<a href="game.php?act=opzioni&amp;attivaplus=1"><?php echo $lang['attiva_plus_con_punti1']; ?></a>
+<a href="index.php?loc=opzioni&amp;attivaplus=1"><?php echo $lang['attiva_plus_con_punti1']; ?></a>
 <?php }
 if($user['puntiplus']>9){ ?>
-<a href="game.php?act=opzioni&amp;attivaplus=2"><?php echo $lang['attiva_plus_con_punti2']; ?></a>
+<a href="index.php?loc=opzioni&amp;attivaplus=2"><?php echo $lang['attiva_plus_con_punti2']; ?></a>
 <?php }
 if($user['puntiplus']>99){ ?>
-<a href="game.php?act=opzioni&amp;attivaplus=3"><?php echo $lang['attiva_plus_con_punti3']; ?></a>
+<a href="index.php?loc=opzioni&amp;attivaplus=3"><?php echo $lang['attiva_plus_con_punti3']; ?></a>
 <?php } ?>
 <br />
 <br />
