@@ -89,6 +89,8 @@ $lang['eventi_dettagli7']='Stai lavorando in Laboratorio come alchimista e finir
 $lang['eventi_dettagli8']='Stai studiando in Rocca dell`Arcano e finirai ';
 $lang['eventi_dettagli9']='Stai lavorando in Fucina come fabbro e finirai ';
 $lang['eventi_dettagli10']='Stai facendo pratica in Rocca dell`Arcano e finirai ';
+$lang['eventi_dettagli11']='Hai lanciato una sfida e stai aspettando una risposta entro ';
+$lang['eventi_dettagli12']='Ti hanno sfidato e devi dare una risposta entro ';
 //fine dettagli eventi
 
 //inizio visualizzautente

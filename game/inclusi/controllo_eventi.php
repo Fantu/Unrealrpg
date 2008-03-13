@@ -6,7 +6,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 require_once('inclusi/funzioni_eventi.php');
 function Controllaeventi($numeventi) {
 global $db,$adesso;
-$evfiniti=$db->QuerySelect("SELECT COUNT(*) AS id FROM eventi WHERE ((datainizio+secondi)<'".$adesso."')");
+$evfiniti=$db->QuerySelect("SELECT COUNT(id) AS id FROM eventi WHERE ((datainizio+secondi)<'".$adesso."')");
 if ($evfiniti['id']>0){//controllo gli eventi finiti
 $evfiniti=$db->QueryCiclo("SELECT * FROM eventi WHERE ((datainizio+secondi)<'".$adesso."') LIMIT ".$numeventi);
 while($evento=$db->QueryCicloResult($evfiniti)) {
@@ -44,6 +44,9 @@ while($evento=$db->QueryCicloResult($evfiniti)) {
 		break;
 		case 3://resurrezione
 		Completaresurrezione($evento['userid']);
+		break;
+		case 4://sfida
+		Completasfida($evento['userid'],$evento['type']);
 		break;
 		}
 $db->QueryMod("DELETE FROM eventi WHERE id='".$evento['id']."'");
