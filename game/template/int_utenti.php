@@ -29,7 +29,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <?php } ?>
 </div></td>
 <td><div align="center"><a href="index.php?loc=messaggi&amp;do=scrivi&amp;id=<?php echo $utentit['userid'][$chiave]; ?>"><img src="template/immagini/mess.gif" alt="<?php echo $lang['scrivi_msg']; ?>" /></a></div></td>
-<td><div align="center"><?php if($utentit['online'][$chiave]==1){ ?><a href="index.php?loc=combact&amp;id=<?php echo $utentit['userid'][$chiave]; ?>"><?php echo $lang['sfida']; ?></a><?php } ?></div></td>
+<td><div align="center"><?php if($utentit['online'][$chiave]==1){ ?><a href="index.php?loc=combact&amp;do=sfida&amp;id=<?php echo $utentit['userid'][$chiave]; ?>"><?php echo $lang['sfida']; ?></a><?php } ?></div></td>
 <td><div align="center"><?php echo $utentit['livello'][$chiave]; ?></div></td>
 </tr>
 <?php }/* fine per ogni utente della lista*/ ?>
@@ -78,7 +78,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <?php } ?>
 </div></td>
 <td><div align="center"><a href="index.php?loc=messaggi&amp;do=scrivi&amp;id=<?php echo $utenti['userid'][$chiave]; ?>"><img src="template/immagini/mess.gif" alt="<?php echo $lang['scrivi_msg']; ?>" /></a></div></td>
-<td><div align="center"><?php if($utentit['online'][$chiave]==1){ ?><a href="index.php?loc=combact&amp;id=<?php echo $utentit['userid'][$chiave]; ?>"><?php echo $lang['sfida']; ?></a><?php } ?></div></td>
+<td><div align="center"><?php if($utentit['online'][$chiave]==1){ ?><a href="index.php?loc=combact&amp;do=sfida&amp;id=<?php echo $utentit['userid'][$chiave]; ?>"><?php echo $lang['sfida']; ?></a><?php } ?></div></td>
 <td><div align="center"><?php echo $utentit['livello'][$chiave]; ?></div></td>
 </tr>
 <?php }/* fine per ogni utente della lista*/ ?>
