@@ -15,6 +15,8 @@ $errore.=$lang['global_errore1'];
 $eventisfidato=$db->QuerySelect("SELECT COUNT(id) AS id FROM eventi WHERE userid='".$idp."'");
 if ($eventisfidato['id']>0)
 $errore.=$lang['combact_errore1'];
+if ($idp==$user['userid'])
+$errore.=$lang['combact_errore2'];
 if($errore){
 	$outputerrori="<span>".$lang['outputerrorisfida']."</span><br /><span>".$errore."</span><br /><br />";}
 else {
