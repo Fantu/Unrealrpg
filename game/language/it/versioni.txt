@@ -15,13 +15,16 @@ Legenda:<br />
 + Lotteria: ora quando viene fatta l'estrazione il vincitore riceve un messaggio che segnala la vincita<br />
 + Iniziata creazione sistema di combattimento<br />
 + Aggiunto link di sfida nell'elenco e ricerca personaggi, visibile se il personaggio è online<br />
-+ Se ci sono eventi in corso per almeno 1 dei personaggi la sfida non può essere fatta<br />
++ Se ci sono eventi in corso per almeno 1 dei personaggi in questione la sfida non può essere fatta<br />
 + Se la sfida non viene accetta o rifiutata entro 30 minuti si annulla automaticamente<br />
 + Le sfide non sono annullabili da Situazione come invece lo sono lavori e preghiera<br />
 + Vari miglioramenti di sistema<br />
 + Vari miglioramenti di sicurezza<br />
 # Modificati tutti i link interni<br />
 # Modificato il decremento di fede con il passare del tempo, reso più equilibrato<br />
+</p>
+<p><strong>0.5.10.3</strong> (14/3/2008 - Beta)<br />
+- Corretto bug nella seconda parte della Rocca<br />
 </p>
 <p><strong>0.5.10.2</strong> (13/3/2008 - Beta)<br />
 - Corretto bug nel lavoro in Laboratorio come alchimista<br />

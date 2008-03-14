@@ -516,6 +516,7 @@ $esplosione=rand(30,100)-($usercar['magica']*5)-($usercar['agilita']/20)-($userc
 if($esplosione<10){
 $testo2="<span>".$lang['report_esplosione_roc1']."</span>";
 }else{
+$resistenza=$usercar['difmagica']/20;
 $danni=rand(20,30)-rand(floor($resistenza/2),floor($resistenza));
 if ($danni<1)
 $danni=1;	
