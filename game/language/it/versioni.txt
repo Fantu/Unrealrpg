@@ -18,6 +18,7 @@ Legenda:<br />
 + Se ci sono eventi in corso per almeno 1 dei personaggi in questione la sfida non può essere fatta<br />
 + Se la sfida non viene accetta o rifiutata entro 30 minuti si annulla automaticamente<br />
 + Le sfide non sono annullabili da Situazione come invece lo sono lavori e preghiera<br />
++ Aggiunta la spedizione di un messaggio allo sfidante in caso di rifiuto da parte dello sfidato<br />
 + Vari miglioramenti di sistema<br />
 + Vari miglioramenti di sicurezza<br />
 # Modificati tutti i link interni<br />

@@ -147,4 +147,6 @@ $lang['seleziona_ore_lavoro']='Seleziona quante ore:';
 $lang['ore_in_coda']='(%s ore in coda)';
 $lang['nessuno']='Nessuno';
 $lang['sfida']='Sfida';
+$lang['Accetta']='Accetta';
+$lang['Rifiuta']='Rifiuta';
 ?>
