@@ -44,8 +44,10 @@ break;//fine rispondi alla sfida
 $outputsfida=$lang['nessuna_sfida'];
 if ($eventi['id']>0){
 $eventisfida=$db->QuerySelect("SELECT * FROM eventi WHERE userid='".$user['userid']."'");
-if($eventisfida['tipo']==4 AND $eventisfida['type']==2)
-$outputsfida=sprintf($lang['rispondi_sfida'],$eventisfida['oggid'])." - <a href=\"index.php?loc=combact&amp;do=rispsfida&amp;risp=0\">".$lang['Rifiuta']."</a> - <a href=\"index.php?loc=combact&amp;do=rispsfida&amp;risp=1\">".$lang['Accetta']."</a>";
+if($eventisfida['tipo']==4 AND $eventisfida['type']==2){
+$sfidante=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$eventisfida['oggid']."'");
+$outputsfida=sprintf($lang['rispondi_sfida'],$sfidante['username'])." - <a href=\"index.php?loc=combact&amp;do=rispsfida&amp;risp=0\">".$lang['Rifiuta']."</a> - <a href=\"index.php?loc=combact&amp;do=rispsfida&amp;risp=1\">".$lang['Accetta']."</a>";
+}
 }
 
 require('template/int_combact.php');
