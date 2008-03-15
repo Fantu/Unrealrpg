@@ -15,7 +15,7 @@ $lang['Entra']='Enter';
 $lang['Registrazione']='Registration';
 $lang['Registrati']='Register';
 $lang['outputerrori']='The following errors have occured:';
-$lang['account_creato_ok']='<strong>Account creato con successo!!</strong><br />Prima di poter iniziare a giocare, dovrai confermare l\'iscrizione visitando il link contenuto nella mail che ti &egrave; stata inviata all\'indirizzo di posta inserito.<br />Se non trovi la mail controlla nelle cartelle Posta indesiderata, Antispam o simili.<br /><br />';
+$lang['account_creato_ok']='<strong>Account creato con successo!!</strong><br />Prima di poter iniziare a giocare, dovrai confermare l`iscrizione visitando il link contenuto nella mail che ti è stata inviata all`indirizzo di posta inserito.<br />Se non trovi la mail, controlla nelle cartelle Posta indesiderata, Antispam o simili.<br /><br />';
 $lang['Conferma_account']='Confirm account ';
 $lang['testo_mail_conferma']='Ciao,<br />Per confermare l\'iscrizione a %s devi visitare il link sottostante:<br /> <a href="%s/conferma.php?t=%s&cod=%s">Conferma account</a> <br /><br />Finch&egrave; l\'account non verr&agrave; confermato, non potrai accedere al gioco.<br />Saluti,<br />%s Staff';
 $lang['altre_lingue']='Le altre lingue in cui è disponibile %s sono: ';

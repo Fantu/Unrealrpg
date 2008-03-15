@@ -21,6 +21,7 @@ Legenda:<br />
 + Aggiunta la spedizione di un messaggio allo sfidante in caso di rifiuto da parte dello sfidato<br />
 + Vari miglioramenti di sistema<br />
 + Vari miglioramenti di sicurezza<br />
++ Miglioramenti ai testi in italiano<br />
 # Modificati tutti i link interni<br />
 # Modificato il decremento di fede con il passare del tempo, reso più equilibrato<br />
 </p>

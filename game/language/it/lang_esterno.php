@@ -15,7 +15,7 @@ $lang['Entra']='Entra';
 $lang['Registrazione']='Registrazione';
 $lang['Registrati']='Registrati';
 $lang['outputerrori']='Si sono verificati i seguenti errori:';
-$lang['account_creato_ok']='<strong>Account creato con successo!!</strong><br />Prima di poter iniziare a giocare, dovrai confermare l\'iscrizione visitando il link contenuto nella mail che ti &egrave; stata inviata all\'indirizzo di posta inserito.<br />Se non trovi la mail controlla nelle cartelle Posta indesiderata, Antispam o simili.<br /><br />';
+$lang['account_creato_ok']='<strong>Account creato con successo!!</strong><br />Prima di poter iniziare a giocare, dovrai confermare l`iscrizione visitando il link contenuto nella mail che ti è stata inviata all`indirizzo di posta inserito.<br />Se non trovi la mail, controlla nelle cartelle Posta indesiderata, Antispam o simili.<br /><br />';
 $lang['Conferma_account']='Conferma account ';
 $lang['testo_mail_conferma']='Ciao,<br />Per confermare l\'iscrizione a %s devi visitare il link sottostante:<br /> <a href="%s/conferma.php?t=%s&cod=%s">Conferma account</a> <br /><br />Finch&egrave; l\'account non verr&agrave; confermato, non potrai accedere al gioco.<br />Saluti,<br />%s Staff';
 $lang['altre_lingue']='Le altre lingue in cui è disponibile %s sono: ';
@@ -39,5 +39,5 @@ $lang['ext_error7']='Account confermato!\\nAdesso puoi entrare e iniziare a gioc
 $lang['ext_error12']='Server momentaneamente chiuso per installazione aggiornamenti o manutenzione. Riprova più tardi. Grazie.';
 $lang['ext_error13']='Accesso negato!\\nHai tentato di entrare in una pagina riservata agli utenti loggati.';
 $lang['ext_error14']='Accesso negato!\\nIl tuo IP è cambiato dal momento del login.\\nLoggati nuovamente.';
-$lang['ext_error16']='Link errato.\\nPer favore segui i link del gioco.';
+$lang['ext_error16']='Link errato!\\nPer favore segui i link del gioco.';
 ?>

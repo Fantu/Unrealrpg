@@ -17,6 +17,7 @@ $lang['Inventario']='Inventory';
 $lang['Fucina']='Forge';
 $lang['Rocca_arcano']='Mage tower';
 $lang['Libro_incantesimi']='Spellbook';
+$lang['Combattimenti']='Combattimenti';
 //fine menu
 
 //inizio razze
@@ -74,6 +75,7 @@ $lang['ab_alchimista']='Alchemist';
 $lang['ab_fabbro']='Smith';
 $lang['ab_magica']='Magical wisdom';
 $lang['Monete']='Coins';
+$lang['Reputazione']='Reputazione';
 //fine caratteristiche
 
 //inizio dettagli eventi
@@ -87,6 +89,8 @@ $lang['eventi_dettagli7']='You are working at the Laboratory as alchemist,you`ll
 $lang['eventi_dettagli8']='You are studying at the Mage Tower,you`ll finish at ';
 $lang['eventi_dettagli9']='Stai lavorando in Fucina come fabbro e finirai ';
 $lang['eventi_dettagli10']='Stai facendo pratica in Rocca dell`Arcano e finirai ';
+$lang['eventi_dettagli11']='Hai lanciato una sfida e stai aspettando una risposta entro ';
+$lang['eventi_dettagli12']='Ti hanno sfidato e devi dare una risposta entro ';
 //fine dettagli eventi
 
 //inizio visualizzautente
@@ -142,4 +146,7 @@ $lang['Annulla']='Cancel';
 $lang['seleziona_ore_lavoro']='Seleziona quante ore:';
 $lang['ore_in_coda']='(%s hours remaining)';
 $lang['nessuno']='Nobody';
+$lang['sfida']='Sfida';
+$lang['Accetta']='Accetta';
+$lang['Rifiuta']='Rifiuta';
 ?>

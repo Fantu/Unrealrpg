@@ -30,4 +30,5 @@ $lang['hai_gia_biglietto']='Possiedi già un biglietto';
 $lang['info_partecipanti']='L`attuale numero di partecipanti &egrave;: %s ';
 $lang['info_vincitore']='The winner of the last round is: %s';
 $lang['data_estrazione']='La prossima estrazione della Lotteria sarà  ';
+$lang['hai_vinto_lotteria']='Sei il vincitore della lotteria, hai vinto %s monete.';
 ?>
