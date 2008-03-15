@@ -12,7 +12,7 @@ if($chiave!=999){
 $db->database=$chiave;
 $db->QueryMod("ALTER TABLE `config` ADD `version` VARCHAR( 10 ) NOT NULL");
 $db->QueryMod("ALTER TABLE `caratteristiche` ADD `reputazione` SMALLINT NOT NULL DEFAULT '0'");
-$db->QueryMod("UPDATE `config` SET version=".$newversion." WHERE id=".$chiave.");
+$db->QueryMod("UPDATE `config` SET version=".$newversion." WHERE id=".$chiave);
 echo "Aggiornato db server ".$chiave." alla ".$newversion."<br />";
 }//se non è quello di sviluppo principale
 }//fine per ogni server	
