@@ -6,14 +6,17 @@ $adesso=strtotime("now");
 require('../game/inclusi/valori.php');
 require('../game/inclusi/funzioni_db.php');
 $db = new ConnessioniMySQL();
-$newversion="0.6.0";
+$newversion="0.6.1";
 foreach($game_server as $chiave=>$elemento){
 if($chiave!=999){
 $db->database=$chiave;
-$db->QueryMod("ALTER TABLE `config` ADD `version` VARCHAR( 10 ) NOT NULL");
-$db->QueryMod("ALTER TABLE `caratteristiche` ADD `reputazione` SMALLINT NOT NULL DEFAULT '0'");
-$db->QueryMod("UPDATE `config` SET version=".$newversion." WHERE id=".$chiave);
-echo "Aggiornato db server ".$chiave." alla ".$newversion."<br />";
+$check=$db->QuerySelect("SELECT version FROM config WHERE id=".$chiave);
+if($check['version']!=$newversion){
+$db->QueryMod("UPDATE `config` SET version='".$newversion."' WHERE id=".$chiave);
+echo "Aggiornato db server ".$chiave." alla versione ".$newversion."<br />";
+}/*se non aggiornato*/else{
+echo "IL db server ".$chiave." egrave; giagrave; aggiornato<br />";
+}
 }//se non è quello di sviluppo principale
 }//fine per ogni server	
 	/* //creazione record per tab con 1 record per utente

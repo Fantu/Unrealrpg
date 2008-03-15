@@ -8,7 +8,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 if($semagie!=1){echo $lang['nessuna_magia_presente'];}else{
 foreach($elementi as $chiaveel=>$elementoel){
 if(is_array($outputmagie[$elementoel])){
-echo $elementoel."<br />";
+echo "<br />".$elementoel."<br />";
 foreach($tipimagia as $chiavetm=>$elementotm){
 if(is_array($outputmagie[$elementoel][$elementotm])){
 echo $elementotm."<br />";

@@ -8,7 +8,7 @@ Legenda:<br />
 <br />
 </p>
 <p><strong>0.6.1</strong> (Non disponibile - In sviluppo)<br />
-Niente attualmente
++ Vari miglioramenti di sistema<br />
 </p>
 <p><strong>0.6.0</strong> [R.807] (15/3/2008 - Beta)<br />
 + Iniziato rifacimento sistema di base interno<br />
