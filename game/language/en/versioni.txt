@@ -7,7 +7,10 @@ Legenda:<br />
 - Correzione bug e patch di situazioni non previste<br />
 <br />
 </p>
-<p><strong>0.6.0</strong> (Non disponibile - In sviluppo)<br />
+<p><strong>0.6.1</strong> (Non disponibile - In sviluppo)<br />
+Niente attualmente
+</p>
+<p><strong>0.6.0</strong> [R.807] (15/3/2008 - Beta)<br />
 + Iniziato rifacimento sistema di base interno<br />
 + Aggiunta la reputazione fra le caratteristiche<br />
 + Aggiunta la visualizzazione della reputazione in Situazione<br />
