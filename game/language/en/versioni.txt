@@ -8,7 +8,11 @@ Legenda:<br />
 <br />
 </p>
 <p><strong>0.6.1</strong> (Non disponibile - In sviluppo)<br />
++ L'interesse del prestito viene incrementato del 10% ogni 2 settimane<br />
 + Vari miglioramenti di sistema<br />
+</p>
+<p><strong>0.6.0.1</strong> (16/3/2008)<br />
+- Corretta la risposta alla sfida<br />
 </p>
 <p><strong>0.6.0</strong> [R.807] (15/3/2008 - Beta)<br />
 + Iniziato rifacimento sistema di base interno<br />

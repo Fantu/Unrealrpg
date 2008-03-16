@@ -7,6 +7,8 @@ require_once('language/'.$language.'/lang_combact.php');
 
 $do=htmlspecialchars($_GET['do'],ENT_QUOTES);
 
+
+
 switch($do){
 case "sfida":
 $idp=(int)$_GET['id'];
@@ -29,12 +31,14 @@ exit();
 break;//fine sfidda
 case "rispsfida":
 $risp=(int)$_GET['risp'];
+$eventisfida=$db->QuerySelect("SELECT * FROM eventi WHERE userid='".$user['userid']."'");
+$idp=(int)$eventisfida['oggid'];
 if($risp==1){
 $outputerrori="Sfida accettata ma impossibile procedere con il combattimento...in sviluppo";
 }else{
 $titolo=$lang['sfida_rifiutata'];
 $testo=$lang['report_sfida_rifiutata'];
-$db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$user['userid']."','".$titolo."','".$testo."','0','".$adesso."')");
+$db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$idp."','".$titolo."','".$testo."','0','".$adesso."')");
 }
 $db->QueryMod("DELETE FROM eventi WHERE userid='".$user['userid']."'");
 $db->QueryMod("DELETE FROM eventi WHERE userid='".$idp."'");

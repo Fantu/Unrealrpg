@@ -17,7 +17,7 @@ $db->QueryMod("UPDATE `banca` SET incprestito='1',dataincprestito='".$adesso."' 
 $db->QueryMod("UPDATE `config` SET version='".$newversion."' WHERE id=".$chiave);
 echo "Aggiornato db server ".$chiave." alla versione ".$newversion."<br />";
 }/*se non aggiornato*/else{
-echo "IL db server ".$chiave." egrave; giagrave; aggiornato<br />";
+echo "Il db server ".$chiave." egrave; giagrave; aggiornato<br />";
 }
 }//se non è quello di sviluppo principale
 }//fine per ogni server	
