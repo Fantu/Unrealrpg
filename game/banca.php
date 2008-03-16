@@ -26,7 +26,7 @@ $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES
 }//fine estrazione
 }//fine controllo se estrazione
 $userbank=$db->QuerySelect("SELECT * FROM banca WHERE userid='".$user['userid']."' LIMIT 1");
-if (($userbank['interessi']+86400)<$adesso){
+if(($userbank['interessi']+86400)<$adesso){
 	$differenzaora=$adesso-$userbank['interessi'];
 	$giorni=floor($differenzaora/86400);
 	$interessi=floor(($userbank['conto']/100)*0.5);
@@ -37,7 +37,10 @@ if (($userbank['interessi']+86400)<$adesso){
 	}
 	else{$db->QueryMod("UPDATE banca SET interessi='".$adesso."' WHERE userid='".$user['userid']."'");}
 	$userbank=$db->QuerySelect("SELECT * FROM banca WHERE userid='".$user['userid']."' LIMIT 1");
-}
+}//fine controllo interessi
+if(($userbank['dataincprestito']+604800)<$adesso){
+$db->QueryMod("UPDATE banca SET incprestito=incprestito+'1',dataincprestito='".$adesso."' WHERE userid='".$user['userid']."'");
+}//fine controllo prestito
 $infointeressi=$lang['info_interessi']." ".date($lang['dataora'],($userbank['interessi']+86400));
 if (isset($_POST['deposita'])){
 $errore="";
@@ -83,54 +86,54 @@ $db->QueryMod("UPDATE banca t1 JOIN utenti t2 on t1.userid=t2.userid JOIN caratt
 $db->QueryMod("UPDATE config SET banca=banca-'".$daprelevare."'");
 }
 }//fine preleva
-if (isset($_POST['chiediprestito'])){
+if(isset($_POST['chiediprestito'])){
 $errore="";
 $prestito=(int)$_POST['inprestito'];
-if (!is_numeric($prestito)){
+if(!is_numeric($prestito)){
 $errore .= $lang['banca_errore1'];}
 else{
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$user['userid']."' LIMIT 1");
 $prestitopossibile=($usercar['livello']*100)-$userbank['prestito'];
 if ($eventi['id']>0)
-$errore .= $lang['global_errore1'];
+$errore.=$lang['global_errore1'];
 if ($prestito<1)
-$errore .= $lang['banca_errore7'];
-$deposito = $db->QuerySelect("SELECT banca FROM config");
+$errore.=$lang['banca_errore7'];
+$deposito=$db->QuerySelect("SELECT banca FROM config");
 if ($prestito>$deposito['banca'])
-$errore .= $lang['banca_errore6'];
+$errore.=$lang['banca_errore6'];
 if ($prestito>$prestitopossibile)
-$errore .= $lang['banca_errore8']." ".$prestitopossibile."<br />";
+$errore.=sprintf($lang['banca_errore8'],$prestitopossibile);
 }
 if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
 else {
-$db->QueryMod("UPDATE banca t1 JOIN utenti t2 on t1.userid=t2.userid JOIN caratteristiche t3 on t2.userid=t3.userid SET t1.prestito=t1.prestito+'".$prestito."',t2.monete=t2.monete+'".$prestito."',t3.energia=t3.energia-'1' WHERE t1.userid='".$user['userid']."'");
+$db->QueryMod("UPDATE banca t1 JOIN utenti t2 on t1.userid=t2.userid JOIN caratteristiche t3 on t2.userid=t3.userid SET t1.prestito=t1.prestito+'".$prestito."',t1.incprestito='1',t2.monete=t2.monete+'".$prestito."',t1.dataincprestito='".$adesso."',t3.energia=t3.energia-'1' WHERE t1.userid='".$user['userid']."'");
 $db->QueryMod("UPDATE config SET banca=banca-'".$prestito."'");
 }
 }//fine chiedi prestito
-if (isset($_POST['restituisciprestito'])){
+if(isset($_POST['restituisciprestito'])){
 $errore="";
-$prestito=$userbank['prestito']+(floor(($userbank['prestito']/100)*10));
+$prestito=$userbank['prestito']+(floor(($userbank['prestito']/100)*(10*$userbank['incprestito'])));
 if ($user['monete']<$prestito)
-$errore .= $lang['banca_errore3'];
+$errore.=$lang['banca_errore3'];
 if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
-else {
-$db->QueryMod("UPDATE banca t1 JOIN utenti t2 on t1.userid=t2.userid JOIN caratteristiche t3 on t2.userid=t3.userid SET t1.prestito=t1.prestito-'".$prestito."',t2.monete=t2.monete-'".$prestito."',t3.energia=t3.energia-'1' WHERE t1.userid='".$user['userid']."'");
+else{
+$db->QueryMod("UPDATE banca t1 JOIN utenti t2 on t1.userid=t2.userid JOIN caratteristiche t3 on t2.userid=t3.userid SET t1.prestito='0',t1.incprestito='0',t1.dataincprestito='0',t2.monete=t2.monete-'".$prestito."',t3.energia=t3.energia-'1' WHERE t1.userid='".$user['userid']."'");
 $db->QueryMod("UPDATE config SET banca=banca+'".$prestito."'");
 }
 }//fine restituisci prestito
-if (isset($_POST['comprabiglietto'])){
+if(isset($_POST['comprabiglietto'])){
 $errore="";
-if ($eventi['id']>0)
-$errore .= $lang['global_errore1'];
+if($eventi['id']>0)
+$errore.=$lang['global_errore1'];
 if($userbank['conto']<1)
 $errore.=$lang['banca_errore9'];
 if($userbank['lotteria']>0)
 $errore.=$lang['banca_errore10'];
 if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
-else {
+else{
 $db->QueryMod("UPDATE banca t1 JOIN caratteristiche t3 on t1.userid=t3.userid SET t1.conto=t1.conto-'1',t1.lotteria='1',t3.energia=t3.energia-'1' WHERE t1.userid='".$user['userid']."'");
 $db->QueryMod("UPDATE config SET banca=banca+'1'");
 }
