@@ -76,7 +76,7 @@ echo $lang['prelevare']; ?>
 </form>
 <br />
 <?php if ($userbank['prestito']>0){
-echo $lang['restituzione_prestito']." ".$prestito; ?>
+echo sprintf($lang['restituzione_prestito'],$prestito); ?>
 <br />
 <form action="" method="post" name="daiprestito">
 <table border="0">
