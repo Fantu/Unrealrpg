@@ -392,7 +392,7 @@ $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,lavor
 } //fine Completaroccastudia
 
 function Completalavfucfab($userid,$oggdf,$ore,$materiale) {
-global $db,$adesso,$lang,$language;
+global $db,$adesso,$lang,$language,$materiali_num,$oggdf_num;
 require_once('language/'.$language.'/lang_fucina.php');
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");
 if($materiali_num[$materiale][1]>0)
