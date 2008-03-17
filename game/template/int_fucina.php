@@ -61,7 +61,7 @@ echo "<option value=\"$chiave\">$elemento</option>"; ?>
 <?php echo $lang['seleziona_materiale']; ?> <select name="materiale" id="materiale">
 <option value="0" selected="selected">--------</option>
 <?php
-foreach($materiali_nomi as $chiave=>$elemento)
+foreach($materiali_nome as $chiave=>$elemento)
 echo "<option value=\"$chiave\">$elemento</option>"; ?>
 </select>
 </td>
