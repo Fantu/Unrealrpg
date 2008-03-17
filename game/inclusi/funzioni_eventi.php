@@ -395,7 +395,6 @@ function Completalavfucfab($userid,$oggdf,$ore,$materiale) {
 global $db,$adesso,$lang,$language;
 require_once('language/'.$language.'/lang_fucina.php');
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");
-$oggettodf=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$oggdf."' LIMIT 1");
 if($materiali_num[$materiale][1]>0)
 $db->QueryMod("UPDATE inoggetti SET inuso='1' WHERE userid='".$userid."' AND oggid='2' LIMIT ".$materiali_num[$materiale][1]);
 if($materiali_num[$materiale][2]>0)
@@ -413,9 +412,9 @@ $exp=floor($usercar['saluteattuale']/10+$usercar['energia']/100+$usercar['attfis
 $exp=floor(rand(($exp/100*75),$exp));
 $exp+=(5*$usercar['fabbro']);
 $testo=sprintf($lang['report_lav_fuc_fab'],$exp,$energia,$salute)."<br />";
-$bonusabilita=$usercar['fabbro']-$oggettodf['abilitanec'];
-if($bonusabilita>0)
-$bonusabilita=$bonusabilita*30;
+$bonusabilita=$usercar['fabbro']*10;
+if($bonusabilita>50)
+$bonusabilita=50;
 $esplosione=rand(30,100)-$bonusabilita-($usercar['attfisico']/20)-($usercar['destrezza']/10);
 $danni=0;
 if($esplosione>10){
@@ -432,6 +431,7 @@ $titolo2=$lang['report_incidente_fucina'];
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo2."','".$testo2."','0','".$adesso."')");	
 $testo.=$lang['report_lavfuc_forgia_no']."<br />";
 }/*fine incidente*/else{//inizio forgia riuscita
+$oggettodf=$db->QuerySelect("SELECT * FROM oggetti WHERE tipo='".$oggdf_num[$oggdf][1]."' AND categoria='".$oggdf_num[$oggdf][2]."' AND materiale='".$materiale."' AND abilitanec<='".$usercar['fabbro']."' ORDER BY abilitanec DESC LIMIT 1");
 $db->QueryMod("INSERT INTO inoggetti (oggid,userid) VALUES ('".$oggettodf['id']."','".$userid."')");
 $nomeoggetto=$lang['oggetto'.$oggettodf['id'].'_nome'];
 $testo.=sprintf($lang['report_lavfuc_forgia_si'],$nomeoggetto)."<br />";
