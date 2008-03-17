@@ -51,7 +51,17 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <?php echo $lang['seleziona_oggetto_da_forgiare']; ?> <select name="oggettodf" id="oggettodf">
 <option value="0" selected="selected">--------</option>
 <?php
-foreach($oggettiforgia as $chiave=>$elemento)
+foreach($oggdf_nome as $chiave=>$elemento)
+echo "<option value=\"$chiave\">$elemento</option>"; ?>
+</select>
+</td>
+</tr>
+<tr>
+<td>
+<?php echo $lang['seleziona_materiale']; ?> <select name="materiale" id="materiale">
+<option value="0" selected="selected">--------</option>
+<?php
+foreach($materiali_nomi as $chiave=>$elemento)
 echo "<option value=\"$chiave\">$elemento</option>"; ?>
 </select>
 </td>

@@ -9,9 +9,11 @@ Legenda:<br />
 </p>
 <p><strong>0.6.1</strong> (Non disponibile - In sviluppo)<br />
 + L'interesse del prestito viene incrementato del 10% ogni 2 settimane<br />
++ Rifatto il lavoro come fabbro, ora non si seleziona più l'oggetto preciso ma il tipo di oggetto e di materiale<br />
 + Vari miglioramenti di sistema<br />
++ Miglioramenti ai testi in italiano<br />
 </p>
-<p><strong>0.6.0.1</strong> (16/3/2008)<br />
+<p><strong>0.6.0.1</strong> (16/3/2008 - Beta)<br />
 - Corretta la risposta alla sfida<br />
 </p>
 <p><strong>0.6.0</strong> [R.807] (15/3/2008 - Beta)<br />

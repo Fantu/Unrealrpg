@@ -7,5 +7,5 @@ $lang['report_sfida_annullata']='La sfida è sta annullata in quanto non c`è st
 $lang['nessuna_sfida']='Nessuna richiesta di sfida presente';
 $lang['rispondi_sfida']='%s ti vuole sfidare';
 $lang['sfida_rifiutata']='Sfida rifiutata';
-$lang['report_sfida_rifiutata']='La sfida è sta rifiutata.';
+$lang['report_sfida_rifiutata']='La sfida è stata rifiutata.';
 ?>

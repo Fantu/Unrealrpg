@@ -391,17 +391,17 @@ $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,lavor
 }//fine se deve lavorare ancora
 } //fine Completaroccastudia
 
-function Completalavfucfab($userid,$oggdf,$ore) {
+function Completalavfucfab($userid,$oggdf,$ore,$materiale) {
 global $db,$adesso,$lang,$language;
 require_once('language/'.$language.'/lang_fucina.php');
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");
 $oggettodf=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$oggdf."' LIMIT 1");
-if($oggettodf['carbone']>0)
-$db->QueryMod("UPDATE inoggetti SET inuso='1' WHERE userid='".$userid."' AND oggid='2' LIMIT ".$oggettodf['carbone']);
-if($oggettodf['rame']>0)
-$db->QueryMod("UPDATE inoggetti SET inuso='1' WHERE userid='".$userid."' AND oggid='3' LIMIT ".$oggettodf['rame']);
-if($oggettodf['ferro']>0)
-$db->QueryMod("UPDATE inoggetti SET inuso='1' WHERE userid='".$userid."' AND oggid='4' LIMIT ".$oggettodf['ferro']);
+if($materiali_num[$materiale][1]>0)
+$db->QueryMod("UPDATE inoggetti SET inuso='1' WHERE userid='".$userid."' AND oggid='2' LIMIT ".$materiali_num[$materiale][1]);
+if($materiali_num[$materiale][2]>0)
+$db->QueryMod("UPDATE inoggetti SET inuso='1' WHERE userid='".$userid."' AND oggid='3' LIMIT ".$materiali_num[$materiale][2]);
+if($materiali_num[$materiale][3]>0)
+$db->QueryMod("UPDATE inoggetti SET inuso='1' WHERE userid='".$userid."' AND oggid='4' LIMIT ".$materiali_num[$materiale][3]);
 $energia=100-(5*$usercar['fabbro']);
 if ($energia<50)
 $energia=50;

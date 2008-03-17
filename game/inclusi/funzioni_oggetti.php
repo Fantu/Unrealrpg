@@ -12,6 +12,26 @@ $catoggetti_nome=array(
 4=>array(1,2),
 );
 
+$materiali_nome=array(
+1=>$lang['Rame'],
+2=>$lang['Ferro'],
+3=>$lang['Acciaio']
+);
+
+$materiali_num=array(
+1=>array(1=>1,2=>1,3=>0),
+2=>array(1=>1,2=>0,3=>1),
+3=>array(1=>1,2=>0,3=>2)
+);
+
+$oggdf_nome=array(
+1=>$lang['Piccone']
+);
+
+$oggdf_num=array(
+1=>array(1=>2,2=>1)
+);
+
 function Checkusurarottura($userid) {
 global $db,$lang;
 $oggusati=$db->QuerySelect("SELECT count(oggid) AS numero FROM inoggetti WHERE userid='".$userid."' AND inuso='1'");

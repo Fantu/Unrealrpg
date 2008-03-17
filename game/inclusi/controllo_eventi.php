@@ -32,7 +32,7 @@ while($evento=$db->QueryCicloResult($evfiniti)) {
 			Completaroccastudia($evento['userid'],$evento['oggid'],$evento['ore']);
 			break;
 			case 7://fabbro in fucina
-			Completalavfucfab($evento['userid'],$evento['oggid'],$evento['ore']);
+			Completalavfucfab($evento['userid'],$evento['oggid'],$evento['ore'],$evento['type']);
 			break;
 			case 8://fai pratica in rocca
 			Completaroccapratica($evento['userid'],$evento['oggid'],$evento['ore'],$evento['type']);
