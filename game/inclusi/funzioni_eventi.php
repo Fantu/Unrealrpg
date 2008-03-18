@@ -334,9 +334,9 @@ $testo2="<span>".sprintf($lang['report_esplosione_lab2'],$danni)."</span>";
 $titolo=$lang['report_esplosione_laboratorio'];
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo2."','0','".$adesso."')");	
 $testo3=$lang['report_lavlab_pozione_no']."<br />";
-$exp-=floor($exp/2);
+$exp-=floor($exp/100*20);
 }/*fine esplosione*/else{
-$exp+=floor($exp/2);
+$exp+=floor($exp/100*20);
 $db->QueryMod("INSERT INTO inoggetti (oggid,userid) VALUES ('".$pozione['id']."','".$userid."')");
 $nomepozione=$lang['oggetto'.$pozione['id'].'_nome'];
 $testo3=sprintf($lang['report_lavlab_pozione_si'],$nomepozione)."<br />";
@@ -412,7 +412,7 @@ $exp=floor($usercar['saluteattuale']/10+$usercar['energia']/100+$usercar['attfis
 $exp=floor(rand(($exp/100*75),$exp));
 $exp+=(5*$usercar['fabbro']);
 $testo=sprintf($lang['report_lav_fuc_fab'],$exp,$energia,$salute)."<br />";
-$bonusabilita=$usercar['fabbro']*10;
+$bonusabilita=$usercar['fabbro']*7;
 if($bonusabilita>50)
 $bonusabilita=50;
 $esplosione=rand(30,100)-$bonusabilita-($usercar['attfisico']/20)-($usercar['destrezza']/10);
