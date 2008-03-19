@@ -24,7 +24,7 @@ if( isset($_POST['user']) ) {
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title><?php echo $game_name; echo" "; echo $lang['pannello_amministrazione']; ?></title>
+<title><?php echo $game_name; echo" - "; echo $lang['pannello_amministrazione']; ?></title>
 <meta name="author" content="Fantoni Fabio"></meta>
 <meta name="language" content="it,en"></meta>
 <meta name="copyright" content="Fantoni Fabio"></meta>
@@ -34,9 +34,9 @@ if( isset($_POST['user']) ) {
 function CambiaImg(id,bool) {
 	var immagine = document.getElementById(id);
 	if( bool == true )
-		percorso = 'game/template/immagini/'+id+'_color.gif';
+		percorso = '../game/template/immagini/'+id+'_color.gif';
 	else
-		percorso = 'game/template/immagini/'+id+'_grigio.gif';
+		percorso = '../game/template/immagini/'+id+'_grigio.gif';
 	immagine.src = percorso;
 }
 // -->
