@@ -10,9 +10,11 @@ Legenda:<br />
 <p><strong>0.6.1</strong> (Non disponibile - In sviluppo)<br />
 + L'interesse del prestito viene incrementato del 10% ogni 2 settimane<br />
 + Rifatto il lavoro come fabbro, ora non si seleziona più l'oggetto preciso ma il tipo di oggetto e di materiale<br />
++ Aggiunta la visualizzazione del testo del messaggio a cui si sta rispondendo alla risposta ai messaggi<br />
 + Vari miglioramenti di sistema<br />
 + Miglioramenti ai testi in italiano<br />
 # Nel lavoro in Laboratorio come alchimista l'esperienza in caso di riuscita distillazione o meno aumenta o diminuisce del 20%<br />
+# Diminuito il tempo massimo di risposta alla sfida a 15 minuti<br />
 </p>
 <p><strong>0.6.0.1</strong> (16/3/2008 - Beta)<br />
 - Corretta la risposta alla sfida<br />

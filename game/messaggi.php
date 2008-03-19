@@ -105,16 +105,16 @@ case "risp":// scrivi risposta
 	  <br /><?php echo $lang['caratteri_disponibili']; ?><div id="caratteri" name="caratteri"><?php if($user['plus']==0) echo "500"; else echo "10000";?></div>
   </td></tr>
   <tr>
-    <td><?php $msgorig=$db->QuerySelect("SELECT * FROM messaggi WHERE id='".$id."'");
-    echo $msgorig['testo'];
-    ?>
-  </td></tr>
-  <tr>
     <td><div align="center">
       <?php echo "<input type=\"hidden\" name=\"messid\" value=\"".$id."\" />"; ?>
       <input type="submit" name="Submit" value="<?php echo $lang['invia_messaggio']; ?>" />
     </div></td>
   </tr>
+  <tr>
+    <td><?php $msgorig=$db->QuerySelect("SELECT * FROM messaggi WHERE id='".$id."'");
+    echo $msgorig['testo'];
+    ?>
+  </td></tr>
 </table>
 </form>
 <?php
