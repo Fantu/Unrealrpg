@@ -57,7 +57,7 @@ function CambiaImg(id,bool) {
 		else
 		include("home.php");
 		?>
-		<br></td>
+		<br/></td>
 		</tr>
 	  </tbody>
 	</table>

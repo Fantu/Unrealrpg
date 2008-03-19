@@ -24,7 +24,7 @@ if($op){
       <input type="text" name="passw" /><br/>
       EMAIL
       <input type="text" name="email" /><br/>
-      <input type="submit" value="crea" name="invio">
+      <input type="submit" value="crea" name="invio" />
     </form>
     <br/><br/>
 <?php

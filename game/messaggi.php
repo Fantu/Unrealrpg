@@ -36,10 +36,11 @@ echo "<script language=\"javascript\">window.location.href='index.php?loc=messag
 exit();
 break;
 case "canc"://cancella mess selezionati
-$_POST['contatore']=(int)$_POST['contatore'];
-while($_POST['contatore']>0) {	
-	$db->QueryMod("DELETE FROM messaggi WHERE id='".$_POST['messaggioid'.$_POST['contatore'].'']."'");
-	$_POST['contatore']--;
+$contatore=(int)$_POST['contatore'];
+while($contatore>0){
+	$msgid=(int)$_POST['messaggioid'.$contatore];
+	$db->QueryMod("DELETE FROM messaggi WHERE id='".$msgid."'");
+	$contatore--;
 }
 echo "<script language=\"javascript\">window.location.href='index.php?loc=messaggi'</script>";
 exit();
@@ -102,6 +103,11 @@ case "risp":// scrivi risposta
   <tr>
     <td><textarea name="mymess" cols="45" rows="4" id="mymess" onkeyup="conteggio()" onmousemove="conteggio()"></textarea>      
 	  <br /><?php echo $lang['caratteri_disponibili']; ?><div id="caratteri" name="caratteri"><?php if($user['plus']==0) echo "500"; else echo "10000";?></div>
+  </td></tr>
+  <tr>
+    <td><?php $msgorig=$db->QuerySelect("SELECT * FROM messaggi WHERE id='".$id."'");
+    echo $msgorig['testo'];
+    ?>
   </td></tr>
   <tr>
     <td><div align="center">
