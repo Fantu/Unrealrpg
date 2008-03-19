@@ -51,7 +51,7 @@ function CambiaImg(id,bool) {
 		  <td width="200" valign="top"><?php include("admin_menu.php"); ?></td>
 		  <td width="500" class="tabmenu" valign="top" style="padding:10px 10px 10px 10px"><br />
 		<?php
-		$loc=(int)$_GET['loc'];
+		$loc=htmlspecialchars($_GET['loc'],ENT_QUOTES);
 		if(isset($_GET['loc'])&&file_exists("admin_".$loc.".php"))
 			include("admin_".$loc.".php");
 		else
