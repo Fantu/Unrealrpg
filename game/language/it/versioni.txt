@@ -13,6 +13,7 @@ Legenda:<br />
 + Vari miglioramenti di sistema<br />
 + Miglioramenti ai testi in italiano<br />
 # Nel lavoro in Laboratorio come alchimista l'esperienza in caso di riuscita distillazione o meno aumenta o diminuisce del 20%<br />
+# Diminuito il tempo massimo di risposta alla sfida a 15 minuti<br />
 </p>
 <p><strong>0.6.0.1</strong> (16/3/2008 - Beta)<br />
 - Corretta la risposta alla sfida<br />

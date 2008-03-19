@@ -1,0 +1,217 @@
+/* CSS Document */
+body,td,th {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #FFFFFF;
+}
+.fontpiccolo {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+}
+.fontpiccolonero {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #000000;
+}
+body {
+	background-color: #000000;
+	margin-top: 0px;
+}
+.bgtab { 
+	background-image: url(bg_tab.gif); 
+}
+.redbig { 
+	color:#660000; font-weight:bold; 
+}
+.text { 
+	width:120px; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:12px; 
+	text-align:center;
+}
+.text_login {
+	width:80px; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:9px; 
+	text-align:center;
+}
+.text_login2 {
+	width:110px; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:9px; 
+	text-align:center;
+}
+.textmini { 
+	width:25px; font-family:Verdana, Arial, Helvetica, sans-serif;
+	text-align:center; 
+}
+.texttrasp {
+	border:0px;
+	background-image:url(bottone.jpg);
+	font-weight:bold;
+}
+.bottoni { 
+	width:120px; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:12px; 
+	background-color:#FFFFCC;
+}
+.giallobig { 
+	color:#cc9966; font-weight:bold; 
+}
+.piccolo {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #FFFFFF;
+}
+.menutab { 
+	background-image: url(menutab.jpg); 
+}
+.redpic { 
+	color:#660000; font-weight:bold; font-size:10px; 
+}
+a { 
+	color:#FFCC66; text-decoration:none; 
+}
+a:hover { 
+	color:#990000; text-decoration:none; 
+}
+.bottonibg { 
+	background-image: url(bottone.jpg); 
+}
+.tabmenu {
+	border:1px solid #D5A954;
+	border-bottom-color:#D5A954;
+	border-left-color:#D5A954;
+	border-right-color:#D5A954;
+	border-top-color:#D5A954;
+}
+.tabmenutd {
+	border:1px solid #7D5406;
+	border-bottom-color:#7D5406;
+	border-left-color:#7D5406;
+	border-right-color:#7D5406;
+	border-top-color:#7D5406;
+}
+.tabmenutd2 {
+	border:1px solid #7D5406;
+	border-bottom-color:#7D5406;
+	border-left-color:#7D5406;
+	border-right-color:#7D5406;
+	border-top-color:#7D5406;
+	background-color:#FFEDCB;
+	/*cursor:pointer;*/
+}
+.linkmenu {
+	color:#660000;
+}
+.tabmenutd3 {
+	border:1px solid #7D5406;
+	border-bottom-color:#7D5406;
+	border-left-color:#7D5406;
+	border-right-color:#7D5406;
+	border-top-color:#7D5406;
+	background-color:#FFEDCB;
+}
+.sfondonero {
+	background-color:#000000;
+	border:1px solid #000000;
+}
+#mybox { 
+	position:absolute; 	
+	top:10px; 
+	left:100px; 
+	width:125px; 
+	z-index:1; 
+}
+#contenuto { 
+	position:absolute; 	
+	top:130px; 
+	left:300px; 
+	width:500px; 
+	z-index:1; 
+}
+#testa { 
+	position:absolute; 	
+	top:10px; 
+	left:120px; 
+	width:500px; 
+	z-index:1; 
+}
+#ads { 
+	position:absolute; 	
+	top:120px; 
+	left:850px; 
+	width:120px; 
+	z-index:1; 
+}
+.linea {
+	background-color:#E4BA6F;
+}
+.giallopic { 
+	color:#FFCC66; font-weight:bold; font-size:10px; 
+}
+.nero {
+	color:#000000;
+}
+.barrato {
+	text-decoration:line-through;
+}
+.verde {
+	color:#00FF00;
+}
+.rosso {
+	color:#FF0000;
+}
+.tabrequisiti {
+	border:1px solid #7D5406;
+	border-bottom-color:#7D5406;
+	border-left-color:#7D5406;
+	border-right-color:#7D5406;
+	border-top-color:#7D5406;
+	background-color:#FFEDCB;
+}
+.tabmessaggi {
+	border:1px solid #7D5406;
+	border-bottom-color:#7D5406;
+	border-left-color:#7D5406;
+	border-right-color:#7D5406;
+	border-top-color:#7D5406;
+	background-color:#804040;
+}
+.miodiv {
+	visibility:hidden;
+	position:absolute; left:0;
+	z-index:2;
+}
+.miodiv2 {
+	visibility:visible;
+	position:absolute; left:0;	
+	z-index:1;
+}
+.blu {
+	color:#0000FF;
+}
+.verdino {
+	color:#66FF99;
+}
+.rossos {
+	color:#990000;
+}
+.descritto {
+	width:400px;
+	text-align:center;
+	background-color:#000000;
+	color:#FFFFFF;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:10px;
+	border:1px solid #000000;
+}
+.top3 {
+	background-image:url(../images/top_03.jpg);
+}
+.top5 {
+	background-image:url(../images/top_05.jpg);
+}
+.top5bg {
+	background-image:url(../images/top05_02.jpg);
+}
+.top2bg {
+	background-image:url(../images/top_02.jpg);
+}
+
+
+
+
