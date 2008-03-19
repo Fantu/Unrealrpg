@@ -8,7 +8,7 @@ $language=htmlspecialchars($_COOKIE['urbglanguage'],ENT_QUOTES);
 }else{
 $language="it";
 }//fine lingua
-require('language/'.$language.'/lang_admin.php');
+require('../game/language/'.$language.'/lang_admin.php');
 if( isset($_POST['user']) ) {
 	$user=htmlspecialchars($_POST['user'],ENT_QUOTES);
 	$pass=htmlspecialchars($_POST['passw'],ENT_QUOTES);

@@ -9,7 +9,7 @@ $language=htmlspecialchars($_COOKIE['urbglanguage'],ENT_QUOTES);
 }else{
 $language="it";
 }//fine lingua
-require('language/'.$language.'/lang_admin.php');
+require('../game/language/'.$language.'/lang_admin.php');
 $accesso=explode("|||",$_COOKIE['urbgadm']);
 $user=htmlspecialchars($accesso[0],ENT_QUOTES);
 $pass=htmlspecialchars($accesso[1],ENT_QUOTES);
