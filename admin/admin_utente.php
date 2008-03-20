@@ -1,6 +1,7 @@
 <?php
 if((empty($int_security)) OR ($int_security!=$game_se_code)){
-	echo $lang['Accesso_negato'];
+	header("Location: ../index.php?error=16");
+	exit();
 }
 if (isset($_POST["invio"])) {
 	$user=htmlspecialchars($_POST['user'],ENT_QUOTES);

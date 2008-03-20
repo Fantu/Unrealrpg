@@ -10,6 +10,7 @@ $language=htmlspecialchars($_COOKIE['urbglanguage'],ENT_QUOTES);
 $language="it";
 }//fine lingua
 require('../game/language/'.$language.'/lang_admin.php');
+$adesso=strtotime("now");
 $accesso=explode("|||",$_COOKIE['urbgadm']);
 $user=htmlspecialchars($accesso[0],ENT_QUOTES);
 $pass=htmlspecialchars($accesso[1],ENT_QUOTES);
