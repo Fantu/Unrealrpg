@@ -7,8 +7,8 @@ if (isset($_POST["invio"])) {
 	$pass=htmlspecialchars($_POST['passw'],ENT_QUOTES);
 	$pass=md5($pass);
 	$email=htmlspecialchars($_POST['email'],ENT_QUOTES);
-$op=$db->QuerySelect("SELECT * FROM utenti WHERE username='".$user."'");
-if($op){
+$op=$db->QuerySelect("SELECT COUNT(id) AS num FROM utenti WHERE username='".$user."'");
+if($op['num']>0){
 	echo $lang['Username_esistente'];}
 	else{
 		$db->QueryMod("INSERT INTO utenti (username,password,email) VALUES ('".$user."','".$pass."','".$email."')");

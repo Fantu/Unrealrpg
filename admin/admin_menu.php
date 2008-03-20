@@ -6,5 +6,8 @@
 <tr>
 	<td class="tabmenutd"><a href="admin.php?loc=utente">- <?php echo $lang['gestione_utenti']; ?></a></td>
 </tr>
+<tr>
+	<td class="tabmenutd"><a href="admin.php?loc=server">- <?php echo $lang['gestione_server']; ?></a></td>
+</tr>
 <?php } ?>
 </table>

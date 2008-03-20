@@ -12,8 +12,8 @@ require('../game/language/'.$language.'/lang_admin.php');
 if( isset($_POST['user']) ) {
 	$user=htmlspecialchars($_POST['user'],ENT_QUOTES);
 	$pass=htmlspecialchars($_POST['passw'],ENT_QUOTES);
-	$op = $db->QuerySelect("SELECT * FROM utenti WHERE username='".$user."' AND password='".md5($pass)."'");
-	if($op['id']){
+	$op=$db->QuerySelect("SELECT COUNT(id) AS num FROM utenti WHERE username='".$user."' AND password='".md5($pass)."'");
+	if($op['num']>0){
 		setcookie ("urbgadm",md5($user)."|||".md5($pass),time()+3600);
 		header("Location: admin.php");
 		exit();
