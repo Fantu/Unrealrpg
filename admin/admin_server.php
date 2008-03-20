@@ -14,7 +14,6 @@ $db->database=$chiave;
 $db->QueryMod("UPDATE config SET chiuso='0' WHERE id='".$chiave."' LIMIT 1");
 echo sprintf($lang['server_aperto'],$chiave);
 }//ogni server
-}
 }else{
 ?>
  	<form method="post" name="fchiuditutti">
