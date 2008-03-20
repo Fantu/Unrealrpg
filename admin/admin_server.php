@@ -8,13 +8,14 @@ $db->database=$chiave;
 $db->QueryMod("UPDATE config SET chiuso='1' WHERE id='".$chiave."' LIMIT 1");
 echo sprintf($lang['server_chiuso'],$chiave);
 }//ogni server
-}
+}//fine chiudi tutti
 if(isset($_POST["apritutti"])) {
 foreach($game_server as $chiave=>$elemento){
 $db->database=$chiave;
 $db->QueryMod("UPDATE config SET chiuso='0' WHERE id='".$chiave."' LIMIT 1");
 echo sprintf($lang['server_aperto'],$chiave)."<br/>";
 }//ogni server
+}//fine apri tutti
 ?>
 <br/><br/>
 <form method="post" name="fchiuditutti">
