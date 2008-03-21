@@ -22,15 +22,15 @@ require('inclusi/aggiornadb.php');
 }//fine aggiorna db
 ?>
 <br/><br/>
-<form method="post" name="fchiuditutti">
+<form method="post" action="" name="fchiuditutti">
 <input type="submit" value="<?php echo $lang['chiudi_tutti_server']; ?>" name="chiuditutti" />
 </form>
 <br/>
-<form method="post" name="fapritutti">
+<form method="post" action="" name="fapritutti">
 <input type="submit" value="<?php echo $lang['apri_tutti_server']; ?>" name="apritutti" />
 </form>
 <br/><br/>
-<form method="post" name="faggiornadb">
+<form method="post" action="" name="faggiornadb">
 <input type="submit" value="<?php echo $lang['aggiorna_db']; ?>" name="aggiornadb" />
 </form>
 <br/><br/>
