@@ -11,6 +11,7 @@ Legenda:<br />
 + L'interesse del prestito viene incrementato del 10% ogni 2 settimane<br />
 + Rifatto il lavoro come fabbro, ora non si seleziona più l'oggetto preciso ma il tipo di oggetto e di materiale<br />
 + Aggiunta la visualizzazione del testo del messaggio a cui si sta rispondendo alla risposta ai messaggi<br />
++ Aggiunto un blocco di un ora dal login se si effettuano 5 tentativi errati<br />
 + Vari miglioramenti di sistema<br />
 + Miglioramenti ai testi in italiano<br />
 # Nel lavoro in Laboratorio come alchimista l'esperienza in caso di riuscita distillazione o meno aumenta o diminuisce del 20%<br />

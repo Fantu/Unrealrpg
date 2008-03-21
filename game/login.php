@@ -11,18 +11,25 @@ $server=(int)$_POST['login_server'];
 if($esistenza==0){
 	header("Location: ../index.php?error=3");
 	exit();
-} else{
-$db->database=$server;	
+} else{$db->database=$server;}
+if($_COOKIE['urbgloginc']){
+$loginfalliti=(int)$_COOKIE['urbgloginc'];}else{$loginfalliti=0;}
+if($loginfalliti>4){
+header("Location: ../index.php?error=8");
+exit();
+}
 $username=htmlspecialchars($_POST['login_username'],ENT_QUOTES);
 $password=htmlspecialchars($_POST['login_password'],ENT_QUOTES);
 $user=$db->QuerySelect("SELECT count(userid) AS numero FROM utenti WHERE username='".$username."' AND password='".md5($password)."' LIMIT 1");
-}
+
 if($user['numero']==0) {
 	header("Location: ../index.php?error=1");
+	$loginfalliti++;
+	setcookie ("urbgloginc",$loginfalliti,time()+3600);
 	exit();
 }
 $user=$db->QuerySelect("SELECT * FROM utenti WHERE username='".$username."' AND password='".md5($password)."' LIMIT 1");
-if($user['conferma']==0) {
+if($user['conferma']==0){
 	header("Location: ../index.php?error=2");
 	exit();
 /*} else if($user['bloccato']>0 && strtotime("now")<$user['bloccato']) {
@@ -30,7 +37,7 @@ if($user['conferma']==0) {
 	exit();*/
 }
 $check = $db->QuerySelect("SELECT chiuso FROM config");
-if($check['chiuso']==1) {
+if($check['chiuso']==1){
 	header("Location: ../index.php?error=12");
 	exit();
 } else {

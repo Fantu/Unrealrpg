@@ -26,6 +26,9 @@ break;
 case 7:
 $msg=$lang['ext_error7'];
 break;
+case 8:
+$msg=$lang['ext_error8'];
+break;
 /*case 11:
 $tempo=(int)$_GET['t'];
 if($tempo>0) {
