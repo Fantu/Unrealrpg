@@ -15,4 +15,5 @@ $lang['rispondi']='Answer';
 $lang['cancella_selezionati']='Cancel selected messages';
 $lang['nessun_messaggio']='Non ci sono messaggi.';
 $lang['sel_desel_tutti']='Select/Deselect all';
+$lang['msg_orig']='Messaggio originale:';
 ?>

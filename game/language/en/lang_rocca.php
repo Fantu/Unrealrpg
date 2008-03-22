@@ -11,12 +11,12 @@ $lang['report_lavoro_roccastudio']='Completato lo studio nella Rocca dell`Arcano
 $lang['seleziona_elemento']='Seleziona l`elemento:';
 $lang['seleziona_tipo']='Seleziona il tipo:';
 $lang['roccapratica']='Fai pratica';
-$lang['desc_rocca_pratica']='Puoi fare pratica su un determinato elemento e tipo cercando di apprendere l`utilizzo di un incantesimi di tale elemento e preferibilmente tale tipo, inoltre guadagnarai esperienza per l`abilità Sapienza magica e per quello stesso elemento.';
+$lang['desc_rocca_pratica']='Puoi fare pratica con un determinato elemento e tipologìa d`incantesimo, cercando di apprendere l`utilizzo di un incantesimo specifico per elemento. Inoltre, guadagnerai esperienza per l`abilità Sapienza magica e per quello stesso elemento.';
 $lang['report_esplosione_rocca']='Imprevisto durante il lavoro in Rocca!';
 $lang['report_esplosione_roc1']='Durante il tuo lavoro in Rocca si è verificata un esplosione ma sei riuscito ad allontanarti in tempo e non ferirti.';
-$lang['report_esplosione_roc2']='Durante il tuo lavoro in Rocca si è verificata un esplosione, non sei riuscito ad allontanarti in tempo e ti sei ferito (%s di salute persa).';
+$lang['report_esplosione_roc2']='Durante il tuo lavoro in Rocca si è verificata un`esplosione, non sei riuscito ad allontanarti in tempo e ti sei ferito (%s di salute persa).';
 $lang['report_lavroc_magia_si']='Hai appreso %s';
-$lang['report_lavroc_magia_no']='Non sei riuscito ad apprendere niente';
+$lang['report_lavroc_magia_no']='Non sei riuscito ad apprendere nulla';
 $lang['report_lavpraticarocca']='Hai fatto pratica nella Rocca dell`Arcano per 1 ora, guadagnando %s di Esperienza per l`abilità Sapienza magica e per l`elemento %s. Lo studio ti ha stancato (hai perso %s di energia).';
 $lang['report_lavoro_roccapratica']='Completato il lavoro nella Rocca dell`Arcano.';
 ?>
