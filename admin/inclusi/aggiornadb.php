@@ -3,7 +3,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	header("Location: ../../index.php?error=16");
 	exit();
 }
-$newversion="0.6.1a";
+$newversion="0.6.2";
 foreach($game_server as $chiave=>$elemento){
 if($chiave!=999){
 $db->database=$chiave;
