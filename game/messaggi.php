@@ -112,6 +112,7 @@ case "risp":// scrivi risposta
   </tr>
   <tr>
     <td><?php $msgorig=$db->QuerySelect("SELECT * FROM messaggi WHERE id='".$id."'");
+    echo $lang['msg_orig']."<br/>";
     echo $msgorig['testo'];
     ?>
   </td></tr>

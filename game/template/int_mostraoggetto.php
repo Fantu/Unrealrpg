@@ -13,6 +13,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <?php echo $lang['probrottura']; ?>: <?php echo $oggetti['probrottura']; ?><br />
 <?php echo $lang['recsalute']; ?>: <?php echo $oggetti['recsalute']; ?><br />
 <?php echo $lang['recenergia']; ?>: <?php echo $oggetti['recenergia']; ?><br />
+<?php echo $lang['danno']; ?>: <?php echo $oggetti['danno']; ?><br />
 <br />
 <br />
 <?php echo $indietro; ?>

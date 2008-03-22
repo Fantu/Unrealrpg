@@ -30,6 +30,7 @@ $oggetti['probtrovare']=$oggetto['probtrovare'];
 $oggetti['probrottura']=$oggetto['probrottura'];
 $oggetti['recsalute']=$oggetto['recsalute'];
 $oggetti['recenergia']=$oggetto['recenergia'];
+$oggetti['danno']=$oggetto['danno'];
 
 require('template/int_mostraoggetto.php');
 ?>
