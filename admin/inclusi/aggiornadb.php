@@ -9,8 +9,6 @@ if($chiave!=999){
 $db->database=$chiave;
 $check=$db->QuerySelect("SELECT version FROM config WHERE id=".$chiave);
 if($check['version']!=$newversion AND $newversion==$game_revision){
-$db->QueryMod("ALTER TABLE `banca` ADD `incprestito` TINYINT( 2 ) UNSIGNED NOT NULL DEFAULT '0', ADD `dataincprestito` INT( 13 ) UNSIGNED NOT NULL DEFAULT '0'");
-$db->QueryMod("UPDATE `banca` SET incprestito='1',dataincprestito='".$adesso."' WHERE prestito>'0'");
 $db->QueryMod("UPDATE `config` SET version='".$newversion."' WHERE id=".$chiave);
 echo sprintf($lang['aggiornato_db_server'],$chiave,$newversion)."<br />";
 }/*se non aggiornato*/else{
