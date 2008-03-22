@@ -48,7 +48,7 @@ if ($user['personaggio']==0){
 	require('creapersonaggio.php');	}
 	else{
 		$location=htmlspecialchars($_GET['loc'],ENT_QUOTES);
-		if(!in_array($location.'.php'),$game_location)
+		if(!in_array($location.'.php',$game_location))
 		$location="situazione";
 		require($location.'.php');
 		}
