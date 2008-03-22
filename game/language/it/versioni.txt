@@ -7,12 +7,16 @@ Legenda:<br />
 - Correzione bug e patch di situazioni non previste<br />
 <br />
 </p>
-<p><strong>0.6.1</strong> (Non disponibile - In sviluppo)<br />
+<p><strong>0.6.2</strong> (Non disponibile - In sviluppo)<br />
+Niente attualmente<br />
+</p>
+<p><strong>0.6.1</strong> (22/3/2008 - In sviluppo)<br />
 + L'interesse del prestito viene incrementato del 10% ogni 2 settimane<br />
 + Rifatto il lavoro come fabbro, ora non si seleziona più l'oggetto preciso ma il tipo di oggetto e di materiale<br />
 + Aggiunta la visualizzazione del testo del messaggio a cui si sta rispondendo alla risposta ai messaggi<br />
 + Aggiunto un blocco di un ora dal login se si effettuano 5 tentativi errati<br />
 + Oggetti: aggiunta la categoria armi corpo a corpo con le sottocategorie pugnali, daghe, spade, asce, mazze<br />
++ Aggiunti 9 pugnali negli oggetti<br />
 + Vari miglioramenti di sistema<br />
 + Vari miglioramenti di sicurezza<br />
 + Miglioramenti ai testi in italiano<br />

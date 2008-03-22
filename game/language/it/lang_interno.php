@@ -113,6 +113,7 @@ $lang['Rame']='Rame';
 $lang['Ferro']='Ferro';
 $lang['Acciaio']='Acciaio';
 $lang['Piccone']='Piccone';
+$lang['Pugnale']='Pugnale';
 //fine funz_ogg
 
 //inizio errori globali

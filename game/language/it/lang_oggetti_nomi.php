@@ -35,4 +35,13 @@ $lang['oggetto33_nome']='Pozione energetica forte';
 $lang['oggetto34_nome']='Pozione energetica intensa';
 $lang['oggetto35_nome']='Pozione energetica pura';
 $lang['oggetto36_nome']='Ampolla';
+$lang['oggetto37_nome']='Pugnale di rame scadente';
+$lang['oggetto38_nome']='Pugnale di rame discreto';
+$lang['oggetto39_nome']='Pugnale di rame buono';
+$lang['oggetto40_nome']='Pugnale di ferro scadente';
+$lang['oggetto41_nome']='Pugnale di ferro discreto';
+$lang['oggetto42_nome']='Pugnale di ferro buono';
+$lang['oggetto43_nome']='Pugnale di acciaio scadente';
+$lang['oggetto44_nome']='Pugnale di acciaio discreto';
+$lang['oggetto45_nome']='Pugnale di acciaio buono';
 ?>
