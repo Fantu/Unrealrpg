@@ -8,9 +8,9 @@ Legenda:<br />
 <br />
 </p>
 <p><strong>0.6.2</strong> (Non disponibile - In sviluppo)<br />
-Niente attualmente<br />
++ Rifatto il login e specificato l'errore in caso di dati errati<br />
 </p>
-<p><strong>0.6.1</strong> [R.842] (22/3/2008 - beta)<br />
+<p><strong>0.6.1</strong> [R.842] (22/3/2008 - Beta)<br />
 + L'interesse del prestito viene incrementato del 10% ogni 2 settimane<br />
 + Rifatto il lavoro come fabbro, ora non si seleziona più l'oggetto preciso ma il tipo di oggetto e di materiale<br />
 + Aggiunta la visualizzazione del testo del messaggio a cui si sta rispondendo alla risposta ai messaggi<br />

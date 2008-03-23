@@ -20,15 +20,23 @@ exit();
 }
 $username=htmlspecialchars($_POST['login_username'],ENT_QUOTES);
 $password=htmlspecialchars($_POST['login_password'],ENT_QUOTES);
-$user=$db->QuerySelect("SELECT count(userid) AS numero FROM utenti WHERE username='".$username."' AND password='".md5($password)."' LIMIT 1");
+$user=$db->QuerySelect("SELECT count(userid) AS numero FROM utenti WHERE username='".$username."' LIMIT 1");
 
-if($user['numero']==0) {
+if($user['numero']>0) {
+$user=$db->QuerySelect("SELECT * FROM utenti WHERE username='".$username."' LIMIT 1");
+if($user['password']!=md5($password)){
+	header("Location: ../index.php?error=4");
+	$loginfalliti++;
+	setcookie ("urbgloginc",$loginfalliti,time()+3600);
+	exit();
+}//se password errata
+}else{
 	header("Location: ../index.php?error=1");
 	$loginfalliti++;
 	setcookie ("urbgloginc",$loginfalliti,time()+3600);
 	exit();
-}
-$user=$db->QuerySelect("SELECT * FROM utenti WHERE username='".$username."' AND password='".md5($password)."' LIMIT 1");
+}//se username inesistente
+
 if($user['conferma']==0){
 	header("Location: ../index.php?error=2");
 	exit();

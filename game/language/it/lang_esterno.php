@@ -30,9 +30,10 @@ $lang['reg_error7']='- L\'indirizzo email inserito non sembra essere corretto.<b
 $lang['reg_error8']='- L\'username che hai scelto &egrave; gi&agrave; stato utilizzato!<br />';
 $lang['reg_error9']='- Questo server &egrave; al momento troppo affollato, scegline un altro.<br />';
 
-$lang['ext_error1']='Login errato!\\nUsername e/o password non corretti.';
-$lang['ext_error2']='Login impossibile!\\nQuesto account non è ancora stato confermato.';
+$lang['ext_error1']='Login fallito\\nUsername inesistente!';
+$lang['ext_error2']='Login fallito\\nQuesto account non è ancora stato confermato.';
 $lang['ext_error3']='Tempo limite scaduto!\\nNuovo login necessario.';
+$lang['ext_error4']='Login fallito\\nPassword errata!';
 $lang['ext_error5']='Impossibile confermare questo account!\\nLink errato, controlla e riprova.';
 $lang['ext_error6']='Impossibile confermare questo account!\\nQuesto account è già stato confermato.';
 $lang['ext_error7']='Account confermato!\\nAdesso puoi entrare e iniziare a giocare.';

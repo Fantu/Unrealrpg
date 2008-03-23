@@ -14,9 +14,9 @@ break;
 case 3:
 $msg=$lang['ext_error3'];
 break;
-/*case 4:
-$msg="Accesso negato!\\nHai tentato di entrare in una pagina riservata agli utenti loggati.";
-break;*/
+case 4:
+$msg=$lang['ext_error4'];
+break;
 case 5:
 $msg=$lang['ext_error5'];
 break;
