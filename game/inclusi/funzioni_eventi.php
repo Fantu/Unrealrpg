@@ -456,7 +456,7 @@ $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES
 }
 else {
 $ore--;
-$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,lavoro,ore,oggid) VALUES ('".$userid."','".$adesso."','3600','9','1','7','".$ore."','".$oggdf."')");
+$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,lavoro,ore,oggid,type) VALUES ('".$userid."','".$adesso."','3600','9','1','7','".$ore."','".$oggdf."','".$materiale."')");
 }//fine continua lavoro
 }//fine se la coda ha almeno un altra ora
 } //fine Completalavfucfab

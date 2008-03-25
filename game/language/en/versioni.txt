@@ -9,6 +9,10 @@ Legenda:<br />
 </p>
 <p><strong>0.6.2</strong> (Non disponibile - In sviluppo)<br />
 + Rifatto il login e specificato l'errore in caso di dati errati<br />
++ Inizio creazione Equipaggiamento, dove definire gli oggetti da utilizzare in battaglia (armi, armature, pozioni ecc..)<br />
+</p>
+<p><strong>0.6.1.1</strong> (22/3/2008 - Beta)<br />
+- Corretto bug nel lavoro come Fabbro<br />
 </p>
 <p><strong>0.6.1</strong> [R.842] (22/3/2008 - Beta)<br />
 + L'interesse del prestito viene incrementato del 10% ogni 2 settimane<br />
