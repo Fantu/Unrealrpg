@@ -10,10 +10,11 @@ Legenda:<br />
 <p><strong>0.6.2</strong> (Non disponibile - In sviluppo)<br />
 + Rifatto il login e specificato l'errore in caso di dati errati<br />
 + Inizio creazione Equipaggiamento, dove definire gli oggetti da utilizzare in battaglia (armi, armature, pozioni ecc..)<br />
++ Gli oggetti nell'equipaggiamento non sono visibili in Inventario ne vendibili o usabili in nessun caso al di fuori della battaglia<br />
 # Aumentato l'incremento di esperienza per ogni livello di abilità per passare al livello successivo<br />
 # Rivisto il lavoro in Laboratorio come alchimista, reso più equilibrato<br />
 </p>
-<p><strong>0.6.1.1</strong> (22/3/2008 - Beta)<br />
+<p><strong>0.6.1.1</strong> (26/3/2008 - Beta)<br />
 - Corretto bug nel lavoro come Fabbro<br />
 </p>
 <p><strong>0.6.1</strong> [R.842] (22/3/2008 - Beta)<br />

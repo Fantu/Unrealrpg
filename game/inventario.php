@@ -8,7 +8,7 @@ if (isset($_POST['vendi'])){
 $errore="";
 $quanti=(int)$_POST['quanti'];
 $oggselect=(int)$_POST['oggselect'];
-$numogg=$db->QuerySelect("SELECT oggid,usura,count(*) AS numero FROM inoggetti WHERE userid='".$user['userid']."' AND oggid='".$oggselect."' GROUP BY oggid");
+$numogg=$db->QuerySelect("SELECT oggid,usura,count(*) AS numero FROM inoggetti WHERE userid='".$user['userid']."' AND oggid='".$oggselect."' AND equip='0' GROUP BY oggid");
 if ($oggselect<1)
 $errore .= $lang['inventario_errore1'];
 if ($quanti<1)
@@ -32,7 +32,7 @@ $monete+=floor($numero*($cogg['costo']/2));
 }
 $outputerrori=sprintf($lang['report_vendita'],$quanti,$lang['oggetto'.$oggselect.'_nome'],$monete);
 $db->QueryMod("UPDATE utenti SET monete=monete+'".$monete."' WHERE userid='".$user['userid']."'");	
-$db->QueryMod("DELETE FROM inoggetti WHERE userid='".$user['userid']."' AND oggid='".$oggselect."' LIMIT ".$quanti);
+$db->QueryMod("DELETE FROM inoggetti WHERE userid='".$user['userid']."' AND oggid='".$oggselect."' AND equip='0' LIMIT ".$quanti);
 }
 }//fine vendi
 
@@ -55,12 +55,12 @@ $outputerrori=sprintf($lang['impossibile_usare_oggetto'],$lang['oggetto'.$oggsel
 }//fine niente errori esegui
 }//fine usa
 
-$seoggetti=$db->QuerySelect("SELECT COUNT(*) AS id FROM inoggetti WHERE userid='".$user['userid']."'");
+$seoggetti=$db->QuerySelect("SELECT COUNT(*) AS id FROM inoggetti WHERE userid='".$user['userid']."' AND equip='0'");
 if ($seoggetti['id']==0){
 $nessunogg=$lang['nessun_oggetto_posseduto'];
 }else{
 require('language/it/lang_oggetti_nomi.php');	
-$oggposseduti=$db->QueryCiclo("SELECT oggid,count(*) AS numero FROM inoggetti WHERE userid='".$user['userid']."' GROUP BY oggid");
+$oggposseduti=$db->QueryCiclo("SELECT oggid,count(*) AS numero FROM inoggetti WHERE userid='".$user['userid']."' AND equip='0' GROUP BY oggid");
 while($ogg=$db->QueryCicloResult($oggposseduti)) {
 $i++;
 $oggetti['id'][$i]=$ogg['oggid'];
