@@ -39,7 +39,7 @@ if(($userbank['interessi']+86400)<$adesso){
 	$userbank=$db->QuerySelect("SELECT * FROM banca WHERE userid='".$user['userid']."' LIMIT 1");
 }//fine controllo interessi
 if($userbank['dataincprestito']>0){
-if(($userbank['dataincprestito']+604800)<$adesso){
+if(($userbank['dataincprestito']+1209600)<$adesso){
 $db->QueryMod("UPDATE banca SET incprestito=incprestito+'1',dataincprestito='".$adesso."' WHERE userid='".$user['userid']."'");
 }//fine controllo prestito
 }//fine se ci sono prestiti
