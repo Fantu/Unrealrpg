@@ -11,6 +11,14 @@ $check=$db->QuerySelect("SELECT version FROM config WHERE id=".$chiave);
 if($check['version']!=$newversion AND $newversion==$game_revision){
 $db->QueryMod("ALTER TABLE `inoggetti` CHANGE `inuso` `inuso` TINYINT( 1 ) UNSIGNED NOT NULL DEFAULT '0'");
 $db->QueryMod("ALTER TABLE `inoggetti` ADD `equip` TINYINT( 1 ) UNSIGNED NOT NULL DEFAULT '0'");
+$db->QueryMod("CREATE TABLE equipaggiamento ( `userid` SMALLINT UNSIGNED NOT NULL , `cac` SMALLINT UNSIGNED NOT NULL DEFAULT '0', PRIMARY KEY ( `userid` ) ) ENGINE = MYISAM");
+
+	$a=$db->QueryCiclo("SELECT userid FROM utenti WHERE conferma='1' AND personaggio='1'");
+	while($var=$db->QueryCicloResult($a))
+	{
+		$db->QueryMod("INSERT INTO equipaggiamento (userid) VALUES ('".$var['userid']."')");
+	}
+
 $db->QueryMod("UPDATE `config` SET version='".$newversion."' WHERE id=".$chiave);
 echo sprintf($lang['aggiornato_db_server'],$chiave,$newversion)."<br />";
 }/*se non aggiornato*/else{
@@ -20,12 +28,9 @@ echo sprintf($lang['non_aggiornato_db_server'],$chiave)."<br />";
 }//fine per ogni server
 
 	/* //creazione record per tab con 1 record per utente
-	foreach($game_server as $chiave=>$elemento){
-	$db->database = $chiave;
 	$a=$db->QueryCiclo("SELECT userid FROM utenti WHERE conferma='1' AND personaggio='1'");
 	while($var=$db->QueryCicloResult($a))
 	{
 		$db->QueryMod("INSERT INTO lavori (userid) VALUES ('".$var['userid']."')");
-	}
-	}// fine per ogni server*/
+	}*/
 ?>

@@ -44,5 +44,6 @@ $db->QueryMod("DELETE FROM lavori WHERE userid='".$chi['userid']."'");
 $db->QueryMod("DELETE FROM inoggetti WHERE userid='".$chi['userid']."'");
 $db->QueryMod("DELETE FROM messaggi WHERE userid='".$chi['userid']."'");
 $db->QueryMod("DELETE FROM inmagia WHERE userid='".$chi['userid']."'");
+$db->QueryMod("DELETE FROM equipaggiamento WHERE userid='".$chi['userid']."'");
 }
 ?>
