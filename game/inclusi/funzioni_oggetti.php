@@ -27,12 +27,14 @@ $materiali_num=array(
 
 $oggdf_nome=array(
 1=>$lang['Piccone'],
-2=>$lang['Pugnale']
+2=>$lang['Pugnale'],
+3=>$lang['Daga']
 );
 
 $oggdf_num=array(
 1=>array(1=>2,2=>1),
-2=>array(1=>5,2=>1)
+2=>array(1=>5,2=>1),
+3=>array(1=>5,2=>2)
 );
 
 function Checkusurarottura($userid) {

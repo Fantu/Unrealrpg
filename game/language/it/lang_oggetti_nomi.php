@@ -44,4 +44,13 @@ $lang['oggetto42_nome']='Pugnale di ferro buono';
 $lang['oggetto43_nome']='Pugnale di acciaio scadente';
 $lang['oggetto44_nome']='Pugnale di acciaio discreto';
 $lang['oggetto45_nome']='Pugnale di acciaio buono';
+$lang['oggetto46_nome']='Daga di rame scadente';
+$lang['oggetto47_nome']='Daga di rame discreto';
+$lang['oggetto48_nome']='Daga di rame buono';
+$lang['oggetto49_nome']='Daga di ferro scadente';
+$lang['oggetto50_nome']='Daga di ferro discreto';
+$lang['oggetto51_nome']='Daga di ferro buono';
+$lang['oggetto52_nome']='Daga di acciaio scadente';
+$lang['oggetto53_nome']='Daga di acciaio discreto';
+$lang['oggetto54_nome']='Daga di acciaio buono';
 ?>

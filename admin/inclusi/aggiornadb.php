@@ -19,6 +19,18 @@ $db->QueryMod("CREATE TABLE equipaggiamento ( `userid` SMALLINT UNSIGNED NOT NUL
 		$db->QueryMod("INSERT INTO equipaggiamento (userid) VALUES ('".$var['userid']."')");
 	}
 
+$db->QueryMod("INSERT INTO oggetti (`id`,`tipo`,`categoria`,`probrottura`,`costo`,`energia`,`usura`,`bonuseff`,`forzafisica`,`probtrovare`,`recsalute`,`recenergia`,`abilitanec`,`materiale`,`danno`)
+VALUES 
+(NULL , '5', '2', '250', '10', '30', '10', '0', '50', '0', '0', '0', '1', '1', '6'),
+(NULL , '5', '2', '200', '20', '30', '20', '0', '50', '0', '0', '0', '3', '1', '7'),
+(NULL , '5', '2', '100', '30', '30', '50', '0', '50', '0', '0', '0', '5', '1', '8'),
+(NULL , '5', '2', '200', '20', '50', '20', '0', '80', '0', '0', '0', '1', '2', '10'),
+(NULL , '5', '2', '100', '40', '50', '40', '0', '80', '0', '0', '0', '3', '2', '12'),
+(NULL , '5', '2', '50', '60', '50', '80', '1', '80', '0', '0', '0', '5', '2', '15'),
+(NULL , '5', '2', '100', '30', '60', '40', '0', '100', '0', '0', '0', '1', '3', '13'),
+(NULL , '5', '2', '50', '60', '60', '80', '1', '100', '0', '0', '0', '3', '3', '16'),
+(NULL , '5', '2', '25', '120', '60', '160', '3', '100', '0', '0', '0', '6', '3', '20');
+");
 $db->QueryMod("UPDATE `config` SET version='".$newversion."' WHERE id=".$chiave);
 echo sprintf($lang['aggiornato_db_server'],$chiave,$newversion)."<br />";
 }/*se non aggiornato*/else{

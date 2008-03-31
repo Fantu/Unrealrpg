@@ -11,6 +11,7 @@ Legenda:<br />
 + Rifatto il login e specificato l'errore in caso di dati errati<br />
 + Inizio creazione Equipaggiamento, dove definire gli oggetti da utilizzare in battaglia (armi, armature, pozioni ecc..)<br />
 + Gli oggetti nell'equipaggiamento non sono visibili in Inventario ne vendibili o usabili in nessun caso al di fuori della battaglia<br />
++ Aggiunti 9 daghe negli oggetti<br />
 # Aumentato l'incremento di esperienza per ogni livello di abilità per passare al livello successivo<br />
 # Rivisto il lavoro in Laboratorio come alchimista, reso più equilibrato<br />
 </p>
