@@ -14,6 +14,7 @@ Legenda:<br />
 + Aggiunti 9 daghe negli oggetti<br />
 # Aumentato l'incremento di esperienza per ogni livello di abilità per passare al livello successivo<br />
 # Rivisto il lavoro in Laboratorio come alchimista, reso più equilibrato<br />
+# Rivisto il lavoro in Miniera vecchia, reso più equilibrato<br />
 </p>
 <p><strong>0.6.1.2</strong> (30/3/2008 - Beta)<br />
 - Corretto incremento interesse dei prestiti<br />
