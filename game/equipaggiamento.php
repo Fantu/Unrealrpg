@@ -31,7 +31,7 @@ exit();
 
 $seogg=$db->QuerySelect("SELECT count(id) AS id FROM inoggetti WHERE userid='".$user['userid']."' AND equip='0'");
 if($seogg['id']>0){
-$oggacac=$db->QueryCiclo("SELECT * FROM oggetti WHERE tipo='5' AND equip='0'");
+$oggacac=$db->QueryCiclo("SELECT * FROM oggetti WHERE tipo='5'");
 while($ogg=$db->QueryCicloResult($oggacac)) {
 $armicact[$ogg['id']]=$ogg['id'];
 }
