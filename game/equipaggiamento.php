@@ -11,7 +11,7 @@ $userequip=$db->QuerySelect("SELECT * FROM equipaggiamento WHERE userid='".$user
 if (isset($_POST['impocac'])){
 $errore="";
 $acac=(int)$_POST['acac'];
-if ($piccone<1)
+if ($acac<1)
 $errore.=$lang['equip_errore1'];
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$user['userid']."' LIMIT 1");
 $acacsel=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$acac."' LIMIT 1");
