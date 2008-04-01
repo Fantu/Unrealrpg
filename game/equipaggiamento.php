@@ -24,6 +24,7 @@ if($errore){
 else {
 if($userequip['cac']!=0){$db->QueryMod("UPDATE inoggetti SET equip='0' WHERE userid='".$user['userid']."' AND oggid='".$userequip['cac']."' AND equip='1' LIMIT 1");}
 $db->QueryMod("UPDATE equipaggiamento SET cac='".$acac."' WHERE userid='".$user['userid']."' LIMIT 1");
+$db->QueryMod("UPDATE inoggetti SET equip='1' WHERE userid='".$user['userid']."' AND oggid='".$acac."' AND equip='0' LIMIT 1");
 echo "<script language=\"javascript\">window.location.href='index.php?loc=equipaggiamento'</script>";
 exit();
 }
