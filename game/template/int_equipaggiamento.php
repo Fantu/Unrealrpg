@@ -9,6 +9,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <br />
 <?php echo $lang['Armi']; ?>
 <br />
+<br />
 <?php echo $desc_impocac; ?>
 <br />
 <form action="" method="post" name="fimpocac">

@@ -27,11 +27,11 @@ $lang['Elfi']='Elfo';
 $lang['Non_morti']='Non morto';
 $lang['Orchi']='Orco';
 $lang['Nani']='Nano';
-$lang['desc_umani']='Descrizione umani';
-$lang['desc_elfi']='Descrizione elfi';
-$lang['desc_non_morti']='Descrizione non morti';
-$lang['desc_orchi']='Descrizione orchi';
-$lang['desc_nani']='Descrizione nani';
+$lang['desc_umani']='Descrizione Umani';
+$lang['desc_elfi']='Descrizione Elfi';
+$lang['desc_non_morti']='Descrizione Non morti';
+$lang['desc_orchi']='Descrizione Orchi';
+$lang['desc_nani']='Descrizione Nani';
 //fine razze
 
 //inizio classi
@@ -41,12 +41,12 @@ $lang['Ladro']='Ladro';
 $lang['Ranger']='Ranger';
 $lang['Ninja']='Ninja';
 $lang['Berserk']='Berserk';
-$lang['desc_guerriero']='Descrizione guerriero';
-$lang['desc_mago']='Descrizione mago';
-$lang['desc_ladro']='Descrizione ladro';
-$lang['desc_ranger']='Descrizione ranger';
-$lang['desc_ninja']='Descrizione ninja';
-$lang['desc_berserk']='Descrizione berserk';
+$lang['desc_guerriero']='Descrizione Guerriero';
+$lang['desc_mago']='Descrizione Mago';
+$lang['desc_ladro']='Descrizione Ladro';
+$lang['desc_ranger']='Descrizione Ranger';
+$lang['desc_ninja']='Descrizione Ninja';
+$lang['desc_berserk']='Descrizione Berserk';
 //fine classi
 
 //inizio caratteristiche
@@ -129,9 +129,9 @@ $lang['global_errore2']='- Le ore di lavoro devono essere minimo di 1 e massimo 
 $lang['Account_cancellato']='Account cancellato';
 $lang['Account_inutilizzato']='Account inutilizzato';
 $lang['mail_cancellato_noconferma']='Ciao %s,<br />Siamo spiacenti di informarti che il tuo account su %s sul server %s è stato cancellato perchè non confermato entro le 48 ore.<br /> Saluti,<br />%s lo Staff.';
-$lang['mail_cancellato_nopersonaggio']='Ciao %s,<br />Siamo spiacenti di informarti che il tuo account su %s sul server %s è stato cancellato perchè non è stato creato un personaggio entro le 72 ore.<br /> Saluti,<br />%s lo Staff.';
-$lang['mail_avviso_inattivita']='Ciao, %s!<br />Ti scriviamo per informarti che il tuo account su %s server %s risulta inattivo da pi&ugrave; di 2 settimane.<br />Se questa inattività dovesse raggiungere i 30 giorni, l`account verrà automaticamente cancellato dal sistema.<br />Saluti,<br />%s lo Staff.';
-$lang['mail_cancellato_inattivita']='Ciao, %s<br />! Siamo spiacenti di informarti che il tuo account su %s sul server %s è stato cancellato perchè inattivo da oltre 30 giorni.<br />Saluti,<br />%s lo Staff.';
+$lang['mail_cancellato_nopersonaggio']='Ciao %s,<br />Siamo spiacenti di informarti che il tuo account su %s sul server %s è stato cancellato perchè non è stato creato un personaggio entro le 72 ore.<br /> Saluti,<br />%s Staff.';
+$lang['mail_avviso_inattivita']='Ciao, %s!<br />Ti scriviamo per informarti che il tuo account su %s server %s risulta inattivo da pi&ugrave; di 2 settimane.<br />Se questa inattività dovesse raggiungere i 30 giorni, l`account verrà automaticamente cancellato dal sistema.<br />Saluti,<br />%s Staff.';
+$lang['mail_cancellato_inattivita']='Ciao, %s<br />! Siamo spiacenti di informarti che il tuo account su %s sul server %s è stato cancellato perchè inattivo da oltre 30 giorni.<br />Saluti,<br />%s Staff.';
 //fine errori cancellazione/inattività
 
 //inizio libro

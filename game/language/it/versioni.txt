@@ -13,6 +13,7 @@ Legenda:<br />
 + Gli oggetti nell'equipaggiamento non sono visibili in Inventario ne vendibili o usabili in nessun caso al di fuori della battaglia<br />
 + Aggiunti 9 daghe negli oggetti<br />
 + Aggiunta la selezione e sostituzione dell`arma corpo a corpo in equipaggiamento<br />
++ Miglioramenti ai testi in italiano<br />
 # Aumentato l'incremento di esperienza per ogni livello di abilità per passare al livello successivo<br />
 # Rivisto il lavoro in Laboratorio come alchimista, reso più equilibrato<br />
 # Rivisto il lavoro in Miniera vecchia, reso più equilibrato<br />

@@ -28,10 +28,10 @@ $lang['reg_error5']='- The password has to be at least 6 characters long.<br />'
 $lang['reg_error6']='- Non hai inserito l`indirizzo email!<br />';
 $lang['reg_error7']='- L`indirizzo email inserito non sembra essere corretto.<br />';
 $lang['reg_error8']='- L`username che hai scelto è già stato utilizzato!<br />';
-$lang['reg_error9']='- This server is full at the moment, please choose another server.<br />';
+$lang['reg_error9']='- Questo server è al momento troppo affollato, scegline un altro.<br />';
 
-$lang['ext_error1']='Login errato!\\nUsername e/o password non corretti.';
-$lang['ext_error2']='Login impossibile!\\nQuesto account non è ancora stato confermato.';
+$lang['ext_error1']='Login fallito\\nUsername inesistente!';
+$lang['ext_error2']='Login fallito\\nQuesto account non è ancora stato confermato.';
 $lang['ext_error3']='Tempo limite scaduto!\\nNuovo login necessario.';
 $lang['ext_error4']='Login fallito\\nPassword errata!';
 $lang['ext_error5']='Impossibile confermare questo account!\\nLink errato, controlla e riprova.';
@@ -41,5 +41,5 @@ $lang['ext_error8']='Sei stato bloccato per un ora in seguito a 5 tentativi di l
 $lang['ext_error12']='Server momentaneamente chiuso per installazione aggiornamenti o manutenzione. Riprova più tardi. Grazie.';
 $lang['ext_error13']='Accesso negato!\\nHai tentato di entrare in una pagina riservata agli utenti loggati.';
 $lang['ext_error14']='Accesso negato!\\nIl tuo IP è cambiato dal momento del login.\\nLoggati nuovamente.';
-$lang['ext_error16']='Link errato!\\nPer favore segui i link del gioco.';
+$lang['ext_error16']='Link errato!\\nPer favore segui i link del gioco.';
 ?>
