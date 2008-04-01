@@ -7,12 +7,16 @@ Legenda:<br />
 - Correzione bug e patch di situazioni non previste<br />
 <br />
 </p>
-<p><strong>0.6.2</strong> (Non disponibile - In sviluppo)<br />
+<p><strong>0.6.3</strong> (Non disponibile - In sviluppo)<br />
+Niente attualmente<br />
+</p>
+<p><strong>0.6.2</strong> [R.863] (1/4/2008 - Beta)<br />
 + Rifatto il login e specificato l'errore in caso di dati errati<br />
 + Inizio creazione Equipaggiamento, dove definire gli oggetti da utilizzare in battaglia (armi, armature, pozioni ecc..)<br />
 + Gli oggetti nell'equipaggiamento non sono visibili in Inventario ne vendibili o usabili in nessun caso al di fuori della battaglia<br />
 + Aggiunti 9 daghe negli oggetti<br />
 + Aggiunta la selezione e sostituzione dell`arma corpo a corpo in equipaggiamento<br />
++ Miglioramenti ai testi in italiano<br />
 # Aumentato l'incremento di esperienza per ogni livello di abilità per passare al livello successivo<br />
 # Rivisto il lavoro in Laboratorio come alchimista, reso più equilibrato<br />
 # Rivisto il lavoro in Miniera vecchia, reso più equilibrato<br />
