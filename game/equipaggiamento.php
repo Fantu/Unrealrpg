@@ -13,10 +13,12 @@ $errore="";
 $acac=(int)$_POST['acac'];
 if ($acac<1)
 $errore.=$lang['equip_errore1'];
+if($errore==""){
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$user['userid']."' LIMIT 1");
 $acacsel=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$acac."' LIMIT 1");
 if ($usercar['attfisico']<$acacsel['forzafisica'])
 $errore.=$lang['equip_errore2'];
+}//se arma selezionata
 if ($eventi['id']>0)
 $errore.=$lang['global_errore1'];
 if($errore){

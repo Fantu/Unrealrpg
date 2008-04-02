@@ -8,7 +8,7 @@ Legenda:<br />
 <br />
 </p>
 <p><strong>0.6.3</strong> (Non disponibile - In sviluppo)<br />
-Niente attualmente<br />
++ Vari miglioramenti di sistema a Miniera, Equipaggiamento<br />
 </p>
 <p><strong>0.6.2</strong> [R.863] (1/4/2008 - Beta)<br />
 + Rifatto il login e specificato l'errore in caso di dati errati<br />

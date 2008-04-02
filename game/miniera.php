@@ -68,9 +68,11 @@ $errore .= $lang['miniera_errore4'];
 $piccone=(int)$_POST['piccone'];
 if ($piccone<1)
 $errore .= $lang['miniera_errore5'];
+if($errore==""){
 $picconesel=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$piccone."' LIMIT 1");
 if ($usercar['attfisico']<$picconesel['forzafisica'])
 $errore .= $lang['miniera_errore6'];
+}//se piccone selezionato
 if ($usercar['minatore']<1)
 $errore .= $lang['miniera_errore7'];
 if ($eventi['id']>0)

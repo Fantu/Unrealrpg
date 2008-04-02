@@ -7,7 +7,7 @@ if (isset($_POST["chiuditutti"])) {
 foreach($game_server as $chiave=>$elemento){
 $db->database=$chiave;
 $db->QueryMod("UPDATE config SET chiuso='1' WHERE id='".$chiave."' LIMIT 1");
-echo sprintf($lang['server_chiuso'],$chiave);
+echo sprintf($lang['server_chiuso'],$chiave)."<br/>";
 }//ogni server
 }//fine chiudi tutti
 if(isset($_POST["apritutti"])) {
