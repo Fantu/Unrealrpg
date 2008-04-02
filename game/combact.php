@@ -33,15 +33,19 @@ case "rispsfida":
 $risp=(int)$_GET['risp'];
 $eventisfida=$db->QuerySelect("SELECT * FROM eventi WHERE userid='".$user['userid']."'");
 $idp=(int)$eventisfida['oggid'];
+$db->QueryMod("DELETE FROM eventi WHERE userid='".$user['userid']."'");
+$db->QueryMod("DELETE FROM eventi WHERE userid='".$idp."'");
 if($risp==1){
 $outputerrori="Sfida accettata ma impossibile procedere con il combattimento...in sviluppo";
+$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,oggid) VALUES ('".$idp."','".$adesso."','84600','13','5','".$user['userid']."')");
+$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,oggid) VALUES ('".$user['userid']."','".$adesso."','84600','13','5','".$idp."')");
+echo "<script language=\"javascript\">window.location.href='index.php?loc=situazione'</script>";
+exit();
 }else{
 $titolo=$lang['sfida_rifiutata'];
 $testo=$lang['report_sfida_rifiutata'];
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$idp."','".$titolo."','".$testo."','0','".$adesso."')");
 }
-$db->QueryMod("DELETE FROM eventi WHERE userid='".$user['userid']."'");
-$db->QueryMod("DELETE FROM eventi WHERE userid='".$idp."'");
 break;//fine rispondi alla sfida
 }
 
