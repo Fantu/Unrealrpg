@@ -203,18 +203,15 @@ $efficenza=rand(0,1+($usercar['minatore']*500));
 if($efficenza>6000)
 $efficenza=6000;
 $trovare=rand(0,9999)-$efficenza;
-$numeromin=0;
 $oggminerali=$db->QueryCiclo("SELECT * FROM oggetti WHERE tipo='1' AND categoria='1' AND probtrovare>'".$trovare."'");
-while($oggminerale=$db->QueryCicloResult($oggminerali)) {
-$numeromin++;	
-$picconi['id'][$numeromin]=$oggminerale['id'];
-$picconi['nome'][$numeromin]=$lang['oggetto'.$oggminerale['id'].'_nome'];
+while($oggminerale=$db->QueryCicloResult($oggminerali)) {	
+$minerali[]=$oggminerale['id'];
 }
-$numeromin=rand(1,$numeromin);
-$minerale=$picconi['nome'][$numeromin];
+shuffle($minerali);
+$minerale=$lang['oggetto'.$minerali[0].'_nome'];
 $quantimin=rand(1,2+floor($usercar['minatore']/3));
 for($i=1; $i<=$quantimin; $i++){
-$db->QueryMod("INSERT INTO inoggetti (oggid,userid) VALUES ('".$picconi['id'][$numeromin]."','".$userid."')");
+$db->QueryMod("INSERT INTO inoggetti (oggid,userid) VALUES ('".$minerali[0]."','".$userid."')");
 }
 $testo.=sprintf($lang['report_lavminieravecchia_materiali_si'],$quantimin,$minerale)."<br />";
 }//fine trovato minerale

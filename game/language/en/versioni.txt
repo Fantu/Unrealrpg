@@ -8,7 +8,9 @@ Legenda:<br />
 <br />
 </p>
 <p><strong>0.6.3</strong> (Non disponibile - In sviluppo)<br />
-+ Vari miglioramenti di sistema a Miniera, Equipaggiamento<br />
++ Iniziata creazione combattimento<br />
++ Iniziata creazione sistema di memorizzazione dei report delle battaglie<br />
++ Vari miglioramenti di sistema a Miniera, Equipaggiamento, lavoro in Miniera vecchia<br />
 </p>
 <p><strong>0.6.2</strong> [R.863] (1/4/2008 - Beta)<br />
 + Rifatto il login e specificato l'errore in caso di dati errati<br />
