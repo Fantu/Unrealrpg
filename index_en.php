@@ -1,5 +1,5 @@
 <?php
-$start_time = microtime();
+$start_time=time()+microtime();
 require('game/inclusi/valori.php');
 $int_security=$game_se_code;
 $language="en";
