@@ -5,9 +5,9 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 }?>
 <br /><div align="center" id="tempogenpag">
 <?php
-$end_time=microtime()-$start_time;
-$end_time=number_format($end_time, 4, '.', '');
-echo sprintf($lang['tempo_gen_pagina'],$end_time,$numquery);
+$end_time=microtime();
+$gen_time=number_format($end_time-$start_time, 4, '.', '');
+echo sprintf($lang['tempo_gen_pagina'],$gen_time,$numquery);
 ?>
 </div>
 </body>
