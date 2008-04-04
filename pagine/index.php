@@ -69,9 +69,9 @@ include('pagine/home.php');
 <?php
 if($_GET['error']){
 require("game/inclusi/errori.php");}
-$end_time=microtime()-$start_time;
-$end_time=number_format($end_time, 4, '.', '');
-echo sprintf($lang['tempo_gen_pagina'],$end_time,$numquery);
+$end_time=time()+microtime();
+$gen_time=number_format($end_time-$start_time, 4, '.', '');
+echo sprintf($lang['tempo_gen_pagina'],$gen_time,$numquery);
 ?><br />
 <script type="text/javascript"><!--
 google_ad_client = "pub-0644240535082356";
