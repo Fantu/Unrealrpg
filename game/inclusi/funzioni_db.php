@@ -1,11 +1,11 @@
 <?php
 	function StampaErroreMysql($arg,$err,$mess) {
 	$data = date("d/m/y - H:i")." ".$arg;
-	$file="inclusi/log/mysql/error.log";
+	$file="inclusi/log/mysql.log";
 	if (!file_exists($file)){
-    $file = "game/inclusi/log/mysql/error.log";
+    $file = "game/inclusi/log/mysq.log";
     if (!file_exists($file)){
-    $file="../game/inclusi/log/mysql/error.log";}}
+    $file="../game/inclusi/log/mysql.log";}}
 	$fp=fopen($file,"a+");
 	fputs($fp,$data."\r\n--------\r\n".$err.": ".$mess."\r\n\r\n");
 	fclose($fp);

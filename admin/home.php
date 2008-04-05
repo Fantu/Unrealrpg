@@ -4,11 +4,14 @@
 <br/>
 <strong>Changelog</strong><br/>
 <br/>
+<p><strong>1.0.2</strong> - 05/04/08<br />
+- Aggiunto controllo file log di sistema<br />
+</p>
 <p><strong>1.0.1</strong> - 20/03/08<br />
 - Aggiunta la chiusura e apertura di tutti i server contemporaneamente<br />
 - Aggiunto l'aggiornamento del db di tutti i server in contemporanea<br />
+</p>
 <p><strong>1.0.0</strong> - 19/03/08<br />
 - Completato e pronto all'uso<br />
-<br />
 </p>
 </div>
