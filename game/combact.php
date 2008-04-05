@@ -4,11 +4,8 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	exit();
 }
 require_once('language/'.$language.'/lang_combact.php');
-
+require_once('inclusi/funzioni_combact.php');
 $do=htmlspecialchars($_GET['do'],ENT_QUOTES);
-
-
-
 switch($do){
 case "sfida":
 $idp=(int)$_GET['id'];
@@ -36,11 +33,12 @@ $idp=(int)$eventisfida['oggid'];
 $db->QueryMod("DELETE FROM eventi WHERE userid='".$user['userid']."'");
 $db->QueryMod("DELETE FROM eventi WHERE userid='".$idp."'");
 if($risp==1){
-$outputerrori="Sfida accettata ma impossibile procedere con il combattimento...in sviluppo";
-$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,oggid) VALUES ('".$idp."','".$adesso."','84600','13','5','".$user['userid']."')");
-$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,oggid) VALUES ('".$user['userid']."','".$adesso."','84600','13','5','".$idp."')");
-echo "<script language=\"javascript\">window.location.href='index.php?loc=situazione'</script>";
-exit();
+//$outputerrori="Sfida accettata ma impossibile procedere con il combattimento...in sviluppo";
+//$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,oggid) VALUES ('".$idp."','".$adesso."','84600','13','5','".$user['userid']."')");
+//$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,oggid) VALUES ('".$user['userid']."','".$adesso."','84600','13','5','".$idp."')");
+Startcombact();
+//echo "<script language=\"javascript\">window.location.href='index.php?loc=situazione'</script>";
+//exit();
 }else{
 $titolo=$lang['sfida_rifiutata'];
 $testo=$lang['report_sfida_rifiutata'];
