@@ -22,6 +22,7 @@ require('inclusi/aggiornadb.php');
 }//fine aggiorna db
 if (isset($_POST["controllaflog"])) {
 if (!file_exists('../game/inclusi/log/mysql.log')){
+umask(0000);
 $fp=fopen("../game/inclusi/log/mysql.log","a+");
 fputs($fp,"--------\r\n\r\n");
 echo $lang['creato_log_query']."<br/>";}
