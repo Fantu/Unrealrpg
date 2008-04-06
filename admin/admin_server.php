@@ -26,6 +26,14 @@ umask(0000);
 $fp=fopen("../game/inclusi/log/mysql.log","a+");
 fputs($fp,"--------\r\n\r\n");
 echo $lang['creato_log_query']."<br/>";}
+foreach($game_server as $chiave=>$elemento){
+if(!is_dir('../game/inclusi/log/report/'.$chiave)){
+echo sprintf($lang['dir_report_mancante'],$chiave)."<br/>";
+mkdir("../game/inclusi/log/report/".$user['server'], 0777);
+if(!is_dir('../game/inclusi/log/report/'.$chiave))
+echo sprintf($lang['creazione_dir_nonriuscita'],$chiave)."<br/>";
+}//se la cartella non esiste
+}//ogni server
 echo $lang['controllo_file_log_eseguito']."<br/>";
 }//fine controlla file log
 ?>
