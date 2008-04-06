@@ -188,8 +188,8 @@ $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES
 $piccone2=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$piccone."' LIMIT 1");
 $efficenza=($usercar['minatore']*1500)+($usercar['attfisico']*2);
 $efficenza+=($efficenza/100*$piccone2['bonuseff']);
-if($efficenza>9900)
-$efficenza=9900;
+if($efficenza>9950)
+$efficenza=9950;
 $energia+=$piccone2['energia'];
 $trovare=rand(0,10000)-$efficenza;
 if($trovare<10){
