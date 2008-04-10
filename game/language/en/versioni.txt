@@ -10,7 +10,8 @@ Legenda:<br />
 <p><strong>0.6.3</strong> (Non disponibile - In sviluppo)<br />
 + Iniziata creazione combattimento<br />
 + Iniziata creazione sistema di memorizzazione dei report delle battaglie<br />
-+ Vari miglioramenti di sistema a Miniera, Equipaggiamento, lavoro in Miniera vecchia, sistema di base<br />
++ Aggiunta cancellazione report delle battaglie più vecchi di 1 settimana<br />
++ Vari miglioramenti di sistema a Miniera, Equipaggiamento, lavoro in Miniera vecchia, sistema di base, Elenco personaggi<br />
 + Vari miglioramenti di sicurezza<br />
 # Rivisto il lavoro in Miniera vecchia, reso più equilibrato<br />
 # Rivisto il lavoro in Laboratorio come alchimista, reso più equilibrato<br />

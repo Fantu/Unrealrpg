@@ -44,7 +44,7 @@ if($user['conferma']==0){
 	header("Location: ../index.php?error=11&t=".$user['bloccato']);	
 	exit();*/
 }
-$check = $db->QuerySelect("SELECT chiuso FROM config");
+$check=$db->QuerySelect("SELECT chiuso FROM config");
 if($check['chiuso']==1){
 	header("Location: ../index.php?error=12");
 	exit();
@@ -61,6 +61,14 @@ if($check['chiuso']==1){
 	$quantimess=$db->QuerySelect("SELECT COUNT(id) AS id FROM messaggi WHERE data<'".$scaduto."' AND letto='1'");
 	if($quantimess['id']>0){
 	$db->QueryMod("DELETE FROM messaggi WHERE data<'".$scaduto."' AND letto='1'");
+	}
+	$quantirep=$db->QuerySelect("SELECT COUNT(id) AS id FROM battlereport WHERE data<'".$scaduto."'");
+	if($quantirep['id']>0){
+	$repscaduti=$db->QueryCiclo("SELECT id FROM battlereport WHERE data<'".$scaduto."'");
+	while($reps=$db->QueryCicloResult($repscaduti)) {
+	$db->QueryMod("DELETE FROM battlereport WHERE id<'".$reps['id']."' LIMIT 1");
+	unlink("inclusi/log/report/".$user['server']."/".$reps['id'].".log");
+	}
 	}
 	$language=$user['language'];
 	require('inclusi/cancellazione.php');

@@ -5,13 +5,14 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 }
 require_once('language/'.$language.'/lang_combact.php');
 
-function Startcombact() {
-global $db,$adesso,$lang,$language,$user,$outputerrori;
-if(!is_dir('inclusi/log/report/'.$user['server'])){
-$outputerrori="Dir mancante<br>";
-mkdir("inclusi/log/report/".$user['server'], 0777);
-if(!is_dir('inclusi/log/report/'.$user['server']))
-$outputerrori.="Creazione dir non riuscita<br>";
-}//se la cartella non esiste
-
+function Startcombact($attaccante,$difensore,$server) {
+global $db,$adesso,$lang,$language,$outputerrori;
+$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,oggid) VALUES ('".$difensore."','".$adesso."','84600','13','5','".$attaccante."')");
+$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,oggid) VALUES ('".$attaccante."','".$adesso."','84600','13','5','".$difensore."')");
+$db->QueryMod("INSERT INTO battle (attid,difid) VALUES ('".$attaccante."','".$difensore."')");
+$battle=$db->QuerySelect("SELECT id FROM battle WHERE attid='".$attaccante."' LIMIT 1");
+$db->QueryMod("INSERT INTO battlereport (id,data) VALUES ('".$battle['id']."','".$adesso."')");
+umask(0000);
+$fp=fopen("inclusi/log/report/".$server."/".$battle['id'].".log","a+");
+fputs($fp,"prova");
 } //fine Startcombact
