@@ -66,7 +66,7 @@ if($check['chiuso']==1){
 	if($quantirep['id']>0){
 	$repscaduti=$db->QueryCiclo("SELECT id FROM battlereport WHERE data<'".$scaduto."'");
 	while($reps=$db->QueryCicloResult($repscaduti)) {
-	$db->QueryMod("DELETE FROM battlereport WHERE id<'".$reps['id']."' LIMIT 1");
+	$db->QueryMod("DELETE FROM battlereport WHERE id='".$reps['id']."' LIMIT 1");
 	unlink("inclusi/log/report/".$user['server']."/".$reps['id'].".log");
 	}
 	}
