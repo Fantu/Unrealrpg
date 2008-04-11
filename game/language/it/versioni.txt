@@ -7,7 +7,10 @@ Legenda:<br />
 - Correzione bug e patch di situazioni non previste<br />
 <br />
 </p>
-<p><strong>0.6.3</strong> (Non disponibile - In sviluppo)<br />
+<p><strong>0.6.4</strong> (Non disponibile - In sviluppo)<br />
+Niente attualmente<br />
+</p>
+<p><strong>0.6.3</strong> (stimato per il 13/4/2008 - In sviluppo)<br />
 + Iniziata creazione combattimento<br />
 + Iniziata creazione sistema di memorizzazione dei report delle battaglie<br />
 + Aggiunta cancellazione report delle battaglie più vecchi di 1 settimana<br />
