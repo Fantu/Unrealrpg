@@ -52,7 +52,10 @@ $errore.=$lang['combact_errore3'];
 if($errore){
 	$outputerrori="<span>".$lang['outputerrorisfida']."</span><br /><span>".$errore."</span><br /><br />";}
 else {
-$report=require($filerep);
+ob_start();
+include $filerep;
+$report=ob_get_contents();
+ob_end_clean();
 $outputcombact="<table>".$report."</table>";
 }
 break;//fine sfidda
