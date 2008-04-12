@@ -9,3 +9,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <br />
 <?php echo $outputsfida; ?>
 <br />
+<br />
+<br />
+<?php echo $outputcombact; ?>
+<br />
