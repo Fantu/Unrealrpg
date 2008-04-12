@@ -13,6 +13,28 @@ $db->QueryMod("INSERT INTO battlereport (id,data) VALUES ('".$battle['id']."','"
 $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,battleid) VALUES ('0','".$adesso."','180','0','6','".$battle['id']."')");
 $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,oggid,battleid) VALUES ('".$difensore."','".$adesso."','84600','13','5','".$attaccante."','".$battle['id']."')");
 $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,oggid,battleid) VALUES ('".$attaccante."','".$adesso."','84600','13','5','".$difensore."','".$battle['id']."')");
+Docombactstats($battle['id'],$server,$attaccante,$difensore);
+Endcombact($battle['id']);
+} //fine Startcombact
+
+function Battledo($battleid) {
+global $db,$adesso,$lang,$language;
+
+//se si continua...creare nuovo turno
+$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,battleid) VALUES ('0','".$adesso."','180','0','6','".$battleid."')");
+//Docombactstats($battleid,$server,$attaccante,$difensore);
+
+} //fine Battledo
+
+function Endcombact($battleid) {
+global $db,$adesso,$lang,$language;
+$db->QueryMod("DELETE FROM eventi WHERE battleid='".$battleid."'");
+$db->QueryMod("DELETE FROM battle WHERE id='".$battleid."'");
+} //fine Endcombact
+
+function Docombactstats($battleid,$attaccante,$difensore) {
+global $db,$adesso,$lang,$language;
+$server=$db->database;
 umask(0000);
 $fp=fopen("inclusi/log/report/".$server."/".$battle['id'].".log","a+");
 $attcar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$attaccante."' LIMIT 1");
@@ -29,19 +51,4 @@ $repinput.=$lang['Salute'].": ".$difcar['saluteattuale']."/".$difcar['salute']."
 $repinput.=$lang['Energia'].": ".$difcar['energia']."/".$difcar['energiamax']."<br/>";
 $repinput.="</td></tr>";
 fputs($fp,$repinput);
-Endcombact($battle['id']);
-} //fine Startcombact
-
-function Battledo($battleid) {
-global $db,$adesso,$lang,$language;
-umask(0000);
-$fp=fopen("inclusi/log/report/".$server."/".$battle['id'].".log","a+");
-$repinput="<table></table>";
-fputs($fp,$repinput);
-} //fine Battledo
-
-function Endcombact($battleid) {
-global $db,$adesso,$lang,$language;
-$db->QueryMod("DELETE FROM eventi WHERE battleid='".$battleid."'");
-$db->QueryMod("DELETE FROM battle WHERE id='".$battleid."'");
-} //fine Endcombact
+} //fine Docombactstats
