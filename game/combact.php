@@ -69,7 +69,11 @@ $sfidante=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$eventis
 $outputsfida=sprintf($lang['rispondi_sfida'],$sfidante['username'])." - <a href=\"index.php?loc=combact&amp;do=rispsfida&amp;risp=0\">".$lang['Rifiuta']."</a> - <a href=\"index.php?loc=combact&amp;do=rispsfida&amp;risp=1\">".$lang['Accetta']."</a>";
 }elseif($eventisfida['tipo']==5){
 $filerep="inclusi/log/report/".$db->database."/".$eventisfida['battleid'].".log";
-$outputcombact="<table>".require($filerep)."</table>";
+ob_start();
+include $filerep;
+$report=ob_get_contents();
+ob_end_clean();
+$outputcombact="<table>".$report."</table>";
 }
 }
 
