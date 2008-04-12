@@ -43,6 +43,18 @@ $testo=$lang['report_sfida_rifiutata'];
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$idp."','".$titolo."','".$testo."','0','".$adesso."')");
 }
 break;//fine rispondi alla sfida
+case "repview":
+$repid=(int)$_GET['id'];
+$errore="";
+$filerep="inclusi/log/report/".$db->database."/".$repid.".log";
+if(!file_exists($filerep))
+$errore.=$lang['combact_errore3'];
+if($errore){
+	$outputerrori="<span>".$lang['outputerrorisfida']."</span><br /><span>".$errore."</span><br /><br />";}
+else {
+$outputcombact="<table>".require($filerep)."</table>";
+}
+break;//fine sfidda
 }
 
 $outputsfida=$lang['nessuna_sfida'];

@@ -15,6 +15,7 @@ Niente attualmente<br />
 + Iniziata creazione sistema di memorizzazione dei report delle battaglie<br />
 + Aggiunta cancellazione report delle battaglie più vecchi di 1 settimana<br />
 + Aggiunta la visualizzazione del combattimento in corso in Combattimenti<br />
++ Aggiunta la visualizzazione di report di combattimenti conclusi<br />
 + Vari miglioramenti di sistema a Miniera, Equipaggiamento, lavoro in Miniera vecchia, sistema di base, Elenco personaggi<br />
 + Vari miglioramenti di sicurezza<br />
 # Rivisto il lavoro in Miniera vecchia, reso più equilibrato<br />
