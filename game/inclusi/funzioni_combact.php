@@ -20,7 +20,7 @@ Endcombact($battle['id']);
 
 function Battledo($battleid) {
 global $db,$adesso,$lang,$language;
-$battle=$db->QuerySelect("SELECT * FROM battle WHERE attid='".$attaccante."' LIMIT 1");
+$battle=$db->QuerySelect("SELECT * FROM battle WHERE id='".$battleid."' LIMIT 1");
 $attaccante=$battle['attid'];
 $difensore=$battle['difid'];
 $attcar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$attaccante."' LIMIT 1");
