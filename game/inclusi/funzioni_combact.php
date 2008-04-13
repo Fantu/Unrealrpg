@@ -14,6 +14,7 @@ $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,battl
 $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,oggid,battleid) VALUES ('".$difensore."','".$adesso."','84600','13','5','".$attaccante."','".$battle['id']."')");
 $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,oggid,battleid) VALUES ('".$attaccante."','".$adesso."','84600','13','5','".$difensore."','".$battle['id']."')");
 Docombactstats($battle['id'],$attaccante,$difensore);
+Battledo($battleid);//prova
 Endcombact($battle['id']);
 } //fine Startcombact
 
@@ -35,8 +36,8 @@ $input.=$chi[$chiave]['nome']."-".$chi[$chiave]['car']['livello']."<br/>";
 Inreport($battleid,$input);
 
 //se si continua...creare nuovo turno
-$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,battleid) VALUES ('0','".$adesso."','180','0','6','".$battleid."')");
-Docombactstats($battleid,$attaccante,$difensore);
+//$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,battleid) VALUES ('0','".$adesso."','180','0','6','".$battleid."')");
+//Docombactstats($battleid,$attaccante,$difensore);
 } //fine Battledo
 
 function Endcombact($battleid) {

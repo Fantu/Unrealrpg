@@ -50,7 +50,7 @@ $filerep="inclusi/log/report/".$db->database."/".$repid.".log";
 if(!file_exists($filerep))
 $errore.=$lang['combact_errore3'];
 if($errore){
-	$outputerrori="<span>".$lang['outputerrorisfida']."</span><br /><span>".$errore."</span><br /><br />";}
+	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
 else {
 ob_start();
 include $filerep;
