@@ -22,19 +22,31 @@ global $db,$adesso,$lang,$language;
 $battle=$db->QuerySelect("SELECT * FROM battle WHERE attid='".$attaccante."' LIMIT 1");
 $attaccante=$battle['attid'];
 $difensore=$battle['difid'];
+$attcar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$attaccante."' LIMIT 1");
+$difcar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$difensore."' LIMIT 1");
+$attn=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$attaccante."' LIMIT 1");
+$difn=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$difensore."' LIMIT 1");
+$chi=Stabilisciordine($attaccante,$difensore,$attcar,$difcar,$attn,$difn);
+
+//prova ordine
+foreach($chi as $chiave=>$elemento){
+$input.=$chi[$chiave]['nome']."-".$chi[$chiave]['car']['livello']."<br/>";
+}
+Inreport($battleid,$input);
+
 //se si continua...creare nuovo turno
 $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,battleid) VALUES ('0','".$adesso."','180','0','6','".$battleid."')");
 Docombactstats($battleid,$attaccante,$difensore);
 } //fine Battledo
 
 function Endcombact($battleid) {
-global $db,$adesso,$lang,$language;
+global $db;
 $db->QueryMod("DELETE FROM eventi WHERE battleid='".$battleid."'");
 $db->QueryMod("DELETE FROM battle WHERE id='".$battleid."'");
 } //fine Endcombact
 
 function Docombactstats($battleid,$attaccante,$difensore) {
-global $db,$adesso,$lang,$language;
+global $db,$lang;
 $server=$db->database;
 umask(0000);
 $fp=fopen("inclusi/log/report/".$server."/".$battleid.".log","a+");
@@ -53,3 +65,36 @@ $repinput.=$lang['Energia'].": ".$difcar['energia']."/".$difcar['energiamax']."<
 $repinput.="</td></tr>";
 fputs($fp,$repinput);
 } //fine Docombactstats
+
+function Inreport($battleid,$input) {
+global $db;
+$server=$db->database;
+umask(0000);
+$fp=fopen("inclusi/log/report/".$server."/".$battleid.".log","a+");
+$repinput.="<tr><td colspan=\"2\">";
+$repinput.=$input;
+$repinput.="</td></tr>";
+fputs($fp,$repinput);
+} //fine Inreport
+
+function Stabilisciordine($attaccante,$difensore,$attcar,$difcar,$attn,$difn) {
+global $db;
+$attpoint=$attcar['agilita']+$attcar['velocita']+($attcar['saluteattuale']/20)+($attcar['energia']/10);
+$difpoint=$difcar['agilita']+$difcar['velocita']+($difcar['saluteattuale']/20)+($difcar['energia']/10);
+if($attpoint>$difpoint){
+$chi[0]['id']=$attaccante;
+$chi[1]['id']=$difensore;
+$chi[0]['nome']=$attn;
+$chi[1]['nome']=$difn;
+$chi[0]['car']=$attcar;
+$chi[1]['car']=$difn;
+}else{
+$chi[1]['id']=$attaccante;
+$chi[0]['id']=$difensore;
+$chi[1]['nome']=$attn;
+$chi[0]['nome']=$difn;
+$chi[1]['car']=$attcar;
+$chi[0]['car']=$difn;	
+}
+return $chi;
+} //fine Stabilisciordine

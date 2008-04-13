@@ -16,6 +16,7 @@ Niente attualmente<br />
 + Aggiunta cancellazione report delle battaglie più vecchi di 1 settimana<br />
 + Aggiunta la visualizzazione del combattimento in corso in Combattimenti<br />
 + Aggiunta la visualizzazione di report di combattimenti conclusi<br />
++ L'"iniziativa" durante il combattimento dipende dalle caratteristiche del personaggio e non da chi è attaccante, difensore o scelta casualmente, attualmente influiscono agilità, velocità, salute ed energia<br />
 + Vari miglioramenti di sistema a Miniera, Equipaggiamento, lavoro in Miniera vecchia, sistema di base, Elenco personaggi<br />
 + Vari miglioramenti di sicurezza<br />
 # Rivisto il lavoro in Miniera vecchia, reso più equilibrato<br />
