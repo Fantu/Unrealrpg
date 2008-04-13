@@ -85,17 +85,23 @@ $difpoint=$difcar['agilita']+$difcar['velocita']+($difcar['saluteattuale']/20)+(
 if($attpoint>$difpoint){
 $chi[0]['id']=$attaccante;
 $chi[1]['id']=$difensore;
-$chi[0]['nome']=$attn;
-$chi[1]['nome']=$difn;
+$chi[0]['nome']=$attn['username'];
+$chi[1]['nome']=$difn['username'];
+/*foreach($attcar as $chiave=>$elemento){
+$chi[0]['car'][$chiave]=$elemento;
+}*/
 $chi[0]['car']=$attcar;
-$chi[1]['car']=$difn;
+$chi[1]['car']=$difcar;
 }else{
 $chi[1]['id']=$attaccante;
 $chi[0]['id']=$difensore;
-$chi[1]['nome']=$attn;
-$chi[0]['nome']=$difn;
+$chi[1]['nome']=$attn['username'];
+$chi[0]['nome']=$difn['username'];
+/*foreach($attcar as $chiave=>$elemento){
+$chi[1]['car'][$chiave]=$elemento;
+}*/
 $chi[1]['car']=$attcar;
-$chi[0]['car']=$difn;	
+$chi[0]['car']=$difcar;
 }
 return $chi;
 } //fine Stabilisciordine
