@@ -10,9 +10,9 @@ class Combattente{
 	var $nome;
 	var $car;
 	function Combattente($id2,$nome2,$car2) {
-	$this->$id=$id2;
-	$this->$nome=$nome2;
-	$this->$car=$car2;
+	$this->id=$id2;
+	$this->nome=$nome2;
+	$this->car=$car2;
 	}
 }
 
