@@ -96,11 +96,9 @@ $difpoint=$difcar['agilita']+$difcar['velocita']+($difcar['saluteattuale']/20)+(
 $att=new Combattente($attaccante,$attn['username'],$attcar);
 $dif=new Combattente($difensore,$difn['username'],$difcar);
 if($attpoint>$difpoint){
-$chi[0]=$att;
-$chi[1]=$dif;
+$chi=array($att,$dif);
 }else{
-$chi[1]=$att;
-$chi[0]=$dif;
+$chi=array($dif,$att);
 }
 return $chi;
 } //fine Stabilisciordine
