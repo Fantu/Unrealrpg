@@ -5,6 +5,17 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 }
 require_once('language/'.$language.'/lang_combact.php');
 
+class Combattente{
+	var id;
+	var nome;
+	var car;
+	function Combattente($id,$nome,$car) {
+	$this->id=$id;
+	$this->nome=$nome;
+	$this->car=$car;
+	}
+}
+
 function Startcombact($attaccante,$difensore,$server) {
 global $db,$adesso,$lang,$language;
 $db->QueryMod("INSERT INTO battle (attid,difid) VALUES ('".$attaccante."','".$difensore."')");
@@ -31,7 +42,7 @@ $chi=Stabilisciordine($attaccante,$difensore,$attcar,$difcar,$attn,$difn);
 
 //prova ordine
 foreach($chi as $chiave=>$elemento){
-$input.=$chi[$chiave]['nome']."-".$chi[$chiave]['car']['livello']."<br/>";
+$input.=$elemento->nome."-".$elemento->car['livello']."<br/>";
 }
 Inreport($battleid,$input);
 
@@ -82,20 +93,14 @@ function Stabilisciordine($attaccante,$difensore,$attcar,$difcar,$attn,$difn) {
 global $db;
 $attpoint=$attcar['agilita']+$attcar['velocita']+($attcar['saluteattuale']/20)+($attcar['energia']/10);
 $difpoint=$difcar['agilita']+$difcar['velocita']+($difcar['saluteattuale']/20)+($difcar['energia']/10);
+$att=new Combattente($attaccante,$attn['username'],$attcar);
+$dif=new Combattente($difensore,$difn['username'],$difcar);
 if($attpoint>$difpoint){
-$chi[0]['id']=$attaccante;
-$chi[1]['id']=$difensore;
-$chi[0]['nome']=$attn['username'];
-$chi[1]['nome']=$difn['username'];
-$chi[0]['car']=$attcar;
-$chi[1]['car']=$difcar;
+$chi[0]=$att;
+$chi[1]=$dif;
 }else{
-$chi[1]['id']=$attaccante;
-$chi[0]['id']=$difensore;
-$chi[1]['nome']=$attn['username'];
-$chi[0]['nome']=$difn['username'];
-$chi[1]['car']=$attcar;
-$chi[0]['car']=$difcar;
+$chi[1]=$att;
+$chi[0]=$dif;
 }
 return $chi;
 } //fine Stabilisciordine

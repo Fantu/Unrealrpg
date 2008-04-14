@@ -30,7 +30,6 @@ class ConnessioniMySQL {
 		$dati=$this->Config();
 		$connect=mysql_connect($this->server,$this->dbuser,$this->dbpass);
 		mysql_select_db($this->dbname,$connect);
-		//$query="$arg";
 		$result=mysql_query($query,$connect);
 		$numquery++;
 		if(!$result){
@@ -47,12 +46,11 @@ class ConnessioniMySQL {
 		mysql_close($connect);
 		return $var;
 	}
-	function QueryMod ($arg) { //$db->QueryMod("UPDATE table SET colonna='1'");	
+	function QueryMod ($query) { //$db->QueryMod("UPDATE table SET colonna='1'");	
 		global $numquery;
 		$dati=$this->Config();
 		$connect=mysql_connect($this->server,$this->dbuser,$this->dbpass);
 		mysql_select_db($this->dbname,$connect);
-		$query="$arg";
 		$result=mysql_query($query,$connect);
 		$numquery++;
 		if(!$result){
@@ -62,12 +60,11 @@ class ConnessioniMySQL {
 		}
 		mysql_close($connect);	
 	}	
-	function QueryCiclo ($arg) { //$guarda_bene=$db->QueryCiclo("SELECT * FROM table"); -- collegata a quella di sotto
+	function QueryCiclo ($query) { //$guarda_bene=$db->QueryCiclo("SELECT * FROM table"); -- collegata a quella di sotto
 		global $numquery;
 		$dati=$this->Config();
 		$connect=mysql_connect($this->server,$this->dbuser,$this->dbpass);
 		mysql_select_db($this->dbname,$connect);
-		$query="$arg";
 		$result=mysql_query($query,$connect);
 		$numquery++;
 		if(!$result){
