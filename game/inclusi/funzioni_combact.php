@@ -6,13 +6,13 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 require_once('language/'.$language.'/lang_combact.php');
 
 class Combattente{
-	var id;
-	var nome;
-	var car;
-	function Combattente($id,$nome,$car) {
-	$this->id=$id;
-	$this->nome=$nome;
-	$this->car=$car;
+	var $id;
+	var $nome;
+	var $car;
+	function Combattente($id2,$nome2,$car2) {
+	$this->$id=$id2;
+	$this->$nome=$nome2;
+	$this->$car=$car2;
 	}
 }
 
