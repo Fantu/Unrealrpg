@@ -1,4 +1,14 @@
 <?php
+
+class ConnessioniMySQL {
+
+	var $database; //da settare dopo il require -- $db->database=1;
+	var $suffix="unrealff_rpg";
+	var $dbname;
+	var $server="localhost";
+	var $dbuser="rpg";
+	var $dbpass="3sWBVeNJN4YbB5MQ";
+
 	function StampaErroreMysql($arg,$err,$mess) {
 	$data = date("d/m/y - H:i")." ".$arg;
 	$file="inclusi/log/mysql.log";
@@ -10,37 +20,29 @@
 	fputs($fp,$data."\r\n--------\r\n".$err.": ".$mess."\r\n\r\n");
 	fclose($fp);
 	}
-class ConnessioniMySQL {
-
-	var $database; //da settare dopo il require -- $db->database=1;
-	var $suffix = "unrealff_rpg";
-	var $dbname = "";
-	var $server = "localhost";
-	var $dbuser = "rpg";
-	var $dbpass = "3sWBVeNJN4YbB5MQ";
-
+	
 	function Config () {
-				$this->dbname = $this->suffix.$this->database;
+				$this->dbname=$this->suffix.$this->database;
 		return $dati;
 	}
-	function QuerySelect ($arg) { //$var=$db->QuerySelect("SELECT * FROM table");	
+	function QuerySelect ($query) { //$var=$db->QuerySelect("SELECT * FROM table");	
 		global $numquery;
 		$dati=$this->Config();
 		$connect=mysql_connect($this->server,$this->dbuser,$this->dbpass);
 		mysql_select_db($this->dbname,$connect);
-		$query="$arg";
+		//$query="$arg";
 		$result=mysql_query($query,$connect);
 		$numquery++;
 		if(!$result){
 			$error=mysql_error();
 			$errorn=mysql_errno();
-			StampaErroreMysql($arg,$errorn,$error);
+			$this->StampaErroreMysql($arg,$errorn,$error);
 		}		
 		$var=mysql_fetch_array($result);
 		if(!$var){
 			$error=mysql_error();
 			$errorn=mysql_errno();
-			StampaErroreMysql($arg,$errorn,$error);
+			$this->StampaErroreMysql($arg,$errorn,$error);
 		}		
 		mysql_close($connect);
 		return $var;
@@ -56,7 +58,7 @@ class ConnessioniMySQL {
 		if(!$result){
 			$error=mysql_error();
 			$errorn=mysql_errno();
-			StampaErroreMysql($arg,$errorn,$error);
+			$this->StampaErroreMysql($arg,$errorn,$error);
 		}
 		mysql_close($connect);	
 	}	
@@ -71,7 +73,7 @@ class ConnessioniMySQL {
 		if(!$result){
 			$error=mysql_error();
 			$errorn=mysql_errno();
-			StampaErroreMysql($arg,$errorn,$error);
+			$this->StampaErroreMysql($arg,$errorn,$error);
 		}
 		mysql_close($connect);
 		return $result;
@@ -103,8 +105,5 @@ class ConnessioniMySQL {
 	} // stringa, numero, booleano
 
 }
-
-
-
 
 ?>
