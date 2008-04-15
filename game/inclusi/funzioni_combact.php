@@ -133,10 +133,10 @@ $energia=10;
 
 $colpisci=rand(1,2);
 if($colpisci==1){
-$input=sprintf($lang['danno_att_vicino'],$att->nome,$dif->nome,$nomearma);
+$input=sprintf($lang['danno_att_vicino'],$att->nome,$dif->nome,$nomearma)."<br/>";
 $db->QueryMod("UPDATE caratteristiche SET saluteattuale=saluteattuale-'".$danno."' WHERE userid='".$dif->id."' LIMIT 1");
 }else{
-$input=sprintf($lang['niente_att_vicino'],$att->nome,$dif->nome,$nomearma);
+$input=sprintf($lang['niente_att_vicino'],$att->nome,$dif->nome,$nomearma."<br/>");
 }
 $db->QueryMod("UPDATE caratteristiche SET energia=energia-'".$energia."' WHERE userid='".$att->id."' LIMIT 1");
 return $input;

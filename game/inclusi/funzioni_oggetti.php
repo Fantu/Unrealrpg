@@ -75,7 +75,7 @@ $db->QueryMod("UPDATE inoggetti SET usura=usura+'1',inuso='0' WHERE id='".$ogg['
 }
 }//fine per ogni oggetto usato
 }/*fine se ci sono oggetti usati*/else{
-$oggpersi=$lang['nessuno_gettato'];}
+$oggpersi=$lang['nessuno_gettato']."<br />";}
 return $oggpersi;
 }/*fine Checkusurarottura*/
 
