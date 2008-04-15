@@ -59,8 +59,18 @@ $oggpersi.=sprintf($lang['oggetto_rotto'],$lang['oggetto'.$ogg['oggid'].'_nome']
 }
 if($rotto==1){
 $db->QueryMod("DELETE FROM inoggetti WHERE id='".$ogg['id']."'");
+if($ogg['equip']==1){
+$oggineq=$db->QueryCiclo("SELECT * FROM equipaggiamento WHERE userid='".$userid."' LIMIT 1");
+foreach($oggineq as $chiave=>$elemento){
+if($chiave!="userid"){
+if($elemento==$ogg['id']){
+$campo=$chiave;
+}//se corrisponde
+}//se non è l'id
+$db->QueryMod("UPDATE equipaggiamento SET ".$campo."='0' WHERE userid='".$userid."' LIMIT 1");
+}
 }else{
-$db->QueryMod("UPDATE inoggetti SET usura=usura+'1',inuso='0' WHERE id='".$ogg['id']."'");
+$db->QueryMod("UPDATE inoggetti SET usura=usura+'1',inuso='0' WHERE id='".$ogg['id']."' LIMIT 1");
 }
 }//fine per ogni oggetto usato
 }/*fine se ci sono oggetti usati*/else{

@@ -10,15 +10,19 @@ Legenda:<br />
 <p><strong>0.6.4</strong> (Non disponibile - In sviluppo)<br />
 Niente attualmente<br />
 </p>
-<p><strong>0.6.3</strong> (stimato per il 15/4/2008 - In sviluppo)<br />
+<p><strong>0.6.3</strong> (16/4/2008 - In sviluppo)<br />
 + Iniziata creazione combattimento<br />
 + Iniziata creazione sistema di memorizzazione dei report delle battaglie<br />
 + Aggiunta cancellazione report delle battaglie più vecchi di 1 settimana<br />
 + Aggiunta la visualizzazione del combattimento in corso in Combattimenti<br />
 + Aggiunta la visualizzazione di report di combattimenti conclusi<br />
 + L'"iniziativa" durante il combattimento dipende dalle caratteristiche del personaggio e non da chi è attaccante, difensore o scelta casualmente, attualmente influiscono agilità, velocità, salute ed energia<br />
-+ Vari miglioramenti di sistema a Miniera, Equipaggiamento, lavoro in Miniera vecchia, sistema di base, Elenco personaggi<br />
++ Aggiunto il controllo usura e rottura degli oggetti usati nel combattimento<br />
++ Aggiunto l'aggiornamento dell'equipaggiamento nel caso venga meno qualche oggetto al suo interno<br />
++ Iniziata la creazione dell'attacco corpo a corpo<br />
++ Vari miglioramenti di sistema a Miniera, Equipaggiamento, lavoro in Miniera vecchia, sistema di base, Elenco personaggi, sistema query, sistema di controllo usura e rottura oggetti<br />
 + Vari miglioramenti di sicurezza<br />
++ Miglioramenti ai testi in italiano<br />
 # Rivisto il lavoro in Miniera vecchia, reso più equilibrato<br />
 # Rivisto il lavoro in Laboratorio come alchimista, reso più equilibrato<br />
 </p>

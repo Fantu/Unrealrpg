@@ -9,4 +9,8 @@ $lang['nessuna_sfida']='Nessuna richiesta di sfida presente';
 $lang['rispondi_sfida']='%s ti vuole sfidare';
 $lang['sfida_rifiutata']='Sfida rifiutata';
 $lang['report_sfida_rifiutata']='La sfida è stata rifiutata.';
+
+$lang['danno_att_vicino']='%s attacca %s con %s e lo colpisce.';
+$lang['niente_att_vicino']='%s attacca %s con %s senza riuscire a colpirlo.';
+$lang['pugno']='pugno';
 ?>

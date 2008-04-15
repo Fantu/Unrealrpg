@@ -9,10 +9,12 @@ class Combattente{
 	var $id;
 	var $nome;
 	var $car;
-	function Combattente($id2,$nome2,$car2) {
+	var $equip;
+	function Combattente($id2,$nome2,$car2,$equip2) {
 	$this->id=$id2;
 	$this->nome=$nome2;
 	$this->car=$car2;
+	$this->equip=$equip2;
 	}
 }
 
@@ -25,8 +27,6 @@ $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,battl
 $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,oggid,battleid) VALUES ('".$difensore."','".$adesso."','84600','13','5','".$attaccante."','".$battle['id']."')");
 $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,oggid,battleid) VALUES ('".$attaccante."','".$adesso."','84600','13','5','".$difensore."','".$battle['id']."')");
 Docombactstats($battle['id'],$attaccante,$difensore);
-Battledo($battle['id']);//prova
-Endcombact($battle['id']);
 } //fine Startcombact
 
 function Battledo($battleid) {
@@ -38,17 +38,34 @@ $attcar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$attacca
 $difcar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$difensore."' LIMIT 1");
 $attn=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$attaccante."' LIMIT 1");
 $difn=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$difensore."' LIMIT 1");
-$chi=Stabilisciordine($attaccante,$difensore,$attcar,$difcar,$attn,$difn);
-
-//prova ordine
-foreach($chi as $chiave=>$elemento){
-$input.=$elemento->nome."-".$elemento->car['livello']."<br/>";
+$attequip=$db->QuerySelect("SELECT * FROM equipaggiamento WHERE userid='".$attaccante."' LIMIT 1");
+$difequip=$db->QuerySelect("SELECT * FROM equipaggiamento WHERE userid='".$difensore."' LIMIT 1");
+$att=new Combattente($attaccante,$attn['username'],$attcar,$attequip);
+$dif=new Combattente($difensore,$difn['username'],$difcar,$difequip);
+$chi=Stabilisciordine($att,$dif);
+if ($chi==1){
+$input.=Attaccovicino($att,$dif);
+$input.=Attaccovicino($dif,$att);
+}else{
+$input.=Attaccovicino($dif,$att);
+$input.=Attaccovicino($att,$dif);
+}
+$oggpersi=Checkusurarottura($att->id);
+if($oggpersi){
+$input.=$att->nome."<br/>".$oggpersi;
+}
+$oggpersi=Checkusurarottura($dif->id);
+if($oggpersi){
+$input.=$dif->nome."<br/>".$oggpersi;
 }
 Inreport($battleid,$input);
-
+/*
 //se si continua...creare nuovo turno
-//$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,battleid) VALUES ('0','".$adesso."','180','0','6','".$battleid."')");
-//Docombactstats($battleid,$attaccante,$difensore);
+$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,battleid) VALUES ('0','".$adesso."','180','0','6','".$battleid."')");
+Docombactstats($battleid,$attaccante,$difensore);
+*/
+//se non continua
+Endcombact($battle['id']);
 } //fine Battledo
 
 function Endcombact($battleid) {
@@ -89,16 +106,38 @@ $repinput.="</td></tr>";
 fputs($fp,$repinput);
 } //fine Inreport
 
-function Stabilisciordine($attaccante,$difensore,$attcar,$difcar,$attn,$difn) {
+function Stabilisciordine($att,$dif) {
 global $db;
-$attpoint=$attcar['agilita']+$attcar['velocita']+($attcar['saluteattuale']/20)+($attcar['energia']/10);
-$difpoint=$difcar['agilita']+$difcar['velocita']+($difcar['saluteattuale']/20)+($difcar['energia']/10);
-$att=new Combattente($attaccante,$attn['username'],$attcar);
-$dif=new Combattente($difensore,$difn['username'],$difcar);
+$attpoint=$att->car['agilita']+$att->car['velocita']+($att->car['saluteattuale']/20)+($att->car['energia']/10);
+$difpoint=$dif->car['agilita']+$dif->car['velocita']+($dif->car['saluteattuale']/20)+($dif->car['energia']/10);
 if($attpoint>$difpoint){
-$chi=array($att,$dif);
+$chi=1;
 }else{
-$chi=array($dif,$att);
+$chi=2;
 }
 return $chi;
 } //fine Stabilisciordine
+
+function Attaccovicino($att,$dif) {
+global $db,$lang;
+if($att->equip['cac']!=0){
+$arma=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$att->equip['cac']."' LIMIT 1");
+$danno=$arma['danno'];
+$nomearma=$lang['oggetto'.$att->equip['cac'].'_nome'];
+$energia=$arma['energia'];
+}else{
+$danno=2;
+$nomearma=$lang['pugno'];
+$energia=10;
+}
+
+$colpisci=rand(1,2);
+if($colpisci==1){
+$input=sprintf($lang['danno_att_vicino'],$att->nome,$dif->nome,$nomearma);
+$db->QueryMod("UPDATE caratteristiche SET saluteattuale=saluteattuale-'".$danno."' WHERE userid='".$dif->id."' LIMIT 1");
+}else{
+$input=sprintf($lang['niente_att_vicino'],$att->nome,$dif->nome,$nomearma);
+}
+$db->QueryMod("UPDATE caratteristiche SET energia=energia-'".$energia."' WHERE userid='".$att->id."' LIMIT 1");
+return $input;
+} //fine Attaccovicino
