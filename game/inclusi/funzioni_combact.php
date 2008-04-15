@@ -125,6 +125,7 @@ $arma=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$att->equip['cac']."' 
 $danno=$arma['danno'];
 $nomearma=$lang['oggetto'.$att->equip['cac'].'_nome'];
 $energia=$arma['energia'];
+$db->QueryMod("UPDATE inoggetti SET inuso='1' WHERE userid='".$att->id."' AND oggid='".$att->equip['cac']."' AND equip='1' LIMIT 1");
 }else{
 $danno=2;
 $nomearma=$lang['pugno'];
