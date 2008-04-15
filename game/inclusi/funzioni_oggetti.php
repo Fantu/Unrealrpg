@@ -67,6 +67,7 @@ if($elemento==$ogg['id']){
 $campo=$chiave;
 }//se corrisponde
 }//se non è l'id
+}//per ogni equip
 $db->QueryMod("UPDATE equipaggiamento SET ".$campo."='0' WHERE userid='".$userid."' LIMIT 1");
 }
 }else{
