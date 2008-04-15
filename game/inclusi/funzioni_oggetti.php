@@ -63,7 +63,7 @@ if($ogg['equip']==1){
 $oggineq=$db->QuerySelect("SELECT * FROM equipaggiamento WHERE userid='".$userid."' LIMIT 1");
 foreach($oggineq as $chiave=>$elemento){
 if($chiave!="userid"){
-if($elemento==$oggetto['id']){
+if($elemento==$ogg['oggid']){
 $campo=$chiave;
 }//se corrisponde
 }//se non è l'id

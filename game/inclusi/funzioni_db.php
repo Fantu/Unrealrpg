@@ -9,8 +9,8 @@ class ConnessioniMySQL {
 	var $dbuser="rpg";
 	var $dbpass="3sWBVeNJN4YbB5MQ";
 
-	function StampaErroreMysql($arg,$err,$mess) {
-	$data = date("d/m/y - H:i")." ".$arg;
+	function StampaErroreMysql($query,$err,$mess) {
+	$data = date("d/m/y - H:i")." ".$query;
 	$file="inclusi/log/mysql.log";
 	if (!file_exists($file)){
     $file = "game/inclusi/log/mysq.log";
@@ -35,13 +35,13 @@ class ConnessioniMySQL {
 		if(!$result){
 			$error=mysql_error();
 			$errorn=mysql_errno();
-			$this->StampaErroreMysql($arg,$errorn,$error);
+			$this->StampaErroreMysql($query,$errorn,$error);
 		}		
 		$var=mysql_fetch_array($result);
 		if(!$var){
 			$error=mysql_error();
 			$errorn=mysql_errno();
-			$this->StampaErroreMysql($arg,$errorn,$error);
+			$this->StampaErroreMysql($query,$errorn,$error);
 		}		
 		mysql_close($connect);
 		return $var;
@@ -56,7 +56,7 @@ class ConnessioniMySQL {
 		if(!$result){
 			$error=mysql_error();
 			$errorn=mysql_errno();
-			$this->StampaErroreMysql($arg,$errorn,$error);
+			$this->StampaErroreMysql($query,$errorn,$error);
 		}
 		mysql_close($connect);	
 	}	
@@ -70,7 +70,7 @@ class ConnessioniMySQL {
 		if(!$result){
 			$error=mysql_error();
 			$errorn=mysql_errno();
-			$this->StampaErroreMysql($arg,$errorn,$error);
+			$this->StampaErroreMysql($query,$errorn,$error);
 		}
 		mysql_close($connect);
 		return $result;
