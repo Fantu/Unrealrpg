@@ -61,7 +61,7 @@ if($rotto==1){
 $db->QueryMod("DELETE FROM inoggetti WHERE id='".$ogg['id']."'");
 if($ogg['equip']==1){
 $oggineq=$db->QueryCiclo("SELECT * FROM equipaggiamento WHERE userid='".$userid."' LIMIT 1");
-foreach($oggineq as $chiave=>$elemento){
+foreach($oggineq[0] as $chiave=>$elemento){
 if($chiave!="userid"){
 if($elemento==$ogg['id']){
 $campo=$chiave;
