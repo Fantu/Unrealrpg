@@ -21,6 +21,7 @@ Niente attualmente<br />
 + Aggiunto l'aggiornamento dell'equipaggiamento nel caso venga meno qualche oggetto al suo interno<br />
 + Iniziata la creazione dell'attacco corpo a corpo<br />
 + Il combattimento avviene "in tempo reale" ed ogni "match" fra i combattenti dura 3 minuti<br />
++ Aggiunta spedizione messaggio alla fine del combattimento con link al report<br />
 + Vari miglioramenti di sistema a Miniera, Equipaggiamento, lavoro in Miniera vecchia, sistema di base, Elenco personaggi, sistema query, sistema di controllo usura e rottura oggetti<br />
 + Vari miglioramenti di sicurezza<br />
 + Miglioramenti ai testi in italiano<br />
