@@ -5,7 +5,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 }
 ?>
 <div align="right">
-  <table width="500" border="0" cellspacing="2" cellpadding="2">
+  <table width="550" border="0" cellspacing="2" cellpadding="2">
   <tr>
     <td>Changelog:</td>
   </tr>

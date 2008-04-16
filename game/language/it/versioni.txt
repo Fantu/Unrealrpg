@@ -8,7 +8,7 @@ Legenda:<br />
 <br />
 </p>
 <p><strong>0.6.4</strong> (Non disponibile - In sviluppo)<br />
-Niente attualmente<br />
++ Vari miglioramenti di sistema a Info versione<br />
 </p>
 <p><strong>0.6.3</strong> [R.915] (16/4/2008 - Beta)<br />
 + Iniziata creazione combattimento<br />
