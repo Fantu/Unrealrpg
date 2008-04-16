@@ -12,13 +12,14 @@ $lang['lab_errore8']='- Non hai selezionato la pozione da creare!<br />';
 $lang['report_lavlabapp']='Hai lavorato in Laboratorio come apprendista per 1 ora, guadagnando %s monete e %s di esperienza. Il lavoro ti ha stancato (hai perso %s di energia), il tuo fisico ne ha risentito (hai perso %s di salute) e hai consumato %s di mana.';
 $lang['report_lavoro_labapp']='Completato lavoro in Laboratorio come apprendista.';
 $lang['report_esplosione_laboratorio']='Imprevisto durante il lavoro in Laboratorio!';
-$lang['report_esplosione_lab1']='Durante il tuo lavoro in Laboratorio &egrave; esplosa una pozione ma sei riuscito ad allontanarti in tempo e non ferirti.';
-$lang['report_esplosione_lab2']='Durante il tuo lavoro in Laboratorio &egrave; esplosa una pozione, non sei riuscito ad allontanarti in tempo e ti sei ferito (%s di salute persa).';
+$lang['report_esplosione_lab1']='Durante il tuo lavoro in Laboratorio è esplosa una pozione ma sei riuscito ad allontanarti in tempo e non ferirti.';
+$lang['report_esplosione_lab2']='Durante il tuo lavoro in Laboratorio è esplosa una pozione, non sei riuscito ad allontanarti in tempo e ti sei ferito (%s di salute persa).';
 $lang['lav_alchimista']='Work as an alchemist';
-$lang['desc_lav_alchimista']='Puoi lavorare in Laboratorio come alchimista cercando di distillare delle pozioni, alcune delle quali, potranno essere create solo in base alla tua abilit&agrave;, non avendo per&ograve; sicurezza circa la loro riuscita.';
+$lang['desc_lav_alchimista']='Puoi lavorare in Laboratorio come alchimista cercando di distillare delle pozioni, alcune delle quali, potranno essere create solo in base alla tua abilità, non avendo però sicurezza circa la loro riuscita.';
 $lang['nessuna_pozione_poss']='Non sei abbastanza esperto per distillare nessuna pozione.';
 $lang['report_lavlabalc']='You have worked at the Laboratory as an alchemist for an hour, earning %s experience. The job has weakened you (you have lost %s energy) and your body needs rest (you have lost %s health). You also spent %s gold to buy the necessary ingredients.';
 $lang['report_lavoro_labalc']='Completato il lavoro in Laboratorio come alchimista.';
 $lang['report_lavlab_pozione_no']='You didn`t manage to prepare the chosen potion.';
 $lang['report_lavlab_pozione_si']='You managed to prepare %s.';
+$lang['seleziona_pozione']='Seleziona quale pozione:';
 ?>

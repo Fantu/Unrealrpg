@@ -70,7 +70,7 @@ Endcombact($battle['id'],$att,$dif);
 
 function Endcombact($battleid,$att,$dif) {
 global $db;
-$link="<a href=\"index.php?loc=combact&do=repview&id=4\">qui</a>";
+$link="<a href=\"index.php?loc=combact&do=repview&id=".$battleid."\">qui</a>";
 $titolo="Combattimento finito";
 $testo="Nella versione attuale non si pu&ograve; definire ancora un combattimento, per&ograve; usabile comunque per rilevare eventuali errori o problemi di alcuni sistemi in sviluppo che saranno alla base del sistema di combattimento, per visualizzare il report clicca ".$link;
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$att->id."','".$titolo."','".$testo."','0','".$adesso."')");

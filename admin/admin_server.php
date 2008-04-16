@@ -29,7 +29,7 @@ echo $lang['creato_log_query']."<br/>";}
 foreach($game_server as $chiave=>$elemento){
 if(!is_dir('../game/inclusi/log/report/'.$chiave)){
 echo sprintf($lang['dir_report_mancante'],$chiave)."<br/>";
-mkdir("../game/inclusi/log/report/".$user['server'], 0777);
+mkdir("../game/inclusi/log/report/".$chiave, 0777);
 if(!is_dir('../game/inclusi/log/report/'.$chiave))
 echo sprintf($lang['creazione_dir_nonriuscita'],$chiave)."<br/>";
 }//se la cartella non esiste
