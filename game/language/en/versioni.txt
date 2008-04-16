@@ -10,7 +10,7 @@ Legenda:<br />
 <p><strong>0.6.4</strong> (Non disponibile - In sviluppo)<br />
 Niente attualmente<br />
 </p>
-<p><strong>0.6.3</strong> (16/4/2008 - In sviluppo)<br />
+<p><strong>0.6.3</strong> [R.915] (16/4/2008 - Beta)<br />
 + Iniziata creazione combattimento<br />
 + Iniziata creazione sistema di memorizzazione dei report delle battaglie<br />
 + Aggiunta cancellazione report delle battaglie più vecchi di 1 settimana<br />
@@ -20,6 +20,8 @@ Niente attualmente<br />
 + Aggiunto il controllo usura e rottura degli oggetti usati nel combattimento<br />
 + Aggiunto l'aggiornamento dell'equipaggiamento nel caso venga meno qualche oggetto al suo interno<br />
 + Iniziata la creazione dell'attacco corpo a corpo<br />
++ Il combattimento avviene "in tempo reale" ed ogni "match" fra i combattenti dura 3 minuti<br />
++ Aggiunta spedizione messaggio alla fine del combattimento con link al report<br />
 + Vari miglioramenti di sistema a Miniera, Equipaggiamento, lavoro in Miniera vecchia, sistema di base, Elenco personaggi, sistema query, sistema di controllo usura e rottura oggetti<br />
 + Vari miglioramenti di sicurezza<br />
 + Miglioramenti ai testi in italiano<br />

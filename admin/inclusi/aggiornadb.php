@@ -10,8 +10,8 @@ $db->database=$chiave;
 $check=$db->QuerySelect("SELECT version FROM config WHERE id=".$chiave);
 if($check['version']!=$newversion AND $newversion==$game_revision){
 $db->QueryMod("ALTER TABLE `eventi` ADD `battleid` INT UNSIGNED NOT NULL DEFAULT '0'");
-$db->QueryMod("CREATE TABLE `battle` (`id` INT UNSIGNED NOT NULL AUTO_INCREMENT ,`attid` SMALLINT UNSIGNED NOT NULL ,`difid` SMALLINT UNSIGNED NOT NULL ,PRIMARY KEY ( `id` ) ENGINE = MYISAM");
-$db->QueryMod("CREATE TABLE `battlereport` (`id` INT UNSIGNED NOT NULL ,`data` INT( 13 ) UNSIGNED NOT NULL ,PRIMARY KEY ( `id` )) ENGINE = MYISAM ");
+$db->QueryMod("CREATE TABLE `battle` (`id` INT UNSIGNED NOT NULL AUTO_INCREMENT ,`attid` SMALLINT UNSIGNED NOT NULL ,`difid` SMALLINT UNSIGNED NOT NULL ,PRIMARY KEY ( `id` )) ENGINE = MYISAM");
+$db->QueryMod("CREATE TABLE `battlereport` (`id` INT UNSIGNED NOT NULL ,`data` INT( 13 ) UNSIGNED NOT NULL ,PRIMARY KEY ( `id` )) ENGINE = MYISAM");
 $db->QueryMod("ALTER TABLE `oggetti` DROP INDEX `tipo`");
 $db->QueryMod("ALTER TABLE `oggetti` DROP INDEX `categoria`");
 $db->QueryMod("ALTER TABLE `magia` DROP INDEX `elemento`");

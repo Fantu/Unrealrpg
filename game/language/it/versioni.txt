@@ -10,7 +10,7 @@ Legenda:<br />
 <p><strong>0.6.4</strong> (Non disponibile - In sviluppo)<br />
 Niente attualmente<br />
 </p>
-<p><strong>0.6.3</strong> (16/4/2008 - Beta)<br />
+<p><strong>0.6.3</strong> [R.915] (16/4/2008 - Beta)<br />
 + Iniziata creazione combattimento<br />
 + Iniziata creazione sistema di memorizzazione dei report delle battaglie<br />
 + Aggiunta cancellazione report delle battaglie più vecchi di 1 settimana<br />
