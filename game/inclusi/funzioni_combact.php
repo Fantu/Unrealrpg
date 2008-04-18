@@ -15,7 +15,12 @@ class Combattente{
 	$this->nome=$nome2;
 	$this->car=$car2;
 	$this->equip=$equip2;
+	$this->oggusati=0;
 	}
+}
+class Dati{
+	var $att;
+	var $dif;
 }
 
 function Startcombact($attaccante,$difensore,$server) {
@@ -40,21 +45,22 @@ $attn=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$attaccante.
 $difn=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$difensore."' LIMIT 1");
 $attequip=$db->QuerySelect("SELECT * FROM equipaggiamento WHERE userid='".$attaccante."' LIMIT 1");
 $difequip=$db->QuerySelect("SELECT * FROM equipaggiamento WHERE userid='".$difensore."' LIMIT 1");
-$att=new Combattente($attaccante,$attn['username'],$attcar,$attequip);
-$dif=new Combattente($difensore,$difn['username'],$difcar,$difequip);
-$chi=Stabilisciordine($att,$dif);
+$dc=new Dati;
+$dc->att=new Combattente($attaccante,$attn['username'],$attcar,$attequip);
+$dc->dif=new Combattente($difensore,$difn['username'],$difcar,$difequip);
+$chi=Stabilisciordine($dc->att,$dc->dif);
 if ($chi==1){
-$input.=Attaccovicino($att,$dif);
-$input.=Attaccovicino($dif,$att);
+$input.=Attaccovicino($dc->att,$dc->dif);
+$input.=Attaccovicino($dc->dif,$dc->att);
 }else{
-$input.=Attaccovicino($dif,$att);
-$input.=Attaccovicino($att,$dif);
+$input.=Attaccovicino($dc->dif,$dc->att);
+$input.=Attaccovicino($dc->att,$dc->dif);
 }
-$oggpersi=Checkusurarottura($att->id);
+$oggpersi=Checkusurarottura($dc->att->id);
 if($oggpersi){
 $input.=$att->nome."<br/>".$oggpersi;
 }
-$oggpersi=Checkusurarottura($dif->id);
+$oggpersi=Checkusurarottura($dc->dif->id);
 if($oggpersi){
 $input.=$dif->nome."<br/>".$oggpersi;
 }
@@ -65,7 +71,7 @@ $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,battl
 Docombactstats($battleid,$attaccante,$difensore);
 */
 //se non continua
-Endcombact($battle['id'],$att,$dif);
+Endcombact($battle['id'],$dc->att,$dc->dif);
 } //fine Battledo
 
 function Endcombact($battleid,$att,$dif) {
