@@ -155,7 +155,7 @@ fputs($fp,$repinput);
 
 function Attaccovicino($att,$dif) {
 global $db,$lang,$dc;
-if($dc->equip($att,'cac')!=0){
+if($dc->equip($att,"cac")!=0){
 $arma=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$dc->equip($att,'cac')."' LIMIT 1");
 $danno=$arma['danno'];
 $nomearma=$lang['oggetto'.$dc->equip($att,'cac').'_nome'];
