@@ -21,7 +21,7 @@ class Combattente{
 class Dati{
 	var $att;
 	var $dif;
-	function Stabilisciordine {
+	function Stabilisciordine() {
 	global $db;
 	$att=$this->$att;
 	$dif=$this->$dif;
