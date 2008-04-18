@@ -58,11 +58,11 @@ $input.=Attaccovicino($dc->att,$dc->dif);
 }
 $oggpersi=Checkusurarottura($dc->att->id);
 if($oggpersi){
-$input.=$att->nome."<br/>".$oggpersi;
+$input.=$dc->att->nome."<br/>".$oggpersi;
 }
 $oggpersi=Checkusurarottura($dc->dif->id);
 if($oggpersi){
-$input.=$dif->nome."<br/>".$oggpersi;
+$input.=$dc->dif->nome."<br/>".$oggpersi;
 }
 Inreport($battleid,$input);
 /*
