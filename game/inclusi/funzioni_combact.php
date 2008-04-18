@@ -17,10 +17,12 @@ class Combattente{
 	$this->equip=$equip2;
 	$this->oggusati=0;
 	}
-}
+} //fine classe Combattente
 class Dati{
 	var $att;
 	var $dif;
+	var $uno;
+	var $due;
 	function Stabilisciordine() {
 	global $db;
 	$att=$this->$att;
@@ -28,13 +30,36 @@ class Dati{
 	$attpoint=$att->car['agilita']+$att->car['velocita']+($att->car['saluteattuale']/20)+($att->car['energia']/10);
 	$difpoint=$dif->car['agilita']+$dif->car['velocita']+($dif->car['saluteattuale']/20)+($dif->car['energia']/10);
 	if($attpoint>$difpoint){
-	$chi=1;
+	$uno=$this->$att;
+	$due=$this->$dif;
 	}else{
-	$chi=2;
+	$uno=$this->$dif;
+	$due=$this->$att;
 	}
-	return $chi;
 	} //fine Stabilisciordine
-}
+	function equip($chi,$campo) {
+	if($chi==1){
+	$dato=$uno->equip[$campo];}
+	else{
+	$dato=$due->equip[$campo];}
+	return $dato;
+	} //fine equip
+	function id($chi) {
+	if($chi==1){
+	$dato=$uno->id;}
+	else{
+	$dato=$due->id;}
+	return $dato;
+	} //fine id
+	function nome($chi) {
+	if($chi==1){
+	$dato=$uno->nome;}
+	else{
+	$dato=$due->nome;}
+	return $dato;
+	} //fine nome
+	
+} //fine classe Dati
 
 function Startcombact($attaccante,$difensore,$server) {
 global $db,$adesso,$lang,$language;
@@ -61,20 +86,19 @@ $difequip=$db->QuerySelect("SELECT * FROM equipaggiamento WHERE userid='".$difen
 $dc->att=new Combattente($attaccante,$attn['username'],$attcar,$attequip);
 $dc->dif=new Combattente($difensore,$difn['username'],$difcar,$difequip);
 $chi=$dc->Stabilisciordine;
-if ($chi==1){
-$input.=Attaccovicino($dc->att,$dc->dif);
-$input.=Attaccovicino($dc->dif,$dc->att);
-}else{
-$input.=Attaccovicino($dc->dif,$dc->att);
-$input.=Attaccovicino($dc->att,$dc->dif);
-}
-$oggpersi=Checkusurarottura($dc->att->id);
+$input.=Attaccovicino(1,2);
+$input.=Attaccovicino(2,1);
+if($dc->uno->oggusati==1){
+$oggpersi=Checkusurarottura($dc->id(1));
 if($oggpersi){
-$input.=$dc->att->nome."<br/>".$oggpersi;
+$input.=$dc->nome(1)."<br/>".$oggpersi;
 }
-$oggpersi=Checkusurarottura($dc->dif->id);
+}
+if($dc->due->oggusati==2){
+$oggpersi=Checkusurarottura($dc->id(2));
 if($oggpersi){
-$input.=$dc->dif->nome."<br/>".$oggpersi;
+$input.=$dc->nome(2)."<br/>".$oggpersi;
+}
 }
 Inreport($battleid,$input);
 /*
@@ -83,7 +107,7 @@ $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,battl
 Docombactstats($battleid,$attaccante,$difensore);
 */
 //se non continua
-Endcombact($battle['id'],$dc->att,$dc->dif);
+Endcombact($battle['id'],$dc->uno,$dc->due);
 } //fine Battledo
 
 function Endcombact($battleid,$att,$dif) {
@@ -131,12 +155,12 @@ fputs($fp,$repinput);
 
 function Attaccovicino($att,$dif) {
 global $db,$lang;
-if($att->equip['cac']!=0){
-$arma=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$att->equip['cac']."' LIMIT 1");
+if($dc->equip($att,'cac')!=0){
+$arma=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$dc->equip($att,'cac')."' LIMIT 1");
 $danno=$arma['danno'];
-$nomearma=$lang['oggetto'.$att->equip['cac'].'_nome'];
+$nomearma=$lang['oggetto'.$dc->equip($att,'cac').'_nome'];
 $energia=$arma['energia'];
-$db->QueryMod("UPDATE inoggetti SET inuso='1' WHERE userid='".$att->id."' AND oggid='".$att->equip['cac']."' AND equip='1' LIMIT 1");
+$db->QueryMod("UPDATE inoggetti SET inuso='1' WHERE userid='".$dc->id($att)."' AND oggid='".$dc->equip($att,'cac')."' AND equip='1' LIMIT 1");
 }else{
 $danno=2;
 $nomearma=$lang['pugno'];
@@ -145,11 +169,11 @@ $energia=10;
 
 $colpisci=rand(1,2);
 if($colpisci==1){
-$input=sprintf($lang['danno_att_vicino'],$att->nome,$dif->nome,$nomearma,$danno)."<br/>";
-$db->QueryMod("UPDATE caratteristiche SET saluteattuale=saluteattuale-'".$danno."' WHERE userid='".$dif->id."' LIMIT 1");
+$input=sprintf($lang['danno_att_vicino'],$dc->nome($att),$dc->nome($dif),$nomearma,$danno)."<br/>";
+$db->QueryMod("UPDATE caratteristiche SET saluteattuale=saluteattuale-'".$danno."' WHERE userid='".$dc->id($dif)."' LIMIT 1");
 }else{
-$input=sprintf($lang['niente_att_vicino'],$att->nome,$dif->nome,$nomearma)."<br/>";
+$input=sprintf($lang['niente_att_vicino'],$dc->nome($att),$dc->nome($dif),$nomearma)."<br/>";
 }
-$db->QueryMod("UPDATE caratteristiche SET energia=energia-'".$energia."' WHERE userid='".$att->id."' LIMIT 1");
+$db->QueryMod("UPDATE caratteristiche SET energia=energia-'".$energia."' WHERE userid='".$dc->id($att)."' LIMIT 1");
 return $input;
 } //fine Attaccovicino
