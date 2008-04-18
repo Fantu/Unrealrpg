@@ -21,6 +21,19 @@ class Combattente{
 class Dati{
 	var $att;
 	var $dif;
+	function Stabilisciordine() {
+	global $db;
+	$att=$this->$att;
+	$dif=$this->$dif;
+	$attpoint=$att->car['agilita']+$att->car['velocita']+($att->car['saluteattuale']/20)+($att->car['energia']/10);
+	$difpoint=$dif->car['agilita']+$dif->car['velocita']+($dif->car['saluteattuale']/20)+($dif->car['energia']/10);
+	if($attpoint>$difpoint){
+	$chi=1;
+	}else{
+	$chi=2;
+}
+return $chi;
+} //fine Stabilisciordine
 }
 
 function Startcombact($attaccante,$difensore,$server) {
@@ -35,7 +48,7 @@ Docombactstats($battle['id'],$attaccante,$difensore);
 } //fine Startcombact
 
 function Battledo($battleid) {
-global $db,$adesso,$lang,$language;
+global $db,$adesso,$lang,$language,$dc;
 $battle=$db->QuerySelect("SELECT * FROM battle WHERE id='".$battleid."' LIMIT 1");
 $attaccante=$battle['attid'];
 $difensore=$battle['difid'];
@@ -45,10 +58,9 @@ $attn=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$attaccante.
 $difn=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$difensore."' LIMIT 1");
 $attequip=$db->QuerySelect("SELECT * FROM equipaggiamento WHERE userid='".$attaccante."' LIMIT 1");
 $difequip=$db->QuerySelect("SELECT * FROM equipaggiamento WHERE userid='".$difensore."' LIMIT 1");
-$dc=new Dati;
 $dc->att=new Combattente($attaccante,$attn['username'],$attcar,$attequip);
 $dc->dif=new Combattente($difensore,$difn['username'],$difcar,$difequip);
-$chi=Stabilisciordine($dc->att,$dc->dif);
+$chi=$dc->Stabilisciordine();
 if ($chi==1){
 $input.=Attaccovicino($dc->att,$dc->dif);
 $input.=Attaccovicino($dc->dif,$dc->att);
@@ -75,7 +87,7 @@ Endcombact($battle['id'],$dc->att,$dc->dif);
 } //fine Battledo
 
 function Endcombact($battleid,$att,$dif) {
-global $db;
+global $db,$adesso;
 $link="<a href=\"index.php?loc=combact&do=repview&id=".$battleid."\">qui</a>";
 $titolo="Combattimento finito";
 $testo="Nella versione attuale non si pu&ograve; definire ancora un combattimento, per&ograve; usabile comunque per rilevare eventuali errori o problemi di alcuni sistemi in sviluppo che saranno alla base del sistema di combattimento, per visualizzare il report clicca ".$link;
@@ -116,18 +128,6 @@ $repinput.=$input;
 $repinput.="</td></tr>";
 fputs($fp,$repinput);
 } //fine Inreport
-
-function Stabilisciordine($att,$dif) {
-global $db;
-$attpoint=$att->car['agilita']+$att->car['velocita']+($att->car['saluteattuale']/20)+($att->car['energia']/10);
-$difpoint=$dif->car['agilita']+$dif->car['velocita']+($dif->car['saluteattuale']/20)+($dif->car['energia']/10);
-if($attpoint>$difpoint){
-$chi=1;
-}else{
-$chi=2;
-}
-return $chi;
-} //fine Stabilisciordine
 
 function Attaccovicino($att,$dif) {
 global $db,$lang;

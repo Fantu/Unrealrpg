@@ -50,6 +50,7 @@ while($evento=$db->QueryCicloResult($evfiniti)) {
 		Completasfida($evento['userid'],$evento['type']);
 		break;
 		case 6://combattimento
+		$dc=new Dati;
 		Battledo($evento['battleid']);
 		break;
 		}
