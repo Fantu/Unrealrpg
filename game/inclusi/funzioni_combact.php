@@ -21,7 +21,7 @@ class Combattente{
 class Dati{
 	var $att;
 	var $dif;
-	function Stabilisciordine() {
+	function Stabilisciordine {
 	global $db;
 	$att=$this->$att;
 	$dif=$this->$dif;
@@ -31,9 +31,9 @@ class Dati{
 	$chi=1;
 	}else{
 	$chi=2;
-}
-return $chi;
-} //fine Stabilisciordine
+	}
+	return $chi;
+	} //fine Stabilisciordine
 }
 
 function Startcombact($attaccante,$difensore,$server) {
@@ -60,7 +60,7 @@ $attequip=$db->QuerySelect("SELECT * FROM equipaggiamento WHERE userid='".$attac
 $difequip=$db->QuerySelect("SELECT * FROM equipaggiamento WHERE userid='".$difensore."' LIMIT 1");
 $dc->att=new Combattente($attaccante,$attn['username'],$attcar,$attequip);
 $dc->dif=new Combattente($difensore,$difn['username'],$difcar,$difequip);
-$chi=$dc->Stabilisciordine();
+$chi=$dc->Stabilisciordine;
 if ($chi==1){
 $input.=Attaccovicino($dc->att,$dc->dif);
 $input.=Attaccovicino($dc->dif,$dc->att);
