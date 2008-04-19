@@ -89,8 +89,8 @@ $difequip=$db->QuerySelect("SELECT * FROM equipaggiamento WHERE userid='".$difen
 $dc->att=new Combattente($attaccante,$attn['username'],$attcar,$attequip);
 $dc->dif=new Combattente($difensore,$difn['username'],$difcar,$difequip);
 $chi=$dc->Stabilisciordine;
-$input.=Attaccovicino("1","2");
-$input.=Attaccovicino("2","1");
+//$input.=Attaccovicino("1","2");
+//$input.=Attaccovicino("2","1");
 if($dc->uno->oggusati==1){
 $oggpersi=Checkusurarottura($dc->id(1));
 if($oggpersi){
