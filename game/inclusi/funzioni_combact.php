@@ -21,11 +21,11 @@ class Dati{
 	$attpoint=$this->att->car['agilita']+$this->att->car['velocita']+($this->att->car['saluteattuale']/20)+($this->att->car['energia']/10);
 	$difpoint=$this->dif->car['agilita']+$this->dif->car['velocita']+($this->dif->car['saluteattuale']/20)+($this->dif->car['energia']/10);
 	if($attpoint>$difpoint){
-	$this->uno=clone $this->att;
-	$this->due=clone $this->dif;
+	$this->uno=$this->att();
+	$this->due=$this->dif();
 	}else{
-	$this->due=clone $this->dif;
-	$this->uno=clone $this->att;
+	$this->due=$this->dif();
+	$this->uno=$this->att();
 	}
 	} //fine Stabilisciordine
 	function eq($chi) {
@@ -57,6 +57,15 @@ class Dati{
 	} //fine ogginuso
 	
 } //fine classe Dati
+
+function nome($chi) {
+	global $dc;
+	if($chi==1){
+	$dato=$dc->uno->nome;}
+	else{
+	$dato=$dc->due->nome;}
+	return $dato;
+	} //fine nome
 
 function Startcombact($attaccante,$difensore,$server) {
 global $db,$adesso,$lang,$language;
@@ -94,7 +103,7 @@ $input.=$atteq['cac'];
 if($dc->uno->oggusati==1){
 $oggpersi=Checkusurarottura($dc->id(1));
 if($oggpersi){
-$input.=$dc->nome(1)."<br/>".$oggpersi;
+$input.=nome(1)."<br/>".$oggpersi;
 }
 }
 if($dc->due->oggusati==2){
