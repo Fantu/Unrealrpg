@@ -59,7 +59,7 @@ class Dati{
 } //fine classe Dati
 
 function Startcombact($attaccante,$difensore,$server) {
-global $db,$adesso,$lang,$language;
+global $db,$adesso,$lang,$language,$dc;
 $db->QueryMod("INSERT INTO battle (attid,difid) VALUES ('".$attaccante."','".$difensore."')");
 $battle=$db->QuerySelect("SELECT id FROM battle WHERE attid='".$attaccante."' LIMIT 1");
 $db->QueryMod("INSERT INTO battlereport (id,data) VALUES ('".$battle['id']."','".$adesso."')");
@@ -86,7 +86,6 @@ $chi=$dc->Stabilisciordine;
 //$input.=Attaccovicino("1","2");
 //$input.=Attaccovicino("2","1");
 
-$dc->ogginuso(1);
 $atteq=$dc->eq(1);
 $input.=$atteq['cac'];
 
