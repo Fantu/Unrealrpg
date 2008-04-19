@@ -25,16 +25,16 @@ class Dati{
 	var $due;
 	function Stabilisciordine() {
 	global $db;
-	$att=$this->$att;
-	$dif=$this->$dif;
+	$att=$this->att;
+	$dif=$this->dif;
 	$attpoint=$att->car['agilita']+$att->car['velocita']+($att->car['saluteattuale']/20)+($att->car['energia']/10);
 	$difpoint=$dif->car['agilita']+$dif->car['velocita']+($dif->car['saluteattuale']/20)+($dif->car['energia']/10);
 	if($attpoint>$difpoint){
-	$uno=$this->$att;
-	$due=$this->$dif;
+	$uno=$this->att;
+	$due=$this->dif;
 	}else{
-	$uno=$this->$dif;
-	$due=$this->$att;
+	$uno=$this->dif;
+	$due=$this->att;
 	}
 	} //fine Stabilisciordine
 	function equip($chi,$campo) {
@@ -58,6 +58,12 @@ class Dati{
 	$dato=$due->nome;}
 	return $dato;
 	} //fine nome
+	function ogginuso($chi) {
+	if($chi==1){
+	$uno->oggusati=1;}
+	else{
+	$due->oggusati=1;}
+	} //fine ogginsuo
 	
 } //fine classe Dati
 
@@ -155,13 +161,13 @@ fputs($fp,$repinput);
 
 function Attaccovicino($att,$dif) {
 global $db,$lang,$dc;
-$attcac=$dc->equip($att,'cac');
-if($attcac!=0){
+if($dc->equip($att,'cac')!=0){
 $arma=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$dc->equip($att,'cac')."' LIMIT 1");
 $danno=$arma['danno'];
 $nomearma=$lang['oggetto'.$dc->equip($att,'cac').'_nome'];
 $energia=$arma['energia'];
 $db->QueryMod("UPDATE inoggetti SET inuso='1' WHERE userid='".$dc->id($att)."' AND oggid='".$dc->equip($att,'cac')."' AND equip='1' LIMIT 1");
+$dc->ogginuso($att);
 }else{
 $danno=2;
 $nomearma=$lang['pugno'];
