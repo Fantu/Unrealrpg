@@ -24,11 +24,8 @@ class Dati{
 	var $uno;
 	var $due;
 	function Stabilisciordine() {
-	global $db;
-	$att=$this->att;
-	$dif=$this->dif;
-	$attpoint=$att->car['agilita']+$att->car['velocita']+($att->car['saluteattuale']/20)+($att->car['energia']/10);
-	$difpoint=$dif->car['agilita']+$dif->car['velocita']+($dif->car['saluteattuale']/20)+($dif->car['energia']/10);
+	$attpoint=$this->att->car['agilita']+$this->att->car['velocita']+($this->att->car['saluteattuale']/20)+($this->att->car['energia']/10);
+	$difpoint=$this->dif->car['agilita']+$this->dif->car['velocita']+($this->dif->car['saluteattuale']/20)+($this->dif->car['energia']/10);
 	if($attpoint>$difpoint){
 	$uno=$this->att;
 	$due=$this->dif;
