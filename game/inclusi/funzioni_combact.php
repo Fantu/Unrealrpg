@@ -34,11 +34,11 @@ class Dati{
 	$due=$this->att;
 	}
 	} //fine Stabilisciordine
-	function equip($chi,$campo) {
+	function equip($chi) {
 	if($chi==1){
-	$dato=$uno->equip[$campo];}
+	$dato=$uno->equip;}
 	else{
-	$dato=$due->equip[$campo];}
+	$dato=$due->equip;}
 	return $dato;
 	} //fine equip
 	function id($chi) {
@@ -158,12 +158,13 @@ fputs($fp,$repinput);
 
 function Attaccovicino($att,$dif) {
 global $db,$lang,$dc;
-if($dc->equip($att,'cac')!=0){
-$arma=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$dc->equip($att,'cac')."' LIMIT 1");
+$atteq=$dc->equip($att);
+if($atteq['cac']!=0){
+$arma=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$atteq['cac']."' LIMIT 1");
 $danno=$arma['danno'];
-$nomearma=$lang['oggetto'.$dc->equip($att,'cac').'_nome'];
+$nomearma=$lang['oggetto'.$atteq['cac'].'_nome'];
 $energia=$arma['energia'];
-$db->QueryMod("UPDATE inoggetti SET inuso='1' WHERE userid='".$dc->id($att)."' AND oggid='".$dc->equip($att,'cac')."' AND equip='1' LIMIT 1");
+$db->QueryMod("UPDATE inoggetti SET inuso='1' WHERE userid='".$dc->id($att)."' AND oggid='".$atteq['cac']."' AND equip='1' LIMIT 1");
 $dc->ogginuso($att);
 }else{
 $danno=2;
