@@ -21,11 +21,11 @@ class Dati{
 	$attpoint=$this->att->car['agilita']+$this->att->car['velocita']+($this->att->car['saluteattuale']/20)+($this->att->car['energia']/10);
 	$difpoint=$this->dif->car['agilita']+$this->dif->car['velocita']+($this->dif->car['saluteattuale']/20)+($this->dif->car['energia']/10);
 	if($attpoint>$difpoint){
-	$this->uno=new Combattente($this->att->id,$this->att->nome,$this->att->car,$this->att->equip);
-	$this->due=new Combattente($this->dif->id,$this->dif->nome,$this->dif->car,$this->dif->equip);
+	$this->uno=clone $this->att;
+	$this->due=clone $this->dif;
 	}else{
-	$this->due=new Combattente($this->att->id,$this->att->nome,$this->att->car,$this->att->equip);
-	$this->uno=new Combattente($this->dif->id,$this->dif->nome,$this->dif->car,$this->dif->equip);
+	$this->due=clone $this->dif;
+	$this->uno=clone $this->att;
 	}
 	} //fine Stabilisciordine
 	function eq($chi) {
@@ -87,6 +87,7 @@ $chi=$dc->Stabilisciordine;
 //$input.=Attaccovicino("1","2");
 //$input.=Attaccovicino("2","1");
 
+$dc->ogginuso(1);
 $atteq=$dc->eq(1);
 $input.=$atteq['cac'];
 
