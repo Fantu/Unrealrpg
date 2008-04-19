@@ -59,7 +59,7 @@ class Dati{
 } //fine classe Dati
 
 function Startcombact($attaccante,$difensore,$server) {
-global $db,$adesso,$lang,$language,$dc;
+global $db,$adesso,$lang,$language;
 $db->QueryMod("INSERT INTO battle (attid,difid) VALUES ('".$attaccante."','".$difensore."')");
 $battle=$db->QuerySelect("SELECT id FROM battle WHERE attid='".$attaccante."' LIMIT 1");
 $db->QueryMod("INSERT INTO battlereport (id,data) VALUES ('".$battle['id']."','".$adesso."')");
@@ -70,7 +70,7 @@ Docombactstats($battle['id'],$attaccante,$difensore);
 } //fine Startcombact
 
 function Battledo($battleid) {
-global $db,$adesso,$lang,$language,$dc;
+global $db,$adesso,$lang,$language;
 $battle=$db->QuerySelect("SELECT * FROM battle WHERE id='".$battleid."' LIMIT 1");
 $attaccante=$battle['attid'];
 $difensore=$battle['difid'];
@@ -85,7 +85,7 @@ $dc->dif=new Combattente($difensore,$difn['username'],$difcar,$difequip);
 $chi=$dc->Stabilisciordine;
 //$input.=Attaccovicino("1","2");
 //$input.=Attaccovicino("2","1");
-
+$dc=new Dati;
 $atteq=$dc->eq(1);
 $input.=$atteq['cac'];
 
