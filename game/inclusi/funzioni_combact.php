@@ -6,10 +6,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 require_once('language/'.$language.'/lang_combact.php');
 
 class Combattente{
-	var $id;
-	var $nome;
-	var $car;
-	var $equip;
+	var $id,$nome,$car,$equip;
 	function Combattente($id2,$nome2,$car2,$equip2) {
 	$this->id=$id2;
 	$this->nome=$nome2;
@@ -19,10 +16,7 @@ class Combattente{
 	}
 } //fine classe Combattente
 class Dati{
-	var $att;
-	var $dif;
-	var $uno;
-	var $due;
+	var $att,$dif,$uno,$due;
 	function Stabilisciordine() {
 	$attpoint=$this->att->car['agilita']+$this->att->car['velocita']+($this->att->car['saluteattuale']/20)+($this->att->car['energia']/10);
 	$difpoint=$this->dif->car['agilita']+$this->dif->car['velocita']+($this->dif->car['saluteattuale']/20)+($this->dif->car['energia']/10);
@@ -91,6 +85,10 @@ $dc->dif=new Combattente($difensore,$difn['username'],$difcar,$difequip);
 $chi=$dc->Stabilisciordine;
 //$input.=Attaccovicino("1","2");
 //$input.=Attaccovicino("2","1");
+
+$atteq=$dc->equip(1);
+$input.=$atteq['cac'];
+
 if($dc->uno->oggusati==1){
 $oggpersi=Checkusurarottura($dc->id(1));
 if($oggpersi){
