@@ -28,7 +28,7 @@ class Dati{
 	$this->due=$this->att;
 	}
 	} //fine Stabilisciordine
-	function equip($chi) {
+	function eq($chi) {
 	if($chi==1){
 	$dato=$this->uno->equip;}
 	else{
@@ -86,7 +86,7 @@ $chi=$dc->Stabilisciordine;
 //$input.=Attaccovicino("1","2");
 //$input.=Attaccovicino("2","1");
 
-$atteq=$dc->equip(1);
+$atteq=$dc->eq(1);
 $input.=$atteq['cac'];
 
 if($dc->uno->oggusati==1){
