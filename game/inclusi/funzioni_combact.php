@@ -86,10 +86,9 @@ $chi=$dc->Stabilisciordine;
 //$input.=Attaccovicino("1","2");
 //$input.=Attaccovicino("2","1");
 
-//$atteq=$dc->eq(1);
-//$input.=$atteq['cac'];
-
-$input.=$dc->nome(1);
+$dc->ogginuso(1);
+$atteq=$dc->eq(1);
+$input.=$atteq['cac'];
 
 if($dc->uno->oggusati==1){
 $oggpersi=Checkusurarottura($dc->id(1));
