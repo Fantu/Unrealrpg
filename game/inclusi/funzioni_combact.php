@@ -36,30 +36,30 @@ class Dati{
 	} //fine Stabilisciordine
 	function equip($chi) {
 	if($chi==1){
-	$dato=$uno->equip;}
+	$dato=$this->uno->equip;}
 	else{
-	$dato=$due->equip;}
+	$dato=$this->due->equip;}
 	return $dato;
 	} //fine equip
 	function id($chi) {
 	if($chi==1){
-	$dato=$uno->id;}
+	$dato=$this->uno->id;}
 	else{
-	$dato=$due->id;}
+	$dato=$this->due->id;}
 	return $dato;
 	} //fine id
 	function nome($chi) {
 	if($chi==1){
-	$dato=$uno->nome;}
+	$dato=$this->uno->nome;}
 	else{
-	$dato=$due->nome;}
+	$dato=$this->due->nome;}
 	return $dato;
 	} //fine nome
 	function ogginuso($chi) {
 	if($chi==1){
-	$uno->oggusati=1;}
+	$this->uno->oggusati=1;}
 	else{
-	$due->oggusati=1;}
+	$this->due->oggusati=1;}
 	} //fine ogginsuo
 	
 } //fine classe Dati
