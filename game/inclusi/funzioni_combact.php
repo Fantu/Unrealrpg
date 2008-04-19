@@ -21,11 +21,11 @@ class Dati{
 	$attpoint=$this->att->car['agilita']+$this->att->car['velocita']+($this->att->car['saluteattuale']/20)+($this->att->car['energia']/10);
 	$difpoint=$this->dif->car['agilita']+$this->dif->car['velocita']+($this->dif->car['saluteattuale']/20)+($this->dif->car['energia']/10);
 	if($attpoint>$difpoint){
-	$this->uno=$this->att;
-	$this->due=$this->dif;
+	$this->uno=new Combattente($this->att->id,$this->att->nome,$this->att->car,$this->att->equip);
+	$this->due=new Combattente($this->dif->id,$this->dif->nome,$this->dif->car,$this->dif->equip);
 	}else{
-	$this->uno=$this->dif;
-	$this->due=$this->att;
+	$this->due=new Combattente($this->att->id,$this->att->nome,$this->att->car,$this->att->equip);
+	$this->uno=new Combattente($this->dif->id,$this->dif->nome,$this->dif->car,$this->dif->equip);
 	}
 	} //fine Stabilisciordine
 	function eq($chi) {
