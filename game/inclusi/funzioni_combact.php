@@ -34,7 +34,7 @@ class Dati{
 	else{
 	$dato=$this->due->equip;}
 	return $dato;
-	} //fine equip
+	} //fine eq
 	function id($chi) {
 	if($chi==1){
 	$dato=$this->uno->id;}
@@ -54,7 +54,7 @@ class Dati{
 	$this->uno->oggusati=1;}
 	else{
 	$this->due->oggusati=1;}
-	} //fine ogginsuo
+	} //fine ogginuso
 	
 } //fine classe Dati
 
@@ -86,8 +86,10 @@ $chi=$dc->Stabilisciordine;
 //$input.=Attaccovicino("1","2");
 //$input.=Attaccovicino("2","1");
 
-$atteq=$dc->eq(1);
-$input.=$atteq['cac'];
+//$atteq=$dc->eq(1);
+//$input.=$atteq['cac'];
+
+$input.=$dc->nome(1);
 
 if($dc->uno->oggusati==1){
 $oggpersi=Checkusurarottura($dc->id(1));
