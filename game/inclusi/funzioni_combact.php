@@ -27,11 +27,11 @@ class Dati{
 	$attpoint=$this->att->car['agilita']+$this->att->car['velocita']+($this->att->car['saluteattuale']/20)+($this->att->car['energia']/10);
 	$difpoint=$this->dif->car['agilita']+$this->dif->car['velocita']+($this->dif->car['saluteattuale']/20)+($this->dif->car['energia']/10);
 	if($attpoint>$difpoint){
-	$uno=$this->att;
-	$due=$this->dif;
+	$this->uno=$this->att;
+	$this->due=$this->dif;
 	}else{
-	$uno=$this->dif;
-	$due=$this->att;
+	$this->uno=$this->dif;
+	$this->due=$this->att;
 	}
 	} //fine Stabilisciordine
 	function equip($chi) {
@@ -156,16 +156,16 @@ $repinput.="</td></tr>";
 fputs($fp,$repinput);
 } //fine Inreport
 
-function Attaccovicino($att,$dif) {
+function Attaccovicino($at,$di) {
 global $db,$lang,$dc;
-$atteq=$dc->equip($att);
+$atteq=$dc->equip($at);
 if($atteq['cac']!=0){
 $arma=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$atteq['cac']."' LIMIT 1");
 $danno=$arma['danno'];
 $nomearma=$lang['oggetto'.$atteq['cac'].'_nome'];
 $energia=$arma['energia'];
-$db->QueryMod("UPDATE inoggetti SET inuso='1' WHERE userid='".$dc->id($att)."' AND oggid='".$atteq['cac']."' AND equip='1' LIMIT 1");
-$dc->ogginuso($att);
+$db->QueryMod("UPDATE inoggetti SET inuso='1' WHERE userid='".$dc->id($at)."' AND oggid='".$atteq['cac']."' AND equip='1' LIMIT 1");
+$dc->ogginuso($at);
 }else{
 $danno=2;
 $nomearma=$lang['pugno'];
@@ -174,11 +174,11 @@ $energia=10;
 
 $colpisci=rand(1,2);
 if($colpisci==1){
-$input=sprintf($lang['danno_att_vicino'],$dc->nome($att),$dc->nome($dif),$nomearma,$danno)."<br/>";
-$db->QueryMod("UPDATE caratteristiche SET saluteattuale=saluteattuale-'".$danno."' WHERE userid='".$dc->id($dif)."' LIMIT 1");
+$input=sprintf($lang['danno_att_vicino'],$dc->nome($at),$dc->nome($di),$nomearma,$danno)."<br/>";
+$db->QueryMod("UPDATE caratteristiche SET saluteattuale=saluteattuale-'".$danno."' WHERE userid='".$dc->id($di)."' LIMIT 1");
 }else{
-$input=sprintf($lang['niente_att_vicino'],$dc->nome($att),$dc->nome($dif),$nomearma)."<br/>";
+$input=sprintf($lang['niente_att_vicino'],$dc->nome($at),$dc->nome($di),$nomearma)."<br/>";
 }
-$db->QueryMod("UPDATE caratteristiche SET energia=energia-'".$energia."' WHERE userid='".$dc->id($att)."' LIMIT 1");
+$db->QueryMod("UPDATE caratteristiche SET energia=energia-'".$energia."' WHERE userid='".$dc->id($at)."' LIMIT 1");
 return $input;
 } //fine Attaccovicino
