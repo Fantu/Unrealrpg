@@ -125,7 +125,7 @@ $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,battl
 Docombactstats($battleid,$attaccante,$difensore);
 */
 //se non continua
-Endcombact($battle['id'],$dc->uno,$dc->due);
+Endcombact($battle['id'],$dc->att,$dc->dif);
 } //fine Battledo
 
 function Endcombact($battleid,$att,$dif) {

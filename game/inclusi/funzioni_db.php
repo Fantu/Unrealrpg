@@ -22,12 +22,11 @@ class ConnessioniMySQL {
 	}
 	
 	function Config () {
-				$this->dbname=$this->suffix.$this->database;
-		return $dati;
+		$this->dbname=$this->suffix.$this->database;
 	}
 	function QuerySelect ($query) { //$var=$db->QuerySelect("SELECT * FROM table");	
 		global $numquery;
-		$dati=$this->Config();
+		$this->Config();
 		$connect=mysql_connect($this->server,$this->dbuser,$this->dbpass);
 		mysql_select_db($this->dbname,$connect);
 		$result=mysql_query($query,$connect);
@@ -48,7 +47,7 @@ class ConnessioniMySQL {
 	}
 	function QueryMod ($query) { //$db->QueryMod("UPDATE table SET colonna='1'");	
 		global $numquery;
-		$dati=$this->Config();
+		$this->Config();
 		$connect=mysql_connect($this->server,$this->dbuser,$this->dbpass);
 		mysql_select_db($this->dbname,$connect);
 		$result=mysql_query($query,$connect);
@@ -62,7 +61,7 @@ class ConnessioniMySQL {
 	}	
 	function QueryCiclo ($query) { //$guarda_bene=$db->QueryCiclo("SELECT * FROM table"); -- collegata a quella di sotto
 		global $numquery;
-		$dati=$this->Config();
+		$this->Config();
 		$connect=mysql_connect($this->server,$this->dbuser,$this->dbpass);
 		mysql_select_db($this->dbname,$connect);
 		$result=mysql_query($query,$connect);
