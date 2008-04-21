@@ -19,11 +19,11 @@ class Combattente{
 	}
 } //fine classe Combattente
 class Dati{
-	var $att;
-	var $dif;
-	var $uno;
-	var $due;
-	function Stabilisciordine() {
+	public $att;
+	public $dif;
+	public $uno;
+	public $due;
+	public function Stabilisciordine() {
 	$attpoint=$this->att->car['agilita']+$this->att->car['velocita']+($this->att->car['saluteattuale']/20)+($this->att->car['energia']/10);
 	$difpoint=$this->dif->car['agilita']+$this->dif->car['velocita']+($this->dif->car['saluteattuale']/20)+($this->dif->car['energia']/10);
 	if($attpoint>$difpoint){
@@ -34,28 +34,32 @@ class Dati{
 	$this->uno=$this->dif;
 	}
 	} //fine Stabilisciordine
-	function eq($chi) {
+	
+	public function eq($chi) {
 	if($chi==1){
 	$dato=$this->uno->equip;}
 	else{
 	$dato=$this->due->equip;}
 	return $dato;
 	} //fine eq
-	function id($chi) {
+	
+	public function id($chi) {
 	if($chi==1){
 	$dato=$this->uno->id;}
 	else{
 	$dato=$this->due->id;}
 	return $dato;
 	} //fine id
-	function nome($chi) {
+	
+	public function nome($chi) {
 	if($chi==1){
 	$dato=$this->uno->nome;}
 	else{
 	$dato=$this->due->nome;}
 	return $dato;
 	} //fine nome
-	function ogginuso($chi) {
+	
+	public function Ogginuso($chi) {
 	if($chi==1){
 	$this->uno->oggusati=1;}
 	else{
@@ -105,8 +109,8 @@ $dc->dif=new Combattente($difensore,$difn['username'],$difcar,$difequip);
 $dc->uno=$dc->att;
 $dc->due=$dc->dif;
 
-$dc->ogginuso(1);
-$dc->ogginuso(2);
+$dc->Ogginuso(1);
+$dc->Ogginuso(2);
 $atteq=$dc->eq(2);
 $input.=$atteq['cac']."<br/>";
 
