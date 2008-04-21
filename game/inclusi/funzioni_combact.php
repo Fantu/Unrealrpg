@@ -124,8 +124,8 @@ global $db,$adesso,$lang,$language;
 $battle=$db->QuerySelect("SELECT * FROM battle WHERE id='".$battleid."' LIMIT 1");
 $dc=new Dati();
 $dc->Stabilisciordine($battle['attid'],$battle['difid']);
-$input.=Attaccovicino(1,2);
-$input.=Attaccovicino(2,1);
+$input.=$dc->Attaccovicino(1,2);
+$input.=$dc->Attaccovicino(2,1);
 
 if($dc->att->oggusati==1){
 $input.=$dc->Controlloogg(1);}
