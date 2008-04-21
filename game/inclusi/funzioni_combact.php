@@ -98,7 +98,7 @@ $difequip=$db->QuerySelect("SELECT * FROM equipaggiamento WHERE userid='".$difen
 $dc=new Dati();
 $dc->att=new Combattente($attaccante,$attn['username'],$attcar,$attequip);
 $dc->dif=new Combattente($difensore,$difn['username'],$difcar,$difequip);
-//$dc->Stabilisciordine;
+//$dc->Stabilisciordine();
 //$input.=Attaccovicino("1","2");
 //$input.=Attaccovicino("2","1");
 
@@ -108,18 +108,20 @@ $dc->due=$dc->dif;
 $dc->ogginuso(1);
 $dc->ogginuso(2);
 $atteq=$dc->eq(1);
-$input.=$atteq['cac'];
+$input.=$atteq['cac']."<br/>";
+$atteq=$dc->eq(2);
+$input.=$atteq['cac']."<br/>";
 
 if($dc->uno->oggusati==1){
 $oggpersi=Checkusurarottura($dc->id(1));
 if($oggpersi){
-$input.=nome(1)."<br/>".$oggpersi;
+$input.="1".nome(1)."<br/>".$oggpersi;
 }
 }
 if($dc->due->oggusati==2){
 $oggpersi=Checkusurarottura($dc->id(2));
 if($oggpersi){
-$input.=$dc->nome(2)."<br/>".$oggpersi;
+$input.="2".$dc->nome(2)."<br/>".$oggpersi;
 }
 }
 Inreport($battleid,$input);
