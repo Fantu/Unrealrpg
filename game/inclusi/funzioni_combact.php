@@ -53,6 +53,8 @@ class Dati{
 	$dato=$this->uno->nome;}
 	else{
 	$dato=$this->due->nome;}
+	$input.="Dato prova2: ".$dato."<br/>";
+	Inreport($battleid,$input);
 	return $dato;
 	} //fine nome
 	function ogginuso($chi) {
@@ -70,7 +72,7 @@ function nome($chi) {
 	$dato=$dc->uno->nome;}
 	else{
 	$dato=$dc->due->nome;}
-	$input.="Dato prova: ".$dc->nome(2)."<br/>";
+	$input.="Dato prova: ".$dato."<br/>";
 	Inreport($battleid,$input);
 	return $dato;
 	} //fine nome
@@ -105,6 +107,7 @@ $chi=$dc->Stabilisciordine;
 //$input.=Attaccovicino("2","1");
 
 $dc->ogginuso(1);
+$dc->ogginuso(2);
 $atteq=$dc->eq(1);
 $input.=$atteq['cac'];
 
