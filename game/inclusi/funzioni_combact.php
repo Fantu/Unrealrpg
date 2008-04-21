@@ -43,7 +43,7 @@ class Dati{
 	
 	public function eq($chi) {
 	if($chi==1){
-	$dato=$this->att->equip}
+	$dato=$this->att->equip;}
 	else{
 	$dato=$this->dif->equip;}
 	return $dato;
