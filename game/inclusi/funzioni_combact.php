@@ -21,61 +21,58 @@ class Combattente{
 class Dati{
 	public $att;
 	public $dif;
-	public $uno;
-	public $due;
 	public function Stabilisciordine() {
-	$attpoint=$this->att->car['agilita']+$this->att->car['velocita']+($this->att->car['saluteattuale']/20)+($this->att->car['energia']/10);
-	$difpoint=$this->dif->car['agilita']+$this->dif->car['velocita']+($this->dif->car['saluteattuale']/20)+($this->dif->car['energia']/10);
+	$attaccante=$battle['attid'];
+	$difensore=$battle['difid'];
+	$attcar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$attaccante."' LIMIT 1");
+	$difcar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$difensore."' LIMIT 1");
+	$attn=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$attaccante."' LIMIT 1");
+	$difn=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$difensore."' LIMIT 1");
+	$attequip=$db->QuerySelect("SELECT * FROM equipaggiamento WHERE userid='".$attaccante."' LIMIT 1");
+	$difequip=$db->QuerySelect("SELECT * FROM equipaggiamento WHERE userid='".$difensore."' LIMIT 1");
+	$attpoint=$attcar['agilita']+$attcar['velocita']+($attcar['saluteattuale']/20)+($attcar['energia']/10);
+	$difpoint=$difcar['agilita']+$difcar['velocita']+($difcar['saluteattuale']/20)+($difcar['energia']/10);
 	if($attpoint>$difpoint){
-	$this->uno=$this->att;
-	$this->due=$this->dif;
+	$this->att=new Combattente($attaccante,$attn['username'],$attcar,$attequip);
+	$this->dif=new Combattente($difensore,$difn['username'],$difcar,$difequip);
 	}else{
-	$this->due=$this->att;
-	$this->uno=$this->dif;
+	$this->dif=new Combattente($attaccante,$attn['username'],$attcar,$attequip);
+	$this->att=new Combattente($difensore,$difn['username'],$difcar,$difequip);
 	}
 	} //fine Stabilisciordine
 	
 	public function eq($chi) {
 	if($chi==1){
-	$dato=$this->uno->equip;}
+	$dato=$this->att->equip;}
 	else{
-	$dato=$this->due->equip;}
+	$dato=$this->dif->equip;}
 	return $dato;
 	} //fine eq
 	
 	public function id($chi) {
 	if($chi==1){
-	$dato=$this->uno->id;}
+	$dato=$this->att->id;}
 	else{
-	$dato=$this->due->id;}
+	$dato=$this->dif->id;}
 	return $dato;
 	} //fine id
 	
 	public function nome($chi) {
 	if($chi==1){
-	$dato=$this->uno->nome;}
+	$dato=$this->att->nome;}
 	else{
-	$dato=$this->due->nome;}
+	$dato=$this->dif->nome;}
 	return $dato;
 	} //fine nome
 	
 	public function Ogginuso($chi) {
 	if($chi==1){
-	$this->uno->oggusati=1;}
+	$this->att->oggusati=1;}
 	else{
-	$this->due->oggusati=1;}
+	$this->dif->oggusati=1;}
 	} //fine ogginuso
 	
 } //fine classe Dati
-
-function nome($chi) {
-	global $dc;
-	if($chi==1){
-	$dato=$dc->uno->nome;}
-	else{
-	$dato=$dc->due->nome;}
-	return $dato;
-	} //fine nome
 
 function Startcombact($attaccante,$difensore,$server) {
 global $db,$adesso,$lang,$language;
@@ -89,7 +86,7 @@ Docombactstats($battle['id'],$attaccante,$difensore);
 } //fine Startcombact
 
 function Battledo($battleid) {
-global $db,$adesso,$lang,$language,$dc;
+global $db,$adesso,$lang,$language;
 $battle=$db->QuerySelect("SELECT * FROM battle WHERE id='".$battleid."' LIMIT 1");
 $attaccante=$battle['attid'];
 $difensore=$battle['difid'];
@@ -99,15 +96,10 @@ $attn=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$attaccante.
 $difn=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$difensore."' LIMIT 1");
 $attequip=$db->QuerySelect("SELECT * FROM equipaggiamento WHERE userid='".$attaccante."' LIMIT 1");
 $difequip=$db->QuerySelect("SELECT * FROM equipaggiamento WHERE userid='".$difensore."' LIMIT 1");
-
-$dc->att=new Combattente($attaccante,$attn['username'],$attcar,$attequip);
-$dc->dif=new Combattente($difensore,$difn['username'],$difcar,$difequip);
-//$dc->Stabilisciordine();
+$dc=new Dati();
+$dc->Stabilisciordine();
 //$input.=Attaccovicino("1","2");
 //$input.=Attaccovicino("2","1");
-
-$dc->uno=$dc->att;
-$dc->due=$dc->dif;
 
 $dc->Ogginuso(1);
 $dc->Ogginuso(2);
