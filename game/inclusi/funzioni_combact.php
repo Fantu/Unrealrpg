@@ -98,9 +98,12 @@ $difequip=$db->QuerySelect("SELECT * FROM equipaggiamento WHERE userid='".$difen
 $dc=new Dati();
 $dc->att=new Combattente($attaccante,$attn['username'],$attcar,$attequip);
 $dc->dif=new Combattente($difensore,$difn['username'],$difcar,$difequip);
-$dc->Stabilisciordine;
+//$dc->Stabilisciordine;
 //$input.=Attaccovicino("1","2");
 //$input.=Attaccovicino("2","1");
+
+$dc->uno=$dc->att;
+$dc->due=$dc->dif;
 
 $dc->ogginuso(1);
 $dc->ogginuso(2);
