@@ -81,6 +81,31 @@ class Dati{
 	return $dato;
 	} //fine Controlloogg
 	
+	public function Attaccovicino($att,$dif) {
+	global $db,$lang;
+	if($this->equip($att,'cac')!=0){
+	$arma=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$this->equip($att,'cac')."' LIMIT 1");
+	$danno=$arma['danno'];
+	$nomearma=$lang['oggetto'.$this->equip($att,'cac').'_nome'];
+	$energia=$arma['energia'];
+	$db->QueryMod("UPDATE inoggetti SET inuso='1' WHERE userid='".$this->id($att)."' AND oggid='".$this->equip($att,'cac')."' AND equip='1' LIMIT 1");
+	$dc->Ogginuso($att);
+	}else{
+	$danno=2;
+	$nomearma=$lang['pugno'];
+	$energia=10;
+	}
+	$colpisci=rand(1,2);
+	if($colpisci==1){
+	$input=sprintf($lang['danno_att_vicino'],$this->nome($att),$this->nome($dif),$nomearma,$danno)."<br/>";
+	$db->QueryMod("UPDATE caratteristiche SET saluteattuale=saluteattuale-'".$danno."' WHERE userid='".$this->id($dif)."' LIMIT 1");
+	}else{
+	$input=sprintf($lang['niente_att_vicino'],$this->nome($att),$this->nome($dif),$nomearma)."<br/>";
+	}
+	$db->QueryMod("UPDATE caratteristiche SET energia=energia-'".$energia."' WHERE userid='".$this->id($att)."' LIMIT 1");
+	return $input;
+	} //fine Attaccovicino
+	
 } //fine classe Dati
 
 function Startcombact($attaccante,$difensore,$server) {
@@ -99,12 +124,8 @@ global $db,$adesso,$lang,$language;
 $battle=$db->QuerySelect("SELECT * FROM battle WHERE id='".$battleid."' LIMIT 1");
 $dc=new Dati();
 $dc->Stabilisciordine($battle['attid'],$battle['difid']);
-//$input.=Attaccovicino("1","2");
-//$input.=Attaccovicino("2","1");
-
-$dc->Ogginuso(1);
-$dc->Ogginuso(2);
-$input.=$dc->equip(2,'cac')."<br/>";
+$input.=Attaccovicino(1,2);
+$input.=Attaccovicino(2,1);
 
 if($dc->att->oggusati==1){
 $input.=$dc->Controlloogg(1);}
@@ -163,30 +184,3 @@ $repinput.=$input;
 $repinput.="</td></tr>";
 fputs($fp,$repinput);
 } //fine Inreport
-
-function Attaccovicino($at,$di) {
-global $db,$lang,$dc;
-$atteq=$dc->equip($at);
-if($atteq['cac']!=0){
-$arma=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$atteq['cac']."' LIMIT 1");
-$danno=$arma['danno'];
-$nomearma=$lang['oggetto'.$atteq['cac'].'_nome'];
-$energia=$arma['energia'];
-$db->QueryMod("UPDATE inoggetti SET inuso='1' WHERE userid='".$dc->id($at)."' AND oggid='".$atteq['cac']."' AND equip='1' LIMIT 1");
-$dc->ogginuso($at);
-}else{
-$danno=2;
-$nomearma=$lang['pugno'];
-$energia=10;
-}
-
-$colpisci=rand(1,2);
-if($colpisci==1){
-$input=sprintf($lang['danno_att_vicino'],$dc->nome($at),$dc->nome($di),$nomearma,$danno)."<br/>";
-$db->QueryMod("UPDATE caratteristiche SET saluteattuale=saluteattuale-'".$danno."' WHERE userid='".$dc->id($di)."' LIMIT 1");
-}else{
-$input=sprintf($lang['niente_att_vicino'],$dc->nome($at),$dc->nome($di),$nomearma)."<br/>";
-}
-$db->QueryMod("UPDATE caratteristiche SET energia=energia-'".$energia."' WHERE userid='".$dc->id($at)."' LIMIT 1");
-return $input;
-} //fine Attaccovicino
