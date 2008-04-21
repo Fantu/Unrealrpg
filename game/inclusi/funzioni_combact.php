@@ -18,6 +18,7 @@ class Combattente{
 	$this->oggusati=0;
 	}
 } //fine classe Combattente
+
 class Dati{
 	public $att;
 	public $dif;
@@ -41,13 +42,13 @@ class Dati{
 	}
 	} //fine Stabilisciordine
 	
-	public function eq($chi) {
+	public function equip($chi,$campo) {
 	if($chi==1){
-	$dato=$this->att->equip;}
+	$dato=$this->att->equip[$campo];}
 	else{
-	$dato=$this->dif->equip;}
+	$dato=$this->dif->equip[$campo];}
 	return $dato;
-	} //fine eq
+	} //fine equip
 	
 	public function id($chi) {
 	if($chi==1){
@@ -103,12 +104,11 @@ $dc->Stabilisciordine($battle['attid'],$battle['difid']);
 
 $dc->Ogginuso(1);
 $dc->Ogginuso(2);
-$atteq=$dc->eq(2);
-$input.=$atteq['cac']."<br/>";
+$input.=$dc->equip(2,'cac')."<br/>";
 
-if($this->att->oggusati==1){
+if($dc->att->oggusati==1){
 $input.=$dc->Controlloogg(1);}
-if($this->dif->oggusati==1){
+if($dc->dif->oggusati==1){
 $input.=$dc->Controlloogg(2);}
 
 Inreport($battleid,$input);
