@@ -53,8 +53,6 @@ class Dati{
 	$dato=$this->uno->nome;}
 	else{
 	$dato=$this->due->nome;}
-	$input.="Dato prova2: ".$dato."<br/>";
-	Inreport($battleid,$input);
 	return $dato;
 	} //fine nome
 	function ogginuso($chi) {
@@ -72,8 +70,6 @@ function nome($chi) {
 	$dato=$dc->uno->nome;}
 	else{
 	$dato=$dc->due->nome;}
-	$input.="Dato prova: ".$dato."<br/>";
-	Inreport($battleid,$input);
 	return $dato;
 	} //fine nome
 
@@ -102,7 +98,7 @@ $difequip=$db->QuerySelect("SELECT * FROM equipaggiamento WHERE userid='".$difen
 $dc=new Dati();
 $dc->att=new Combattente($attaccante,$attn['username'],$attcar,$attequip);
 $dc->dif=new Combattente($difensore,$difn['username'],$difcar,$difequip);
-$chi=$dc->Stabilisciordine;
+$dc->Stabilisciordine;
 //$input.=Attaccovicino("1","2");
 //$input.=Attaccovicino("2","1");
 
