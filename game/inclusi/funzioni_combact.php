@@ -70,6 +70,8 @@ function nome($chi) {
 	$dato=$dc->uno->nome;}
 	else{
 	$dato=$dc->due->nome;}
+	$input.="Dato prova: ".$dc->nome(2)."<br/>";
+	Inreport($battleid,$input);
 	return $dato;
 	} //fine nome
 
@@ -95,7 +97,7 @@ $attn=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$attaccante.
 $difn=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$difensore."' LIMIT 1");
 $attequip=$db->QuerySelect("SELECT * FROM equipaggiamento WHERE userid='".$attaccante."' LIMIT 1");
 $difequip=$db->QuerySelect("SELECT * FROM equipaggiamento WHERE userid='".$difensore."' LIMIT 1");
-$dc=new Dati;
+$dc=new Dati();
 $dc->att=new Combattente($attaccante,$attn['username'],$attcar,$attequip);
 $dc->dif=new Combattente($difensore,$difn['username'],$difcar,$difequip);
 $chi=$dc->Stabilisciordine;
