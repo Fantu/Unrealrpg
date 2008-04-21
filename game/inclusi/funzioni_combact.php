@@ -89,7 +89,7 @@ class Dati{
 	$nomearma=$lang['oggetto'.$this->equip($att,'cac').'_nome'];
 	$energia=$arma['energia'];
 	$db->QueryMod("UPDATE inoggetti SET inuso='1' WHERE userid='".$this->id($att)."' AND oggid='".$this->equip($att,'cac')."' AND equip='1' LIMIT 1");
-	$dc->Ogginuso($att);
+	$this->Ogginuso($att);
 	}else{
 	$danno=2;
 	$nomearma=$lang['pugno'];
