@@ -107,8 +107,7 @@ $dc->due=$dc->dif;
 
 $dc->ogginuso(1);
 $dc->ogginuso(2);
-$atteq=$dc->eq(1);
-$input.=$atteq['cac']."<br/>";
+$input.=$dc->eq(1)."<br/>";
 $atteq=$dc->eq(2);
 $input.=$atteq['cac']."<br/>";
 
