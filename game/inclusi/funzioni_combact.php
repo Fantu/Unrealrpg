@@ -85,7 +85,7 @@ Docombactstats($battle['id'],$attaccante,$difensore);
 } //fine Startcombact
 
 function Battledo($battleid) {
-global $db,$adesso,$lang,$language;
+global $db,$adesso,$lang,$language,$dc;
 $battle=$db->QuerySelect("SELECT * FROM battle WHERE id='".$battleid."' LIMIT 1");
 $attaccante=$battle['attid'];
 $difensore=$battle['difid'];
@@ -95,7 +95,7 @@ $attn=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$attaccante.
 $difn=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$difensore."' LIMIT 1");
 $attequip=$db->QuerySelect("SELECT * FROM equipaggiamento WHERE userid='".$attaccante."' LIMIT 1");
 $difequip=$db->QuerySelect("SELECT * FROM equipaggiamento WHERE userid='".$difensore."' LIMIT 1");
-$dc=new Dati();
+
 $dc->att=new Combattente($attaccante,$attn['username'],$attcar,$attequip);
 $dc->dif=new Combattente($difensore,$difn['username'],$difcar,$difequip);
 //$dc->Stabilisciordine();
@@ -107,14 +107,13 @@ $dc->due=$dc->dif;
 
 $dc->ogginuso(1);
 $dc->ogginuso(2);
-$input.=$dc->eq(1)."<br/>";
 $atteq=$dc->eq(2);
 $input.=$atteq['cac']."<br/>";
 
 if($dc->uno->oggusati==1){
 $oggpersi=Checkusurarottura($dc->id(1));
 if($oggpersi){
-$input.="1".nome(1)."<br/>".$oggpersi;
+$input.="1".$dc->nome(1)."<br/>".$oggpersi;
 }
 }
 if($dc->due->oggusati==2){
