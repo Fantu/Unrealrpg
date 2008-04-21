@@ -105,13 +105,13 @@ $dc->Ogginuso(2);
 $atteq=$dc->eq(2);
 $input.=$atteq['cac']."<br/>";
 
-if($dc->uno->oggusati==1){
+if($dc->att->oggusati==1){
 $oggpersi=Checkusurarottura($dc->id(1));
 if($oggpersi){
 $input.="1".$dc->nome(1)."<br/>".$oggpersi;
 }
 }
-if($dc->due->oggusati==2){
+if($dc->dif->oggusati==2){
 $oggpersi=Checkusurarottura($dc->id(2));
 if($oggpersi){
 $input.="2".$dc->nome(2)."<br/>".$oggpersi;
