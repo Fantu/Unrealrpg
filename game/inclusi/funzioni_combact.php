@@ -21,6 +21,7 @@ class Combattente{
 class Dati{
 	public $att;
 	public $dif;
+	
 	public function Stabilisciordine($attaccante,$difensore) {
 	global $db;
 	$attcar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$attaccante."' LIMIT 1");
@@ -42,7 +43,7 @@ class Dati{
 	
 	public function eq($chi) {
 	if($chi==1){
-	$dato=$this->att->equip;}
+	$dato=$this->att->equip}
 	else{
 	$dato=$this->dif->equip;}
 	return $dato;
@@ -71,6 +72,14 @@ class Dati{
 	$this->dif->oggusati=1;}
 	} //fine ogginuso
 	
+	public function Controlloogg($chi) {
+	$oggpersi=Checkusurarottura($this->id($chi));
+	if($oggpersi){
+	$dato.=$this->nome($chi)."<br/>".$oggpersi;
+	}
+	return $dato;
+	} //fine Controlloogg
+	
 } //fine classe Dati
 
 function Startcombact($attaccante,$difensore,$server) {
@@ -87,14 +96,6 @@ Docombactstats($battle['id'],$attaccante,$difensore);
 function Battledo($battleid) {
 global $db,$adesso,$lang,$language;
 $battle=$db->QuerySelect("SELECT * FROM battle WHERE id='".$battleid."' LIMIT 1");
-$attaccante=$battle['attid'];
-$difensore=$battle['difid'];
-$attcar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$attaccante."' LIMIT 1");
-$difcar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$difensore."' LIMIT 1");
-$attn=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$attaccante."' LIMIT 1");
-$difn=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$difensore."' LIMIT 1");
-$attequip=$db->QuerySelect("SELECT * FROM equipaggiamento WHERE userid='".$attaccante."' LIMIT 1");
-$difequip=$db->QuerySelect("SELECT * FROM equipaggiamento WHERE userid='".$difensore."' LIMIT 1");
 $dc=new Dati();
 $dc->Stabilisciordine($battle['attid'],$battle['difid']);
 //$input.=Attaccovicino("1","2");
@@ -105,18 +106,11 @@ $dc->Ogginuso(2);
 $atteq=$dc->eq(2);
 $input.=$atteq['cac']."<br/>";
 
-if($dc->att->oggusati==1){
-$oggpersi=Checkusurarottura($dc->id(1));
-if($oggpersi){
-$input.="1".$dc->nome(1)."<br/>".$oggpersi;
-}
-}
-if($dc->dif->oggusati==2){
-$oggpersi=Checkusurarottura($dc->id(2));
-if($oggpersi){
-$input.="2".$dc->nome(2)."<br/>".$oggpersi;
-}
-}
+if($this->att->oggusati==1){
+$input.=$dc->Controlloogg(1);}
+if($this->dif->oggusati==1){
+$input.=$dc->Controlloogg(2);}
+
 Inreport($battleid,$input);
 /*
 //se si continua...creare nuovo turno
