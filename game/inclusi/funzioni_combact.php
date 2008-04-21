@@ -22,6 +22,7 @@ class Dati{
 	public $att;
 	public $dif;
 	public function Stabilisciordine() {
+	global $db;
 	$attaccante=$battle['attid'];
 	$difensore=$battle['difid'];
 	$attcar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$attaccante."' LIMIT 1");
