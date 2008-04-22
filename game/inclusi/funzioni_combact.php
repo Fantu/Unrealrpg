@@ -50,6 +50,14 @@ class Dati{
 	return $dato;
 	} //fine equip
 	
+	public function car($chi,$campo) {
+	if($chi==1){
+	$dato=$this->att->car[$campo];}
+	else{
+	$dato=$this->dif->car[$campo];}
+	return $dato;
+	} //fine car
+	
 	public function id($chi) {
 	if($chi==1){
 	$dato=$this->att->id;}
@@ -91,7 +99,7 @@ class Dati{
 	$db->QueryMod("UPDATE inoggetti SET inuso='1' WHERE userid='".$this->id($att)."' AND oggid='".$this->equip($att,'cac')."' AND equip='1' LIMIT 1");
 	$this->Ogginuso($att);
 	}else{
-	$danno=2;
+	$danno=1+round($this->car($att,'attfisico')/100);
 	$nomearma=$lang['pugno'];
 	$energia=10;
 	}

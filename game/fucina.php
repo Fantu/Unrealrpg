@@ -56,6 +56,10 @@ if ($materiale<1)
 $errore.=$lang['fucina_errore9'];
 if ($usercar['fabbro']<1)
 $errore.=$lang['fucina_errore4'];
+if($errore==""){
+$seoggdf=$db->QuerySelect("SELECT COUNT(id) AS num FROM oggetti WHERE tipo='".$oggdf_num[$oggettodaforgiare][1]."' AND categoria='".$oggdf_num[$oggettodaforgiare][2]."' AND materiale='".$materiale."' AND abilitanec<='".$usercar['fabbro']."'");
+if ($seoggdf['num']<1)
+$errore.=$lang['fucina_errore10'];
 $carbone=$db->QuerySelect("SELECT count(*) AS num FROM inoggetti WHERE userid='".$user['userid']."' AND oggid='2'");
 if ($carbone['num']<($materiali_num[$materiale][1]*$ore))
 $errore.=sprintf($lang['fucina_errore6'],($materiali_num[$materiale][1]*$ore));
@@ -65,6 +69,7 @@ $errore.=sprintf($lang['fucina_errore7'],($materiali_num[$materiale][2]*$ore));
 $ferro=$db->QuerySelect("SELECT count(*) AS num FROM inoggetti WHERE userid='".$user['userid']."' AND oggid='4'");
 if ($ferro['num']<($materiali_num[$materiale][3]*$ore))
 $errore.=sprintf($lang['fucina_errore8'],($materiali_num[$materiale][3]*$ore));
+}// se non ci sono gli errori precedenti
 if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
 else {
