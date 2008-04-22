@@ -105,6 +105,11 @@ class Dati{
 	}
 	$colpisci=rand(1,2);
 	if($colpisci==1){
+	$difesamax=round($this->car($dif,'diffisica')/100);
+	$difesa=rand(0,$difesamax);
+	$danno-=$difesa;
+	if($danno<1)
+	$danno=1;
 	$input=sprintf($lang['danno_att_vicino'],$this->nome($att),$this->nome($dif),$nomearma,$danno)."<br/>";
 	$db->QueryMod("UPDATE caratteristiche SET saluteattuale=saluteattuale-'".$danno."' WHERE userid='".$this->id($dif)."' LIMIT 1");
 	}else{
