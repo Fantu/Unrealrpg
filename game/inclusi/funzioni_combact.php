@@ -22,7 +22,7 @@ class Combattente{
 class Dati{
 	public $att;
 	public $dif;
-	const $listc=array(1=>'att',2=>'dif');
+	const listc=array(1=>'att',2=>'dif');
 	
 	public function Stabilisciordine($attaccante,$difensore) {
 	global $db;
@@ -44,7 +44,7 @@ class Dati{
 	} //fine Stabilisciordine
 	
 	public function equip($chi,$campo) {
-	define('CHE_C',$this->$listc[$chi]);
+	define('CHE_C',self::listc[$chi]);
 	$dato=$this->CHE_C->equip[$campo];
 	return $dato;
 	} //fine equip
