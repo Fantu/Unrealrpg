@@ -22,6 +22,7 @@ class Combattente{
 class Dati{
 	public $att;
 	public $dif;
+	public $listc=array(1=>'att',2=>'dif');
 	
 	public function Stabilisciordine($attaccante,$difensore) {
 	global $db;
@@ -43,10 +44,8 @@ class Dati{
 	} //fine Stabilisciordine
 	
 	public function equip($chi,$campo) {
-	if($chi==1){
-	$dato=$this->att->equip[$campo];}
-	else{
-	$dato=$this->dif->equip[$campo];}
+	define('CHE_C',$this->$listc[$chi]);
+	$dato=$this->CHE_C->equip[$campo];
 	return $dato;
 	} //fine equip
 	
@@ -137,6 +136,9 @@ global $db,$adesso,$lang,$language;
 $battle=$db->QuerySelect("SELECT * FROM battle WHERE id='".$battleid."' LIMIT 1");
 $dc=new Dati();
 $dc->Stabilisciordine($battle['attid'],$battle['difid']);
+
+$input.=$dc->equip(1,'cac')."<br/>";
+/*
 $input.=$dc->Attaccovicino(1,2);
 $input.=$dc->Attaccovicino(2,1);
 
@@ -144,9 +146,9 @@ if($dc->att->oggusati==1){
 $input.=$dc->Controlloogg(1);}
 if($dc->dif->oggusati==1){
 $input.=$dc->Controlloogg(2);}
-
+*/
 Inreport($battleid,$input);
-/*
+
 //se si continua...creare nuovo turno
 $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,battleid) VALUES ('0','".$adesso."','180','0','6','".$battleid."')");
 Docombactstats($battleid,$attaccante,$difensore);
