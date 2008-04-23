@@ -148,7 +148,7 @@ if($dc->dif->oggusati==1){
 $input.=$dc->Controlloogg(2);}
 */
 Inreport($battleid,$input);
-
+/*
 //se si continua...creare nuovo turno
 $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,battleid) VALUES ('0','".$adesso."','180','0','6','".$battleid."')");
 Docombactstats($battleid,$attaccante,$difensore);
