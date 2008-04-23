@@ -22,7 +22,7 @@ class Combattente{
 class Dati{
 	public $att;
 	public $dif;
-	public $listc=array(1=>'att',2=>'dif');
+	const $listc=array(1=>'att',2=>'dif');
 	
 	public function Stabilisciordine($attaccante,$difensore) {
 	global $db;
