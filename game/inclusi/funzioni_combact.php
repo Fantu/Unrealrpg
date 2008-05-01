@@ -20,9 +20,7 @@ class Combattente{
 } //fine classe Combattente
 
 class Dati{
-	public $att;
-	public $dif;
-	var $listc=array(1=>'att',2=>'dif');
+	public $che;
 	
 	public function Stabilisciordine($attaccante,$difensore) {
 	global $db;
@@ -35,49 +33,36 @@ class Dati{
 	$attpoint=$attcar['agilita']+$attcar['velocita']+($attcar['saluteattuale']/20)+($attcar['energia']/10);
 	$difpoint=$difcar['agilita']+$difcar['velocita']+($difcar['saluteattuale']/20)+($difcar['energia']/10);
 	if($attpoint>$difpoint){
-	$this->att=new Combattente($attaccante,$attn['username'],$attcar,$attequip);
-	$this->dif=new Combattente($difensore,$difn['username'],$difcar,$difequip);
+	$this->che[1]=new Combattente($attaccante,$attn['username'],$attcar,$attequip);
+	$this->che[2]=new Combattente($difensore,$difn['username'],$difcar,$difequip);
 	}else{
-	$this->dif=new Combattente($attaccante,$attn['username'],$attcar,$attequip);
-	$this->att=new Combattente($difensore,$difn['username'],$difcar,$difequip);
+	$this->che[2]=new Combattente($attaccante,$attn['username'],$attcar,$attequip);
+	$this->che[1]=new Combattente($difensore,$difn['username'],$difcar,$difequip);
 	}
 	} //fine Stabilisciordine
 	
 	public function equip($chi,$campo) {
-	define('CHE_C',$this->listc[$chi]);
-	$dato=$this->CHE_C->equip[$campo];
+	$dato=$this->che[$chi]->equip[$campo];
 	return $dato;
 	} //fine equip
 	
 	public function car($chi,$campo) {
-	if($chi==1){
-	$dato=$this->att->car[$campo];}
-	else{
-	$dato=$this->dif->car[$campo];}
+	$dato=$this->che[$chi]->car[$campo];
 	return $dato;
 	} //fine car
 	
 	public function id($chi) {
-	if($chi==1){
-	$dato=$this->att->id;}
-	else{
-	$dato=$this->dif->id;}
+	$dato=$this->che[$chi]->id;
 	return $dato;
 	} //fine id
 	
 	public function nome($chi) {
-	if($chi==1){
-	$dato=$this->att->nome;}
-	else{
-	$dato=$this->dif->nome;}
+	$dato=$this->che[$chi]->nome;
 	return $dato;
 	} //fine nome
 	
 	public function Ogginuso($chi) {
-	if($chi==1){
-	$this->att->oggusati=1;}
-	else{
-	$this->dif->oggusati=1;}
+	$this->che[$chi]->oggusati=1;
 	} //fine ogginuso
 	
 	public function Controlloogg($chi) {
@@ -87,6 +72,11 @@ class Dati{
 	}
 	return $dato;
 	} //fine Controlloogg
+	
+	public function pvar($chi) {
+	$dato=$this->che[$chi];
+	return $dato;
+	} //fine pvar
 	
 	public function Attaccovicino($att,$dif) {
 	global $db,$lang;
@@ -137,8 +127,8 @@ $battle=$db->QuerySelect("SELECT * FROM battle WHERE id='".$battleid."' LIMIT 1"
 $dc=new Dati();
 $dc->Stabilisciordine($battle['attid'],$battle['difid']);
 
-$input.=$dc->equip(1,'cac')."<br/>";
-/*
+//$input.=$dc->equip(1,'cac')."<br/>";
+
 $input.=$dc->Attaccovicino(1,2);
 $input.=$dc->Attaccovicino(2,1);
 
@@ -146,7 +136,7 @@ if($dc->att->oggusati==1){
 $input.=$dc->Controlloogg(1);}
 if($dc->dif->oggusati==1){
 $input.=$dc->Controlloogg(2);}
-*/
+
 Inreport($battleid,$input);
 /*
 //se si continua...creare nuovo turno
@@ -154,7 +144,7 @@ $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,battl
 Docombactstats($battleid,$attaccante,$difensore);
 */
 //se non continua
-Endcombact($battle['id'],$dc->att,$dc->dif);
+Endcombact($battle['id'],$dc->pvar(1),$dc->pvar(2));
 } //fine Battledo
 
 function Endcombact($battleid,$att,$dif) {
