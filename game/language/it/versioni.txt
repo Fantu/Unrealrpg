@@ -11,6 +11,7 @@ Legenda:<br />
 + Il danno massimo di pugno è influenzato dalla forza fisica<br />
 + Il danno effettivo è variabile in base alla situazione, ha un minimo assoluto di 1 e massimo relativo al danno dell'arma usata<br />
 + La resistenza fisica influisce sul danno subito in attacchi fisici<br />
++ L'agilità dei combattenti influisce nel riuscire a colpire, anche la velocità influisce leggermente<br />
 + Vari miglioramenti di sistema a Info versione, sistema di combattimento, sistema query, Fucina<br />
 - Correzione bug minori<br />
 </p>

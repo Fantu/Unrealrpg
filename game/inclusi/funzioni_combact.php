@@ -92,8 +92,9 @@ class Dati{
 	$nomearma=$lang['pugno'];
 	$energia=10;
 	}
-	$colpisci=rand(1,2);
-	if($colpisci==1){
+	
+	$colpisci=rand(1,40)+($this->car($att,'agilita')/10-$this->car($dif,'agilita')/10)+($this->car($att,'velocita')/30-$this->car($dif,'velocita')/30);
+	if($colpisci>30){
 	$difesamax=round($this->car($dif,'diffisica')/100);
 	$difesa=rand(0,$difesamax);
 	$danno-=$difesa;
