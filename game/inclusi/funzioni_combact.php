@@ -132,9 +132,9 @@ $dc->Stabilisciordine($battle['attid'],$battle['difid']);
 $input.=$dc->Attaccovicino(1,2);
 $input.=$dc->Attaccovicino(2,1);
 
-if($dc->att->oggusati==1){
+if($dc->che[1]->oggusati==1){
 $input.=$dc->Controlloogg(1);}
-if($dc->dif->oggusati==1){
+if($dc->che[2]->oggusati==1){
 $input.=$dc->Controlloogg(2);}
 
 Inreport($battleid,$input);
