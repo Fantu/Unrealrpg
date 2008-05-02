@@ -10,12 +10,14 @@ class Combattente{
 	var $nome;
 	var $car;
 	var $equip;
+	var $stato;
 	function Combattente($id2,$nome2,$car2,$equip2) {
 	$this->id=$id2;
 	$this->nome=$nome2;
 	$this->car=$car2;
 	$this->equip=$equip2;
 	$this->oggusati=0;
+	$this->stato=0;
 	}
 } //fine classe Combattente
 
@@ -56,6 +58,11 @@ class Dati{
 	return $dato;
 	} //fine id
 	
+	public function stato($chi) {
+	$dato=$this->che[$chi]->stato;
+	return $dato;
+	} //fine stato
+	
 	public function nome($chi) {
 	$dato=$this->che[$chi]->nome;
 	return $dato;
@@ -78,13 +85,19 @@ class Dati{
 	return $dato;
 	} //fine pvar
 	
+	public function Controllastato($chi) {
+	if($this->car($chi,'energia')<50)
+	$this->che[$chi]->stato=1;
+	} //fine Controllastato
+	
 	public function Attaccovicino($att,$dif) {
 	global $db,$lang;
 	if($this->equip($att,'cac')!=0){
 	$arma=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$this->equip($att,'cac')."' LIMIT 1");
+	$energia=$arma['energia'];
+	if($this->car($att,'energia')>$energia){
 	$danno=$arma['danno'];
 	$nomearma=$lang['oggetto'.$this->equip($att,'cac').'_nome'];
-	$energia=$arma['energia'];
 	$db->QueryMod("UPDATE inoggetti SET inuso='1' WHERE userid='".$this->id($att)."' AND oggid='".$this->equip($att,'cac')."' AND equip='1' LIMIT 1");
 	$this->Ogginuso($att);
 	}else{
@@ -92,9 +105,8 @@ class Dati{
 	$nomearma=$lang['pugno'];
 	$energia=10;
 	}
-	
 	$colpisci=rand(1,40)+($this->car($att,'agilita')/10-$this->car($dif,'agilita')/10)+($this->car($att,'velocita')/30-$this->car($dif,'velocita')/30);
-	if($colpisci>30){
+	if($colpisci>30 OR $this->stato($dif)==1){
 	$difesamax=round($this->car($dif,'diffisica')/100);
 	$difesa=rand(0,$difesamax);
 	$danno-=$difesa;
@@ -127,11 +139,16 @@ global $db,$adesso,$lang,$language;
 $battle=$db->QuerySelect("SELECT * FROM battle WHERE id='".$battleid."' LIMIT 1");
 $dc=new Dati();
 $dc->Stabilisciordine($battle['attid'],$battle['difid']);
-
+$dc->Controllastato(1);
+$dc->Controllastato(2);
 //$input.=$dc->equip(1,'cac')."<br/>";
 
-$input.=$dc->Attaccovicino(1,2);
-$input.=$dc->Attaccovicino(2,1);
+if($this->stato(1)==1){
+$input.=$dc->Attaccovicino(1,2);}else{
+$input.=sprintf($lang['troppo_stanco_per_attacco'],$this->nome(1))."<br/>";}
+if($this->stato(2)==1){
+$input.=$dc->Attaccovicino(2,1);}else{
+$input.=sprintf($lang['troppo_stanco_per_attacco'],$this->nome(2))."<br/>";}
 
 if($dc->che[1]->oggusati==1){
 $input.=$dc->Controlloogg(1);}

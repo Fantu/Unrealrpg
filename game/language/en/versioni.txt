@@ -12,6 +12,9 @@ Legenda:<br />
 + Il danno effettivo è variabile in base alla situazione, ha un minimo assoluto di 1 e massimo relativo al danno dell'arma usata<br />
 + La resistenza fisica influisce sul danno subito in attacchi fisici<br />
 + L'agilità dei combattenti influisce nel riuscire a colpire in attacchi corpo a corpo, anche la velocità influisce leggermente<br />
++ Se non si ha sufficente energia per utilizzare la propria arma corpo a corpo si combatterà a pugni<br />
++ Se l'energia è troppo bassa non potrà attaccare l'avversario in corpo a corpo in nessun modo<br />
++ Nel corpo a corpo se il nemico è troppo stanco la probabilità di colpire è certa<br />
 + Vari miglioramenti di sistema a Info versione, sistema di combattimento, sistema query, Fucina<br />
 - Correzione bug minori<br />
 # Rivisto il guadagno di esperienza nei lavori, reso più equilibrato<br />
