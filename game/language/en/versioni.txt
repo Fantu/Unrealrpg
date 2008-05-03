@@ -7,7 +7,10 @@ Legenda:<br />
 - Correzione bug e patch di situazioni non previste<br />
 <br />
 </p>
-<p><strong>0.6.4</strong> (Non disponibile - In sviluppo)<br />
+<p><strong>0.6.5</strong> (Non disponibile - In sviluppo)<br />
+Niente attualmente<br />
+</p>
+<p><strong>0.6.4</strong> (Stimato per il 5/5/2008 - In sviluppo)<br />
 + Il danno massimo di pugno è influenzato dalla forza fisica<br />
 + Il danno effettivo è variabile in base alla situazione, ha un minimo assoluto di 1 e massimo relativo al danno dell'arma usata<br />
 + La resistenza fisica influisce sul danno subito in attacchi fisici<br />
@@ -15,6 +18,7 @@ Legenda:<br />
 + Se non si ha sufficente energia per utilizzare la propria arma corpo a corpo si combatterà a pugni<br />
 + Se l'energia è troppo bassa non potrà attaccare l'avversario in corpo a corpo in nessun modo<br />
 + Nel corpo a corpo se il nemico è troppo stanco la probabilità di colpire è certa<br />
++ Se energia e/o salute sono basse non si può essere sfidati o sfidare<br />
 + Vari miglioramenti di sistema a Info versione, sistema di combattimento, sistema query, Fucina<br />
 - Correzione bug minori<br />
 # Rivisto il guadagno di esperienza nei lavori, reso più equilibrato<br />

@@ -17,6 +17,11 @@ if ($eventisfidato['id']>0)
 $errore.=$lang['combact_errore1'];
 if ($idp==$user['userid'])
 $errore.=$lang['combact_errore2'];
+if ( (100/$usercar['salute']*$usercar['saluteattuale'])<40 OR (100/$usercar['energiamax']*$usercar['energia'])<40 )
+$errore.=$lang['combact_errore5'];
+$pcar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$idp."' LIMIT 1");
+if ( (100/$pcar['salute']*$pcar['saluteattuale'])<40 OR (100/$pcar['energiamax']*$pcar['energia'])<40 )
+$errore.=$lang['combact_errore4'];
 if($errore){
 	$outputerrori="<span>".$lang['outputerrorisfida']."</span><br /><span>".$errore."</span><br /><br />";}
 else {
