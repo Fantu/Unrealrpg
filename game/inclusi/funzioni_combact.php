@@ -108,14 +108,14 @@ class Dati{
 	}
 	$colpisci=rand(1,100)+($this->car($att,'agilita')/5-$this->car($dif,'agilita')/5)+($this->car($att,'velocita')/15-$this->car($dif,'velocita')/15);
 	if((100/$this->car($att,'energiamax')*$this->car($att,'energia'))<20)
-	$colpisci-=25;
+	$colpisci-=20;
 	if((100/$this->car($dif,'energiamax')*$this->car($dif,'energia'))<20)
-	$colpisci+=25;
+	$colpisci+=20;
 	if((100/$this->car($att,'salute')*$this->car($att,'saluteattuale'))<10)
-	$colpisci-=25;
+	$colpisci-=20;
 	if((100/$this->car($dif,'salute')*$this->car($dif,'saluteattuale'))<10)
-	$colpisci+=25;
-	if($colpisci>60 OR $this->stato($dif)==1){
+	$colpisci+=20;
+	if($colpisci>50 OR $this->stato($dif)==1){
 	$difesamax=round($this->car($dif,'diffisica')/100);
 	$difesa=rand(0,$difesamax);
 	$danno-=$difesa;
@@ -150,7 +150,6 @@ $dc=new Dati();
 $dc->Stabilisciordine($battle['attid'],$battle['difid']);
 $dc->Controllastato(1);
 $dc->Controllastato(2);
-//$input.=$dc->equip(1,'cac')."<br/>";
 
 if($dc->stato(1)==0){
 $input.=$dc->Attaccovicino(1,2);}else{
@@ -165,11 +164,11 @@ if($dc->che[2]->oggusati==1){
 $input.=$dc->Controlloogg(2);}
 
 Inreport($battleid,$input);
-/*
+
 //se si continua...creare nuovo turno
-$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,battleid) VALUES ('0','".$adesso."','180','0','6','".$battleid."')");
+//$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,battleid) VALUES ('0','".$adesso."','180','0','6','".$battleid."')");
 Docombactstats($battleid,$attaccante,$difensore);
-*/
+
 //se non continua
 Endcombact($battle['id'],$dc->pvar(1),$dc->pvar(2));
 } //fine Battledo
