@@ -106,7 +106,7 @@ class Dati{
 	$nomearma=$lang['pugno'];
 	$energia=10;
 	}
-	$colpisci=rand(1,40)+($this->car($att,'agilita')/10-$this->car($dif,'agilita')/10)+($this->car($att,'velocita')/30-$this->car($dif,'velocita')/30);
+	$colpisci=rand(1,50)+($this->car($att,'agilita')/10-$this->car($dif,'agilita')/10)+($this->car($att,'velocita')/30-$this->car($dif,'velocita')/30);
 	if((100/$this->car($att,'energiamax')*$this->car($att,'energia'))<20)
 	$colpisci-=10;
 	if((100/$this->car($dif,'energiamax')*$this->car($dif,'energia'))<20)
