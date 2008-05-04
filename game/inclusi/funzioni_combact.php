@@ -95,7 +95,8 @@ class Dati{
 	if($this->equip($att,'cac')!=0){
 	$arma=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$this->equip($att,'cac')."' LIMIT 1");
 	$energia=$arma['energia'];
-	if($this->car($att,'energia')>$energia){
+	}
+	if($this->equip($att,'cac')!=0 AND $this->car($att,'energia')>$energia){
 	$danno=$arma['danno'];
 	$nomearma=$lang['oggetto'.$this->equip($att,'cac').'_nome'];
 	$db->QueryMod("UPDATE inoggetti SET inuso='1' WHERE userid='".$this->id($att)."' AND oggid='".$this->equip($att,'cac')."' AND equip='1' LIMIT 1");
