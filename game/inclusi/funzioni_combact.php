@@ -106,6 +106,14 @@ class Dati{
 	$energia=10;
 	}
 	$colpisci=rand(1,40)+($this->car($att,'agilita')/10-$this->car($dif,'agilita')/10)+($this->car($att,'velocita')/30-$this->car($dif,'velocita')/30);
+	if((100/$this->car($att,'energiamax')*$this->car($att,'energia'))<20)
+	$colpisci-=10;
+	if((100/$this->car($dif,'energiamax')*$this->car($dif,'energia'))<20)
+	$colpisci+=10;
+	if((100/$this->car($att,'salute')*$this->car($att,'saluteattuale'))<10)
+	$colpisci-=10;
+	if((100/$this->car($dif,'salute')*$this->car($dif,'saluteattuale'))<10)
+	$colpisci+=10;
 	if($colpisci>30 OR $this->stato($dif)==1){
 	$difesamax=round($this->car($dif,'diffisica')/100);
 	$difesa=rand(0,$difesamax);

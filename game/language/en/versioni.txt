@@ -17,8 +17,10 @@ Niente attualmente<br />
 + L'agilità dei combattenti influisce nel riuscire a colpire in attacchi corpo a corpo, anche la velocità influisce leggermente<br />
 + Se non si ha sufficente energia per utilizzare la propria arma corpo a corpo si combatterà a pugni<br />
 + Se l'energia è troppo bassa non potrà attaccare l'avversario in corpo a corpo in nessun modo<br />
-+ Nel corpo a corpo se il nemico è troppo stanco la probabilità di colpire è certa<br />
++ Nel corpo a corpo se il nemico è esausto la probabilità di colpire è certa<br />
 + Se energia e/o salute sono basse non si può essere sfidati o sfidare<br />
++ Nel corpo a corpo se il nemico è ha energia molto bassa si ha un bonus nella probabilità di colpire mentre se il proprio personaggio ha energia molto bassa un malus<br />
++ Nel corpo a corpo se il nemico è ha salute pessima si ha un bonus nella probabilità di colpire mentre se il proprio personaggio ha salute pessima un malus<br />
 + Vari miglioramenti di sistema a Info versione, sistema di combattimento, sistema query, Fucina<br />
 - Correzione bug minori<br />
 # Rivisto il guadagno di esperienza nei lavori, reso più equilibrato<br />
