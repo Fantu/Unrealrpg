@@ -152,12 +152,12 @@ $dc->Controllastato(1);
 $dc->Controllastato(2);
 //$input.=$dc->equip(1,'cac')."<br/>";
 
-if($this->stato(1)==1){
+if($dc->stato(1)==1){
 $input.=$dc->Attaccovicino(1,2);}else{
-$input.=sprintf($lang['troppo_stanco_per_attacco'],$this->nome(1))."<br/>";}
-if($this->stato(2)==1){
+$input.=sprintf($lang['troppo_stanco_per_attacco'],$dc->nome(1))."<br/>";}
+if($dc->stato(2)==1){
 $input.=$dc->Attaccovicino(2,1);}else{
-$input.=sprintf($lang['troppo_stanco_per_attacco'],$this->nome(2))."<br/>";}
+$input.=sprintf($lang['troppo_stanco_per_attacco'],$dc->nome(2))."<br/>";}
 
 if($dc->che[1]->oggusati==1){
 $input.=$dc->Controlloogg(1);}
