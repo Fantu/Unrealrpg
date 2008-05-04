@@ -152,10 +152,10 @@ $dc->Controllastato(1);
 $dc->Controllastato(2);
 //$input.=$dc->equip(1,'cac')."<br/>";
 
-if($dc->stato(1)==1){
+if($dc->stato(1)==0){
 $input.=$dc->Attaccovicino(1,2);}else{
 $input.=sprintf($lang['troppo_stanco_per_attacco'],$dc->nome(1))."<br/>";}
-if($dc->stato(2)==1){
+if($dc->stato(2)==0){
 $input.=$dc->Attaccovicino(2,1);}else{
 $input.=sprintf($lang['troppo_stanco_per_attacco'],$dc->nome(2))."<br/>";}
 
