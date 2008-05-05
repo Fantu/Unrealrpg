@@ -41,5 +41,5 @@ $lang['ext_error8']='Sei stato bloccato per un ora in seguito a 5 tentativi di l
 $lang['ext_error12']='Server momentaneamente chiuso per installazione aggiornamenti o manutenzione. Riprova più tardi. Grazie.';
 $lang['ext_error13']='Accesso negato!\\nHai tentato di entrare in una pagina riservata agli utenti loggati.';
 $lang['ext_error14']='Accesso negato!\\nIl tuo IP è cambiato dal momento del login.\\nLoggati nuovamente.';
-$lang['ext_error16']='Link errato!\\nPer favore segui i link del gioco.';
+$lang['ext_error16']='Link errato!\\nPer favore, segui i link del gioco.';
 ?>

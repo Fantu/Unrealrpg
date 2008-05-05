@@ -27,11 +27,11 @@ $lang['Elfi']='Elf';
 $lang['Non_morti']='Undead';
 $lang['Orchi']='Orc';
 $lang['Nani']='Dwarf';
-$lang['desc_umani']='Human description';
-$lang['desc_elfi']='Elf description';
-$lang['desc_non_morti']='Undead description';
-$lang['desc_orchi']='Orc description';
-$lang['desc_nani']='Dwarf description';
+$lang['desc_umani']='Descrizione Umani';
+$lang['desc_elfi']='Descrizione Elfi';
+$lang['desc_non_morti']='Descrizione Non morti';
+$lang['desc_orchi']='Descrizione Orchi';
+$lang['desc_nani']='Descrizione Nani';
 //fine razze
 
 //inizio classi
@@ -41,12 +41,12 @@ $lang['Ladro']='Thief';
 $lang['Ranger']='Ranger';
 $lang['Ninja']='Ninja';
 $lang['Berserk']='Berserk';
-$lang['desc_guerriero']='Warrior description';
-$lang['desc_mago']='Mage description';
-$lang['desc_ladro']='Thief description';
-$lang['desc_ranger']='Ranger description';
-$lang['desc_ninja']='Ninja description';
-$lang['desc_berserk']='Berserk description';
+$lang['desc_guerriero']='Descrizione Guerriero';
+$lang['desc_mago']='Descrizione Mago';
+$lang['desc_ladro']='Descrizione Ladro';
+$lang['desc_ranger']='Descrizione Ranger';
+$lang['desc_ninja']='Descrizione Ninja';
+$lang['desc_berserk']='Descrizione Berserk';
 //fine classi
 
 //inizio caratteristiche

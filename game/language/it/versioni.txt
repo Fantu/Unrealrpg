@@ -10,7 +10,7 @@ Legenda:<br />
 <p><strong>0.6.5</strong> (Non disponibile - In sviluppo)<br />
 Niente attualmente<br />
 </p>
-<p><strong>0.6.4</strong> (Stimato per il 5/5/2008 - In sviluppo)<br />
+<p><strong>0.6.4</strong> [R.988] (5/5/2008 - Beta)<br />
 + Il danno massimo di pugno è influenzato dalla forza fisica<br />
 + Il danno effettivo è variabile in base alla situazione, ha un minimo assoluto di 1 e massimo relativo al danno dell'arma usata<br />
 + La resistenza fisica influisce sul danno subito in attacchi fisici<br />
