@@ -107,6 +107,8 @@ class Dati{
 	$energia=10;
 	}
 	$colpisci=rand(1,100)+($this->car($att,'agilita')/5-$this->car($dif,'agilita')/5)+($this->car($att,'velocita')/15-$this->car($dif,'velocita')/15);
+	if($this->equip($att,'cac')!=0 AND $arma['danno']!=0)
+	$colpisci+=$colpisci/100*$arma['danno'];
 	if((100/$this->car($att,'energiamax')*$this->car($att,'energia'))<20)
 	$colpisci-=20;
 	if((100/$this->car($dif,'energiamax')*$this->car($dif,'energia'))<20)
