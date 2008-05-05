@@ -169,7 +169,7 @@ Inreport($battleid,$input);
 
 //se si continua...creare nuovo turno
 //$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,battleid) VALUES ('0','".$adesso."','180','0','6','".$battleid."')");
-Docombactstats($battleid,$attaccante,$difensore);
+Docombactstats($battleid,$dc->id(1),$dc->id(2));
 
 //se non continua
 Endcombact($battle['id'],$dc->pvar(1),$dc->pvar(2));
