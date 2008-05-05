@@ -197,12 +197,80 @@ $attn=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$attaccante.
 $difn=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$difensore."' LIMIT 1");
 $repinput.="<tr><td>";
 $repinput.=$attn['username']."<br/>";
-$repinput.=$lang['Salute'].": ".$attcar['saluteattuale']."/".$attcar['salute']."<br/>";
-$repinput.=$lang['Energia'].": ".$attcar['energia']."/".$attcar['energiamax']."<br/>";
+$percsalute=100/$attcar['salute']*$attcar['saluteattuale'];
+if ($percsalute<1){
+$salute=$lang['morto'];
+}elseif ($percsalute>=1 AND $percsalute<10){
+$salute=$lang['pessima'];
+}elseif ($percsalute>=10 AND $percsalute<20){
+$salute=$lang['molto_bassa'];
+}elseif ($percsalute>=20 AND $percsalute<40){
+$salute=$lang['bassa'];
+}elseif ($percsalute>=40 AND $percsalute<60){
+$salute=$lang['media'];
+}elseif ($percsalute>=60 AND $percsalute<80){
+$salute=$lang['alta'];
+}elseif ($percsalute>=80 AND $percsalute<90){
+$salute=$lang['molto_alta'];
+}elseif ($percsalute>=90){
+$salute=$lang['perfetta'];
+}
+$percenergia=100/$attcar['energiamax']*$attcar['energia'];
+if ($percenergia<10){
+$energia=$lang['pessima'];
+}elseif ($percenergia>=10 AND $percenergia<20){
+$energia=$lang['molto_bassa'];
+}elseif ($percenergia>=20 AND $percenergia<40){
+$energia=$lang['bassa'];
+}elseif ($percenergia>=40 AND $percenergia<60){
+$energia=$lang['media'];
+}elseif ($percenergia>=60 AND $percenergia<80){
+$energia=$lang['alta'];
+}elseif ($percenergia>=80 AND $percenergia<90){
+$energia=$lang['molto_alta'];
+}elseif ($percenergia>=90){
+$energia=$lang['perfetta'];
+}
+$repinput.=$lang['Salute'].": ".$salute."<br/>";
+$repinput.=$lang['Energia'].": ".$energia."<br/>";
 $repinput.="</td><td>";
 $repinput.=$difn['username']."<br/>";
-$repinput.=$lang['Salute'].": ".$difcar['saluteattuale']."/".$difcar['salute']."<br/>";
-$repinput.=$lang['Energia'].": ".$difcar['energia']."/".$difcar['energiamax']."<br/>";
+$percsalute=100/$difcar['salute']*$difcar['saluteattuale'];
+if ($percsalute<1){
+$salute=$lang['morto'];
+}elseif ($percsalute>=1 AND $percsalute<10){
+$salute=$lang['pessima'];
+}elseif ($percsalute>=10 AND $percsalute<20){
+$salute=$lang['molto_bassa'];
+}elseif ($percsalute>=20 AND $percsalute<40){
+$salute=$lang['bassa'];
+}elseif ($percsalute>=40 AND $percsalute<60){
+$salute=$lang['media'];
+}elseif ($percsalute>=60 AND $percsalute<80){
+$salute=$lang['alta'];
+}elseif ($percsalute>=80 AND $percsalute<90){
+$salute=$lang['molto_alta'];
+}elseif ($percsalute>=90){
+$salute=$lang['perfetta'];
+}
+$percenergia=100/$difcar['energiamax']*$difcar['energia'];
+if ($percenergia<10){
+$energia=$lang['pessima'];
+}elseif ($percenergia>=10 AND $percenergia<20){
+$energia=$lang['molto_bassa'];
+}elseif ($percenergia>=20 AND $percenergia<40){
+$energia=$lang['bassa'];
+}elseif ($percenergia>=40 AND $percenergia<60){
+$energia=$lang['media'];
+}elseif ($percenergia>=60 AND $percenergia<80){
+$energia=$lang['alta'];
+}elseif ($percenergia>=80 AND $percenergia<90){
+$energia=$lang['molto_alta'];
+}elseif ($percenergia>=90){
+$energia=$lang['perfetta'];
+}
+$repinput.=$lang['Salute'].": ".$salute."<br/>";
+$repinput.=$lang['Energia'].": ".$energia."<br/>";
 $repinput.="</td></tr>";
 fputs($fp,$repinput);
 } //fine Docombactstats
