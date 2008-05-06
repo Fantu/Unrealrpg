@@ -104,6 +104,7 @@ $lang['alta']='Alta';
 $lang['molto_alta']='Molto alta';
 $lang['perfetta']='Perfetta';
 $lang['morto']='Morto';
+$lang['esausto']='Esausto';
 //fine visualizzautente
 
 //inizio funz_ogg

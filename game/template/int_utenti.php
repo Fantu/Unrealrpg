@@ -57,7 +57,6 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 </form>
 </div>
 <br />
-<br />
 <?php echo $prec; ?>  <?php echo $prox; ?>
 <br />
 <table width="500" border="1" cellspacing="2" cellpadding="2">

@@ -25,7 +25,9 @@ $salute=$lang['molto_alta'];
 $salute=$lang['perfetta'];
 }
 $percenergia=100/$datiutente['energiamax']*$datiutente['energia'];
-if ($percenergia<10){
+if ($percenergia<5){
+$energia=$lang['esausto'];
+}elseif ($percenergia>=5 AND $percenergia<10){
 $energia=$lang['pessima'];
 }elseif ($percenergia>=10 AND $percenergia<20){
 $energia=$lang['molto_bassa'];

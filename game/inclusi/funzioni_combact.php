@@ -86,7 +86,8 @@ class Dati{
 	} //fine pvar
 	
 	public function Controllastato($chi) {
-	if($this->car($chi,'energia')<50)
+	$percenergia=100/$this->car($chi,'energiamax')*$this->car($chi,'energia');
+	if ($percenergia<5)
 	$this->che[$chi]->stato=1;
 	} //fine Controllastato
 	
@@ -104,7 +105,7 @@ class Dati{
 	}else{
 	$danno=1+round($this->car($att,'attfisico')/100);
 	$nomearma=$lang['pugno'];
-	$energia=10;
+	$energia=20;
 	}
 	$colpisci=rand(1,100)+($this->car($att,'agilita')/5-$this->car($dif,'agilita')/5)+($this->car($att,'velocita')/15-$this->car($dif,'velocita')/15);
 	if($this->equip($att,'cac')!=0 AND $arma['danno']!=0)
@@ -216,7 +217,9 @@ $salute=$lang['molto_alta'];
 $salute=$lang['perfetta'];
 }
 $percenergia=100/$attcar['energiamax']*$attcar['energia'];
-if ($percenergia<10){
+if ($percenergia<5){
+$energia=$lang['esausto'];
+}elseif ($percenergia>=5 AND $percenergia<10){
 $energia=$lang['pessima'];
 }elseif ($percenergia>=10 AND $percenergia<20){
 $energia=$lang['molto_bassa'];
@@ -254,7 +257,9 @@ $salute=$lang['molto_alta'];
 $salute=$lang['perfetta'];
 }
 $percenergia=100/$difcar['energiamax']*$difcar['energia'];
-if ($percenergia<10){
+if ($percenergia<5){
+$energia=$lang['esausto'];
+}elseif ($percenergia>=5 AND $percenergia<10){
 $energia=$lang['pessima'];
 }elseif ($percenergia>=10 AND $percenergia<20){
 $energia=$lang['molto_bassa'];
