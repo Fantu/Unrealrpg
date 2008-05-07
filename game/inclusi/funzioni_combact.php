@@ -11,6 +11,7 @@ class Combattente{
 	var $car;
 	var $equip;
 	var $esausto;
+	var $morto;
 	function Combattente($id2,$nome2,$car2,$equip2) {
 	$this->id=$id2;
 	$this->nome=$nome2;
@@ -18,6 +19,7 @@ class Combattente{
 	$this->equip=$equip2;
 	$this->oggusati=0;
 	$this->esausto=0;
+	$this->morto=0;
 	}
 } //fine classe Combattente
 
@@ -62,6 +64,11 @@ class Dati{
 	$dato=$this->che[$chi]->esausto;
 	return $dato;
 	} //fine esausto
+	
+	public function morto($chi) {
+	$dato=$this->che[$chi]->morto;
+	return $dato;
+	} //fine morto
 	
 	public function nome($chi) {
 	$dato=$this->che[$chi]->nome;
@@ -183,7 +190,11 @@ $dc->Controllastato(2);
 
 Docombactstats($battleid,$dc->id(1),$dc->id(2));
 
-if($dc->esausto(1)==1 AND $dc->esausto(2)==1){
+if($dc->esausto(1)==1 AND $dc->esausto(2)==1){//se entrambi esausti
+Guadagnaexp(1);
+Guadagnaexp(2);
+Endcombact($battle['id'],$dc->pvar(1),$dc->pvar(2));
+}elseif($dc->morto(1)==1 OR $dc->morto(2)==1){//se uno dei 2 morto
 Guadagnaexp(1);
 Guadagnaexp(2);
 Endcombact($battle['id'],$dc->pvar(1),$dc->pvar(2));

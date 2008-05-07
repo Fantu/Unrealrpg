@@ -15,6 +15,7 @@ Niente attualmente<br />
 + Il combattimento continua fino al verificarsi di determinate condizioni<br />
 + Se entrambi i combattenti sono esausti il combattimento finisce in parità<br />
 + Quando il combattimento finisce i combattenti guadagnano esperienza<br />
++ Se uno dei 2 combattenti è morto il combattimento finisce<br />
 # Rivisto il guadagno di esperienza nei lavori, reso più equilibrato<br />
 # Raddoppiato il consumo energetico di pugno<br />
 </p>
