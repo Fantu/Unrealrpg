@@ -10,14 +10,14 @@ class Combattente{
 	var $nome;
 	var $car;
 	var $equip;
-	var $stato;
+	var $esausto;
 	function Combattente($id2,$nome2,$car2,$equip2) {
 	$this->id=$id2;
 	$this->nome=$nome2;
 	$this->car=$car2;
 	$this->equip=$equip2;
 	$this->oggusati=0;
-	$this->stato=0;
+	$this->esausto=0;
 	}
 } //fine classe Combattente
 
@@ -58,10 +58,10 @@ class Dati{
 	return $dato;
 	} //fine id
 	
-	public function stato($chi) {
-	$dato=$this->che[$chi]->stato;
+	public function esausto($chi) {
+	$dato=$this->che[$chi]->esausto;
 	return $dato;
-	} //fine stato
+	} //fine esausto
 	
 	public function nome($chi) {
 	$dato=$this->che[$chi]->nome;
@@ -88,7 +88,7 @@ class Dati{
 	public function Controllastato($chi) {
 	$percenergia=100/$this->car($chi,'energiamax')*$this->car($chi,'energia');
 	if ($percenergia<5)
-	$this->che[$chi]->stato=1;
+	$this->che[$chi]->esausto=1;
 	} //fine Controllastato
 	
 	public function Attaccovicino($att,$dif) {
@@ -118,7 +118,7 @@ class Dati{
 	$colpisci-=20;
 	if((100/$this->car($dif,'salute')*$this->car($dif,'saluteattuale'))<10)
 	$colpisci+=20;
-	if($colpisci>50 OR $this->stato($dif)==1){
+	if($colpisci>50 OR $this->esausto($dif)==1){
 	$difesamax=round($this->car($dif,'diffisica')/100);
 	$difesa=rand(0,$difesamax);
 	$danno-=$difesa;
@@ -154,10 +154,10 @@ $dc->Stabilisciordine($battle['attid'],$battle['difid']);
 $dc->Controllastato(1);
 $dc->Controllastato(2);
 
-if($dc->stato(1)==0){
+if($dc->esausto(1)==0){
 $input.=$dc->Attaccovicino(1,2);}else{
 $input.=sprintf($lang['troppo_stanco_per_attacco'],$dc->nome(1))."<br/>";}
-if($dc->stato(2)==0){
+if($dc->esausto(2)==0){
 $input.=$dc->Attaccovicino(2,1);}else{
 $input.=sprintf($lang['troppo_stanco_per_attacco'],$dc->nome(2))."<br/>";}
 
@@ -168,12 +168,15 @@ $input.=$dc->Controlloogg(2);}
 
 Inreport($battleid,$input);
 
-//se si continua...creare nuovo turno
-//$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,battleid) VALUES ('0','".$adesso."','180','0','6','".$battleid."')");
+$dc->Controllastato(1);
+$dc->Controllastato(2);
+
 Docombactstats($battleid,$dc->id(1),$dc->id(2));
 
-//se non continua
+if($dc->esausto(1)==1 AND $dc->esausto(2)==1){
 Endcombact($battle['id'],$dc->pvar(1),$dc->pvar(2));
+}else{//continua
+$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,battleid) VALUES ('0','".$adesso."','180','0','6','".$battleid."')");}
 } //fine Battledo
 
 function Endcombact($battleid,$att,$dif) {

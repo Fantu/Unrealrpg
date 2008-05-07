@@ -9,6 +9,8 @@ Legenda:<br />
 </p>
 <p><strong>0.6.5</strong> (Non disponibile - In sviluppo)<br />
 + Aggiunto esausto fra i livelli di energia e adattato ai suoi utilizzi nel sistema di combattimento<br />
++ Il combattimento continua fino al verificarsi di determinate condizioni<br />
++ Se entrambi i combattenti sono esausti il combattimento finisce in parità<br />
 # Rivisto il guadagno di esperienza nei lavori, reso più equilibrato<br />
 # Raddoppiato il consumo energetico di pugno<br />
 </p>
