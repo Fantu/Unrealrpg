@@ -7,10 +7,14 @@ Legenda:<br />
 - Correzione bug e patch di situazioni non previste<br />
 <br />
 </p>
-<p><strong>0.6.5</strong> (Non disponibile - In sviluppo)<br />
+<p><strong>0.6.6</strong> (Non disponibile - In sviluppo)<br />
+Niente attualmente<br />
+</p>
+<p><strong>0.6.5</strong> (Stimato il 10/05/08 - In sviluppo)<br />
 + Aggiunto esausto fra i livelli di energia e adattato ai suoi utilizzi nel sistema di combattimento<br />
 + Il combattimento continua fino al verificarsi di determinate condizioni<br />
 + Se entrambi i combattenti sono esausti il combattimento finisce in parità<br />
++ Quando il combattimento finisce i combattenti guadagnano esperienza<br />
 # Rivisto il guadagno di esperienza nei lavori, reso più equilibrato<br />
 # Raddoppiato il consumo energetico di pugno<br />
 </p>

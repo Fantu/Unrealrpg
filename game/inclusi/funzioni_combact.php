@@ -91,6 +91,16 @@ class Dati{
 	$this->che[$chi]->esausto=1;
 	} //fine Controllastato
 	
+	public function Guadagnaexp($chi) {
+	global $db;
+	if($chi==1)
+	$chi2=2;
+	else
+	$chi2=1;
+	$exp=rand(5,10);
+	$db->QueryMod("UPDATE caratteristiche SET exp=exp+'".$exp."' WHERE userid='".$this->id($chi)."' LIMIT 1");
+	} //fine Guadagnaexp
+	
 	public function Attaccovicino($att,$dif) {
 	global $db,$lang;
 	if($this->equip($att,'cac')!=0){
@@ -174,6 +184,8 @@ $dc->Controllastato(2);
 Docombactstats($battleid,$dc->id(1),$dc->id(2));
 
 if($dc->esausto(1)==1 AND $dc->esausto(2)==1){
+Guadagnaexp(1);
+Guadagnaexp(2);
 Endcombact($battle['id'],$dc->pvar(1),$dc->pvar(2));
 }else{//continua
 $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,battleid) VALUES ('0','".$adesso."','180','0','6','".$battleid."')");}
