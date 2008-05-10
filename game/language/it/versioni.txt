@@ -16,6 +16,8 @@ Niente attualmente<br />
 + Se entrambi i combattenti sono esausti il combattimento finisce in parità<br />
 + Quando il combattimento finisce i combattenti guadagnano esperienza<br />
 + Se uno dei 2 combattenti è morto il combattimento finisce<br />
++ L'esperienza guadagnata in combattimento aumenta con l'aumentare della durata del combattimento<br />
++ Se il combattimento dura troppo a lungo finisce in parità<br />
 # Esecuzione automatica eventi (anche con nessun utente online) ogni minuto<br />
 # Rivisto il guadagno di esperienza nei lavori, reso più equilibrato<br />
 # Raddoppiato il consumo energetico di pugno<br />

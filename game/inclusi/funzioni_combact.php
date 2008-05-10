@@ -101,13 +101,13 @@ class Dati{
 	$this->che[$chi]->morto=1;
 	} //fine Controllastato
 	
-	public function Guadagnaexp($chi) {
+	public function Guadagnaexp($chi,$turni) {
 	global $db;
 	if($chi==1)
 	$chi2=2;
 	else
 	$chi2=1;
-	$exp=rand(5,10);
+	$exp=rand(5,(9+$turni));
 	$db->QueryMod("UPDATE caratteristiche SET exp=exp+'".$exp."' WHERE userid='".$this->id($chi)."' LIMIT 1");
 	} //fine Guadagnaexp
 	
@@ -166,7 +166,7 @@ $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,oggid
 Docombactstats($battle['id'],$attaccante,$difensore);
 } //fine Startcombact
 
-function Battledo($battleid) {
+function Battledo($battleid,$turni) {
 global $db,$adesso,$lang,$language;
 $battle=$db->QuerySelect("SELECT * FROM battle WHERE id='".$battleid."' LIMIT 1");
 $dc=new Dati();
@@ -193,6 +193,7 @@ $dc->Controllastato(2);
 
 Docombactstats($battleid,$dc->id(1),$dc->id(2));
 $finito=0;
+$turni++;
 if($dc->esausto(1)==1 AND $dc->esausto(2)==1){//se entrambi esausti
 $finito=1;
 $input=$lang['finito_entrambi_esausti'];
@@ -203,13 +204,17 @@ $input=sprintf($lang['vincitore_combattimento'],$dc->nome(1));
 $finito=1;
 $input=sprintf($lang['vincitore_combattimento'],$dc->nome(2));
 }
+elseif($turni==20){//se dura troppo
+$finito=1;
+$input=$lang['combattimento_troppo_lungo'];
+}
 if($finito==1){
-$dc->Guadagnaexp(1);
-$dc->Guadagnaexp(2);
+$dc->Guadagnaexp(1,$turni);
+$dc->Guadagnaexp(2,$turni);
 Endcombact($battle['id'],$dc->pvar(1),$dc->pvar(2));
 Inreport($battleid,$input);
 }else{//continua
-$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,battleid) VALUES ('0','".$adesso."','180','0','6','".$battleid."')");}
+$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,battleid,turni) VALUES ('0','".$adesso."','180','0','6','".$battleid."','".$turni."')");}
 } //fine Battledo
 
 function Endcombact($battleid,$att,$dif) {

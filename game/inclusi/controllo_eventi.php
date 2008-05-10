@@ -50,7 +50,7 @@ while($evento=$db->QueryCicloResult($evfiniti)) {
 		Completasfida($evento['userid'],$evento['type']);
 		break;
 		case 6://combattimento
-		Battledo($evento['battleid']);
+		Battledo($evento['battleid'],$evento['turni']);
 		break;
 		}
 $db->QueryMod("DELETE FROM eventi WHERE id='".$evento['id']."'");
