@@ -10,7 +10,7 @@ Legenda:<br />
 <p><strong>0.6.6</strong> (Non disponibile - In sviluppo)<br />
 Niente attualmente<br />
 </p>
-<p><strong>0.6.5</strong> (Stimato il 10/05/08 - In sviluppo)<br />
+<p><strong>0.6.5</strong> [R.1002] (10/05/08 - Beta)<br />
 + Aggiunto esausto fra i livelli di energia e adattato ai suoi utilizzi nel sistema di combattimento<br />
 + Il combattimento continua fino al verificarsi di determinate condizioni<br />
 + Se entrambi i combattenti sono esausti il combattimento finisce in parità<br />

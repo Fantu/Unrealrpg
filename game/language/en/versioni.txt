@@ -10,14 +10,18 @@ Legenda:<br />
 <p><strong>0.6.6</strong> (Non disponibile - In sviluppo)<br />
 Niente attualmente<br />
 </p>
-<p><strong>0.6.5</strong> (Stimato il 10/05/08 - In sviluppo)<br />
+<p><strong>0.6.5</strong> [R.1002] (10/05/08 - Beta)<br />
 + Aggiunto esausto fra i livelli di energia e adattato ai suoi utilizzi nel sistema di combattimento<br />
 + Il combattimento continua fino al verificarsi di determinate condizioni<br />
 + Se entrambi i combattenti sono esausti il combattimento finisce in parità<br />
 + Quando il combattimento finisce i combattenti guadagnano esperienza<br />
 + Se uno dei 2 combattenti è morto il combattimento finisce<br />
++ L'esperienza guadagnata in combattimento aumenta con l'aumentare della durata del combattimento<br />
++ Se il combattimento dura troppo a lungo finisce in parità<br />
+# Esecuzione automatica eventi (anche con nessun utente online) ogni minuto<br />
 # Rivisto il guadagno di esperienza nei lavori, reso più equilibrato<br />
 # Raddoppiato il consumo energetico di pugno<br />
+- Correzione bug minori<br />
 </p>
 <p><strong>0.6.4</strong> [R.988] (5/5/2008 - Beta)<br />
 + Il danno massimo di pugno è influenzato dalla forza fisica<br />

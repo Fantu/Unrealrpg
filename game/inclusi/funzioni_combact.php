@@ -199,10 +199,10 @@ $finito=1;
 $input=$lang['finito_entrambi_esausti'];
 }elseif($dc->morto(1)==1){//se il primo vince
 $finito=1;
-$input=sprintf($lang['vincitore_combattimento'],$dc->nome(1));
+$input=sprintf($lang['vincitore_combattimento'],$dc->nome(2));
 }elseif($dc->morto(2)==1){//se il secondo vince
 $finito=1;
-$input=sprintf($lang['vincitore_combattimento'],$dc->nome(2));
+$input=sprintf($lang['vincitore_combattimento'],$dc->nome(1));
 }
 elseif($turni==20){//se dura troppo
 $finito=1;
