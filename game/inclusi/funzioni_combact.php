@@ -192,15 +192,22 @@ $dc->Controllastato(1);
 $dc->Controllastato(2);
 
 Docombactstats($battleid,$dc->id(1),$dc->id(2));
-
+$finito=0;
 if($dc->esausto(1)==1 AND $dc->esausto(2)==1){//se entrambi esausti
+$finito=1;
+$input=$lang['finito_entrambi_esausti'];
+}elseif($dc->morto(1)==1){//se il primo vince
+$finito=1;
+$input=sprintf($lang['vincitore_combattimento'],$dc->nome(1));
+}elseif($dc->morto(2)==1){//se il secondo vince
+$finito=1;
+$input=sprintf($lang['vincitore_combattimento'],$dc->nome(2));
+}
+if($finito==1){
 $dc->Guadagnaexp(1);
 $dc->Guadagnaexp(2);
 Endcombact($battle['id'],$dc->pvar(1),$dc->pvar(2));
-}elseif($dc->morto(1)==1 OR $dc->morto(2)==1){//se uno dei 2 morto
-$dc->Guadagnaexp(1);
-$dc->Guadagnaexp(2);
-Endcombact($battle['id'],$dc->pvar(1),$dc->pvar(2));
+Inreport($battleid,$input);
 }else{//continua
 $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,battleid) VALUES ('0','".$adesso."','180','0','6','".$battleid."')");}
 } //fine Battledo

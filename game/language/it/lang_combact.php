@@ -16,4 +16,6 @@ $lang['danno_att_vicino']='%s attacca %s con %s e lo colpisce infliggendo %s di 
 $lang['niente_att_vicino']='%s attacca %s con %s senza riuscire a colpirlo.';
 $lang['pugno']='pugno';
 $lang['troppo_stanco_per_attacco']='%s non attacca in quanto esausto.';
+$lang['finito_entrambi_esausti']='Il combattimento finisce in parità in quanto entrambi i combattenti sono esausti.';
+$lang['vincitore_combattimento']='%s vince il combattimento.';
 ?>

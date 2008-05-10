@@ -19,6 +19,7 @@ Niente attualmente<br />
 # Esecuzione automatica eventi (anche con nessun utente online) ogni minuto<br />
 # Rivisto il guadagno di esperienza nei lavori, reso più equilibrato<br />
 # Raddoppiato il consumo energetico di pugno<br />
+- Correzione bug minori<br />
 </p>
 <p><strong>0.6.4</strong> [R.988] (5/5/2008 - Beta)<br />
 + Il danno massimo di pugno è influenzato dalla forza fisica<br />
