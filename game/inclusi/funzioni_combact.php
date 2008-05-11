@@ -107,7 +107,8 @@ class Dati{
 	$chi2=2;
 	else
 	$chi2=1;
-	$exp=rand(5,(9+$turni));
+	$exp=10+2*$turni;
+	$exp=round(rand(($exp/100*80),$exp));
 	$db->QueryMod("UPDATE caratteristiche SET exp=exp+'".$exp."' WHERE userid='".$this->id($chi)."' LIMIT 1");
 	} //fine Guadagnaexp
 	

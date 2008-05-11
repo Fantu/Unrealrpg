@@ -8,7 +8,7 @@ Legenda:<br />
 <br />
 </p>
 <p><strong>0.6.6</strong> (Non disponibile - In sviluppo)<br />
-Niente attualmente<br />
+# Aumentato l'incremento di esperienza in base alla durata del combattimento<br />
 </p>
 <p><strong>0.6.5</strong> [R.1002] (10/05/08 - Beta)<br />
 + Aggiunto esausto fra i livelli di energia e adattato ai suoi utilizzi nel sistema di combattimento<br />

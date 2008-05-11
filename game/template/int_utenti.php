@@ -82,6 +82,5 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 </tr>
 <?php }/* fine per ogni utente della lista*/ ?>
 </table>
-<br />
 <?php echo $prec; ?>  <?php echo $prox; ?>
 <br />
