@@ -21,7 +21,12 @@ echo "<span><strong>".$lang['comunicazione']."</strong>".$newscom['comunicazione
 <?php echo $lang['Razza']; ?>: <?php echo $razze['nome'][$usercar['razza']]; ?><br />
 <?php echo $lang['Classe']; ?>: <?php echo $classi['nome'][$usercar['classe']]; ?><br />
 <?php echo $lang['Sesso']; ?>: <?php echo $sessi['nome'][$usercar['sesso']]; ?><br />
-<?php echo $lang['Livello']; ?>: <?php echo $usercar['livello']; ?><br />
+<?php echo $lang['Livello']; ?>: <?php
+if($usercar['exp']>=$expnewlevel)
+echo "<a href=\"index.php?loc=levelup\">".$usercar['livello']."</a>";
+else
+echo $usercar['livello'];
+?><br />
 <?php echo $lang['Esperienza']; ?>: <?php echo $usercar['exp']; echo "/"; echo $expnewlevel; ?><br />
 <?php echo $lang['Salute']; ?>: <?php echo $usercar['saluteattuale']; echo "/"; echo $usercar['salute']; ?><br />
 <?php echo $lang['Energia']; ?>: <?php echo $usercar['energia']; echo "/"; echo $usercar['energiamax']; ?><br />

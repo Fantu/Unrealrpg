@@ -34,7 +34,7 @@ $percmin5=floor((100/$expnewmin3)*$usercar['expfabbro']);
 $percmin6=100-$percmin5;
 $percmin7=floor((100/$expnewmin4)*$usercar['expmagica']);
 $percmin8=100-$percmin7;
-$expnewlevel=$usercar['livello']*100;
+$expnewlevel=$usercar['livello']*200;
 $quantimess=$db->QuerySelect("SELECT COUNT(*) AS id FROM messaggi WHERE userid='".$user['userid']."' AND letto=0");
 if($quantimess['id']==0){
 $newmsg=$lang['nessun_nuovo_msg'];
