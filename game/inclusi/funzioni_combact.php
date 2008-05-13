@@ -109,6 +109,18 @@ class Dati{
 	$chi2=1;
 	$exp=10+2*$turni;
 	$exp=round(rand(($exp/100*80),$exp));
+	$level=$this->car($chi,'livello')-this->car($chi2,'livello');
+	if($level<0){
+	$liv=abs($level);
+	if($liv>10)
+	$liv=10;
+	$exp+=round($exp/10*$liv);
+	}
+	if($level>0){
+	if($liv>9)
+	$liv=9;
+	$exp-=round($exp/10*$liv);
+	}
 	$db->QueryMod("UPDATE caratteristiche SET exp=exp+'".$exp."' WHERE userid='".$this->id($chi)."' LIMIT 1");
 	} //fine Guadagnaexp
 	
