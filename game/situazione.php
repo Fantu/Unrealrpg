@@ -4,7 +4,6 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	exit();
 }
 require('language/'.$language.'/lang_situazione.php');
-$usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$user['userid']."' LIMIT 1");
 $expnewmin=100+($usercar['minatore']*1500);
 if($usercar['expminatore']>99) {
 	if($usercar['expminatore']>=$expnewmin)
