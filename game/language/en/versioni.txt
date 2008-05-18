@@ -10,8 +10,10 @@ Legenda:<br />
 <p><strong>0.6.6</strong> (Non disponibile - In sviluppo)<br />
 + Aggiunto link all'incremento di livello nel caso si abbia abbastanza esperienza<br />
 + L'esperienza guadagnata in combattimento varia in base al livello degli sfidanti, se l'avversario ha un livello maggiore si guadagna un 10% in più ogni livello di differenza fino ad un massimo del doppio mentre se il livello è minore 10% in meno a livello di differenza fino ad un minimo del 10%<br />
++ Vari miglioramenti di sistema a Situazione<br />
 # Aumentato l'incremento di esperienza in base alla durata del combattimento<br />
 # Aumentata l'esperienza necessaria per salire di livello<br />
+# Rivista la preghiera nel Tempio, resa più equilibrata<br />
 </p>
 <p><strong>0.6.5</strong> [R.1002] (10/05/08 - Beta)<br />
 + Aggiunto esausto fra i livelli di energia e adattato ai suoi utilizzi nel sistema di combattimento<br />
