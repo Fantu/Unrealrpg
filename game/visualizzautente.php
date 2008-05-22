@@ -9,7 +9,7 @@ $datiutente=$db->QuerySelect("SELECT t1.userid AS userid,t1.username AS username
 $percsalute=100/$datiutente['salute']*$datiutente['saluteattuale'];
 $salute=testosalute($percsalute);
 $percenergia=100/$datiutente['energiamax']*$datiutente['energia'];
-$energia=testosalute($percenergia);
+$energia=testoenergia($percenergia);
 $cheordine=htmlspecialchars($_GET['ordine'],ENT_QUOTES);
 $iniziale=(int)$_GET['inizio'];
 $linkindietro="index.php?loc=utenti&amp;ordine=".$cheordine."&amp;inizio=".$iniziale;

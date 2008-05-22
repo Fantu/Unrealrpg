@@ -1,5 +1,6 @@
 <?php
 function testosalute($percsalute){
+global $lang;
 if ($percsalute<1){
 $salute=$lang['morto'];
 }elseif ($percsalute>=1 AND $percsalute<10){
@@ -21,6 +22,7 @@ return $salute;
 }//fine testosalute
 
 function testoenergia($percenergia){
+global $lang;
 if ($percenergia<5){
 $energia=$lang['esausto'];
 }elseif ($percenergia>=5 AND $percenergia<10){
