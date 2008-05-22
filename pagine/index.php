@@ -21,6 +21,7 @@ setcookie ("urbgrefer", $refer."|".$server,time()+604800);
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title><?php echo $game_name; echo" "; echo $game_version; echo" "; echo $game_revision; ?></title>
 <?php include('game/inclusi/meta.php'); ?>
+<link href="game/template/stile.css" rel="stylesheet" type="text/css" title="all"></link>
 <script type="text/javascript">
 <!--
 function CambiaImg(id,bool) {
