@@ -133,7 +133,10 @@ $energia=$usercar['energia']-$energiapersa;
 $salute=$usercar['saluteattuale'];
 $fede=100;
 $dono=1;
-$miracolo=rand(10,2000)-($usercar['fede']/100);
+$fede=$usercar['fede']/100;
+if($fede>100)
+$fede=100;
+$miracolo=rand(10,1000)-$fede;
 $titolo=$lang['report_tempio_preghiera'];
 if($miracolo<1){
 $mana=$usercar['mana'];
