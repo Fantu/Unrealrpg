@@ -1,6 +1,7 @@
 <?php
 require('inclusi/funzioni_db.php');
 require('inclusi/valori.php');
+require_once('inclusi/funzioni.php');
 $adesso=strtotime("now");
 $db = new ConnessioniMySQL();
 $esistenza=0;

@@ -3,6 +3,7 @@ if($_GET['code']!='autourbg'){
 	header("Location: index.php?error=16");
 	exit();}
 require('inclusi/valori.php');
+require_once('inclusi/funzioni.php');
 require('inclusi/funzioni_db.php');
 $db = new ConnessioniMySQL();
 $adesso=strtotime("now");
