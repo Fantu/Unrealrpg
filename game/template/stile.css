@@ -4,4 +4,6 @@ body {
 }
 .sfondoverde {background-color: #008000;}
 .sfondorosso {background-color: #FF0000;}
-.tabmenu {background-color: #ffbb88;}
+.tabmenu {background-color: #ffbb88;
+position: fixed;
+}
