@@ -4,8 +4,16 @@ body {
 }
 .sfondoverde {background-color: #008000;}
 .sfondorosso {background-color: #FF0000;}
-.tabmenu {background-color: #ffbb88;
+#menu {background-color: #ffbb88;
 position: fixed;
+text-align: center;
+}
+#menu a{
+display: block;
+padding: 2px;
+text-decoration: none;
+width: 143px;
+margin: 2px;
 }
 #menu a:focus,a:hover{
 font-weight:bold;
