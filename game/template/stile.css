@@ -16,5 +16,5 @@ width: 148px;
 margin: 3px;
 }
 #menu a:focus,a:hover{
-font-weight:bold;
+background-color: #ff9977;
 }
