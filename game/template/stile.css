@@ -7,3 +7,6 @@ body {
 .tabmenu {background-color: #ffbb88;
 position: fixed;
 }
+#menu a:focus,a:hover{
+font-weight:bold;
+}
