@@ -29,9 +29,9 @@ if( $check['chiuso']==1 ) {
 $int_security=$game_se_code;
 require_once('inclusi/int_header.php');
 ?>
-<table width="900" border="0" align="center" cellpadding="0" cellspacing="0">
+<table width="910" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
-    <td width="145" rowspan="2" valign="top"><?php include('inclusi/menu.php'); ?>
+    <td width="155" rowspan="2" valign="top"><?php include('inclusi/menu.php'); ?>
     </td>
     <td width="20">&nbsp;</td>
     <td width="715">&nbsp;</td>

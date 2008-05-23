@@ -10,10 +10,10 @@ text-align: center;
 }
 #menu a{
 display: block;
-padding: 2px;
+padding: 3px;
 text-decoration: none;
-width: 143px;
-margin: 2px;
+width: 148px;
+margin: 3px;
 }
 #menu a:focus,a:hover{
 font-weight:bold;
