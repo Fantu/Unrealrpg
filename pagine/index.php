@@ -66,14 +66,14 @@ include('pagine/home.php');
 </a>&nbsp;&nbsp;
 <a href="http://www.mysql.com" target="_blank">
 	<img id="mysql" src="game/template/immagini/mysql_grigio.gif" alt="" border="0" onmouseover="CambiaImg('mysql', true);" onmouseout="CambiaImg('mysql', false);" />
-</a>&nbsp;&nbsp;<br />
+</a>&nbsp;&nbsp;<br /><div id="tempogenpag">
 <?php
 if($_GET['error']){
 require("game/inclusi/errori.php");}
 $end_time=time()+microtime();
 $gen_time=number_format($end_time-$start_time, 4, '.', '');
 echo sprintf($lang['tempo_gen_pagina'],$gen_time,$numquery);
-?><br />
+?></div><br />
 <script type="text/javascript"><!--
 google_ad_client = "pub-0644240535082356";
 //468x60, creato il 26/01/08
