@@ -198,7 +198,7 @@ if($dc->che[1]->oggusati==1){
 $input.=$dc->Controlloogg(1);}
 if($dc->che[2]->oggusati==1){
 $input.=$dc->Controlloogg(2);}
-
+$input.="<br/>";
 Inreport($battleid,$input);
 
 $dc->Controllastato(1);
