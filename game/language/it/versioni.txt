@@ -19,6 +19,8 @@ Legenda:<br />
 # Aumentata l'esperienza necessaria per salire di livello<br />
 # Rivista la preghiera nel Tempio, resa più equilibrata<br />
 # Modificato il decremento di fede con il passare del tempo, reso più equilibrato<br />
+# Rivista la resurrezione, resa più equilibrata<br />
+- Correzione bug minori<br />
 </p>
 <p><strong>0.6.5</strong> [R.1002] (10/05/08 - Beta)<br />
 + Aggiunto esausto fra i livelli di energia e adattato ai suoi utilizzi nel sistema di combattimento<br />

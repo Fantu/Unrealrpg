@@ -96,8 +96,7 @@ class Dati{
 	$percenergia=100/$this->car($chi,'energiamax')*$this->car($chi,'energia');
 	if ($percenergia<5)
 	$this->che[$chi]->esausto=1;
-	$percsalute=100/$this->car($chi,'salute')*$this->car($chi,'saluteattuale');
-	if ($percsalute<1)
+	if ($this->car($chi,'saluteattuale')<1)
 	$this->che[$chi]->morto=1;
 	} //fine Controllastato
 	

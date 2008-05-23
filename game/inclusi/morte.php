@@ -6,7 +6,8 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 if ($user['resuscita']=='0'){
 $tempor=86400-$usercar['fede'];
 }else{
-$tempor=36000;	
+$tempor=10800;
+$db->QueryMod("UPDATE utenti SET resuscita='0' WHERE userid='".$user['userid']."' LIMIT 1");
 }
 if($user['plus']!=0){$tempor-=3600;}
 if ($tempor<3600)

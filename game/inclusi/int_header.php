@@ -3,10 +3,10 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	header("Location: ../../index.php?error=16");
 	exit();
 }
-$username=htmlspecialchars($lg[0],ENT_QUOTES);
+$userid=htmlspecialchars($lg[0],ENT_QUOTES);
 $password=htmlspecialchars($lg[2],ENT_QUOTES);
-$user=$db->QuerySelect("SELECT * FROM utenti WHERE userid='".$username."' AND password='".$password."' AND conferma=1 LIMIT 1");
-if($user['userid']) {
+$user=$db->QuerySelect("SELECT * FROM utenti WHERE userid='".$userid."' AND password='".$password."' AND conferma=1 LIMIT 1");
+if($user['userid']){
 if($user['ipattuale']!=$_SERVER['REMOTE_ADDR']){
 echo "<script language=\"javascript\">window.location.href='../index.php?error=14'</script>";
 exit();
