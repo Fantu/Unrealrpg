@@ -19,8 +19,7 @@ margin: 3px;
 background-color: #ff9977;
 }
 #tempogenpag{
-
-position: fixed;
- margin-bottom: 5px;
- text-align: center;
+bottom: 0;
+position: absolute;
+text-align: center;
 }
