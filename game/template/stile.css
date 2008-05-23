@@ -20,6 +20,6 @@ background-color: #ff9977;
 }
 #tempogenpag{
 bottom: 5px;
-position: fixed;
+position: static;
 text-align: center;
 }
