@@ -18,3 +18,6 @@ margin: 3px;
 #menu a:focus,#menu a:hover{
 background-color: #ff9977;
 }
+#tempogenpag{
+position: absolute;
+}
