@@ -15,6 +15,6 @@ text-decoration: none;
 width: 148px;
 margin: 3px;
 }
-#menu a:focus,a:hover{
+#menu a:focus,#menu a:hover{
 background-color: #ff9977;
 }
