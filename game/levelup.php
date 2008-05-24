@@ -42,8 +42,8 @@ $mana=round($usercar['mana']/100*$mana);
 foreach($caratteristichelup as $chiave=>$elemento){
 $carattuale=(int)$_POST[$caratteristichelup[$chiave]];
 if($carattuale>0){
-$incremento=$usercar[$caratteristichelup[$chiave]]/100*$carattuale;
-$setcaratteristiche.=",".$caratteristichelup[$chiave]."+".$caratteristichelup[$chiave].$incremento;
+$incremento=round($usercar[$caratteristichelup[$chiave]]/100*$carattuale);
+$setcaratteristiche.=",".$caratteristichelup[$chiave]."=".$caratteristichelup[$chiave]."+".$incremento;
 }
 }//per caratteristica
 $db->QueryMod("UPDATE caratteristiche SET livello=livello+'1',salute=salute+'".$salute."',energiamax=energiamax+'".$energia."',mana=mana+'".$mana."'".$setcaratteristiche.",exp=exp-'".$expnewlevel."' WHERE userid='".$user['userid']."' LIMIT 1");
