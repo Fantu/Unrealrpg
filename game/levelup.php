@@ -24,7 +24,7 @@ $troppi=0;
 foreach($caratteristichelup as $chiave=>$elemento){
 $carattuale=(int)$_POST[$caratteristichelup[$chiave]];
 if($carattuale>10)
-$troppi=0;
+$troppi=1;
 $somma+=$carattuale;
 }//per caratteristica
 if ($troppi==1)
