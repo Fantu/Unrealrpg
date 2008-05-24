@@ -6,11 +6,13 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <div id="menu">
 <a href="index.php?loc=situazione"><?php echo $lang['Situazione']; ?></a>
 <a href="index.php?loc=banca"><?php echo $lang['Banca']; ?></a>
+<ul>
 <li><a href="#"><?php echo "Lavori"; ?></a><ul>
 <li><a href="index.php?loc=miniera"><?php echo $lang['Miniera']; ?></a></li>
 <li><a href="index.php?loc=laboratorio"><?php echo $lang['Laboratorio']; ?></a></li>
 <li><a href="index.php?loc=fucina"><?php echo $lang['Fucina']; ?></a></li>
 </ul></li>
+</ul>
 <a href="index.php?loc=tempio"><?php echo $lang['Tempio']; ?></a>
 <a href="index.php?loc=rocca"><?php echo $lang['Rocca_arcano']; ?></a>
 <a href="index.php?loc=libro"><?php echo $lang['Libro_incantesimi']; ?></a>
