@@ -5,15 +5,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 }
 ?>
 <div align="right">
-  <table width="550" border="0" cellspacing="2" cellpadding="2">
-  <tr>
-    <td>Changelog:</td>
-  </tr>
-  <tr>
-    <td>Per leggere i changelog completi pi&ugrave; aggiornati dell'intero progetto clicca <a href="index.php?loc=changelog&amp;completa=1">qui</a></td>
-  </tr>  
-  <tr>
-    <td><?php if($_GET['completa']==1){include('/var/www/web5/web/rpgdev/game/language/'.$language.'/versioni.txt');}else{include('language/'.$language.'/versioni.txt');} ?></td>
-  </tr>
-</table>
+Changelog:<br/>
+Per leggere i changelog completi pi&ugrave; aggiornati dell'intero progetto clicca <a href="index.php?loc=changelog&amp;completa=1">qui</a><br/><br/>
+<?php if($_GET['completa']==1){include('/var/www/web5/web/rpgdev/game/language/'.$language.'/versioni.txt');}else{include('language/'.$language.'/versioni.txt');} ?>
 </div>

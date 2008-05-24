@@ -14,7 +14,7 @@ Legenda:<br />
 + Aggiunto link all'incremento di livello nel caso si abbia abbastanza esperienza<br />
 + L'esperienza guadagnata in combattimento varia in base al livello degli sfidanti, se l'avversario ha un livello maggiore si guadagna un 10% in più ogni livello di differenza fino ad un massimo del doppio mentre se il livello è minore 10% in meno a livello di differenza fino ad un minimo del 10%<br />
 + Controllo della morte e inizio procedura di resurrezione anche se l'utente è offline<br />
-+ Vari miglioramenti di sistema a Situazione, sistema di combattimento, visualizzazione dettagliata utente<br />
++ Vari miglioramenti di sistema a Situazione, sistema di combattimento, visualizzazione dettagliata utente, Info versione<br />
 + Vari miglioramenti grafici<br />
 + Rifatto il menu in modo migliore, fisso e con un sottomenu dei lavori<br />
 + Creato l'incremento di livello con crescita del personaggio personalizzata, 10 punti di percentuale di incremento distribuibili tra salute, energia e mana, anche tutti e 10 in uno, e 20 punti di percentuale di incremento distribuibili tra le caratteristiche ma non più di 10 per caratteristica<br />
