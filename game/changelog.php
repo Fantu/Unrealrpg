@@ -4,7 +4,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	exit();
 }
 ?>
-<div align="right">
+<div>
 Changelog:<br/>
 Per leggere i changelog completi pi&ugrave; aggiornati dell'intero progetto clicca <a href="index.php?loc=changelog&amp;completa=1">qui</a><br/><br/>
 <?php if($_GET['completa']==1){include('/var/www/web5/web/rpgdev/game/language/'.$language.'/versioni.txt');}else{include('language/'.$language.'/versioni.txt');} ?>
