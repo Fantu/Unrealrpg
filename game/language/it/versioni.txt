@@ -16,12 +16,12 @@ Legenda:<br />
 + Controllo della morte e inizio procedura di resurrezione anche se l'utente è offline<br />
 + Vari miglioramenti di sistema a Situazione, sistema di combattimento, visualizzazione dettagliata utente<br />
 + Vari miglioramenti grafici<br />
++ Rifatto il menu in modo migliore, fisso e con un sottomenu dei lavori<br />
 # Aumentato l'incremento di esperienza in base alla durata del combattimento<br />
 # Aumentata l'esperienza necessaria per salire di livello<br />
 # Rivista la preghiera nel Tempio, resa più equilibrata<br />
 # Modificato il decremento di fede con il passare del tempo, reso più equilibrato<br />
 # Rivista la resurrezione, resa più equilibrata<br />
-# Il menu interno di sinistra ora è fisso<br />
 - Correzione bug minori<br />
 </p>
 <p><strong>0.6.5</strong> [R.1002] (10/05/08 - Beta)<br />

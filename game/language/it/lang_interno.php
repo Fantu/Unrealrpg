@@ -19,6 +19,7 @@ $lang['Rocca_arcano']='Rocca dell`Arcano';
 $lang['Libro_incantesimi']='Libro degli incantesimi';
 $lang['Combattimenti']='Combattimenti';
 $lang['Equipaggiamento']='Equipaggiamento';
+$lang['Lavori']='Lavori';
 //fine menu
 
 //inizio razze

@@ -7,7 +7,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <a href="index.php?loc=situazione"><?php echo $lang['Situazione']; ?></a>
 <a href="index.php?loc=banca"><?php echo $lang['Banca']; ?></a>
 <ul>
-<li><a href="#"><?php echo "Lavori"; ?></a><ul>
+<li><a href="#"><?php echo $lang['Lavori']; ?></a><ul>
 <li><a href="index.php?loc=miniera"><?php echo $lang['Miniera']; ?></a></li>
 <li><a href="index.php?loc=laboratorio"><?php echo $lang['Laboratorio']; ?></a></li>
 <li><a href="index.php?loc=fucina"><?php echo $lang['Fucina']; ?></a></li>

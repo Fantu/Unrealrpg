@@ -15,6 +15,8 @@ Legenda:<br />
 + L'esperienza guadagnata in combattimento varia in base al livello degli sfidanti, se l'avversario ha un livello maggiore si guadagna un 10% in più ogni livello di differenza fino ad un massimo del doppio mentre se il livello è minore 10% in meno a livello di differenza fino ad un minimo del 10%<br />
 + Controllo della morte e inizio procedura di resurrezione anche se l'utente è offline<br />
 + Vari miglioramenti di sistema a Situazione, sistema di combattimento, visualizzazione dettagliata utente<br />
++ Vari miglioramenti grafici<br />
++ Rifatto il menu in modo migliore, fisso e con un sottomenu dei lavori<br />
 # Aumentato l'incremento di esperienza in base alla durata del combattimento<br />
 # Aumentata l'esperienza necessaria per salire di livello<br />
 # Rivista la preghiera nel Tempio, resa più equilibrata<br />
