@@ -200,6 +200,7 @@ $input.=$dc->Controlloogg(2);}
 $input.="<br/>";
 Inreport($battleid,$input);
 
+$dc->Stabilisciordine($battle['attid'],$battle['difid']);
 $dc->Controllastato(1);
 $dc->Controllastato(2);
 
