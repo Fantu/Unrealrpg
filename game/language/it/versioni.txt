@@ -10,7 +10,7 @@ Legenda:<br />
 <p><strong>0.6.7</strong> (Non disponibile - In sviluppo)<br />
 - Niente attualmente<br />
 </p>
-<p><strong>0.6.6</strong> (25/05/08 - In sviluppo)<br />
+<p><strong>0.6.6</strong> [R.1054] (25/05/08 - Beta)<br />
 + Aggiunto link all'incremento di livello nel caso si abbia abbastanza esperienza<br />
 + L'esperienza guadagnata in combattimento varia in base al livello degli sfidanti, se l'avversario ha un livello maggiore si guadagna un 10% in più ogni livello di differenza fino ad un massimo del doppio mentre se il livello è minore 10% in meno a livello di differenza fino ad un minimo del 10%<br />
 + Controllo della morte e inizio procedura di resurrezione anche se l'utente è offline<br />
