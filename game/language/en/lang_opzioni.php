@@ -1,9 +1,9 @@
 <?php
-$lang['Cambia_sesso']='Cambia sesso:';
-$lang['sesso_modificato']='Sesso modificato correttamente.';
-$lang['opzioni_error1']='- Sesso: valore immesso non valido!';
+$lang['Cambia_sesso']='Change gender:';
+$lang['sesso_modificato']='Gender changed succesfully.';
+$lang['opzioni_error1']='- Gender: invalid input value!';
 $lang['plus_fino_a']='Account plus active until: ';
-$lang['plus_non_attivo']='Account plus non attivo.';
+$lang['plus_non_attivo']='Account plus not active.';
 $lang['quanti_punti_plus']='Hai %s punti Plus.';
 $lang['desc_attivare_plus_con_punti']='I punti Plus, servono per poter avere un Account Plus per tot. tempo: 3 punti= 1 settimana, 10 punti= 1 mese, 100 punti= 1 anno.';
 $lang['non_puoi_attivare_nessun_plus']='Non hai abbastanza punti per attivare nessun tipo di Account Plus.';

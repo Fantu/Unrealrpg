@@ -19,6 +19,7 @@ $lang['Rocca_arcano']='Mage tower';
 $lang['Libro_incantesimi']='Spellbook';
 $lang['Combattimenti']='Combattimenti';
 $lang['Equipaggiamento']='Equipaggiamento';
+$lang['Lavori']='Lavori';
 //fine menu
 
 //inizio razze
@@ -69,7 +70,7 @@ $lang['Mana']='Mana';
 $lang['Non_definito']='Undefined';
 $lang['Maschio']='Male';
 $lang['Femmina']='Female';
-$lang['Sesso']='Sex';
+$lang['Sesso']='Gender';
 $lang['elenco_ab']='Abilità';
 $lang['ab_minatore']='Miner';
 $lang['ab_alchimista']='Alchemist';
