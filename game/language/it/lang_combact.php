@@ -19,4 +19,5 @@ $lang['troppo_stanco_per_attacco']='%s non attacca in quanto esausto.';
 $lang['finito_entrambi_esausti']='Il combattimento finisce in parità in quanto entrambi i combattenti sono esausti.';
 $lang['vincitore_combattimento']='%s vince il combattimento.';
 $lang['combattimento_troppo_lungo']='Il combattimento è durato a lungo e nessun combattente ha avuto la meglio, finisce quindi in parità';
+$lang['exp_guadagnata']='%s guadagna %s punti esperienza.';
 ?>

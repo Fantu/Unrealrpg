@@ -101,7 +101,7 @@ class Dati{
 	} //fine Controllastato
 	
 	public function Guadagnaexp($chi,$turni) {
-	global $db;
+	global $db,$lang;
 	if($chi==1)
 	$chi2=2;
 	else
@@ -121,6 +121,8 @@ class Dati{
 	$exp-=round($exp/10*$liv);
 	}
 	$db->QueryMod("UPDATE caratteristiche SET exp=exp+'".$exp."' WHERE userid='".$this->id($chi)."' LIMIT 1");
+	$input=sprintf($lang['exp_guadagnata'],$this->nome($chi),$exp)."<br/>";
+	return $input;
 	} //fine Guadagnaexp
 	
 	public function Attaccovicino($att,$dif) {
@@ -222,8 +224,8 @@ $finito=1;
 $input=$lang['combattimento_troppo_lungo'];
 }
 if($finito==1){
-$dc->Guadagnaexp(1,$turni);
-$dc->Guadagnaexp(2,$turni);
+$input.=$dc->Guadagnaexp(1,$turni);
+$input.=$dc->Guadagnaexp(2,$turni);
 Endcombact($battle['id'],$dc->pvar(1),$dc->pvar(2));
 Inreport($battleid,$input);
 }else{//continua
