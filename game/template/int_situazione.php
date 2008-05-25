@@ -28,7 +28,7 @@ else
 echo $usercar['livello'];
 ?><br />
 <?php echo $lang['Esperienza']; ?>: <?php echo $usercar['exp']; echo "/"; echo $expnewlevel; ?><br />
-<?php echo $lang['Salute']; ?>: <?php echo $usercar['saluteattuale']; echo "/"; echo $usercar['salute']; ?><br />
+<?php echo $lang['Salute']; ?>: <?php if($usercar['saluteattuale']<1){echo $lang['morto'];}else{echo $usercar['saluteattuale']; echo "/"; echo $usercar['salute'];} ?><br />
 <?php echo $lang['Energia']; ?>: <?php echo $usercar['energia']; echo "/"; echo $usercar['energiamax']; ?><br />
 <?php echo $lang['Mana']; ?>: <?php echo $usercar['manarimasto']; echo "/"; echo $usercar['mana']; ?><br />
 <?php echo $lang['Reputazione']; ?>: <?php echo $usercar['reputazione'];?><br />
