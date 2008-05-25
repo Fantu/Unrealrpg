@@ -34,8 +34,8 @@ class Dati{
 	$difn=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$difensore."' LIMIT 1");
 	$attequip=$db->QuerySelect("SELECT * FROM equipaggiamento WHERE userid='".$attaccante."' LIMIT 1");
 	$difequip=$db->QuerySelect("SELECT * FROM equipaggiamento WHERE userid='".$difensore."' LIMIT 1");
-	$attpoint=$attcar['agilita']+$attcar['velocita']+($attcar['saluteattuale']/20)+($attcar['energia']/10);
-	$difpoint=$difcar['agilita']+$difcar['velocita']+($difcar['saluteattuale']/20)+($difcar['energia']/10);
+	$attpoint=$attcar['agilita']+$attcar['velocita']+($attcar['saluteattuale']/2)+($attcar['energia']/5);
+	$difpoint=$difcar['agilita']+$difcar['velocita']+($difcar['saluteattuale']/2)+($difcar['energia']/5);
 	if($attpoint>$difpoint){
 	$this->che[1]=new Combattente($attaccante,$attn['username'],$attcar,$attequip);
 	$this->che[2]=new Combattente($difensore,$difn['username'],$difcar,$difequip);
