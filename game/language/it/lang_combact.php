@@ -22,4 +22,7 @@ $lang['combattimento_troppo_lungo']='Il combattimento è durato a lungo e nessun
 $lang['exp_guadagnata']='%s guadagna %s punti esperienza.';
 $lang['titolo_report_combattimento1']='Report di combattimento';
 $lang['titolo_report_combattimento2']='Combattimento in corso';
+$lang['seleziona_tattica']='Scegli la tattica';
+$lang['tattica_attacco']='Attacco';
+$lang['tattica_resa']='Resa';
 ?>

@@ -81,7 +81,7 @@ ob_start();
 include $filerep;
 $report=ob_get_contents();
 ob_end_clean();
-$combactview=1;
+$combactview=2;
 $titleoutputcombact=$lang['titolo_report_combattimento2'];
 $outputcombact="<table>".$report."</table>";
 }
