@@ -9,6 +9,7 @@ Legenda:<br />
 </p>
 <p><strong>0.6.7</strong> (Non disponibile - In sviluppo)<br />
 + Aggiunto nel report il guadagno di esperienza<br />
++ Aggiunto link alla scheda dettagliata agli oggetti in equipaggiamento<br />
 + Vari miglioramenti di sistema a Situazione<br />
 + Vari miglioramenti grafici<br />
 </p>
