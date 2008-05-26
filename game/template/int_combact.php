@@ -14,7 +14,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <div align="center"><?php if($combactview==1 OR $combactview==2) echo $titleoutputcombact; ?></div><br />
 <br />
 <?php if($combactview==2){ ?>
-<div id="tattic">
+<div id="tattic" align="center">
 <?php echo $lang['seleziona_tattica']; ?>
 <ul>
 <li><a href="#"><?php echo $lang['tattica_attacco']; ?></a>
