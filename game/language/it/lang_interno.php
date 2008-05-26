@@ -159,4 +159,5 @@ $lang['nessuno']='Nessuno';
 $lang['sfida']='Sfida';
 $lang['Accetta']='Accetta';
 $lang['Rifiuta']='Rifiuta';
+$lang['usura_attuale']='Usura attuale: ';
 ?>

@@ -49,7 +49,7 @@ if($userequip['cac']!=0){
 $usuraogg='';
 if($user['plus']>0){
 $usuraoggsel=$db->QuerySelect("SELECT * FROM inoggetti WHERE userid='".$user['userid']."' AND oggid='".$userequip['cac']."' AND equip='1' LIMIT 1");
-$usuraogg='title="'.$usuraoggsel['usura'].'"';
+$usuraogg='title="'.$lang['usura_attuale'].$usuraoggsel['usura'].'"';
 }
 $armacacimpo="<a href=\"index.php?loc=mostraoggetto&amp;ogg=".$userequip['cac']."&amp;da=equip\"".$usuraogg.">".$lang['oggetto'.$userequip['cac'].'_nome']."</a>";
 $desc_impocac=sprintf($lang['armacacimpo'],$armacacimpo);
