@@ -19,6 +19,7 @@ border: groove #ffbb88;
 }
 #menu a:focus,#menu a:hover{
 background-color: #ff9977;
+border: groove #ff9977;
 }
 #tempogenpag{
 text-align: center;
