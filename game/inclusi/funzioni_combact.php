@@ -211,17 +211,17 @@ $finito=0;
 $turni++;
 if($dc->esausto(1)==1 AND $dc->esausto(2)==1){//se entrambi esausti
 $finito=1;
-$input=$lang['finito_entrambi_esausti'];
+$input=$lang['finito_entrambi_esausti']."<br/>";
 }elseif($dc->morto(1)==1){//se il primo vince
 $finito=1;
-$input=sprintf($lang['vincitore_combattimento'],$dc->nome(2));
+$input=sprintf($lang['vincitore_combattimento'],$dc->nome(2))."<br/>";
 }elseif($dc->morto(2)==1){//se il secondo vince
 $finito=1;
-$input=sprintf($lang['vincitore_combattimento'],$dc->nome(1));
+$input=sprintf($lang['vincitore_combattimento'],$dc->nome(1))."<br/>";
 }
 elseif($turni==20){//se dura troppo
 $finito=1;
-$input=$lang['combattimento_troppo_lungo'];
+$input=$lang['combattimento_troppo_lungo']."<br/>";
 }
 if($finito==1){
 $input.=$dc->Guadagnaexp(1,$turni);
