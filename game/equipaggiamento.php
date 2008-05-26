@@ -46,7 +46,12 @@ $armicac[$ogg2['oggid']]=$lang['oggetto'.$ogg2['oggid'].'_nome'];
 }//se ci sono armi corpo a corpo
 
 if($userequip['cac']!=0){
-$armacacimpo="<a href=\"index.php?loc=mostraoggetto&amp;ogg=".$userequip['cac']."&amp;da=equip\">".$lang['oggetto'.$userequip['cac'].'_nome']."</a>";
+$usuraogg='';
+if($user['plus']>0){
+$usuraoggsel=$db->QuerySelect("SELECT * FROM inoggetti WHERE userid='".$user['userid']."' AND oggid='".$userequip['cac']."' AND equip='1' LIMIT 1");
+$usuraogg='title="'.$usuraoggsel['usura'].'"';
+}
+$armacacimpo="<a href=\"index.php?loc=mostraoggetto&amp;ogg=".$userequip['cac']."&amp;da=equip\"".$usuraogg.">".$lang['oggetto'.$userequip['cac'].'_nome']."</a>";
 $desc_impocac=sprintf($lang['armacacimpo'],$armacacimpo);
 }else{
 $desc_impocac=$lang['noarmacacimpo'];
