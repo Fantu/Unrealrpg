@@ -11,6 +11,8 @@ Legenda:<br />
 + Aggiunto nel report il guadagno di esperienza<br />
 + Aggiunto link alla scheda dettagliata agli oggetti in equipaggiamento<br />
 + Aggiunta la visualizzazione dell'usura attuale delle armi in equipaggiamento, disponibile solo agli account plus<br />
++ Inizio creazione sistema tattiche di combattimento<br />
++ Creata la visualizzazione delle tattiche in Combattimenti<br />
 + Vari miglioramenti di sistema a Situazione, Combattimenti<br />
 + Vari miglioramenti grafici<br />
 </p>

@@ -18,6 +18,9 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <ul>
 <li><a href="#"><?php echo $lang['seleziona_tattica']; ?></a><ul>
 <li><a href="#"><?php echo $lang['tattica_attacco']; ?></a></li>
+<ul>
+<li><a href="index.php?loc=combact&amp;tattica=1&amp;subtatt=1"><?php echo $lang['tattica_attacco_cac']; ?></a></li>
+</ul>
 <li><a href="index.php?loc=combact&amp;tattica=2"><?php echo $lang['tattica_resa']; ?></a></li>
 </ul></li>
 </ul>

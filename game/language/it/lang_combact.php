@@ -25,4 +25,5 @@ $lang['titolo_report_combattimento2']='Combattimento in corso';
 $lang['seleziona_tattica']='Scegli la tattica';
 $lang['tattica_attacco']='Attacco';
 $lang['tattica_resa']='Resa';
+$lang['tattica_attacco_cac']='corpo a corpo';
 ?>
