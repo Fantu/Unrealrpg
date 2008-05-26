@@ -46,7 +46,7 @@ $armicac[$ogg2['oggid']]=$lang['oggetto'.$ogg2['oggid'].'_nome'];
 }//se ci sono armi corpo a corpo
 
 if($userequip['cac']!=0){
-$armacacimpo="<a href=\"index.php?loc=mostraoggetto&amp;ogg=".$ogg['id']."&amp;da=equip\">".$lang['oggetto'.$userequip['cac'].'_nome']."</a>";
+$armacacimpo="<a href=\"index.php?loc=mostraoggetto&amp;ogg=".$ogg2['oggid']."&amp;da=equip\">".$lang['oggetto'.$userequip['cac'].'_nome']."</a>";
 $desc_impocac=sprintf($lang['armacacimpo'],$armacacimpo);
 }else{
 $desc_impocac=$lang['noarmacacimpo'];
