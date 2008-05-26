@@ -20,4 +20,6 @@ $lang['finito_entrambi_esausti']='Il combattimento finisce in parità in quanto 
 $lang['vincitore_combattimento']='%s vince il combattimento.';
 $lang['combattimento_troppo_lungo']='Il combattimento è durato a lungo e nessun combattente ha avuto la meglio, finisce quindi in parità';
 $lang['exp_guadagnata']='%s guadagna %s punti esperienza.';
+$lang['titolo_report_combattimento1']='Report di combattimento';
+$lang['titolo_report_combattimento2']='Combattimento in corso';
 ?>

@@ -6,6 +6,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 require_once('language/'.$language.'/lang_combact.php');
 require_once('inclusi/funzioni_combact.php');
 $do=htmlspecialchars($_GET['do'],ENT_QUOTES);
+$combactview=0;
 switch($do){
 case "sfida":
 $idp=(int)$_GET['id'];
@@ -61,6 +62,8 @@ ob_start();
 include $filerep;
 $report=ob_get_contents();
 ob_end_clean();
+$combactview=1;
+$titleoutputcombact=$lang['titolo_report_combattimento1'];
 $outputcombact="<table>".$report."</table>";
 }
 break;//fine sfidda
@@ -78,6 +81,8 @@ ob_start();
 include $filerep;
 $report=ob_get_contents();
 ob_end_clean();
+$combactview=1;
+$titleoutputcombact=$lang['titolo_report_combattimento2'];
 $outputcombact="<table>".$report."</table>";
 }
 }

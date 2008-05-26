@@ -10,6 +10,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <?php echo $outputsfida; ?>
 <br />
 <br />
+<div align="center"><?php if($combactview==1) echo $titleoutputcombact; ?></div><br />
 <br />
 <?php echo $outputcombact; ?>
 <br />

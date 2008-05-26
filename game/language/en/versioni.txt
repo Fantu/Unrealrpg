@@ -10,7 +10,8 @@ Legenda:<br />
 <p><strong>0.6.7</strong> (Non disponibile - In sviluppo)<br />
 + Aggiunto nel report il guadagno di esperienza<br />
 + Aggiunto link alla scheda dettagliata agli oggetti in equipaggiamento<br />
-+ Vari miglioramenti di sistema a Situazione<br />
++ Aggiunta la visualizzazione dell'usura attuale delle armi in equipaggiamento, disponibile solo agli account plus<br />
++ Vari miglioramenti di sistema a Situazione, Combattimenti<br />
 + Vari miglioramenti grafici<br />
 </p>
 <p><strong>0.6.6</strong> [R.1054] (25/05/08 - Beta)<br />
