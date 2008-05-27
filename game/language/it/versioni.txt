@@ -13,6 +13,9 @@ Legenda:<br />
 + Aggiunta la visualizzazione dell'usura attuale delle armi in equipaggiamento, disponibile solo agli account plus<br />
 + Inizio creazione sistema tattiche di combattimento<br />
 + Creata la visualizzazione delle tattiche in Combattimenti<br />
++ Aggiunti attacco corpo a corpo e resa alle tattiche, attacco corpo a corpo predefinito<br />
++ Se uno combattente si arrende l'altro vince la battaglia, se entrambi si arrendono finisce in parità<br />
++ Se la battaglia dura solo un turno non si guadagna esperienza<br />
 + Vari miglioramenti di sistema a Situazione, Combattimenti, sistema di combattimento<br />
 + Vari miglioramenti grafici<br />
 </p>

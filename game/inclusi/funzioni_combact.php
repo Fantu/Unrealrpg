@@ -12,7 +12,9 @@ class Combattente{
 	var $equip;
 	var $esausto;
 	var $morto;
-	function Combattente($id2,$nome2,$car2,$equip2) {
+	var $tattica;
+	var $subtattica;
+	function Combattente($id2,$nome2,$car2,$equip2,$tattica2,$subtattica2){
 	$this->id=$id2;
 	$this->nome=$nome2;
 	$this->car=$car2;
@@ -20,13 +22,15 @@ class Combattente{
 	$this->oggusati=0;
 	$this->esausto=0;
 	$this->morto=0;
+	$this->tatica=$tattica2;
+	$this->subtatica=$subtattica2;
 	}
 } //fine classe Combattente
 
 class Dati{
 	public $che;
 	
-	public function Stabilisciordine($attaccante,$difensore) {
+	public function Stabilisciordine($attaccante,$difensore,$battle) {
 	global $db;
 	$attcar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$attaccante."' LIMIT 1");
 	$difcar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$difensore."' LIMIT 1");
@@ -37,11 +41,11 @@ class Dati{
 	$attpoint=$attcar['agilita']+$attcar['velocita']+($attcar['saluteattuale']/2)+($attcar['energia']/5);
 	$difpoint=$difcar['agilita']+$difcar['velocita']+($difcar['saluteattuale']/2)+($difcar['energia']/5);
 	if($attpoint>$difpoint){
-	$this->che[1]=new Combattente($attaccante,$attn['username'],$attcar,$attequip);
-	$this->che[2]=new Combattente($difensore,$difn['username'],$difcar,$difequip);
+	$this->che[1]=new Combattente($attaccante,$attn['username'],$attcar,$attequip,$battle['tatatt'],$battle['tatatt2']);
+	$this->che[2]=new Combattente($difensore,$difn['username'],$difcar,$difequip,$battle['tatdif'],$battle['tatdif2']);
 	}else{
-	$this->che[2]=new Combattente($attaccante,$attn['username'],$attcar,$attequip);
-	$this->che[1]=new Combattente($difensore,$difn['username'],$difcar,$difequip);
+	$this->che[2]=new Combattente($attaccante,$attn['username'],$attcar,$attequip,$battle['tatatt'],$battle['tatatt2']);
+	$this->che[1]=new Combattente($difensore,$difn['username'],$difcar,$difequip,$battle['tatdif'],$battle['tatdif2']);
 	}
 	} //fine Stabilisciordine
 	
@@ -54,6 +58,14 @@ class Dati{
 	$dato=$this->che[$chi]->car[$campo];
 	return $dato;
 	} //fine car
+	
+	public function tattica($chi,$campo) {
+	if($campo==1)
+	$dato=$this->che[$chi]->tattica;
+	else
+	$dato=$this->che[$chi]->subtattica;
+	return $dato;
+	} //fine tattica
 	
 	public function id($chi) {
 	$dato=$this->che[$chi]->id;
@@ -184,7 +196,8 @@ function Battledo($battleid,$turni) {
 global $db,$adesso,$lang,$language;
 $battle=$db->QuerySelect("SELECT * FROM battle WHERE id='".$battleid."' LIMIT 1");
 $dc=new Dati();
-$dc->Stabilisciordine($battle['attid'],$battle['difid']);
+$dc->Stabilisciordine($battle['attid'],$battle['difid'],$battle);
+if($dc->tattica(1,1)!=2 AND $dc->tattica(2,1)!=2){
 $dc->Controllastato(1);
 $dc->Controllastato(2);
 
@@ -202,30 +215,34 @@ $input.=$dc->Controlloogg(2);}
 $input.="<br/>";
 Inreport($battleid,$input);
 
-$dc->Stabilisciordine($battle['attid'],$battle['difid']);
+$dc->Stabilisciordine($battle['attid'],$battle['difid'],$battle);
 $dc->Controllastato(1);
 $dc->Controllastato(2);
 
 Docombactstats($battleid,$dc->id(1),$dc->id(2));
-$finito=0;
-$turni++;
-if($dc->esausto(1)==1 AND $dc->esausto(2)==1){//se entrambi esausti
+}//se nessuno si arrende
 $finito=1;
+$turni++;
+if($dc->tattica(1,1)==2 AND $dc->tattica(2,1)==2){//se entrambi si arrendono
+$input=$lang['finito_entrambi_arresi']."<br/>";
+}elseif($dc->tattica(1,1)==2){//se il primo si arrende
+$input=sprintf($lang['finito_resa'],$dc->nome(1),$dc->nome(2))."<br/>";
+}elseif($dc->tattica(2,1)==2){//se il secondo si arrende
+$input=sprintf($lang['finito_resa'],$dc->nome(2),$dc->nome(1))."<br/>";
+}elseif($dc->esausto(1)==1 AND $dc->esausto(2)==1){//se entrambi esausti
 $input=$lang['finito_entrambi_esausti']."<br/>";
 }elseif($dc->morto(1)==1){//se il primo vince
-$finito=1;
 $input=sprintf($lang['vincitore_combattimento'],$dc->nome(2))."<br/>";
 }elseif($dc->morto(2)==1){//se il secondo vince
-$finito=1;
 $input=sprintf($lang['vincitore_combattimento'],$dc->nome(1))."<br/>";
-}
-elseif($turni==20){//se dura troppo
-$finito=1;
+}elseif($turni==20){//se dura troppo
 $input=$lang['combattimento_troppo_lungo']."<br/>";
-}
+}else{$finito=0;}
 if($finito==1){
+if($turni>1){
 $input.=$dc->Guadagnaexp(1,$turni);
 $input.=$dc->Guadagnaexp(2,$turni);
+}//se più di un turno
 Endcombact($battle['id'],$dc->pvar(1),$dc->pvar(2));
 Inreport($battleid,$input);
 }else{//continua
