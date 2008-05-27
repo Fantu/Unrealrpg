@@ -22,8 +22,8 @@ class Combattente{
 	$this->oggusati=0;
 	$this->esausto=0;
 	$this->morto=0;
-	$this->tatica=$tattica2;
-	$this->subtatica=$subtattica2;
+	$this->tattica=$tattica2;
+	$this->subtattica=$subtattica2;
 	}
 } //fine classe Combattente
 
