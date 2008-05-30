@@ -18,7 +18,7 @@ $resistenza=$usercar['diffisica']/20;
 $salute=rand(5,15)-($usercar['minatore'])-rand(floor($resistenza/2),floor($resistenza));
 if ($salute<1)
 $salute=1;
-$exp=floor($usercar['saluteattuale']/15+$usercar['energia']/150+$usercar['attfisico']/8);
+$exp=floor($usercar['saluteattuale']/20+$usercar['energia']/200+$usercar['attfisico']/8);
 $exp=floor(rand(($exp/100*80),$exp));
 $exp+=15+(2*$usercar['minatore']);
 $esplosione=rand(30,100)-($usercar['minatore']*5)-($usercar['attfisico']/20);
@@ -73,7 +73,7 @@ $resistenza=$usercar['difmagica']/20;
 $salute=rand(2,10)-($usercar['alchimista'])-rand(floor($resistenza/2),floor($resistenza));
 if ($salute<1)
 $salute=1;
-$exp=floor($usercar['saluteattuale']/15+$usercar['energia']/150+$usercar['attmagico']/10+$usercar['intelligenza']/20);
+$exp=floor($usercar['saluteattuale']/20+$usercar['energia']/200+$usercar['attmagico']/10+$usercar['intelligenza']/20);
 $exp=floor(rand(($exp/100*80),$exp));
 $exp+=15+(2*$usercar['alchimista']);
 $esplosione=rand(30,100)-($usercar['alchimista']*5)-($usercar['attmagico']/20);
@@ -170,7 +170,7 @@ $resistenza=$usercar['diffisica']/20;
 $salute=rand(5,15)-($usercar['minatore'])-rand(floor($resistenza/2),floor($resistenza));
 if ($salute<1)
 $salute=1;
-$exp=floor($usercar['saluteattuale']/15+$usercar['energia']/150+$usercar['attfisico']/8);
+$exp=floor($usercar['saluteattuale']/20+$usercar['energia']/200+$usercar['attfisico']/8);
 $exp=floor(rand(($exp/100*80),$exp));
 $exp+=15+(2*$usercar['minatore']);
 $esplosione=rand(30,100)-($usercar['minatore']*5)-($usercar['attfisico']/20);
@@ -258,7 +258,7 @@ $resistenza=$usercar['diffisica']/20;
 $salute=rand(5,15)-($usercar['fabbro'])-rand(floor($resistenza/2),floor($resistenza));
 if ($salute<1)
 $salute=1;
-$exp=floor($usercar['saluteattuale']/15+$usercar['energia']/150+$usercar['attfisico']/30+$usercar['destrezza']/20+$usercar['intelligenza']/40);
+$exp=floor($usercar['saluteattuale']/20+$usercar['energia']/200+$usercar['attfisico']/30+$usercar['destrezza']/20+$usercar['intelligenza']/40);
 $exp=floor(rand(($exp/100*80),$exp));
 $exp+=15+(2*$usercar['fabbro']);
 $esplosione=rand(30,100)-($usercar['fabbro']*5)-($usercar['attfisico']/20)-($usercar['destrezza']/10);
@@ -315,7 +315,7 @@ $resistenza=$usercar['difmagica']/20;
 $salute=rand(2,10)-($usercar['alchimista'])-rand(floor($resistenza/2),floor($resistenza));
 if ($salute<1)
 $salute=1;
-$exp=floor($usercar['saluteattuale']/15+$usercar['energia']/150+$usercar['attmagico']/10+$usercar['intelligenza']/20);
+$exp=floor($usercar['saluteattuale']/20+$usercar['energia']/200+$usercar['attmagico']/10+$usercar['intelligenza']/20);
 $exp=floor(rand(($exp/100*80),$exp));
 $exp+=15+(2*$usercar['alchimista']);
 $bonusabilita=$usercar['alchimista']-$pozione['abilitanec'];
@@ -381,7 +381,7 @@ $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid
 $energia=100-(5*$usercar['magica']);
 if($energia<50)
 $energia=50;
-$exp=floor($usercar['saluteattuale']/15+$usercar['energia']/150+$usercar['attmagico']/12+$usercar['intelligenza']/15);
+$exp=floor($usercar['saluteattuale']/20+$usercar['energia']/200+$usercar['attmagico']/12+$usercar['intelligenza']/15);
 $exp=floor(rand(($exp/100*80),$exp));
 $exp+=15+(2*$usercar['magica']);
 $testo="<span>".sprintf($lang['report_lavstudiorocca'],$exp,$elementi[$elementosel],$energia)."</span>";
@@ -412,7 +412,7 @@ $resistenza=$usercar['diffisica']/20;
 $salute=rand(5,15)-($usercar['fabbro'])-rand(floor($resistenza/2),floor($resistenza));
 if ($salute<1)
 $salute=1;
-$exp=floor($usercar['saluteattuale']/15+$usercar['energia']/150+$usercar['attfisico']/30+$usercar['destrezza']/20+$usercar['intelligenza']/40);
+$exp=floor($usercar['saluteattuale']/20+$usercar['energia']/200+$usercar['attfisico']/30+$usercar['destrezza']/20+$usercar['intelligenza']/40);
 $exp=floor(rand(($exp/100*80),$exp));
 $exp+=15+(2*$usercar['fabbro']);
 $testo=sprintf($lang['report_lav_fuc_fab'],$exp,$energia,$salute)."<br />";
@@ -472,7 +472,7 @@ $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid
 $energia=100-(5*$usercar['magica']);
 if($energia<50)
 $energia=50;
-$exp=floor($usercar['saluteattuale']/15+$usercar['energia']/150+$usercar['attmagico']/12+$usercar['intelligenza']/15);
+$exp=floor($usercar['saluteattuale']/20+$usercar['energia']/200+$usercar['attmagico']/12+$usercar['intelligenza']/15);
 $exp=floor(rand(($exp/100*80),$exp));
 $exp+=15+(2*$usercar['magica']);
 $trovato=0;

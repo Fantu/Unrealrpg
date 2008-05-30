@@ -22,6 +22,7 @@ Niente attualmente<br />
 + Vari miglioramenti di sistema a Situazione, Combattimenti, sistema di combattimento<br />
 + Vari miglioramenti grafici<br />
 # Resi in percentuale i recuperi di salute ed energia con il passare del tempo<br />
+# Rivisto il guadagno di esperienza nei lavori, reso più equilibrato<br />
 </p>
 <p><strong>0.6.6</strong> [R.1054] (25/05/08 - Beta)<br />
 + Aggiunto link all'incremento di livello nel caso si abbia abbastanza esperienza<br />
