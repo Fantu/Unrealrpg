@@ -33,6 +33,12 @@ $tattivazioneplus=31536000;
 break;
 }
 
+$news=(int)$_GET['newsletter'];
+if($news!=$user['mailnews']){
+$db->QueryMod("UPDATE utenti SET mailnews='".$news."' WHERE userid='".$user['userid']."' LIMIT 1");
+$user=$db->QuerySelect("SELECT * FROM utenti WHERE userid='".$user['userid']."' LIMIT 1");
+}
+
 if(!empty($tattivazioneplus)){
 if ($user['puntiplus']<$punti)
 $errore .= $lang['opzioni_error2']."<br />";
@@ -54,10 +60,6 @@ if($user['mailnews']==0)
 $newsletters=$lang['newsletter_disattiva']." <a href=\"index.php?loc=opzioni&amp;newsletter=1\">".$lang['attiva']."</a>";
 else
 $newsletters=$lang['newsletter_attiva']." <a href=\"index.php?loc=opzioni&amp;newsletter=0\">".$lang['disattiva']."</a>";
-
-$news=(int)$_GET['newsletter'];
-if($news!=$user['mailnews'])
-$db->QueryMod("UPDATE utenti SET mailnews='".$news."' WHERE userid='".$user['userid']."' LIMIT 1");
 
 require('inclusi/personaggio.php');
 require('template/int_opzioni.php');
