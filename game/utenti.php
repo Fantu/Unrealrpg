@@ -11,7 +11,8 @@ $online=$db->QuerySelect("SELECT COUNT(userid) AS numero FROM utenti WHERE ultim
 $utentionline=$online['numero'];
 $totpersonaggi=$db->QuerySelect("SELECT COUNT(userid) AS numero FROM utenti WHERE personaggio='1'");
 $personaggi=$totpersonaggi['numero'];
-$infoutenti=sprintf($lang['info_utenti_server'],$utentireg,$personaggi,$utentionline);
+$totcombattimenti=$db->QuerySelect("SELECT COUNT(id) AS numero FROM battle");
+$infoutenti=sprintf($lang['info_utenti_server'],$utentireg,$personaggi,$utentionline,$totcombattimenti['numero']);
 if (isset($_POST['cercau'])){
 $errore="";
 if(!$_POST['nome']){
