@@ -52,7 +52,7 @@ if ($adesso>($usercar['recuperosalute']+3600)){
 	if ($usercar['saluteattuale']<=$usercar['salute']){
 		$differenzaora=$adesso-$usercar['recuperosalute'];
 		$ore=floor($differenzaora/3600);
-		$salute=$usercar['saluteattuale']+$ore;
+		$salute=$usercar['saluteattuale']+round($usercar['salute']/100*$ore);
 		if ($salute>$usercar['salute'])
 		$salute=$usercar['salute'];
 		$db->QueryMod("UPDATE caratteristiche SET recuperosalute=recuperosalute+'".($ore*3600)."',saluteattuale='".($salute)."' WHERE userid='".$user['userid']."'");
@@ -63,7 +63,7 @@ if ($adesso>($usercar['recuperoenergia']+60)){
 	if ($usercar['energia']<=$usercar['energiamax']){
 		$differenzaora=$adesso-$usercar['recuperoenergia'];
 		$ore=floor($differenzaora/60);
-		$energia=$usercar['energia']+$ore;
+		$energia=$usercar['energia']+round($usercar['energiamax']/1000*$ore);
 		if ($energia>$usercar['energiamax'])
 		$energia=$usercar['energiamax'];
 		$db->QueryMod("UPDATE caratteristiche SET recuperoenergia=recuperoenergia+'".($ore*60)."',energia='".($energia)."' WHERE userid='".$user['userid']."'");
