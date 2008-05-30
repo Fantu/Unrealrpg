@@ -13,6 +13,7 @@ $db->QueryMod("ALTER TABLE `battle` ADD `tatatt` TINYINT( 1 ) UNSIGNED NOT NULL 
 ADD `tatatt2` TINYINT( 1 ) UNSIGNED NOT NULL DEFAULT '0',
 ADD `tatdif` TINYINT( 1 ) UNSIGNED NOT NULL DEFAULT '0',
 ADD `tatdif2` TINYINT( 1 ) UNSIGNED NOT NULL DEFAULT '0'");
+$db->QueryMod("ALTER TABLE `utenti` ADD `mailnews` TINYINT( 1 ) UNSIGNED NOT NULL DEFAULT '1'");
 
 	/*//creazione record per tab con 1 record per utente
 	$a=$db->QueryCiclo("SELECT userid FROM utenti WHERE conferma='1' AND personaggio='1'");

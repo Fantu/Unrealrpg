@@ -50,6 +50,18 @@ $user=$db->QuerySelect("SELECT * FROM utenti WHERE userid='".$user['userid']."' 
 
 $linkref=$game_link."/index.php?refer=".$user['userid']."&amp;server=".$user['server'];
 
+if($user['mailnews']==0)
+$newsletters=$lang['newsletter_disattiva']." <a href=\"index.php?loc=opzioni&amp;newsletter=1\">".$lang['attiva']."</a>";
+else
+$newsletters=$lang['newsletter_attiva']." <a href=\"index.php?loc=opzioni&amp;newsletter=0\">".$lang['disattiva']."</a>";
+
+if($_GET['newsletter']){
+$news=(int)$_GET['newsletter'];
+if($news!=0)
+$news=1;
+$db->QueryMod("UPDATE utenti SET mailnews='".$news."' WHERE userid='".$user['userid']."' LIMIT 1");
+}
+
 require('inclusi/personaggio.php');
 require('template/int_opzioni.php');
 ?>

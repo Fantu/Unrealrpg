@@ -20,6 +20,7 @@ Niente attualmente<br />
 + Se uno combattente si arrende l'altro vince la battaglia, se entrambi si arrendono finisce in parità<br />
 + Se la battaglia dura solo un turno non si guadagna esperienza<br />
 + Aggiunto in Elenco personaggi il numero di combattimenti in corso<br />
++ Aggiunta in Opzioni la disattivazione/attivazione delle newsletters<br />
 + Vari miglioramenti di sistema a Situazione, Combattimenti, sistema di combattimento<br />
 + Vari miglioramenti grafici<br />
 # Resi in percentuale i recuperi di salute ed energia con il passare del tempo<br />
