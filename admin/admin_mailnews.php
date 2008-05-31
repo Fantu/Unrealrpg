@@ -10,14 +10,14 @@ if ($titolo==""){ echo "Manca il titolo";
 } else {
 	if ($msg==""){ echo "Manca il messaggio";
 	} else {
-	/*$db->database=2;
-	$op=$db->QueryCiclo("SELECT * FROM phpbb_users WHERE user_active='1'");
+	$db->database=999;
+	$op=$db->QueryCiclo("SELECT email FROM utenti WHERE conferma='1' AND mailnews='1'");
 	while($var=$db->QueryCicloResult($op)){
-		$to=$var['user_email'];
-		mail($to,$titolo,$msg,$head);
+		$to=$var['email'];
+		mail($to,$titolo,$msg,$game_intestazione_mail);
 	}*/
-	$to="fantonifabio@tiscali.it";
-	mail($to,$titolo,$msg,$game_intestazione_mail);
+	/*$to="fantonifabio@tiscali.it";
+	mail($to,$titolo,$msg,$game_intestazione_mail);*/
 	echo "Mail spedita";
 	}}
 }else{
