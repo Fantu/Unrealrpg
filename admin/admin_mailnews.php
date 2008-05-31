@@ -26,7 +26,7 @@ if ($titolo==""){ echo "Manca il titolo";
 <form action="" method="post">
 Spedizione mail news agli utenti<br />
 Titolo: <input type="text" name="titolo" /><br />
-Messaggio: <input type="text" name="msg" /><br />
+Messaggio: <textarea name="msg" cols="45" rows="4"></textarea><br />
 <input type="submit" name="spedisci" value="Spedisci" />
 </form>
     <br/><br/>
