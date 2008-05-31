@@ -34,7 +34,7 @@ break;
 }
 
 $news=(int)$_GET['newsletter'];
-if($news!=$user['mailnews']){
+if($_GET['newsletter'] AND $news!=$user['mailnews']){
 $db->QueryMod("UPDATE utenti SET mailnews='".$news."' WHERE userid='".$user['userid']."' LIMIT 1");
 $user=$db->QuerySelect("SELECT * FROM utenti WHERE userid='".$user['userid']."' LIMIT 1");
 }
