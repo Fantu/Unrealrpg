@@ -4,6 +4,9 @@
 </tr>
 <?php if($op['admin']==1){ ?>
 <tr>
+	<td class="tabmenutd"><a href="admin.php?loc=mailnews">- <?php echo "Mail news"; ?></a></td>
+</tr>
+<tr>
 	<td class="tabmenutd"><a href="admin.php?loc=utente">- <?php echo $lang['gestione_utenti']; ?></a></td>
 </tr>
 <tr>
