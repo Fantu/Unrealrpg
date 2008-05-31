@@ -14,8 +14,12 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 </ul></li>
 </ul>
 <a href="index.php?loc=tempio"><?php echo $lang['Tempio']; ?></a>
-<a href="index.php?loc=rocca"><?php echo $lang['Rocca_arcano']; ?></a>
-<a href="index.php?loc=libro"><?php echo $lang['Libro_incantesimi']; ?></a>
+<ul>
+<li><a href="#"><?php echo $lang['Magia']; ?></a><ul>
+<li><a href="index.php?loc=rocca"><?php echo $lang['Rocca_arcano']; ?></a></li>
+<li><a href="index.php?loc=libro"><?php echo $lang['Libro_incantesimi']; ?></a></li>
+</ul></li>
+</ul>
 <a href="index.php?loc=combact"><?php echo $lang['Combattimenti']; ?></a>
 <a href="index.php?loc=mercato"><?php echo $lang['Mercato']; ?></a>
 <a href="index.php?loc=inventario"><?php echo $lang['Inventario']; ?></a>

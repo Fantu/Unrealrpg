@@ -20,6 +20,7 @@ $lang['Libro_incantesimi']='Spellbook';
 $lang['Combattimenti']='Combattimenti';
 $lang['Equipaggiamento']='Equipaggiamento';
 $lang['Lavori']='Work';
+$lang['Magia']='Magia';
 //fine menu
 
 //inizio razze

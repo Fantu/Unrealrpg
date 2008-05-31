@@ -10,6 +10,9 @@ Legenda:<br />
 <p><strong>0.6.8</strong> (Non disponibile - In sviluppo)<br />
 Niente attualmente<br />
 </p>
+<p><strong>0.6.7.1</strong> (31/05/08 - Beta)<br />
+- Patch: rivisto il menu per renderlo completamente visibile anche a risoluzione 1024*768<br />
+</p>
 <p><strong>0.6.7</strong> [R.1100] (31/05/08 - Beta)<br />
 + Aggiunto nel report il guadagno di esperienza<br />
 + Aggiunto link alla scheda dettagliata agli oggetti in equipaggiamento<br />
