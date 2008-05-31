@@ -15,7 +15,7 @@ if ($titolo==""){ echo "Manca il titolo";
 	while($var=$db->QueryCicloResult($op)){
 		$to=$var['email'];
 		mail($to,$titolo,$msg,$game_intestazione_mail);
-	}*/
+	}
 	/*$to="fantonifabio@tiscali.it";
 	mail($to,$titolo,$msg,$game_intestazione_mail);*/
 	echo "Mail spedita";
