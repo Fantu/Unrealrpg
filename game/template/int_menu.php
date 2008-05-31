@@ -26,8 +26,12 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <a href="index.php?loc=equipaggiamento"><?php echo $lang['Equipaggiamento']; ?></a>
 <a href="index.php?loc=messaggi"><?php echo $lang['Messaggi']; ?></a>
 <a href="index.php?loc=utenti"><?php echo $lang['Lista_utenti']; ?></a>
-<a href="index.php?loc=guida"><?php echo $lang['Guida']; ?></a>
-<a href="index.php?loc=changelog"><?php echo $lang['Changelog']; ?></a>
+<ul>
+<li><a href="#"><?php echo $lang['Informazioni']; ?></a><ul>
+<li><a href="index.php?loc=guida"><?php echo $lang['Guida']; ?></a></li>
+<li><a href="index.php?loc=changelog"><?php echo $lang['Changelog']; ?></a></li>
+</ul></li>
+</ul>
 <a href="index.php?loc=opzioni"><?php echo $lang['Opzioni']; ?></a>
 <a href="http://www.lostgames.net/forum/forumdisplay.php?f=33" target="_blank">Forum</a>
 <a href="index.php?loc=logout"><?php echo $lang['Logout']; ?></a>
