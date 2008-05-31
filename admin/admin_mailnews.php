@@ -5,7 +5,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 }
 if (isset($_POST["spedisci"])) {
 $titolo=htmlspecialchars($_POST['titolo'],ENT_QUOTES);
-$msg=htmlspecialchars($_POST['msg'],ENT_QUOTES);
+$msg=$_POST['msg'];
 if ($titolo==""){ echo "Manca il titolo"; 
 } else {
 	if ($msg==""){ echo "Manca il messaggio";
