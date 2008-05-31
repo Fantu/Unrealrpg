@@ -22,6 +22,7 @@ $lang['Equipaggiamento']='Equipaggiamento';
 $lang['Lavori']='Lavori';
 $lang['Magia']='Magia';
 $lang['Informazioni']='Informazioni';
+$lang['Oggetti']='Oggetti';
 //fine menu
 
 //inizio razze

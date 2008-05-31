@@ -22,8 +22,12 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 </ul>
 <a href="index.php?loc=combact"><?php echo $lang['Combattimenti']; ?></a>
 <a href="index.php?loc=mercato"><?php echo $lang['Mercato']; ?></a>
-<a href="index.php?loc=inventario"><?php echo $lang['Inventario']; ?></a>
-<a href="index.php?loc=equipaggiamento"><?php echo $lang['Equipaggiamento']; ?></a>
+<ul>
+<li><a href="#"><?php echo $lang['Oggetti']; ?></a><ul>
+<li><a href="index.php?loc=inventario"><?php echo $lang['Inventario']; ?></a></li>
+<li><a href="index.php?loc=equipaggiamento"><?php echo $lang['Equipaggiamento']; ?></a></li>
+</ul></li>
+</ul>
 <a href="index.php?loc=messaggi"><?php echo $lang['Messaggi']; ?></a>
 <a href="index.php?loc=utenti"><?php echo $lang['Lista_utenti']; ?></a>
 <ul>
