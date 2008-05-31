@@ -19,7 +19,7 @@ $lang['Rocca_arcano']='Mage tower';
 $lang['Libro_incantesimi']='Spellbook';
 $lang['Combattimenti']='Combattimenti';
 $lang['Equipaggiamento']='Equipaggiamento';
-$lang['Lavori']='Lavori';
+$lang['Lavori']='Work';
 //fine menu
 
 //inizio razze
@@ -159,4 +159,5 @@ $lang['nessuno']='Nobody';
 $lang['sfida']='Sfida';
 $lang['Accetta']='Accetta';
 $lang['Rifiuta']='Rifiuta';
+$lang['usura_attuale']='Usura attuale: ';
 ?>

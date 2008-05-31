@@ -10,7 +10,7 @@ if ($titolo==""){ echo "Manca il titolo";
 } else {
 	if ($msg==""){ echo "Manca il messaggio";
 	} else {
-	$db->database=999;
+	$db->database=0;
 	$op=$db->QueryCiclo("SELECT email FROM utenti WHERE conferma='1' AND mailnews='1'");
 	while($var=$db->QueryCicloResult($op)){
 		$to=$var['email'];

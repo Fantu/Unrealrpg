@@ -10,7 +10,7 @@ Legenda:<br />
 <p><strong>0.6.8</strong> (Non disponibile - In sviluppo)<br />
 Niente attualmente<br />
 </p>
-<p><strong>0.6.7</strong> (Stimato per il 31/05/08 - In sviluppo)<br />
+<p><strong>0.6.7</strong> [R.1100] (31/05/08 - Beta)<br />
 + Aggiunto nel report il guadagno di esperienza<br />
 + Aggiunto link alla scheda dettagliata agli oggetti in equipaggiamento<br />
 + Aggiunta la visualizzazione dell'usura attuale delle armi in equipaggiamento, disponibile solo agli account plus<br />
@@ -20,8 +20,10 @@ Niente attualmente<br />
 + Se uno combattente si arrende l'altro vince la battaglia, se entrambi si arrendono finisce in parità<br />
 + Se la battaglia dura solo un turno non si guadagna esperienza<br />
 + Aggiunto in Elenco personaggi il numero di combattimenti in corso<br />
++ Aggiunta in Opzioni la disattivazione/attivazione delle newsletters<br />
 + Vari miglioramenti di sistema a Situazione, Combattimenti, sistema di combattimento<br />
 + Vari miglioramenti grafici<br />
++ Aggiornati i testi in inglese<br />
 # Resi in percentuale i recuperi di salute ed energia con il passare del tempo<br />
 # Rivisto il guadagno di esperienza nei lavori, reso più equilibrato<br />
 </p>

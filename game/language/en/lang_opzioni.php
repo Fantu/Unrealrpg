@@ -11,5 +11,9 @@ $lang['attiva_plus_con_punti1']='Attiva Account Plus di 1 settimana';
 $lang['attiva_plus_con_punti2']='<br />Attiva Account Plus di 1 mese';
 $lang['attiva_plus_con_punti3']='<br />Attiva Account Plus di 1 anno';
 $lang['opzioni_error2']='- Non hai abbastanza punti Plus.';
-$lang['desc_link_refer']='Gli utenti che visiteranno %s ed entro 1 settimana si iscriveranno e saranno ben attivi, ti faranno guadagnare un punto Plus e, se continueranno a giocare attivamente, guadagnerai 1 punto Plus ogni mese. Attualmente, tale sistema &egrave; valido solo per l`iscrizione allo stesso server. Nel tuo caso &egrave; il server: %s';
+$lang['desc_link_refer']='Gli utenti che visiteranno %s ed entro 1 settimana si iscriveranno e saranno ben attivi, ti faranno guadagnare un punto Plus e, se continueranno a giocare attivamente, guadagnerai 1 punto Plus ogni mese. Attualmente, tale sistema è valido solo per l`iscrizione allo stesso server. Nel tuo caso è il server: %s';
+$lang['newsletter_disattiva']='Attualmente non ricevi le newsletter';
+$lang['newsletter_attiva']='Attualmente ricevi le newsletter';
+$lang['disattiva']='Disattiva';
+$lang['attiva']='Attiva';
 ?>

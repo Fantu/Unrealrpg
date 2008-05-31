@@ -17,6 +17,15 @@ $lang['niente_att_vicino']='%s attacca %s con %s senza riuscire a colpirlo.';
 $lang['pugno']='pugno';
 $lang['troppo_stanco_per_attacco']='%s non attacca in quanto esausto.';
 $lang['finito_entrambi_esausti']='Il combattimento finisce in parità in quanto entrambi i combattenti sono esausti.';
+$lang['finito_entrambi_arresi']='Il combattimento finisce in parità in quanto entrambi i combattenti si sono arresi.';
+$lang['finito_resa']='%s si arrende e %s vince il combattimento.';
 $lang['vincitore_combattimento']='%s vince il combattimento.';
 $lang['combattimento_troppo_lungo']='Il combattimento è durato a lungo e nessun combattente ha avuto la meglio, finisce quindi in parità';
+$lang['exp_guadagnata']='%s guadagna %s punti esperienza.';
+$lang['titolo_report_combattimento1']='Report di combattimento';
+$lang['titolo_report_combattimento2']='Combattimento in corso';
+$lang['seleziona_tattica']='Scegli la tattica';
+$lang['tattica_attacco']='Attacco';
+$lang['tattica_resa']='Resa';
+$lang['tattica_attacco_cac']='corpo a corpo';
 ?>
