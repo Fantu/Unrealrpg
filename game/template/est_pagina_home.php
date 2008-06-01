@@ -55,6 +55,15 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
             </select></td>
           </tr>
           <tr>
+          <tr>
+            <td><?php echo $lang['Newsletter']; ?></td>
+            <td>
+			<select name="newsletter" id="newsletter">
+              <option value="1" selected="selected"><?php echo $lang['attiva']; ?></option>
+              <option value="2"><?php echo $lang['disattiva']; ?></option>
+            </select></td>
+          </tr>
+          <tr>
             <td><input name="Submit2" type="submit" value="<?php echo $lang['Registrati']; ?>" /></td>
           </tr>
         </table>
