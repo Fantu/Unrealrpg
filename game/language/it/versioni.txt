@@ -9,6 +9,7 @@ Legenda:<br />
 </p>
 <p><strong>0.6.8</strong> (Non disponibile - In sviluppo)<br />
 + Aggiunta nella registrazione la scelta sulla newsletter<br />
++ Vari miglioramenti grafici<br />
 </p>
 <p><strong>0.6.7.2</strong> (31/05/08 - Beta)<br />
 - Corretto un bug in Opzioni, ora la newsletter non viene disattivata ogni volta che si visita la pagina<br />

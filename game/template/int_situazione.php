@@ -43,7 +43,7 @@ echo $usercar['livello'];
 <?php echo $lang['Intelligenza']; ?>: <?php echo $usercar['intelligenza']; ?><br />
 <?php echo $lang['Destrezza']; ?>: <?php echo $usercar['destrezza']; ?><br />
 <br />
-<table border="0" cellspacing="1">
+<table border="0">
 <tr><td colspan="2"><?php echo $lang['elenco_ab']; ?></td></tr>
 <tr><td><?php echo $lang['ab_minatore']; ?>: <?php echo $usercar['minatore']; ?></td>
 <td><table align="center" border="0" cellspacing="0"><tr><td width="<?php echo $percmin1; ?>" class="sfondoverde"></td><td width="<?php echo $percmin2; ?>" class="sfondorosso"></td></tr>
