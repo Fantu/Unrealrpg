@@ -126,8 +126,7 @@ class Dati{
 	if($liv>10)
 	$liv=10;
 	$exp+=round($exp/10*$liv);
-	}
-	if($level>0){
+	}elseif($level>0){
 	if($liv>9)
 	$liv=9;
 	$exp-=round($exp/10*$liv);
@@ -136,6 +135,24 @@ class Dati{
 	$input=sprintf($lang['exp_guadagnata'],$this->nome($chi),$exp)."<br/>";
 	return $input;
 	} //fine Guadagnaexp
+	
+	public function Checkrep($chi) {
+	if($chi==1)
+	$chi2=2;
+	else
+	$chi2=1;
+	$level=$this->car($chi,'livello')-$this->car($chi2,'livello');
+	$liv=abs($level);
+	$rep[1]=floor($liv/2);
+	if($liv<=2){
+	$rep[0]=0;
+	}elseif($level<0){
+	$rep[0]=1;
+	}elseif($level>0){
+	$rep[0]=2;
+	}
+	return $rep;
+	} //fine Checkrep
 	
 	public function Attaccovicino($att,$dif) {
 	global $db,$lang;
@@ -227,8 +244,14 @@ if($dc->tattica(1,1)==2 AND $dc->tattica(2,1)==2){//se entrambi si arrendono
 $input=$lang['finito_entrambi_arresi']."<br/>";
 }elseif($dc->tattica(1,1)==2){//se il primo si arrende
 $input=sprintf($lang['finito_resa'],$dc->nome(1),$dc->nome(2))."<br/>";
+$rep=Checkrep(1);
+if($rep[0]==2)
+$db->QueryMod("UPDATE caratteristiche SET reputazione=reputazione-'".$rep[1]."' WHERE userid='".$this->id(1)."' LIMIT 1");
 }elseif($dc->tattica(2,1)==2){//se il secondo si arrende
 $input=sprintf($lang['finito_resa'],$dc->nome(2),$dc->nome(1))."<br/>";
+$rep=Checkrep(2);
+if($rep[0]==2)
+$db->QueryMod("UPDATE caratteristiche SET reputazione=reputazione-'".$rep[1]."' WHERE userid='".$this->id(2)."' LIMIT 1");
 }elseif($dc->esausto(1)==1 AND $dc->esausto(2)==1){//se entrambi esausti
 $input=$lang['finito_entrambi_esausti']."<br/>";
 }elseif($dc->morto(1)==1){//se il primo vince

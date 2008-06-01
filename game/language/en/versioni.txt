@@ -9,6 +9,10 @@ Legenda:<br />
 </p>
 <p><strong>0.6.8</strong> (Non disponibile - In sviluppo)<br />
 + Aggiunta nella registrazione la scelta sulla newsletter<br />
++ Create fasce di differenza per la reputazione, fino a 2 livello di differenza sono di pari livello, oltre l'avversario è più debole/forte di 1 punto ogni 2 livelli<br />
++ In combattimento se chi si arrende è più debole (in base alle fasce di reputazione) dell'avversario perde reputazione<br />
++ Vari miglioramenti di sistema a sistema di combattimento<br />
++ Vari miglioramenti grafici<br />
 </p>
 <p><strong>0.6.7.2</strong> (31/05/08 - Beta)<br />
 - Corretto un bug in Opzioni, ora la newsletter non viene disattivata ogni volta che si visita la pagina<br />
