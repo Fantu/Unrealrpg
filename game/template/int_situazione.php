@@ -43,17 +43,20 @@ echo $usercar['livello'];
 <?php echo $lang['Intelligenza']; ?>: <?php echo $usercar['intelligenza']; ?><br />
 <?php echo $lang['Destrezza']; ?>: <?php echo $usercar['destrezza']; ?><br />
 <br />
-<?php echo $lang['elenco_ab']; ?><br />
-<table align="center" border="0" cellspacing="0"><tr><td><?php echo $lang['ab_minatore']; ?>: <?php echo $usercar['minatore']; ?></td><td width="<?php echo $percmin1; ?>" class="sfondoverde"></td><td width="<?php echo $percmin2; ?>" class="sfondorosso"></td></tr>
-</table>
-<?php echo $lang['ab_alchimista']; ?>: <?php echo $usercar['alchimista']; ?>
-<table align="center" border="0" cellspacing="0"><tr><td width="<?php echo $percmin3; ?>" class="sfondoverde"></td><td width="<?php echo $percmin4; ?>" class="sfondorosso"></td></tr>
-</table>
-<?php echo $lang['ab_fabbro']; ?>: <?php echo $usercar['fabbro']; ?>
-<table align="center" border="0" cellspacing="0"><tr><td width="<?php echo $percmin5; ?>" class="sfondoverde"></td><td width="<?php echo $percmin6; ?>" class="sfondorosso"></td></tr>
-</table>
-<?php echo $lang['ab_magica']; ?>: <?php echo $usercar['magica']; ?>
-<table align="center" border="0" cellspacing="0"><tr><td width="<?php echo $percmin7; ?>" class="sfondoverde"></td><td width="<?php echo $percmin8; ?>" class="sfondorosso"></td></tr>
+<table border="0" cellspacing="1">
+<tr><td colspan="2"><?php echo $lang['elenco_ab']; ?></td></tr>
+<tr><td><?php echo $lang['ab_minatore']; ?>: <?php echo $usercar['minatore']; ?></td>
+<td><table align="center" border="0" cellspacing="0"><tr><td width="<?php echo $percmin1; ?>" class="sfondoverde"></td><td width="<?php echo $percmin2; ?>" class="sfondorosso"></td></tr>
+</table></tr>
+<tr><td><?php echo $lang['ab_alchimista']; ?>: <?php echo $usercar['alchimista']; ?></td>
+<td><table align="center" border="0" cellspacing="0"><tr><td width="<?php echo $percmin3; ?>" class="sfondoverde"></td><td width="<?php echo $percmin4; ?>" class="sfondorosso"></td></tr>
+</table></tr>
+<tr><td><?php echo $lang['ab_fabbro']; ?>: <?php echo $usercar['fabbro']; ?></td>
+<td><table align="center" border="0" cellspacing="0"><tr><td width="<?php echo $percmin5; ?>" class="sfondoverde"></td><td width="<?php echo $percmin6; ?>" class="sfondorosso"></td></tr>
+</table></tr>
+<tr><td><?php echo $lang['ab_magica']; ?>: <?php echo $usercar['magica']; ?></td>
+<td><table align="center" border="0" cellspacing="0"><tr><td width="<?php echo $percmin7; ?>" class="sfondoverde"></td><td width="<?php echo $percmin8; ?>" class="sfondorosso"></td></tr>
+</table></tr>
 </table>
 <br />
 <?php echo $proxlav; ?><br />
