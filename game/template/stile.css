@@ -2,8 +2,8 @@ body{
 	background-color: #60ACD7;
 	font-family: "Century Gothic", Verdana;
 }
-.sfondoverde {background-color: #008000;}
-.sfondorosso {background-color: #FF0000;}
+.sfondoverde {background-color: #008000;  height: 5px;}
+.sfondorosso {background-color: #FF0000;  height: 5px;}
 #menu{
 position: fixed;
 text-align: center;
