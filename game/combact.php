@@ -103,7 +103,7 @@ case 2:
 $viewtattic=$lang['tattica_resa'];
 break;//fine resa
 }
-$viewtattic=sprintf($lang['tattica_selezionata'],$viewtattic);
+$viewtattic=sprintf($lang['tattica_selezionata'],$viewtattic)."<br/>";
 $tattica=(int)$_GET['tattica'];
 $subtattica=(int)$_GET['subtatt'];
 if($tattica!=0){
