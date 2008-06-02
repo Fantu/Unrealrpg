@@ -261,6 +261,7 @@ $input=sprintf($lang['vincitore_combattimento'],$dc->nome(1))."<br/>";
 }elseif($turni==20){//se dura troppo
 $input=$lang['combattimento_troppo_lungo']."<br/>";
 }else{$finito=0;}
+$db->QueryMod("UPDATE battle SET tatatt='0',tatatt2='0',tatdif='0',tatdif2='0' WHERE id='".$battleid."' LIMIT 1");
 if($finito==1){
 if($turni>1){
 $input.=$dc->Guadagnaexp(1,$turni);

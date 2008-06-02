@@ -24,7 +24,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <li><a href="index.php?loc=combact&amp;tattica=2"><?php echo $lang['tattica_resa']; ?></a></li>
 </ul>
 </div>
-<?php } ?>
+<?php echo $viewtattic; } ?>
 <br />
 <?php echo $outputcombact; ?>
 <br />
