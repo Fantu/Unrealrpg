@@ -84,6 +84,15 @@ ob_end_clean();
 $combactview=2;
 $titleoutputcombact=$lang['titolo_report_combattimento2'];
 $outputcombact="<table>".$report."</table>";
+$tattica=(int)$_GET['tattica'];
+$subtattica=(int)$_GET['subtatt'];
+if($tattica!=0){
+if($batt['attid']==$user['userid']){
+$db->QueryMod("UPDATE battle SET tatatt='".$tattica."',tatatt2='".$subtattica."' WHERE id='".$eventisfida['battleid']."' LIMIT 1");
+}else{
+$db->QueryMod("UPDATE battle SET tatdif='".$tattica."',tatdif2='".$subtattica."' WHERE id='".$eventisfida['battleid']."' LIMIT 1");
+}
+}//fine imposta tattica
 $batt=$db->QuerySelect("SELECT * FROM battle WHERE id='".$eventisfida['battleid']."' LIMIT 1");
 if($batt['attid']==$user['userid']){
 $tattica=$batt['tatatt'];
@@ -104,15 +113,6 @@ $viewtattic=$lang['tattica_resa'];
 break;//fine resa
 }
 $viewtattic=sprintf($lang['tattica_selezionata'],$viewtattic)."<br/>";
-$tattica=(int)$_GET['tattica'];
-$subtattica=(int)$_GET['subtatt'];
-if($tattica!=0){
-if($batt['attid']==$user['userid']){
-$db->QueryMod("UPDATE battle SET tatatt='".$tattica."',tatatt2='".$subtattica."' WHERE id='".$eventisfida['battleid']."' LIMIT 1");
-}else{
-$db->QueryMod("UPDATE battle SET tatdif='".$tattica."',tatdif2='".$subtattica."' WHERE id='".$eventisfida['battleid']."' LIMIT 1");
-}
-}//fine imposta tattica
 }
 }
 
