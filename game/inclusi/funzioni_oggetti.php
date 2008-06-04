@@ -39,8 +39,10 @@ $oggdf_num=array(
 
 function Checkusurarottura($userid) {
 global $db,$lang;
-$oggusati=$db->QuerySelect("SELECT count(oggid) AS numero FROM inoggetti WHERE userid='".$userid."' AND inuso='1'");
+$check=0;
+$oggusati=$db->QuerySelect("SELECT count(id) AS numero FROM inoggetti WHERE userid='".$userid."' AND inuso='1'");
 if($oggusati['numero']>0){
+$check=1;
 $oggusati=$db->QueryCiclo("SELECT * FROM inoggetti WHERE userid='".$userid."' AND inuso='1'");
 while($ogg=$db->QueryCicloResult($oggusati)) {
 $oggetto=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$ogg['oggid']."' LIMIT 1");
@@ -59,7 +61,32 @@ $oggpersi.=sprintf($lang['oggetto_rotto'],$lang['oggetto'.$ogg['oggid'].'_nome']
 }
 if($rotto==1){
 $db->QueryMod("DELETE FROM inoggetti WHERE id='".$ogg['id']."'");
-if($ogg['equip']==1){
+}else{
+$db->QueryMod("UPDATE inoggetti SET usura=usura+'1',inuso='0' WHERE id='".$ogg['id']."' LIMIT 1");
+}
+}//fine per ogni oggetto usato
+}/*fine se ci sono oggetti usati*/
+$oggusati=$db->QuerySelect("SELECT count(id) AS numero FROM equip WHERE userid='".$userid."' AND inuso='1'");
+if($oggusati['numero']>0){
+$check=1;
+$oggusati=$db->QueryCiclo("SELECT * FROM equip WHERE userid='".$userid."' AND inuso='1'");
+while($ogg=$db->QueryCicloResult($oggusati)) {
+$oggetto=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$ogg['oggid']."' LIMIT 1");
+$rotto=0;
+$usura=$ogg['usura']+1;
+if($usura>=$oggetto['usura']){
+$rotto=1;
+$oggpersi.=sprintf($lang['oggetto_usurato'],$lang['oggetto'.$ogg['oggid'].'_nome'])."<br />";
+}else{
+$rottura=floor($oggetto['probrottura']/$oggetto['usura']*$usura);
+$prob=rand(1,10000);
+if($prob<$rottura){
+$rotto=1;
+$oggpersi.=sprintf($lang['oggetto_rotto'],$lang['oggetto'.$ogg['oggid'].'_nome'])."<br />";
+}
+}
+if($rotto==1){
+$db->QueryMod("DELETE FROM equip WHERE id='".$ogg['id']."'");
 $oggineq=$db->QuerySelect("SELECT * FROM equipaggiamento WHERE userid='".$userid."' LIMIT 1");
 foreach($oggineq as $chiave=>$elemento){
 if($chiave!="userid"){
@@ -69,25 +96,25 @@ $campo=$chiave;
 }//se non è l'id
 }//per ogni equip
 $db->QueryMod("UPDATE equipaggiamento SET ".$campo."='0' WHERE userid='".$userid."' LIMIT 1");
-}
 }else{
-$db->QueryMod("UPDATE inoggetti SET usura=usura+'1',inuso='0' WHERE id='".$ogg['id']."' LIMIT 1");
+$db->QueryMod("UPDATE equip SET usura=usura+'1',inuso='0' WHERE id='".$ogg['id']."' LIMIT 1");
 }
 }//fine per ogni oggetto usato
-}/*fine se ci sono oggetti usati*/else{
-$oggpersi=$lang['nessuno_gettato']."<br />";}
+}/*fine se ci sono oggetti usati*/
+if($check==0)
+$oggpersi=$lang['nessuno_gettato']."<br />";
 return $oggpersi;
 }/*fine Checkusurarottura*/
 
-function Usaoggetto($userid,$oggid) {
+function Usaoggetto($userid,$oggid,$equip) {
 global $db,$lang;
 $oggetto=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$oggid."' LIMIT 1");
 $nomeogg=$lang['oggetto'.$oggetto['id'].'_nome'];
+$ok=1;
 switch($oggetto['tipo']){
 		case 4://pozioni generiche
 			switch($oggetto['categoria']){
 			case 1://pozioni curative
-			$db->QueryMod("UPDATE inoggetti SET inuso='1' WHERE userid='".$userid."' AND oggid='".$oggid."' AND equip='0' ORDER BY usura DESC LIMIT 1");
 			$car=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");
 			$salute=$car['saluteattuale']+$oggetto['recsalute'];
 			if($salute>$car['salute'])
@@ -96,7 +123,6 @@ switch($oggetto['tipo']){
 			$output=sprintf($lang['utilizzato_4_1'],$nomeogg,$oggetto['recsalute']);
 			break;
 			case 2://pozioni energetiche
-			$db->QueryMod("UPDATE inoggetti SET inuso='1' WHERE userid='".$userid."' AND oggid='".$oggid."' AND equip='0' ORDER BY usura DESC LIMIT 1");
 			$car=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");
 			$energia=$car['energia']+$oggetto['recenergia'];
 			if($energia>$car['energiamax'])
@@ -105,14 +131,23 @@ switch($oggetto['tipo']){
 			$output=sprintf($lang['utilizzato_4_2'],$nomeogg,$oggetto['recenergia']);
 			break;
 			default:
+			$ok=0;
 			$output=sprintf($lang['errore_sistema_utilizzo_ogg'],$nomeogg);
 			break;
 			}	
 		break;
 		default:
+		$ok=0;
 		$output=sprintf($lang['errore_sistema_utilizzo_ogg'],$nomeogg);
 		break;
 		}
+if($ok==1){
+if($equip==0){
+$db->QueryMod("UPDATE inoggetti SET inuso='1' WHERE userid='".$userid."' AND oggid='".$oggid."' ORDER BY usura DESC LIMIT 1");
+}else{
+$db->QueryMod("UPDATE equip SET inuso='1' WHERE userid='".$userid."' AND oggid='".$oggid."' ORDER BY usura DESC LIMIT 1");
+}
+}//se usato
 return $output;
 }/*fine Usaoggetto*/
 ?>

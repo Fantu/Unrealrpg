@@ -13,8 +13,10 @@ Legenda:<br />
 + In combattimento se chi si arrende è più debole (in base alle fasce di reputazione) dell'avversario perde reputazione<br />
 + Aggiunta in combattimenti la visualizzazione della tattica scelta<br />
 + A fine di ogni "round" le tattiche vengono azzerate<br />
-+ Vari miglioramenti di sistema a sistema di combattimento<br />
++ Rifatto il sistema oggetti/equipaggiamento in modo più efficente<br />
++ Vari miglioramenti di sistema a sistema di combattimento, sistema di utilizzo degli oggetti, sistema di controllo usura/rottura degli oggetti<br />
 + Vari miglioramenti grafici<br />
+# Modificata la durata di un "round" di combattimento da 3 a 2 minuti<br />
 </p>
 <p><strong>0.6.7.2</strong> (31/05/08 - Beta)<br />
 - Corretto un bug in Opzioni, ora la newsletter non viene disattivata ogni volta che si visita la pagina<br />
