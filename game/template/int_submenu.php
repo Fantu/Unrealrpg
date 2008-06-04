@@ -8,7 +8,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <div align="center">
 <?php foreach($link as $chiave=>$elemento){ ?>
 <br/>
-echo $elemento;
+<?php echo $elemento; ?>
 <?php }/* fine per ogni link*/ ?>
 </div>
 <br />
