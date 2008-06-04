@@ -5,19 +5,24 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 }
 $newversion="0.6.8";
 foreach($game_server as $chiave=>$elemento){
-if($chiave!=999){
+if($chiave==999){
 $db->database=$chiave;
 $check=$db->QuerySelect("SELECT version FROM config WHERE id=".$chiave);
 if($check['version']!=$newversion AND $newversion==$game_revision){
-$db->QueryMod("CREATE TABLE `unrealff_rpg999`.`equip` (
+/*$db->QueryMod("CREATE TABLE `unrealff_rpg999`.`equip` (
 `id` INT UNSIGNED NOT NULL AUTO_INCREMENT ,
 `oggid` SMALLINT UNSIGNED NOT NULL ,
 `userid` SMALLINT UNSIGNED NOT NULL ,
 `usura` SMALLINT UNSIGNED NOT NULL DEFAULT '0',
 `inuso` TINYINT( 1 ) UNSIGNED NOT NULL DEFAULT '0',
 PRIMARY KEY ( `id` )
-) ENGINE = MYISAM");
-
+) ENGINE = MYISAM");*/
+$a=$db->QueryCiclo("SELECT * FROM inoggetti WHERE equip='1'");
+while($var=$db->QueryCicloResult($a))
+{
+	$db->QueryMod("DELETE FROM inoggetti WHERE id='".$var['id']."' LIMIT 1");
+	$db->QueryMod("INSERT INTO equip (oggid,userid,usura) VALUES ('".$var['oggid']."','".$var['userid']."','".$var['usura']."')");
+}
 	/*//creazione record per tab con 1 record per utente
 	$a=$db->QueryCiclo("SELECT userid FROM utenti WHERE conferma='1' AND personaggio='1'");
 	while($var=$db->QueryCicloResult($a))
