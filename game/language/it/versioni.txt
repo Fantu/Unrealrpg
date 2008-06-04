@@ -21,6 +21,7 @@ Niente attualmente<br />
 + Vari miglioramenti di sistema a sistema di combattimento, sistema di utilizzo degli oggetti, sistema di controllo usura/rottura degli oggetti<br />
 + Vari miglioramenti grafici<br />
 # Modificata la durata di un "round" di combattimento da 3 a 2 minuti<br />
+# Modificato il guadagno di esperienza, reso più equilibrato<br />
 </p>
 <p><strong>0.6.7.2</strong> (31/05/08 - Beta)<br />
 - Corretto un bug in Opzioni, ora la newsletter non viene disattivata ogni volta che si visita la pagina<br />

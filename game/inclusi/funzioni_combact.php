@@ -118,7 +118,7 @@ class Dati{
 	$chi2=2;
 	else
 	$chi2=1;
-	$exp=10+2*$turni;
+	$exp=4+3*$turni;
 	$exp=round(rand(($exp/100*80),$exp));
 	$level=$this->car($chi,'livello')-$this->car($chi2,'livello');
 	if($level<0){
