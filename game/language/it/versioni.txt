@@ -23,6 +23,7 @@ Niente attualmente<br />
 # Modificata la durata di un "round" di combattimento da 3 a 2 minuti<br />
 # Modificato il guadagno di esperienza, reso più equilibrato<br />
 # Rivisto il lavoro in Laboratorio come alchimista, reso più equilibrato<br />
+# Aumentata la paga nelle "prime parti" dei lavori, portato da 6 a 7 monete ad ora<br />
 </p>
 <p><strong>0.6.7.2</strong> (31/05/08 - Beta)<br />
 - Corretto un bug in Opzioni, ora la newsletter non viene disattivata ogni volta che si visita la pagina<br />

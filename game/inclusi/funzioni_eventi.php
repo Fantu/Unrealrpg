@@ -10,7 +10,7 @@ function Completalavminnuova($userid,$ore) {
 global $db,$adesso,$lang,$language;
 require_once('language/'.$language.'/lang_miniera.php');
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");	
-$paga=6;
+$paga=7;
 $energia=100-(5*$usercar['minatore']);
 if ($energia<50)
 $energia=50;
@@ -64,7 +64,7 @@ function Completalavlabapp($userid,$ore) {
 global $db,$adesso,$lang,$language;
 require_once('language/'.$language.'/lang_laboratorio.php');
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");
-$paga=6;
+$paga=7;
 $mana=rand(5,10);
 $energia=100-(5*$usercar['alchimista']);
 if ($energia<50)
@@ -250,7 +250,7 @@ function Completalavfucapp($userid,$ore) {
 global $db,$adesso,$lang,$language;
 require_once('language/'.$language.'/lang_fucina.php');
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");	
-$paga=6;
+$paga=7;
 $energia=100-(5*$usercar['fabbro']);
 if ($energia<50)
 $energia=50;
