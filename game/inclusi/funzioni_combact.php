@@ -163,7 +163,7 @@ class Dati{
 	if($this->equip($att,'cac')!=0 AND $this->car($att,'energia')>$energia){
 	$danno=$arma['danno'];
 	$nomearma=$lang['oggetto'.$this->equip($att,'cac').'_nome'];
-	$db->QueryMod("UPDATE inoggetti SET inuso='1' WHERE userid='".$this->id($att)."' AND oggid='".$this->equip($att,'cac')."' AND equip='1' LIMIT 1");
+	$db->QueryMod("UPDATE equip SET inuso='1' WHERE userid='".$this->id($att)."' AND oggid='".$this->equip($att,'cac')."' LIMIT 1");
 	$this->Ogginuso($att);
 	}else{
 	$danno=1+round($this->car($att,'attfisico')/100);
