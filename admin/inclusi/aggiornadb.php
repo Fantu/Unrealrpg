@@ -9,7 +9,7 @@ if($chiave!=999){
 $db->database=$chiave;
 $check=$db->QuerySelect("SELECT version FROM config WHERE id=".$chiave);
 if($check['version']!=$newversion AND $newversion==$game_revision){
-$db->QueryMod("CREATE TABLE `unrealff_rpg999`.`equip` (
+$db->QueryMod("CREATE TABLE `equip` (
 `id` INT UNSIGNED NOT NULL AUTO_INCREMENT ,
 `oggid` SMALLINT UNSIGNED NOT NULL ,
 `userid` SMALLINT UNSIGNED NOT NULL ,
