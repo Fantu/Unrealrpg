@@ -19,6 +19,9 @@ $lang['account_creato_ok']='<strong>Account creato con successo!!</strong><br />
 $lang['Conferma_account']='Confirm account ';
 $lang['testo_mail_conferma']='Hi,<br />To confirm your registration at %s you must open the link below:<br /> <a href="%s/conferma.php?t=%s&cod=%s">Conferma account</a> <br /><br />Until the account will not be confirmed, you can not access the game.<br />Greetings,<br />%s Staff';
 $lang['altre_lingue']='%s is also available in the following languages: ';
+$lang['disattiva']='Disattiva';
+$lang['attiva']='Attiva';
+$lang['Newsletter']='Newsletter';
 
 $lang['reg_error1']='- Non hai selezionato il server!<br />';
 $lang['reg_error2']='- Non hai scritto il tuo username!<br />';
