@@ -17,7 +17,7 @@ $db->QueryMod("CREATE TABLE `unrealff_rpg999`.`equip` (
 `inuso` TINYINT( 1 ) UNSIGNED NOT NULL DEFAULT '0',
 PRIMARY KEY ( `id` )
 ) ENGINE = MYISAM");
-$b=$db->QuerySlect("SELECT count(id) AS num FROM inoggetti WHERE equip='1'");
+$b=$db->QuerySelect("SELECT count(id) AS num FROM inoggetti WHERE equip='1'");
 if($b['num']>0){
 $a=$db->QueryCiclo("SELECT * FROM inoggetti WHERE equip='1'");
 while($var=$db->QueryCicloResult($a))
