@@ -9,6 +9,7 @@ Legenda:<br />
 </p>
 <p><strong>0.6.9</strong> (Non disponibile - In sviluppo)<br />
 + Aggiunta negli oggetti la categoria Equipaggiamento da difesa con le sottocategorie Armature e Scudi<br />
++ Vincendo un combattimento contro un avversario più forte (in base alle fasce di reputazione) la reputazione sali<br />
 </p>
 <p><strong>0.6.8.1</strong> (07/06/08 - Beta)<br />
 - Corretto un bug in Equipaggiamento<br />

@@ -145,11 +145,11 @@ class Dati{
 	$liv=abs($level);
 	$rep[1]=floor($liv/2);
 	if($liv<=2){
-	$rep[0]=0;
+	$rep[0]=0;//pari
 	}elseif($level<0){
-	$rep[0]=1;
+	$rep[0]=1;//più debole
 	}elseif($level>0){
-	$rep[0]=2;
+	$rep[0]=2;//più forte
 	}
 	return $rep;
 	} //fine Checkrep
@@ -254,10 +254,16 @@ if($rep[0]==2)
 $db->QueryMod("UPDATE caratteristiche SET reputazione=reputazione-'".$rep[1]."' WHERE userid='".$this->id(2)."' LIMIT 1");
 }elseif($dc->esausto(1)==1 AND $dc->esausto(2)==1){//se entrambi esausti
 $input=$lang['finito_entrambi_esausti']."<br/>";
-}elseif($dc->morto(1)==1){//se il primo vince
+}elseif($dc->morto(1)==1){//se il secondo vince
 $input=sprintf($lang['vincitore_combattimento'],$dc->nome(2))."<br/>";
-}elseif($dc->morto(2)==1){//se il secondo vince
+$rep=$dc->Checkrep(2);
+if($rep[0]==1)
+$db->QueryMod("UPDATE caratteristiche SET reputazione=reputazione+'".$rep[1]."' WHERE userid='".$this->id(2)."' LIMIT 1");
+}elseif($dc->morto(2)==1){//se il primo vince
 $input=sprintf($lang['vincitore_combattimento'],$dc->nome(1))."<br/>";
+$rep=$dc->Checkrep(1);
+if($rep[0]==1)
+$db->QueryMod("UPDATE caratteristiche SET reputazione=reputazione+'".$rep[1]."' WHERE userid='".$this->id(1)."' LIMIT 1");
 }elseif($turni==20){//se dura troppo
 $input=$lang['combattimento_troppo_lungo']."<br/>";
 }else{$finito=0;}
