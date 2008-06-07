@@ -10,7 +10,8 @@ $catoggetti_nome=array(
 2=>array(1),
 3,
 4=>array(1,2),
-5=>array(1,2,3,4,5)
+5=>array(1,2,3,4,5),
+6=>array(1,2)
 );
 
 $materiali_nome=array(
