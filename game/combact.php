@@ -84,6 +84,7 @@ ob_end_clean();
 $combactview=2;
 $titleoutputcombact=$lang['titolo_report_combattimento2'];
 $outputcombact="<table>".$report."</table>";
+$batt=$db->QuerySelect("SELECT * FROM battle WHERE id='".$eventisfida['battleid']."' LIMIT 1");
 $tattica=(int)$_GET['tattica'];
 $subtattica=(int)$_GET['subtatt'];
 if($tattica!=0){
