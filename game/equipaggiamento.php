@@ -38,7 +38,7 @@ exit();
 }
 }//fine imposta arma corpo a corpo
 
-$seogg=$db->QuerySelect("SELECT count(id) AS id FROM equip WHERE userid='".$user['userid']."'");
+$seogg=$db->QuerySelect("SELECT count(id) AS id FROM inoggetti WHERE userid='".$user['userid']."'");
 if($seogg['id']>0){
 $oggacac=$db->QueryCiclo("SELECT * FROM oggetti WHERE tipo='5'");
 while($ogg=$db->QueryCicloResult($oggacac)) {

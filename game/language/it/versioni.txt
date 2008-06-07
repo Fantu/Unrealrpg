@@ -10,6 +10,9 @@ Legenda:<br />
 <p><strong>0.6.9</strong> (Non disponibile - In sviluppo)<br />
 Niente attualmente<br />
 </p>
+<p><strong>0.6.8.1</strong> (07/06/08 - Beta)<br />
+- Corretto un bug in Equipaggiamento<br />
+</p>
 <p><strong>0.6.8</strong> [R.1131] (06/06/08 - Beta)<br />
 + Aggiunta nella registrazione la scelta sulla newsletter<br />
 + Create fasce di differenza per la reputazione, fino a 2 livello di differenza sono di pari livello, oltre l'avversario è più debole/forte di 1 punto ogni 2 livelli<br />
