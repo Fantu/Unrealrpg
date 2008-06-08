@@ -46,7 +46,7 @@ display: none;
 #menu li:hover ul,#tattic li:hover ul,#lutenti li:hover ul{
 display: block;
 }
-.alutenti a{
+a.alutenti{
 background-color: #ffbb88;
 display: block;
 text-decoration: none;
