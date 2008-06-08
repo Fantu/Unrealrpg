@@ -51,6 +51,7 @@ background-color: #ffbb88;
 display: block;
 text-decoration: none;
 width: 140px;
+border-width: 3px;
 }
 #lutenti li ul{
 position: absolute;
