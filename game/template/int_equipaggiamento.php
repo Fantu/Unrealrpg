@@ -18,7 +18,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <td>
 <?php echo $lang['seleziona_cac']; ?> <select name="acac" id="acac">
 <option value="-1" selected="selected">--------</option>
-<option value="0" selected="selected"><?php echo $lang['Niente']; ?></option>
+<option value="0"><?php echo $lang['Niente']; ?></option>
 <?php if($armicac){
 foreach($armicac as $chiave=>$elemento)
 echo "<option value=\"$chiave\">$elemento</option>";} ?>
