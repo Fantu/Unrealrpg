@@ -12,7 +12,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <br />
 <?php echo $lang['risultati_nome_cercato']; ?>
 <br />
-<table width="500" border="1" cellspacing="2" cellpadding="2">
+<table border="1" cellspacing="2" cellpadding="2" align="center">
   <tr>
     <td><div align="center"><?php echo $lang['Personaggio']; ?></div></td>
     <td><div align="center"><?php echo $lang['Stato']; ?></div></td>
@@ -64,7 +64,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <br />
 <?php echo $prec; ?>  <?php echo $prox; ?>
 <br />
-<table border="1" cellspacing="2" cellpadding="2">
+<table border="1" cellspacing="2" cellpadding="2" align="center">
   <tr>
     <td><div align="center"><a href="index.php?loc=utenti&amp;ordine=personaggio"><?php echo $lang['Personaggio']; ?></a></div></td>
     <td><div align="center"><a href="index.php?loc=utenti&amp;ordine=stato"><?php echo $lang['Stato']; ?></a></div></td>
@@ -77,6 +77,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <ul>
 <li><a class="alutenti" href="<?php echo $utenti['link'][$chiave]; ?>"><?php echo $utenti['nome'][$chiave]; ?></a><ul>
 <li><a class="alutenti" href="index.php?loc=messaggi&amp;do=scrivi&amp;id=<?php echo $utenti['userid'][$chiave]; ?>"><?php echo $lang['scrivi_msg']; ?></a></li>
+<?php if($utenti['online'][$chiave]==1){ ?><li><a href="index.php?loc=combact&amp;do=sfida&amp;id=<?php echo $utenti['userid'][$chiave]; ?>"><?php echo $lang['sfida']; ?></a></li><?php } ?>
 </ul></li>
 </ul>
 </div></td>
