@@ -50,10 +50,11 @@ a.alutenti{
 background-color: #ffbb88;
 display: block;
 text-decoration: none;
-width: 120px;
+width: 140px;
 }
 #lutenti li ul{
 position: absolute;
 display: none;
+left: 140px;
 top: 0;
 }
