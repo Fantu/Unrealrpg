@@ -21,7 +21,7 @@ width: 148px;
 margin: 3px;
 border: groove #ffbb88;
 }
-#menu a:focus,#menu a:hover,#tattic a:focus,#tattic a:hover{
+#menu a:focus,#menu a:hover,#tattic a:focus,#tattic a:hover,a.alutenti:hover,a.alutenti:focus{
 background-color: #ff9977;
 border: groove #ff9977;
 }
