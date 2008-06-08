@@ -64,7 +64,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <br />
 <?php echo $prec; ?>  <?php echo $prox; ?>
 <br />
-<table width="500" border="1" cellspacing="2" cellpadding="2">
+<table border="1" cellspacing="2" cellpadding="2">
   <tr>
     <td><div align="center"><a href="index.php?loc=utenti&amp;ordine=personaggio"><?php echo $lang['Personaggio']; ?></a></div></td>
     <td><div align="center"><a href="index.php?loc=utenti&amp;ordine=stato"><?php echo $lang['Stato']; ?></a></div></td>
