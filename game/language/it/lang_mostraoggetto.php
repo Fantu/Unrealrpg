@@ -9,4 +9,5 @@ $lang['probrottura']='Probabilit&agrave di rottura massima';
 $lang['recsalute']='Salute che ripristina';
 $lang['recenergia']='Energia che ripristina';
 $lang['danno']='Danno';
+$lang['difesafisica']='Difesa fisica massima';
 ?>

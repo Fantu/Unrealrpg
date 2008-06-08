@@ -14,6 +14,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <?php echo $lang['recsalute']; ?>: <?php echo $oggetti['recsalute']; ?><br />
 <?php echo $lang['recenergia']; ?>: <?php echo $oggetti['recenergia']; ?><br />
 <?php echo $lang['danno']; ?>: <?php echo $oggetti['danno']; ?><br />
+<?php echo $lang['difesafisica']; ?>: <?php echo $oggetti['difesafisica']; ?><br />
 <br />
 <br />
 <?php echo $indietro; ?>

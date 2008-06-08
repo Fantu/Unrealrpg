@@ -37,6 +37,7 @@ $oggetti['probrottura']=$oggetto['probrottura'];
 $oggetti['recsalute']=$oggetto['recsalute'];
 $oggetti['recenergia']=$oggetto['recenergia'];
 $oggetti['danno']=$oggetto['danno'];
+$oggetti['difesafisica']=$oggetto['difesafisica'];
 
 require('template/int_mostraoggetto.php');
 ?>
