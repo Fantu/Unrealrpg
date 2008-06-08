@@ -25,6 +25,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <ul>
 <li><a class="alutenti" href="index.php?loc=visualizzautente&amp;id=<?php echo $utentit['userid'][$chiave]; ?>"><?php echo $utentit['nome'][$chiave]; ?></a><ul>
 <li><a class="alutenti" href="index.php?loc=messaggi&amp;do=scrivi&amp;id=<?php echo $utentit['userid'][$chiave]; ?>"><?php echo $lang['scrivi_msg']; ?></a></li>
+<?php if($utentit['online'][$chiave]==1){ ?><li><a class="alutenti" href="index.php?loc=combact&amp;do=sfida&amp;id=<?php echo $utentit['userid'][$chiave]; ?>"><?php echo $lang['sfida']; ?></a></li><?php } ?>
 </ul></li>
 </ul>
 </div></td>
@@ -77,7 +78,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <ul>
 <li><a class="alutenti" href="<?php echo $utenti['link'][$chiave]; ?>"><?php echo $utenti['nome'][$chiave]; ?></a><ul>
 <li><a class="alutenti" href="index.php?loc=messaggi&amp;do=scrivi&amp;id=<?php echo $utenti['userid'][$chiave]; ?>"><?php echo $lang['scrivi_msg']; ?></a></li>
-<?php if($utenti['online'][$chiave]==1){ ?><li><a href="index.php?loc=combact&amp;do=sfida&amp;id=<?php echo $utenti['userid'][$chiave]; ?>"><?php echo $lang['sfida']; ?></a></li><?php } ?>
+<?php if($utenti['online'][$chiave]==1){ ?><li><a class="alutenti" href="index.php?loc=combact&amp;do=sfida&amp;id=<?php echo $utenti['userid'][$chiave]; ?>"><?php echo $lang['sfida']; ?></a></li><?php } ?>
 </ul></li>
 </ul>
 </div></td>
