@@ -15,6 +15,7 @@ Legenda:<br />
 + Aggiunta la difesa fisica nella visualizzazione dettagliata degli oggetti<br />
 + Vari miglioramenti di sistema a Elenco personaggi<br />
 + Vari miglioramenti grafici<br />
+# Modificato il guadagno di esperienza, reso più equilibrato<br />
 </p>
 <p><strong>0.6.8.2</strong> (07/06/08 - Beta)<br />
 - Corretto bug nella selezione della tattica in combattimento<br />
