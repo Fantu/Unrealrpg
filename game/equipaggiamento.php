@@ -11,9 +11,9 @@ $userequip=$db->QuerySelect("SELECT * FROM equipaggiamento WHERE userid='".$user
 if (isset($_POST['impocac'])){
 $errore="";
 $acac=(int)$_POST['acac'];
-if ($acac<1)
+if ($acac<0)
 $errore.=$lang['equip_errore1'];
-if($errore==""){
+if($errore=="" AND $acac>0){
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$user['userid']."' LIMIT 1");
 $acacsel=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$acac."' LIMIT 1");
 if ($usercar['attfisico']<$acacsel['forzafisica'])
@@ -30,9 +30,11 @@ $db->QueryMod("DELETE FROM equip WHERE id='".$datrasf['id']."' LIMIT 1");
 $db->QueryMod("INSERT INTO inoggetti (oggid,userid,usura) VALUES ('".$datrasf['oggid']."','".$datrasf['userid']."','".$datrasf['usura']."')");
 }//se c'è già un oggetto impo
 $db->QueryMod("UPDATE equipaggiamento SET cac='".$acac."' WHERE userid='".$user['userid']."' LIMIT 1");
+if($acac!=0){
 $datrasf=$db->QuerySelect("SELECT * FROM inoggetti WHERE userid='".$user['userid']."' AND oggid='".$acac."' LIMIT 1");
 $db->QueryMod("DELETE FROM inoggetti WHERE id='".$datrasf['id']."' LIMIT 1");
 $db->QueryMod("INSERT INTO equip (oggid,userid,usura) VALUES ('".$datrasf['oggid']."','".$datrasf['userid']."','".$datrasf['usura']."')");
+}
 echo "<script language=\"javascript\">window.location.href='index.php?loc=equipaggiamento'</script>";
 exit();
 }
