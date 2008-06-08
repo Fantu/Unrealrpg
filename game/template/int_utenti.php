@@ -16,7 +16,6 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
   <tr>
     <td><div align="center"><?php echo $lang['Personaggio']; ?></div></td>
     <td><div align="center"><?php echo $lang['Stato']; ?></div></td>
-    <td><div align="center"><?php echo $lang['sfida']; ?></div></td>
     <td><div align="center"><?php echo $lang['Livello']; ?></div></td>
   </tr>
 <?php foreach($utentit['nome'] as $chiave=>$elemento){ ?>
@@ -35,7 +34,6 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <img src="template/immagini/led_rosso.gif" alt="Offline" />
 <?php } ?>
 </div></td>
-<td><div align="center"><?php if($utentit['online'][$chiave]==1){ ?><a href="index.php?loc=combact&amp;do=sfida&amp;id=<?php echo $utentit['userid'][$chiave]; ?>"><?php echo $lang['sfida']; ?></a><?php } ?></div></td>
 <td><div align="center"><?php echo $utentit['livello'][$chiave]; ?></div></td>
 </tr>
 <?php }/* fine per ogni utente della lista*/ ?>
@@ -69,7 +67,6 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
   <tr>
     <td><div align="center"><a href="index.php?loc=utenti&amp;ordine=personaggio"><?php echo $lang['Personaggio']; ?></a></div></td>
     <td><div align="center"><a href="index.php?loc=utenti&amp;ordine=stato"><?php echo $lang['Stato']; ?></a></div></td>
-    <td><div align="center"><?php echo $lang['sfida']; ?></div></td>
     <td><div align="center"><a href="index.php?loc=utenti&amp;ordine=livello"><?php echo $lang['Livello']; ?></a></div></td>
   </tr>
 <?php foreach($utenti['nome'] as $chiave=>$elemento){ ?>
@@ -88,7 +85,6 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <img src="template/immagini/led_rosso.gif" alt="Offline" />
 <?php } ?>
 </div></td>
-<td><div align="center"><?php if($utenti['online'][$chiave]==1){ ?><a href="index.php?loc=combact&amp;do=sfida&amp;id=<?php echo $utenti['userid'][$chiave]; ?>"><?php echo $lang['sfida']; ?></a><?php } ?></div></td>
 <td><div align="center"><?php echo $utenti['livello'][$chiave]; ?></div></td>
 </tr>
 <?php }/* fine per ogni utente della lista*/ ?>
