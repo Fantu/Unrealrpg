@@ -29,7 +29,7 @@ border: groove #ff9977;
 text-align: center;
 font-size: small;
 }
-#menu ul,#tattic ul{
+#menu ul,#tattic ul,#tattic ul{
 margin: 0;
 padding: 0;
 list-style: none;
@@ -43,6 +43,15 @@ left: 160px;
 top: 0;
 display: none;
 }
-#menu li:hover ul,#tattic li:hover ul{
+#menu li:hover ul,#tattic li:hover ul,#lutenti li:hover ul{
 display: block;
+}
+.alutenti a{
+display: block;
+text-decoration: none;
+width: 120px;
+}
+#lutenti li ul{
+position: absolute;
+display: none;
 }

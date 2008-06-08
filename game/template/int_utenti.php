@@ -6,6 +6,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <center><h2><?php echo $lang['Lista_utenti']; ?></h2></center><br />
 <br />
 <?php echo $outputerrori; ?>
+<div id="lutenti">
 <?php if($ricerca==1){/*inizio mostra risultati ricerca*/ ?>
 <br />
 <br />
@@ -69,14 +70,22 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
   </tr>
 <?php foreach($utenti['nome'] as $chiave=>$elemento){ ?>
 <tr>
-<td><div align="center"><a href="<?php echo $utenti['link'][$chiave]; ?>"><?php echo $utenti['nome'][$chiave]; ?></a></div></td>
+<td><div align="center">
+<ul>
+<li><a class="alutenti" href="<?php echo $utenti['link'][$chiave]; ?>"><?php echo $utenti['nome'][$chiave]; ?></a><ul>
+<li><a class="alutenti" href="index.php?loc=messaggi&amp;do=scrivi&amp;id=<?php echo $utenti['userid'][$chiave]; ?>"><?php echo $lang['scrivi_msg']; ?></a></li>
+</ul></li>
+</ul>
+</div></td>
 <td><div align="center"><?php if($utenti['online'][$chiave]==1){ ?>
 <img src="template/immagini/led_verde.gif" alt="Online" />
 <?php }else{ ?>
 <img src="template/immagini/led_rosso.gif" alt="Offline" />
 <?php } ?>
 </div></td>
-<td><div align="center"><a href="index.php?loc=messaggi&amp;do=scrivi&amp;id=<?php echo $utenti['userid'][$chiave]; ?>"><img src="template/immagini/mess.gif" alt="<?php echo $lang['scrivi_msg']; ?>" /></a></div></td>
+<td><div align="center">
+<a href="index.php?loc=messaggi&amp;do=scrivi&amp;id=<?php echo $utenti['userid'][$chiave]; ?>"><img src="template/immagini/mess.gif" alt="<?php echo $lang['scrivi_msg']; ?>" /></a>
+</div></td>
 <td><div align="center"><?php if($utenti['online'][$chiave]==1){ ?><a href="index.php?loc=combact&amp;do=sfida&amp;id=<?php echo $utenti['userid'][$chiave]; ?>"><?php echo $lang['sfida']; ?></a><?php } ?></div></td>
 <td><div align="center"><?php echo $utenti['livello'][$chiave]; ?></div></td>
 </tr>
@@ -84,3 +93,4 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 </table>
 <?php echo $prec; ?>  <?php echo $prox; ?>
 <br />
+</div>
