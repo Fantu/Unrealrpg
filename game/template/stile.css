@@ -34,7 +34,7 @@ margin: 0;
 padding: 0;
 list-style: none;
 }
-#menu li,#tattic li{
+#menu li,#tattic li,#lutenti li{
 position: relative;
 }
 #menu li ul,#tattic li ul{
