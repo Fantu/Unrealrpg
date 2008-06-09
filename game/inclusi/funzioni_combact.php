@@ -140,11 +140,17 @@ class Dati{
 	else
 	$chi2=1;
 	$percsalute=100/$this->car($chi,'salute')*$this->car($chi,'saluteattuale');
+	$percenergia=100/$this->car($chi,'energiamax')*$this->car($chi,'energia');
 	$percenergia2=100/$this->car($chi2,'energiamax')*$this->car($chi2,'energia');
 	if($percenergia2<5){//se l'avversario è esausto attacco
 	$this->che[$chi]->tattic=1;
-	}elseif($percsalute<10){//se la salute è pessima
-	$this->che[$chi]->tattic=2;}
+	}elseif($percsalute<10){//se la salute è pessima resa
+	$this->che[$chi]->tattic=2;
+	}elseif($percenergia2<5){//se esausto resa
+	$this->che[$chi]->tattic=2;
+	}else{//se nessuna condizione valida
+	$this->che[$chi]->tattic=1;
+	}
 	if($this->tattica(1,1)==1)
 	$this->che[$chi]->subtattica==1;
 	} //fine Autotattic
