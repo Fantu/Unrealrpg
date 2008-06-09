@@ -15,7 +15,8 @@ class Combattente{
 	var $tattica;
 	var $subtattica;
 	var $bonusexp;
-	function Combattente($id2,$nome2,$car2,$equip2,$tattica2,$subtattica2){
+	var $plus;
+	function Combattente($id2,$nome2,$car2,$equip2,$tattica2,$subtattica2,$plus2){
 	$this->id=$id2;
 	$this->nome=$nome2;
 	$this->car=$car2;
@@ -26,6 +27,7 @@ class Combattente{
 	$this->tattica=$tattica2;
 	$this->subtattica=$subtattica2;
 	$this->bonusexp=0;
+	$this->plus=$plus2;
 	}
 } //fine classe Combattente
 
@@ -36,19 +38,23 @@ class Dati{
 	global $db;
 	$attcar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$attaccante."' LIMIT 1");
 	$difcar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$difensore."' LIMIT 1");
-	$attn=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$attaccante."' LIMIT 1");
-	$difn=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$difensore."' LIMIT 1");
+	$attn=$db->QuerySelect("SELECT * FROM utenti WHERE userid='".$attaccante."' LIMIT 1");
+	$difn=$db->QuerySelect("SELECT * FROM utenti WHERE userid='".$difensore."' LIMIT 1");
 	$attequip=$db->QuerySelect("SELECT * FROM equipaggiamento WHERE userid='".$attaccante."' LIMIT 1");
 	$difequip=$db->QuerySelect("SELECT * FROM equipaggiamento WHERE userid='".$difensore."' LIMIT 1");
 	$attpoint=$attcar['agilita']+$attcar['velocita']+($attcar['saluteattuale']/2)+($attcar['energia']/5);
 	$difpoint=$difcar['agilita']+$difcar['velocita']+($difcar['saluteattuale']/2)+($difcar['energia']/5);
 	if($attpoint>$difpoint){
-	$this->che[1]=new Combattente($attaccante,$attn['username'],$attcar,$attequip,$battle['tatatt'],$battle['tatatt2']);
-	$this->che[2]=new Combattente($difensore,$difn['username'],$difcar,$difequip,$battle['tatdif'],$battle['tatdif2']);
+	$this->che[1]=new Combattente($attaccante,$attn['username'],$attcar,$attequip,$battle['tatatt'],$battle['tatatt2'],$attn['plus']);
+	$this->che[2]=new Combattente($difensore,$difn['username'],$difcar,$difequip,$battle['tatdif'],$battle['tatdif2'],$difn['plus']);
 	}else{
-	$this->che[2]=new Combattente($attaccante,$attn['username'],$attcar,$attequip,$battle['tatatt'],$battle['tatatt2']);
-	$this->che[1]=new Combattente($difensore,$difn['username'],$difcar,$difequip,$battle['tatdif'],$battle['tatdif2']);
+	$this->che[2]=new Combattente($attaccante,$attn['username'],$attcar,$attequip,$battle['tatatt'],$battle['tatatt2'],$attn['plus']);
+	$this->che[1]=new Combattente($difensore,$difn['username'],$difcar,$difequip,$battle['tatdif'],$battle['tatdif2'],$difn['plus']);
 	}
+	/*if($dc->plus(1)>0 AND $dc->tattica(1,1)==0)
+	$this->Autotattic(1);
+	if($dc->plus(2)>0 AND $dc->tattica(2,1)==0)
+	$this->Autotattic(2);*/
 	} //fine Stabilisciordine
 	
 	public function equip($chi,$campo) {
@@ -73,6 +79,11 @@ class Dati{
 	$dato=$this->che[$chi]->id;
 	return $dato;
 	} //fine id
+	
+	public function plus($chi) {
+	$dato=$this->che[$chi]->plus;
+	return $dato;
+	} //fine plus
 	
 	public function esausto($chi) {
 	$dato=$this->che[$chi]->esausto;
@@ -122,6 +133,21 @@ class Dati{
 	if ($this->car($chi,'saluteattuale')<1)
 	$this->che[$chi]->morto=1;
 	} //fine Controllastato
+	
+	public function Autotattic($chi) {
+	if($chi==1)
+	$chi2=2;
+	else
+	$chi2=1;
+	$percsalute=100/$this->car($chi,'salute')*$this->car($chi,'saluteattuale');
+	$percenergia2=100/$this->car($chi2,'energiamax')*$this->car($chi2,'energia');
+	if($percenergia2<5){//se l'avversario è esausto attacco
+	$this->che[$chi]->tattic=1;
+	}elseif($percsalute<10){//se la salute è pessima
+	$this->che[$chi]->tattic=2;}
+	if($this->tattica(1,1)==1)
+	$this->che[$chi]->subtattica==1;
+	} //fine Autotattic
 	
 	public function Guadagnaexp($chi,$turni) {
 	global $db,$lang;
