@@ -14,6 +14,7 @@ class Combattente{
 	var $morto;
 	var $tattica;
 	var $subtattica;
+	var $bonusexp;
 	function Combattente($id2,$nome2,$car2,$equip2,$tattica2,$subtattica2){
 	$this->id=$id2;
 	$this->nome=$nome2;
@@ -24,6 +25,7 @@ class Combattente{
 	$this->morto=0;
 	$this->tattica=$tattica2;
 	$this->subtattica=$subtattica2;
+	$this->bonusexp=0;
 	}
 } //fine classe Combattente
 
@@ -87,9 +89,18 @@ class Dati{
 	return $dato;
 	} //fine nome
 	
+	public function bexp($chi) {
+	$dato=$this->che[$chi]->bonusexp;
+	return $dato;
+	} //fine bexp
+	
 	public function Ogginuso($chi) {
 	$this->che[$chi]->oggusati=1;
 	} //fine ogginuso
+	
+	public function Impobexp($chi,$cosa) {
+	$this->che[$chi]->bexp=$cosa;
+	} //fine Impobexp
 	
 	public function Controlloogg($chi) {
 	$oggpersi=Checkusurarottura($this->id($chi));
@@ -119,6 +130,9 @@ class Dati{
 	else
 	$chi2=1;
 	$exp=4+3*$turni;
+	if($dc->bexp(1)==1){
+	$exp-=5}elseif($dc->bexp(1)==2){
+	$exp+=5}
 	$exp=round(rand(($exp/100*90),$exp));
 	$level=$this->car($chi,'livello')-$this->car($chi2,'livello');
 	if($level<0){
@@ -244,11 +258,15 @@ if($dc->tattica(1,1)==2 AND $dc->tattica(2,1)==2){//se entrambi si arrendono
 $input=$lang['finito_entrambi_arresi']."<br/>";
 }elseif($dc->tattica(1,1)==2){//se il primo si arrende
 $input=sprintf($lang['finito_resa'],$dc->nome(1),$dc->nome(2))."<br/>";
+$dc->Impobexp(1,1);
+$dc->Impobexp(2,2);
 $rep=$dc->Checkrep(1);
 if($rep[0]==2)
 $db->QueryMod("UPDATE caratteristiche SET reputazione=reputazione-'".$rep[1]."' WHERE userid='".$this->id(1)."' LIMIT 1");
 }elseif($dc->tattica(2,1)==2){//se il secondo si arrende
 $input=sprintf($lang['finito_resa'],$dc->nome(2),$dc->nome(1))."<br/>";
+$dc->Impobexp(2,1);
+$dc->Impobexp(1,2);
 $rep=$dc->Checkrep(2);
 if($rep[0]==2)
 $db->QueryMod("UPDATE caratteristiche SET reputazione=reputazione-'".$rep[1]."' WHERE userid='".$this->id(2)."' LIMIT 1");
@@ -256,11 +274,13 @@ $db->QueryMod("UPDATE caratteristiche SET reputazione=reputazione-'".$rep[1]."' 
 $input=$lang['finito_entrambi_esausti']."<br/>";
 }elseif($dc->morto(1)==1){//se il secondo vince
 $input=sprintf($lang['vincitore_combattimento'],$dc->nome(2))."<br/>";
+$dc->Impobexp(2,2);
 $rep=$dc->Checkrep(2);
 if($rep[0]==1)
 $db->QueryMod("UPDATE caratteristiche SET reputazione=reputazione+'".$rep[1]."' WHERE userid='".$this->id(2)."' LIMIT 1");
 }elseif($dc->morto(2)==1){//se il primo vince
 $input=sprintf($lang['vincitore_combattimento'],$dc->nome(1))."<br/>";
+$dc->Impobexp(1,2);
 $rep=$dc->Checkrep(1);
 if($rep[0]==1)
 $db->QueryMod("UPDATE caratteristiche SET reputazione=reputazione+'".$rep[1]."' WHERE userid='".$this->id(1)."' LIMIT 1");

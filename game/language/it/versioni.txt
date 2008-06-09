@@ -13,6 +13,8 @@ Legenda:<br />
 + Aggiunta la possibilità di togliere gli oggetti in Equipaggiamento per riaverli in Inventario senza necessariamente sostituirli<br />
 + Aggiunte 2 armature di cuoio negli oggetti<br />
 + Aggiunta la difesa fisica nella visualizzazione dettagliata degli oggetti<br />
++ Malus di esperienza in caso di resa<br />
++ Bonus di esperienza in caso di vittoria<br />
 + Vari miglioramenti di sistema a Elenco personaggi<br />
 + Vari miglioramenti grafici<br />
 # Modificato il guadagno di esperienza, reso più equilibrato<br />
