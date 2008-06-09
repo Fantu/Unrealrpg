@@ -163,7 +163,8 @@ class Dati{
 	$chi2=1;
 	$exp=4+3*$turni;
 	if($dc->bexp(1)==1){
-	$exp-=5}elseif($dc->bexp(1)==2){
+	$exp-=5;
+	}elseif($dc->bexp(1)==2){
 	$exp+=5}
 	$exp=round(rand(($exp/100*90),$exp));
 	$level=$this->car($chi,'livello')-$this->car($chi2,'livello');
