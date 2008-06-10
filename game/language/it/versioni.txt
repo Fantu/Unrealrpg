@@ -18,11 +18,13 @@ Legenda:<br />
 + Aggiunta la difesa fisica nella visualizzazione dettagliata degli oggetti<br />
 + Aggiunto nel menu Città con sottomenu Banca, Tempio, Mercato e Locanda<br />
 + Iniziata creazione di Locanda<br />
++ Aggiunta in Locanda la possibilità di prendere in affatto una stanza per dormire, da 1 a 6 ore, pagando 1 moneta ogni 2 ore e recuperando più velocemente salute ed energia durante il sonno<br />
 + Malus di esperienza in caso di resa<br />
 + Bonus di esperienza in caso di vittoria<br />
 + Vari miglioramenti di sistema a Elenco personaggi<br />
 + Vari miglioramenti grafici<br />
 # Modificato il guadagno di esperienza, reso più equilibrato<br />
+- Correzione bug minori<br />
 </p>
 <p><strong>0.6.8.2</strong> (07/06/08 - Beta)<br />
 - Corretto bug nella selezione della tattica in combattimento<br />

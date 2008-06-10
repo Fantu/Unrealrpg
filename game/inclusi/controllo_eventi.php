@@ -52,6 +52,9 @@ while($evento=$db->QueryCicloResult($evfiniti)) {
 		case 6://combattimento
 		Battledo($evento['battleid'],$evento['turni']);
 		break;
+		case 7://dormire
+		Completadormire($evento['userid'],$evento['ore']);
+		break;
 		}
 $db->QueryMod("DELETE FROM eventi WHERE id='".$evento['id']."'");
 }//fine controllo eventi

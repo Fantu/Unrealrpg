@@ -562,4 +562,25 @@ $testo=$lang['report_sfida_annullata'];
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");
 }//se dello sfidante
 } //fine Completasfida
+
+function Completadormire($userid,$ore){
+global $db,$adesso,$lang,$language;
+require_once('language/'.$language.'/lang_locanda.php');
+$usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");	
+if($usercar['saluteattuale']<=$usercar['salute']){
+$salute=$usercar['saluteattuale']+round($usercar['salute']/100*2);
+if($salute>$usercar['salute'])
+$salute=$usercar['salute'];
+}else{$salute=$usercar['salute'];}
+if($usercar['energia']<=$usercar['energiamax']){
+$energia=$usercar['energia']+round($usercar['energiamax']/1000*200);
+if($energia>$usercar['energiamax'])
+$energia=$usercar['energiamax'];
+}else{$energia=$usercar['energiamax'];}
+$db->QueryMod("UPDATE caratteristiche SET energia='".$energia."',saluteattuale='".$salute."',recuperosalute='".$adesso."',recuperoenergia='".$adesso."' WHERE userid='".$userid."'");
+if($ore>1){
+$ore--;
+$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,ore) VALUES ('".$userid."','".$adesso."','3600','7','14','".$ore."')");
+}//fine se la coda ha almeno un altra ora
+} //fine Completadormire
 ?>

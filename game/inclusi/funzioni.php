@@ -1,7 +1,7 @@
 <?php
 function testosalute($percsalute){
 global $lang;
-if ($percsalute<1){
+if ($percsalute<=0){
 $salute=$lang['morto'];
 }elseif ($percsalute>=1 AND $percsalute<10){
 $salute=$lang['pessima'];
