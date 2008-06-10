@@ -19,7 +19,7 @@ if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
 else {
 $db->QueryMod("UPDATE utenti SET monete=monete-'".$monete."' WHERE userid='".$userid."'");
-$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,ore) VALUES ('".$user['userid']."','".$adesso."','3600','7','14','".$ore."')");	
+$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,ore) VALUES ('".$user['userid']."','".$adesso."','3600','14','7','".$ore."')");	
 echo "<script language=\"javascript\">window.location.href='index.php?loc=situazione'</script>";
 exit();
 }

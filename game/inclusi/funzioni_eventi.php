@@ -580,7 +580,7 @@ $energia=$usercar['energiamax'];
 $db->QueryMod("UPDATE caratteristiche SET energia='".$energia."',saluteattuale='".$salute."',recuperosalute='".$adesso."',recuperoenergia='".$adesso."' WHERE userid='".$userid."'");
 if($ore>1){
 $ore--;
-$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,ore) VALUES ('".$userid."','".$adesso."','3600','7','14','".$ore."')");
+$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,ore) VALUES ('".$userid."','".$adesso."','3600','14','7','".$ore."')");
 }//fine se la coda ha almeno un altra ora
 } //fine Completadormire
 ?>
