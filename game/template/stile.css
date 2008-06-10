@@ -40,7 +40,7 @@ position: relative;
 #menu li ul,#tattic li ul{
 position: absolute;
 left: 160px;
-top: 0;
+top: -3;
 display: none;
 }
 #menu li:hover ul,#tattic li:hover ul,#lutenti li:hover ul{
