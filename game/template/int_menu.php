@@ -13,7 +13,6 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <li><a href="index.php?loc=locanda"><?php echo $lang['Locanda']; ?></a></li>
 </ul></li>
 </ul>
-
 <ul>
 <li><a href="index.php?loc=submenu&amp;menu=lavori"><?php echo $lang['Lavori']; ?></a><ul>
 <li><a href="index.php?loc=miniera"><?php echo $lang['Miniera']; ?></a></li>
@@ -28,7 +27,6 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 </ul></li>
 </ul>
 <a href="index.php?loc=combact"><?php echo $lang['Combattimenti']; ?></a>
-<a href="index.php?loc=mercato"><?php echo $lang['Mercato']; ?></a>
 <ul>
 <li><a href="index.php?loc=submenu&amp;menu=oggetti"><?php echo $lang['Oggetti']; ?></a><ul>
 <li><a href="index.php?loc=inventario"><?php echo $lang['Inventario']; ?></a></li>
