@@ -5,7 +5,15 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 }?>
 <div id="menu">
 <a href="index.php?loc=situazione"><?php echo $lang['Situazione']; ?></a>
-<a href="index.php?loc=banca"><?php echo $lang['Banca']; ?></a>
+<ul>
+<li><a href="index.php?loc=submenu&amp;menu=citta"><?php echo $lang['Citta']; ?></a><ul>
+<li><a href="index.php?loc=banca"><?php echo $lang['Banca']; ?></a></li>
+<li><a href="index.php?loc=tempio"><?php echo $lang['Tempio']; ?></a></li>
+<li><a href="index.php?loc=mercato"><?php echo $lang['Mercato']; ?></a></li>
+<li><a href="index.php?loc=locanda"><?php echo $lang['Locanda']; ?></a></li>
+</ul></li>
+</ul>
+
 <ul>
 <li><a href="index.php?loc=submenu&amp;menu=lavori"><?php echo $lang['Lavori']; ?></a><ul>
 <li><a href="index.php?loc=miniera"><?php echo $lang['Miniera']; ?></a></li>
@@ -13,7 +21,6 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <li><a href="index.php?loc=fucina"><?php echo $lang['Fucina']; ?></a></li>
 </ul></li>
 </ul>
-<a href="index.php?loc=tempio"><?php echo $lang['Tempio']; ?></a>
 <ul>
 <li><a href="index.php?loc=submenu&amp;menu=magia"><?php echo $lang['Magia']; ?></a><ul>
 <li><a href="index.php?loc=rocca"><?php echo $lang['Rocca_arcano']; ?></a></li>

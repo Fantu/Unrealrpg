@@ -5,6 +5,13 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 }
 $menu=htmlspecialchars($_GET['menu'],ENT_QUOTES);
 switch($menu){
+case "citta":
+$titolo=$lang['Citta'];
+$link[]='<a href="index.php?loc=banca">'.$lang['Banca'].'</a>';
+$link[]='<a href="index.php?loc=tempio">'.$lang['Tempio'].'</a>';
+$link[]='<a href="index.php?loc=mercato">'.$lang['Mercato'].'</a>';
+$link[]='<a href="index.php?loc=locanda">'.$lang['Locanda'].'</a>';
+break;
 case "lavori":
 $titolo=$lang['Lavori'];
 $link[]='<a href="index.php?loc=miniera">'.$lang['Miniera'].'</a>';

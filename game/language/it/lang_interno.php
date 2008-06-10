@@ -23,6 +23,8 @@ $lang['Lavori']='Lavori';
 $lang['Magia']='Magia';
 $lang['Informazioni']='Informazioni';
 $lang['Oggetti']='Oggetti';
+$lang['Citta']='Città';
+$lang['Locanda']='Locanda';
 //fine menu
 
 //inizio razze
