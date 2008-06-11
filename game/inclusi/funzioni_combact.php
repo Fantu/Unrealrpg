@@ -162,7 +162,7 @@ class Dati{
 	else
 	$chi2=1;
 	$exp=4+3*$turni;
-	if($thos->bexp(1)==1){
+	if($this->bexp(1)==1){
 	$exp-=5;
 	}elseif($this->bexp(1)==2){
 	$exp+=5;}
