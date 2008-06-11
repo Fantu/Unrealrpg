@@ -1,6 +1,6 @@
 <?php
 $lang['lav_apprendista']='Work as an apprentice';
-$lang['desc_lav_apprendista']='Puoi lavorare in Laboratorio come apprendista, avendo una retribuzione fissa di 6 monete ad ora e guadagnare esperienza per l\'abilità di alchimista, utile per avere risultati migliori con meno fatica e meno danni.';
+$lang['desc_lav_apprendista']='Puoi lavorare in Laboratorio come apprendista, avendo una retribuzione fissa di 7 monete ad ora e guadagnare esperienza per l\'abilità di alchimista, utile per avere risultati migliori con meno fatica e meno danni.';
 $lang['lab_errore1']='- Non hai sufficienti energie per poter lavorare in Laboratorio.<br />';
 $lang['lab_errore2']='- Attualmente il tuo fisico non può reggere il lavoro in Laboratorio.<br />';
 $lang['lab_errore3']='- Devono passare 3 ore per ogni ora di lavoro dall`ultimo effettuato.<br />';

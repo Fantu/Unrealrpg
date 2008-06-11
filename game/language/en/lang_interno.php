@@ -23,6 +23,8 @@ $lang['Lavori']='Work';
 $lang['Magia']='Magia';
 $lang['Informazioni']='Informazioni';
 $lang['Oggetti']='Oggetti';
+$lang['Citta']='Città';
+$lang['Locanda']='Locanda';
 //fine menu
 
 //inizio razze
@@ -97,6 +99,7 @@ $lang['eventi_dettagli10']='Stai facendo pratica in Rocca dell`Arcano e finirai 
 $lang['eventi_dettagli11']='Hai lanciato una sfida e stai aspettando una risposta entro ';
 $lang['eventi_dettagli12']='Ti hanno sfidato e devi dare una risposta entro ';
 $lang['eventi_dettagli13']='Stai combattendo';
+$lang['eventi_dettagli14']='Stai dormendo e finirai ';
 //fine dettagli eventi
 
 //inizio visualizzautente

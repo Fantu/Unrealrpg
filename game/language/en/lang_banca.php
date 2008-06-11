@@ -28,7 +28,7 @@ $lang['desc_lotteria']='La Lotteria è organizzata dalla Banca, dove è possibil
 $lang['Compra_biglietto']='Acquista un biglietto';
 $lang['hai_gia_biglietto']='Possiedi già un biglietto';
 $lang['info_partecipanti']='L`attuale numero di partecipanti è: %s ';
-$lang['info_vincitore']='Il vincitore della scorsa estrazione è: %s';
+$lang['info_vincitore']='Il vincitore della scorsa estrazione è %s';
 $lang['data_estrazione']='La prossima estrazione della Lotteria sarà  ';
 $lang['hai_vinto_lotteria']='Sei il vincitore della lotteria! Il premio in palio è di %s monete.';
 ?>

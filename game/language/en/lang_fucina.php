@@ -1,6 +1,6 @@
 <?php
 $lang['fucina_app']='Work as an apprentice';
-$lang['desc_fucina_app']='Puoi lavorare in Fucina come apprendista, avendo una retribuzione fissa di 6 monete ad ora e guadagnare esperienza per l\'abilit&agrave; di fabbro, utile per avere risultati migliori con meno fatica e meno danni.';
+$lang['desc_fucina_app']='Puoi lavorare in Fucina come apprendista, avendo una retribuzione fissa di 7 monete ad ora e guadagnare esperienza per l\'abilit&agrave; di fabbro, utile per avere risultati migliori con meno fatica e meno danni.';
 $lang['lavora_fucina']='Work at the Forge';
 $lang['fucina_errore1']='- Sei troppo stanco per poter lavorare in Fucina<br />';
 $lang['fucina_errore2']='- Attualmente il tuo fisico non è in grado di reggere il lavoro in Fucina<br />';
