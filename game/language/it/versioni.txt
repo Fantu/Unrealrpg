@@ -10,7 +10,7 @@ Legenda:<br />
 <p><strong>0.7.0</strong> (Non disponibile - In sviluppo)<br />
 + Iniziata creazione sistema automatico di selezione della tattica di combattimento, attiva per chi ha l'account plus attivo e non ha selezionato nessuna tattica<br />
 </p>
-<p><strong>0.6.9</strong> (Stimato per il 11/06/08 - In sviluppo)<br />
+<p><strong>0.6.9</strong> (11/06/08 - In sviluppo)<br />
 + Aggiunta negli oggetti la categoria Equipaggiamento da difesa con le sottocategorie Armature e Scudi<br />
 + Vincendo un combattimento contro un avversario più forte (in base alle fasce di reputazione) la reputazione sale<br />
 + Aggiunta la possibilità di togliere gli oggetti in Equipaggiamento per riaverli in Inventario senza necessariamente sostituirli<br />
@@ -21,7 +21,7 @@ Legenda:<br />
 + Aggiunta in Locanda la possibilità di prendere in affatto una stanza per dormire, da 1 a 6 ore, pagando 1 moneta ogni 2 ore e recuperando più velocemente salute ed energia durante il sonno<br />
 + Malus di esperienza in caso di resa<br />
 + Bonus di esperienza in caso di vittoria<br />
-+ Vari miglioramenti di sistema a Elenco personaggi<br />
++ Vari miglioramenti di sistema a Elenco personaggi, Combattimenti<br />
 + Vari miglioramenti grafici<br />
 # Modificato il guadagno di esperienza, reso più equilibrato<br />
 # Modificato il decremento di fede con il passare del tempo, reso più equilibrato<br />
