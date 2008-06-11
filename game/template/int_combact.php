@@ -16,6 +16,8 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <?php if($combactview==2){ ?>
 <div align="center" id="tattic">
 <?php echo $lang['seleziona_tattica']; ?>
+<table border="0" align="center">
+<tr><td>
 <ul>
 <li><a href="#"><?php echo $lang['tattica_attacco']; ?></a>
 <ul>
@@ -23,6 +25,8 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 </ul></li>
 <li><a href="index.php?loc=combact&amp;tattica=2"><?php echo $lang['tattica_resa']; ?></a></li>
 </ul>
+</td></tr>
+</table>
 <?php echo $viewtattic; } ?>
 </div>
 <br />
