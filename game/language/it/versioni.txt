@@ -10,7 +10,10 @@ Legenda:<br />
 <p><strong>0.7.0</strong> (Non disponibile - In sviluppo)<br />
 + Iniziata creazione sistema automatico di selezione della tattica di combattimento, attiva per chi ha l'account plus attivo e non ha selezionato nessuna tattica<br />
 </p>
-<p><strong>0.6.9</strong> (11/06/08 - In sviluppo)<br />
+<p><strong>0.6.10</strong> (Non disponibile - In sviluppo)<br />
+Niente attualmente<br />
+</p>
+<p><strong>0.6.9</strong> [R.1196] (11/06/08 - Beta)<br />
 + Aggiunta negli oggetti la categoria Equipaggiamento da difesa con le sottocategorie Armature e Scudi<br />
 + Vincendo un combattimento contro un avversario più forte (in base alle fasce di reputazione) la reputazione sale<br />
 + Aggiunta la possibilità di togliere gli oggetti in Equipaggiamento per riaverli in Inventario senza necessariamente sostituirli<br />
