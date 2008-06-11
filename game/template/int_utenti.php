@@ -17,9 +17,9 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <br />
 <table border="1" cellspacing="2" cellpadding="2" align="center">
   <tr>
-    <td><div align="center"><?php echo $lang['Personaggio']; ?></div></td>
-    <td><div align="center"><?php echo $lang['Stato']; ?></div></td>
-    <td><div align="center"><?php echo $lang['Livello']; ?></div></td>
+    <td><?php echo $lang['Personaggio']; ?></td>
+    <td><?php echo $lang['Stato']; ?><</td>
+    <td><?php echo $lang['Livello']; ?></td>
   </tr>
 <?php foreach($utentit['nome'] as $chiave=>$elemento){ ?>
 <tr>
@@ -31,20 +31,19 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 </li>
 </ul>
 </td>
-<td><div align="center"><?php if($utentit['online'][$chiave]==1){ ?>
+<td><?php if($utentit['online'][$chiave]==1){ ?>
 <img src="template/immagini/led_verde.gif" alt="Online" />
 <?php }else{ ?>
 <img src="template/immagini/led_rosso.gif" alt="Offline" />
 <?php } ?>
-</div></td>
-<td><div align="center"><?php echo $utentit['livello'][$chiave]; ?></div></td>
+</td>
+<td><?php echo $utentit['livello'][$chiave]; ?></td>
 </tr>
 <?php }/* fine per ogni utente della lista*/ ?>
 </table>
 <?php }/*fine mostra risultati ricerca*/ ?>
 <br />
 <br />
-<div align="center">
 <form action="index.php?loc=utenti" method="post" name="formcu">
 <table width="250" border="0" cellspacing="2" cellpadding="2" align="center">
   <tr>
@@ -59,15 +58,14 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
   </tr>
 </table>
 </form>
-</div>
 <br />
 <?php echo $prec; ?>  <?php echo $prox; ?>
 <br />
 <table border="1" cellspacing="2" cellpadding="2" align="center">
   <tr>
-    <td><div align="center"><a href="index.php?loc=utenti&amp;ordine=personaggio"><?php echo $lang['Personaggio']; ?></a></div></td>
-    <td><div align="center"><a href="index.php?loc=utenti&amp;ordine=stato"><?php echo $lang['Stato']; ?></a></div></td>
-    <td><div align="center"><a href="index.php?loc=utenti&amp;ordine=livello"><?php echo $lang['Livello']; ?></a></div></td>
+    <td><a href="index.php?loc=utenti&amp;ordine=personaggio"><?php echo $lang['Personaggio']; ?></a></td>
+    <td><a href="index.php?loc=utenti&amp;ordine=stato"><?php echo $lang['Stato']; ?></a></td>
+    <td><a href="index.php?loc=utenti&amp;ordine=livello"><?php echo $lang['Livello']; ?></a></td>
   </tr>
 <?php foreach($utenti['nome'] as $chiave=>$elemento){ ?>
 <tr>
@@ -79,13 +77,13 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 </li>
 </ul>
 </td>
-<td><div align="center"><?php if($utenti['online'][$chiave]==1){ ?>
+<td><?php if($utenti['online'][$chiave]==1){ ?>
 <img src="template/immagini/led_verde.gif" alt="Online" />
 <?php }else{ ?>
 <img src="template/immagini/led_rosso.gif" alt="Offline" />
 <?php } ?>
-</div></td>
-<td><div align="center"><?php echo $utenti['livello'][$chiave]; ?></div></td>
+</td>
+<td><?php echo $utenti['livello'][$chiave]; ?></td>
 </tr>
 <?php }/* fine per ogni utente della lista*/ ?>
 </table>
