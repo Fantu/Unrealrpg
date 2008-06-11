@@ -18,7 +18,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <table border="1" cellspacing="2" cellpadding="2" align="center">
   <tr>
     <td><?php echo $lang['Personaggio']; ?></td>
-    <td><?php echo $lang['Stato']; ?><</td>
+    <td><?php echo $lang['Stato']; ?></td>
     <td><?php echo $lang['Livello']; ?></td>
   </tr>
 <?php foreach($utentit['nome'] as $chiave=>$elemento){ ?>
