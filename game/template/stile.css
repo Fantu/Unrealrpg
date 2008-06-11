@@ -12,6 +12,9 @@ text-align: center;
 text-align: center;
 width: 165px;
 }
+#lutenti{
+text-align: center;
+}
 #menu a,#tattic a{
 background-color: #ffbb88;
 display: block;
