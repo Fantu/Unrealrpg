@@ -6,7 +6,10 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <center><h2><?php echo $lang['Lista_utenti']; ?></h2></center><br />
 <br />
 <?php echo $outputerrori; ?>
-<div id="lutenti">
+<br />
+<br />
+<?php echo $infoutenti; ?><br />
+<div id="lutenti" align="center">
 <?php if($ricerca==1){/*inizio mostra risultati ricerca*/ ?>
 <br />
 <br />
@@ -20,14 +23,14 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
   </tr>
 <?php foreach($utentit['nome'] as $chiave=>$elemento){ ?>
 <tr>
-<td><div align="center">
+<td>
 <ul>
 <li><a class="alutenti" href="index.php?loc=visualizzautente&amp;id=<?php echo $utentit['userid'][$chiave]; ?>"><?php echo $utentit['nome'][$chiave]; ?></a>
 <?php if($utentit['userid'][$chiave]!=$user['userid']){ ?><ul><li><a class="alutenti" href="index.php?loc=messaggi&amp;do=scrivi&amp;id=<?php echo $utentit['userid'][$chiave]; ?>"><?php echo $lang['scrivi_msg']; ?></a></li>
 <?php if($utentit['online'][$chiave]==1){ ?><li><a class="alutenti" href="index.php?loc=combact&amp;do=sfida&amp;id=<?php echo $utentit['userid'][$chiave]; ?>"><?php echo $lang['sfida']; ?></a></li><?php } ?></ul><?php } ?>
 </li>
 </ul>
-</div></td>
+</td>
 <td><div align="center"><?php if($utentit['online'][$chiave]==1){ ?>
 <img src="template/immagini/led_verde.gif" alt="Online" />
 <?php }else{ ?>
@@ -39,9 +42,6 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <?php }/* fine per ogni utente della lista*/ ?>
 </table>
 <?php }/*fine mostra risultati ricerca*/ ?>
-<br />
-<br />
-<?php echo $infoutenti; ?><br />
 <br />
 <br />
 <div align="center">
@@ -71,14 +71,14 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
   </tr>
 <?php foreach($utenti['nome'] as $chiave=>$elemento){ ?>
 <tr>
-<td><div align="center">
+<td>
 <ul>
 <li><a class="alutenti" href="<?php echo $utenti['link'][$chiave]; ?>"><?php echo $utenti['nome'][$chiave]; ?></a>
 <?php if($utenti['userid'][$chiave]!=$user['userid']){ ?><ul><li><a class="alutenti" href="index.php?loc=messaggi&amp;do=scrivi&amp;id=<?php echo $utenti['userid'][$chiave]; ?>"><?php echo $lang['scrivi_msg']; ?></a></li>
 <?php if($utenti['online'][$chiave]==1){ ?><li><a class="alutenti" href="index.php?loc=combact&amp;do=sfida&amp;id=<?php echo $utenti['userid'][$chiave]; ?>"><?php echo $lang['sfida']; ?></a></li><?php } ?></ul><?php } ?>
 </li>
 </ul>
-</div></td>
+</td>
 <td><div align="center"><?php if($utenti['online'][$chiave]==1){ ?>
 <img src="template/immagini/led_verde.gif" alt="Online" />
 <?php }else{ ?>
