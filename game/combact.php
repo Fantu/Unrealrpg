@@ -34,6 +34,7 @@ exit();
 break;//fine sfidda
 case "rispsfida":
 $risp=(int)$_GET['risp'];
+if ($eventi['id']>0){
 $eventisfida=$db->QuerySelect("SELECT * FROM eventi WHERE userid='".$user['userid']."'");
 $idp=(int)$eventisfida['oggid'];
 $db->QueryMod("DELETE FROM eventi WHERE userid='".$user['userid']."'");
@@ -47,6 +48,7 @@ exit();
 $titolo=$lang['sfida_rifiutata'];
 $testo=$lang['report_sfida_rifiutata'];
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$idp."','".$titolo."','".$testo."','0','".$adesso."')");
+}
 }
 break;//fine rispondi alla sfida
 case "repview":
