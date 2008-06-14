@@ -96,6 +96,7 @@ $oggarm=$db->QueryCiclo("SELECT * FROM oggetti WHERE tipo='6' AND categoria='1'"
 while($ogg=$db->QueryCicloResult($oggarm)) {
 $armt[$ogg['id']]=$ogg['id'];
 }
+$oggetti=$db->QueryCiclo("SELECT oggid FROM inoggetti WHERE userid='".$user['userid']."' GROUP BY oggid");
 while($ogg2=$db->QueryCicloResult($oggetti)) {
 if(isset($armt[$ogg2['oggid']]))
 $armature[$ogg2['oggid']]=$lang['oggetto'.$ogg2['oggid'].'_nome'];
