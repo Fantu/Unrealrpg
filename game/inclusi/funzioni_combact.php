@@ -230,12 +230,21 @@ class Dati{
 	$colpisci+=20;
 	if($colpisci>50 OR $this->esausto($dif)==1){
 	$difesamax=round($this->car($dif,'diffisica')/100);
+	$energiadif=0;
+	if($this->equip($dif,'arm')!=0){
+	$armatura=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$this->equip($dif,'arm')."' LIMIT 1");
+	if($armatura['energia']<=$this->car($dif,'energia')){
+	$energiadif=$armatura['energia'];
+	$difesamax+=$armatura['difesafisica'];
+	$db->QueryMod("UPDATE equip SET inuso='1' WHERE userid='".$this->id($dif)."' AND oggid='".$this->equip($dif,'arm')."' LIMIT 1");
+	}
+	}//se il difensore ha armatura
 	$difesa=rand(0,$difesamax);
 	$danno-=$difesa;
 	if($danno<1)
 	$danno=1;
 	$input=sprintf($lang['danno_att_vicino'],$this->nome($att),$this->nome($dif),$nomearma,$danno)."<br/>";
-	$db->QueryMod("UPDATE caratteristiche SET saluteattuale=saluteattuale-'".$danno."' WHERE userid='".$this->id($dif)."' LIMIT 1");
+	$db->QueryMod("UPDATE caratteristiche SET saluteattuale=saluteattuale-'".$danno."',energia=energia-'".$energiadif."' WHERE userid='".$this->id($dif)."' LIMIT 1");
 	}else{
 	$input=sprintf($lang['niente_att_vicino'],$this->nome($att),$this->nome($dif),$nomearma)."<br/>";
 	}
