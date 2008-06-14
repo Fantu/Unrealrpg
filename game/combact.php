@@ -74,7 +74,7 @@ if ((100/$pcar['salute']*$pcar['saluteattuale'])<40 OR (100/$pcar['energiamax']*
 $errore.=$lang['combact_errore4'];
 if ($usercar['exp']>=$usercar['livello']*200)
 $errore.=$lang['combact_errore6'];
-if ($pcar['exp']>=$pcar['livello']*200;)
+if ($pcar['exp']>=$pcar['livello']*200)
 $errore.=$lang['combact_errore7'];
 if($errore){
 	$outputerrori="<span>".$lang['outputerrorisfida']."</span><br /><span>".$errore."</span><br /><br />";}
