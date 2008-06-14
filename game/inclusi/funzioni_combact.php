@@ -105,7 +105,9 @@ class Dati{
 	return $dato;
 	} //fine bexp
 	
-	public function Ogginuso($chi) {
+	public function Ogginuso($chi,$cosa) {
+	global $db;
+	$db->QueryMod("UPDATE equip SET inuso='1' WHERE userid='".$this->id($chi)."' AND oggid='".$this->equip($chi,$cosa)."' LIMIT 1");
 	$this->che[$chi]->oggusati=1;
 	} //fine ogginuso
 	
@@ -210,8 +212,7 @@ class Dati{
 	if($this->equip($att,'cac')!=0 AND $this->car($att,'energia')>$energia){
 	$danno=$arma['danno'];
 	$nomearma=$lang['oggetto'.$this->equip($att,'cac').'_nome'];
-	$db->QueryMod("UPDATE equip SET inuso='1' WHERE userid='".$this->id($att)."' AND oggid='".$this->equip($att,'cac')."' LIMIT 1");
-	$this->Ogginuso($att);
+	$this->Ogginuso($att,'cac');
 	}else{
 	$danno=1+round($this->car($att,'attfisico')/100);
 	$nomearma=$lang['pugno'];
@@ -236,8 +237,7 @@ class Dati{
 	if($armatura['energia']<=$this->car($dif,'energia')){
 	$energiadif=$armatura['energia'];
 	$difesamax+=$armatura['difesafisica'];
-	$db->QueryMod("UPDATE equip SET inuso='1' WHERE userid='".$this->id($dif)."' AND oggid='".$this->equip($dif,'arm')."' LIMIT 1");
-	$this->Ogginuso($dif);
+	$this->Ogginuso($dif,'arm');
 	}
 	}//se il difensore ha armatura
 	$difesa=rand(0,$difesamax);

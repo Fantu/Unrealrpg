@@ -17,7 +17,7 @@ Niente attualmente<br />
 + Non si può sfidare qualcuno se uno dei 2 può salire di livello ma non lo ha fatto<br />
 + Aggiunte le armature all'equipaggiamento<br />
 + Implementate le armature nei combattimenti<br />
-+ Vari miglioramenti di sistema a Combattimenti, Equipaggiamento<br />
++ Vari miglioramenti di sistema a Combattimenti, Equipaggiamento, sistema di combattimento<br />
 </p>
 <p><strong>0.6.9</strong> [R.1196] (11/06/08 - Beta)<br />
 + Aggiunta negli oggetti la categoria Equipaggiamento da difesa con le sottocategorie Armature e Scudi<br />
