@@ -10,9 +10,14 @@ Legenda:<br />
 <p><strong>0.7.0</strong> (Non disponibile - In sviluppo)<br />
 + Iniziata creazione sistema automatico di selezione della tattica di combattimento, attiva per chi ha l'account plus attivo e non ha selezionato nessuna tattica<br />
 </p>
-<p><strong>0.6.10</strong> (Non disponibile - In sviluppo)<br />
+<p><strong>0.6.11</strong> (Non disponibile - In sviluppo)<br />
+Niente attualmente<br />
+</p>
+<p><strong>0.6.10</strong> (Stimato per il 15/06/08 - In sviluppo)<br />
 + Non si può sfidare qualcuno se uno dei 2 può salire di livello ma non lo ha fatto<br />
-+ Vari miglioramenti di sistema a Combattimenti<br />
++ Aggiunte le armature all'equipaggiamento<br />
++ Implementate le armature nei combattimenti<br />
++ Vari miglioramenti di sistema a Combattimenti, Equipaggiamento<br />
 </p>
 <p><strong>0.6.9</strong> [R.1196] (11/06/08 - Beta)<br />
 + Aggiunta negli oggetti la categoria Equipaggiamento da difesa con le sottocategorie Armature e Scudi<br />

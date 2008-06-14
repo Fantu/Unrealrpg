@@ -72,7 +72,7 @@ $errore.=$lang['combact_errore5'];
 $pcar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$idp."' LIMIT 1");
 if ((100/$pcar['salute']*$pcar['saluteattuale'])<40 OR (100/$pcar['energiamax']*$pcar['energia'])<40)
 $errore.=$lang['combact_errore4'];
-if ($usercar['exp']>=$usercar['livello']*200;)
+if ($usercar['exp']>=$usercar['livello']*200)
 $errore.=$lang['combact_errore6'];
 if ($pcar['exp']>=$pcar['livello']*200;)
 $errore.=$lang['combact_errore7'];

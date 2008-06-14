@@ -237,6 +237,7 @@ class Dati{
 	$energiadif=$armatura['energia'];
 	$difesamax+=$armatura['difesafisica'];
 	$db->QueryMod("UPDATE equip SET inuso='1' WHERE userid='".$this->id($dif)."' AND oggid='".$this->equip($dif,'arm')."' LIMIT 1");
+	$this->Ogginuso($dif);
 	}
 	}//se il difensore ha armatura
 	$difesa=rand(0,$difesamax);
