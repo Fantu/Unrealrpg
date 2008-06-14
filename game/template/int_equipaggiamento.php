@@ -34,3 +34,28 @@ echo "<option value=\"$chiave\">$elemento</option>";} ?>
 </form>
 <br />
 <br />
+<?php echo $lang['Equipdifensivo']; ?>
+<br />
+<br />
+<?php echo $desc_impoarm; ?>
+<br />
+<form action="" method="post" name="fimpoarm">
+<table border="0">
+<tr>
+<td>
+<?php echo $lang['seleziona_arm']; ?> <select name="arm" id="arm">
+<option value="-1" selected="selected">--------</option>
+<option value="0"><?php echo $lang['Niente']; ?></option>
+<?php if($armature){
+foreach($armature as $chiave=>$elemento)
+echo "<option value=\"$chiave\">$elemento</option>";} ?>
+</select>
+</td>
+</tr>
+<tr>
+<td>
+<input type="submit" name="impoarm" value="<?php echo $lang['Imposta']; ?>" />
+</td>
+</tr>
+</table>
+</form>
