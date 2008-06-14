@@ -165,9 +165,9 @@ class Dati{
 	$chi2=1;
 	$exp=4+3*$turni;
 	$exp=round(rand(($exp/100*90),$exp));
-	if($this->bexp(1)==1){
+	if($this->bexp($chi)==1){
 	$exp-=5;
-	}elseif($this->bexp(1)==2){
+	}elseif($this->bexp($chi)==2){
 	$exp+=5;}
 	$level=$this->car($chi,'livello')-$this->car($chi2,'livello');
 	if($level<0){
