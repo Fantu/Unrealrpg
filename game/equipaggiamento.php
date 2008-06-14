@@ -51,7 +51,7 @@ if ($armatura<0)
 $errore.=$lang['equip_errore1'];
 if($errore=="" AND $armatura>0){
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$user['userid']."' LIMIT 1");
-$armsel=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$acac."' LIMIT 1");
+$armsel=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$armatura."' LIMIT 1");
 if ($usercar['attfisico']<$armsel['forzafisica'])
 $errore.=$lang['equip_errore2'];
 }//se armatura selezionata
@@ -82,12 +82,11 @@ exit();
 
 $seogg=$db->QuerySelect("SELECT count(id) AS id FROM inoggetti WHERE userid='".$user['userid']."'");
 if($seogg['id']>0){
-$oggetti=$db->QueryCiclo("SELECT oggid FROM inoggetti WHERE userid='".$user['userid']."' GROUP BY oggid");
-
 $oggacac=$db->QueryCiclo("SELECT * FROM oggetti WHERE tipo='5'");
 while($ogg=$db->QueryCicloResult($oggacac)) {
 $armicact[$ogg['id']]=$ogg['id'];
 }
+$oggetti=$db->QueryCiclo("SELECT oggid FROM inoggetti WHERE userid='".$user['userid']."' GROUP BY oggid");
 while($ogg2=$db->QueryCicloResult($oggetti)) {
 if(isset($armicact[$ogg2['oggid']]))
 $armicac[$ogg2['oggid']]=$lang['oggetto'.$ogg2['oggid'].'_nome'];
