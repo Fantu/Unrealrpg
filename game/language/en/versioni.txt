@@ -17,6 +17,7 @@ Niente attualmente<br />
 + Non si può sfidare qualcuno se uno dei 2 può salire di livello ma non lo ha fatto<br />
 + Aggiunte le armature all'equipaggiamento<br />
 + Implementate le armature nei combattimenti<br />
++ Visualizzati al primo "round" gli equipaggiamenti visibili dei combattenti<br />
 + Vari miglioramenti di sistema a Combattimenti, Equipaggiamento, sistema di combattimento<br />
 - Correzione bug minori<br />
 </p>

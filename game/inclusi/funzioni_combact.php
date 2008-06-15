@@ -185,6 +185,19 @@ class Dati{
 	return $input;
 	} //fine Guadagnaexp
 	
+	public function Viewequip($chi) {
+	global $lang;
+	$input="";
+	if($this->equip($chi,'cac')!=0 OR $this->equip($chi,'arm')!=0){
+	if($this->equip($chi,'cac')!=0)
+	$equip.=" ".$lang['oggetto'.$this->equip($chi,'cac').'_nome'];
+	if($this->equip($chi,'arm')!=0)
+	$equip.=" ".$lang['oggetto'.$this->equip($chi,'arm').'_nome'];
+	$input=sprintf($lang['equip_di'],$this->nome($chi),$equip)."<br/>";
+	}
+	return $input;
+	} //fine Viewequip
+	
 	public function Checkrep($chi) {
 	if($chi==1)
 	$chi2=2;
@@ -271,6 +284,9 @@ global $db,$adesso,$lang,$language;
 $battle=$db->QuerySelect("SELECT * FROM battle WHERE id='".$battleid."' LIMIT 1");
 $dc=new Dati();
 $dc->Stabilisciordine($battle['attid'],$battle['difid'],$battle);
+if($turni==0){
+$input.=$dc->Viewequip(1);
+$input.=$dc->Viewequip(2);}
 if($dc->tattica(1,1)!=2 AND $dc->tattica(2,1)!=2){
 $dc->Controllastato(1);
 $dc->Controllastato(2);
