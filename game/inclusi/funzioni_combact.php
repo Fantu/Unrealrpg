@@ -111,6 +111,19 @@ class Dati{
 	$this->che[$chi]->oggusati=1;
 	} //fine ogginuso
 	
+	public function Modsalute($chi,$quanto){
+	$this->che[$chi]->car['saluteattuale']-=$quanto;
+	} //fine ogginuso
+	
+	public function Modenergia($chi,$quanto){
+	$this->che[$chi]->car['energia']-=$quanto;
+	} //fine ogginuso
+	
+	public function Aggiornastat($chi){
+	global $db;
+	$db->QueryMod("UPDATE caratteristiche SET saluteattuale='".$this->car($chi,'saluteattuale')."',energia='".$this->car($chi,'energia')."' WHERE userid='".$this->id($chi)."' LIMIT 1");
+	} //fine ogginuso
+	
 	public function Impobexp($chi,$cosa) {
 	$this->che[$chi]->bexp=$cosa;
 	} //fine Impobexp
@@ -258,11 +271,12 @@ class Dati{
 	if($danno<1)
 	$danno=1;
 	$input=sprintf($lang['danno_att_vicino'],$this->nome($att),$this->nome($dif),$nomearma,$danno)."<br/>";
-	$db->QueryMod("UPDATE caratteristiche SET saluteattuale=saluteattuale-'".$danno."',energia=energia-'".$energiadif."' WHERE userid='".$this->id($dif)."' LIMIT 1");
+	$this->Modsalute($dif,$danno);
+	$this->Modenergia($dif,$energiadif);
 	}else{
 	$input=sprintf($lang['niente_att_vicino'],$this->nome($att),$this->nome($dif),$nomearma)."<br/>";
 	}
-	$db->QueryMod("UPDATE caratteristiche SET energia=energia-'".$energia."' WHERE userid='".$this->id($att)."' LIMIT 1");
+	$this->Modenergia($att,$energia);
 	return $input;
 	} //fine Attaccovicino
 	
@@ -305,7 +319,8 @@ $input.=$dc->Controlloogg(2);}
 $input.="<br/>";
 Inreport($battleid,$input);
 
-$dc->Stabilisciordine($battle['attid'],$battle['difid'],$battle);
+$dc->Aggiornastat(1);
+$dc->Aggiornastat(2);
 $dc->Controllastato(1);
 $dc->Controllastato(2);
 
