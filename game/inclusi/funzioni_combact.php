@@ -245,8 +245,8 @@ class Dati{
 	$energia=20;
 	}
 	$colpisci=rand(1,100)+($this->car($att,'agilita')/5-$this->car($dif,'agilita')/5)+($this->car($att,'velocita')/15-$this->car($dif,'velocita')/15);
-	if($this->equip($att,'cac')!=0 AND $arma['danno']!=0)
-	$colpisci+=$colpisci/100*$arma['danno'];
+	if($this->equip($att,'cac')!=0 AND $arma['bonuseff']!=0)
+	$colpisci+=$colpisci/100*$arma['bonuseff'];
 	if((100/$this->car($att,'energiamax')*$this->car($att,'energia'))<20)
 	$colpisci-=20;
 	if((100/$this->car($dif,'energiamax')*$this->car($dif,'energia'))<20)
@@ -258,15 +258,15 @@ class Dati{
 	if($colpisci>50 OR $this->esausto($dif)==1){
 	$difesamax=round($this->car($dif,'diffisica')/100);
 	$energiadif=0;
+	$difesa=rand(0,$difesamax);
 	if($this->equip($dif,'arm')!=0){
 	$armatura=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$this->equip($dif,'arm')."' LIMIT 1");
 	if($armatura['energia']<=$this->car($dif,'energia')){
 	$energiadif=$armatura['energia'];
-	$difesamax+=$armatura['difesafisica'];
+	$difesa+=round(rand($armatura['difesafisica']/10,$armatura['difesafisica']));
 	$this->Ogginuso($dif,'arm');
 	}
 	}//se il difensore ha armatura
-	$difesa=rand(0,$difesamax);
 	$danno-=$difesa;
 	if($danno<1)
 	$danno=1;

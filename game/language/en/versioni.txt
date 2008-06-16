@@ -12,6 +12,8 @@ Legenda:<br />
 </p>
 <p><strong>0.6.11</strong> (Non disponibile - In sviluppo)<br />
 + Vari miglioramenti di sistema a sistema di combattimento<br />
+# Migliorato l'utilizzo delle armature in combattimento<br />
+- Correzione bug minori<br />
 </p>
 <p><strong>0.6.10</strong> [R.1209] (15/06/08 - Beta)<br />
 + Non si può sfidare qualcuno se uno dei 2 può salire di livello ma non lo ha fatto<br />
