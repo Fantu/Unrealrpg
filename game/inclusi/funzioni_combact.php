@@ -201,11 +201,13 @@ class Dati{
 	public function Viewequip($chi) {
 	global $lang;
 	$input="";
-	if($this->equip($chi,'cac')!=0 OR $this->equip($chi,'arm')!=0){
+	if($this->equip($chi,'cac')!=0 OR $this->equip($chi,'arm')!=0 OR $this->equip($chi,'scu')!=0){
 	if($this->equip($chi,'cac')!=0)
 	$equip.=" ".$lang['oggetto'.$this->equip($chi,'cac').'_nome'];
 	if($this->equip($chi,'arm')!=0)
 	$equip.=" ".$lang['oggetto'.$this->equip($chi,'arm').'_nome'];
+	if($this->equip($chi,'scu')!=0)
+	$equip.=" ".$lang['oggetto'.$this->equip($chi,'scu').'_nome'];
 	$input=sprintf($lang['equip_di'],$this->nome($chi),$equip)."<br/>";
 	}
 	return $input;
