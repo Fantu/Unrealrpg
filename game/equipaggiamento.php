@@ -176,7 +176,7 @@ $usuraogg='title="'.$lang['usura_attuale'].$usuraoggsel['usura'].'"';
 $scuimpo="<a href=\"index.php?loc=mostraoggetto&amp;ogg=".$userequip['scu']."&amp;da=equip\"".$usuraogg.">".$lang['oggetto'.$userequip['scu'].'_nome']."</a>";
 $desc_imposcu=sprintf($lang['scuimpo'],$scuimpo);
 }else{
-$desc_impoarm=$lang['noscuimpo'];
+$desc_imposcu=$lang['noscuimpo'];
 }
 
 require('template/int_equipaggiamento.php');
