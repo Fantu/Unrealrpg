@@ -13,6 +13,7 @@ Legenda:<br />
 <p><strong>0.6.11</strong> (Non disponibile - In sviluppo)<br />
 + Aggiunti 2 scudi di legno negli oggetti<br />
 + Aggiunti gli scudi all'equipaggiamento<br />
++ Implementati gli scudi nei combattimenti<br />
 + Vari miglioramenti di sistema a sistema di combattimento<br />
 # Migliorato l'utilizzo delle armature in combattimento<br />
 - Correzione bug minori<br />

@@ -257,22 +257,31 @@ class Dati{
 	$colpisci+=20;
 	if($colpisci>50 OR $this->esausto($dif)==1){
 	$difesamax=round($this->car($dif,'diffisica')/100);
-	$energiadif=0;
 	$difesa=rand(0,$difesamax);
 	if($this->equip($dif,'arm')!=0){
 	$armatura=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$this->equip($dif,'arm')."' LIMIT 1");
 	if($armatura['energia']<=$this->car($dif,'energia')){
-	$energiadif=$armatura['energia'];
+	$this->Modenergia($dif,$armatura['energia']);
 	$difesa+=round(rand($armatura['difesafisica']/10,$armatura['difesafisica']));
 	$this->Ogginuso($dif,'arm');
 	}
 	}//se il difensore ha armatura
+	$pscudo="";
+	$probps=rand(0,100);
+	if($this->equip($dif,'scu')!=0 AND $probps<20){
+	$scudo=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$this->equip($dif,'scu')."' LIMIT 1");
+	if($scudo['energia']<=$this->car($dif,'energia')){
+	$this->Modenergia($dif,$scudo['energia']);
+	$pscudo=$lang['parata_con_scudo'];
+	$difesa+=round(rand($scudo['difesafisica']/50,$scudo['difesafisica']));
+	$this->Ogginuso($dif,'scu');
+	}
+	}//se il difensore ha scudo
 	$danno-=$difesa;
 	if($danno<1)
 	$danno=1;
-	$input=sprintf($lang['danno_att_vicino'],$this->nome($att),$this->nome($dif),$nomearma,$danno)."<br/>";
+	$input=sprintf($lang['danno_att_vicino'],$this->nome($att),$this->nome($dif),$nomearma,$danno).$pscudo."<br/>";
 	$this->Modsalute($dif,$danno);
-	$this->Modenergia($dif,$energiadif);
 	}else{
 	$input=sprintf($lang['niente_att_vicino'],$this->nome($att),$this->nome($dif),$nomearma)."<br/>";
 	}
