@@ -59,3 +59,27 @@ echo "<option value=\"$chiave\">$elemento</option>";} ?>
 </tr>
 </table>
 </form>
+<br />
+<br />
+<?php echo $desc_imposcu; ?>
+<br />
+<form action="" method="post" name="fimposcu">
+<table border="0">
+<tr>
+<td>
+<?php echo $lang['seleziona_scu']; ?> <select name="scu" id="scu">
+<option value="-1" selected="selected">--------</option>
+<option value="0"><?php echo $lang['Niente']; ?></option>
+<?php if($scudi){
+foreach($scudi as $chiave=>$elemento)
+echo "<option value=\"$chiave\">$elemento</option>";} ?>
+</select>
+</td>
+</tr>
+<tr>
+<td>
+<input type="submit" name="imposcu" value="<?php echo $lang['Imposta']; ?>" />
+</td>
+</tr>
+</table>
+</form>

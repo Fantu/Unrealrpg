@@ -11,4 +11,7 @@ $lang['Equipdifensivo']='Equipaggiamento difensivo';
 $lang['seleziona_arm']='Seleziona armatura';
 $lang['armimpo']='La tua armatura è %s';
 $lang['noarmimpo']='Non hai un armatura nell`equipaggiamento.';
+$lang['seleziona_scu']='Seleziona scudo';
+$lang['scuimpo']='Il tuo scudo è %s';
+$lang['noscuimpo']='Non hai uno scudo nell`equipaggiamento.';
 ?>

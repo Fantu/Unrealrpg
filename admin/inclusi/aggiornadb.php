@@ -3,13 +3,13 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	header("Location: ../../index.php?error=16");
 	exit();
 }
-$newversion="0.6.10";
+$newversion="0.6.11";
 foreach($game_server as $chiave=>$elemento){
 if($chiave!=999){
 $db->database=$chiave;
 $check=$db->QuerySelect("SELECT version FROM config WHERE id=".$chiave);
 if($check['version']!=$newversion AND $newversion==$game_revision){
-$db->QueryMod("ALTER TABLE `equipaggiamento` ADD `arm` SMALLINT UNSIGNED NOT NULL DEFAULT '0'");
+$db->QueryMod("ALTER TABLE `equipaggiamento` ADD `scu` SMALLINT UNSIGNED NOT NULL DEFAULT '0'");
 $db->QueryMod("INSERT INTO `unrealff_rpg999`.`oggetti` (
 `id` ,
 `tipo` ,

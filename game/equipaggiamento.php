@@ -76,6 +76,38 @@ exit();
 }
 }//fine imposta armatura
 
+if (isset($_POST['imposcu'])){
+$errore="";
+$scudo=(int)$_POST['scu'];
+if ($scudo<0)
+$errore.=$lang['equip_errore1'];
+if($errore=="" AND $scudo>0){
+$usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$user['userid']."' LIMIT 1");
+$scusel=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$scudo."' LIMIT 1");
+if ($usercar['attfisico']<$scusel['forzafisica'])
+$errore.=$lang['equip_errore2'];
+}//se scudo selezionato
+if ($eventi['id']>0)
+$errore.=$lang['global_errore1'];
+if($errore){
+	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
+else {
+if($userequip['scu']!=0){
+$datrasf=$db->QuerySelect("SELECT * FROM equip WHERE userid='".$user['userid']."' AND oggid='".$userequip['scu']."' LIMIT 1");
+$db->QueryMod("DELETE FROM equip WHERE id='".$datrasf['id']."' LIMIT 1");
+$db->QueryMod("INSERT INTO inoggetti (oggid,userid,usura) VALUES ('".$datrasf['oggid']."','".$datrasf['userid']."','".$datrasf['usura']."')");
+}//se c'è già un oggetto impo
+$db->QueryMod("UPDATE equipaggiamento SET scu='".$scudo."' WHERE userid='".$user['userid']."' LIMIT 1");
+if($scudo!=0){
+$datrasf=$db->QuerySelect("SELECT * FROM inoggetti WHERE userid='".$user['userid']."' AND oggid='".$scudo."' LIMIT 1");
+$db->QueryMod("DELETE FROM inoggetti WHERE id='".$datrasf['id']."' LIMIT 1");
+$db->QueryMod("INSERT INTO equip (oggid,userid,usura) VALUES ('".$datrasf['oggid']."','".$datrasf['userid']."','".$datrasf['usura']."')");
+}
+echo "<script language=\"javascript\">window.location.href='index.php?loc=equipaggiamento'</script>";
+exit();
+}
+}//fine imposta scudo
+
 //-------------------------------
 //VISUALIZZAZIONE EQUIPAGGIAMENTO
 //-------------------------------
@@ -100,7 +132,15 @@ while($ogg2=$db->QueryCicloResult($oggetti)) {
 if(isset($armt[$ogg2['oggid']]))
 $armature[$ogg2['oggid']]=$lang['oggetto'.$ogg2['oggid'].'_nome'];
 }
-
+$oggscu=$db->QueryCiclo("SELECT * FROM oggetti WHERE tipo='6' AND categoria='2'");
+while($ogg=$db->QueryCicloResult($oggscu)) {
+$scut[$ogg['id']]=$ogg['id'];
+}
+$oggetti=$db->QueryCiclo("SELECT oggid FROM inoggetti WHERE userid='".$user['userid']."' GROUP BY oggid");
+while($ogg2=$db->QueryCicloResult($oggetti)) {
+if(isset($scut[$ogg2['oggid']]))
+$scudi[$ogg2['oggid']]=$lang['oggetto'.$ogg2['oggid'].'_nome'];
+}
 }//se ci sono oggetti
 
 if($userequip['cac']!=0){
@@ -125,6 +165,18 @@ $armimpo="<a href=\"index.php?loc=mostraoggetto&amp;ogg=".$userequip['arm']."&am
 $desc_impoarm=sprintf($lang['armimpo'],$armimpo);
 }else{
 $desc_impoarm=$lang['noarmimpo'];
+}
+
+if($userequip['scu']!=0){
+$usuraogg='';
+if($user['plus']>0){
+$usuraoggsel=$db->QuerySelect("SELECT * FROM equip WHERE userid='".$user['userid']."' AND oggid='".$userequip['scu']."' LIMIT 1");
+$usuraogg='title="'.$lang['usura_attuale'].$usuraoggsel['usura'].'"';
+}
+$scuimpo="<a href=\"index.php?loc=mostraoggetto&amp;ogg=".$userequip['scu']."&amp;da=equip\"".$usuraogg.">".$lang['oggetto'.$userequip['scu'].'_nome']."</a>";
+$desc_impoarm=sprintf($lang['scuimpo'],$scuimpo);
+}else{
+$desc_impoarm=$lang['noscuimpo'];
 }
 
 require('template/int_equipaggiamento.php');
