@@ -11,6 +11,7 @@ Legenda:<br />
 + Iniziata creazione sistema automatico di selezione della tattica di combattimento, attiva per chi ha l'account plus attivo e non ha selezionato nessuna tattica<br />
 </p>
 <p><strong>0.6.11</strong> (Non disponibile - In sviluppo)<br />
++ Aggiunti 2 scudi di legno negli oggetti<br />
 + Vari miglioramenti di sistema a sistema di combattimento<br />
 # Migliorato l'utilizzo delle armature in combattimento<br />
 - Correzione bug minori<br />

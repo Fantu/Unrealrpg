@@ -10,6 +10,27 @@ $db->database=$chiave;
 $check=$db->QuerySelect("SELECT version FROM config WHERE id=".$chiave);
 if($check['version']!=$newversion AND $newversion==$game_revision){
 $db->QueryMod("ALTER TABLE `equipaggiamento` ADD `arm` SMALLINT UNSIGNED NOT NULL DEFAULT '0'");
+$db->QueryMod("INSERT INTO `unrealff_rpg999`.`oggetti` (
+`id` ,
+`tipo` ,
+`categoria` ,
+`probrottura` ,
+`costo` ,
+`energia` ,
+`usura` ,
+`bonuseff` ,
+`forzafisica` ,
+`probtrovare` ,
+`recsalute` ,
+`recenergia` ,
+`abilitanec` ,
+`materiale` ,
+`danno` ,
+`difesafisica`
+)
+VALUES (NULL , '6', '2', '200', '10', '12', '20', '0', '22', '0', '0', '0', '0', '0', '0', '8'),
+VALUES (NULL , '6', '2', '150', '20', '15', '50', '0', '26', '0', '0', '0', '0', '0', '0', '12');
+");
 	/*//creazione record per tab con 1 record per utente
 	$a=$db->QueryCiclo("SELECT userid FROM utenti WHERE conferma='1' AND personaggio='1'");
 	while($var=$db->QueryCicloResult($a))
