@@ -174,7 +174,7 @@ $usuraoggsel=$db->QuerySelect("SELECT * FROM equip WHERE userid='".$user['userid
 $usuraogg='title="'.$lang['usura_attuale'].$usuraoggsel['usura'].'"';
 }
 $scuimpo="<a href=\"index.php?loc=mostraoggetto&amp;ogg=".$userequip['scu']."&amp;da=equip\"".$usuraogg.">".$lang['oggetto'.$userequip['scu'].'_nome']."</a>";
-$desc_impoarm=sprintf($lang['scuimpo'],$scuimpo);
+$desc_imposcu=sprintf($lang['scuimpo'],$scuimpo);
 }else{
 $desc_impoarm=$lang['noscuimpo'];
 }
