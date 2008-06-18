@@ -14,6 +14,9 @@ $eventisfida=$db->QuerySelect("SELECT * FROM eventi WHERE userid='".$user['useri
 if($eventisfida['tipo']==4 AND $eventisfida['type']==2){
 $sfidante=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$eventisfida['oggid']."'");
 $outputsfida=sprintf($lang['rispondi_sfida'],$sfidante['username'])." - <a href=\"index.php?loc=combact&amp;do=rispsfida&amp;risp=0\">".$lang['Rifiuta']."</a> - <a href=\"index.php?loc=combact&amp;do=rispsfida&amp;risp=1\">".$lang['Accetta']."</a>";
+}elseif($eventisfida['tipo']==4 AND $eventisfida['type']==1){
+$sfidante=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$eventisfida['oggid']."'");
+$outputsfida=sprintf($lang['sfida_lanciata'],$sfidante['username'])." - <a href=\"index.php?loc=combact&amp;do=annullasfida\">".$lang['Annulla']."</a>";
 }elseif($eventisfida['tipo']==5){
 $filerep="inclusi/log/report/".$db->database."/".$eventisfida['battleid'].".log";
 ob_start();
@@ -103,6 +106,16 @@ $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES
 }
 }
 break;//fine rispondi alla sfida
+case "annullasfida":
+if ($eventi['id']>0){
+$eventisfida=$db->QuerySelect("SELECT * FROM eventi WHERE userid='".$user['userid']."'");
+if($eventisfida['type']==1){
+$idp=(int)$eventisfida['oggid'];
+$db->QueryMod("DELETE FROM eventi WHERE userid='".$user['userid']."'");
+$db->QueryMod("DELETE FROM eventi WHERE userid='".$idp."'");
+}//se ha lanciato lui la sfida
+}
+break;//fine annulla sfida
 case "repview":
 $repid=(int)$_GET['id'];
 $errore="";

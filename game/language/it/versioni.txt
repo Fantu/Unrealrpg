@@ -12,6 +12,7 @@ Legenda:<br />
 </p>
 <p><strong>0.6.12</strong> (Non disponibile - In sviluppo)<br />
 + Aggiunta difesa alle tattiche<br />
++ Aggiunta in Combattimenti la visualizzazione della sfida lanciata e la possibilità di annullarla<br />
 + Vari miglioramenti di sistema a sistema di combattimento<br />
 </p>
 <p><strong>0.6.11.1</strong> (18/06/08 - Beta)<br />
