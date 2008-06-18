@@ -125,7 +125,7 @@ class Dati{
 	} //fine ogginuso
 	
 	public function Impobexp($chi,$cosa) {
-	$this->che[$chi]->bexp=$cosa;
+	$this->che[$chi]->bonusexp=$cosa;
 	} //fine Impobexp
 	
 	public function Controlloogg($chi) {
