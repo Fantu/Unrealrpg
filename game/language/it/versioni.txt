@@ -14,6 +14,9 @@ Legenda:<br />
 + Aggiunta difesa alle tattiche<br />
 + Vari miglioramenti di sistema a sistema di combattimento<br />
 </p>
+<p><strong>0.6.11.1</strong> (18/06/08 - Beta)<br />
+- Corretto bug nel calcolo dell'esperienza guadagnata in combattimento<br />
+</p>
 <p><strong>0.6.11</strong> [R.1220] (18/06/08 - Beta)<br />
 + Aggiunti 2 scudi di legno negli oggetti<br />
 + Aggiunti gli scudi all'equipaggiamento<br />
