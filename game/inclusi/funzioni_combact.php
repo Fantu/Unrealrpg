@@ -169,7 +169,7 @@ class Dati{
 	}else{//se nessuna condizione valida
 	$this->che[$chi]->tattic=1;
 	}
-	if($this->tattica(1,1)==1)
+	if($this->tattica($chi,1)==1)
 	$this->che[$chi]->subtattica==1;
 	} //fine Autotattic
 	
@@ -318,6 +318,7 @@ $dc->Stabilisciordine($battle['attid'],$battle['difid'],$battle);
 if($turni==0){
 $input.=$dc->Viewequip(1);
 $input.=$dc->Viewequip(2);}
+$input.=$dc->tattica(1,1)."-".$dc->tattica(2,1)."<br/>";
 if($dc->tattica(1,1)!=2 AND $dc->tattica(2,1)!=2){
 $dc->Controllastato(1);
 $dc->Controllastato(2);
