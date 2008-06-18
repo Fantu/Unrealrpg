@@ -51,7 +51,7 @@ class Dati{
 	$this->che[2]=new Combattente($attaccante,$attn['username'],$attcar,$attequip,$battle['tatatt'],$battle['tatatt2'],$attn['plus']);
 	$this->che[1]=new Combattente($difensore,$difn['username'],$difcar,$difequip,$battle['tatdif'],$battle['tatdif2'],$difn['plus']);
 	}
-	if($this->tattica(1,1)==0)
+	if($this->plus(1)>0 AND $this->tattica(1,1)==0)
 	$this->Autotattic(1);
 	if($this->plus(2)>0 AND $this->tattica(2,1)==0)
 	$this->Autotattic(2);
@@ -159,15 +159,15 @@ class Dati{
 	$percenergia=100/$this->car($chi,'energiamax')*$this->car($chi,'energia');
 	$percenergia2=100/$this->car($chi2,'energiamax')*$this->car($chi2,'energia');
 	if($percenergia<20 AND $percsalute<20 AND $percsalute2>40 AND $percenergia2>40){//difesa
-	$this->che[$chi]->tattic=3;
+	$this->che[$chi]->tattica=3;
 	}elseif($percenergia2<5){//se l'avversario è esausto attacco
-	$this->che[$chi]->tattic=1;
+	$this->che[$chi]->tattica=1;
 	}elseif($percsalute<10){//se la salute è pessima resa
-	$this->che[$chi]->tattic=2;
+	$this->che[$chi]->tattica=2;
 	}elseif($percenergia2<5){//se esausto resa
-	$this->che[$chi]->tattic=2;
+	$this->che[$chi]->tattica=2;
 	}else{//se nessuna condizione valida
-	$this->che[$chi]->tattic=1;
+	$this->che[$chi]->tattica=1;
 	}
 	if($this->tattica($chi,1)==1)
 	$this->che[$chi]->subtattica==1;
