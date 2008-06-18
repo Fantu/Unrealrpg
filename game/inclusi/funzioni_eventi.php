@@ -117,7 +117,7 @@ $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,lavor
 }//fine se la coda ha almeno un altra ora
 } //fine Completalavlabapp
 
-function Completatempioprega($userid) {
+function Completatempioprega($userid,$ore) {
 global $db,$adesso,$lang,$language;
 require_once('language/'.$language.'/lang_tempio.php');
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");
@@ -150,6 +150,10 @@ $testo="<span>".sprintf($lang['report_preghiera_normale'],$dono,$energiapersa)."
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");
 }//fine se niente manifestazione divina
 $db->QueryMod("UPDATE utenti t2 JOIN caratteristiche t3 on t2.userid=t3.userid SET t3.fede=t3.fede+'".$fede."',t2.monete=t2.monete-'".$dono."',t3.energia='".$energia."',t3.saluteattuale='".$salute."',t3.recuperoenergia='".$adesso."',t3.decfede='".$adesso."',t3.manarimasto='".$mana."' WHERE t2.userid='".$userid."'");
+if($ore>1){
+$ore--;
+$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,ore) VALUES ('".$userid."','".$adesso."','3600','3','2','".$ore."')");	
+}//fine se la coda ha almeno un altra ora
 } //fine Completatempioprega
 
 function Completaresurrezione($userid) {

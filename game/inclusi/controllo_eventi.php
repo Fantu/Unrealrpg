@@ -41,7 +41,7 @@ while($evento=$db->QueryCicloResult($evfiniti)) {
 			}	
 		break;
 		case 2://preghiera
-		Completatempioprega($evento['userid']);
+		Completatempioprega($evento['userid'],$evento['ore']);
 		break;
 		case 3://resurrezione
 		Completaresurrezione($evento['userid']);
