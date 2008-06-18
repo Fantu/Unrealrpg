@@ -51,10 +51,10 @@ class Dati{
 	$this->che[2]=new Combattente($attaccante,$attn['username'],$attcar,$attequip,$battle['tatatt'],$battle['tatatt2'],$attn['plus']);
 	$this->che[1]=new Combattente($difensore,$difn['username'],$difcar,$difequip,$battle['tatdif'],$battle['tatdif2'],$difn['plus']);
 	}
-	/*if($this->plus(1)>0 AND $this->tattica(1,1)==0)
+	if($this->plus(1)>0 AND $this->tattica(1,1)==0)
 	$this->Autotattic(1);
 	if($this->plus(2)>0 AND $this->tattica(2,1)==0)
-	$this->Autotattic(2);*/
+	$this->Autotattic(2);
 	} //fine Stabilisciordine
 	
 	public function equip($chi,$campo) {
@@ -155,9 +155,12 @@ class Dati{
 	else
 	$chi2=1;
 	$percsalute=100/$this->car($chi,'salute')*$this->car($chi,'saluteattuale');
+	$percsalute2=100/$this->car($chi2,'salute')*$this->car($chi2,'saluteattuale');
 	$percenergia=100/$this->car($chi,'energiamax')*$this->car($chi,'energia');
 	$percenergia2=100/$this->car($chi2,'energiamax')*$this->car($chi2,'energia');
-	if($percenergia2<5){//se l'avversario è esausto attacco
+	if($percenergia<20 AND $percsalute<20 AND $percsalute2>40 AND $percenergia2>40){//difesa
+	$this->che[$chi]->tattic=3;
+	}elseif($percenergia2<5){//se l'avversario è esausto attacco
 	$this->che[$chi]->tattic=1;
 	}elseif($percsalute<10){//se la salute è pessima resa
 	$this->che[$chi]->tattic=2;
@@ -249,6 +252,8 @@ class Dati{
 	$colpisci=rand(1,100)+($this->car($att,'agilita')/5-$this->car($dif,'agilita')/5)+($this->car($att,'velocita')/15-$this->car($dif,'velocita')/15);
 	if($this->equip($att,'cac')!=0 AND $arma['bonuseff']!=0)
 	$colpisci+=$colpisci/100*$arma['bonuseff'];
+	if($this->tattica($dif,1)==3)
+	$colpisci-=rand(5,20);
 	if((100/$this->car($att,'energiamax')*$this->car($att,'energia'))<20)
 	$colpisci-=20;
 	if((100/$this->car($dif,'energiamax')*$this->car($dif,'energia'))<20)
@@ -269,7 +274,8 @@ class Dati{
 	}
 	}//se il difensore ha armatura
 	$pscudo="";
-	$probps=rand(0,100);
+	if($this->tattica($dif,1)==3){
+	$probps=rand(0,50);}else{$probps=rand(0,100);}
 	if($this->equip($dif,'scu')!=0 AND $probps<20){
 	$scudo=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$this->equip($dif,'scu')."' LIMIT 1");
 	if($scudo['energia']<=$this->car($dif,'energia')){
@@ -316,12 +322,20 @@ if($dc->tattica(1,1)!=2 AND $dc->tattica(2,1)!=2){
 $dc->Controllastato(1);
 $dc->Controllastato(2);
 
-if($dc->esausto(1)==0){
-$input.=$dc->Attaccovicino(1,2);}else{
-$input.=sprintf($lang['troppo_stanco_per_attacco'],$dc->nome(1))."<br/>";}
-if($dc->esausto(2)==0){
-$input.=$dc->Attaccovicino(2,1);}else{
-$input.=sprintf($lang['troppo_stanco_per_attacco'],$dc->nome(2))."<br/>";}
+if($dc->esausto(1)==1){
+$input.=sprintf($lang['troppo_stanco_per_attacco'],$dc->nome(1))."<br/>";
+}elseif($dc->tattica(1,1)==3){
+$input.=sprintf($lang['resta_in_difesa'],$dc->nome(1))."<br/>";
+}else{
+$input.=$dc->Attaccovicino(1,2);
+}
+if($dc->esausto(2)==1){
+$input.=sprintf($lang['troppo_stanco_per_attacco'],$dc->nome(2))."<br/>";
+}elseif($dc->tattica(2,1)==3){
+$input.=sprintf($lang['resta_in_difesa'],$dc->nome(2))."<br/>";
+}else{
+$input.=$dc->Attaccovicino(2,1);
+}
 
 if($dc->che[1]->oggusati==1){
 $input.=$dc->Controlloogg(1);}
