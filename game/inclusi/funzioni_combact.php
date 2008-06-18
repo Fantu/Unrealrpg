@@ -280,7 +280,7 @@ class Dati{
 	$scudo=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$this->equip($dif,'scu')."' LIMIT 1");
 	if($scudo['energia']<=$this->car($dif,'energia')){
 	$this->Modenergia($dif,$scudo['energia']);
-	$pscudo=" ".$lang['parata_con_scudo'];
+	$pscudo=" ".sprintf($lang['parata_con_scudo'],$this->nome($dif));
 	$difesa+=round(rand($scudo['difesafisica']/50,$scudo['difesafisica']));
 	$this->Ogginuso($dif,'scu');
 	}
