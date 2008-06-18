@@ -55,4 +55,6 @@ $lang['oggetto53_nome']='Daga di acciaio discreto';
 $lang['oggetto54_nome']='Daga di acciaio buono';
 $lang['oggetto55_nome']='Armatura di cuoio';
 $lang['oggetto56_nome']='Armatura di cuoio rinforzato';
+$lang['oggetto57_nome']='Scudo di legno';
+$lang['oggetto58_nome']='Scudo di legno rinforzato';
 ?>

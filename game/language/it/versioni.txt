@@ -10,10 +10,14 @@ Legenda:<br />
 <p><strong>0.7.0</strong> (Non disponibile - In sviluppo)<br />
 + Iniziata creazione sistema automatico di selezione della tattica di combattimento, attiva per chi ha l'account plus attivo e non ha selezionato nessuna tattica<br />
 </p>
-<p><strong>0.6.11</strong> (Non disponibile - In sviluppo)<br />
+<p><strong>0.6.12</strong> (Non disponibile - In sviluppo)<br />
+Niente attualmente<br />
+</p>
+<p><strong>0.6.11</strong> [R.1220] (18/06/08 - Beta)<br />
 + Aggiunti 2 scudi di legno negli oggetti<br />
 + Aggiunti gli scudi all'equipaggiamento<br />
 + Implementati gli scudi nei combattimenti<br />
++ Aggiunti gli scudi negli equipaggiamenti visibili a inizio combattimento<br />
 + Vari miglioramenti di sistema a sistema di combattimento<br />
 # Migliorato l'utilizzo delle armature in combattimento<br />
 - Correzione bug minori<br />
