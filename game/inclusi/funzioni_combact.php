@@ -318,7 +318,6 @@ $dc->Stabilisciordine($battle['attid'],$battle['difid'],$battle);
 if($turni==0){
 $input.=$dc->Viewequip(1);
 $input.=$dc->Viewequip(2);}
-$input.=$dc->tattica(1,1)."-".$dc->tattica(2,1)."<br/>";
 if($dc->tattica(1,1)!=2 AND $dc->tattica(2,1)!=2){
 $dc->Controllastato(1);
 $dc->Controllastato(2);
