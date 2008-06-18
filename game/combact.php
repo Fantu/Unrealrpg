@@ -113,6 +113,8 @@ if($eventisfida['type']==1){
 $idp=(int)$eventisfida['oggid'];
 $db->QueryMod("DELETE FROM eventi WHERE userid='".$user['userid']."'");
 $db->QueryMod("DELETE FROM eventi WHERE userid='".$idp."'");
+echo "<script language=\"javascript\">window.location.href='index.php?loc=situazione'</script>";
+exit();
 }//se ha lanciato lui la sfida
 }
 break;//fine annulla sfida
