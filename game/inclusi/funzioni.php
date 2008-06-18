@@ -3,7 +3,7 @@ function testosalute($percsalute){
 global $lang;
 if ($percsalute<=0){
 $salute=$lang['morto'];
-}elseif ($percsalute>=1 AND $percsalute<10){
+}elseif ($percsalute>0 AND $percsalute<10){
 $salute=$lang['pessima'];
 }elseif ($percsalute>=10 AND $percsalute<20){
 $salute=$lang['molto_bassa'];
