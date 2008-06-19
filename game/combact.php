@@ -54,6 +54,9 @@ break;//fine attacco
 case 2:
 $viewtattic=$lang['tattica_resa'];
 break;//fine resa
+case 3:
+$viewtattic=$lang['tattica_difesa'];
+break;//fine difesa
 }
 $viewtattic=sprintf($lang['tattica_selezionata'],$viewtattic)."<br/>";
 }
