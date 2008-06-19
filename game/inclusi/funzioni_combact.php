@@ -276,18 +276,20 @@ class Dati{
 	}
 	}//se il difensore ha armatura
 	$pscudo="";
+	if($this->esausto($dif)==0 AND $this->equip($dif,'scu')!=0){
+	$this->Ogginuso($dif,'scu');
+	$scudo=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$this->equip($dif,'scu')."' LIMIT 1");
+	$this->Modenergia($dif,$scudo['energia']);
+	}
 	if($this->tattica($dif,1)==3){
 	$probps=rand(0,40);}else{$probps=rand(0,100);}
 	if($this->equip($dif,'scu')!=0 AND $probps<20 AND $this->esausto($dif)==0){
-	$scudo=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$this->equip($dif,'scu')."' LIMIT 1");
 	if($scudo['energia']<=$this->car($dif,'energia')){
-	$this->Modenergia($dif,$scudo['energia']);
 	$pscudo=" ".sprintf($lang['parata_con_scudo'],$this->nome($dif));
 	$prob=50;
 	if($this->tattica($dif,1)==3)
 	$prob=70;
 	$difesa+=round(rand($scudo['difesafisica']/50,$scudo['difesafisica']));
-	$this->Ogginuso($dif,'scu');
 	}
 	}//se il difensore ha scudo
 	$danno-=$difesa;
