@@ -165,8 +165,8 @@ $db->QueryMod("UPDATE utenti t2 JOIN caratteristiche t3 on t2.userid=t3.userid S
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");
 if($usercar['fede']<5000){
 $mana=$usercar['manarimasto'];
-$salute=$usercar['saluteattuale'];
-$energia=$usercar['energia'];
+$salute=round($usercar['salute']/50);
+$energia=round($usercar['energiamax']/50);
 }else{
 $bonus=5*($usercar['fede']/5000);
 $mana=$usercar['manarimasto']+round($usercar['mana']/100*$bonus);
