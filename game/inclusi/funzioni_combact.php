@@ -121,6 +121,8 @@ class Dati{
 	
 	public function Aggiornastat($chi){
 	global $db;
+	if($this->car($chi,'saluteattuale')<0)
+	$this->che[$chi]->car['saluteattuale']=0;
 	$db->QueryMod("UPDATE caratteristiche SET saluteattuale='".$this->car($chi,'saluteattuale')."',energia='".$this->car($chi,'energia')."' WHERE userid='".$this->id($chi)."' LIMIT 1");
 	} //fine ogginuso
 	
