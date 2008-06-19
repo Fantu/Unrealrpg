@@ -10,6 +10,7 @@ $db->database=$chiave;
 $check=$db->QuerySelect("SELECT version FROM config WHERE id=".$chiave);
 if($check['version']!=$newversion AND $newversion==$game_revision){
 $db->QueryMod("ALTER TABLE `caratteristiche` CHANGE `saluteattuale` `saluteattuale` MEDIUMINT( 8 ) UNSIGNED NOT NULL DEFAULT '100'");
+$db->QueryMod("ALTER TABLE `battle` ADD `difcpu` TINYINT( 1 ) UNSIGNED NOT NULL DEFAULT '0'");
 /*$db->QueryMod("INSERT INTO `oggetti` (
 `id` ,
 `tipo` ,

@@ -280,7 +280,7 @@ class Dati{
 	$this->Ogginuso($dif,'scu');
 	$scudo=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$this->equip($dif,'scu')."' LIMIT 1");
 	$this->Modenergia($dif,$scudo['energia']);
-	}
+	}//se il difensore ha scudo
 	if($this->tattica($dif,1)==3){
 	$probps=rand(0,40);}else{$probps=rand(0,100);}
 	if($this->equip($dif,'scu')!=0 AND $probps<20 AND $this->esausto($dif)==0){
