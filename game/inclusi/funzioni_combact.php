@@ -254,7 +254,7 @@ class Dati{
 	$colpisci=rand(1,100)+($this->car($att,'agilita')/5-$this->car($dif,'agilita')/5)+($this->car($att,'velocita')/15-$this->car($dif,'velocita')/15);
 	if($this->equip($att,'cac')!=0 AND $arma['bonuseff']!=0)
 	$colpisci+=$colpisci/100*$arma['bonuseff'];
-	if($this->tattica($dif,1)==3)
+	if($this->tattica($dif,1)==3 AND $this->esausto($dif)==0)
 	$colpisci-=rand(5,20);
 	if((100/$this->car($att,'energiamax')*$this->car($att,'energia'))<20)
 	$colpisci-=20;
@@ -278,7 +278,7 @@ class Dati{
 	$pscudo="";
 	if($this->tattica($dif,1)==3){
 	$probps=rand(0,40);}else{$probps=rand(0,100);}
-	if($this->equip($dif,'scu')!=0 AND $probps<20){
+	if($this->equip($dif,'scu')!=0 AND $probps<20 AND $this->esausto($dif)==0){
 	$scudo=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$this->equip($dif,'scu')."' LIMIT 1");
 	if($scudo['energia']<=$this->car($dif,'energia')){
 	$this->Modenergia($dif,$scudo['energia']);

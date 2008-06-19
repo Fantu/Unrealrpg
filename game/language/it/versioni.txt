@@ -15,6 +15,7 @@ Legenda:<br />
 + Aggiunta in Combattimenti la visualizzazione della sfida lanciata e la possibilità di annullarla<br />
 + Aggiunta la possibilità di pregare per più ore consecutive, massimo 3<br />
 + Rifatta la resurrezione, se avviene tramite i chierici salute, energia e mana saranno ripristinati al massimo; in caso contrario dipendentemente dalla fede da salute 50%, energia 50% e mana invariato a tutto massimo<br />
++ Se esausto il difensore non può pararsi con lo scudo ne attuare la tattica difensiva<br />
 + Vari miglioramenti di sistema a sistema di combattimento<br />
 - Correzione bug minori<br />
 </p>
