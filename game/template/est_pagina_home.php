@@ -55,7 +55,6 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
             </select></td>
           </tr>
           <tr>
-          <tr>
             <td><?php echo $lang['Newsletter']; ?></td>
             <td>
 			<select name="newsletter" id="newsletter">
