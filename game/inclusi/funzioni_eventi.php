@@ -168,7 +168,7 @@ $mana=$usercar['manarimasto'];
 $salute=round($usercar['salute']/2);
 $energia=round($usercar['energiamax']/2);
 }else{
-$bonus=5*($usercar['fede']/5000);
+$bonus=10*($usercar['fede']/5000);
 $mana=$usercar['manarimasto']+round($usercar['mana']/100*$bonus);
 if($mana>$usercar['mana'])
 $mana=$usercar['mana'];
