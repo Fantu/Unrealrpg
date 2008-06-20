@@ -11,7 +11,7 @@ $check=$db->QuerySelect("SELECT version FROM config WHERE id=".$chiave);
 if($check['version']!=$newversion AND $newversion==$game_revision){
 $db->QueryMod("ALTER TABLE `caratteristiche` CHANGE `saluteattuale` `saluteattuale` MEDIUMINT( 8 ) UNSIGNED NOT NULL DEFAULT '100'");
 $db->QueryMod("ALTER TABLE `battle` ADD `difcpu` TINYINT( 1 ) UNSIGNED NOT NULL DEFAULT '0'");
-/*$db->QueryMod("INSERT INTO `oggetti` (
+$db->QueryMod("INSERT INTO `oggetti` (
 `id` ,
 `tipo` ,
 `categoria` ,
@@ -30,9 +30,16 @@ $db->QueryMod("ALTER TABLE `battle` ADD `difcpu` TINYINT( 1 ) UNSIGNED NOT NULL 
 `difesafisica`
 )
 VALUES 
-(NULL , '6', '2', '200', '10', '12', '20', '0', '22', '0', '0', '0', '0', '0', '0', '8'),
-(NULL , '6', '2', '150', '20', '15', '50', '0', '26', '0', '0', '0', '0', '0', '0', '12');
-");*/
+(NULL , '5', '3', '200', '15', '50', '20', '0', '100', '0', '0', '0', '1', '1', '11', '0'),
+(NULL , '5', '3', '150', '30', '50', '40', '1', '100', '0', '0', '0', '3', '1', '13', '0'),
+(NULL , '5', '3', '100', '50', '50', '100', '2', '100', '0', '0', '0', '5', '1', '16', '0'),
+(NULL , '5', '4', '250', '20', '100', '20', '0', '150', '0', '0', '0', '1', '1', '13', '0'),
+(NULL , '5', '4', '200', '40', '100', '40', '0', '150', '0', '0', '0', '3', '1', '16', '0'),
+(NULL , '5', '4', '150', '70', '100', '80', '0', '150', '0', '0', '0', '5', '1', '20', '0'),
+(NULL , '5', '5', '150', '15', '60', '30', '0', '100', '0', '0', '0', '1', '1', '10', '0'),
+(NULL , '5', '5', '120', '30', '60', '60', '0', '100', '0', '0', '0', '3', '1', '12', '0'),
+(NULL , '5', '5', '90', '60', '60', '150', '1', '100', '0', '0', '0', '5', '1', '14', '0');
+");
 	/*//creazione record per tab con 1 record per utente
 	$a=$db->QueryCiclo("SELECT userid FROM utenti WHERE conferma='1' AND personaggio='1'");
 	while($var=$db->QueryCicloResult($a))
