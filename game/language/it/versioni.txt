@@ -18,6 +18,7 @@ Legenda:<br />
 + Rifatta la resurrezione, se avviene tramite i chierici salute, energia e mana saranno ripristinati al massimo; in caso contrario dipendentemente dalla fede da salute 50%, energia 50% e mana invariato a tutto massimo<br />
 + Se esausto il difensore non può pararsi con lo scudo ne attuare la tattica difensiva<br />
 + Aggiunti negli oggetti 3 spade, 3 asce e 3 mazze di rame<br />
++ Aggiunte spade, asce e mazze fra gli oggetti forgiabili in fucina<br />
 + Vari miglioramenti di sistema a sistema di combattimento<br />
 - Correzione bug minori<br />
 </p>

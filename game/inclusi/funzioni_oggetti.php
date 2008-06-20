@@ -29,13 +29,19 @@ $materiali_num=array(
 $oggdf_nome=array(
 1=>$lang['Piccone'],
 2=>$lang['Pugnale'],
-3=>$lang['Daga']
+3=>$lang['Daga'],
+4=>$lang['Spada'],
+5=>$lang['Ascia'],
+6=>$lang['Mazza']
 );
 
 $oggdf_num=array(
 1=>array(1=>2,2=>1),
 2=>array(1=>5,2=>1),
-3=>array(1=>5,2=>2)
+3=>array(1=>5,2=>2),
+4=>array(1=>5,2=>3),
+5=>array(1=>5,2=>4),
+6=>array(1=>5,2=>5)
 );
 
 function Checkusurarottura($userid) {
