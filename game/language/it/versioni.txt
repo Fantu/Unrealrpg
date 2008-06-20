@@ -19,8 +19,9 @@ Legenda:<br />
 + Se esausto il difensore non può pararsi con lo scudo ne attuare la tattica difensiva<br />
 + Aggiunti negli oggetti 3 spade, 3 asce e 3 mazze di rame<br />
 + Aggiunte spade, asce e mazze fra gli oggetti forgiabili in fucina<br />
-+ Vari miglioramenti di sistema a sistema di combattimento<br />
++ Vari miglioramenti di sistema a sistema di combattimento, sistema di base interno<br />
 - Correzione bug minori<br />
+# Portato il guadagno di punti plus mensili degli utenti referenziati che giocano regolarmente da 1 a 2<br />
 </p>
 <p><strong>0.6.11.1</strong> (18/06/08 - Beta)<br />
 - Corretto bug nel calcolo dell'esperienza guadagnata in combattimento<br />
