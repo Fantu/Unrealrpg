@@ -11,14 +11,16 @@ Legenda:<br />
 + Iniziata creazione sistema automatico di selezione della tattica di combattimento, attiva per chi ha l'account plus attivo e non ha selezionato nessuna tattica<br />
 + Iniziata creazione personaggi non comandati da utenti<br />
 </p>
-<p><strong>0.6.12</strong> (Non disponibile - In sviluppo)<br />
+<p><strong>0.6.12</strong> (Stimato per il 22/06/08 - In sviluppo)<br />
 + Aggiunta difesa alle tattiche<br />
 + Aggiunta in Combattimenti la visualizzazione della sfida lanciata e la possibilità di annullarla<br />
 + Aggiunta la possibilità di pregare per più ore consecutive, massimo 3<br />
 + Rifatta la resurrezione, se avviene tramite i chierici salute, energia e mana saranno ripristinati al massimo; in caso contrario dipendentemente dalla fede da salute 50%, energia 50% e mana invariato a tutto massimo<br />
 + Se esausto il difensore non può pararsi con lo scudo ne attuare la tattica difensiva<br />
 + Aggiunti negli oggetti 3 spade, 3 asce e 3 mazze di rame<br />
-+ Vari miglioramenti di sistema a sistema di combattimento<br />
++ Aggiunte spade, asce e mazze fra gli oggetti forgiabili in fucina<br />
++ Vari miglioramenti di sistema a sistema di combattimento, sistema di base interno<br />
+# Portato il guadagno di punti plus mensili degli utenti referenziati che giocano regolarmente da 1 a 2<br />
 - Correzione bug minori<br />
 </p>
 <p><strong>0.6.11.1</strong> (18/06/08 - Beta)<br />

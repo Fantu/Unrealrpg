@@ -11,14 +11,16 @@ if ($titolo==""){ echo "Manca il titolo";
 	if ($msg==""){ echo "Manca il messaggio";
 	} else {
 	$db->database=0;
+	$n=0;
 	$op=$db->QueryCiclo("SELECT email FROM utenti WHERE conferma='1' AND mailnews='1'");
 	while($var=$db->QueryCicloResult($op)){
 		$to=$var['email'];
 		mail($to,$titolo,$msg,$game_intestazione_mail);
+		$n++;
 	}
 	/*$to="fantonifabio@tiscali.it";
 	mail($to,$titolo,$msg,$game_intestazione_mail);*/
-	echo "Mail spedita";
+	echo $n++." Mail spedite";
 	}}
 }else{
 /*echo $lang['crea_nuovo_utente'];*/
