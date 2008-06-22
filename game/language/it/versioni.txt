@@ -11,6 +11,9 @@ Legenda:<br />
 + Iniziata creazione sistema automatico di selezione della tattica di combattimento, attiva per chi ha l'account plus attivo e non ha selezionato nessuna tattica<br />
 + Iniziata creazione personaggi non comandati da utenti<br />
 </p>
+<p><strong>0.6.13</strong> (Non disponibile - In sviluppo)<br />
+# Modificata Spada di rame eccellente, resa più equilibrata<br />
+</p>
 <p><strong>0.6.12</strong> [R.1252] (22/06/08 - Beta)<br />
 + Aggiunta difesa alle tattiche<br />
 + Aggiunta in Combattimenti la visualizzazione della sfida lanciata e la possibilità di annullarla<br />

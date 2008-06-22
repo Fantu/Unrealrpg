@@ -3,15 +3,15 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	header("Location: ../../index.php?error=16");
 	exit();
 }
-$newversion="0.6.12";
+$newversion="0.6.13";
 foreach($game_server as $chiave=>$elemento){
 if($chiave!=999){
 $db->database=$chiave;
 $check=$db->QuerySelect("SELECT version FROM config WHERE id=".$chiave);
 if($check['version']!=$newversion AND $newversion==$game_revision){
-$db->QueryMod("ALTER TABLE `caratteristiche` CHANGE `saluteattuale` `saluteattuale` MEDIUMINT( 8 ) UNSIGNED NOT NULL DEFAULT '100'");
-$db->QueryMod("ALTER TABLE `battle` ADD `difcpu` TINYINT( 1 ) UNSIGNED NOT NULL DEFAULT '0'");
-$db->QueryMod("INSERT INTO `oggetti` (
+$db->QueryMod("UPDATE `oggetti` SET `costo` = '55' WHERE `oggetti`.`id` =61 LIMIT 1");
+
+/*$db->QueryMod("INSERT INTO `oggetti` (
 `id` ,
 `tipo` ,
 `categoria` ,
@@ -39,7 +39,7 @@ VALUES
 (NULL , '5', '5', '150', '15', '60', '30', '0', '100', '0', '0', '0', '1', '1', '10', '0'),
 (NULL , '5', '5', '120', '30', '60', '60', '0', '100', '0', '0', '0', '3', '1', '12', '0'),
 (NULL , '5', '5', '90', '60', '60', '150', '1', '100', '0', '0', '0', '5', '1', '14', '0');
-");
+");*/
 	/*//creazione record per tab con 1 record per utente
 	$a=$db->QueryCiclo("SELECT userid FROM utenti WHERE conferma='1' AND personaggio='1'");
 	while($var=$db->QueryCicloResult($a))
