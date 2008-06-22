@@ -57,4 +57,13 @@ $lang['oggetto55_nome']='Armatura di cuoio';
 $lang['oggetto56_nome']='Armatura di cuoio rinforzato';
 $lang['oggetto57_nome']='Scudo di legno';
 $lang['oggetto58_nome']='Scudo di legno rinforzato';
+$lang['oggetto59_nome']='Spada di rame scadente';
+$lang['oggetto60_nome']='Spada di rame buona';
+$lang['oggetto61_nome']='Spada di rame eccellente';
+$lang['oggetto62_nome']='Ascia di rame scadente';
+$lang['oggetto63_nome']='Ascia di rame buona';
+$lang['oggetto64_nome']='Ascia di rame eccellente';
+$lang['oggetto65_nome']='Mazza di rame scadente';
+$lang['oggetto66_nome']='Mazza di rame buona';
+$lang['oggetto67_nome']='Mazza di rame eccellente';
 ?>
