@@ -51,10 +51,10 @@ class Dati{
 	$this->che[2]=new Combattente($attaccante,$attn['username'],$attcar,$attequip,$battle['tatatt'],$battle['tatatt2'],$attn['plus']);
 	$this->che[1]=new Combattente($difensore,$difn['username'],$difcar,$difequip,$battle['tatdif'],$battle['tatdif2'],$difn['plus']);
 	}
-	if($this->plus(1)>0 AND $this->tattica(1,1)==0)
+	/*if($this->plus(1)>0 AND $this->tattica(1,1)==0)
 	$this->Autotattic(1);
 	if($this->plus(2)>0 AND $this->tattica(2,1)==0)
-	$this->Autotattic(2);
+	$this->Autotattic(2);*/
 	} //fine Stabilisciordine
 	
 	public function equip($chi,$campo) {
@@ -181,12 +181,12 @@ class Dati{
 	$chi2=2;
 	else
 	$chi2=1;
-	$exp=4+3*$turni;
-	$exp=round(rand(($exp/100*90),$exp));
+	$exp=3*$turni;
+	$exp=round(rand(($exp/100*95),$exp));
 	if($this->bexp($chi)==1){
-	$exp-=5;
+	$exp-=6;
 	}elseif($this->bexp($chi)==2){
-	$exp+=5;}
+	$exp+=6;}
 	$level=$this->car($chi,'livello')-$this->car($chi2,'livello');
 	if($level<0){
 	$liv=abs($level);

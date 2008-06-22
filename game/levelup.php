@@ -5,7 +5,8 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 }
 require('language/'.$language.'/lang_situazione.php');
 
-$expnewlevel=$usercar['livello']*200;
+$expinc=1+floor($usercar['livello']/2);
+$expnewlevel=$expinc*(120*$usercar['livello']);
 if($usercar['exp']<$expnewlevel){
 echo "<script language=\"javascript\">window.location.href='index.php?loc=situazione'</script>";
 exit();
