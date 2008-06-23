@@ -4,10 +4,11 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	exit();
 }
 $serep=$db->QuerySelect("SELECT COUNT(id) AS num FROM battlereport WHERE attid='".$user['userid']."' OR difid='".$user['userid']."'");
-if ($serep['num']>0){//controllo gli eventi finiti
+if ($serep['num']>0){//controllo se ci sono rep
 $reps=$db->QueryCiclo("SELECT * FROM battlereport WHERE attid='".$user['userid']."' OR difid='".$user['userid']."'");
-while($rep=$db->QueryCicloResult($reps)) {
+while($rep=$db->QueryCicloResult($reps)){
 $link[]='<a href="index.php?loc=combact&do=repview&id='.$rep['id'].'">'.$lang['combact_avvenuto'].$rep['data'].'</a>';
-
+}//per ogni report
+}//se ci sono report
 require('template/int_archiviorep.php');
 ?>
