@@ -151,6 +151,13 @@ $lang['nessuna_magia_presente']='Non conosci nessun incantesimo';
 $lang['appreso']='Appreso';
 //fine libro
 
+//inizio archivio report
+$lang['archivio_report']='Archivio report';
+$lang['desc_archivio_report']='Qui sono presente tutti i report dei tuoi combattimenti attualmente presenti in archivio (degli ultimi 7 giorni).';
+$lang['nessun_report_presente']='Nessun report presente attualmente.';
+$lang['combact_avvenuto']='Combattimento avvenuto ';
+//fine archivio report
+
 $lang['outputerrori']='Si sono verificati i seguenti errori:';
 $lang['outputerrori_continualav']='Non è stato possibile continuare a lavorare per i seguenti motivi:';
 $lang['Impossibile_lavorare_ancora']='Impossibile lavorare ancora!';

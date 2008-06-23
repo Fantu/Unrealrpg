@@ -13,7 +13,9 @@ Legenda:<br />
 </p>
 <p><strong>0.6.13</strong> (Non disponibile - In sviluppo)<br />
 + Ora è possibile visualizzare solo i propri report<br />
++ Creato archivio report e inserito link per raggiungerlo in Combattimenti, attualmente ci sono memorizzati tutti i report degli ultimi 7 giorni<br />
 # Modificata Spada di rame eccellente, resa più equilibrata<br />
+# Modificata la cadenza dell'estrazione della lotteria, ora avviene ogni 3 giorni al posto di 7<br />
 </p>
 <p><strong>0.6.12</strong> [R.1252] (22/06/08 - Beta)<br />
 + Aggiunta difesa alle tattiche<br />

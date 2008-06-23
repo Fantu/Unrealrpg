@@ -33,3 +33,6 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <br />
 <?php echo $outputcombact; ?>
 <br />
+<br />
+<br />
+<center><a href="index.php?loc=archiviorep"><?php echo $lang['archivio_report']; ?></a></center>
