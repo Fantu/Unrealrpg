@@ -11,6 +11,7 @@ foreach($link as $chiave=>$elemento){ ?>
 <br/>
 <?php echo $elemento; ?>
 <?php }/* fine per ogni report*/
-}/*se ci sono report*/ ?>
+}else{/*se ci sono report*/
+echo $lang['nessun_report_presente'];} ?>
 </div>
 <br />
