@@ -6,6 +6,7 @@ $lang['combact_errore4']='- Il personaggio che vuoi sfidare non è in condizioni
 $lang['combact_errore5']='- Non sei in condizioni abbastanza buone per affrontare un combattimento.<br />';
 $lang['combact_errore6']='- Puoi salire di livello, non puoi lanciare una sfida finchè non lo farai.<br />';
 $lang['combact_errore7']='- Il personaggio che vuoi sfidare può salire di livello, non puoi lanciargli una sfida finchè non lo farà.<br />';
+$lang['combact_errore8']='- Questo report non è tuo.<br />';
 $lang['outputerrorisfida']='Impossibile lanciare la sfida per i seguenti motivi:';
 $lang['sfida_annullata']='Sfida annullata';
 $lang['report_sfida_annullata']='La sfida è stata annullata per mancata risposta entro i 10 minuti.';

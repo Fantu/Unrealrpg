@@ -10,6 +10,7 @@ $db->database=$chiave;
 $check=$db->QuerySelect("SELECT version FROM config WHERE id=".$chiave);
 if($check['version']!=$newversion AND $newversion==$game_revision){
 $db->QueryMod("UPDATE `oggetti` SET `costo` = '55' WHERE `oggetti`.`id` =61 LIMIT 1");
+$db->QueryMod("ALTER TABLE `battlereport` ADD `attid` SMALLINT UNSIGNED NOT NULL ,ADD `difid` SMALLINT UNSIGNED NOT NULL ,ADD `cpuid` SMALLINT UNSIGNED NOT NULL ;");
 
 /*$db->QueryMod("INSERT INTO `oggetti` (
 `id` ,

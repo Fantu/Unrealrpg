@@ -129,6 +129,11 @@ $errore="";
 $filerep="inclusi/log/report/".$db->database."/".$repid.".log";
 if(!file_exists($filerep))
 $errore.=$lang['combact_errore3'];
+if($errore==""){
+$repbatt=$db->QuerySelect("SELECT * FROM battlereport WHERE id='".$repid."' LIMIT 1");
+if($repbatt['attid']!=$user['userid'] AND $repbatt['difid']!=$user['userid'])
+$errore.=$lang['combact_errore8'];	
+}
 if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
 else {
