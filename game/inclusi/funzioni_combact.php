@@ -160,17 +160,17 @@ class Dati{
 	$percsalute2=100/$this->car($chi2,'salute')*$this->car($chi2,'saluteattuale');
 	$percenergia=100/$this->car($chi,'energiamax')*$this->car($chi,'energia');
 	$percenergia2=100/$this->car($chi2,'energiamax')*$this->car($chi2,'energia');
-	$tattiche[1]+=99;//attacco di base
-	$tattiche[2]=0;
-	$tattiche[3]=0;
+	$tattiche['1']+=99;//attacco di base
+	$tattiche['2']=0;
+	$tattiche['3']=0;
 	if($percenergia<20 AND $percsalute<20 AND $percsalute2>40 AND $percenergia2>20){//difesa
-	$tattiche[3]+=100;}
+	$tattiche['3']+=100;}
 	if($percenergia2<5){//se l'avversario è esausto attacco
-	$tattiche[1]+=50;}
+	$tattiche['1']+=50;}
 	if($percsalute<10){//se la salute è pessima resa
-	$tattiche[2]+=101;}
+	$tattiche['2']+=101;}
 	if($percenergia2<5){//se esausto resa
-	$tattiche[2]+=150;}
+	$tattiche['2']+=150;}
 	$max=0;
 	foreach($tattiche as $chiave=>$elemento){
 	if($elemento>$max){
@@ -332,6 +332,7 @@ $dc->Stabilisciordine($battle['attid'],$battle['difid'],$battle);
 if($turni==0){
 $input.=$dc->Viewequip(1);
 $input.=$dc->Viewequip(2);}
+$input.=tattica(1,1)." - "tattica(2,1);//visualizzazione tattiche per debug
 if($dc->tattica(1,1)!=2 AND $dc->tattica(2,1)!=2){
 $dc->Controllastato(1);
 $dc->Controllastato(2);
