@@ -160,17 +160,21 @@ class Dati{
 	$percsalute2=100/$this->car($chi2,'salute')*$this->car($chi2,'saluteattuale');
 	$percenergia=100/$this->car($chi,'energiamax')*$this->car($chi,'energia');
 	$percenergia2=100/$this->car($chi2,'energiamax')*$this->car($chi2,'energia');
+	$tattiche['1']+=99;//attacco di base
 	if($percenergia<20 AND $percsalute<20 AND $percsalute2>40 AND $percenergia2>40){//difesa
-	$this->che[$chi]->tattica=3;
-	}elseif($percenergia2<5){//se l'avversario è esausto attacco
-	$this->che[$chi]->tattica=1;
-	}elseif($percsalute<10){//se la salute è pessima resa
-	$this->che[$chi]->tattica=2;
-	}elseif($percenergia2<5){//se esausto resa
-	$this->che[$chi]->tattica=2;
-	}else{//se nessuna condizione valida
-	$this->che[$chi]->tattica=1;
-	}
+	$tattiche['3']+=100;}
+	if($percenergia2<5){//se l'avversario è esausto attacco
+	$tattiche['1']+=50;}
+	if($percsalute<10){//se la salute è pessima resa
+	$tattiche['2']+=100;}
+	if($percenergia2<5){//se esausto resa
+	$tattiche['2']+=150;}
+	$max=0;
+	foreach($tattiche as $chiave=>$elemento){
+	if($elemento>$max){
+	$max=$elemento;
+	$this->che[$chi]->tattica==$chiave;}
+	}//per ogni tattica
 	if($this->tattica($chi,1)==1)
 	$this->che[$chi]->subtattica==1;
 	} //fine Autotattic

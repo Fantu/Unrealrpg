@@ -8,7 +8,7 @@ Legenda:<br />
 <br />
 </p>
 <p><strong>0.7.0</strong> (Non disponibile - In sviluppo)<br />
-+ Iniziata creazione sistema automatico di selezione della tattica di combattimento, attiva per chi ha l'account plus attivo e non ha selezionato nessuna tattica<br />
++ Creato sistema automatico di selezione della tattica di combattimento, attiva per chi ha l'account plus attivo e non ha selezionato nessuna tattica<br />
 + Iniziata creazione personaggi non comandati da utenti<br />
 </p>
 <p><strong>0.6.13</strong> (Non disponibile - In sviluppo)<br />
