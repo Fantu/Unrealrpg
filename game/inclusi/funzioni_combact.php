@@ -162,7 +162,7 @@ class Dati{
 	$percenergia2=100/$this->car($chi2,'energiamax')*$this->car($chi2,'energia');
 	$tattp=array(1=>0,2=>0,3=>0);
 	$tattp[1]=99;//attacco di base
-	if($percenergia<20 AND $percsalute<20 AND $percsalute2>40 AND $percenergia2>20){//difesa
+	if($percenergia<20 AND $percsalute<30 AND $percsalute2>40 AND $percenergia2>20){//difesa
 	$tattp[3]+=100;}
 	if($percenergia2<5){//se l'avversario è esausto attacco
 	$tattp[1]+=55;}
