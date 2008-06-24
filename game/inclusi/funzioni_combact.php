@@ -168,7 +168,7 @@ class Dati{
 	$tattp[1]+=50;}
 	if($percsalute<10){//se la salute è pessima resa
 	$tattp[2]+=101;}
-	if($percenergia2<5){//se esausto resa
+	if($percenergia<5){//se esausto resa
 	$tattp[2]+=150;}
 	$max=0;
 	foreach($tattp as $chiave=>$elemento){
