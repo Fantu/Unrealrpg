@@ -17,6 +17,7 @@ Legenda:<br />
 + Creato archivio report e inserito link per raggiungerlo in Combattimenti, attualmente ci sono memorizzati tutti i report degli ultimi 7 giorni<br />
 + Aggiunta piccola probabilità di infliggere un colpo potente che aumenta del 50% il danno inflitto<br />
 + Aggiunta la visualizzazione del livello dei combattenti assieme al messaggio dell'equipaggiamento (sarà utile contro "combattenti non utenti")<br />
++ Aggiunta la visualizzazione dei "round"<br />
 + Vari miglioramenti di sistema a sistema di combattimento<br />
 # Modificata Spada di rame eccellente, resa più equilibrata<br />
 # Modificata la cadenza dell'estrazione della lotteria, ora avviene ogni 3 giorni al posto di 7<br />

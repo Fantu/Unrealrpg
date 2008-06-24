@@ -379,9 +379,11 @@ $dc->Controllastato(1);
 $dc->Controllastato(2);
 
 Docombactstats($battleid,$dc->id(1),$dc->id(2));
+$turni++;
+$input="-----------<".$turni.">-----------";
+Inreport($battleid,$input);
 }//se nessuno si arrende
 $finito=1;
-$turni++;
 if($dc->tattica(1,1)==2 AND $dc->tattica(2,1)==2){//se entrambi si arrendono
 $input=$lang['finito_entrambi_arresi']."<br/>";
 }elseif($dc->tattica(1,1)==2){//se il primo si arrende
