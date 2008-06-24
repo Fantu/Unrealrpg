@@ -380,7 +380,7 @@ $dc->Controllastato(2);
 
 Docombactstats($battleid,$dc->id(1),$dc->id(2));
 $turni++;
-$input="-----------<".$turni.">-----------";
+$input="----------------------<".($turni+1).">----------------------";
 Inreport($battleid,$input);
 }//se nessuno si arrende
 $finito=1;
