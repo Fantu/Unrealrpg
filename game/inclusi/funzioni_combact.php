@@ -51,7 +51,7 @@ class Dati{
 	$this->che[2]=new Combattente($attaccante,$attn['username'],$attcar,$attequip,$battle['tatatt'],$battle['tatatt2'],$attn['plus']);
 	$this->che[1]=new Combattente($difensore,$difn['username'],$difcar,$difequip,$battle['tatdif'],$battle['tatdif2'],$difn['plus']);
 	}
-	//if($this->plus(1)>0 AND $this->tattica(1,1)==0)
+	if($this->plus(1)>0 AND $this->tattica(1,1)==0)
 	$this->Autotattic(1);
 	if($this->plus(2)>0 AND $this->tattica(2,1)==0)
 	$this->Autotattic(2);
@@ -175,7 +175,7 @@ class Dati{
 	foreach($tattp as $chiave=>$elemento){
 	if($elemento>$max){
 	$max=$elemento;
-	$this->che[$chi]->tattica==$tattica[$chiave];
+	$this->che[$chi]->tattica=$tattica[$chiave];
 	}
 	}//per ogni tattica
 	if($this->tattica($chi,1)==1)
