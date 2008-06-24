@@ -170,7 +170,7 @@ class Dati{
 	$tattp[3]+=40;}
 	if($percenergia2>10){//difesa
 	$tattp[3]+=40;}
-	if($this->equip($chi,'cac')==0 $this->equip($chi2,'cac')!=0){//se nessuna arma mentre avversario sì difesa
+	if($this->equip($chi,'cac')==0 AND $this->equip($chi2,'cac')!=0){//se nessuna arma mentre avversario sì difesa
 	$tattp[3]+=20;}
 	if($percenergia2<5){//se l'avversario è esausto attacco
 	$tattp[1]+=90;}
