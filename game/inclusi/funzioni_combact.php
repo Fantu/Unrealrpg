@@ -312,7 +312,11 @@ class Dati{
 	$danno=1;
 	$potente="";
 	$probpot=rand(1,10);
-	if($probpot==10){
+	if((100/$this->car($att,'energiamax')*$this->car($att,'energia'))<20)
+	$probpot-=5;
+	if((100/$this->car($dif,'energiamax')*$this->car($dif,'energia'))<20 AND (100/$this->car($att,'energiamax')*$this->car($att,'energia'))>40)
+	$probpot+=3;
+	if($probpot>=10){
 	$danno+=round($danno/2);
 	$potente=" ".sprintf($lang['colpo_potente'],$this->nome($att));
 	}//se colpo potente
