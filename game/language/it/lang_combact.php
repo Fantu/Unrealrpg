@@ -37,6 +37,6 @@ $lang['tattica_attacco_cac']='corpo a corpo';
 $lang['nessuna']='Nessuna';
 $lang['tattica_selezionata']='Tattica selezionata: %s';
 $lang['equip_di']='Equipaggiamento di %s: %s';
-$lang['parata_con_scudo']='%s si para con lo scudo';
-$lang['colpo_potente']='%s infligge un colpo potente';
+$lang['parata_con_scudo']='%s si para con lo scudo.';
+$lang['colpo_potente']='%s infligge un colpo potente.';
 ?>
