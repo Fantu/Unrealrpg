@@ -378,10 +378,10 @@ $dc->Aggiornastat(2);
 $dc->Controllastato(1);
 $dc->Controllastato(2);
 
-Docombactstats($battleid,$dc->id(1),$dc->id(2));
 $turni++;
 $input="----------------------<".($turni+1).">----------------------";
 Inreport($battleid,$input);
+Docombactstats($battleid,$dc->id(1),$dc->id(2));
 }//se nessuno si arrende
 $finito=1;
 if($dc->tattica(1,1)==2 AND $dc->tattica(2,1)==2){//se entrambi si arrendono
