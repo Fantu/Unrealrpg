@@ -165,7 +165,7 @@ class Dati{
 	if($percenergia<20 AND $percsalute<20 AND $percsalute2>40 AND $percenergia2>20){//difesa
 	$tattp[3]+=100;}
 	if($percenergia2<5){//se l'avversario è esausto attacco
-	$tattp[1]+=50;}
+	$tattp[1]+=55;}
 	if($percsalute<10){//se la salute è pessima resa
 	$tattp[2]+=101;}
 	if($percenergia<5){//se esausto resa
