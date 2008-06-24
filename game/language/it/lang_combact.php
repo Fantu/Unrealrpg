@@ -16,8 +16,8 @@ $lang['sfida_lanciata']='Hai lanciato una sfida a %s';
 $lang['sfida_rifiutata']='Sfida rifiutata';
 $lang['report_sfida_rifiutata']='La sfida è stata rifiutata.';
 
-$lang['danno_att_vicino']='%s attacca %s con %s e lo colpisce infliggendo %s di danno.';
-$lang['niente_att_vicino']='%s attacca %s con %s senza riuscire a colpirlo.';
+$lang['danno_att_vicino']='%s attacca %s con %s e colpisce infliggendo %s di danno.';
+$lang['niente_att_vicino']='%s attacca %s con %s senza riuscire a colpire.';
 $lang['pugno']='pugno';
 $lang['troppo_stanco_per_attacco']='%s non attacca in quanto esausto.';
 $lang['resta_in_difesa']='%s non attacca in quanto resta sulla difensiva.';
