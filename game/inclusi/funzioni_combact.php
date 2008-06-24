@@ -160,7 +160,7 @@ class Dati{
 	$percsalute2=100/$this->car($chi2,'salute')*$this->car($chi2,'saluteattuale');
 	$percenergia=100/$this->car($chi,'energiamax')*$this->car($chi,'energia');
 	$percenergia2=100/$this->car($chi2,'energiamax')*$this->car($chi2,'energia');
-	$tattiche['1']+=99;//attacco di base
+	$tattiche['1']=99;//attacco di base
 	$tattiche['2']=0;
 	$tattiche['3']=0;
 	if($percenergia<20 AND $percsalute<20 AND $percsalute2>40 AND $percenergia2>20){//difesa
@@ -332,7 +332,7 @@ $dc->Stabilisciordine($battle['attid'],$battle['difid'],$battle);
 if($turni==0){
 $input.=$dc->Viewequip(1);
 $input.=$dc->Viewequip(2);}
-$input.=$dc->tattica(1,1)." - ".$dc->tattica(2,1);//visualizzazione tattiche per debug
+$input.="Debug tattiche: ".$dc->tattica(1,1)." - ".$dc->tattica(2,1)."<br/>";//visualizzazione tattiche per debug
 if($dc->tattica(1,1)!=2 AND $dc->tattica(2,1)!=2){
 $dc->Controllastato(1);
 $dc->Controllastato(2);
