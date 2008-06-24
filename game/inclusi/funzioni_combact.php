@@ -163,15 +163,17 @@ class Dati{
 	$tattp=array(1=>0,2=>0,3=>0);
 	$tattp[1]=99;//attacco di base
 	if($percsalute<30){//difesa
-	$tattp[3]+=51;}
+	$tattp[3]+=40;}
 	if($percenergia<20){//difesa
-	$tattp[3]+=51;}
-	if($percsalute2>40 AND $percenergia2>20){//difesa
-	$tattp[3]+=51;}
+	$tattp[3]+=40;}
+	if($percsalute2>40){//difesa
+	$tattp[3]+=40;}
+	if($percenergia2>20){//difesa
+	$tattp[3]+=40;}
 	if($percenergia2<5){//se l'avversario è esausto attacco
 	$tattp[1]+=70;}
 	if($percsalute<10){//se la salute è pessima resa
-	$tattp[2]+=160;}
+	$tattp[2]+=161;}
 	if($percenergia<5){//se esausto resa
 	$tattp[2]+=200;}
 	$max=0;
