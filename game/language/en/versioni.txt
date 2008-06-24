@@ -8,14 +8,17 @@ Legenda:<br />
 <br />
 </p>
 <p><strong>0.7.0</strong> (Non disponibile - In sviluppo)<br />
-+ Iniziata creazione sistema automatico di selezione della tattica di combattimento, attiva per chi ha l'account plus attivo e non ha selezionato nessuna tattica<br />
 + Iniziata creazione personaggi non comandati da utenti<br />
 </p>
 <p><strong>0.6.13</strong> (Non disponibile - In sviluppo)<br />
++ Creato sistema automatico di selezione della tattica di combattimento, attiva per chi ha l'account plus attivo e non ha selezionato nessuna tattica<br />
++ Aggiunta una minima probabilità di colpire o non colpire anche se la diferrenza di caratteristiche dei combattenti sarebbe tale da dare sempre esito opposto<br />
 + Ora è possibile visualizzare solo i propri report<br />
 + Creato archivio report e inserito link per raggiungerlo in Combattimenti, attualmente ci sono memorizzati tutti i report degli ultimi 7 giorni<br />
++ Vari miglioramenti di sistema a sistema di combattimento<br />
 # Modificata Spada di rame eccellente, resa più equilibrata<br />
 # Modificata la cadenza dell'estrazione della lotteria, ora avviene ogni 3 giorni al posto di 7<br />
+# Migliorato l'utilizzo di armature e scudi<br />
 </p>
 <p><strong>0.6.12</strong> [R.1252] (22/06/08 - Beta)<br />
 + Aggiunta difesa alle tattiche<br />
