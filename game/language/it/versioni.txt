@@ -18,6 +18,7 @@ Legenda:<br />
 + Vari miglioramenti di sistema a sistema di combattimento<br />
 # Modificata Spada di rame eccellente, resa più equilibrata<br />
 # Modificata la cadenza dell'estrazione della lotteria, ora avviene ogni 3 giorni al posto di 7<br />
+# Migliorato l'utilizzo di armature e scudi<br />
 </p>
 <p><strong>0.6.12</strong> [R.1252] (22/06/08 - Beta)<br />
 + Aggiunta difesa alle tattiche<br />
