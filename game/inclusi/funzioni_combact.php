@@ -164,11 +164,11 @@ class Dati{
 	$tattp[1]=99;//attacco di base
 	if($percsalute<30){//difesa
 	$tattp[3]+=40;}
-	if($percenergia<20){//difesa
+	if($percenergia<30){//difesa
 	$tattp[3]+=40;}
 	if($percsalute2>40){//difesa
 	$tattp[3]+=40;}
-	if($percenergia2>20){//difesa
+	if($percenergia2>10){//difesa
 	$tattp[3]+=40;}
 	if($percenergia2<5){//se l'avversario è esausto attacco
 	$tattp[1]+=70;}
