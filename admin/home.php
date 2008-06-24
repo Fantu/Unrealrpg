@@ -16,7 +16,9 @@ $online=$db->QuerySelect("SELECT COUNT(*) AS id FROM utenti WHERE ultimazione>'"
 echo "Utenti online ultime 24 ore: ".$online['id'].", ";
 $seonline=$adesso-604800;
 $inattivi=$db->QuerySelect("SELECT COUNT(*) AS id FROM utenti WHERE ultimazione>'".$seonline."'");
-echo "Utenti inattivi (7 giorni): ".$inattivi['id']."<br/><br/>";
+echo "Utenti inattivi (7 giorni): ".$inattivi['id'].", ";
+$plus=$db->QuerySelect("SELECT COUNT(*) AS id FROM utenti WHERE plus>'0'");
+echo "Account plus: ".$plus['id']."<br/><br/>";
 }/* fine per ogni server*/ ?>
 <br/>
 <br/>
