@@ -171,7 +171,7 @@ class Dati{
 	if($percenergia2>10 AND $percsalute<30 AND $percsalute2>40){//difesa
 	$tattp[3]+=40;}
 	if($this->equip($chi,'cac')==0 AND $this->equip($chi2,'cac')!=0){//se nessuna arma mentre avversario sì difesa
-	$tattp[3]+=19;}
+	$tattp[3]+=18;}
 	if($percenergia2<5){//se l'avversario è esausto attacco
 	$tattp[1]+=90;}
 	if($percsalute<10){//se la salute è pessima resa
