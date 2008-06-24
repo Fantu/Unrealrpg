@@ -166,9 +166,9 @@ class Dati{
 	$tattp[3]+=40;}
 	if($percenergia<30){//difesa
 	$tattp[3]+=40;}
-	if($percsalute2>40){//difesa
+	if($percsalute2>40 AND $percsalute<30){//difesa
 	$tattp[3]+=40;}
-	if($percenergia2>10){//difesa
+	if($percenergia2>10 AND $percsalute<30 AND $percsalute2>40){//difesa
 	$tattp[3]+=40;}
 	if($this->equip($chi,'cac')==0 AND $this->equip($chi2,'cac')!=0){//se nessuna arma mentre avversario sì difesa
 	$tattp[3]+=19;}
