@@ -253,7 +253,7 @@ class Dati{
 	$nomearma=$lang['oggetto'.$this->equip($att,'cac').'_nome'];
 	$this->Ogginuso($att,'cac');
 	}else{
-	$danno=1+round($this->car($att,'attfisico')/100);
+	$danno=rand(1,2)+round($this->car($att,'attfisico')/80);
 	$nomearma=$lang['pugno'];
 	$energia=20;
 	}
