@@ -257,6 +257,7 @@ class Dati{
 	$nomearma=$lang['pugno'];
 	$energia=20;
 	}
+	$casuale=rand(1,10);if($casuale==1){$colpisci=100;}elseif($casuale==10){$colpisci=0;}else{//casualità totale per minima prob colpire o non colpire cmq
 	$colpisci=rand(1,100)+($this->car($att,'agilita')/5-$this->car($dif,'agilita')/5)+($this->car($att,'velocita')/15-$this->car($dif,'velocita')/15);
 	if($this->equip($att,'cac')!=0 AND $arma['bonuseff']!=0)
 	$colpisci+=$colpisci/100*$arma['bonuseff'];
@@ -270,7 +271,7 @@ class Dati{
 	$colpisci-=20;
 	if((100/$this->car($dif,'salute')*$this->car($dif,'saluteattuale'))<10)
 	$colpisci+=20;
-	$casuale=rand(1,10);if($casuale==1){$colpisci=100;}if($casuale==10){$colpisci=0;}//casualità totale per minima prob colpire o non colpire cmq
+	}//se colpire o no non sicuro
 	if($colpisci>50 OR $this->esausto($dif)==1){
 	$difesamax=round($this->car($dif,'diffisica')/100);
 	$difesa=rand(0,$difesamax);
