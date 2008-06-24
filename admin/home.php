@@ -4,7 +4,7 @@
 <br/>
 <strong>Situazione server</strong><br/>
 <?php foreach($game_server as $chiave=>$elemento){ 
-echo $elemento."-".$game_language[$chiave]."<br/>";
+echo $elemento."-".$game_server_lang[$chiave]."<br/>";
 $db->database=$chiave;
 $utenti=$db->QuerySelect("SELECT COUNT(*) AS id FROM utenti");
 echo "Utenti registrati: ".$utenti['id'].", ";
