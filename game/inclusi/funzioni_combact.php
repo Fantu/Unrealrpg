@@ -162,11 +162,11 @@ class Dati{
 	$percenergia2=100/$this->car($chi2,'energiamax')*$this->car($chi2,'energia');
 	$tattp=array(1=>0,2=>0,3=>0);
 	$tattp[1]=99;//attacco di base
-	if($percsalute<30){//difesa
+	if($percsalute<40){//difesa
 	$tattp[3]+=40;}
 	if($percenergia<30){//difesa
 	$tattp[3]+=40;}
-	if($percsalute2>40 AND $percsalute<30){//difesa
+	if($percsalute2>40 AND $percsalute<40){//difesa
 	$tattp[3]+=40;}
 	if($percenergia2>10 AND $percsalute<30 AND $percsalute2>40){//difesa
 	$tattp[3]+=40;}
