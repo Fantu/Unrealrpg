@@ -173,9 +173,10 @@ class Dati{
 	$tattiche[2]+=150;}
 	$max=0;
 	foreach($tattiche as $chiave=>$elemento){
-	if($elemento>$max){
+	//if($elemento>$max){
 	$max=$elemento;
-	$this->che[$chi]->tattica==$tattica[$chiave];}
+	$this->che[$chi]->tattica==$tattica[$chiave];
+	//}
 	}//per ogni tattica
 	if($this->tattica($chi,1)==1)
 	$this->che[$chi]->subtattica==1;
