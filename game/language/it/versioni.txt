@@ -15,6 +15,7 @@ Legenda:<br />
 + Aggiunta una minima probabilità di colpire o non colpire anche se la differrenza di caratteristiche dei combattenti sarebbe tale da dare sempre esito opposto<br />
 + Ora è possibile visualizzare solo i propri report<br />
 + Creato archivio report e inserito link per raggiungerlo in Combattimenti, attualmente ci sono memorizzati tutti i report degli ultimi 7 giorni<br />
++ Aggiunta piccola probabilità di infliggere un colpo potente che aumenta del 50% il danno inflitto<br />
 + Vari miglioramenti di sistema a sistema di combattimento<br />
 # Modificata Spada di rame eccellente, resa più equilibrata<br />
 # Modificata la cadenza dell'estrazione della lotteria, ora avviene ogni 3 giorni al posto di 7<br />

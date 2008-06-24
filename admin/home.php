@@ -2,8 +2,26 @@
 <h3><?php echo $lang['pannello_amministrazione']; ?></h3>
 <br/>
 <br/>
+<strong>Situazione server</strong><br/>
+<?php foreach($game_server as $chiave=>$elemento){ 
+echo $elemento."-".$game_language[$chiave]."<br/>";
+$db=>database=$chiave;
+$utenti=$db->QuerySelect("SELECT COUNT(*) AS id FROM utenti");
+echo "Utenti registrati: ".$utenti['id'].", ";
+$seonline=$adesso-600;
+$online=$db->QuerySelect("SELECT COUNT(*) AS id FROM utenti WHERE ultimazione>'".$seonline."'");
+echo "Utenti online: ".$online['id']", ";
+$seonline=$adesso-86400;
+$online=$db->QuerySelect("SELECT COUNT(*) AS id FROM utenti WHERE ultimazione>'".$seonline."'");
+echo "Utenti online ultime 24 ore: ".$online['id']"<br/><br/>";
+}/* fine per ogni server*/ ?>
+<br/>
+<br/>
 <strong>Changelog</strong><br/>
 <br/>
+<p><strong>1.0.4</strong> - 24/05/08<br />
+- Iniziata creazione situazione server in home<br />
+</p>
 <p><strong>1.0.3</strong> - 31/05/08<br />
 - Iniziata creazione spedizione mail news<br />
 </p>

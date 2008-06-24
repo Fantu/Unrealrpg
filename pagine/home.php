@@ -63,7 +63,6 @@ $infoserver['nome'][$chiave]=$elemento;
 $db->database=$chiave;
 $utenti=$db->QuerySelect("SELECT COUNT(*) AS id FROM utenti");
 $infoserver['utenti'][$chiave]=$utenti['id'];
-$adesso=strtotime("now");
 $sereg=$adesso-604800;
 $online=$db->QuerySelect("SELECT COUNT(*) AS id FROM utenti WHERE dataiscrizione>'".$sereg."'");
 $infoserver['utentilw'][$chiave]=$online['id'];

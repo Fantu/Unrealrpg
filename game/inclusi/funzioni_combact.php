@@ -303,7 +303,13 @@ class Dati{
 	$danno-=$difesa;
 	if($danno<1)
 	$danno=1;
-	$input=sprintf($lang['danno_att_vicino'],$this->nome($att),$this->nome($dif),$nomearma,$danno).$pscudo."<br/>";
+	$potente="";
+	$probpot=rand(1,10);
+	if($probpot==10){
+	$danno=$danno+round($danno/2);
+	$potente=" ".sprintf($lang['colpo_potente'],$this->nome($att));
+	}//se colpo potente
+	$input=sprintf($lang['danno_att_vicino'],$this->nome($att),$this->nome($dif),$nomearma,$danno).$pscudo.$potente."<br/>";
 	$this->Modsalute($dif,$danno);
 	}else{
 	$input=sprintf($lang['niente_att_vicino'],$this->nome($att),$this->nome($dif),$nomearma)."<br/>";
@@ -333,7 +339,7 @@ $dc->Stabilisciordine($battle['attid'],$battle['difid'],$battle);
 if($turni==0){
 $input.=$dc->Viewequip(1);
 $input.=$dc->Viewequip(2);}
-$input.="Debug tattiche: ".$dc->tattica(1,1)." - ".$dc->tattica(2,1)."<br/>";//visualizzazione tattiche per debug
+//$input.="Debug tattiche: ".$dc->tattica(1,1)." - ".$dc->tattica(2,1)."<br/>";//visualizzazione tattiche per debug
 if($dc->tattica(1,1)!=2 AND $dc->tattica(2,1)!=2){
 $dc->Controllastato(1);
 $dc->Controllastato(2);
