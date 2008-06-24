@@ -168,7 +168,7 @@ class Dati{
 	if($percenergia2<5){//se l'avversario è esausto attacco
 	$tattiche[1]+=50;}
 	if($percsalute<10){//se la salute è pessima resa
-	$tattiche[2]+=100;}
+	$tattiche[2]+=101;}
 	if($percenergia2<5){//se esausto resa
 	$tattiche[2]+=150;}
 	$max=0;
