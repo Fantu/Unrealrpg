@@ -12,6 +12,7 @@ Legenda:<br />
 + Iniziata creazione personaggi non comandati da utenti<br />
 </p>
 <p><strong>0.6.13</strong> (Non disponibile - In sviluppo)<br />
++ Aggiunta una minima probabilità di colpire o non colpire anche se la diferrenza di caratteristiche dei combattenti sarebbe tale da dare sempre esito opposto<br />
 + Ora è possibile visualizzare solo i propri report<br />
 + Creato archivio report e inserito link per raggiungerlo in Combattimenti, attualmente ci sono memorizzati tutti i report degli ultimi 7 giorni<br />
 # Modificata Spada di rame eccellente, resa più equilibrata<br />
