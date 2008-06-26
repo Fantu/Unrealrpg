@@ -3,18 +3,13 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	header("Location: ../../index.php?error=16");
 	exit();
 }
-$newversion="0.6.13";
+$newversion="0.6.14";
 foreach($game_server as $chiave=>$elemento){
 if($chiave!=999){
 $db->database=$chiave;
 $check=$db->QuerySelect("SELECT version FROM config WHERE id=".$chiave);
 if($check['version']!=$newversion AND $newversion==$game_revision){
-$db->QueryMod("UPDATE `oggetti` SET `costo` = '55' WHERE `oggetti`.`id` =61 LIMIT 1");
-$db->QueryMod("UPDATE `oggetti` SET `danno` = '4' WHERE `oggetti`.`id` =37 LIMIT 1 ;");
-$db->QueryMod("UPDATE `oggetti` SET `danno` = '5' WHERE `oggetti`.`id` =38 LIMIT 1 ;");
-$db->QueryMod("UPDATE `oggetti` SET `danno` = '6' WHERE `oggetti`.`id` =39 LIMIT 1 ;");
-$db->QueryMod("ALTER TABLE `battlereport` ADD `attid` SMALLINT UNSIGNED NOT NULL ,ADD `difid` SMALLINT UNSIGNED NOT NULL ,ADD `cpuid` SMALLINT UNSIGNED NOT NULL ;");
-
+$db->QueryMod("ALTER TABLE `inoggetti` DROP `equip`");
 /*$db->QueryMod("INSERT INTO `oggetti` (
 `id` ,
 `tipo` ,
