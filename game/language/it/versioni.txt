@@ -10,6 +10,12 @@ Legenda:<br />
 <p><strong>0.7.0</strong> (Non disponibile - In sviluppo)<br />
 + Iniziata creazione personaggi non comandati da utenti<br />
 </p>
+<p><strong>0.6.14</strong> (Non disponibile - In sviluppo)<br />
+Niente attualmente<br />
+</p>
+<p><strong>0.6.13.1</strong> (26/06/08 - Beta)<br />
+- Corretta la data della prossima estrazione della lotteria<br />
+</p>
 <p><strong>0.6.13</strong> [R.1309] (26/06/08 - Beta)<br />
 + Creato sistema automatico di selezione della tattica di combattimento, attiva per chi ha l'account plus attivo e non ha selezionato nessuna tattica<br />
 + Aggiunta una minima probabilità di colpire o non colpire anche se la differrenza di caratteristiche dei combattenti sarebbe tale da dare sempre esito opposto<br />
