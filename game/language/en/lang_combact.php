@@ -6,6 +6,7 @@ $lang['combact_errore4']='- Il personaggio che vuoi sfidare non è in condizioni
 $lang['combact_errore5']='- Non sei in condizioni abbastanza buone per affrontare un combattimento.<br />';
 $lang['combact_errore6']='- Puoi salire di livello, non puoi lanciare una sfida finchè non lo farai.<br />';
 $lang['combact_errore7']='- Il personaggio che vuoi sfidare può salire di livello, non puoi lanciargli una sfida finchè non lo farà.<br />';
+$lang['combact_errore8']='- Questo report non è tuo.<br />';
 $lang['outputerrorisfida']='Impossibile lanciare la sfida per i seguenti motivi:';
 $lang['sfida_annullata']='Sfida annullata';
 $lang['report_sfida_annullata']='La sfida è stata annullata per mancata risposta entro i 10 minuti.';
@@ -36,5 +37,6 @@ $lang['tattica_attacco_cac']='corpo a corpo';
 $lang['nessuna']='Nessuna';
 $lang['tattica_selezionata']='Tattica selezionata: %s';
 $lang['equip_di']='Equipaggiamento di %s: %s';
-$lang['parata_con_scudo']='Parata con lo scudo';
+$lang['parata_con_scudo']='%s si para con lo scudo';
+$lang['colpo_potente']='%s infligge un colpo potente.';
 ?>

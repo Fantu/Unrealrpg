@@ -1,6 +1,6 @@
 <?php
 $lang['Prega']='Pray';
-$lang['desc_tempio_prega']='Puoi pregare nel Tempio per un`ora, per aumentare la tua fede e recuperare parte del tuo mana.';
+$lang['desc_tempio_prega']='Puoi pregare nel Tempio per aumentare la tua fede e recuperare parte del tuo mana.';
 $lang['tempio_errore1']='- Sei troppo stanco per poter pregare.<br />';
 $lang['tempio_errore2']='- Non hai abbastanza monete da poter offrire.<br />';
 $lang['report_tempio_preghiera']='Conclusa preghiera nel Tempio.';
