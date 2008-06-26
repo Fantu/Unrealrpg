@@ -13,6 +13,9 @@ Legenda:<br />
 <p><strong>0.6.14</strong> (Non disponibile - In sviluppo)<br />
 Niente attualmente<br />
 </p>
+<p><strong>0.6.13.2</strong> (26/06/08 - Beta)<br />
+- Corretto bug nella Locanda<br />
+</p>
 <p><strong>0.6.13.1</strong> (26/06/08 - Beta)<br />
 - Corretta la data della prossima estrazione della lotteria<br />
 </p>
