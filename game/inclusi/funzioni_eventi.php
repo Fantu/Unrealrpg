@@ -136,7 +136,7 @@ $dono=1;
 $fede=$usercar['fede']/100;
 if($fede>100)
 $fede=100;
-$miracolo=rand(10,1000)-$fede;
+$miracolo=rand(2,1000)-$fede;
 $titolo=$lang['report_tempio_preghiera'];
 if($miracolo<1){
 $mana=$usercar['mana'];
