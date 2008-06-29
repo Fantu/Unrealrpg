@@ -131,7 +131,7 @@ $mana=$usercar['mana'];
 $energiapersa=10;
 $energia=$usercar['energia']-$energiapersa;
 $salute=$usercar['saluteattuale'];
-$fede=100;
+$fedeg=100;
 $dono=1;
 $fede=$usercar['fede']/100;
 if($fede>100)
@@ -149,7 +149,7 @@ else{
 $testo="<span>".sprintf($lang['report_preghiera_normale'],$dono,$energiapersa)."</span>";
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");
 }//fine se niente manifestazione divina
-$db->QueryMod("UPDATE utenti t2 JOIN caratteristiche t3 on t2.userid=t3.userid SET t3.fede=t3.fede+'".$fede."',t2.monete=t2.monete-'".$dono."',t3.energia='".$energia."',t3.saluteattuale='".$salute."',t3.recuperoenergia='".$adesso."',t3.decfede='".$adesso."',t3.manarimasto='".$mana."' WHERE t2.userid='".$userid."'");
+$db->QueryMod("UPDATE utenti t2 JOIN caratteristiche t3 on t2.userid=t3.userid SET t3.fede=t3.fede+'".$fedeg."',t2.monete=t2.monete-'".$dono."',t3.energia='".$energia."',t3.saluteattuale='".$salute."',t3.recuperoenergia='".$adesso."',t3.decfede='".$adesso."',t3.manarimasto='".$mana."' WHERE t2.userid='".$userid."'");
 if($ore>1){
 $ore--;
 $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,ore) VALUES ('".$userid."','".$adesso."','3600','3','2','".$ore."')");	

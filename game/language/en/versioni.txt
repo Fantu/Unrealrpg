@@ -14,6 +14,9 @@ Legenda:<br />
 + Vari miglioramenti di sistema a Archivio report<br />
 # Modificata la probabilità di miracolo durante la preghiera, resa più equilibrata<br />
 </p>
+<p><strong>0.6.13.3</strong> (26/06/08 - Beta)<br />
+- Corretto bug nella preghiera, ora incrementa la fede correttamente in ogni caso<br />
+</p>
 <p><strong>0.6.13.2</strong> (26/06/08 - Beta)<br />
 - Corretto bug nella Locanda<br />
 </p>
