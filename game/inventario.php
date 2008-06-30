@@ -8,13 +8,20 @@ if (isset($_POST['vendi'])){
 $errore="";
 $quanti=(int)$_POST['quanti'];
 $oggselect=(int)$_POST['oggselect'];
-$numogg=$db->QuerySelect("SELECT oggid,usura,count(*) AS numero FROM inoggetti WHERE userid='".$user['userid']."' AND oggid='".$oggselect."' GROUP BY oggid");
 if ($oggselect<1)
-$errore .= $lang['inventario_errore1'];
+$errore.=$lang['inventario_errore1'];
 if ($quanti<1)
-$errore .= $lang['inventario_errore2'];
+$errore.=$lang['inventario_errore2'];
+if($errore==""){
+$numogg=$db->QuerySelect("SELECT count(id) AS num FROM inoggetti WHERE userid='".$user['userid']."' AND oggid='".$oggselect."'");
+if ($numogg['num']<1)
+$errore.=$lang['inventario_errore5'];
+if($errore==""){
+$numogg=$db->QuerySelect("SELECT oggid,usura,count(*) AS numero FROM inoggetti WHERE userid='".$user['userid']."' AND oggid='".$oggselect."' GROUP BY oggid");
 if ($quanti>$numogg['numero'])
-$errore .= $lang['inventario_errore3'];
+$errore.=$lang['inventario_errore3'];
+}//se almeno 1 oggetto
+}
 if ($eventi['id']>0)
 $errore .= $lang['global_errore1'];
 if($errore){
@@ -40,9 +47,14 @@ if (isset($_POST['usa'])){
 $errore="";
 $oggselect=(int)$_POST['oggselect'];
 if ($oggselect<1)
-$errore .= $lang['inventario_errore4'];
+$errore.=$lang['inventario_errore4'];
 if ($eventi['id']>0)
-$errore .= $lang['global_errore1'];
+$errore.=$lang['global_errore1'];
+if($errore==""){
+$numogg=$db->QuerySelect("SELECT count(id) AS num FROM inoggetti WHERE userid='".$user['userid']."' AND oggid='".$oggselect."'");
+if ($numogg['num']<1)
+$errore.=$lang['inventario_errore5'];
+}
 if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
 else {
