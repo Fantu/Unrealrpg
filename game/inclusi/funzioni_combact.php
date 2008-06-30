@@ -262,7 +262,7 @@ class Dati{
 	}else{
 	$danno=rand(1,2)+round($this->car($att,'attfisico')/80);
 	$nomearma=$lang['pugno'];
-	$energia=20;
+	$energia=50;
 	}
 	$casuale=rand(1,10);if($casuale==1){$colpisci=100;}elseif($casuale==10){$colpisci=0;}else{//casualità totale per minima prob colpire o non colpire cmq
 	$colpisci=rand(1,100)+($this->car($att,'agilita')/5-$this->car($dif,'agilita')/5)+($this->car($att,'velocita')/15-$this->car($dif,'velocita')/15);

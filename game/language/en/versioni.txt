@@ -13,6 +13,7 @@ Legenda:<br />
 <p><strong>0.6.14</strong> (Non disponibile - In sviluppo)<br />
 + Vari miglioramenti di sistema a Archivio report, Inventario<br />
 # Modificata la probabilità di miracolo durante la preghiera, resa più equilibrata<br />
+# Modificato pugno, reso più equilibrato<br />
 - Correzione bug minori<br />
 </p>
 <p><strong>0.6.13.3</strong> (29/06/08 - Beta)<br />
