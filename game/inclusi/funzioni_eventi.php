@@ -579,14 +579,20 @@ $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,lavor
 }//fine se deve lavorare ancora
 } //fine Completaroccapratica
 
-function Completasfida($userid,$tipo) {
+function Completasfida($userid,$eid) {
 global $db,$adesso,$lang,$language;
 require_once('language/'.$language.'/lang_combact.php');
-if($tipo==1){
+$sfida=$db->QuerySelect("SELECT * FROM eventi WHERE id='".$eid."' LIMIT 1");
+$sfidante=$db->QuerySelect("SELECT username FROM utenti WHERE id='".$sfida['oggid']."' LIMIT 1");
+if($sfida['type']==1){
 $titolo=$lang['sfida_annullata'];
-$testo=$lang['report_sfida_annullata'];
+$testo=sprintf($lang['report_sfida_annullata1'],$sfidante['username']);
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");
-}//se dello sfidante
+}else{//se dello sfidante
+$titolo=$lang['sfida_annullata'];
+$testo=sprintf($lang['report_sfida_annullata2'],$sfidante['username']);
+$db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");
+}
 } //fine Completasfida
 
 function Completadormire($userid,$ore){

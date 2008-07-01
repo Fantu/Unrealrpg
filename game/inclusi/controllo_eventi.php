@@ -47,7 +47,7 @@ while($evento=$db->QueryCicloResult($evfiniti)) {
 		Completaresurrezione($evento['userid']);
 		break;
 		case 4://sfida
-		Completasfida($evento['userid'],$evento['type']);
+		Completasfida($evento['userid'],$evento['id']);
 		break;
 		case 6://combattimento
 		Battledo($evento['battleid'],$evento['turni']);
