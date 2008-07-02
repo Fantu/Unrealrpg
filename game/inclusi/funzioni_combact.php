@@ -375,7 +375,6 @@ $input.=$dc->Controlloogg(1);}
 if($dc->che[2]->oggusati==1){
 $input.=$dc->Controlloogg(2);}
 $input.="<br/>";
-Inreport($battleid,$input);
 
 $dc->Aggiornastat(1);
 $dc->Aggiornastat(2);
@@ -383,8 +382,9 @@ $dc->Controllastato(1);
 $dc->Controllastato(2);
 
 $turni++;
-$input="---------------------------------<( ".($turni+1)." )>---------------------------------";
+$input.="---------------------------------<( ".($turni+1)." )>---------------------------------";
 Inreport($battleid,$input);
+$input="";
 Docombactstats($battleid,$dc->id(1),$dc->id(2));
 }//se nessuno si arrende
 $finito=1;
