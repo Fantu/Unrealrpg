@@ -76,8 +76,10 @@ $gen_time=number_format($end_time-$start_time, 4, '.', '');
 echo sprintf($lang['tempo_gen_pagina'],$gen_time,$numquery);
 ?></div><br />
 <script type="text/javascript">
+<!--
 var uri = 'http://imp.tradedoubler.com/imp?type(js)pool(274958)a(1316148)' + new String (Math.random()).substring (2, 11);
 document.write('<sc'+'ript type="text/javascript" src="'+uri+'" charset="ISO-8859-1"></sc'+'ript>');
+//-->
 </script>
 </div>
 </body>
