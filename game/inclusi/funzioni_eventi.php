@@ -583,7 +583,7 @@ function Completasfida($userid,$eid) {
 global $db,$adesso,$lang,$language;
 require_once('language/'.$language.'/lang_combact.php');
 $sfida=$db->QuerySelect("SELECT * FROM eventi WHERE id='".$eid."' LIMIT 1");
-$sfidante=$db->QuerySelect("SELECT username FROM utenti WHERE id='".$sfida['oggid']."' LIMIT 1");
+$sfidante=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$sfida['oggid']."' LIMIT 1");
 if($sfida['type']==1){
 $titolo=$lang['sfida_annullata'];
 $testo=sprintf($lang['report_sfida_annullata1'],$sfidante['username']);

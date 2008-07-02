@@ -9,8 +9,8 @@ $reps=$db->QueryCiclo("SELECT * FROM battlereport WHERE attid='".$user['userid']
 while($rep=$db->QueryCicloResult($reps)){
 if($rep['finito']==1){
 if($rep['attid']==$user['userid']){
-if($rep['difid']==0){/*$rep['cpuid'] DA COMPLETARE NOME AVVERSARIO CPU*/}else{$s=$db->QuerySelect("SELECT username FROM utenti WHERE id='".$rep['difid']."' LIMIT 1"); $sfidante=$s['username'];}
-}else{$s=$db->QuerySelect("SELECT username FROM utenti WHERE id='".$rep['difid']."' LIMIT 1"); $sfidante=$s['username'];}
+if($rep['difid']==0){/*$rep['cpuid'] DA COMPLETARE NOME AVVERSARIO CPU*/}else{$s=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$rep['difid']."' LIMIT 1"); $sfidante=$s['username'];}
+}else{$s=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$rep['difid']."' LIMIT 1"); $sfidante=$s['username'];}
 $link[]='<a href="index.php?loc=combact&do=repview&id='.$rep['id'].'">'.sprintf($lang['combact_avvenuto'],$sfidante).date($lang['dataora'],$rep['data']).'</a>';
 }
 }//per ogni report
