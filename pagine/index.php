@@ -75,16 +75,9 @@ $end_time=time()+microtime();
 $gen_time=number_format($end_time-$start_time, 4, '.', '');
 echo sprintf($lang['tempo_gen_pagina'],$gen_time,$numquery);
 ?></div><br />
-<script type="text/javascript"><!--
-google_ad_client = "pub-0644240535082356";
-//468x60, creato il 26/01/08
-google_ad_slot = "7260256335";
-google_ad_width = 468;
-google_ad_height = 60;
-google_cpa_choice = ""; // on file
-//--></script>
-<script type="text/javascript"
-src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+<script type="text/javascript">
+var uri = 'http://imp.tradedoubler.com/imp?type(js)pool(274958)a(1316148)' + new String (Math.random()).substring (2, 11);
+document.write('<sc'+'ript type="text/javascript" src="'+uri+'" charset="ISO-8859-1"></sc'+'ript>');
 </script>
 </div>
 </body>
