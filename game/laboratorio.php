@@ -10,9 +10,9 @@ $tempoproxlav=$tempoproxlav*$userlav['oreultimolav'];
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$user['userid']."' LIMIT 1");
 $oggpozioni=$db->QuerySelect("SELECT count(id) AS id FROM oggetti WHERE tipo='4' AND abilitanec<='".$usercar['alchimista']."'");
 if($oggpozioni['id']>0){
-$oggpozioni=$db->QueryCiclo("SELECT id FROM oggetti WHERE tipo='4' AND abilitanec<='".$usercar['alchimista']."'");
+$oggpozioni=$db->QueryCiclo("SELECT id,costo FROM oggetti WHERE tipo='4' AND abilitanec<='".$usercar['alchimista']."'");
 while($oggpozione=$db->QueryCicloResult($oggpozioni)) {
-$pozioni[$oggpozione['id']]=$lang['oggetto'.$oggpozione['id'].'_nome'];
+$pozioni[$oggpozione['id']]=$lang['oggetto'.$oggpozione['id'].'_nome']." C.i.: ".floor($oggpozione['id']/5);
 }
 }//fine può tentare di produrre almeno 1 pozione
 if (isset($_POST['lavoralabapp'])){
@@ -20,15 +20,15 @@ $errore="";
 $ore=(int)$_POST['ore'];
 $userlav=$db->QuerySelect("SELECT * FROM lavori WHERE userid='".$user['userid']."' LIMIT 0,1");
 if ($usercar['energia']<100)
-$errore .= $lang['lab_errore1'];
+$errore.=$lang['lab_errore1'];
 if ($usercar['saluteattuale']<30)
-$errore .= $lang['lab_errore2'];
+$errore.=$lang['lab_errore2'];
 if ($adesso<($userlav['ultimolavoro']+$tempoproxlav))
-$errore .= $lang['lab_errore3'];
+$errore.=$lang['lab_errore3'];
 if ($usercar['mana']<10)
-$errore .= $lang['lab_errore4'];
+$errore.=$lang['lab_errore4'];
 if ($eventi['id']>0)
-$errore .= $lang['global_errore1'];
+$errore.=$lang['global_errore1'];
 if($ore<1 OR $ore>3)
 $errore.=$lang['global_errore2'];
 if($errore){

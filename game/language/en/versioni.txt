@@ -13,6 +13,7 @@ Legenda:<br />
 <p><strong>0.6.14</strong> (Non disponibile - In sviluppo)<br />
 + Aggiunto messaggio di annullamento di sfida per mancata risposta anche a chi viene sfidato e aggiunto il nome del personaggio sfidante<br />
 + In Archivio report ora i report sono ordinati dal più recente al più vecchio, vengono visualizzati solo quelli di combattimenti completati e appare il nome dell'avversario<br />
++ Aggiunta la visualizzazione del costo degli ingredienti per ogni pozione in parte al loro nome nella lista di pozioni che si possono produrre in Laboratorio<br />
 + Vari miglioramenti di sistema a Archivio report, Inventario<br />
 # Modificata la probabilità di miracolo durante la preghiera, resa più equilibrata<br />
 # Modificato pugno, reso più equilibrato<br />
