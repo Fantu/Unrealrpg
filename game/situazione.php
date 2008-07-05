@@ -35,10 +35,9 @@ $percmin7=floor((100/$expnewmin4)*$usercar['expmagica']);
 $percmin8=100-$percmin7;
 $expinc=1+floor($usercar['livello']/2);
 $expnewlevel=$expinc*(120*$usercar['livello']);
-$quantimess=$db->QuerySelect("SELECT COUNT(*) AS id FROM messaggi WHERE userid='".$user['userid']."' AND letto=0");
-if($quantimess['id']==0){
+if($snm['id']==0){
 $newmsg=$lang['nessun_nuovo_msg'];
-} elseif($quantimess['id']==1){
+} elseif($snm['id']==0){
 $newmsg="<a href=\"index.php?loc=messaggi\">".$lang['un_nuovo_msg']."</a>";
 }else{
 $newmsg="<a href=\"index.php?loc=messaggi\">".sprintf($lang['nuovi_msg'],$quantimess['id'])."</a>";

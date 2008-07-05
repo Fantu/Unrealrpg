@@ -33,7 +33,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <li><a href="index.php?loc=equipaggiamento"><?php echo $lang['Equipaggiamento']; ?></a></li>
 </ul></li>
 </ul>
-<a href="index.php?loc=messaggi"><?php echo $lang['Messaggi']; ?></a>
+<a href="index.php?loc=messaggi"><?php if($snm['id']>0){echo "<strong>";} echo $lang['Messaggi']; if($snm['id']>0){echo "</strong>";} ?></a>
 <a href="index.php?loc=utenti"><?php echo $lang['Lista_utenti']; ?></a>
 <ul>
 <li><a href="index.php?loc=submenu&amp;menu=info"><?php echo $lang['Informazioni']; ?></a><ul>
