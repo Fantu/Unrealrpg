@@ -320,7 +320,7 @@ class Dati{
 	$danno+=round($danno/2);
 	$potente=" ".sprintf($lang['colpo_potente'],$this->nome($att));
 	}//se colpo potente
-	$input=sprintf($lang['danno_att_vicino'],$this->nome($att),$this->nome($dif),$nomearma,$danno).$pscudo.$potente."<br/>";
+	$input=sprintf($lang['danno_att_vicino'],$this->nome($att),$this->nome($dif),$nomearma,$danno).$potente.$pscudo."<br/>";
 	$this->Modsalute($dif,$danno);
 	}else{
 	$input=sprintf($lang['niente_att_vicino'],$this->nome($att),$this->nome($dif),$nomearma)."<br/>";
