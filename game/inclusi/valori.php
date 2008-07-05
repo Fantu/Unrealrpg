@@ -17,4 +17,15 @@ $game_intestazione_mail.="Message-ID: <".time()."-server@lostage.it>\r\n";
 $game_intestazione_mail.="X-Mailer: PHP v".phpversion()."\r\n";
 $game_intestazione_mail.="MIME-Version: 1.0\r\n";
 $game_intestazione_mail.="Content-Type: text/html; charset=utf8\r\n";
+
+$banner_120_600=array(
+"<script type=\"text/javascript\">
+var uri = 'http://imp.tradedoubler.com/imp?type(js)pool(275035)a(1316148)' + new String (Math.random()).substring (2, 11);
+document.write('<sc'+'ript type="text/javascript" src="'+uri+'" charset="ISO-8859-1"></sc'+'ript>');
+</script>",
+"<script type=\"text/javascript\">
+var uri = 'http://imp.tradedoubler.com/imp?type(js)pool(275541)a(1316148)' + new String (Math.random()).substring (2, 11);
+document.write('<sc'+'ript type="text/javascript" src="'+uri+'" charset="ISO-8859-1"></sc'+'ript>');
+</script>"
+);
 ?>

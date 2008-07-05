@@ -42,4 +42,9 @@ $energia=$lang['perfetta'];
 }
 return $energia;
 }//fine testoenergia
+
+function Showbanner($banner){
+$quale=array_rand($banner);
+echo $banner[$quale[0]];
+}//fine Showbanner
 ?>

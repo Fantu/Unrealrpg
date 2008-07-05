@@ -62,12 +62,7 @@ if ($user['personaggio']==0){
 				if($user['plus']==0) {
 				?>
 					<div id="ads" align="right">
-					<script type="text/javascript">
-					<!--
-					var uri = 'http://imp.tradedoubler.com/imp?type(js)pool(275035)a(1316148)' + new String (Math.random()).substring (2, 11);
-					document.write('<sc'+'ript type="text/javascript" src="'+uri+'" charset="ISO-8859-1"></sc'+'ript>');
-					// -->
-					</script>
+					<?php Showbanner($banner_120_600); ?>
 					</div>
 				<?php
 				} //fine se plus attivo
