@@ -40,7 +40,7 @@ $newmsg=$lang['nessun_nuovo_msg'];
 } elseif($snm['id']==0){
 $newmsg="<a href=\"index.php?loc=messaggi\">".$lang['un_nuovo_msg']."</a>";
 }else{
-$newmsg="<a href=\"index.php?loc=messaggi\">".sprintf($lang['nuovi_msg'],$quantimess['id'])."</a>";
+$newmsg="<a href=\"index.php?loc=messaggi\">".sprintf($lang['nuovi_msg'],$snm['id'])."</a>";
 }//fine nuovi msg
 if($eventi['id']>0){
 	$eventi=$db->QuerySelect("SELECT * FROM eventi WHERE userid='".$user['userid']."' LIMIT 1");
