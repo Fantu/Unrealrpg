@@ -63,8 +63,8 @@ if ($user['personaggio']==0){
 				?>
 					<div id="ads" align="right">
 					<?php //Showbanner($banner_120_600); 
-					$quale=array_rand($banner_120_600);
-					echo $banner_120_600[$quale[0]];?>
+					$quale=array_rand($banner1);
+					echo $banner1[$quale[0]];?>
 					</div>
 				<?php
 				} //fine se plus attivo
