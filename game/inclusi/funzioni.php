@@ -45,6 +45,6 @@ return $energia;
 
 function Showbanner($banner){
 $quale=array_rand($banner);
-echo $banner[$quale[0]];
+echo $banner[$quale];
 }//fine Showbanner
 ?>
