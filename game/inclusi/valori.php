@@ -20,13 +20,7 @@ $game_intestazione_mail.="Content-Type: text/html; charset=utf8\r\n";
 
 //banner 120*600
 $banner1=array(
-"<script type=\"text/javascript\">
-var uri = 'http://imp.tradedoubler.com/imp?type(js)pool(275035)a(1316148)' + new String (Math.random()).substring (2, 11);
-document.write('<sc'+'ript type=\"text/javascript\" src=\"'+uri+'\" charset=\"ISO-8859-1\"></sc'+'ript>');
-</script>",
-"<script type=\"text/javascript\">
-var uri = 'http://imp.tradedoubler.com/imp?type(js)pool(275541)a(1316148)' + new String (Math.random()).substring (2, 11);
-document.write('<sc'+'ript type=\"text/javascript\" src=\"'+uri+'\" charset=\"ISO-8859-1\"></sc'+'ript>');
-</script>"
+"1",
+"2"
 );
 ?>
