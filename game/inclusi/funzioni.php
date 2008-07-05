@@ -19,6 +19,7 @@ $salute=$lang['molto_alta'];
 $salute=$lang['ottima'];
 }elseif ($percsalute>=99){
 $salute=$lang['perfetta'];
+}
 return $salute;
 }//fine testosalute
 
