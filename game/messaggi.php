@@ -80,6 +80,11 @@ case "doscrivi":// invia nuovo messaggio
 		$errore.=$lang['messaggi_error3']."<br />";	
 	if($user['plus']>0 && strlen($_POST['mymess'])>10000)
 		$errore.=$lang['messaggi_error5']."<br />";
+	if($errore==""){
+	$u=$db->QuerySelect("SELECT count(userid) AS n FROM utenti WHERE userid='".$achi."'");
+	if($u['n']==0)
+		$errore.=$lang['messaggi_error6']."<br />";
+	}
 	if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";
 	echo $outputerrori;}
@@ -88,7 +93,6 @@ case "doscrivi":// invia nuovo messaggio
 		$messaggio=htmlspecialchars($_POST['mymess'],ENT_QUOTES);
 		$achi=(int)$_POST['achi'];
 		$db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$achi."','".$titolo."','".$messaggio."','".$user['userid']."','".$adesso."')");
-		$db->QueryMod("DELETE FROM messaggi WHERE id='".$id."'");
 		echo "<script language=\"javascript\">window.location.href='index.php?loc=messaggi'</script>";
 	}
 exit();
