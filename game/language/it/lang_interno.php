@@ -109,6 +109,7 @@ $lang['bassa']='Bassa';
 $lang['media']='Media';
 $lang['alta']='Alta';
 $lang['molto_alta']='Molto alta';
+$lang['ottima']='Ottima';
 $lang['perfetta']='Perfetta';
 $lang['morto']='Morto';
 $lang['esausto']='Esausto';

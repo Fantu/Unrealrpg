@@ -15,9 +15,10 @@ $salute=$lang['media'];
 $salute=$lang['alta'];
 }elseif ($percsalute>=80 AND $percsalute<90){
 $salute=$lang['molto_alta'];
-}elseif ($percsalute>=90){
+}elseif ($percsalute>=90 AND $percsalute<99){
+$salute=$lang['ottima'];
+}elseif ($percsalute>=99){
 $salute=$lang['perfetta'];
-}
 return $salute;
 }//fine testosalute
 
@@ -37,7 +38,9 @@ $energia=$lang['media'];
 $energia=$lang['alta'];
 }elseif ($percenergia>=80 AND $percenergia<90){
 $energia=$lang['molto_alta'];
-}elseif ($percenergia>=90){
+}elseif ($percenergia>=90 AND $percenergia<99){
+$energia=$lang['ottima'];
+}elseif ($percenergia>=99){
 $energia=$lang['perfetta'];
 }
 return $energia;

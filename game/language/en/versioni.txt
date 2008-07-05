@@ -15,6 +15,7 @@ Legenda:<br />
 + In Archivio report ora i report sono ordinati dal più recente al più vecchio, vengono visualizzati solo quelli di combattimenti completati e appare il nome dell'avversario<br />
 + Aggiunta la visualizzazione del costo degli ingredienti per ogni pozione in parte al loro nome nella lista di pozioni che si possono produrre in Laboratorio<br />
 + Se ci sono nuovi messaggi Messaggi nel menu viene evidenziato<br />
++ Aggiunta una fascia a salute ed energia, Ottima da 90% a 99% e Perfetta adesso è dal 99%<br />
 + Vari miglioramenti di sistema a Archivio report, Inventario, sistema di combattimento<br />
 # Modificata la probabilità di miracolo durante la preghiera, resa più equilibrata<br />
 # Modificato pugno, reso più equilibrato<br />
