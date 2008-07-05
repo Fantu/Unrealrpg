@@ -80,6 +80,7 @@ case "doscrivi":// invia nuovo messaggio
 		$errore.=$lang['messaggi_error3']."<br />";	
 	if($user['plus']>0 && strlen($_POST['mymess'])>10000)
 		$errore.=$lang['messaggi_error5']."<br />";
+	$achi=(int)$_POST['achi'];
 	if($errore==""){
 	$u=$db->QuerySelect("SELECT count(userid) AS n FROM utenti WHERE userid='".$achi."'");
 	if($u['n']==0)
@@ -91,7 +92,6 @@ case "doscrivi":// invia nuovo messaggio
 	else {
 		$titolo=htmlspecialchars($_POST['titolo'],ENT_QUOTES);
 		$messaggio=htmlspecialchars($_POST['mymess'],ENT_QUOTES);
-		$achi=(int)$_POST['achi'];
 		$db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$achi."','".$titolo."','".$messaggio."','".$user['userid']."','".$adesso."')");
 		echo "<script language=\"javascript\">window.location.href='index.php?loc=messaggi'</script>";
 	}
