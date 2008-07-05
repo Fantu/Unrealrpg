@@ -37,7 +37,7 @@ $expinc=1+floor($usercar['livello']/2);
 $expnewlevel=$expinc*(120*$usercar['livello']);
 if($snm['id']==0){
 $newmsg=$lang['nessun_nuovo_msg'];
-} elseif($snm['id']==0){
+} elseif($snm['id']==1){
 $newmsg="<a href=\"index.php?loc=messaggi\">".$lang['un_nuovo_msg']."</a>";
 }else{
 $newmsg="<a href=\"index.php?loc=messaggi\">".sprintf($lang['nuovi_msg'],$snm['id'])."</a>";
