@@ -346,10 +346,10 @@ $exp=floor(rand(($exp/100*80),$exp));
 $exp+=10+(2*$usercar['alchimista']);
 $bonusabilita=$usercar['alchimista']-$pozione['abilitanec'];
 if($bonusabilita>0)
-$bonusabilita=$bonusabilita*20;
+$bonusabilita=$bonusabilita*15;
 if($bonusabilita>65)
 $bonusabilita=65;
-$esplosione=rand(70,100)-$bonusabilita-($usercar['attmagico']/15)-$usercar['intelligenza']/20;
+$esplosione=rand(70,100)-$bonusabilita-($usercar['attmagico']/15)-$usercar['intelligenza']/25;
 $danni=0;
 if($esplosione>10){
 $esplosione=rand(30,100)-($usercar['alchimista']*5)-($usercar['agilita']/20)-($usercar['attmagico']/10)-($usercar['velocita']/50);

@@ -20,6 +20,7 @@ Legenda:<br />
 # Modificato il guadagno di esperienza nei lavori, reso più equilibrato<br />
 # Modificato l'incremento di esperienza necessaria per il livello successivo di abilità, reso più equilibrato<br />
 # Portati gli interessi in banca da 0.5% a 1%<br />
+# Modificato il lavoro in Laboratorio come Alchimista, reso più equilibrato<br />
 - Correzione bug minori<br />
 </p>
 <p><strong>0.6.13.3</strong> (29/06/08 - Beta)<br />
