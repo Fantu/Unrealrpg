@@ -418,7 +418,7 @@ $dc->Impobexp(1,2);//aumento al primo
 $rep=$dc->Checkrep(1);
 if($rep[0]==1)
 $db->QueryMod("UPDATE caratteristiche SET reputazione=reputazione+'".$rep[1]."' WHERE userid='".$this->id(1)."' LIMIT 1");
-}elseif($turni==20){//se dura troppo
+}elseif($turni==25){//se dura troppo
 $input=$lang['combattimento_troppo_lungo']."<br/>";
 }else{$finito=0;}
 $db->QueryMod("UPDATE battle SET tatatt='0',tatatt2='0',tatdif='0',tatdif2='0' WHERE id='".$battleid."' LIMIT 1");
