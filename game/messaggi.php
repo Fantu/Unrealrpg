@@ -10,7 +10,7 @@ $id=(int)$_GET['id'];
 function Cancellamsg($id){
 global $db,$user;
 $m=$db->QuerySelect("SELECT count(id) AS n FROM messaggi WHERE id='".$id."'");
-if($m['n']==0){
+if($m['n']>0){
 $m=$db->QuerySelect("SELECT userid FROM messaggi WHERE id='".$id."'");
 if($m['userid']==$user['userid']){
 $db->QueryMod("DELETE FROM messaggi WHERE id='".$id."'");
