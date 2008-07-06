@@ -107,7 +107,6 @@ $errore="";
 $m=$db->QuerySelect("SELECT count(id) AS n FROM messaggi WHERE id='".$id."'");
 if($m['n']==0)
 $errore.=$lang['messaggi_error7']."<br />";
-}
 if($errore){
 $outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";
 echo $outputerrori;}
