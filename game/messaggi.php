@@ -6,6 +6,18 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 require('language/'.$language.'/lang_messaggi.php');
 require('template/int_messaggi.php');
 $id=(int)$_GET['id'];
+
+function Cancellamsg($id){
+global $user;
+$m=$db->QuerySelect("SELECT count(id) AS n FROM messaggi WHERE id='".$id."'");
+if($m['n']==0){
+$m=$db->QuerySelect("SELECT userid FROM messaggi WHERE id='".$id."'");
+if($m['userid']==$user['userid']){
+$db->QueryMod("DELETE FROM messaggi WHERE id='".$id."'");
+}//se è un proprio messaggio
+}//se esiste
+}//fine Cancellamsg
+
 ?>
 <script type="text/javascript">
 function cambiaseltuttimsg(formogg, imposta)
@@ -28,10 +40,10 @@ if($user['plus']==0)
 else
 	$scaduto=strtotime("now")-432000;
 $db->QueryMod("DELETE FROM messaggi WHERE userid='".$user['userid']."' AND letto='1' AND data<'".$scaduto."'");
-
+Cancellamsg($id);
 switch($_GET['do']){
 case "elim"://cancella msg singolo
-$db->QueryMod("DELETE FROM messaggi WHERE id='".$id."'");
+
 echo "<script language=\"javascript\">window.location.href='index.php?loc=messaggi'</script>";
 exit();
 break;
@@ -39,7 +51,7 @@ case "canc"://cancella mess selezionati
 $contatore=(int)$_POST['contatore'];
 while($contatore>0){
 	$msgid=(int)$_POST['messaggioid'.$contatore];
-	$db->QueryMod("DELETE FROM messaggi WHERE id='".$msgid."'");
+	Cancellamsg($msgid);
 	$contatore--;
 }
 echo "<script language=\"javascript\">window.location.href='index.php?loc=messaggi'</script>";

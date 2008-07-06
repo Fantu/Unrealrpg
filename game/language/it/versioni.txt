@@ -16,7 +16,9 @@ Legenda:<br />
 + Aggiunta la visualizzazione del costo degli ingredienti per ogni pozione in parte al loro nome nella lista di pozioni che si possono produrre in Laboratorio<br />
 + Se ci sono nuovi messaggi Messaggi nel menu viene evidenziato<br />
 + Aggiunta una fascia a salute ed energia, Ottima da 90% a 99% e Perfetta adesso è dal 99%<br />
++ Ora i "server" e rispettivi regni hanno dei nomi, quelli italiano Draknor e quello inglese Lyton<br />
 + Vari miglioramenti di sistema a Archivio report, Inventario, sistema di combattimento, sistema messaggi<br />
++ Vari miglioramenti di sicurezza<br />
 # Modificata la probabilità di miracolo durante la preghiera, resa più equilibrata<br />
 # Modificato pugno, reso più equilibrato<br />
 # Modificato il guadagno di esperienza nei lavori, reso più equilibrato<br />
