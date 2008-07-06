@@ -26,6 +26,7 @@ Legenda:<br />
 # Portati gli interessi in banca da 0.5% a 1%<br />
 # Modificato il lavoro in Laboratorio come Alchimista, reso più equilibrato<br />
 # Modificati i "round" massimi di un combattimento prima della conclusione in parità da 20 a 25<br />
+# Diminuito il tempo di un "round" da 2 minuti a 100 secondi<br />
 - Correzione bug minori<br />
 </p>
 <p><strong>0.6.13.3</strong> (29/06/08 - Beta)<br />
