@@ -8,7 +8,7 @@ require('template/int_messaggi.php');
 $id=(int)$_GET['id'];
 
 function Cancellamsg($id){
-global $user;
+global $db,$user;
 $m=$db->QuerySelect("SELECT count(id) AS n FROM messaggi WHERE id='".$id."'");
 if($m['n']==0){
 $m=$db->QuerySelect("SELECT userid FROM messaggi WHERE id='".$id."'");
