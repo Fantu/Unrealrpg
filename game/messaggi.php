@@ -54,12 +54,17 @@ case "dorisp":// invia risposta
 	if($user['plus']==0 && strlen($_POST['mymess'])>500)
 		$errore.=$lang['messaggi_error3']."<br />";
 	if($user['plus']>0 && strlen($_POST['mymess'])>10000)
-		$errore.=$lang['messaggi_error5']."<br />";					
+		$errore.=$lang['messaggi_error5']."<br />";
+	$msgid=(int)$_POST['messid'];
+	if($errore==""){
+	$m=$db->QuerySelect("SELECT count(id) AS n FROM messaggi WHERE id='".$msgid."'");
+	if($m['n']==0)
+	$errore.=$lang['messaggi_error7']."<br />";
+	}
 	if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";
 	echo $outputerrori;}
 	else {
-		$msgid=(int)$_POST['messid'];
 		$a=$db->QuerySelect("SELECT titolo,mittenteid FROM messaggi WHERE id='".$msgid."'");
 		$titolo="RE: ".$a['titolo'];
 		$messaggio=htmlspecialchars($_POST['mymess'],ENT_QUOTES);
@@ -84,7 +89,7 @@ case "doscrivi":// invia nuovo messaggio
 	if($errore==""){
 	$u=$db->QuerySelect("SELECT count(userid) AS n FROM utenti WHERE userid='".$achi."'");
 	if($u['n']==0)
-		$errore.=$lang['messaggi_error6']."<br />";
+	$errore.=$lang['messaggi_error6']."<br />";
 	}
 	if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";
@@ -98,6 +103,15 @@ case "doscrivi":// invia nuovo messaggio
 exit();
 break;
 case "risp":// scrivi risposta
+$errore="";	
+$m=$db->QuerySelect("SELECT count(id) AS n FROM messaggi WHERE id='".$id."'");
+if($m['n']==0)
+$errore.=$lang['messaggi_error7']."<br />";
+}
+if($errore){
+$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";
+echo $outputerrori;}
+else {
 ?>
 <form action="index.php?loc=messaggi&amp;do=dorisp" method="post" name="formrisp">
 <table width="505"  border="0" cellspacing="2" cellpadding="2">
@@ -123,6 +137,7 @@ case "risp":// scrivi risposta
 </table>
 </form>
 <?php
+}//se messaggio a cui rispondere esiste
 break;
 case "scrivi":// scrivi nuovo
 ?>
