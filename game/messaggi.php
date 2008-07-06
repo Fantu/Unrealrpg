@@ -40,10 +40,9 @@ if($user['plus']==0)
 else
 	$scaduto=strtotime("now")-432000;
 $db->QueryMod("DELETE FROM messaggi WHERE userid='".$user['userid']."' AND letto='1' AND data<'".$scaduto."'");
-Cancellamsg($id);
 switch($_GET['do']){
 case "elim"://cancella msg singolo
-
+Cancellamsg($id);
 echo "<script language=\"javascript\">window.location.href='index.php?loc=messaggi'</script>";
 exit();
 break;
