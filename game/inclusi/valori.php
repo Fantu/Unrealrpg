@@ -31,6 +31,10 @@ document.write('<sc'+'ript type=\"text/javascript\" src=\"'+uri+'\" charset=\"IS
 "apple"=>"<script type=\"text/javascript\">
 var uri = 'http://imp.tradedoubler.com/imp?type(js)pool(275579)a(1316148)' + new String (Math.random()).substring (2, 11);
 document.write('<sc'+'ript type=\"text/javascript\" src=\"'+uri+'\" charset=\"ISO-8859-1\"></sc'+'ript>');
+</script>",
+"multiplayer"=>"<script type=\"text/javascript\">
+var uri = 'http://imp.tradedoubler.com/imp?type(js)pool(276343)a(1316148)' + new String (Math.random()).substring (2, 11);
+document.write('<sc'+'ript type=\"text/javascript\" src=\"'+uri+'\" charset=\"ISO-8859-1\"></sc'+'ript>');
 </script>"
 );
 ?>
