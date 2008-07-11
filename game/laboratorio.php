@@ -12,7 +12,7 @@ $oggpozioni=$db->QuerySelect("SELECT count(id) AS id FROM oggetti WHERE tipo='4'
 if($oggpozioni['id']>0){
 $oggpozioni=$db->QueryCiclo("SELECT id,costo FROM oggetti WHERE tipo='4' AND abilitanec<='".$usercar['alchimista']."'");
 while($oggpozione=$db->QueryCicloResult($oggpozioni)) {
-$pozioni[$oggpozione['id']]=$lang['oggetto'.$oggpozione['id'].'_nome']." - C.i.: ".floor($oggpozione['id']/5);
+$pozioni[$oggpozione['id']]=$lang['oggetto'.$oggpozione['id'].'_nome']." - C.i.: ".floor($oggpozione['costo']/5);
 }
 }//fine può tentare di produrre almeno 1 pozione
 if (isset($_POST['lavoralabapp'])){
