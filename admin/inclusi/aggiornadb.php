@@ -15,10 +15,7 @@ $a=$db->QueryCiclo("SELECT * FROM oggetti WHERE tipo='5'");
 while($var=$db->QueryCicloResult($a))
 {
 	$us=floor($var['usura']/2);
-	$id=$var['id'];
-	$db->QueryMod("
-	UPDATE `oggetti` SET `usura`=`usura`+'"$us"' WHERE id='"$id"' LIMIT 1
-	");
+	$db->QueryMod("UPDATE `oggetti` SET `usura`=`usura`+'".$us."' WHERE id='".$var['id']."' LIMIT 1");
 }
 
 /*$db->QueryMod("INSERT INTO `oggetti` (
