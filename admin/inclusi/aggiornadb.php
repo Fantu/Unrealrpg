@@ -14,7 +14,8 @@ if($check['version']!=$newversion AND $newversion==$game_revision){
 $a=$db->QueryCiclo("SELECT * FROM oggetti WHERE tipo='5'");
 while($var=$db->QueryCicloResult($a))
 {
-	$db->QueryMod("UPDATE oggetti SET usura=usura+'"floor($var['usura']/2)"' WHERE id='"$var['id']"' LIMIT 1");
+	$usura=floor($var['usura']/2);
+	$db->QueryMod("UPDATE oggetti SET usura=usura+'"$usura"' WHERE id='"$var['id']"' LIMIT 1");
 }
 
 /*$db->QueryMod("INSERT INTO `oggetti` (
