@@ -16,7 +16,9 @@ while($var=$db->QueryCicloResult($a))
 {
 	$us=floor($var['usura']/2);
 	$id=$var['id'];
-	$db->QueryMod("UPDATE `oggetti` SET `usura`=`usura`+'"$us"' WHERE id="$id);
+	$db->QueryMod("
+	UPDATE `oggetti` SET `usura`=`usura`+'"$us"' WHERE id='"$id"' LIMIT 1
+	");
 }
 
 /*$db->QueryMod("INSERT INTO `oggetti` (
