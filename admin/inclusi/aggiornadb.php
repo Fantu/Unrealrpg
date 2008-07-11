@@ -5,11 +5,11 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 }
 $newversion="0.6.15";
 foreach($game_server as $chiave=>$elemento){
-if($chiave==999){
+if($chiave!=999){
 $db->database=$chiave;
 $check=$db->QuerySelect("SELECT version FROM config WHERE id=".$chiave);
 if($check['version']!=$newversion AND $newversion==$game_revision){
-//$db->QueryMod("UPDATE `oggetti` SET `danno`=`danno`+'1' WHERE tipo='5'");
+$db->QueryMod("UPDATE `oggetti` SET `danno`=`danno`+'1' WHERE tipo='5'");
 
 $a=$db->QueryCiclo("SELECT * FROM oggetti WHERE tipo='5'");
 while($var=$db->QueryCicloResult($a))
