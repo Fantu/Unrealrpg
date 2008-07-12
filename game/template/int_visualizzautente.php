@@ -2,7 +2,9 @@
 if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	header("Location: ../../index.php?error=16");
 	exit();
-}?>
+}
+if($datiutente){
+?>
 <center><h2><?php echo $datiutente['username']; ?></h2></center><br />
 <br />
 <?php echo $lang['Razza']; ?>: <?php echo $razze['nome'][$datiutente['razza']]; ?><br />
@@ -17,7 +19,15 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <img src="template/immagini/led_verde.gif" alt="Online" />
 <?php }else{ ?>
 <img src="template/immagini/led_rosso.gif" alt="Offline" />
-<?php } ?>
+<br />
+<a href="index.php?loc=messaggi&amp;do=scrivi&amp;id=<?php echo $utente; ?>"><?php echo $lang['scrivi_msg']; ?></a>
+<br /><br />
+<?php if($datiutente['ultimazione']>($adesso-600)){ ?>
+<a href="index.php?loc=combact&amp;do=sfida&amp;id=<?php echo $utente; ?>"><?php echo $lang['sfida']; ?></a>
+<br /><br />
+<?php }/*se online*/ ?>
+<?php }
+}/*se utente esiste*/else{ echo $lang['utente_inesistente']; } ?>
 <br />
 <br />
 <a href="<?php echo $linkindietro; ?>"><?php echo $lang['Indietro']; ?></a>

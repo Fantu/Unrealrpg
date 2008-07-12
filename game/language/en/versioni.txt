@@ -11,8 +11,12 @@ Legenda:<br />
 + Iniziata creazione personaggi non comandati da utenti<br />
 </p>
 <p><strong>0.6.15</strong> (Non disponibile - In sviluppo)<br />
++ Aggiunti i link di sfida e scrivi messaggi nella visualizzazione dettagliata del personaggio<br />
++ Vari miglioramenti di sistema a visualizzazione dettagliata del pesonaggio<br />
 # Modificato il guadagno di esperienza nei lavori in Laboratorio, reso più equilibrato<br />
 # Modificato il lavoro in Laboratorio come Alchimista, reso più equilibrato<br />
+# Modificate le armi corpo a corpo, rese più equilibrate<br />
+- Correzione bug minori<br />
 </p>
 <p><strong>0.6.14.1</strong> (06/07/08 - Beta)<br />
 - Corretto bug nel sistema messaggi<br />

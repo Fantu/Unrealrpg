@@ -113,6 +113,7 @@ $lang['ottima']='Ottima';
 $lang['perfetta']='Perfetta';
 $lang['morto']='Morto';
 $lang['esausto']='Esausto';
+$lang['utente_inesistente']='Utente inesistente';
 //fine visualizzautente
 
 //inizio funz_ogg
