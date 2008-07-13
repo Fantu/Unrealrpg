@@ -372,7 +372,7 @@ $battle=$db->QuerySelect("SELECT * FROM battle WHERE id='".$battleid."' LIMIT 1"
 $expb=$battle['exp'];
 $dc=new Dati();
 $dc->Stabilisciordine($battle['attid'],$battle['difid'],$battle);
-$expb=Checkeqipexp($expb);
+$expb=$dc->Checkeqipexp($expb);
 if($turni==0){
 $input.=$dc->Viewequip(1);
 $input.=$dc->Viewequip(2);}
