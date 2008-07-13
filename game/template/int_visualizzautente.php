@@ -19,7 +19,7 @@ if($datiutente){
 <img src="template/immagini/led_verde.gif" alt="Online" />
 <?php }else{ ?>
 <img src="template/immagini/led_rosso.gif" alt="Offline" />
-<br />
+<br /><br />
 <a href="index.php?loc=messaggi&amp;do=scrivi&amp;id=<?php echo $utente; ?>"><?php echo $lang['scrivi_msg']; ?></a>
 <br /><br />
 <?php if($datiutente['ultimazione']>($adesso-600)){ ?>

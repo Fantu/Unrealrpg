@@ -18,6 +18,9 @@ while($var=$db->QueryCicloResult($a))
 	$db->QueryMod("UPDATE `oggetti` SET `usura`=`usura`+'".$us."' WHERE id='".$var['id']."' LIMIT 1");
 }
 
+$db->QueryMod("UPDATE `oggetti` SET `usura`=`usura`+'10' WHERE tipo='6'");
+$db->QueryMod("ALTER TABLE `battle` ADD `exp` SMALLINT UNSIGNED NOT NULL DEFAULT '0'");
+
 /*$db->QueryMod("INSERT INTO `oggetti` (
 `id` ,
 `tipo` ,

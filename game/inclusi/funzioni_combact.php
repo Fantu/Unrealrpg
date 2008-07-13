@@ -57,6 +57,10 @@ class Dati{
 	$this->Autotattic(2);
 	} //fine Stabilisciordine
 	
+	//----------------------------
+	//  VISUALIZZAZIONE DATI
+	//----------------------------
+	
 	public function equip($chi,$campo) {
 	$dato=$this->che[$chi]->equip[$campo];
 	return $dato;
@@ -105,6 +109,15 @@ class Dati{
 	return $dato;
 	} //fine bexp
 	
+	public function pvar($chi) {
+	$dato=$this->che[$chi];
+	return $dato;
+	} //fine pvar
+	
+	//----------------------------
+	//  IMPOSTAZIONE DATI
+	//----------------------------
+	
 	public function Ogginuso($chi,$cosa) {
 	global $db;
 	$db->QueryMod("UPDATE equip SET inuso='1' WHERE userid='".$this->id($chi)."' AND oggid='".$this->equip($chi,$cosa)."' LIMIT 1");
@@ -137,11 +150,6 @@ class Dati{
 	}
 	return $dato;
 	} //fine Controlloogg
-	
-	public function pvar($chi) {
-	$dato=$this->che[$chi];
-	return $dato;
-	} //fine pvar
 	
 	public function Controllastato($chi) {
 	$percenergia=100/$this->car($chi,'energiamax')*$this->car($chi,'energia');
@@ -189,13 +197,14 @@ class Dati{
 	$this->che[$chi]->subtattica==1;
 	} //fine Autotattic
 	
-	public function Guadagnaexp($chi,$turni) {
+	public function Guadagnaexp($chi,$turni,$expb) {
 	global $db,$lang;
 	if($chi==1)
 	$chi2=2;
 	else
 	$chi2=1;
-	$exp=3*$turni;
+	$exp=2*$turni;
+	$exp+=$expb;
 	$exp=round(rand(($exp/100*95),$exp));
 	if($this->bexp($chi)==1){
 	$exp-=6;
@@ -248,6 +257,21 @@ class Dati{
 	}
 	return $rep;
 	} //fine Checkrep
+	
+	public function Checkeqipexp($expb){
+	//controllo armi
+	if($this->equip(1,'cac')!=0)
+	$expb+=0.5;
+	if($this->equip(2,'cac')!=0)
+	$expb+=0.5;
+	//controllo difese
+	if($this->equip(1,'arm')!=0 OR $this->equip(1,'scu')!=0)
+	$expb+=0.5;
+	if($this->equip(2,'arm')!=0 OR $this->equip(2,'scu')!=0)
+	$expb+=0.5;
+	$expb=floor($expb);
+	return $expb;
+	} //fine Checkeqipexp
 	
 	public function Attaccovicino($att,$dif) {
 	global $db,$lang;
@@ -345,8 +369,10 @@ Docombactstats($battle['id'],$attaccante,$difensore);
 function Battledo($battleid,$turni) {
 global $db,$adesso,$lang,$language;
 $battle=$db->QuerySelect("SELECT * FROM battle WHERE id='".$battleid."' LIMIT 1");
+$expb=$battle['exp'];
 $dc=new Dati();
 $dc->Stabilisciordine($battle['attid'],$battle['difid'],$battle);
+$expb=Checkeqipexp($expb);
 if($turni==0){
 $input.=$dc->Viewequip(1);
 $input.=$dc->Viewequip(2);}
@@ -424,13 +450,16 @@ $input=$lang['combattimento_troppo_lungo']."<br/>";
 $db->QueryMod("UPDATE battle SET tatatt='0',tatatt2='0',tatdif='0',tatdif2='0' WHERE id='".$battleid."' LIMIT 1");
 if($finito==1){
 if($turni>1){
-$input.=$dc->Guadagnaexp(1,$turni);
-$input.=$dc->Guadagnaexp(2,$turni);
+$input.=$dc->Guadagnaexp(1,$turni,$expb);
+$input.=$dc->Guadagnaexp(2,$turni,$expb);
 }//se più di un turno
 Endcombact($battle['id'],$dc->pvar(1),$dc->pvar(2));
 Inreport($battleid,$input);
 }else{//continua
-$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,battleid,turni) VALUES ('0','".$adesso."','100','0','6','".$battleid."','".$turni."')");}
+if($expb!=$battle['exp']){
+$db->QueryMod("UPDATE battle SET exp='".$expb."' WHERE id='".$battleid."' LIMIT 1");}
+$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,battleid,turni) VALUES ('0','".$adesso."','100','0','6','".$battleid."','".$turni."')");
+}//fine continua
 } //fine Battledo
 
 function Endcombact($battleid,$att,$dif) {
