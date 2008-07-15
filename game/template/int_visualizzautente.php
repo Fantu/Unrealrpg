@@ -19,15 +19,16 @@ if($datiutente){
 <img src="template/immagini/led_verde.gif" alt="Online" />
 <?php }else{ ?>
 <img src="template/immagini/led_rosso.gif" alt="Offline" />
-<?php } ?>
+<?php }
+if ($utente!=$user['userid']){ ?>
 <br /><br />
 <a href="index.php?loc=messaggi&amp;do=scrivi&amp;id=<?php echo $utente; ?>"><?php echo $lang['scrivi_msg']; ?></a>
 <br /><br />
 <?php if($datiutente['ultimazione']>($adesso-600)){ ?>
 <a href="index.php?loc=combact&amp;do=sfida&amp;id=<?php echo $utente; ?>"><?php echo $lang['sfida']; ?></a>
 <br /><br />
-<?php }/*se online*/ ?>
-<?php
+<?php }/*se online*/
+}//se diverso da se stesso
 }/*se utente esiste*/else{ echo $lang['utente_inesistente']; } ?>
 <br />
 <br />
