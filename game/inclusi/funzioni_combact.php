@@ -321,7 +321,7 @@ class Dati{
 	$this->Modenergia($dif,$scudo['energia']);
 	}//se il difensore ha scudo
 	if($this->tattica($dif,1)==3){
-	$probps=rand(0,40);}else{$probps=rand(0,80);}
+	$probps=rand(0,40);}else{$probps=rand(0,90);}
 	if($this->equip($dif,'scu')!=0 AND $probps<20 AND $this->esausto($dif)==0){
 	if($scudo['energia']<=$this->car($dif,'energia')){
 	$pscudo=" ".sprintf($lang['parata_con_scudo'],$this->nome($dif));
