@@ -55,9 +55,9 @@ $pfede=$lang['Fedele'];
 }elseif($usercar['fede']>10000 AND $usercar['fede']<=30000){
 $pfede=$lang['Devoto'];
 }elseif($usercar['fede']>30000 AND $usercar['fede']<=100000){
-$pfede=$lang['Illuminato'];
-}elseif($usercar['fede']>100000){
 $pfede=$lang['Pio'];
+}elseif($usercar['fede']>100000){
+$pfede=$lang['Illuminato'];
 }
 $pfede=sprintf($lang['liv_fede'],$pfede);
 
