@@ -321,14 +321,14 @@ class Dati{
 	$this->Modenergia($dif,$scudo['energia']);
 	}//se il difensore ha scudo
 	if($this->tattica($dif,1)==3){
-	$probps=rand(0,40);}else{$probps=rand(0,90);}
+	$probps=rand(0,40);}else{$probps=rand(0,80);}
 	if($this->equip($dif,'scu')!=0 AND $probps<20 AND $this->esausto($dif)==0){
 	if($scudo['energia']<=$this->car($dif,'energia')){
 	$pscudo=" ".sprintf($lang['parata_con_scudo'],$this->nome($dif));
-	$prob=60;
+	$prob=10;
 	if($this->tattica($dif,1)==3)
-	$prob=80;
-	$difesa+=round(rand($scudo['difesafisica']/$prob,$scudo['difesafisica']));
+	$prob=50;
+	$difesa+=round(rand($scudo['difesafisica']/100*$prob,$scudo['difesafisica']));
 	}
 	}//se il difensore ha scudo
 	$danno-=$difesa;
