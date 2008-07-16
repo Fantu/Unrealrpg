@@ -39,5 +39,27 @@ else {
 $db->QueryMod("UPDATE utenti SET monete=monete-'".$paga."',resuscita='1' WHERE userid='".$user['userid']."'");
 }
 }//fine chierici
+
+if($usercar['fede']==0){
+$pfede=$lang['Eretico'];
+}elseif($usercar['fede']>0 AND $usercar['fede']<=100){
+$pfede=$lang['Infedele'];
+}elseif($usercar['fede']>100 AND $usercar['fede']<=500){
+$pfede=$lang['Ateo'];
+}elseif($usercar['fede']>500 AND $usercar['fede']<=1000){
+$pfede=$lang['Leale'];
+}elseif($usercar['fede']>1000 AND $usercar['fede']<=2000){
+$pfede=$lang['Credente'];
+}elseif($usercar['fede']>2000 AND $usercar['fede']<=10000){
+$pfede=$lang['Fedele'];
+}elseif($usercar['fede']>10000 AND $usercar['fede']<=30000){
+$pfede=$lang['Devoto'];
+}elseif($usercar['fede']>30000 AND $usercar['fede']<=100000){
+$pfede=$lang['Illuminato'];
+}elseif($usercar['fede']>100000){
+$pfede=$lang['Pio'];
+}
+$pfede=sprintf($lang['liv_fede'],$pfede);
+
 require('template/int_tempio.php');
 ?>

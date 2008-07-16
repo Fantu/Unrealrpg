@@ -11,4 +11,13 @@ $lang['desc_tempio_chierici']='Pagando loro 100 monete, in qualunque momento, al
 $lang['Paga_chierici']='Paga i chierici';
 $lang['tempio_errore3']='- Non hai abbastanza monete per pagare i chierici.<br />';
 $lang['tempio_errore4']='- I chierici hanno gi&agrave; in programma una tua resurrezione.<br />';
+$lang['liv_fede']='Attualmente sei %s';
+$lang['Eretico']='Eretico';
+$lang['Infedele']='Infedele';
+$lang['Ateo']='Ateo';
+$lang['Leale']='Leale';
+$lang['Credente']='Credente';
+$lang['Devoto']='Devoto';
+$lang['Illuminato']='Illuminato';
+$lang['Pio']='Pio';
 ?>

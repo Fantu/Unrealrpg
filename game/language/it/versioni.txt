@@ -13,6 +13,7 @@ Legenda:<br />
 <p><strong>0.6.15</strong> (Non disponibile - In sviluppo)<br />
 + Aggiunti i link di sfida e scrivi messaggi nella visualizzazione dettagliata del personaggio<br />
 + Ora lo svolgimento del combattimento in ogni "round" influenza maggiormente l'esperienza guadagnata<br />
++ Aggiunta la visualizzazione della propria fede in Tempio secondo le seguenti fasce: Eretico, Infedele, Ateo, Leale, Credente, Fedele, Devoto, Illuminato, Pio<br />
 + Vari miglioramenti di sistema a visualizzazione dettagliata del pesonaggio<br />
 # Modificato il guadagno di esperienza nei lavori in Laboratorio, reso più equilibrato<br />
 # Modificato il lavoro in Laboratorio come Alchimista, reso più equilibrato<br />

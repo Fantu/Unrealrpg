@@ -11,6 +11,8 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <br />
 <?php echo $lang['desc_tempio_prega']; ?>
 <br />
+<?php echo $pfede; ?>
+<br />
 <form action="" method="post" name="tempioprega">
 <table border="0">
 <tr>
