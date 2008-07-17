@@ -113,6 +113,7 @@ $lang['ottima']='Ottima';
 $lang['perfetta']='Perfect';
 $lang['morto']='Morto';
 $lang['esausto']='Esausto';
+$lang['utente_inesistente']='Utente inesistente';
 //fine visualizzautente
 
 //inizio funz_ogg
@@ -156,7 +157,7 @@ $lang['appreso']='Appreso';
 $lang['archivio_report']='Archivio report';
 $lang['desc_archivio_report']='Qui sono presente tutti i report dei tuoi combattimenti attualmente presenti in archivio (degli ultimi 7 giorni).';
 $lang['nessun_report_presente']='Nessun report presente attualmente.';
-$lang['combact_avvenuto']='Combattimento avvenuto ';
+$lang['combact_avvenuto']='Combattimento contro %s avvenuto ';
 //fine archivio report
 
 $lang['outputerrori']='The following errors have occurred:';

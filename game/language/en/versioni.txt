@@ -10,14 +10,15 @@ Legenda:<br />
 <p><strong>0.7.0</strong> (Non disponibile - In sviluppo)<br />
 + Iniziata creazione personaggi non comandati da utenti<br />
 </p>
-<p><strong>0.6.15</strong> (Non disponibile - In sviluppo)<br />
+<p><strong>0.6.15</strong> [R.1388] (17/07/08 - Beta)<br />
 + Aggiunti i link di sfida e scrivi messaggi nella visualizzazione dettagliata del personaggio<br />
 + Ora lo svolgimento del combattimento in ogni "round" influenza maggiormente l'esperienza guadagnata<br />
-+ Aggiunta la visualizzazione della propria fede in Tempio secondo le seguenti fasce: Eretico, Infedele, Ateo, Leale, Credente, Fedele, Devoto, Illuminato, Pio<br />
++ Aggiunta la visualizzazione della propria fede in Tempio secondo le seguenti fasce: Eretico, Infedele, Ateo, Leale, Credente, Fedele, Devoto, Pio, Illuminato<br />
 + Vari miglioramenti di sistema a visualizzazione dettagliata del pesonaggio<br />
 # Modificato il guadagno di esperienza nei lavori in Laboratorio, reso più equilibrato<br />
 # Modificato il lavoro in Laboratorio come Alchimista, reso più equilibrato<br />
 # Modificate le armi corpo a corpo e l'equipaggiamento difensivo, resi più equilibrati<br />
+# Modificato l'utilizzo degli scudi, reso più equilibrato<br />
 - Correzione bug minori<br />
 </p>
 <p><strong>0.6.14.1</strong> (06/07/08 - Beta)<br />
