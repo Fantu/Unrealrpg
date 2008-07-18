@@ -279,14 +279,14 @@ class Dati{
 	
 	public function Checkturnexp($expb){
 	//energia
-	if( (($this->che[$chi]->energiai-$this->car(1,'energia'))+($this->che[$chi]->energiai)-$this->car(2,'energia'))>100 )
+	if( (($this->che[1]->energiai-$this->car(1,'energia'))+($this->che[2]->energiai)-$this->car(2,'energia'))>100 )
 	$expb+=0.5;
 	//controllo difese
-	if( ($this->che[$chi]->salutei-$this->car(2,'saluteattuale'))>5 )
+	if( ($this->che[2]->salutei-$this->car(2,'saluteattuale'))>5 )
 	$expb+=0.5;
-	if( ($this->che[$chi]->salutei-$this->car(2,'saluteattuale'))>5 )
+	if( ($this->che[2]->salutei-$this->car(2,'saluteattuale'))>5 )
 	$expb+=0.5;
-	if( (($this->che[$chi]->salutei-$this->car(2,'saluteattuale'))+($this->che[$chi]->salutei-$this->car(2,'saluteattuale')))>30 )
+	if( (($this->che[1]->salutei-$this->car(1,'saluteattuale'))+($this->che[2]->salutei-$this->car(2,'saluteattuale')))>30 )
 	$expb+=0.5;
 	$expb=floor($expb);
 	return $expb;
