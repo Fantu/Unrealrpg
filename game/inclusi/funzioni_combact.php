@@ -425,7 +425,7 @@ $dc->Aggiornastat(1);
 $dc->Aggiornastat(2);
 $dc->Controllastato(1);
 $dc->Controllastato(2);
-$expb+=$dc->Checkturnexp($expb);
+$expb=$dc->Checkturnexp($expb);
 
 $turni++;
 $input.="---------------------------------<( ".($turni+1)." )>---------------------------------";
