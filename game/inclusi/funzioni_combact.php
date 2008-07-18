@@ -278,20 +278,15 @@ class Dati{
 	} //fine Checkeqipexp
 	
 	public function Checkturnexp($expb){
-	$percenergia=100/$this->car($chi,'energiamax')*$this->car($chi,'energia');
-	if ($percenergia<5)
-	$this->che[$chi]->esausto=1;
-	if ($this->car($chi,'saluteattuale')<1)
-	$this->che[$chi]->morto=1;
 	//energia
-	if( (($this->che[$chi]->energiai(1)-$this->car(1,'energia'))+($this->che[$chi]->energiai(2)-$this->car(2,'energia')))>100 )
+	if( (($this->che[$chi]->energiai-$this->car(1,'energia'))+($this->che[$chi]->energiai)-$this->car(2,'energia')))>100 )
 	$expb+=0.5;
 	//controllo difese
-	if( ($this->che[$chi]->salutei(2)-$this->car(2,'saluteattuale'))>5 )
+	if( ($this->che[$chi]->salutei-$this->car(2,'saluteattuale'))>5 )
 	$expb+=0.5;
-	if( ($this->che[$chi]->salutei(2)-$this->car(2,'saluteattuale'))>5 )
+	if( ($this->che[$chi]->salutei-$this->car(2,'saluteattuale'))>5 )
 	$expb+=0.5;
-	if( (($this->che[$chi]->salutei(2)-$this->car(2,'saluteattuale'))+($this->che[$chi]->salutei(2)-$this->car(2,'saluteattuale')))>30 )
+	if( (($this->che[$chi]->salutei-$this->car(2,'saluteattuale'))+($this->che[$chi]->salutei-$this->car(2,'saluteattuale')))>30 )
 	$expb+=0.5;
 	$expb=floor($expb);
 	return $expb;
