@@ -3,41 +3,25 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	header("Location: ../../index.php?error=16");
 	exit();
 }
-$newversion="0.6.15";
+$newversion="0.6.16";
 foreach($game_server as $chiave=>$elemento){
 if($chiave!=999){
 $db->database=$chiave;
 $check=$db->QuerySelect("SELECT version FROM config WHERE id=".$chiave);
 if($check['version']!=$newversion AND $newversion==$game_revision){
-$db->QueryMod("UPDATE `oggetti` SET `danno`=`danno`+'1' WHERE tipo='5'");
 
-$a=$db->QueryCiclo("SELECT * FROM oggetti WHERE tipo='5'");
-while($var=$db->QueryCicloResult($a))
-{
-	$us=floor($var['usura']/2);
-	$db->QueryMod("UPDATE `oggetti` SET `usura`=`usura`+'".$us."' WHERE id='".$var['id']."' LIMIT 1");
-}
-
-$db->QueryMod("UPDATE `oggetti` SET `usura`=`usura`+'10' WHERE tipo='6'");
-$db->QueryMod("ALTER TABLE `battle` ADD `exp` SMALLINT UNSIGNED NOT NULL DEFAULT '0'");
-$db->QueryMod("CREATE TABLE `pcpudata` (
-`id` SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY ,
-`quest` SMALLINT UNSIGNED NOT NULL ,
-`salute` MEDIUMINT UNSIGNED NOT NULL ,
-`energia` MEDIUMINT UNSIGNED NOT NULL ,
-`mana` MEDIUMINT UNSIGNED NOT NULL ,
-`attfisico` MEDIUMINT UNSIGNED NOT NULL ,
-`attmagico` MEDIUMINT UNSIGNED NOT NULL ,
-`diffisica` MEDIUMINT UNSIGNED NOT NULL ,
-`difmagica` MEDIUMINT UNSIGNED NOT NULL ,
-`agilita` MEDIUMINT UNSIGNED NOT NULL ,
-`velocita` MEDIUMINT UNSIGNED NOT NULL ,
-`intelligenza` MEDIUMINT UNSIGNED NOT NULL ,
-`destrezza` MEDIUMINT UNSIGNED NOT NULL ,
-`livello` SMALLINT UNSIGNED NOT NULL ,
-`eqcac` SMALLINT UNSIGNED NOT NULL DEFAULT '0',
-`eqarm` SMALLINT UNSIGNED NOT NULL DEFAULT '0',
-`eqscu` SMALLINT UNSIGNED NOT NULL DEFAULT '0'
+$db->QueryMod("CREATE TABLE `equipagcpu` (
+`cpuid` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`cac` SMALLINT UNSIGNED NOT NULL DEFAULT '0',
+`arm` SMALLINT UNSIGNED NOT NULL DEFAULT '0',
+`scu` SMALLINT UNSIGNED NOT NULL DEFAULT '0'
+) ENGINE = MYISAM");
+$db->QueryMod("CREATE TABLE `equipcpu` (
+`id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`oggid` SMALLINT UNSIGNED NOT NULL ,
+`cpuid` SMALLINT UNSIGNED NOT NULL ,
+`usura` SMALLINT UNSIGNED NOT NULL DEFAULT '0',
+`inuso` TINYINT( 1 ) UNSIGNED NOT NULL DEFAULT '0'
 ) ENGINE = MYISAM");
 
 /*$db->QueryMod("INSERT INTO `oggetti` (

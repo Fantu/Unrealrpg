@@ -16,6 +16,8 @@ class Combattente{
 	var $subtattica;
 	var $bonusexp;
 	var $plus;
+	var $salutei;
+	var $energiai;
 	function Combattente($id2,$nome2,$car2,$equip2,$tattica2,$subtattica2,$plus2){
 	$this->id=$id2;
 	$this->nome=$nome2;
@@ -28,6 +30,8 @@ class Combattente{
 	$this->subtattica=$subtattica2;
 	$this->bonusexp=0;
 	$this->plus=$plus2;
+	$this->salutei=$car2['saluteattuale'];
+	$this->energiai=$car2['energia'];
 	}
 } //fine classe Combattente
 
@@ -203,7 +207,7 @@ class Dati{
 	$chi2=2;
 	else
 	$chi2=1;
-	$exp=2*$turni;
+	$exp=1*$turni;
 	$exp+=$expb;
 	$exp=round(rand(($exp/100*95),$exp));
 	if($this->bexp($chi)==1){
@@ -272,6 +276,26 @@ class Dati{
 	$expb=floor($expb);
 	return $expb;
 	} //fine Checkeqipexp
+	
+	public function Checkturnexp($expb){
+	$percenergia=100/$this->car($chi,'energiamax')*$this->car($chi,'energia');
+	if ($percenergia<5)
+	$this->che[$chi]->esausto=1;
+	if ($this->car($chi,'saluteattuale')<1)
+	$this->che[$chi]->morto=1;
+	//energia
+	if( (($this->che[$chi]->energiai(1)-$this->car(1,'energia'))+($this->che[$chi]->energiai(2)-$this->car(2,'energia')))>100 )
+	$expb+=0.5;
+	//controllo difese
+	if( ($this->che[$chi]->salutei(2)-$this->car(2,'saluteattuale'))>5 )
+	$expb+=0.5;
+	if( ($this->che[$chi]->salutei(2)-$this->car(2,'saluteattuale'))>5 )
+	$expb+=0.5;
+	if( (($this->che[$chi]->salutei(2)-$this->car(2,'saluteattuale'))+($this->che[$chi]->salutei(2)-$this->car(2,'saluteattuale')))>30 )
+	$expb+=0.5;
+	$expb=floor($expb);
+	return $expb;
+	} //fine Checkturnexp
 	
 	public function Attaccovicino($att,$dif) {
 	global $db,$lang;
@@ -406,6 +430,7 @@ $dc->Aggiornastat(1);
 $dc->Aggiornastat(2);
 $dc->Controllastato(1);
 $dc->Controllastato(2);
+$expb+=$dc->Checkturnexp($expb);
 
 $turni++;
 $input.="---------------------------------<( ".($turni+1)." )>---------------------------------";

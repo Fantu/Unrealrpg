@@ -10,6 +10,9 @@ Legenda:<br />
 <p><strong>0.7.0</strong> (Non disponibile - In sviluppo)<br />
 + Iniziata creazione personaggi non comandati da utenti<br />
 </p>
+<p><strong>0.6.16</strong> (Non disponibile - In sviluppo)<br />
++ Ora lo svolgimento del combattimento in ogni "round" influenza maggiormente l'esperienza guadagnata<br />
+</p>
 <p><strong>0.6.15</strong> [R.1388] (17/07/08 - Beta)<br />
 + Aggiunti i link di sfida e scrivi messaggi nella visualizzazione dettagliata del personaggio<br />
 + Ora lo svolgimento del combattimento in ogni "round" influenza maggiormente l'esperienza guadagnata<br />
