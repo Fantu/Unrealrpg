@@ -279,7 +279,7 @@ class Dati{
 	
 	public function Checkturnexp($expb){
 	//energia
-	if( (($this->che[$chi]->energiai-$this->car(1,'energia'))+($this->che[$chi]->energiai)-$this->car(2,'energia')))>100 )
+	if( (($this->che[$chi]->energiai-$this->car(1,'energia'))+($this->che[$chi]->energiai)-$this->car(2,'energia'))>100 )
 	$expb+=0.5;
 	//controllo difese
 	if( ($this->che[$chi]->salutei-$this->car(2,'saluteattuale'))>5 )
