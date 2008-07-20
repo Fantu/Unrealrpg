@@ -197,6 +197,11 @@ class Dati{
 	$this->che[$chi]->tattica=$chiave;
 	}
 	}//per ogni tattica
+	if($this->tattica($chi,1)==3){
+	$prob=rand(1,5);
+	if($prob==1)
+	$this->che[$chi]->tattica=1;
+	}//se difesa prob di attacco
 	if($this->tattica($chi,1)==1)
 	$this->che[$chi]->subtattica==1;
 	} //fine Autotattic
@@ -207,8 +212,8 @@ class Dati{
 	$chi2=2;
 	else
 	$chi2=1;
-	$exp=1*$turni;
-	$exp+=$expb;
+	//$exp=1*$turni;
+	$exp=$expb;
 	$exp=round(rand(($exp/100*95),$exp));
 	if($this->bexp($chi)==1){
 	$exp-=6;
