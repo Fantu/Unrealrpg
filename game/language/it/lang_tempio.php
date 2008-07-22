@@ -17,6 +17,7 @@ $lang['Infedele']='Infedele';
 $lang['Ateo']='Ateo';
 $lang['Leale']='Leale';
 $lang['Credente']='Credente';
+$lang['Fedele']='Fedele';
 $lang['Devoto']='Devoto';
 $lang['Illuminato']='Illuminato';
 $lang['Pio']='Pio';
