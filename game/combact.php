@@ -10,15 +10,14 @@ $combactview=0;
 
 $outputsfida=$lang['nessuna_sfida'];
 if ($eventi['id']>0){
-$eventisfida=$db->QuerySelect("SELECT * FROM eventi WHERE userid='".$user['userid']."' LIMIT 1");
-if($eventisfida['tipo']==4 AND $eventisfida['type']==2){
-$sfidante=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$eventisfida['oggid']."'");
+if($evento['tipo']==4 AND $evento['type']==2){
+$sfidante=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$evento['oggid']."'");
 $outputsfida=sprintf($lang['rispondi_sfida'],$sfidante['username'])." - <a href=\"index.php?loc=combact&amp;do=rispsfida&amp;risp=0\">".$lang['Rifiuta']."</a> - <a href=\"index.php?loc=combact&amp;do=rispsfida&amp;risp=1\">".$lang['Accetta']."</a>";
-}elseif($eventisfida['tipo']==4 AND $eventisfida['type']==1){
-$sfidante=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$eventisfida['oggid']."'");
+}elseif($evento['tipo']==4 AND $evento['type']==1){
+$sfidante=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$evento['oggid']."'");
 $outputsfida=sprintf($lang['sfida_lanciata'],$sfidante['username'])." - <a href=\"index.php?loc=combact&amp;do=annullasfida\">".$lang['Annulla']."</a>";
-}elseif($eventisfida['tipo']==5){
-$filerep="inclusi/log/report/".$db->database."/".$eventisfida['battleid'].".log";
+}elseif($evento['tipo']==5){
+$filerep="inclusi/log/report/".$db->database."/".$evento['battleid'].".log";
 ob_start();
 include $filerep;
 $report=ob_get_contents();
@@ -26,17 +25,17 @@ ob_end_clean();
 $combactview=2;
 $titleoutputcombact=$lang['titolo_report_combattimento2'];
 $outputcombact="<table width=\"500\" align=\"center\">".$report."</table>";
-$batt=$db->QuerySelect("SELECT * FROM battle WHERE id='".$eventisfida['battleid']."' LIMIT 1");
+$batt=$db->QuerySelect("SELECT * FROM battle WHERE id='".$evento['battleid']."' LIMIT 1");
 $tattica=(int)$_GET['tattica'];
 $subtattica=(int)$_GET['subtatt'];
 if($tattica!=0){
 if($batt['attid']==$user['userid']){
-$db->QueryMod("UPDATE battle SET tatatt='".$tattica."',tatatt2='".$subtattica."' WHERE id='".$eventisfida['battleid']."' LIMIT 1");
+$db->QueryMod("UPDATE battle SET tatatt='".$tattica."',tatatt2='".$subtattica."' WHERE id='".$evento['battleid']."' LIMIT 1");
 }else{
-$db->QueryMod("UPDATE battle SET tatdif='".$tattica."',tatdif2='".$subtattica."' WHERE id='".$eventisfida['battleid']."' LIMIT 1");
+$db->QueryMod("UPDATE battle SET tatdif='".$tattica."',tatdif2='".$subtattica."' WHERE id='".$evento['battleid']."' LIMIT 1");
 }
 }//fine imposta tattica
-$batt=$db->QuerySelect("SELECT * FROM battle WHERE id='".$eventisfida['battleid']."' LIMIT 1");
+$batt=$db->QuerySelect("SELECT * FROM battle WHERE id='".$evento['battleid']."' LIMIT 1");
 if($batt['attid']==$user['userid']){
 $tattica=$batt['tatatt'];
 $subtattica=$batt['tatatt2'];
@@ -96,8 +95,7 @@ break;//fine sfidda
 case "rispsfida":
 $risp=(int)$_GET['risp'];
 if ($eventi['id']>0){
-$eventisfida=$db->QuerySelect("SELECT * FROM eventi WHERE userid='".$user['userid']."'");
-$idp=(int)$eventisfida['oggid'];
+$idp=(int)$evento['oggid'];
 $db->QueryMod("DELETE FROM eventi WHERE userid='".$user['userid']."'");
 $db->QueryMod("DELETE FROM eventi WHERE userid='".$idp."'");
 if($risp==1){
@@ -113,9 +111,8 @@ $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES
 break;//fine rispondi alla sfida
 case "annullasfida":
 if ($eventi['id']>0){
-$eventisfida=$db->QuerySelect("SELECT * FROM eventi WHERE userid='".$user['userid']."'");
-if($eventisfida['type']==1){
-$idp=(int)$eventisfida['oggid'];
+if($evento['type']==1){
+$idp=(int)$evento['oggid'];
 $db->QueryMod("DELETE FROM eventi WHERE userid='".$user['userid']."'");
 $db->QueryMod("DELETE FROM eventi WHERE userid='".$idp."'");
 echo "<script language=\"javascript\">window.location.href='index.php?loc=situazione'</script>";

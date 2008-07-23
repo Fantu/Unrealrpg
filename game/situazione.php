@@ -43,24 +43,23 @@ $newmsg="<a href=\"index.php?loc=messaggi\">".$lang['un_nuovo_msg']."</a>";
 $newmsg="<a href=\"index.php?loc=messaggi\">".sprintf($lang['nuovi_msg'],$snm['id'])."</a>";
 }//fine nuovi msg
 if($eventi['id']>0){
-	$eventi=$db->QuerySelect("SELECT * FROM eventi WHERE userid='".$user['userid']."' LIMIT 1");
-	if($eventi['tipo']==5){
-	$evento=$lang['eventi_dettagli'.$eventi['dettagli']];
+	if($evento['tipo']==5){
+	$event=$lang['eventi_dettagli'.$evento['dettagli']];
 	}else{
-	$evento=$lang['eventi_dettagli'.$eventi['dettagli']].date($lang['dataora'],($eventi['datainizio']+$eventi['secondi']));}
-	if($eventi['ore']>1)
-	$evento.=" ".sprintf($lang['ore_in_coda'],($eventi['ore']-1))." ";
-	if(($eventi['datainizio']+600)>$adesso AND $eventi['tipo']!=3){
+	$event=$lang['eventi_dettagli'.$evento['dettagli']].date($lang['dataora'],($evento['datainizio']+$evento['secondi']));}
+	if($evento['ore']>1)
+	$event.=" ".sprintf($lang['ore_in_coda'],($evento['ore']-1))." ";
+	if(($evento['datainizio']+600)>$adesso AND $evento['tipo']!=3){
 	if($_GET['annullaevento']==1){
 	$db->QueryMod("DELETE FROM eventi WHERE userid='".$user['userid']."'");
 	header("Location: index.php?loc=situazione");
 	exit();
 	}
-	if ($eventi['tipo']!=5 AND $eventi['tipo']!=3 AND $eventi['tipo']!=4)
-	$evento.=" <a href=\"index.php?loc=situazione&amp;annullaevento=1\">".$lang['Annulla']."</a>";}
+	if ($evento['tipo']!=5 AND $evento['tipo']!=3 AND $evento['tipo']!=4)
+	$event.=" <a href=\"index.php?loc=situazione&amp;annullaevento=1\">".$lang['Annulla']."</a>";}
 }
-if(!$evento)
-$evento=$lang['nessun_evento'];
+if(!$event)
+$event=$lang['nessun_evento'];
 $userlav=$db->QuerySelect("SELECT * FROM lavori WHERE userid='".$user['userid']."' LIMIT 1");
 if($user['plus']==0){$tempoproxlav=$game_proxlav_normal;}else{$tempoproxlav=$game_proxlav_plus;}
 $tempoproxlav=$tempoproxlav*$userlav['oreultimolav'];
@@ -68,8 +67,7 @@ if (($userlav['ultimolavoro']+$tempoproxlav)<$adesso){
 $proxlavdata=$lang['Adesso'];
 }else
 {$proxlavdata=date($lang['dataora'],($userlav['ultimolavoro']+$tempoproxlav));}
-$lavoroincorso=$db->QuerySelect("SELECT COUNT(*) AS id FROM eventi WHERE userid='".$user['userid']."' AND tipo='1'");
-if ($lavoroincorso['id']>0)
+if ($eventi['id']>0 AND $evento['tipo']==1)
 $proxlavdata=$lang['stai_gia_lavorando'];
 $proxlav=$lang['prossimo_lavoro'].$proxlavdata;
 $newscom=$db->QuerySelect("SELECT news,comunicazione FROM config LIMIT 1");

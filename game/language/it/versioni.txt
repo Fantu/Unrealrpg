@@ -13,6 +13,8 @@ Legenda:<br />
 <p><strong>0.6.16</strong> (Non disponibile - In sviluppo)<br />
 + Ora lo svolgimento del combattimento in ogni "round" influenza maggiormente l'esperienza guadagnata<br />
 + Migliorato il sistema automatico di selezione delle tattiche<br />
++ Se ti hanno sfidato o hai combattimenti in corso Combattimenti nel menu viene evidenziato<br />
++ Vari miglioramenti di sistema a sistema di base interno, Combattimenti, Situazione<br />
 # Modificato il guadagno di esperienza nei combattimenti, reso più equilibrato<br />
 - Correzione bug minori<br />
 </p>

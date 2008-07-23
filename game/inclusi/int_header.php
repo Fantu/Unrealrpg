@@ -72,7 +72,9 @@ if ($adesso>($usercar['recuperoenergia']+60)){
 	}
 	else{$db->QueryMod("UPDATE caratteristiche SET recuperoenergia='".$adesso."' WHERE userid='".$user['userid']."'");}
 }//fine recupero energia con tempo
-}//fine se ci sono eventi in corso
+}else{/*fine se non ci sono eventi in corso*/
+$evento=$db->QuerySelect("SELECT * FROM eventi WHERE userid='".$user['userid']."' LIMIT 1");
+}//se ci sono eventi in corso
 }//fine se personaggio creato
 require_once('template/int_header.php');
 } //fine if userid
