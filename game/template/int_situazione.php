@@ -14,7 +14,7 @@ echo "<span><strong>".$lang['comunicazione']."</strong>".$newscom['comunicazione
 <div align="center">
 <?php echo $newmsg; ?><br />
 <br />
-<?php echo $evento; ?><br />
+<?php echo $event; ?><br />
 </div>
 <br />
 <?php echo $lang['Personaggio']; ?>: <?php echo $user['username']; ?><br />
