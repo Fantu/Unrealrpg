@@ -40,4 +40,6 @@ $lang['tattica_selezionata']='Tattica selezionata: %s';
 $lang['equip_di']='%s di livello %s, equipaggiamento: %s';
 $lang['parata_con_scudo']='%s si para con lo scudo.';
 $lang['colpo_potente']='%s infligge un colpo potente.';
+
+$lang['nomepcpu1']='CpuProva';
 ?>

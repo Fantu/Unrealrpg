@@ -29,6 +29,10 @@ $db->QueryMod("CREATE TABLE `unrealff_rpg999`.`carcpu` (
 `intelligenza` MEDIUMINT UNSIGNED NOT NULL ,
 `destrezza` MEDIUMINT UNSIGNED NOT NULL
 ) ENGINE = MYISAM");
+$db->QueryMod("INSERT INTO `pcpudata` (`id` ,`quest` ,`salute` ,`energia` ,`mana` ,`attfisico` ,`attmagico` ,`diffisica` ,`difmagica` ,`agilita` ,`velocita` ,`intelligenza` ,`destrezza` ,`livello` ,`eqcac` ,`eqarm` ,`eqscu`)
+VALUES 
+(NULL , '0', '100', '1000', '50', '200', '50', '50', '200', '150', '150', '100', '100', '1', '64', '56', '58');
+");
 
 /*$db->QueryMod("INSERT INTO `oggetti` (
 `id` ,
