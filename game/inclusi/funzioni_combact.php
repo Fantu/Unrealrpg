@@ -162,7 +162,7 @@ class Dati{
 	} //fine Impobexp
 	
 	public function Controlloogg($chi) {
-	$oggpersi=Checkusurarottura($this->id($chi));
+	$oggpersi=Checkusurarottura($this->id($chi),0);//0=utente 1=cpu
 	if($oggpersi){
 	$dato.=$this->nome($chi)."<br/>".$oggpersi;
 	}
