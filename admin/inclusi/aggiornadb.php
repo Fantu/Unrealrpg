@@ -3,25 +3,31 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	header("Location: ../../index.php?error=16");
 	exit();
 }
-$newversion="0.6.16";
+$newversion="0.7.0";
 foreach($game_server as $chiave=>$elemento){
 if($chiave!=999){
 $db->database=$chiave;
 $check=$db->QuerySelect("SELECT version FROM config WHERE id=".$chiave);
 if($check['version']!=$newversion AND $newversion==$game_revision){
 
-$db->QueryMod("CREATE TABLE `equipagcpu` (
+$db->QueryMod("CREATE TABLE `unrealff_rpg999`.`carcpu` (
 `cpuid` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY ,
-`cac` SMALLINT UNSIGNED NOT NULL DEFAULT '0',
-`arm` SMALLINT UNSIGNED NOT NULL DEFAULT '0',
-`scu` SMALLINT UNSIGNED NOT NULL DEFAULT '0'
-) ENGINE = MYISAM");
-$db->QueryMod("CREATE TABLE `equipcpu` (
-`id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY ,
-`oggid` SMALLINT UNSIGNED NOT NULL ,
-`cpuid` SMALLINT UNSIGNED NOT NULL ,
-`usura` SMALLINT UNSIGNED NOT NULL DEFAULT '0',
-`inuso` TINYINT( 1 ) UNSIGNED NOT NULL DEFAULT '0'
+`pid` SMALLINT UNSIGNED NOT NULL ,
+`livello` SMALLINT UNSIGNED NOT NULL ,
+`salute` MEDIUMINT UNSIGNED NOT NULL ,
+`saluteattuale` MEDIUMINT UNSIGNED NOT NULL ,
+`energia` MEDIUMINT UNSIGNED NOT NULL ,
+`energiamax` MEDIUMINT UNSIGNED NOT NULL ,
+`mana` MEDIUMINT UNSIGNED NOT NULL ,
+`manarimasto` MEDIUMINT UNSIGNED NOT NULL ,
+`attfisico` MEDIUMINT UNSIGNED NOT NULL ,
+`attmagico` MEDIUMINT UNSIGNED NOT NULL ,
+`diffisica` MEDIUMINT UNSIGNED NOT NULL ,
+`difmagica` MEDIUMINT UNSIGNED NOT NULL ,
+`agilita` MEDIUMINT UNSIGNED NOT NULL ,
+`velocita` MEDIUMINT UNSIGNED NOT NULL ,
+`intelligenza` MEDIUMINT UNSIGNED NOT NULL ,
+`destrezza` MEDIUMINT UNSIGNED NOT NULL
 ) ENGINE = MYISAM");
 
 /*$db->QueryMod("INSERT INTO `oggetti` (

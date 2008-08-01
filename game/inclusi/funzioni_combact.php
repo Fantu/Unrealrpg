@@ -118,6 +118,20 @@ class Dati{
 	return $dato;
 	} //fine pvar
 	
+	public function Viewequip($chi) {
+	global $lang;
+	if($this->equip($chi,'cac')!=0 OR $this->equip($chi,'arm')!=0 OR $this->equip($chi,'scu')!=0){
+	if($this->equip($chi,'cac')!=0)
+	$equip.=" ".$lang['oggetto'.$this->equip($chi,'cac').'_nome'];
+	if($this->equip($chi,'arm')!=0)
+	$equip.=" ".$lang['oggetto'.$this->equip($chi,'arm').'_nome'];
+	if($this->equip($chi,'scu')!=0)
+	$equip.=" ".$lang['oggetto'.$this->equip($chi,'scu').'_nome'];
+	}else{$equip=$lang['nessuno'];}
+	$input=sprintf($lang['equip_di'],$this->nome($chi),$this->car($chi,'livello'),$equip)."<br/>";
+	return $input;
+	} //fine Viewequip
+	
 	//----------------------------
 	//  IMPOSTAZIONE DATI
 	//----------------------------
@@ -234,20 +248,6 @@ class Dati{
 	$input=sprintf($lang['exp_guadagnata'],$this->nome($chi),$exp)."<br/>";
 	return $input;
 	} //fine Guadagnaexp
-	
-	public function Viewequip($chi) {
-	global $lang;
-	if($this->equip($chi,'cac')!=0 OR $this->equip($chi,'arm')!=0 OR $this->equip($chi,'scu')!=0){
-	if($this->equip($chi,'cac')!=0)
-	$equip.=" ".$lang['oggetto'.$this->equip($chi,'cac').'_nome'];
-	if($this->equip($chi,'arm')!=0)
-	$equip.=" ".$lang['oggetto'.$this->equip($chi,'arm').'_nome'];
-	if($this->equip($chi,'scu')!=0)
-	$equip.=" ".$lang['oggetto'.$this->equip($chi,'scu').'_nome'];
-	}else{$equip=$lang['nessuno'];}
-	$input=sprintf($lang['equip_di'],$this->nome($chi),$this->car($chi,'livello'),$equip)."<br/>";
-	return $input;
-	} //fine Viewequip
 	
 	public function Checkrep($chi) {
 	if($chi==1)
