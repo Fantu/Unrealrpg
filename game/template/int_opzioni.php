@@ -56,3 +56,12 @@ if($user['puntiplus']>99){ ?>
 <?php echo $linkref; ?><br />
 <br />
 <?php echo $newsletters; ?><br />
+<br />
+<?php echo $lang['cambia_password']; ?><br />
+<form action="" method="post" name="cambiapsw">
+<?php echo $lang['vecchia_password']; ?><input name="vpassword" type="password" maxlength="20" /><br />
+<?php echo $lang['nuova_password']; ?><input name="npassword" type="password" maxlength="20" /><br />
+<?php echo $lang['ripeti_password']; ?><input name="rpassword" type="password" maxlength="20" /><br />
+<input type="submit" name="cambiap" value="<?php echo $lang['cambia_password']; ?>" />
+</form>
+<br />

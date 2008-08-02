@@ -7,9 +7,8 @@ require('language/'.$language.'/lang_opzioni.php');
 if (isset($_POST['cambias'])){
 $errore="";
 $sesso=$_POST['sesso'];
-if (!is_numeric($sesso))
-$errore .= $lang['opzioni_error1']."<br />";
-
+if(!is_numeric($sesso))
+$errore.=$lang['opzioni_error1']."<br />";
 if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
 else {
@@ -17,6 +16,26 @@ $db->QueryMod("UPDATE caratteristiche SET sesso='".$sesso."' WHERE userid='".$us
 $outputerrori="<span>".$lang['sesso_modificato']."</span><br /><br />";
 }
 }//fine cambia sesso
+
+if (isset($_POST['cambiap'])){
+$errore="";
+$vpassword=htmlspecialchars($_POST['vpassword'],ENT_QUOTES);
+$vpass=md5($vpassword);
+$npassword=htmlspecialchars($_POST['npassword'],ENT_QUOTES);
+$rpassword=htmlspecialchars($_POST['rpassword'],ENT_QUOTES);
+$npass=md5($npassword);
+if($vpass!=$user['password'])
+$errore.=$lang['opzioni_error3']."<br />";
+if($npassword!=$rpassword)
+$errore.=$lang['opzioni_error4']."<br />";
+if($errore){
+	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
+else {
+$db->QueryMod("UPDATE utenti SET password='".$npass."' WHERE userid='".$user['userid']."'");
+header("Location: ../index.php");
+exit();
+}
+}//fine cambia password
 
 switch($_GET['attivaplus']){
 case "1":

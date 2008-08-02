@@ -18,7 +18,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 		  </tr>
 		  <tr>
 			<td><?php echo $lang['Password']; ?></td>
-			<td><input name="login_password" type="password" maxlength="25" /></td>
+			<td><input name="login_password" type="password" maxlength="20" /></td>
 			<td><input name="Submit" type="submit" value="<?php echo $lang['Entra']; ?>" /></td>
 		  </tr>
 		</table>

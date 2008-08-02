@@ -9,6 +9,7 @@ Legenda:<br />
 </p>
 <p><strong>0.7.0</strong> (Non disponibile - In sviluppo)<br />
 + Iniziata creazione personaggi non comandati da utenti<br />
++ Aggiunto il cambio di password in Opzioni<br />
 </p>
 <p><strong>0.6.16</strong> [R.1399] (27/07/08 - Beta)<br />
 + Ora lo svolgimento del combattimento in ogni "round" influenza maggiormente l'esperienza guadagnata<br />
