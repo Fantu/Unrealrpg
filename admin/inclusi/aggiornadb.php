@@ -95,7 +95,7 @@ for($i=1;$i<=$livello-1;$i++){
 $expinc=1+floor($i/2);
 $exp+=$expinc*(120*$i);
 }
-$db->QueryMod("UPDATE caratteristiche SET agilita='".$agilita."',attfisico='".$attfisico."',attmagico='".$attmagico."',diffisica='".$diffisica."',difmagica='".$difmagica."',mana='".$mana."',velocita='".$velocita."',intelligenza='".$intelligenza."',destrezza='".$destrezza."',livello='1',exp=exp+'".$exp."' WHERE userid='".$var['userid']."'");
+$db->QueryMod("UPDATE caratteristiche SET agilita='".$agilita."',attfisico='".$attfisico."',attmagico='".$attmagico."',diffisica='".$diffisica."',difmagica='".$difmagica."',mana='".$mana."',manarimasto='".$mana."',velocita='".$velocita."',intelligenza='".$intelligenza."',destrezza='".$destrezza."',livello='1',exp=exp+'".$exp."',salute='100',saluteattuale='100',energia='1000',energiamax='1000' WHERE userid='".$var['userid']."'");
 }//se livello maggiore di 1
 }//per ogni utente
 // FINE SISTEMAZIONE CARATTERISTICHE E RITORNO A LIVELLO 1

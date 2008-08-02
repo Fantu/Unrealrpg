@@ -24,13 +24,13 @@ $somma=0;
 $troppi=0;
 foreach($caratteristichelup as $chiave=>$elemento){
 $carattuale=(int)$_POST[$caratteristichelup[$chiave]];
-if($carattuale>10)
+if($carattuale>2)
 $troppi=1;
 $somma+=$carattuale;
 }//per caratteristica
 if ($troppi==1)
 $errore.=$lang['levelup_errore2'];
-if ($somma!=20)
+if ($somma!=4)
 $errore.=$lang['levelup_errore3'];
 if ($eventi['id']>0)
 $errore.=$lang['global_errore1'];
