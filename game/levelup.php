@@ -44,6 +44,7 @@ foreach($caratteristichelup as $chiave=>$elemento){
 $carattuale=(int)$_POST[$caratteristichelup[$chiave]];
 if($carattuale>0){
 if($usercar[$caratteristichelup[$chiave]]<200){$incremento=5;}else{$incremento=10;}
+$incremento=$incremento*$carattuale;
 $setcaratteristiche.=",".$caratteristichelup[$chiave]."=".$caratteristichelup[$chiave]."+".$incremento;
 }
 }//per caratteristica
