@@ -91,7 +91,7 @@ $chiave=$car['classe'];
 		$destrezza=$classi['destrezza'][$chiave];
 $livello=$car['livello'];
 $exp=0;
-for($i=1;$i=$livello-1;$i++){
+for($i=1;$i<=$livello-1;$i++){
 $expinc=1+floor($i/2);
 $exp+=$expinc*(120*$i);
 }
