@@ -79,16 +79,16 @@ while($var=$db->QueryCicloResult($a))
 {
 $car=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$var['userid']."'");
 if($car['livello']>1){
-$chiave=$car['classe'];
-		$agilita=$classi['agilita'][$chiave];
-		$attfisico=$classi['attfisico'][$chiave];
-		$attmagico=$classi['attmagico'][$chiave];
-		$diffisica=$classi['diffisica'][$chiave];
-		$difmagica=$classi['difmagica'][$chiave];
-		$mana=$classi['mana'][$chiave];
-		$velocita=$classi['velocita'][$chiave];
-		$intelligenza=$classi['intelligenza'][$chiave];
-		$destrezza=$classi['destrezza'][$chiave];
+$chiave2=$car['classe'];
+		$agilita=$classi['agilita'][$chiave2];
+		$attfisico=$classi['attfisico'][$chiave2];
+		$attmagico=$classi['attmagico'][$chiave2];
+		$diffisica=$classi['diffisica'][$chiave2];
+		$difmagica=$classi['difmagica'][$chiave2];
+		$mana=$classi['mana'][$chiave2];
+		$velocita=$classi['velocita'][$chiave2];
+		$intelligenza=$classi['intelligenza'][$chiave2];
+		$destrezza=$classi['destrezza'][$chiave2];
 $livello=$car['livello'];
 $exp=0;
 for($i=1;$i<=$livello-1;$i++){
