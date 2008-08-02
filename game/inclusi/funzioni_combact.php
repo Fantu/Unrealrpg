@@ -227,7 +227,7 @@ class Dati{
 	else
 	$chi2=1;
 	//$exp=1*$turni;
-	$exp=$expb;
+	$exp=5+$expb;
 	$exp=round(rand(($exp/100*95),$exp));
 	if($this->bexp($chi)==1){
 	$exp-=6;
