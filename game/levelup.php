@@ -37,13 +37,13 @@ $errore.=$lang['global_errore1'];
 if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
 else{
-$salute=round($usercar['salute']/100*$salute);
-$energia=round($usercar['energiamax']/100*$energia);
+$salute=round(100/100*$salute);
+$energia=round(1000/100*$energia);
 $mana=round($usercar['mana']/100*$mana);
 foreach($caratteristichelup as $chiave=>$elemento){
 $carattuale=(int)$_POST[$caratteristichelup[$chiave]];
 if($carattuale>0){
-$incremento=round($usercar[$caratteristichelup[$chiave]]/100*$carattuale);
+if($usercar[$caratteristichelup[$chiave]]<200){$incremento=5;}else{$incremento=10;}
 $setcaratteristiche.=",".$caratteristichelup[$chiave]."=".$caratteristichelup[$chiave]."+".$incremento;
 }
 }//per caratteristica

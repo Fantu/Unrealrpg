@@ -3,14 +3,15 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	header("Location: ../../index.php?error=16");
 	exit();
 }
-$newversion="0.7.0";
+$newversion="0.6.17";
 foreach($game_server as $chiave=>$elemento){
-if($chiave!=999){
+if($chiave==999){
 $db->database=$chiave;
 $check=$db->QuerySelect("SELECT version FROM config WHERE id=".$chiave);
 if($check['version']!=$newversion AND $newversion==$game_revision){
 
-$db->QueryMod("CREATE TABLE `unrealff_rpg999`.`carcpu` (
+/*
+$db->QueryMod("CREATE TABLE `carcpu` (
 `cpuid` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY ,
 `pid` SMALLINT UNSIGNED NOT NULL ,
 `livello` SMALLINT UNSIGNED NOT NULL ,
@@ -33,6 +34,7 @@ $db->QueryMod("INSERT INTO `pcpudata` (`id` ,`quest` ,`salute` ,`energia` ,`mana
 VALUES 
 (NULL , '0', '100', '1000', '50', '200', '50', '50', '200', '150', '150', '100', '100', '1', '64', '56', '58');
 ");
+*/
 
 /*$db->QueryMod("INSERT INTO `oggetti` (
 `id` ,
@@ -69,6 +71,36 @@ VALUES
 	{
 		$db->QueryMod("INSERT INTO equipaggiamento (userid) VALUES ('".$var['userid']."')");
 	}*/
+
+// INIZIO SISTEMAZIONE CARATTERISTICHE E RITORNO A LIVELLO 1
+require('../game/inclusi/personaggio.php');
+$a=$db->QueryCiclo("SELECT userid FROM utenti WHERE conferma='1' AND personaggio='1'");
+while($var=$db->QueryCicloResult($a))
+{
+$car=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$var['userid']."'");
+if($car['livello']>1){
+$chiave=$car['classe'];
+		$agilita=$classi['agilita'][$chiave];
+		$attfisico=$classi['attfisico'][$chiave];
+		$attmagico=$classi['attmagico'][$chiave];
+		$diffisica=$classi['diffisica'][$chiave];
+		$difmagica=$classi['difmagica'][$chiave];
+		$mana=$classi['mana'][$chiave];
+		$velocita=$classi['velocita'][$chiave];
+		$intelligenza=$classi['intelligenza'][$chiave];
+		$destrezza=$classi['destrezza'][$chiave];
+$livello=$car['livello'];
+$exp=0;
+for($i=1;$i=$livello-1;$i++){
+$expinc=1+floor($i/2);
+$exp+=$expinc*(120*$i);
+}
+$db->QueryMod("UPDATE caratteristiche SET agilita='".$agilita."',attfisico='".$attfisico."',attmagico='".$attmagico."',diffisica='".$diffisica."',difmagica='".$difmagica."',mana='".$mana."',velocita='".$velocita."',intelligenza='".$intelligenza."',destrezza='".$destrezza."',livello='1',exp=exp+'".$exp."' WHERE userid='".$var['userid']."'");
+}//se livello maggiore di 1
+}//per ogni utente
+// FINE SISTEMAZIONE CARATTERISTICHE E RITORNO A LIVELLO 1
+	
+	
 
 $db->QueryMod("UPDATE `config` SET version='".$newversion."' WHERE id=".$chiave);
 echo sprintf($lang['aggiornato_db_server'],$chiave,$newversion)."<br />";
