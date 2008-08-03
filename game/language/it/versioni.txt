@@ -16,6 +16,7 @@ Legenda:<br />
 + L'incremento di salute ed energia nell'incremento di livello ora non si basano più sui valori attuali ma a quelli iniziali<br />
 + Vari miglioramenti di sistema a sistema di combattimento, sistema di controllo usura/rottura degli oggetti<br />
 # Modificato il guadagno di esperienza nei combattimenti, reso più equilibrato<br />
+# Modificate le fasce di fede visuabili in Tempio, eliminato leale e inserito praticante<br />
 </p>
 <p><strong>0.6.16</strong> [R.1399] (27/07/08 - Beta)<br />
 + Ora lo svolgimento del combattimento in ogni "round" influenza maggiormente l'esperienza guadagnata<br />
