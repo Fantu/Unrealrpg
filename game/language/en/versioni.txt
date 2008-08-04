@@ -10,7 +10,7 @@ Legenda:<br />
 <p><strong>0.7.0</strong> (Non disponibile - In sviluppo)<br />
 + Iniziata creazione personaggi non comandati da utenti<br />
 </p>
-<p><strong>0.6.17</strong> (Non disponibile - In sviluppo)<br />
+<p><strong>0.6.17</strong> [R.1412] (04/08/08 - Beta)<br />
 + Aggiunto il cambio di password in Opzioni<br />
 + Aggiunta la modalità vacanza in Opzioni<br />
 + Se la modalità vacanza è attiva l'account non viene cancellato per inattività<br />
