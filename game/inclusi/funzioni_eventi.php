@@ -244,7 +244,7 @@ $db->QueryMod("INSERT INTO inoggetti (oggid,userid) VALUES ('".$minerali[0]."','
 }
 $testo.=sprintf($lang['report_lavminieravecchia_materiali_si'],$quantimin,$minerale)."<br />";
 }//fine trovato minerale
-$oggpersi=Checkusurarottura($userid);
+$oggpersi=Checkusurarottura($userid,0);
 $testo="<span>".$testo.$oggpersi."</span>";
 $titolo=$lang['report_lavoro_vecchia'];
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");
@@ -374,7 +374,7 @@ $testo3=sprintf($lang['report_lavlab_pozione_si'],$nomepozione)."<br />";
 }//fine pozione riuscita
 $testo=sprintf($lang['report_lavlabalc'],$exp,$energia,$salute,$mana,$costo)."<br />";
 $testo.=$testo3;
-$oggpersi=Checkusurarottura($userid);
+$oggpersi=Checkusurarottura($userid,0);
 $testo="<span>".$testo.$oggpersi."</span>";
 $titolo=$lang['report_lavoro_labalc'];
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");
@@ -467,7 +467,7 @@ $db->QueryMod("INSERT INTO inoggetti (oggid,userid) VALUES ('".$oggettodf['id'].
 $nomeoggetto=$lang['oggetto'.$oggettodf['id'].'_nome'];
 $testo.=sprintf($lang['report_lavfuc_forgia_si'],$nomeoggetto)."<br />";
 }//fine forgia riuscita
-$oggpersi=Checkusurarottura($userid);
+$oggpersi=Checkusurarottura($userid,0);
 $testo="<span>".$testo.$oggpersi."</span>";
 $titolo=$lang['report_lavoro_fucina_fab'];
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");

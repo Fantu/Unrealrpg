@@ -9,6 +9,10 @@ Legenda:<br />
 </p>
 <p><strong>0.7.0</strong> (Non disponibile - In sviluppo)<br />
 + Iniziata creazione personaggi non comandati da utenti<br />
+# Rivisto il lavoro in Laboratorio come alchimista, reso più equilibrato<br />
+</p>
+<p><strong>0.6.17.1</strong> (04/08/08 - Beta)<br />
+- Corrette alcune dimenticanze per la modifica di controllo usura/rottura oggetti<br />
 </p>
 <p><strong>0.6.17</strong> [R.1412] (04/08/08 - Beta)<br />
 + Aggiunto il cambio di password in Opzioni<br />
