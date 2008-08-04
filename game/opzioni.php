@@ -58,6 +58,12 @@ $db->QueryMod("UPDATE utenti SET mailnews='".$news."' WHERE userid='".$user['use
 $user=$db->QuerySelect("SELECT * FROM utenti WHERE userid='".$user['userid']."' LIMIT 1");
 }
 
+$vac=(int)$_GET['vacanza'];
+if(isset($_GET['vacanza']) AND $vac!=$user['vacanza']){
+$db->QueryMod("UPDATE utenti SET vacanza='".$vac."' WHERE userid='".$user['userid']."' LIMIT 1");
+$user=$db->QuerySelect("SELECT * FROM utenti WHERE userid='".$user['userid']."' LIMIT 1");
+}
+
 if(!empty($tattivazioneplus)){
 if ($user['puntiplus']<$punti)
 $errore .= $lang['opzioni_error2']."<br />";
@@ -79,6 +85,11 @@ if($user['mailnews']==0)
 $newsletters=$lang['newsletter_disattiva']." <a href=\"index.php?loc=opzioni&amp;newsletter=1\">".$lang['attiva']."</a>";
 else
 $newsletters=$lang['newsletter_attiva']." <a href=\"index.php?loc=opzioni&amp;newsletter=0\">".$lang['disattiva']."</a>";
+
+if($user['vacanza']==0)
+$vacanza=$lang['vacanza_disattiva']." <a href=\"index.php?loc=opzioni&amp;vacanza=1\">".$lang['attiva']."</a>";
+else
+$vacanza=$lang['vacanza_attiva']." <a href=\"index.php?loc=opzioni&amp;vacanza=0\">".$lang['disattiva']."</a>";
 
 require('inclusi/personaggio.php');
 require('template/int_opzioni.php');

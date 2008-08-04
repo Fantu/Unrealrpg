@@ -12,9 +12,13 @@ Legenda:<br />
 </p>
 <p><strong>0.6.17</strong> (Non disponibile - In sviluppo)<br />
 + Aggiunto il cambio di password in Opzioni<br />
++ Aggiunta la modalità vacanza in Opzioni<br />
++ Se la modalità vacanza è attiva l'account non viene cancellato per inattività<br />
 + Rifatto l'incremento delle caratteristiche, ora sono 4 punti di cui massimo 2 ad unica caratteristica i quali ogniuno di essi aumenta la caratteristica di 5 se essa è minore di 200 altrimenti di 10<br />
 + L'incremento di salute ed energia nell'incremento di livello ora non si basano più sui valori attuali ma a quelli iniziali<br />
 + Vari miglioramenti di sistema a sistema di combattimento, sistema di controllo usura/rottura degli oggetti<br />
+# Modificato il guadagno di esperienza nei combattimenti, reso più equilibrato<br />
+# Modificate le fasce di fede visuabili in Tempio, eliminato leale e inserito praticante<br />
 </p>
 <p><strong>0.6.16</strong> [R.1399] (27/07/08 - Beta)<br />
 + Ora lo svolgimento del combattimento in ogni "round" influenza maggiormente l'esperienza guadagnata<br />

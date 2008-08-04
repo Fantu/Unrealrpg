@@ -31,8 +31,8 @@ $avviso=$adesso+604800;
 $db->QueryMod("UPDATE utenti SET avvinattivo='".$avviso."' WHERE userid='".$chi['userid']."'");
 }
 $tempo=$adesso-2592000;
-$dacanc=$db->QuerySelect("SELECT count(userid) AS id FROM utenti WHERE ultimologin<'".$tempo."'");
-$dacanc=$db->QueryCiclo("SELECT * FROM utenti WHERE ultimologin<'".$tempo."'");
+$dacanc=$db->QuerySelect("SELECT count(userid) AS id FROM utenti WHERE ultimologin<'".$tempo."' AND vacanza='0'");
+$dacanc=$db->QueryCiclo("SELECT * FROM utenti WHERE ultimologin<'".$tempo."' AND vacanza='0'");
 while($chi=$db->QueryCicloResult($dacanc)) {
 $messaggio=sprintf($lang['mail_cancellato_inattivita'],$chi['username'],$game_name,$game_server[$chi['server']],$game_name);
 mail($chi['email'],$lang['Account_cancellato'],$messaggio,$game_intestazione_mail);

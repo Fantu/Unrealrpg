@@ -22,4 +22,6 @@ $lang['cambia_password']='Cambia Password';
 $lang['vecchia_password']='Vecchia Password';
 $lang['nuova_password']='Nuova Password';
 $lang['ripeti_password']='Ripeti Password';
+$lang['vacanza_disattiva']='Modalità vacanza disattiva';
+$lang['vacanza_attiva']='Modalità vacanza attiva';
 ?>

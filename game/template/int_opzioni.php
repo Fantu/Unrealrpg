@@ -57,6 +57,8 @@ if($user['puntiplus']>99){ ?>
 <br />
 <?php echo $newsletters; ?><br />
 <br />
+<?php echo $vacanza; ?><br />
+<br />
 <?php echo $lang['cambia_password']; ?><br />
 <form action="" method="post" name="cambiapsw">
 <?php echo $lang['vecchia_password']." "; ?><input name="vpassword" type="password" maxlength="20" /><br />

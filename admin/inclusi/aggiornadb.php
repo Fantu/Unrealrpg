@@ -5,12 +5,11 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 }
 $newversion="0.6.17";
 foreach($game_server as $chiave=>$elemento){
-if($chiave==999){
+if($chiave!=999){
 $db->database=$chiave;
 $check=$db->QuerySelect("SELECT version FROM config WHERE id=".$chiave);
 if($check['version']!=$newversion AND $newversion==$game_revision){
 
-/*
 $db->QueryMod("CREATE TABLE `carcpu` (
 `cpuid` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY ,
 `pid` SMALLINT UNSIGNED NOT NULL ,
@@ -34,7 +33,7 @@ $db->QueryMod("INSERT INTO `pcpudata` (`id` ,`quest` ,`salute` ,`energia` ,`mana
 VALUES 
 (NULL , '0', '100', '1000', '50', '200', '50', '50', '200', '150', '150', '100', '100', '1', '64', '56', '58');
 ");
-*/
+$db->QueryMod("ALTER TABLE `utenti` ADD `vacanza` TINYINT( 1 ) UNSIGNED NOT NULL DEFAULT '0'");
 
 /*$db->QueryMod("INSERT INTO `oggetti` (
 `id` ,
