@@ -9,6 +9,7 @@ Legenda:<br />
 </p>
 <p><strong>0.7.0</strong> (Non disponibile - In sviluppo)<br />
 + Iniziata creazione personaggi non comandati da utenti<br />
+# Portato il ricavo della vendita degli oggetti dal 50% al 75%<br />
 # Rivisto il lavoro in Laboratorio come alchimista, reso più equilibrato<br />
 </p>
 <p><strong>0.6.17.1</strong> (04/08/08 - Beta)<br />
