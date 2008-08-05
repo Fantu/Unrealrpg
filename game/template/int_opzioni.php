@@ -53,7 +53,7 @@ if($user['puntiplus']>99){ ?>
 <br />
 <br />
 <?php echo sprintf($lang['desc_link_refer'],$game_name,$game_server[$user['server']]); ?><br />
-<?php echo $linkref; ?><br />
+<?php echo "<blockquote>".$linkref."</blockquote>"; ?><br />
 <br />
 <?php echo $newsletters; ?><br />
 <br />
