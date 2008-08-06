@@ -15,6 +15,9 @@ Legenda:<br />
 # Rivisto il lavoro in Laboratorio come alchimista, reso più equilibrato<br />
 - Corretti bug minori<br />
 </p>
+<p><strong>0.6.17.2</strong> (06/08/08 - Beta)<br />
+- Corretto un bug nel sistema di combattimento<br />
+</p>
 <p><strong>0.6.17.1</strong> (04/08/08 - Beta)<br />
 - Corrette alcune dimenticanze per la modifica di controllo usura/rottura oggetti<br />
 </p>
