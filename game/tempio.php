@@ -4,6 +4,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	exit();
 }
 require('language/'.$language.'/lang_tempio.php');
+$resuscita=$user['resuscita'];
 if (isset($_POST['prega'])){
 $errore="";
 $ore=(int)$_POST['ore'];
@@ -29,7 +30,7 @@ $errore="";
 $paga=100;
 if ($user['monete']<$paga)
 $errore.=$lang['tempio_errore3'];
-if ($user['resuscita']>0)
+if ($resuscita>0)
 $errore.=$lang['tempio_errore4'];
 if ($eventi['id']>0)
 $errore.=$lang['global_errore1'];
@@ -37,6 +38,7 @@ if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
 else {
 $db->QueryMod("UPDATE utenti SET monete=monete-'".$paga."',resuscita='1' WHERE userid='".$user['userid']."'");
+$resuscita=1;
 }
 }//fine chierici
 

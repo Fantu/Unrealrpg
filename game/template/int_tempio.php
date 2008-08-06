@@ -37,7 +37,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <br />
 <?php echo $lang['desc_tempio_chierici']; ?>
 <br />
-<?php if($user['resuscita']=='0'){ ?>
+<?php if($resuscita=='0'){ ?>
 <form action="" method="post" name="tempiochierici">
 <table border="0">
 <tr>
