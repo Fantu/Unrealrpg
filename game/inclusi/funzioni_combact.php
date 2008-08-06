@@ -348,7 +348,7 @@ class Dati{
 	$probps=rand(0,30);}else{$probps=rand(0,90);}
 	if($this->equip($dif,'scu')!=0 AND $probps<20 AND $this->esausto($dif)==0){
 	if($scudo['energia']<=$this->car($dif,'energia')){
-	$pscudo=" ".sprintf($lang['parata_con_scudo'],$this->nome($dif));
+	$pscudo=", ".sprintf($lang['parata_con_scudo'],$this->nome($dif));
 	$prob=10;
 	if($this->tattica($dif,1)==3)
 	$prob=50;
@@ -366,9 +366,9 @@ class Dati{
 	$probpot+=3;
 	if($probpot>=10){
 	$danno+=round($danno/2);
-	$potente=" ".sprintf($lang['colpo_potente'],$this->nome($att));
+	$potente=$lang['colpo_potente'];
 	}//se colpo potente
-	$input=sprintf($lang['danno_att_vicino'],$this->nome($att),$this->nome($dif),$nomearma,$danno).$potente.$pscudo."<br/>";
+	$input=sprintf($lang['danno_att_vicino'],$this->nome($att),$nomearma).$potente.$pscudo.", ".sprintf($lang['danni_subiti'],$this->nome($dif),$danno)."<br/>";
 	$this->Modsalute($dif,$danno);
 	}else{
 	$input=sprintf($lang['niente_att_vicino'],$this->nome($att),$this->nome($dif),$nomearma)."<br/>";

@@ -11,7 +11,7 @@ Legenda:<br />
 + Iniziata creazione personaggi non comandati da utenti<br />
 </p>
 <p><strong>0.6.18</strong> (Non disponibile - In sviluppo)<br />
-+ Vari miglioramenti di sistema a Tempio, lavoro come Alchimista<br />
++ Vari miglioramenti di sistema a Tempio, lavoro come Alchimista, sistema di combattimento<br />
 # Portato il ricavo della vendita degli oggetti dal 50% al 75%<br />
 # Rivisto il lavoro in Laboratorio come alchimista, reso più equilibrato<br />
 # Modificato il guadagno di esperienza nei combattimenti, reso più equilibrato<br />
