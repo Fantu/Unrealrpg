@@ -456,6 +456,7 @@ $db->QueryMod("UPDATE caratteristiche SET reputazione=reputazione+'".$rep[1]."' 
 $input=$lang['finito_entrambi_esausti']."<br/>";
 }elseif($dc->tattica(1,1)==2 AND $dc->tattica(2,1)==2){//se entrambi si arrendono
 $input=$lang['finito_entrambi_arresi']."<br/>";
+$expb+=5;
 }elseif($dc->tattica(1,1)==2){//se il primo si arrende
 $input.=sprintf($lang['finito_resa'],$dc->nome(1),$dc->nome(2))."<br/>";
 $dc->Impobexp(1,1);//diminuzione al primo
