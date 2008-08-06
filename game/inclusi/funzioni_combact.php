@@ -439,7 +439,22 @@ $input="";
 Docombactstats($battleid,$dc->id(1),$dc->id(2));
 }//se nessuno si arrende
 $finito=1;
-if($dc->tattica(1,1)==2 AND $dc->tattica(2,1)==2){//se entrambi si arrendono
+
+if($dc->morto(1)==1){//se il secondo vince
+$input.=sprintf($lang['vincitore_combattimento'],$dc->nome(2))."<br/>";
+$dc->Impobexp(2,2);//aumento al secondo
+$rep=$dc->Checkrep(2);
+if($rep[0]==1)
+$db->QueryMod("UPDATE caratteristiche SET reputazione=reputazione+'".$rep[1]."' WHERE userid='".$dc->id(2)."' LIMIT 1");
+}elseif($dc->morto(2)==1){//se il primo vince
+$input.=sprintf($lang['vincitore_combattimento'],$dc->nome(1))."<br/>";
+$dc->Impobexp(1,2);//aumento al primo
+$rep=$dc->Checkrep(1);
+if($rep[0]==1)
+$db->QueryMod("UPDATE caratteristiche SET reputazione=reputazione+'".$rep[1]."' WHERE userid='".$dc->id(1)."' LIMIT 1");
+}elseif($dc->esausto(1)==1 AND $dc->esausto(2)==1){//se entrambi esausti
+$input=$lang['finito_entrambi_esausti']."<br/>";
+}elseif($dc->tattica(1,1)==2 AND $dc->tattica(2,1)==2){//se entrambi si arrendono
 $input=$lang['finito_entrambi_arresi']."<br/>";
 }elseif($dc->tattica(1,1)==2){//se il primo si arrende
 $input.=sprintf($lang['finito_resa'],$dc->nome(1),$dc->nome(2))."<br/>";
@@ -455,20 +470,6 @@ $dc->Impobexp(1,2);//aumento al primo
 $rep=$dc->Checkrep(2);
 if($rep[0]==2)
 $db->QueryMod("UPDATE caratteristiche SET reputazione=reputazione-'".$rep[1]."' WHERE userid='".$dc->id(2)."' LIMIT 1");
-}elseif($dc->esausto(1)==1 AND $dc->esausto(2)==1){//se entrambi esausti
-$input=$lang['finito_entrambi_esausti']."<br/>";
-}elseif($dc->morto(1)==1){//se il secondo vince
-$input.=sprintf($lang['vincitore_combattimento'],$dc->nome(2))."<br/>";
-$dc->Impobexp(2,2);//aumento al secondo
-$rep=$dc->Checkrep(2);
-if($rep[0]==1)
-$db->QueryMod("UPDATE caratteristiche SET reputazione=reputazione+'".$rep[1]."' WHERE userid='".$dc->id(2)."' LIMIT 1");
-}elseif($dc->morto(2)==1){//se il primo vince
-$input.=sprintf($lang['vincitore_combattimento'],$dc->nome(1))."<br/>";
-$dc->Impobexp(1,2);//aumento al primo
-$rep=$dc->Checkrep(1);
-if($rep[0]==1)
-$db->QueryMod("UPDATE caratteristiche SET reputazione=reputazione+'".$rep[1]."' WHERE userid='".$dc->id(1)."' LIMIT 1");
 }elseif($turni==25){//se dura troppo
 $input=$lang['combattimento_troppo_lungo']."<br/>";
 }else{$finito=0;}

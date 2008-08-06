@@ -15,6 +15,9 @@ Legenda:<br />
 # Rivisto il lavoro in Laboratorio come alchimista, reso più equilibrato<br />
 - Corretti bug minori<br />
 </p>
+<p><strong>0.6.17.3</strong> (06/08/08 - Beta)<br />
+- Sistemato l'ordine di condizioni per la fine del combattimento<br />
+</p>
 <p><strong>0.6.17.2</strong> (06/08/08 - Beta)<br />
 - Corretto un bug nel sistema di combattimento<br />
 </p>
