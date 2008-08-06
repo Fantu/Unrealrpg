@@ -7,8 +7,10 @@ Legenda:<br />
 - Correzione bug e patch di situazioni non previste<br />
 <br />
 </p>
-<p><strong>0.7.0</strong> (Non disponibile - In sviluppo)<br />
+<p><strong>0.7.0</strong> (stimato per fine agosto/inizio settembre - In sviluppo)<br />
 + Iniziata creazione personaggi non comandati da utenti<br />
+</p>
+<p><strong>0.6.18</strong> (Non disponibile - In sviluppo)<br />
 # Portato il ricavo della vendita degli oggetti dal 50% al 75%<br />
 # Rivisto il lavoro in Laboratorio come alchimista, reso più equilibrato<br />
 - Corretti bug minori<br />
