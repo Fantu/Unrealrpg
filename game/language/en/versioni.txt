@@ -13,6 +13,8 @@ Legenda:<br />
 <p><strong>0.6.18</strong> (Non disponibile - In sviluppo)<br />
 # Portato il ricavo della vendita degli oggetti dal 50% al 75%<br />
 # Rivisto il lavoro in Laboratorio come alchimista, reso più equilibrato<br />
+# Modificato il guadagno di esperienza nei combattimenti, reso più equilibrato<br />
+# Portata la resurrezione tramite il pagamento ai chierici da 10 ore a 3<br />
 - Corretti bug minori<br />
 </p>
 <p><strong>0.6.17.3</strong> (06/08/08 - Beta)<br />
