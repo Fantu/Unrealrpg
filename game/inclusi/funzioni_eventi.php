@@ -332,6 +332,7 @@ $db->QueryMod("UPDATE inoggetti SET inuso='1' WHERE userid='".$userid."' AND ogg
 require_once('language/'.$language.'/lang_laboratorio.php');
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");
 $pozione=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$pozionesel."' LIMIT 1");
+$nomepozione=$lang['oggetto'.$pozione['id'].'_nome'];
 $mana=rand(5,10);
 $costo=floor($pozione['costo']/5);
 $energia=100-(5*$usercar['alchimista']);
@@ -364,12 +365,11 @@ $testo2="<span>".sprintf($lang['report_esplosione_lab2'],$danni)."</span>";
 }
 $titolo=$lang['report_esplosione_laboratorio'];
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo2."','0','".$adesso."')");	
-$testo3=$lang['report_lavlab_pozione_no']."<br />";
+$testo3=sprintf($lang['report_lavlab_pozione_no'],$nomepozione)."<br />";
 $exp-=floor($exp/100*20);
 }/*fine esplosione*/else{
 $exp+=floor($exp/100*20);
 $db->QueryMod("INSERT INTO inoggetti (oggid,userid) VALUES ('".$pozione['id']."','".$userid."')");
-$nomepozione=$lang['oggetto'.$pozione['id'].'_nome'];
 $testo3=sprintf($lang['report_lavlab_pozione_si'],$nomepozione)."<br />";
 }//fine pozione riuscita
 $testo=sprintf($lang['report_lavlabalc'],$exp,$energia,$salute,$mana,$costo)."<br />";
