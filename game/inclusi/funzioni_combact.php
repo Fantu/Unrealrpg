@@ -366,7 +366,7 @@ class Dati{
 	$probpot+=3;
 	if($probpot>=10){
 	$danno+=round($danno/2);
-	$potente=$lang['colpo_potente'];
+	$potente=" ".$lang['colpo_potente'];
 	}//se colpo potente
 	$input=sprintf($lang['danno_att_vicino'],$this->nome($att),$nomearma).$potente.$pscudo.", ".sprintf($lang['danni_subiti'],$this->nome($dif),$danno)."<br/>";
 	$this->Modsalute($dif,$danno);
