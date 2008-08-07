@@ -30,8 +30,8 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 </ul>
 </td></tr>
 </table>
-<?php echo $viewtattic; } ?>
 </div>
+<?php echo $viewtattic; } ?>
 <br />
 <br />
 <br />
