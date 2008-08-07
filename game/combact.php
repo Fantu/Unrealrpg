@@ -140,7 +140,7 @@ $report=ob_get_contents();
 ob_end_clean();
 $combactview=1;
 $titleoutputcombact=$lang['titolo_report_combattimento1'];
-$outputcombact="<table width=\"500\" align=\"center\">".$report."</table>";
+$outputcombact="<table width=\"500\" align=\"center\">".$report."</table><br /><a href="index.php?loc=combattimenti#fondo"></a>";
 }
 break;//fine sfidda
 }

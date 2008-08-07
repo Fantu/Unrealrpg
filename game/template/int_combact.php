@@ -13,9 +13,11 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <br />
 <div align="center"><?php if($combactview==1 OR $combactview==2) echo $titleoutputcombact; ?></div><br />
 <br />
+<?php echo $outputcombact; ?>
+<br />
 <?php if($combactview==2){ ?>
 <div align="center" id="tattic">
-<?php echo $lang['seleziona_tattica']; ?>
+<?php echo "<a href="#fondo">".$lang['seleziona_tattica']."</a>"; ?>
 <table border="0" align="center">
 <tr><td>
 <ul>
@@ -30,8 +32,6 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 </table>
 <?php echo $viewtattic; } ?>
 </div>
-<br />
-<?php echo $outputcombact; ?>
 <br />
 <br />
 <br />
