@@ -43,4 +43,6 @@ $lang['colpo_potente']='con un colpo potente';
 $lang['danni_subiti']='%s subisce %s danni.';
 
 $lang['nomepcpu1']='CpuProva';
+
+$lang['aggiorna']='Aggiorna';
 ?>
