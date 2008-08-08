@@ -17,7 +17,8 @@ $outputsfida=sprintf($lang['rispondi_sfida'],$sfidante['username'])." - <a href=
 $sfidante=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$evento['oggid']."'");
 $outputsfida=sprintf($lang['sfida_lanciata'],$sfidante['username'])." - <a href=\"index.php?loc=combact&amp;do=annullasfida\">".$lang['Annulla']."</a>";
 }elseif($evento['tipo']==5){
-$sec_prox_round=($evento['datainizio']+$evento['secondi'])-$adesso;
+$ev=$db->QuerySelect("SELECT * FROM eventi WHERE userid='0' AND battleid='".$evento['battleid']."' LIMIT 1");
+$sec_prox_round=($ev['datainizio']+$ev['secondi'])-$adesso;
 $filerep="inclusi/log/report/".$db->database."/".$evento['battleid'].".log";
 ob_start();
 include $filerep;
