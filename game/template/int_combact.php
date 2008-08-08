@@ -16,6 +16,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <?php echo $outputcombact; ?>
 <br />
 <?php if($combactview==2){ ?>
+<center>
 <?php echo "<a name=\"fondo\">".$lang['seleziona_tattica']."</a>"; ?>
 <div align="center" id="tattic">
 <table border="0" align="center">
