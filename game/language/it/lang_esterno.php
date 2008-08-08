@@ -23,7 +23,7 @@ $lang['disattiva']='Disattiva';
 $lang['attiva']='Attiva';
 $lang['Newsletter']='Newsletter';
 $lang['scarica_firefox']='Scarica Firefox';
-$lang['desc_firefox']='Stai utilizzando Internet Explorer, che purtroppo attualmente, neppure nella ultima versione non supporta a pieno gli standard web in particolare i css, ti consigliamo di utilizzare Firefox, browser gratuito, più sicuro, efficente e con maggiore rispetto degli standard di Internet Explorer, per scaricare l`ultima versione ufficiale clicca sul banner sottostante.';
+$lang['desc_firefox']='Stai utilizzando Internet Explorer, che purtroppo attualmente, neppure nella ultima versione non supporta a pieno gli standard web, in particolare i css, ti consigliamo di utilizzare Firefox, browser gratuito, più sicuro, efficente e con maggiore rispetto degli standard, per scaricare l`ultima versione ufficiale clicca sul banner sottostante.';
 
 $lang['reg_error1']='- Non hai selezionato il server!<br />';
 $lang['reg_error2']='- Non hai scritto il tuo username!<br />';
