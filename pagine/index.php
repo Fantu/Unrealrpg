@@ -46,7 +46,7 @@ $pagina="home";
 if (ereg("MSIE",$_SERVER['HTTP_USER_AGENT']) AND ($pagina=="home")){ ?>
 <?php echo $lang['desc_firefox']; ?>
 <br />
-<center><a href="http://www.mozilla-europe.org/firefox/"><img src="game/template/immagini/firefox.png" alt="<?php echo $lang['scarica_firefox']; ?>" /></a></center>
+<center><a href="http://www.mozilla-europe.org/firefox/"><img src="game/template/immagini/firefox.png" alt="<?php echo $lang['scarica_firefox']; ?>" border="0" /></a></center>
 <br />
 <?php } ?>
 </td>
