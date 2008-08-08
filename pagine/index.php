@@ -37,19 +37,28 @@ function CambiaImg(id,bool) {
 </head>
 <body>
 <table width="750" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr>
-  <td>
+<tr>
+<td>
+<?php 
+$pagina=htmlspecialchars($_GET['pag'],ENT_QUOTES);
+if( !file_exists('pagine/'.$pagina.'.php') )
+$pagina="home";
+if (ereg("MSIE",$_SERVER['HTTP_USER_AGENT']) AND ($_GET['pag']=="home")){ ?>
+<?php echo $lang['desc_firefox']; ?>
+<br />
+<a href="http://www.mozilla-europe.org/firefox/"><img src="game/template/immagini/firefox.png" alt="<?php echo $lang['scarica_firefox']; ?>" /></a>
+<br />
+<?php } ?>
+</td>
+</tr>
+<tr>
+<td>
 <center><h1>
 <?php echo $game_name; echo" "; echo $game_version; echo" "; echo $game_revision; ?>
 </h1></center>
-<?php
-if( file_exists('pagine/'.$_GET['pag'].'.php') )
-include('pagine/'.$_GET['pag'].'.php');
-else
-include('pagine/home.php');		
-?>
-  </td>
-  </tr>
+<?php require('pagine/'.$pagina.'.php'); ?>
+</td>
+</tr>
 </table>
 <div align="center">
 <br /><br />
