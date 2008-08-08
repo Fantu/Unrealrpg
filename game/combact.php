@@ -26,7 +26,7 @@ $report=ob_get_contents();
 ob_end_clean();
 $combactview=2;
 $titleoutputcombact=$lang['titolo_report_combattimento2'];
-$outputcombact="<table width=\"500\" align=\"center\">".$report."</table><br />".sprintf($lang['secondi_prox_round'],$sec_prox_round)."<br /><br /><center><form action=\"index.php?loc=combact#fondo\" method=\"post\" name=\"formaggiorna\"><input name=\"Submit\" type=\"submit\" value=\"".$lang['aggiorna']."\" /></form></center><br />";
+$outputcombact="<table width=\"500\" align=\"center\">".$report."</table><br /><center>".sprintf($lang['secondi_prox_round'],$sec_prox_round)."<br /><br /><form action=\"index.php?loc=combact#fondo\" method=\"post\" name=\"formaggiorna\"><input name=\"Submit\" type=\"submit\" value=\"".$lang['aggiorna']."\" /></form><br />";
 $batt=$db->QuerySelect("SELECT * FROM battle WHERE id='".$evento['battleid']."' LIMIT 1");
 $tattica=(int)$_GET['tattica'];
 $subtattica=(int)$_GET['subtatt'];
