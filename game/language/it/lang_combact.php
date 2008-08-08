@@ -16,6 +16,8 @@ $lang['rispondi_sfida']='%s ti vuole sfidare';
 $lang['sfida_lanciata']='Hai lanciato una sfida a %s';
 $lang['sfida_rifiutata']='Sfida rifiutata';
 $lang['report_sfida_rifiutata']='La sfida è stata rifiutata.';
+$lang['aggiorna']='Aggiorna';
+$lang['secondi_prox_round']='Questo "round" finirà tra %s secondi.';
 
 $lang['danno_att_vicino']='%s attacca con %s e colpisce';
 $lang['niente_att_vicino']='%s attacca %s con %s senza riuscire a colpire.';
@@ -43,6 +45,4 @@ $lang['colpo_potente']='con un colpo potente';
 $lang['danni_subiti']='%s subisce %s danni.';
 
 $lang['nomepcpu1']='CpuProva';
-
-$lang['aggiorna']='Aggiorna';
 ?>

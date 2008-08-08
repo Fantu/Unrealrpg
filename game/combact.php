@@ -17,6 +17,7 @@ $outputsfida=sprintf($lang['rispondi_sfida'],$sfidante['username'])." - <a href=
 $sfidante=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$evento['oggid']."'");
 $outputsfida=sprintf($lang['sfida_lanciata'],$sfidante['username'])." - <a href=\"index.php?loc=combact&amp;do=annullasfida\">".$lang['Annulla']."</a>";
 }elseif($evento['tipo']==5){
+$sec_prox_round=($evento['datainizio']+$evento['secondi'])-$adesso;
 $filerep="inclusi/log/report/".$db->database."/".$evento['battleid'].".log";
 ob_start();
 include $filerep;
@@ -24,7 +25,7 @@ $report=ob_get_contents();
 ob_end_clean();
 $combactview=2;
 $titleoutputcombact=$lang['titolo_report_combattimento2'];
-$outputcombact="<table width=\"500\" align=\"center\">".$report."</table><br /><center><form action=\"index.php?loc=combact#fondo\" method=\"post\" name=\"formaggiorna\"><input name=\"Submit\" type=\"submit\" value=\"".$lang['aggiorna']."\" /></form></center><br />";
+$outputcombact="<table width=\"500\" align=\"center\">".$report."</table><br />".sprintf($lang['secondi_prox_round'],$sec_prox_round)."<br /><br /><center><form action=\"index.php?loc=combact#fondo\" method=\"post\" name=\"formaggiorna\"><input name=\"Submit\" type=\"submit\" value=\"".$lang['aggiorna']."\" /></form></center><br />";
 $batt=$db->QuerySelect("SELECT * FROM battle WHERE id='".$evento['battleid']."' LIMIT 1");
 $tattica=(int)$_GET['tattica'];
 $subtattica=(int)$_GET['subtatt'];
