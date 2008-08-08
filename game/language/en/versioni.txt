@@ -10,8 +10,9 @@ Legenda:<br />
 <p><strong>0.7.0</strong> (stimato per fine agosto/inizio settembre - In sviluppo)<br />
 + Iniziata creazione personaggi non comandati da utenti<br />
 </p>
-<p><strong>0.6.18</strong> (Non disponibile - In sviluppo)<br />
+<p><strong>0.6.18</strong> [R.1454] (08/08/08 - Beta)<br />
 + Aggiunto "aggiorna" in fondo a Combattimenti che aggiorna la pagina durante i combattimenti e porta direttamente sotto l'ultimo "round"<br />
++ Aggiunta la visualizzazione dei secondi rimanenti alla fine dell'attuale "round" durante il combattimento<br />
 + Vari miglioramenti di sistema a Tempio, lavoro come Alchimista, sistema di combattimento, Combattimenti, sistema di base esterno<br />
 + Vari miglioramenti di sicurezza<br />
 # Portato il ricavo della vendita degli oggetti dal 50% al 75%<br />
