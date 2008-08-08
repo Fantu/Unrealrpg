@@ -33,7 +33,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 </table>
 </center>
 </div>
-<?php echo $viewtattic; } ?>
+<?php echo "<center>".$viewtattic."</center>"; } ?>
 <br />
 <br />
 <br />
