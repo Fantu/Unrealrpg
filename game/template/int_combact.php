@@ -11,7 +11,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <br />
 <br />
 <br />
-<div align="center"><?php if($combactview==1 OR $combactview==2) echo $titleoutputcombact; ?></div><br />
+<div align="center" style="text-align:center"><?php if($combactview==1 OR $combactview==2) echo $titleoutputcombact; ?></div><br />
 <br />
 <?php echo $outputcombact; ?>
 <br />
