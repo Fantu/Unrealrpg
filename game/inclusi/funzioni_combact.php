@@ -278,7 +278,6 @@ class Dati{
 	$expb+=0.5;
 	if($this->equip(2,'arm')!=0 OR $this->equip(2,'scu')!=0)
 	$expb+=0.5;
-	$expb=floor($expb);
 	return $expb;
 	} //fine Checkeqipexp
 	
@@ -293,7 +292,6 @@ class Dati{
 	$expb+=0.5;
 	if( (($this->che[1]->salutei-$this->car(1,'saluteattuale'))+($this->che[2]->salutei-$this->car(2,'saluteattuale')))>30 )
 	$expb+=0.5;
-	$expb=floor($expb);
 	return $expb;
 	} //fine Checkturnexp
 	
@@ -431,6 +429,7 @@ $dc->Aggiornastat(2);
 $dc->Controllastato(1);
 $dc->Controllastato(2);
 $expb=$dc->Checkturnexp($expb);
+$expb=floor($expb);
 
 $turni++;
 $input.="---------------------------------<( ".($turni+1)." )>---------------------------------";
