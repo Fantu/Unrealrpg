@@ -18,7 +18,8 @@ class Combattente{
 	var $plus;
 	var $salutei;
 	var $energiai;
-	function Combattente($id2,$nome2,$car2,$equip2,$tattica2,$subtattica2,$plus2){
+	var $cpu;
+	function Combattente($id2,$nome2,$car2,$equip2,$tattica2,$subtattica2,$plus2,$cpu2){
 	$this->id=$id2;
 	$this->nome=$nome2;
 	$this->car=$car2;
@@ -32,28 +33,43 @@ class Combattente{
 	$this->plus=$plus2;
 	$this->salutei=$car2['saluteattuale'];
 	$this->energiai=$car2['energia'];
+	$this->cpu=$cpu2;
 	}
 } //fine classe Combattente
 
 class Dati{
 	public $che;
 	
-	public function Stabilisciordine($attaccante,$difensore,$battle) {
+	public function Stabilisciordine($battle) {
 	global $db;
+	$attaccante=$battle['attid'];
+	$difensore=$battle['difid'];
 	$attcar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$attaccante."' LIMIT 1");
-	$difcar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$difensore."' LIMIT 1");
 	$attn=$db->QuerySelect("SELECT * FROM utenti WHERE userid='".$attaccante."' LIMIT 1");
-	$difn=$db->QuerySelect("SELECT * FROM utenti WHERE userid='".$difensore."' LIMIT 1");
+	$attname=$attn['username'];
 	$attequip=$db->QuerySelect("SELECT * FROM equipaggiamento WHERE userid='".$attaccante."' LIMIT 1");
-	$difequip=$db->QuerySelect("SELECT * FROM equipaggiamento WHERE userid='".$difensore."' LIMIT 1");
 	$attpoint=$attcar['agilita']+$attcar['velocita']+($attcar['saluteattuale']/2)+($attcar['energia']/5);
+	if($battle['difcpu']==0){
+	$difcar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$difensore."' LIMIT 1");
+	$difn=$db->QuerySelect("SELECT * FROM utenti WHERE userid='".$difensore."' LIMIT 1");
+	$difname=$difn['username'];
+	$difequip=$db->QuerySelect("SELECT * FROM equipaggiamento WHERE userid='".$difensore."' LIMIT 1");
+	$difplus=$difn['plus'];
+	$cpu=0;
+	}else{
+	$difcar=$db->QuerySelect("SELECT * FROM carcpu WHERE cpuid='".$difensore."' LIMIT 1");
+	$difname=$lang['nomepcpu'.$difensore];
+	$difequip=$db->QuerySelect("SELECT * FROM equipagcpu WHERE cpuid='".$difensore."' LIMIT 1");
+	$difplus=1;
+	$cpu=1;
+	}
 	$difpoint=$difcar['agilita']+$difcar['velocita']+($difcar['saluteattuale']/2)+($difcar['energia']/5);
 	if($attpoint>$difpoint){
-	$this->che[1]=new Combattente($attaccante,$attn['username'],$attcar,$attequip,$battle['tatatt'],$battle['tatatt2'],$attn['plus']);
-	$this->che[2]=new Combattente($difensore,$difn['username'],$difcar,$difequip,$battle['tatdif'],$battle['tatdif2'],$difn['plus']);
+	$this->che[1]=new Combattente($attaccante,$attname,$attcar,$attequip,$battle['tatatt'],$battle['tatatt2'],$attn['plus'],0);
+	$this->che[2]=new Combattente($difensore,$difname,$difcar,$difequip,$battle['tatdif'],$battle['tatdif2'],$difplus,$cpu);
 	}else{
-	$this->che[2]=new Combattente($attaccante,$attn['username'],$attcar,$attequip,$battle['tatatt'],$battle['tatatt2'],$attn['plus']);
-	$this->che[1]=new Combattente($difensore,$difn['username'],$difcar,$difequip,$battle['tatdif'],$battle['tatdif2'],$difn['plus']);
+	$this->che[2]=new Combattente($attaccante,$attname,$attcar,$attequip,$battle['tatatt'],$battle['tatatt2'],$attn['plus'],0);
+	$this->che[1]=new Combattente($difensore,$difname,$difcar,$difequip,$battle['tatdif'],$battle['tatdif2'],$difplus,$cpu);
 	}
 	if($this->plus(1)>0 AND $this->tattica(1,1)==0)
 	$this->Autotattic(1);
@@ -92,6 +108,11 @@ class Dati{
 	$dato=$this->che[$chi]->plus;
 	return $dato;
 	} //fine plus
+	
+	public function cpu($chi) {
+	$dato=$this->che[$chi]->cpu;
+	return $dato;
+	} //fine cpu
 	
 	public function esausto($chi) {
 	$dato=$this->che[$chi]->esausto;
@@ -162,7 +183,7 @@ class Dati{
 	} //fine Impobexp
 	
 	public function Controlloogg($chi) {
-	$oggpersi=Checkusurarottura($this->id($chi),0);//0=utente 1=cpu
+	$oggpersi=Checkusurarottura($this->id($chi),$this->cpu($chi));
 	if($oggpersi){
 	$dato.=$this->nome($chi)."<br/>".$oggpersi;
 	}
@@ -393,7 +414,7 @@ global $db,$adesso,$lang,$language;
 $battle=$db->QuerySelect("SELECT * FROM battle WHERE id='".$battleid."' LIMIT 1");
 $expb=$battle['exp'];
 $dc=new Dati();
-$dc->Stabilisciordine($battle['attid'],$battle['difid'],$battle);
+$dc->Stabilisciordine($battle);
 $expb=$dc->Checkeqipexp($expb);
 if($turni==0){
 $input.=$dc->Viewequip(1);

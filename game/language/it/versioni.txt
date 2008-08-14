@@ -11,7 +11,7 @@ Legenda:<br />
 + Iniziata creazione personaggi non comandati da utenti<br />
 </p>
 <p><strong>0.6.19</strong> (non disponibile - In sviluppo)<br />
-+ Vari miglioramenti di sistema a sistema automatico di selezione delle tattiche<br />
++ Vari miglioramenti di sistema a Combattimenti, sistema automatico di selezione delle tattiche, sistema di combattimento<br />
 # Rivisto il lavoro in Laboratorio come alchimista, reso più equilibrato<br />
 # Modificato il guadagno di esperienza nei combattimenti, reso più equilibrato<br />
 </p>
