@@ -16,6 +16,9 @@ Legenda:<br />
 # Rivisto il lavoro in Laboratorio come alchimista, reso più equilibrato<br />
 # Modificato il guadagno di esperienza nei combattimenti, reso più equilibrato<br />
 </p>
+<p><strong>0.6.18.1</strong> (15/08/08 - Beta)<br />
+- Corretto un bug nella vendita di oggetti<br />
+</p>
 <p><strong>0.6.18</strong> [R.1454] (08/08/08 - Beta)<br />
 + Aggiunto "aggiorna" in fondo a Combattimenti che aggiorna la pagina durante i combattimenti e porta direttamente sotto l'ultimo "round"<br />
 + Aggiunta la visualizzazione dei secondi rimanenti alla fine dell'attuale "round" durante il combattimento<br />

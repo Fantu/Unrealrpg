@@ -29,14 +29,15 @@ if($errore){
 else {
 $cogg=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$oggselect."' LIMIT 1");	
 if($cogg['usura']>1){
-$monete=floor(($cogg['costo']/4*3)/$cogg['usura']*($cogg['usura']-$numogg['usura']));
+$monete=($cogg['costo']/4*3)/$cogg['usura']*($cogg['usura']-$numogg['usura']);
 }else{
-$monete=floor($cogg['costo']/4*3);
+$monete=$cogg['costo']/4*3;
 }
 if($quanti>1){
 $numero=$quanti-1;
-$monete+=floor($numero*($cogg['costo']/4*3));
+$monete+=$numero*($cogg['costo']/4*3);
 }
+$monete=floor($monete);
 $outputerrori=sprintf($lang['report_vendita'],$quanti,$lang['oggetto'.$oggselect.'_nome'],$monete);
 $db->QueryMod("UPDATE utenti SET monete=monete+'".$monete."' WHERE userid='".$user['userid']."'");	
 $db->QueryMod("DELETE FROM inoggetti WHERE userid='".$user['userid']."' AND oggid='".$oggselect."' LIMIT ".$quanti);
