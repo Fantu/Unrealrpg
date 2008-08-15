@@ -226,6 +226,8 @@ class Dati{
 	if($percenergia<5){//se esausto resa
 	$tattp[2]+=200;}
 	$max=0;
+	if($this->cpu(1)==1 OR $this->cpu(2)==1){
+	$tattp[2]=0;}//se contro cpu resa non possibile
 	foreach($tattp as $chiave=>$elemento){
 	if($elemento>$max){
 	$max=$elemento;

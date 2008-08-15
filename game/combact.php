@@ -30,14 +30,16 @@ $outputcombact="<table width=\"500\" align=\"center\">".$report."</table><br />"
 $batt=$db->QuerySelect("SELECT * FROM battle WHERE id='".$evento['battleid']."' LIMIT 1");
 $tattica=(int)$_GET['tattica'];
 $subtattica=(int)$_GET['subtatt'];
+if($tattica==2 AND $batt['difcpu']==1){
+$tattica=0;}//se tattica resa e contro cpu annulla
 if($tattica!=0){
 if($batt['attid']==$user['userid']){
 $db->QueryMod("UPDATE battle SET tatatt='".$tattica."',tatatt2='".$subtattica."' WHERE id='".$evento['battleid']."' LIMIT 1");
 }else{
 $db->QueryMod("UPDATE battle SET tatdif='".$tattica."',tatdif2='".$subtattica."' WHERE id='".$evento['battleid']."' LIMIT 1");
 }
-}//fine imposta tattica
 $batt=$db->QuerySelect("SELECT * FROM battle WHERE id='".$evento['battleid']."' LIMIT 1");
+}//fine imposta tattica
 if($batt['attid']==$user['userid']){
 $tattica=$batt['tatatt'];
 $subtattica=$batt['tatatt2'];

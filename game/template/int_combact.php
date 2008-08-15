@@ -27,7 +27,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <li><a href="index.php?loc=combact&amp;tattica=1&amp;subtatt=1"><?php echo $lang['tattica_attacco_cac']; ?></a></li>
 </ul></li>
 <li><a href="index.php?loc=combact&amp;tattica=3"><?php echo $lang['tattica_difesa']; ?></a></li>
-<li><a href="index.php?loc=combact&amp;tattica=2"><?php echo $lang['tattica_resa']; ?></a></li>
+<?php if($batt['difcpu']==0){ ?><li><a href="index.php?loc=combact&amp;tattica=2"><?php echo $lang['tattica_resa']; ?></a></li><?php }/*se non contro cpu*/ ?>
 </ul>
 </td></tr>
 </table>

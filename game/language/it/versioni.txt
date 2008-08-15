@@ -9,6 +9,7 @@ Legenda:<br />
 </p>
 <p><strong>0.7.0</strong> (stimato per fine agosto/inizio settembre - In sviluppo)<br />
 + Iniziata creazione personaggi non comandati da utenti<br />
++ Nei combattimenti contro personaggi non comandati da utenti non è possibile la resa<br />
 </p>
 <p><strong>0.6.19</strong> (non disponibile - In sviluppo)<br />
 + Se la modalità vacanza è attiva non si ricevono le email di segnalazione inattività<br />
