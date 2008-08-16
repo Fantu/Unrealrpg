@@ -159,7 +159,11 @@ class Dati{
 	
 	public function Ogginuso($chi,$cosa) {
 	global $db;
+	if($this->cpu($chi)==0){
 	$db->QueryMod("UPDATE equip SET inuso='1' WHERE userid='".$this->id($chi)."' AND oggid='".$this->equip($chi,$cosa)."' LIMIT 1");
+	}else{
+	$db->QueryMod("UPDATE equipcpu SET inuso='1' WHERE cpuid='".$this->id($chi)."' AND oggid='".$this->equip($chi,$cosa)."' LIMIT 1");
+	}
 	$this->che[$chi]->oggusati=1;
 	} //fine ogginuso
 	
@@ -175,7 +179,12 @@ class Dati{
 	global $db;
 	if($this->car($chi,'saluteattuale')<0)
 	$this->che[$chi]->car['saluteattuale']=0;
+	if($this->cpu($chi)==0){
 	$db->QueryMod("UPDATE caratteristiche SET saluteattuale='".$this->car($chi,'saluteattuale')."',energia='".$this->car($chi,'energia')."' WHERE userid='".$this->id($chi)."' LIMIT 1");
+	}else{
+	$db->QueryMod("UPDATE carcpu SET saluteattuale='".$this->car($chi,'saluteattuale')."',energia='".$this->car($chi,'energia')."' WHERE cpuid='".$this->id($chi)."' LIMIT 1");
+	}
+	
 	} //fine ogginuso
 	
 	public function Impobexp($chi,$cosa) {
