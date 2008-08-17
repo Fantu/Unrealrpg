@@ -409,17 +409,6 @@ class Dati{
 	
 } //fine classe Dati
 
-function Startcombact($attaccante,$difensore,$server) {
-global $db,$adesso,$lang,$language;
-$db->QueryMod("INSERT INTO battle (attid,difid) VALUES ('".$attaccante."','".$difensore."')");
-$battle=$db->QuerySelect("SELECT id FROM battle WHERE attid='".$attaccante."' LIMIT 1");
-$db->QueryMod("INSERT INTO battlereport (id,data,attid,difid) VALUES ('".$battle['id']."','".$adesso."','".$attaccante."','".$difensore."')");
-$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,battleid) VALUES ('0','".$adesso."','100','0','6','".$battle['id']."')");
-$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,oggid,battleid) VALUES ('".$difensore."','".$adesso."','84600','13','5','".$attaccante."','".$battle['id']."')");
-$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,oggid,battleid) VALUES ('".$attaccante."','".$adesso."','84600','13','5','".$difensore."','".$battle['id']."')");
-Docombactstats($battle['id'],$attaccante,$difensore);
-} //fine Startcombact
-
 function Battledo($battleid,$turni) {
 global $db,$adesso,$lang,$language;
 $battle=$db->QuerySelect("SELECT * FROM battle WHERE id='".$battleid."' LIMIT 1");
@@ -467,7 +456,7 @@ $turni++;
 $input.="---------------------------------<( ".($turni+1)." )>---------------------------------";
 Inreport($battleid,$input);
 $input="";
-Docombactstats($battleid,$dc->id(1),$dc->id(2));
+Docombactstats($battleid,$dc->nome(1),$dc->nome(2),$dc->che[1]->car,$dc->che[2]->car);
 }//se nessuno si arrende
 $finito=1;
 
@@ -475,14 +464,14 @@ if($dc->morto(1)==1){//se il secondo vince
 $input.=sprintf($lang['vincitore_combattimento'],$dc->nome(2))."<br/>";
 $dc->Impobexp(2,2);//aumento al secondo
 $rep=$dc->Checkrep(2);
-if($rep[0]==1)
-$db->QueryMod("UPDATE caratteristiche SET reputazione=reputazione+'".$rep[1]."' WHERE userid='".$dc->id(2)."' LIMIT 1");
+if($rep[0]==1){
+if($dc->cpu(2)==0){$db->QueryMod("UPDATE caratteristiche SET reputazione=reputazione+'".$rep[1]."' WHERE userid='".$dc->id(2)."' LIMIT 1");}}
 }elseif($dc->morto(2)==1){//se il primo vince
 $input.=sprintf($lang['vincitore_combattimento'],$dc->nome(1))."<br/>";
 $dc->Impobexp(1,2);//aumento al primo
 $rep=$dc->Checkrep(1);
-if($rep[0]==1)
-$db->QueryMod("UPDATE caratteristiche SET reputazione=reputazione+'".$rep[1]."' WHERE userid='".$dc->id(1)."' LIMIT 1");
+if($rep[0]==1){
+if($dc->cpu(1)==0){$db->QueryMod("UPDATE caratteristiche SET reputazione=reputazione+'".$rep[1]."' WHERE userid='".$dc->id(1)."' LIMIT 1");}}
 }elseif($dc->esausto(1)==1 AND $dc->esausto(2)==1){//se entrambi esausti
 $input=$lang['finito_entrambi_esausti']."<br/>";
 }elseif($dc->tattica(1,1)==2 AND $dc->tattica(2,1)==2){//se entrambi si arrendono
@@ -493,23 +482,23 @@ $input.=sprintf($lang['finito_resa'],$dc->nome(1),$dc->nome(2))."<br/>";
 $dc->Impobexp(1,1);//diminuzione al primo
 $dc->Impobexp(2,2);//aumento al secondo
 $rep=$dc->Checkrep(1);
-if($rep[0]==2)
-$db->QueryMod("UPDATE caratteristiche SET reputazione=reputazione-'".$rep[1]."' WHERE userid='".$dc->id(1)."' LIMIT 1");
+if($rep[0]==2){
+if($dc->cpu(1)==0){$db->QueryMod("UPDATE caratteristiche SET reputazione=reputazione-'".$rep[1]."' WHERE userid='".$dc->id(1)."' LIMIT 1");}}
 }elseif($dc->tattica(2,1)==2){//se il secondo si arrende
 $input.=sprintf($lang['finito_resa'],$dc->nome(2),$dc->nome(1))."<br/>";
 $dc->Impobexp(2,1);//diminuzione al secondo
 $dc->Impobexp(1,2);//aumento al primo
 $rep=$dc->Checkrep(2);
-if($rep[0]==2)
-$db->QueryMod("UPDATE caratteristiche SET reputazione=reputazione-'".$rep[1]."' WHERE userid='".$dc->id(2)."' LIMIT 1");
+if($rep[0]==2){
+if($dc->cpu(2)==0){$db->QueryMod("UPDATE caratteristiche SET reputazione=reputazione-'".$rep[1]."' WHERE userid='".$dc->id(2)."' LIMIT 1");}}
 }elseif($turni==25){//se dura troppo
 $input=$lang['combattimento_troppo_lungo']."<br/>";
 }else{$finito=0;}
 $db->QueryMod("UPDATE battle SET tatatt='0',tatatt2='0',tatdif='0',tatdif2='0' WHERE id='".$battleid."' LIMIT 1");
 if($finito==1){
 if($turni>1){
-$input.=$dc->Guadagnaexp(1,$turni,$expb);
-$input.=$dc->Guadagnaexp(2,$turni,$expb);
+if($dc->cpu(1)==0){$input.=$dc->Guadagnaexp(1,$turni,$expb);}
+if($dc->cpu(2)==0){$input.=$dc->Guadagnaexp(2,$turni,$expb);}
 }//se più di un turno
 Endcombact($battle['id'],$dc->pvar(1),$dc->pvar(2));
 Inreport($battleid,$input);
@@ -532,17 +521,28 @@ $db->QueryMod("DELETE FROM battle WHERE id='".$battleid."'");
 $db->QueryMod("UPDATE battlereport SET finito='1' WHERE id='".$battleid."' LIMIT 1");
 } //fine Endcombact
 
-function Docombactstats($battleid,$attaccante,$difensore) {
+function Startcombact($attaccante,$difensore,$server) {
+global $db,$adesso,$lang,$language;
+$db->QueryMod("INSERT INTO battle (attid,difid) VALUES ('".$attaccante."','".$difensore."')");
+$battle=$db->QuerySelect("SELECT id FROM battle WHERE attid='".$attaccante."' LIMIT 1");
+$db->QueryMod("INSERT INTO battlereport (id,data,attid,difid) VALUES ('".$battle['id']."','".$adesso."','".$attaccante."','".$difensore."')");
+$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,battleid) VALUES ('0','".$adesso."','100','0','6','".$battle['id']."')");
+$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,oggid,battleid) VALUES ('".$difensore."','".$adesso."','84600','13','5','".$attaccante."','".$battle['id']."')");
+$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,oggid,battleid) VALUES ('".$attaccante."','".$adesso."','84600','13','5','".$difensore."','".$battle['id']."')");
+$attn=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$attaccante."' LIMIT 1");
+$attcar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$attaccante."' LIMIT 1");
+$difn=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$difensore."' LIMIT 1");
+$difcar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$difensore."' LIMIT 1");
+Docombactstats($battle['id'],$attn['username'],$difn['username']);
+} //fine Startcombact
+
+function Docombactstats($battleid,$attaccante,$difensore,$attcar,$difcar) {
 global $db,$lang;
 $server=$db->database;
 umask(0000);
 $fp=fopen("inclusi/log/report/".$server."/".$battleid.".log","a+");
-$attcar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$attaccante."' LIMIT 1");
-$difcar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$difensore."' LIMIT 1");
-$attn=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$attaccante."' LIMIT 1");
-$difn=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$difensore."' LIMIT 1");
 $repinput.="<tr><td>";
-$repinput.=$attn['username']."<br/>";
+$repinput.=$attaccante."<br/>";
 $percsalute=100/$attcar['salute']*$attcar['saluteattuale'];
 $salute=testosalute($percsalute);
 $percenergia=100/$attcar['energiamax']*$attcar['energia'];
@@ -550,7 +550,7 @@ $energia=testoenergia($percenergia);
 $repinput.=$lang['Salute'].": ".$salute."<br/>";
 $repinput.=$lang['Energia'].": ".$energia."<br/>";
 $repinput.="</td><td>";
-$repinput.=$difn['username']."<br/>";
+$repinput.=$difensore."<br/>";
 $percsalute=100/$difcar['salute']*$difcar['saluteattuale'];
 $salute=testosalute($percsalute);
 $percenergia=100/$difcar['energiamax']*$difcar['energia'];
