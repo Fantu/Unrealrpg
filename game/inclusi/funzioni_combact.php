@@ -533,7 +533,7 @@ $attn=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$attaccante.
 $attcar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$attaccante."' LIMIT 1");
 $difn=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$difensore."' LIMIT 1");
 $difcar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$difensore."' LIMIT 1");
-Docombactstats($battle['id'],$attn['username'],$difn['username']);
+Docombactstats($battle['id'],$attn['username'],$difn['username'],$attcar,$difcar);
 } //fine Startcombact
 
 function Docombactstats($battleid,$attaccante,$difensore,$attcar,$difcar) {
