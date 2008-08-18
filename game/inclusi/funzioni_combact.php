@@ -544,11 +544,19 @@ $db->QueryMod("UPDATE battlereport SET finito='1' WHERE id='".$battleid."' LIMIT
 
 function Startcombact($attaccante,$difensore,$server,$cpu) {
 global $db,$adesso,$lang,$language;
-$db->QueryMod("INSERT INTO battle (attid,difid) VALUES ('".$attaccante."','".$difensore."')");
+if($cpu==0){$dif=$difensore;}else{
+$cpud=$db->QuerySelect("SELECT * FROM pcpudata WHERE id='".$difensore."' LIMIT 1");
+$db->QueryMod("INSERT INTO carcpu (pid,livello,salute,saluteattuale,energia,energiamax,mana,manarimasto,attfisico,attmagico,diffisica,difmagica,agilita,velocita,intelligenza,destrezza,monete) VALUES ('".$difensore."','".$cpud['livello']."','".$cpud['salute']."','".$cpud['salute']."','".$cpud['energia']."','".$cpud['energia']."','".$cpud['energia']."','".$cpud['mana']."','".$cpud['mana']."','".$cpud['attfisico']."','".$cpud['attmagico']."','".$cpud['diffisica']."','".$cpud['difmagica']."','".$cpud['agilita']."','".$cpud['velocita']."','".$cpud['intelligenza']."','".$cpud['destrezza']."','".$cpud['monete']."')");
+$idcpu=$db->QuerySelect("SELECT cpuid FROM carcpu ORDER BY cpuid DESC");
+$dif=$idcpu['cpuid'];
+$db->QueryMod("INSERT INTO equipagcpu (cpuid,cac,arm,scu) VALUES ('".$dif."','".$cpud['eqcac']."','".$cpud['eqarm']."','".$cpud['eqscu']."')");
+/*DA COMPLETARE*/
+}
+$db->QueryMod("INSERT INTO battle (attid,difid,difcpu) VALUES ('".$attaccante."','".$dif."','".$cpu."')");
 $battle=$db->QuerySelect("SELECT id FROM battle WHERE attid='".$attaccante."' LIMIT 1");
 $db->QueryMod("INSERT INTO battlereport (id,data,attid,difid) VALUES ('".$battle['id']."','".$adesso."','".$attaccante."','".$difensore."')");
+
 $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,battleid) VALUES ('0','".$adesso."','100','0','6','".$battle['id']."')");
-$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,oggid,battleid) VALUES ('".$difensore."','".$adesso."','84600','13','5','".$attaccante."','".$battle['id']."')");
 $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,oggid,battleid) VALUES ('".$attaccante."','".$adesso."','84600','13','5','".$difensore."','".$battle['id']."')");
 $attn=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$attaccante."' LIMIT 1");
 $attcar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$attaccante."' LIMIT 1");
@@ -556,9 +564,10 @@ if($cpu==0){
 $difn=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$difensore."' LIMIT 1");
 $difcar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$difensore."' LIMIT 1");
 $difname=$difn['username'];
+$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,oggid,battleid) VALUES ('".$difensore."','".$adesso."','84600','13','5','".$attaccante."','".$battle['id']."')");
 }else{
 $difname=$lang['nomepcpu'.$difensore];
-$difcar=$db->QuerySelect("SELECT * FROM carcpu WHERE cpuid='".$difensore."' LIMIT 1");
+$difcar=$db->QuerySelect("SELECT * FROM carcpu WHERE cpuid='".$dif."' LIMIT 1");
 }
 Docombactstats($battle['id'],$attn['username'],$difname,$attcar,$difcar);
 } //fine Startcombact
