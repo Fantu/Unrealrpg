@@ -3,37 +3,16 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	header("Location: ../../index.php?error=16");
 	exit();
 }
-$newversion="0.6.17";
+$newversion="0.6.19";
 foreach($game_server as $chiave=>$elemento){
 if($chiave!=999){
 $db->database=$chiave;
 $check=$db->QuerySelect("SELECT version FROM config WHERE id=".$chiave);
 if($check['version']!=$newversion AND $newversion==$game_revision){
 
-$db->QueryMod("CREATE TABLE `carcpu` (
-`cpuid` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY ,
-`pid` SMALLINT UNSIGNED NOT NULL ,
-`livello` SMALLINT UNSIGNED NOT NULL ,
-`salute` MEDIUMINT UNSIGNED NOT NULL ,
-`saluteattuale` MEDIUMINT UNSIGNED NOT NULL ,
-`energia` MEDIUMINT UNSIGNED NOT NULL ,
-`energiamax` MEDIUMINT UNSIGNED NOT NULL ,
-`mana` MEDIUMINT UNSIGNED NOT NULL ,
-`manarimasto` MEDIUMINT UNSIGNED NOT NULL ,
-`attfisico` MEDIUMINT UNSIGNED NOT NULL ,
-`attmagico` MEDIUMINT UNSIGNED NOT NULL ,
-`diffisica` MEDIUMINT UNSIGNED NOT NULL ,
-`difmagica` MEDIUMINT UNSIGNED NOT NULL ,
-`agilita` MEDIUMINT UNSIGNED NOT NULL ,
-`velocita` MEDIUMINT UNSIGNED NOT NULL ,
-`intelligenza` MEDIUMINT UNSIGNED NOT NULL ,
-`destrezza` MEDIUMINT UNSIGNED NOT NULL
-) ENGINE = MYISAM");
-$db->QueryMod("INSERT INTO `pcpudata` (`id` ,`quest` ,`salute` ,`energia` ,`mana` ,`attfisico` ,`attmagico` ,`diffisica` ,`difmagica` ,`agilita` ,`velocita` ,`intelligenza` ,`destrezza` ,`livello` ,`eqcac` ,`eqarm` ,`eqscu`)
-VALUES 
-(NULL , '0', '100', '1000', '50', '200', '50', '50', '200', '150', '150', '100', '100', '1', '64', '56', '58');
-");
-$db->QueryMod("ALTER TABLE `utenti` ADD `vacanza` TINYINT( 1 ) UNSIGNED NOT NULL DEFAULT '0'");
+$db->QueryMod("ALTER TABLE `pcpudata` ADD `monete` SMALLINT UNSIGNED NOT NULL DEFAULT '0'");
+$db->QueryMod("ALTER TABLE `carcpu` ADD `monete` SMALLINT UNSIGNED NOT NULL");
+$db->QueryMod("UPDATE `pcpudata` SET `monete` = '20' WHERE `pcpudata`.`id` =1 LIMIT 1");
 
 /*$db->QueryMod("INSERT INTO `oggetti` (
 `id` ,
@@ -71,7 +50,7 @@ VALUES
 		$db->QueryMod("INSERT INTO equipaggiamento (userid) VALUES ('".$var['userid']."')");
 	}*/
 
-// INIZIO SISTEMAZIONE CARATTERISTICHE E RITORNO A LIVELLO 1
+/* INIZIO SISTEMAZIONE CARATTERISTICHE E RITORNO A LIVELLO 1
 require('../game/inclusi/personaggio.php');
 $a=$db->QueryCiclo("SELECT userid FROM utenti WHERE conferma='1' AND personaggio='1'");
 while($var=$db->QueryCicloResult($a))
@@ -97,7 +76,7 @@ $exp+=$expinc*(120*$i);
 $db->QueryMod("UPDATE caratteristiche SET agilita='".$agilita."',attfisico='".$attfisico."',attmagico='".$attmagico."',diffisica='".$diffisica."',difmagica='".$difmagica."',mana='".$mana."',manarimasto='".$mana."',velocita='".$velocita."',intelligenza='".$intelligenza."',destrezza='".$destrezza."',livello='1',exp=exp+'".$exp."',salute='100',saluteattuale='100',energia='1000',energiamax='1000' WHERE userid='".$var['userid']."'");
 }//se livello maggiore di 1
 }//per ogni utente
-// FINE SISTEMAZIONE CARATTERISTICHE E RITORNO A LIVELLO 1
+// FINE SISTEMAZIONE CARATTERISTICHE E RITORNO A LIVELLO 1*/
 	
 	
 

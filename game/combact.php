@@ -103,7 +103,7 @@ $idp=(int)$evento['oggid'];
 $db->QueryMod("DELETE FROM eventi WHERE userid='".$user['userid']."'");
 $db->QueryMod("DELETE FROM eventi WHERE userid='".$idp."'");
 if($risp==1){
-Startcombact($user['userid'],$idp,$user['server']);
+Startcombact($user['userid'],$idp,$user['server'],0);
 echo "<script language=\"javascript\">window.location.href='index.php?loc=situazione'</script>";
 exit();
 }else{
