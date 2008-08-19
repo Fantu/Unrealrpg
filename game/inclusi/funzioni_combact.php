@@ -187,10 +187,6 @@ class Dati{
 	
 	} //fine ogginuso
 	
-	public function Impobexp($chi,$cosa) {
-	$this->che[$chi]->bonusexp=$cosa;
-	} //fine Impobexp
-	
 	public function Controlloogg($chi) {
 	$oggpersi=Checkusurarottura($this->id($chi),$this->cpu($chi));
 	if($oggpersi){
@@ -252,7 +248,7 @@ class Dati{
 	$this->che[$chi]->subtattica==1;
 	} //fine Autotattic
 	
-	public function Guadagnaexp($chi,$turni,$expb) {
+	public function Guadagnaexp($chi,$turni,$expb,$vincitore) {
 	global $db,$lang;
 	if($chi==1)
 	$chi2=2;
@@ -261,10 +257,11 @@ class Dati{
 	//$exp=1*$turni;
 	$exp=5+$expb;
 	$exp=round(rand(($exp/100*95),$exp));
-	if($this->bexp($chi)==1){
+	if($vincitore==$chi2){
 	$exp-=6;
-	}elseif($this->bexp($chi)==2){
-	$exp+=6;}
+	}elseif($vincitore==$chi){
+	$exp+=6;}elseif($vincitore==0){
+	$exp+=5;}
 	$level=$this->car($chi,'livello')-$this->car($chi2,'livello');
 	if($level<0){
 	$liv=abs($level);
@@ -463,14 +460,12 @@ $vincitore=0;
 if($dc->morto(1)==1){//se il secondo vince
 $vincitore=2;
 $input.=sprintf($lang['vincitore_combattimento'],$dc->nome(2))."<br/>";
-$dc->Impobexp(2,2);//aumento al secondo
 $rep=$dc->Checkrep(2);
 if($rep[0]==1){
 if($dc->cpu(2)==0){$db->QueryMod("UPDATE caratteristiche SET reputazione=reputazione+'".$rep[1]."' WHERE userid='".$dc->id(2)."' LIMIT 1");}}
 }elseif($dc->morto(2)==1){//se il primo vince
 $vincitore=1;
 $input.=sprintf($lang['vincitore_combattimento'],$dc->nome(1))."<br/>";
-$dc->Impobexp(1,2);//aumento al primo
 $rep=$dc->Checkrep(1);
 if($rep[0]==1){
 if($dc->cpu(1)==0){$db->QueryMod("UPDATE caratteristiche SET reputazione=reputazione+'".$rep[1]."' WHERE userid='".$dc->id(1)."' LIMIT 1");}}
@@ -478,20 +473,15 @@ if($dc->cpu(1)==0){$db->QueryMod("UPDATE caratteristiche SET reputazione=reputaz
 $input=$lang['finito_entrambi_esausti']."<br/>";
 }elseif($dc->tattica(1,1)==2 AND $dc->tattica(2,1)==2){//se entrambi si arrendono
 $input=$lang['finito_entrambi_arresi']."<br/>";
-$expb+=5;
 }elseif($dc->tattica(1,1)==2){//se il primo si arrende
 $vincitore=2;
 $input.=sprintf($lang['finito_resa'],$dc->nome(1),$dc->nome(2))."<br/>";
-$dc->Impobexp(1,1);//diminuzione al primo
-$dc->Impobexp(2,2);//aumento al secondo
 $rep=$dc->Checkrep(1);
 if($rep[0]==2){
 if($dc->cpu(1)==0){$db->QueryMod("UPDATE caratteristiche SET reputazione=reputazione-'".$rep[1]."' WHERE userid='".$dc->id(1)."' LIMIT 1");}}
 }elseif($dc->tattica(2,1)==2){//se il secondo si arrende
 $vincitore=1;
 $input.=sprintf($lang['finito_resa'],$dc->nome(2),$dc->nome(1))."<br/>";
-$dc->Impobexp(2,1);//diminuzione al secondo
-$dc->Impobexp(1,2);//aumento al primo
 $rep=$dc->Checkrep(2);
 if($rep[0]==2){
 if($dc->cpu(2)==0){$db->QueryMod("UPDATE caratteristiche SET reputazione=reputazione-'".$rep[1]."' WHERE userid='".$dc->id(2)."' LIMIT 1");}}
@@ -501,8 +491,8 @@ $input=$lang['combattimento_troppo_lungo']."<br/>";
 $db->QueryMod("UPDATE battle SET tatatt='0',tatatt2='0',tatdif='0',tatdif2='0' WHERE id='".$battleid."' LIMIT 1");
 if($finito==1){
 if($turni>1){
-if($dc->cpu(1)==0){$input.=$dc->Guadagnaexp(1,$turni,$expb);}
-if($dc->cpu(2)==0){$input.=$dc->Guadagnaexp(2,$turni,$expb);}
+if($dc->cpu(1)==0){$input.=$dc->Guadagnaexp(1,$turni,$expb,$vincitore);}
+if($dc->cpu(2)==0){$input.=$dc->Guadagnaexp(2,$turni,$expb,$vincitore);}
 }//se più di un turno
 if($vincitore!=0){
 if($battle['attid']==$dc->id($vincitore)){$vincitore=1;}else{$vincitore=2;}
