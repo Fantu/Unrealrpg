@@ -19,7 +19,7 @@ $lang['desc_lav_alchimista']='Puoi lavorare in Laboratorio come alchimista cerca
 $lang['nessuna_pozione_poss']='Non sei abbastanza esperto per distillare nessuna pozione.';
 $lang['report_lavlabalc']='You have worked at the Laboratory as an alchemist for an hour, earning %s experience. The job has weakened you (you have lost %s energy) and your body needs rest (you have lost %s health). You also spent %s gold to buy the necessary ingredients.';
 $lang['report_lavoro_labalc']='Completato il lavoro in Laboratorio come alchimista.';
-$lang['report_lavlab_pozione_no']='You didn`t manage to prepare the chosen potion.';
+$lang['report_lavlab_pozione_no']='Non sei riuscito a distillare %s.';
 $lang['report_lavlab_pozione_si']='You managed to prepare %s.';
 $lang['seleziona_pozione']='Seleziona quale pozione:';
 ?>

@@ -18,12 +18,12 @@ $lang['Fucina']='Forge';
 $lang['Rocca_arcano']='Mage tower';
 $lang['Libro_incantesimi']='Spellbook';
 $lang['Combattimenti']='Combattimenti';
-$lang['Equipaggiamento']='Equipaggiamento';
+$lang['Equipaggiamento']='Equipment';
 $lang['Lavori']='Work';
 $lang['Magia']='Magia';
-$lang['Informazioni']='Informazioni';
-$lang['Oggetti']='Oggetti';
-$lang['Citta']='Città';
+$lang['Informazioni']='Information';
+$lang['Oggetti']='Objects';
+$lang['Citta']='City';
 $lang['Locanda']='Locanda';
 //fine menu
 
@@ -76,7 +76,7 @@ $lang['Non_definito']='Undefined';
 $lang['Maschio']='Male';
 $lang['Femmina']='Female';
 $lang['Sesso']='Gender';
-$lang['elenco_ab']='Abilità';
+$lang['elenco_ab']='Skills';
 $lang['ab_minatore']='Miner';
 $lang['ab_alchimista']='Alchemist';
 $lang['ab_fabbro']='Smith';
@@ -109,10 +109,10 @@ $lang['bassa']='Low';
 $lang['media']='Normal';
 $lang['alta']='High';
 $lang['molto_alta']='Very high';
-$lang['ottima']='Ottima';
+$lang['ottima']='Excellent';
 $lang['perfetta']='Perfect';
-$lang['morto']='Morto';
-$lang['esausto']='Esausto';
+$lang['morto']='Dead';
+$lang['esausto']='Exhausted';
 $lang['utente_inesistente']='Utente inesistente';
 //fine visualizzautente
 

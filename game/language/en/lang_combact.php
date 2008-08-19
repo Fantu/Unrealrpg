@@ -19,7 +19,7 @@ $lang['report_sfida_rifiutata']='La sfida è stata rifiutata.';
 $lang['aggiorna']='Aggiorna';
 $lang['secondi_prox_round']='Questo "round" finirà tra %s secondi.';
 
-$lang['danno_att_vicino']='%s attacca %s con %s e colpisce infliggendo %s di danno.';
+$lang['danno_att_vicino']='%s attacca con %s e colpisce';
 $lang['niente_att_vicino']='%s attacca %s con %s senza riuscire a colpire.';
 $lang['pugno']='pugno';
 $lang['troppo_stanco_per_attacco']='%s non attacca in quanto esausto.';
@@ -40,8 +40,8 @@ $lang['tattica_attacco_cac']='corpo a corpo';
 $lang['nessuna']='Nessuna';
 $lang['tattica_selezionata']='Tattica selezionata: %s';
 $lang['equip_di']='%s di livello %s, equipaggiamento: %s';
-$lang['parata_con_scudo']='%s si para con lo scudo.';
-$lang['colpo_potente']='%s infligge un colpo potente.';
+$lang['parata_con_scudo']='%s si para con lo scudo';
+$lang['colpo_potente']='con un colpo potente';
 $lang['danni_subiti']='%s subisce %s danni.';
 
 $lang['nomepcpu1']='CpuProva';
