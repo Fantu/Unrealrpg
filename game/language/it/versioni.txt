@@ -13,6 +13,7 @@ Legenda:<br />
 + Nei combattimenti contro personaggi non comandati da utenti è possibile guadagnare monete in caso di vittoria<br />
 + Vari miglioramenti di sistema a sistema di combattimento<br />
 # Modificato il guadagno di esperienza nei combattimenti, reso più equilibrato<br />
+# Diminuiti i danni che si possono subire con gli incidenti durante i lavori<br />
 </p>
 <p><strong>0.6.19</strong> [R.1470] (19/08/08 - Beta)<br />
 + Se la modalità vacanza è attiva non si ricevono le email di segnalazione inattività<br />

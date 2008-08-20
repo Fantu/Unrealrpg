@@ -540,7 +540,9 @@ $db->QueryMod("INSERT INTO carcpu (pid,livello,salute,saluteattuale,energia,ener
 $idcpu=$db->QuerySelect("SELECT cpuid FROM carcpu ORDER BY cpuid DESC");
 $dif=$idcpu['cpuid'];
 $db->QueryMod("INSERT INTO equipagcpu (cpuid,cac,arm,scu) VALUES ('".$dif."','".$cpud['eqcac']."','".$cpud['eqarm']."','".$cpud['eqscu']."')");
-/*DA COMPLETARE*/
+if($cpud['eqcac']!=0){$db->QueryMod("INSERT INTO equipcpu (oggid,cpuid) VALUES ('".$dif."','".$cpud['eqcac']."')");}
+if($cpud['eqarm']!=0){$db->QueryMod("INSERT INTO equipcpu (oggid,cpuid) VALUES ('".$dif."','".$cpud['eqarm']."')");}
+if($cpud['eqscu']!=0){$db->QueryMod("INSERT INTO equipcpu (oggid,cpuid) VALUES ('".$dif."','".$cpud['eqscu']."')");}
 }
 $db->QueryMod("INSERT INTO battle (attid,difid,difcpu) VALUES ('".$attaccante."','".$dif."','".$cpu."')");
 $battle=$db->QuerySelect("SELECT id FROM battle WHERE attid='".$attaccante."' LIMIT 1");
