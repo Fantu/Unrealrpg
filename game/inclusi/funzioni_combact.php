@@ -58,7 +58,7 @@ class Dati{
 	$cpu=0;
 	}else{
 	$difcar=$db->QuerySelect("SELECT * FROM carcpu WHERE cpuid='".$difensore."' LIMIT 1");
-	$difname=$lang['nomepcpu'.$difensore];
+	$difname=$lang['nomepcpu'.$difcar['pid']];
 	$difequip=$db->QuerySelect("SELECT * FROM equipagcpu WHERE cpuid='".$difensore."' LIMIT 1");
 	$difplus=1;
 	$cpu=1;
