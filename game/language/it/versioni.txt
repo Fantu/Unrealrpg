@@ -8,7 +8,7 @@ Legenda:<br />
 <br />
 </p>
 <p><strong>0.7.0</strong> (stimato per fine agosto/inizio settembre - In sviluppo)<br />
-+ Iniziata creazione personaggi non comandati da utenti<br />
++ Aggiunta la possibilità di combattere contro personaggi non comandati da utenti<br />
 + Nei combattimenti contro personaggi non comandati da utenti non è possibile la resa<br />
 + Iniziata creazione "Confini"<br />
 + Nei combattimenti contro personaggi non comandati da utenti è possibile guadagnare monete in caso di vittoria<br />

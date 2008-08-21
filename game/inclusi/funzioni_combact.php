@@ -515,7 +515,7 @@ $testo="Nella versione attuale non si pu&ograve; definire ancora un combattiment
 $att=$battle['attid'];
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$att."','".$titolo."','".$testo."','0','".$adesso."')");
 $dif=$battle['difid'];
-if($battle['cpu']==0){
+if($battle['difcpu']==0){
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$dif."','".$titolo."','".$testo."','0','".$adesso."')");
 }else{
 $db->QueryMod("DELETE FROM carcpu WHERE cpuid='".$dif."' LIMIT 1");
