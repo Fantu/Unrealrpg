@@ -26,6 +26,11 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <li><a href="index.php?loc=libro"><?php echo $lang['Libro_incantesimi']; ?></a></li>
 </ul></li>
 </ul>
+<ul>
+<li><a href="index.php?loc=submenu&amp;menu=confini"><?php echo $game_server[$user['server']]; ?></a><ul>
+<li><a href="index.php?loc=confini"><?php echo $lang['Confini']; ?></a></li>
+</ul></li>
+</ul>
 <a href="index.php?loc=combact"><?php if(($evento['tipo']==4 AND $evento['type']==2) OR $evento['tipo']==5){echo "<strong>";} echo $lang['Combattimenti']; if(($evento['tipo']==4 AND $evento['type']==2) OR $evento['tipo']==5){echo "</strong>";} ?></a>
 <ul>
 <li><a href="index.php?loc=submenu&amp;menu=oggetti"><?php echo $lang['Oggetti']; ?></a><ul>

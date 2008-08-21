@@ -33,6 +33,10 @@ $titolo=$lang['Informazioni'];
 $link[]='<a href="index.php?loc=guida">'.$lang['Guida'].'</a>';
 $link[]='<a href="index.php?loc=changelog">'.$lang['Changelog'].'</a>';
 break;
+case "confini":
+$titolo=$game_server[$user['server']];
+$link[]='<a href="index.php?loc=confini">'.$lang['Confini'].'</a>';
+break;
 }
 require('template/int_submenu.php');
 ?>
