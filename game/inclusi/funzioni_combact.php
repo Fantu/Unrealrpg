@@ -507,7 +507,7 @@ $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,battl
 } //fine Battledo
 
 function Endcombact($battleid,$vincitore){
-global $db,$adesso;
+global $db,$adesso,$lang;
 $battle=$db->QuerySelect("SELECT * FROM battle WHERE id='".$battleid."' LIMIT 1");
 $link="<a href=\"index.php?loc=combact&do=repview&id=".$battleid."\">qui</a>";
 $titolo="Combattimento finito";
@@ -521,11 +521,17 @@ $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES
 $db->QueryMod("DELETE FROM carcpu WHERE cpuid='".$dif."' LIMIT 1");
 $db->QueryMod("DELETE FROM equipagcpu WHERE cpuid='".$dif."' LIMIT 1");
 $db->QueryMod("DELETE FROM equipcpu WHERE cpuid='".$dif."'");
+if($vincitore>0){$attn=$db->QuerySelect("SELECT username,monete FROM utenti WHERE userid='".$battle['attid']."' LIMIT 1");}
 if($vincitore==1){
 $carcpu=$db->QuerySelect("SELECT * FROM carcpu WHERE cpuid='".$dif."' LIMIT 1");
 $monete=round(rand(($carcpu['monete']/100*90),$carcpu['monete']));
 $db->QueryMod("UPDATE `utenti` SET `monete`=`monete`+'".$monete."' WHERE `userid`='".$att."' LIMIT 1");
-}//se vince contro cpu
+$input=sprintf($lang['c_vince_monete'],$attn['username'],$monete)."<br/>";
+}elseif($vincitore==2){//se vince contro cpu
+$db->QueryMod("UPDATE `utenti` SET `monete`='0' WHERE `userid`='".$att."' LIMIT 1");
+$input=sprintf($lang['c_perde_monete'],$attn['username'],$attn['monete'])."<br/>";
+}//se perde contro cpu
+if($vincitore>0){Inreport($battleid,$input);}
 }//se cpu
 $db->QueryMod("DELETE FROM eventi WHERE battleid='".$battleid."'");
 $db->QueryMod("DELETE FROM battle WHERE id='".$battleid."'");
