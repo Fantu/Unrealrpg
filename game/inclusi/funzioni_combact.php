@@ -497,8 +497,8 @@ if($dc->cpu(2)==0){$input.=$dc->Guadagnaexp(2,$turni,$expb,$vincitore);}
 if($vincitore!=0){
 if($battle['attid']==$dc->id($vincitore)){$vincitore=1;}else{$vincitore=2;}
 }
-Endcombact($battle['id'],$vincitore);
 Inreport($battleid,$input);
+Endcombact($battle['id'],$vincitore);
 }else{//continua
 if($expb!=$battle['exp']){
 $db->QueryMod("UPDATE battle SET exp='".$expb."' WHERE id='".$battleid."' LIMIT 1");}
