@@ -518,9 +518,6 @@ $dif=$battle['difid'];
 if($battle['difcpu']==0){
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$dif."','".$titolo."','".$testo."','0','".$adesso."')");
 }else{
-$db->QueryMod("DELETE FROM carcpu WHERE cpuid='".$dif."' LIMIT 1");
-$db->QueryMod("DELETE FROM equipagcpu WHERE cpuid='".$dif."' LIMIT 1");
-$db->QueryMod("DELETE FROM equipcpu WHERE cpuid='".$dif."'");
 if($vincitore>0){$attn=$db->QuerySelect("SELECT username,monete FROM utenti WHERE userid='".$battle['attid']."' LIMIT 1");}
 if($vincitore==1){
 $carcpu=$db->QuerySelect("SELECT * FROM carcpu WHERE cpuid='".$dif."' LIMIT 1");
@@ -532,6 +529,9 @@ $db->QueryMod("UPDATE `utenti` SET `monete`='0' WHERE `userid`='".$att."' LIMIT 
 $input=sprintf($lang['c_perde_monete'],$attn['username'],$attn['monete'])."<br/>";
 }//se perde contro cpu
 if($vincitore>0){Inreport($battleid,$input);}
+$db->QueryMod("DELETE FROM carcpu WHERE cpuid='".$dif."' LIMIT 1");
+$db->QueryMod("DELETE FROM equipagcpu WHERE cpuid='".$dif."' LIMIT 1");
+$db->QueryMod("DELETE FROM equipcpu WHERE cpuid='".$dif."'");
 }//se cpu
 $db->QueryMod("DELETE FROM eventi WHERE battleid='".$battleid."'");
 $db->QueryMod("DELETE FROM battle WHERE id='".$battleid."'");
