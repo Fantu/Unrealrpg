@@ -46,5 +46,9 @@ $lang['danni_subiti']='%s subisce %s danni.';
 $lang['c_vince_monete']='%s prende %s monete.';
 $lang['c_perde_monete']='%s perde %s monete.';
 
+$lang['outputerroriquest']='Impossibile effettuare una quest per i seguenti motivi:';
+$lang['quest_error1']='- Non sei in condizioni abbastanza buone per affrontare una quest.<br />';
+$lang['quest_error2']='- Puoi salire di livello, non puoi fare una quest finchè non lo farai.<br />';
+
 $lang['nomepcpu1']='CpuProva';
 ?>
