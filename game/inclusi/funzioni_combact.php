@@ -495,7 +495,7 @@ if($dc->cpu(1)==0){$input.=$dc->Guadagnaexp(1,$turni,$expb,$vincitore);}
 if($dc->cpu(2)==0){$input.=$dc->Guadagnaexp(2,$turni,$expb,$vincitore);}
 }//se più di un turno
 
-$input.="1=".$dc->nome(1))."2=".$dc->nome(2)."<br/>";
+$input.="1=".$dc->nome(1)."2=".$dc->nome(2)."<br/>";
 $input.="Prima vincitore=".$vincitore."<br/>";
 
 if($vincitore!=0){
