@@ -63,7 +63,7 @@ class Dati{
 	$difplus=1;
 	$cpu=1;
 	}
-	$difpoint=$difcar['agilita']+$difcar['velocita']+($difcar['saluteattuale']/2)+($difcar['energia']/5);
+	$difpoint=$difcar['agilita']+$difcar['velocita']+($difcar['saluteattuale']/2)+($difcar['energia']/20);
 	if($attpoint>$difpoint){
 	$this->che[1]=new Combattente($attaccante,$attname,$attcar,$attequip,$battle['tatatt'],$battle['tatatt2'],$attn['plus'],0);
 	$this->che[2]=new Combattente($difensore,$difname,$difcar,$difequip,$battle['tatdif'],$battle['tatdif2'],$difplus,$cpu);
