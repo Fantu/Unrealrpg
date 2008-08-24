@@ -13,6 +13,7 @@ Legenda:<br />
 + Nei combattimenti contro personaggi non comandati da utenti è possibile guadagnare monete in caso di vittoria e in caso di sconfitta si perderanno le proprie<br />
 + Iniziata creazione "Confini"<br />
 + Iniziata creazione "quest"<br />
++ Iniziata creazione A nord, verso le montagne<br />
 + Vari miglioramenti di sistema a sistema di combattimento, Combattimenti<br />
 # Modificato il guadagno di esperienza nei combattimenti, reso più equilibrato<br />
 # Diminuiti i danni che si possono subire con gli incidenti durante i lavori<br />

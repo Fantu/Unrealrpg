@@ -7,4 +7,11 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <?php echo $outputerrori; ?>
 <br />
 <br />
-<center><a href="index.php?loc=confini&amp;do=prova"><?php echo "Prova"; ?></a></center>
+<form action="" method="post" name="foltreconfine">
+<?php echo $lang['vai_verso']; ?>: 
+<select name="direzione" id="direzione">
+<option value="0" selected="selected">--------</option>
+<option value="1">Nord</option>
+</select>
+<input type="submit" name="parti" value="<?php echo $lang['Parti']; ?>" />
+</form>
