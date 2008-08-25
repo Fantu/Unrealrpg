@@ -344,7 +344,7 @@ class Dati{
 	if($this->equip($att,'cac')!=0 AND $arma['bonuseff']!=0)
 	$colpisci+=$colpisci/100*$arma['bonuseff'];
 	if($this->tattica($dif,1)==3 AND $this->esausto($dif)==0)
-	$colpisci-=rand(5,20);
+	$colpisci-=rand(10,20);
 	if((100/$this->car($att,'energiamax')*$this->car($att,'energia'))<20)
 	$colpisci-=20;
 	if((100/$this->car($dif,'energiamax')*$this->car($dif,'energia'))<20)
