@@ -18,6 +18,7 @@ Legenda:<br />
 + Vari miglioramenti di sistema a sistema di combattimento, Combattimenti, sistema automatico di selezione delle tattiche<br />
 # Modificato il guadagno di esperienza nei combattimenti, reso più equilibrato<br />
 # Diminuiti i danni che si possono subire con gli incidenti durante i lavori<br />
+# Modificata la probabilità di colpire in attacco corpo a corpo, resa più equilibrata ed aggiunta l'influenza dell'energia attuale dei combattenti in qualsiasi caso<br />
 </p>
 <p><strong>0.6.19</strong> [R.1470] (19/08/08 - Beta)<br />
 + Se la modalità vacanza è attiva non si ricevono le email di segnalazione inattività<br />
