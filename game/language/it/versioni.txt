@@ -14,7 +14,7 @@ Legenda:<br />
 + Iniziata creazione "Confini"<br />
 + Iniziata creazione "quest"<br />
 + Iniziata creazione A nord, verso le montagne<br />
-+ Aggiunti i personaggi non comandati da utenti: Bandito giovane, Bandito, Bandito esperto<br />
++ Aggiunti ai personaggi non comandati da utenti: Bandito giovane, Bandito, Bandito esperto, Goblin<br />
 + Vari miglioramenti di sistema a sistema di combattimento, Combattimenti<br />
 # Modificato il guadagno di esperienza nei combattimenti, reso più equilibrato<br />
 # Diminuiti i danni che si possono subire con gli incidenti durante i lavori<br />

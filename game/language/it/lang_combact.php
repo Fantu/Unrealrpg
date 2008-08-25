@@ -56,5 +56,6 @@ $lang['Parti']='Parti';
 $lang['nomepcpu1']='CpuProva';
 $lang['nomepcpu2']='Bandito giovane';
 $lang['nomepcpu3']='Bandito';
-$lang['nomepcpu3']='Bandito esperto';
+$lang['nomepcpu4']='Bandito esperto';
+$lang['nomepcpu5']='Goblin';
 ?>

@@ -21,7 +21,13 @@ $errore.=$lang['quest_error3'];
 if($errore){
 	$outputerrori="<span>".$lang['outputerroriquest']."</span><br /><span>".$errore."</span><br /><br />";}
 else {
-Startcombact($user['userid'],1,$user['server'],1);
+$pq=$db->QueryCiclo("SELECT id FROM pcpudata WHERE quest='1'");
+while($ps=$db->QueryCicloResult($pq)) {	
+$prs[]=$ps['id'];
+}
+shuffle($prs);
+$pcpuid=$prs[0];
+Startcombact($user['userid'],$pcpuid,$user['server'],1);
 echo "<script language=\"javascript\">window.location.href='index.php?loc=combact'</script>";
 exit();
 }//se nessun errore
