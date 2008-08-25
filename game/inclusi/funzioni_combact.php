@@ -340,7 +340,7 @@ class Dati{
 	$energia=50;
 	}
 	$casuale=rand(1,10);if($casuale==1){$colpisci=100;}elseif($casuale==10){$colpisci=0;}else{//casualità totale per minima prob colpire o non colpire cmq
-	$colpisci=rand(1,100)+($this->car($att,'agilita')/8-$this->car($dif,'agilita')/8)+($this->car($att,'velocita')/16-$this->car($dif,'velocita')/16)+((20/$this->car($att,'energiamax')*$this->car($att,'energia'))+(20/$this->car($dif,'energiamax')*$this->car($dif,'energia')));
+	$colpisci=rand(1,100)+($this->car($att,'agilita')/6-$this->car($dif,'agilita')/6)+($this->car($att,'velocita')/16-$this->car($dif,'velocita')/16)+((20/$this->car($att,'energiamax')*$this->car($att,'energia'))+(20/$this->car($dif,'energiamax')*$this->car($dif,'energia')));
 	if($this->equip($att,'cac')!=0 AND $arma['bonuseff']!=0)
 	$colpisci+=$colpisci/100*$arma['bonuseff'];
 	if($this->tattica($dif,1)==3 AND $this->esausto($dif)==0)
