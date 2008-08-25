@@ -15,7 +15,7 @@ Legenda:<br />
 + Iniziata creazione "quest"<br />
 + Iniziata creazione A nord, verso le montagne<br />
 + Aggiunti ai personaggi non comandati da utenti: Bandito giovane, Bandito, Bandito esperto, Goblin<br />
-+ Vari miglioramenti di sistema a sistema di combattimento, Combattimenti<br />
++ Vari miglioramenti di sistema a sistema di combattimento, Combattimenti, sistema automatico di selezione delle tattiche<br />
 # Modificato il guadagno di esperienza nei combattimenti, reso più equilibrato<br />
 # Diminuiti i danni che si possono subire con gli incidenti durante i lavori<br />
 </p>

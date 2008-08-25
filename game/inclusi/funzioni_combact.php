@@ -240,7 +240,7 @@ class Dati{
 	}
 	}//per ogni tattica
 	if($this->tattica($chi,1)==3){
-	$prob=rand(1,5);
+	$prob=rand(1,3);
 	if($prob==1)
 	$this->che[$chi]->tattica=1;
 	}//se difesa prob di attacco
