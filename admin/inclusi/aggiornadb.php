@@ -3,16 +3,38 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	header("Location: ../../index.php?error=16");
 	exit();
 }
-$newversion="0.6.19";
+$newversion="0.7.0";
 foreach($game_server as $chiave=>$elemento){
 if($chiave!=999){
 $db->database=$chiave;
 $check=$db->QuerySelect("SELECT version FROM config WHERE id=".$chiave);
 if($check['version']!=$newversion AND $newversion==$game_revision){
 
-$db->QueryMod("ALTER TABLE `pcpudata` ADD `monete` SMALLINT UNSIGNED NOT NULL DEFAULT '0'");
-$db->QueryMod("ALTER TABLE `carcpu` ADD `monete` SMALLINT UNSIGNED NOT NULL");
-$db->QueryMod("UPDATE `pcpudata` SET `monete` = '20' WHERE `pcpudata`.`id` =1 LIMIT 1");
+$db->QueryMod("INSERT INTO `pcpudata` (
+`id` ,
+`quest` ,
+`salute` ,
+`energia` ,
+`mana` ,
+`attfisico` ,
+`attmagico` ,
+`diffisica` ,
+`difmagica` ,
+`agilita` ,
+`velocita` ,
+`intelligenza` ,
+`destrezza` ,
+`livello` ,
+`eqcac` ,
+`eqarm` ,
+`eqscu` ,
+`monete`
+)
+VALUES 
+(NULL , '1', '100', '1000', '50', '100', '25', '100', '25', '150', '150', '100', '100', '1', '65', '55', '57', '10'),
+(NULL , '1', '110', '1100', '50', '200', '25', '200', '25', '160', '160', '100', '150', '2', '60', '56', '57', '15'),
+(NULL , '1', '130', '1300', '50', '300', '30', '300', '30', '180', '180', '120', '200', '4', '61', '56', '58', '0');
+");
 
 /*$db->QueryMod("INSERT INTO `oggetti` (
 `id` ,
