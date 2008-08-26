@@ -179,6 +179,8 @@ class Dati{
 	global $db;
 	if($this->car($chi,'saluteattuale')<0)
 	$this->che[$chi]->car['saluteattuale']=0;
+	if($this->car($chi,'energia')<0)
+	$this->che[$chi]->car['energia']=0;
 	if($this->cpu($chi)==0){
 	$db->QueryMod("UPDATE caratteristiche SET saluteattuale='".$this->car($chi,'saluteattuale')."',energia='".$this->car($chi,'energia')."' WHERE userid='".$this->id($chi)."' LIMIT 1");
 	}else{
@@ -447,7 +449,6 @@ $dc->Aggiornastat(2);
 $dc->Controllastato(1);
 $dc->Controllastato(2);
 $expb=$dc->Checkturnexp($expb);
-$expb=floor($expb);
 
 $turni++;
 $input.="---------------------------------<( ".($turni+1)." )>---------------------------------";
