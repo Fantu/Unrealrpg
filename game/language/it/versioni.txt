@@ -7,7 +7,7 @@ Legenda:<br />
 - Correzione bug e patch di situazioni non previste<br />
 <br />
 </p>
-<p><strong>0.7.0</strong> (stimato per fine agosto/inizio settembre - In sviluppo)<br />
+<p><strong>0.7.0</strong> (stimato per inizio settembre - In sviluppo)<br />
 + Aggiunta la possibilità di combattere contro personaggi non comandati da utenti<br />
 + Nei combattimenti contro personaggi non comandati da utenti non è possibile la resa<br />
 + Nei combattimenti contro personaggi non comandati da utenti è possibile guadagnare monete in caso di vittoria e in caso di sconfitta si perderanno le proprie<br />

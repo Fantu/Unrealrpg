@@ -7,11 +7,13 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <?php echo $outputerrori; ?>
 <br />
 <br />
+<?php echo $lang['Nord'].": ".$lang['le_montagne']; ?>
+<br />
 <form action="" method="post" name="foltreconfine">
 <?php echo $lang['vai_verso']; ?>: 
 <select name="direzione" id="direzione">
 <option value="0" selected="selected">--------</option>
-<option value="1">Nord</option>
+<option value="1"><?php echo $lang['Nord']; ?></option>
 </select>
 <input type="submit" name="parti" value="<?php echo $lang['Parti']; ?>" />
 </form>

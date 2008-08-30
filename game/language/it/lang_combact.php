@@ -52,6 +52,8 @@ $lang['quest_error2']='- Puoi salire di livello, non puoi fare una quest finchè
 $lang['quest_error3']='- Direzione non valida.<br />';
 $lang['vai_verso']='Vai verso';
 $lang['Parti']='Parti';
+$lang['Nord']='Nord';
+$lang['le_montagne']='Le Montagne';
 
 $lang['nomepcpu1']='CpuProva';
 $lang['nomepcpu2']='Bandito giovane';
