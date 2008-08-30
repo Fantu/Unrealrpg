@@ -20,6 +20,7 @@ Legenda:<br />
 # Diminuiti i danni che si possono subire con gli incidenti durante i lavori<br />
 # Modificata la probabilità di colpire in attacco corpo a corpo, resa più equilibrata ed aggiunta l'influenza dell'energia attuale dei combattenti in qualsiasi caso<br />
 # Modificata la difesa, resa più equilibrata<br />
+# Diminuito il tempo di un "round" da 100 a 90 secondi<br />
 </p>
 <p><strong>0.6.19</strong> [R.1470] (19/08/08 - Beta)<br />
 + Se la modalità vacanza è attiva non si ricevono le email di segnalazione inattività<br />

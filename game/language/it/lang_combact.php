@@ -53,6 +53,9 @@ $lang['quest_error3']='- Direzione non valida.<br />';
 $lang['vai_verso']='Vai verso';
 $lang['Parti']='Parti';
 $lang['Nord']='Nord';
+$lang['Sud']='Sud';
+$lang['Ovest']='Ovest';
+$lang['Est']='Est';
 $lang['le_montagne']='Le Montagne';
 
 $lang['nomepcpu1']='CpuProva';
