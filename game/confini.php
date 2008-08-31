@@ -36,14 +36,9 @@ $errore.=$lang['quest_error3'];
 if($errore){
 	$outputerrori="<span>".$lang['outputerroriquest']."</span><br /><span>".$errore."</span><br /><br />";}
 else {
-$pq=$db->QueryCiclo("SELECT id FROM pcpudata WHERE quest='1'");
-while($ps=$db->QueryCicloResult($pq)) {	
-$prs[]=$ps['id'];
-}
-shuffle($prs);
-$pcpuid=$prs[0];
-Startcombact($user['userid'],$pcpuid,$user['server'],1);
-echo "<script language=\"javascript\">window.location.href='index.php?loc=combact'</script>";
+$secondi=2000/1000*$usercar['velocita'];
+$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,questid) VALUES ('".$user['userid']."','".$adesso."','".$secondi."','15','8','1')");
+echo "<script language=\"javascript\">window.location.href='index.php?loc=situazione'</script>";
 exit();
 }//se nessun errore
 }//fine parti

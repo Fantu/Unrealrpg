@@ -37,6 +37,7 @@ VALUES
 (NULL , '1', '100', '1200', '50', '200', '50', '200', '50', '200', '200', '50', '50', '3', '65', '0', '0', '10');
 ");
 $db->QueryMod("ALTER TABLE `battle` CHANGE `exp` `exp` FLOAT UNSIGNED NOT NULL DEFAULT '0'");
+$db->QueryMod("ALTER TABLE `eventi` ADD `questid` SMALLINT UNSIGNED NOT NULL DEFAULT '0'");
 
 /*$db->QueryMod("INSERT INTO `oggetti` (
 `id` ,

@@ -616,4 +616,16 @@ $ore--;
 $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,ore) VALUES ('".$userid."','".$adesso."','3600','14','7','".$ore."')");
 }//fine se la coda ha almeno un altra ora
 } //fine Completadormire
+
+function Completaquest($userid,$qid){
+global $db,$adesso,$lang;
+$pq=$db->QueryCiclo("SELECT id FROM pcpudata WHERE quest='1'");
+while($ps=$db->QueryCicloResult($pq)) {	
+$prs[]=$ps['id'];
+}
+shuffle($prs);
+$pcpuid=$prs[0];
+Startcombact($userid,$pcpuid,$db->database,1);
+}//fine se la coda ha almeno un altra ora
+} //fine Completadormire
 ?>

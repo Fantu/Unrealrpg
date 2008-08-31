@@ -15,7 +15,9 @@ Legenda:<br />
 + Iniziata creazione "quest"<br />
 + Iniziata creazione A nord, verso le montagne<br />
 + Aggiunti ai personaggi non comandati da utenti: Bandito giovane, Bandito, Bandito esperto, Goblin<br />
-+ Vari miglioramenti di sistema a sistema di combattimento, Combattimenti, sistema automatico di selezione delle tattiche<br />
++ Aggiunta la possibilità di imbattersi in personaggi ostili non comandati da utenti<br />
++ Andare oltre il confine del regno comporta tot tempo per arrivare a destinazione, la velocità del personaggio influisce<br />
++ Vari miglioramenti di sistema a sistema di combattimento, Combattimenti, sistema automatico di selezione delle tattiche, sistema messaggi<br />
 # Modificato il guadagno di esperienza nei combattimenti, reso più equilibrato<br />
 # Diminuiti i danni che si possono subire con gli incidenti durante i lavori<br />
 # Modificata la probabilità di colpire in attacco corpo a corpo, resa più equilibrata ed aggiunta l'influenza dell'energia attuale dei combattenti in qualsiasi caso<br />
