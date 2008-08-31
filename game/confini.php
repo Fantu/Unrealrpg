@@ -5,7 +5,22 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 }
 require_once('language/'.$language.'/lang_combact.php');
 require_once('inclusi/funzioni_combact.php');
-
+?>
+<script type="text/javascript">
+function conteggio() {
+	var caso=foltreconfine.selectedIndex.text;
+	switch (caso){
+	case 1:
+	var tempo=1;
+	break;
+	default:
+	var tempo=0;
+	break;
+		}
+	window.document.getElementById("tempo").innerHTML=(tempo);
+}
+</script>
+<?php
 if (isset($_POST['parti'])){
 $direzione=(int)$_POST['direzione'];
 $errore="";

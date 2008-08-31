@@ -15,9 +15,11 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <br />
 <form action="" method="post" name="foltreconfine">
 <?php echo $lang['vai_verso']; ?>: 
-<select name="direzione" id="direzione">
+<select name="direzione" id="direzione"  onchange="conteggio()">
 <option value="0" selected="selected">--------</option>
 <option value="1"><?php echo $lang['Nord']; ?></option>
 </select>
 <input type="submit" name="parti" value="<?php echo $lang['Parti']; ?>" />
 </form>
+<br />
+<?php echo sprintf($lang['tempo_previsto_per_destinazione'],'<div id="tempo">-</div>');?>

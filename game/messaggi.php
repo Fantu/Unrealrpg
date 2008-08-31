@@ -23,10 +23,7 @@ $db->QueryMod("DELETE FROM messaggi WHERE id='".$id."'");
 function cambiaseltuttimsg(formogg, imposta)
 {
 	for (var i =0; i < formogg.elements.length; i++)
-	{
-	var elemento = formogg.elements[i];
-	elemento.checked = imposta;
-	}
+	{formogg.elements[i].checked = imposta;}
 }
 function conteggio() {
 	window.document.getElementById("caratteri").innerHTML=(<?php if($user['plus']==0) echo "500"; else echo "10000";?>-window.document.getElementById("mymess").value.length);
