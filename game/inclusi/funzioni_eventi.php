@@ -626,6 +626,5 @@ $prs[]=$ps['id'];
 shuffle($prs);
 $pcpuid=$prs[0];
 Startcombact($userid,$pcpuid,$db->database,1);
-}//fine se la coda ha almeno un altra ora
 } //fine Completadormire
 ?>
