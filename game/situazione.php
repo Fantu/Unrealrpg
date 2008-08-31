@@ -43,7 +43,7 @@ $newmsg="<a href=\"index.php?loc=messaggi\">".$lang['un_nuovo_msg']."</a>";
 $newmsg="<a href=\"index.php?loc=messaggi\">".sprintf($lang['nuovi_msg'],$snm['id'])."</a>";
 }//fine nuovi msg
 if($eventi['id']>0){
-	if($evento['tipo']==5){
+	if($evento['tipo']==5 OR $evento['tipo']==8){
 	$event=$lang['eventi_dettagli'.$evento['dettagli']];
 	}else{
 	$event=$lang['eventi_dettagli'.$evento['dettagli']].date($lang['dataora'],($evento['datainizio']+$evento['secondi']));}
