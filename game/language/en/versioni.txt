@@ -8,15 +8,17 @@ Legenda:<br />
 <br />
 </p>
 <p><strong>0.7.0</strong> (stimato per inizio settembre - In sviluppo)<br />
-+ Aggiunta la possibilità di combattere contro personaggi non comandati da utenti<br />
-+ Nei combattimenti contro personaggi non comandati da utenti non è possibile la resa<br />
-+ Nei combattimenti contro personaggi non comandati da utenti è possibile guadagnare monete in caso di vittoria e in caso di sconfitta si perderanno le proprie<br />
++ Aggiunta la possibilità di combattere contro personaggi non comandati da utenti (NPC)<br />
++ Nei combattimenti contro NPC non è possibile la resa<br />
++ Nei combattimenti contro NPC è possibile guadagnare monete in caso di vittoria e in caso di sconfitta si perderanno le proprie<br />
 + Iniziata creazione "Confini"<br />
 + Iniziata creazione "quest"<br />
 + Iniziata creazione A nord, verso le montagne<br />
-+ Aggiunti ai personaggi non comandati da utenti: Bandito giovane, Bandito, Bandito esperto, Goblin<br />
-+ Aggiunta la possibilità di imbattersi in personaggi ostili non comandati da utenti<br />
++ Aggiunti agli NPC: Bandito giovane, Bandito, Bandito esperto, Goblin<br />
++ Aggiunta la possibilità di imbattersi in NPC ostili<br />
 + Andare oltre il confine del regno comporta tot tempo per arrivare a destinazione, la velocità del personaggio influisce<br />
++ Ora l'esperienza nel lavoro come fabbro è maggiore del 20% se si riesce a forgiare e minore del 20% se no<br />
++ Ora l'esperienza nel lavoro in miniera vecchia è maggiore del 20% se si riesce a trovare qualcosa e minore del 20% se no<br />
 + Vari miglioramenti di sistema a sistema di combattimento, Combattimenti, sistema automatico di selezione delle tattiche, sistema messaggi<br />
 # Modificato il guadagno di esperienza nei combattimenti, reso più equilibrato<br />
 # Diminuiti i danni che si possono subire con gli incidenti durante i lavori<br />

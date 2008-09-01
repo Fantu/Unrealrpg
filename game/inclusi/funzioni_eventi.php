@@ -222,8 +222,11 @@ $efficenza=9950;
 $energia+=$piccone2['energia'];
 $trovare=rand(0,10000)-$efficenza;
 if($trovare<10){
-$trovato=1;}else{
-$trovato=0;}
+$trovato=1;
+$exp-=floor($exp/100*20);
+}else{
+$trovato=0;
+$exp+=floor($exp/100*20);}
 $testo=sprintf($lang['report_lavminieravecchia'],$exp,$energia,$salute)."<br />";
 if($trovato==0){
 $testo.=$lang['report_lavminieravecchia_materiali_no']."<br />";
@@ -442,7 +445,6 @@ $salute=1;
 $exp=floor($usercar['saluteattuale']/30+$usercar['energia']/300+$usercar['attfisico']/30+$usercar['destrezza']/20+$usercar['intelligenza']/40);
 $exp=floor(rand(($exp/100*80),$exp));
 $exp+=10+(2*$usercar['fabbro']);
-$testo=sprintf($lang['report_lav_fuc_fab'],$exp,$energia,$salute)."<br />";
 $bonusabilita=$usercar['fabbro']*7;
 if($bonusabilita>50)
 $bonusabilita=50;
@@ -460,17 +462,20 @@ $testo2="<span>".sprintf($lang['report_incidente_fuc2'],$danni)."</span>";
 }
 $titolo2=$lang['report_incidente_fucina'];
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo2."','".$testo2."','0','".$adesso."')");	
-$testo.=$lang['report_lavfuc_forgia_no']."<br />";
+$testo=$lang['report_lavfuc_forgia_no']."<br />";
+$exp-=floor($exp/100*20);
 }/*fine incidente*/else{//inizio forgia riuscita
+$exp+=floor($exp/100*20);
 $oggettodf=$db->QuerySelect("SELECT * FROM oggetti WHERE tipo='".$oggdf_num[$oggdf][1]."' AND categoria='".$oggdf_num[$oggdf][2]."' AND materiale='".$materiale."' AND abilitanec<='".$usercar['fabbro']."' ORDER BY abilitanec DESC LIMIT 1");
 $db->QueryMod("INSERT INTO inoggetti (oggid,userid) VALUES ('".$oggettodf['id']."','".$userid."')");
 $nomeoggetto=$lang['oggetto'.$oggettodf['id'].'_nome'];
-$testo.=sprintf($lang['report_lavfuc_forgia_si'],$nomeoggetto)."<br />";
+$testo=sprintf($lang['report_lavfuc_forgia_si'],$nomeoggetto)."<br />";
 }//fine forgia riuscita
 $oggpersi=Checkusurarottura($userid,0);
 $testo="<span>".$testo.$oggpersi."</span>";
 $titolo=$lang['report_lavoro_fucina_fab'];
-$db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");
+$testo1=sprintf($lang['report_lav_fuc_fab'],$exp,$energia,$salute)."<br />";
+$db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo1.$testo."','0','".$adesso."')");
 $salute+=$danni;
 $db->QueryMod("UPDATE lavori t1 JOIN utenti t2 on t1.userid=t2.userid JOIN caratteristiche t3 on t2.userid=t3.userid SET t1.ultimolavoro='".$adesso."',t1.oreultimolav=t1.oreultimolav+'1',t3.expfabbro=t3.expfabbro+'".$exp."',t2.monete=t2.monete-'1',t3.energia=t3.energia-'".$energia."',t3.saluteattuale=t3.saluteattuale-'".$salute."',t3.recuperosalute='".$adesso."',t3.recuperoenergia='".$adesso."' WHERE t1.userid='".$userid."'");
 if($ore>1){
