@@ -16,6 +16,7 @@ Legenda:<br />
 + Iniziata creazione A nord, verso le montagne<br />
 + Aggiunti agli NPC: Bandito giovane, Bandito, Bandito esperto, Goblin<br />
 + Aggiunta la possibilità di imbattersi in NPC ostili<br />
++ Aggiunta la possibilità di trovare "tesori"<br />
 + Andare oltre il confine del regno comporta tot tempo per arrivare a destinazione, la velocità del personaggio influisce<br />
 + Ora l'esperienza nel lavoro come fabbro è maggiore del 20% se si riesce a forgiare e minore del 20% se no<br />
 + Ora l'esperienza nel lavoro in miniera vecchia è maggiore del 20% se si riesce a trovare qualcosa e minore del 20% se no<br />
