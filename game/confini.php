@@ -36,7 +36,8 @@ $errore.=$lang['quest_error3'];
 if($errore){
 	$outputerrori="<span>".$lang['outputerroriquest']."</span><br /><span>".$errore."</span><br /><br />";}
 else {
-$secondi=2000/1000*$usercar['velocita'];
+$secondi=2000/1000*(1000-$usercar['velocita']);
+$secondi+=rand(10,200);
 $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,questid) VALUES ('".$user['userid']."','".$adesso."','".$secondi."','15','8','1')");
 echo "<script language=\"javascript\">window.location.href='index.php?loc=situazione'</script>";
 exit();
