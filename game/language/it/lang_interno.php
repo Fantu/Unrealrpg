@@ -102,7 +102,7 @@ $lang['eventi_dettagli12']='Ti hanno sfidato e devi dare una risposta entro ';
 $lang['eventi_dettagli13']='Stai combattendo';
 $lang['eventi_dettagli14']='Stai dormendo e finirai ';
 $lang['eventi_dettagli15']='Stai andando oltre confine';
-$lang['eventi_dettagli16']='Stai tornando a casa';
+$lang['eventi_dettagli16']='Stai tornando a casa, arriverai ';
 //fine dettagli eventi
 
 //inizio visualizzautente

@@ -55,7 +55,7 @@ if($eventi['id']>0){
 	header("Location: index.php?loc=situazione");
 	exit();
 	}
-	if ($evento['tipo']!=5 AND $evento['tipo']!=3 AND $evento['tipo']!=4)
+	if ($evento['tipo']!=5 AND $evento['tipo']!=3 AND $evento['tipo']!=4 AND $evento['tipo']!=9)
 	$event.=" <a href=\"index.php?loc=situazione&amp;annullaevento=1\">".$lang['Annulla']."</a>";}
 }
 if(!$event)

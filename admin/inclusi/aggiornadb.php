@@ -38,6 +38,13 @@ VALUES
 ");
 $db->QueryMod("ALTER TABLE `battle` CHANGE `exp` `exp` FLOAT UNSIGNED NOT NULL DEFAULT '0'");
 $db->QueryMod("ALTER TABLE `eventi` ADD `questid` SMALLINT UNSIGNED NOT NULL DEFAULT '0'");
+$db->QueryMod("CREATE TABLE `cachequest` (
+`id` INT UNSIGNED NOT NULL AUTO_INCREMENT ,
+`userid` SMALLINT UNSIGNED NOT NULL DEFAULT '0',
+`questid` SMALLINT UNSIGNED NOT NULL DEFAULT '0',
+`secondi` MEDIUMINT UNSIGNED NOT NULL DEFAULT '0',
+PRIMARY KEY ( `id` )
+) ENGINE = MYISAM");
 
 /*$db->QueryMod("INSERT INTO `oggetti` (
 `id` ,

@@ -56,9 +56,10 @@ while($evento=$db->QueryCicloResult($evfiniti)) {
 		Completadormire($evento['userid'],$evento['ore']);
 		break;
 		case 8://quest
-		Completaquest($evento['userid'],$evento['questid']);
+		Completaquest($evento['userid'],$evento['questid'],$evento['secondi']);
 		break;
 		}
+		//tipo 9 è a vuoto (ritorno da quest)
 $db->QueryMod("DELETE FROM eventi WHERE id='".$evento['id']."'");
 }//fine controllo eventi
 }//fine se ci sono eventi finiti

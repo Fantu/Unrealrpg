@@ -622,14 +622,13 @@ $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,ore) 
 }//fine se la coda ha almeno un altra ora
 } //fine Completadormire
 
-function Completaquest($userid,$qid){
+function Completaquest($userid,$qid,$secondi){
 global $db,$adesso,$lang;
 $prob=rand(1,100);
 $titolo=$lang['le_montagne'];
 if($prob==100){
 $monete=rand(5,100);
 $testo=sprintf($lang['oconfini_trovato_tesoro'],$monete)."<br />";
-$db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");
 $db->QueryMod("UPDATE utenti SET monete=monete+'".$monete."' WHERE userid='".$userid."'");
 }elseif($prob<20){
 $pq=$db->QueryCiclo("SELECT id FROM pcpudata WHERE quest='1'");
@@ -641,7 +640,15 @@ $pcpuid=$prs[0];
 Startcombact($userid,$pcpuid,$db->database,1);
 }else{
 $testo=$lang['oconfini_trovato_nulla']."<br />";
-$db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");
 }
+if($prob>=20){
+$db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");
+Ritornoacasa($userid,$secondi);
+}
+} //fine Completaquest
+
+function Ritornoacasa($userid,$secondi){
+global $db,$adesso;
+$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo) VALUES ('".$userid."','".$adesso."','".$secondi."','16','9')");	
 } //fine Completaquest
 ?>
