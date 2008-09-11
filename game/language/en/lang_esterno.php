@@ -23,7 +23,7 @@ $lang['disattiva']='Disable';
 $lang['attiva']='Enable';
 $lang['Newsletter']='Newsletter';
 $lang['scarica_firefox']='Download Firefox';
-$lang['desc_firefox']='Stai utilizzando Internet Explorer, che purtroppo attualmente, neppure nella ultima versione non supporta a pieno gli standard web, in particolare i css, ti consigliamo di utilizzare Firefox, browser gratuito, più sicuro, efficiente e con maggiore rispetto degli standard, per scaricare l`ultima versione ufficiale clicca sul banner sottostante.';
+$lang['desc_firefox']='You are using Internet Explorer that, actually, the last version doesn\'t support fully the web\'s standards, particulary the css. We recommend using Mozilla Firefox, free browser, more secure, powerful and with more respect of the standards. To download the last ufficial version click on the banner below.';
 
 $lang['reg_error1']='- You haven`t selected the server!<br />';
 $lang['reg_error2']='- You haven`t write your username!<br />';
@@ -35,13 +35,13 @@ $lang['reg_error7']='- L`indirizzo e-mail inserito non sembra essere corretto.<b
 $lang['reg_error8']='- L`username che hai scelto è già stato utilizzato!<br />';
 $lang['reg_error9']='- Questo server è al momento troppo affollato, scegline un altro.<br />';
 
-$lang['ext_error1']='Login fallito\\nUsername inesistente!';
-$lang['ext_error2']='Login fallito\\nQuesto account non è ancora stato confermato.';
+$lang['ext_error1']='Login failed\\nUsername doesn\'t exist';
+$lang['ext_error2']='Login failed\\nThis account has not yet been confirmed.';
 $lang['ext_error3']='Tempo limite scaduto!\\nNuovo login necessario.';
 $lang['ext_error4']='Login failed\\nPassword wrong!';
-$lang['ext_error5']='Impossibile confermare questo account!\\nLink errato, controlla e riprova.';
-$lang['ext_error6']='Impossibile confermare questo account!\\nQuesto account è già stato confermato.';
-$lang['ext_error7']='Account confermato!\\nAdesso puoi entrare e iniziare a giocare.';
+$lang['ext_error5']='Unable to confirm this account!\\nLink wrong, check and try again.';
+$lang['ext_error6']='Unable to confirm this account!\\nThis account has been already confirmed.';
+$lang['ext_error7']='Account confirmed!\\nNow you can login and play.';
 $lang['ext_error8']='Sei stato bloccato per un ora in seguito a 5 tentativi di login falliti.';
 $lang['ext_error12']='Server momentaneamente chiuso per installazione aggiornamenti o manutenzione. Riprova più tardi. Grazie.';
 $lang['ext_error13']='Accesso negato!\\nHai tentato di entrare in una pagina riservata agli utenti loggati.';

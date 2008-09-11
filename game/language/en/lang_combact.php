@@ -43,6 +43,27 @@ $lang['equip_di']='%s di livello %s, equipaggiamento: %s';
 $lang['parata_con_scudo']='%s si para con lo scudo';
 $lang['colpo_potente']='con un colpo potente';
 $lang['danni_subiti']='%s subisce %s danni.';
+$lang['c_vince_monete']='%s prende %s monete.';
+$lang['c_perde_monete']='%s perde %s monete.';
+
+$lang['outputerroriquest']='Impossibile effettuare una quest per i seguenti motivi:';
+$lang['quest_error1']='- Non sei in condizioni abbastanza buone per affrontare una quest.<br />';
+$lang['quest_error2']='- Puoi salire di livello, non puoi fare una quest finchè non lo farai.<br />';
+$lang['quest_error3']='- Direzione non valida.<br />';
+$lang['vai_verso']='Vai verso';
+$lang['Parti']='Parti';
+$lang['Nord']='Nord';
+$lang['Sud']='Sud';
+$lang['Ovest']='Ovest';
+$lang['Est']='Est';
+$lang['le_montagne']='Le Montagne';
+$lang['tempo_previsto_per_destinazione']='Per giungere a destinazione ci metterai circa %s minuti';
+$lang['oconfini_trovato_tesoro']='Hai trovato un piccolo tesoro dal valore di %s monete';
+$lang['oconfini_trovato_nulla']='Non hai trovato niente ne nessuno';
 
 $lang['nomepcpu1']='CpuProva';
+$lang['nomepcpu2']='Bandito giovane';
+$lang['nomepcpu3']='Bandito';
+$lang['nomepcpu4']='Bandito esperto';
+$lang['nomepcpu5']='Goblin';
 ?>

@@ -25,6 +25,7 @@ $lang['Informazioni']='Information';
 $lang['Oggetti']='Objects';
 $lang['Citta']='City';
 $lang['Locanda']='Locanda';
+$lang['Confini']='Confini';
 //fine menu
 
 //inizio razze
@@ -100,6 +101,8 @@ $lang['eventi_dettagli11']='Hai lanciato una sfida e stai aspettando una rispost
 $lang['eventi_dettagli12']='Ti hanno sfidato e devi dare una risposta entro ';
 $lang['eventi_dettagli13']='Stai combattendo';
 $lang['eventi_dettagli14']='Stai dormendo e finirai ';
+$lang['eventi_dettagli15']='Stai andando oltre confine';
+$lang['eventi_dettagli16']='Stai tornando a casa, arriverai ';
 //fine dettagli eventi
 
 //inizio visualizzautente
