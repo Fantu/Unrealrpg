@@ -22,4 +22,3 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <input type="submit" name="parti" value="<?php echo $lang['Parti']; ?>" />
 </form>
 <br />
-<?php echo sprintf($lang['tempo_previsto_per_destinazione'],'<div id="tempo">-</div>');?>
