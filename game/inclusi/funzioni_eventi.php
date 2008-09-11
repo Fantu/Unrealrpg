@@ -638,6 +638,7 @@ $prs[]=$ps['id'];
 shuffle($prs);
 $pcpuid=$prs[0];
 Startcombact($userid,$pcpuid,$db->database,1);
+$db->QueryMod("INSERT INTO cachequest (userid,secondi) VALUES ('".$userid."','".$secondi."')");
 }else{
 $testo=$lang['oconfini_trovato_nulla']."<br />";
 }

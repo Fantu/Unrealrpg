@@ -496,14 +496,14 @@ if($dc->cpu(1)==0){$input.=$dc->Guadagnaexp(1,$turni,$expb,$vincitore);}
 if($dc->cpu(2)==0){$input.=$dc->Guadagnaexp(2,$turni,$expb,$vincitore);}
 }//se più di un turno
 
-$input.="1=".$dc->nome(1)."2=".$dc->nome(2)."<br/>";
-$input.="Prima vincitore=".$vincitore."<br/>";
+//$input.="1=".$dc->nome(1)."2=".$dc->nome(2)."<br/>";
+//$input.="Prima vincitore=".$vincitore."<br/>";
 
 if($vincitore!=0){
 if($battle['attid']==$dc->id($vincitore)){$vincitore=1;}else{$vincitore=2;}
 }
 
-$input.="Poi vincitore=".$vincitore."<br/>";
+//$input.="Poi vincitore=".$vincitore."<br/>";
 
 Inreport($battleid,$input);
 Endcombact($battle['id'],$vincitore);
@@ -526,6 +526,15 @@ $dif=$battle['difid'];
 if($battle['difcpu']==0){
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$dif."','".$titolo."','".$testo."','0','".$adesso."')");
 }else{
+$cq=$db->QuerySelect("SELECT count(id) AS n FROM cachequest WHERE userid='".$att."'");
+if($cq['n']>0){
+$cq=$db->QuerySelect("SELECT * FROM cachequest WHERE userid='".$att."'");
+$caruser=$db->QuerySelect("SELECT saluteattuale FROM caratteristiche WHERE userid='".$att."'");
+if($caruser['saluteattuale']>0){
+Ritornoacasa($att,$cq['secondi']);
+}//se non è morto
+$db->QueryMod("DELETE FROM cachequest WHERE userid='".$att."'");
+}//se esiste cache quest
 if($vincitore>0){$attn=$db->QuerySelect("SELECT username,monete FROM utenti WHERE userid='".$battle['attid']."' LIMIT 1");}
 if($vincitore==1){
 $carcpu=$db->QuerySelect("SELECT * FROM carcpu WHERE cpuid='".$dif."' LIMIT 1");
