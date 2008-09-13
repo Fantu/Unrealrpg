@@ -7,10 +7,10 @@ Legenda:<br />
 - Correzione bug e patch di situazioni non previste<br />
 <br />
 </p>
-<p><strong>0.7.0</strong> (stimato entro il 13/09/08 - In sviluppo)<br />
+<p><strong>0.7.0</strong> (13/09/08 - In sviluppo)<br />
 + Aggiunta la possibilità di combattere contro personaggi non comandati da utenti (NPC)<br />
 + Nei combattimenti contro NPC non è possibile la resa<br />
-+ Nei combattimenti contro NPC è possibile guadagnare monete in caso di vittoria e in caso di sconfitta si perderanno le proprie<br />
++ Nei combattimenti contro NPC è possibile guadagnare monete in caso di vittoria e in caso di sconfitta, si perderanno quelle che si hanno indosso<br />
 + Iniziata creazione "Confini"<br />
 + Iniziata creazione "quest"<br />
 + Iniziata creazione A nord, verso le montagne<br />
@@ -20,6 +20,7 @@ Legenda:<br />
 + Andare oltre il confine del regno comporta tot tempo per arrivare a destinazione, la velocità del personaggio influisce<br />
 + Ora l'esperienza nel lavoro come fabbro è maggiore del 20% se si riesce a forgiare e minore del 20% se no<br />
 + Ora l'esperienza nel lavoro in miniera vecchia è maggiore del 20% se si riesce a trovare qualcosa e minore del 20% se no<br />
++ Ora è possibile cambiare l'equipaggiamento anche mentre si attende risposta ad una sfida lanciata o prima di rispondere ad una ricevuta<br />
 + Vari miglioramenti di sistema a sistema di combattimento, Combattimenti, sistema automatico di selezione delle tattiche, sistema messaggi<br />
 + Aggiornati i testi in inglese (22% tradotto su totale)<br />
 # Modificato il guadagno di esperienza nei combattimenti, reso più equilibrato<br />

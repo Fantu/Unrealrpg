@@ -23,7 +23,7 @@ $acacsel=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$acac."' LIMIT 1");
 if ($usercar['attfisico']<$acacsel['forzafisica'])
 $errore.=$lang['equip_errore2'];
 }//se arma selezionata
-if ($eventi['id']>0)
+if ($eventi['id']>0 AND $evento['tipo']!=4)
 $errore.=$lang['global_errore1'];
 if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
@@ -55,7 +55,7 @@ $armsel=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$armatura."' LIMIT 1
 if ($usercar['attfisico']<$armsel['forzafisica'])
 $errore.=$lang['equip_errore2'];
 }//se armatura selezionata
-if ($eventi['id']>0)
+if ($eventi['id']>0 AND $evento['tipo']!=4)
 $errore.=$lang['global_errore1'];
 if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
@@ -87,7 +87,7 @@ $scusel=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$scudo."' LIMIT 1");
 if ($usercar['attfisico']<$scusel['forzafisica'])
 $errore.=$lang['equip_errore2'];
 }//se scudo selezionato
-if ($eventi['id']>0)
+if ($eventi['id']>0 AND $evento['tipo']!=4)
 $errore.=$lang['global_errore1'];
 if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
