@@ -15,7 +15,7 @@ $lang['messaggio_da']='Message by ';
 $lang['elimina']='Cancel';
 $lang['rispondi']='Answer';
 $lang['cancella_selezionati']='Cancel selected messages';
-$lang['nessun_messaggio']='Non ci sono messaggi.';
+$lang['nessun_messaggio']='There are no messages.';
 $lang['sel_desel_tutti']='Select/Deselect all';
-$lang['msg_orig']='Messaggio originale:';
+$lang['msg_orig']='Original message:';
 ?>

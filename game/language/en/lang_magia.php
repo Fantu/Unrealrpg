@@ -1,20 +1,20 @@
 <?php
-$lang['Acqua']='ACQUA';
-$lang['Aria']='ARIA';
+$lang['Acqua']='WATER';
+$lang['Aria']='AIR';
 $lang['Terra']='TERRA';
-$lang['Fuoco']='FUOCO';
+$lang['Fuoco']='FIRE';
 
-$lang['Offensivi']='Offensivi';
-$lang['Difensivi']='Difensivi';
+$lang['Offensivi']='Offensive';
+$lang['Difensivi']='Defensive';
 
-$lang['magia1']='VAPORE';
-$lang['magia2']='BOLLA';
-$lang['magia3']='COLPO DI VENTO';
-$lang['magia4']='MURO DI VENTO';
-$lang['magia5']='TREMORI';
-$lang['magia6']='FANGO';
-$lang['magia7']='FIAMMATA';
-$lang['magia8']='FUOCO DIFENSIVO';
+$lang['magia1']='STEAM';
+$lang['magia2']='BUBBLE';
+$lang['magia3']='WIND SHOT';
+$lang['magia4']='WIND WALL';
+$lang['magia5']='TREMORS';
+$lang['magia6']='MUD';
+$lang['magia7']='FLAME';
+$lang['magia8']='DEFENSIVE FIRE';
 
 $lang['dmagia1']='Il mago getta dell`acqua ai piedi dell`avversario, il quale, inconsapevole di ciò che stia accadendo, presto si ritrova immerso in una nube di vapore che lo indebolisce leggermente.';
 $lang['dmagia2']='Una grande bolla d`acqua ingloba il mago, fungendo da lieve barriera difensiva contro gli attacchi nemici.';

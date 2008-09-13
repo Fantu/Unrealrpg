@@ -13,9 +13,9 @@ $lang['apri_tutti_server']='Open all servers';
 $lang['aggiornato_db_server']='Upgraded server %s\'s db to version %s';
 $lang['non_aggiornato_db_server']='The server %s\'s db has been upgraded';
 $lang['aggiorna_db']='Upgrade database to the actual version';
-$lang['controlla_file_log']='Controlla i file log di sistema';
-$lang['creato_log_query']='Creato file log delle query';
-$lang['controllo_file_log_eseguito']='Controllo file log eseguito';
-$lang['dir_report_mancante']='Cartella report server %s mancante';
-$lang['creazione_dir_nonriuscita']='Creazione cartella report server %s non riuscita';
+$lang['controlla_file_log']='Check system\'s log files';
+$lang['creato_log_query']='Queries log file created';
+$lang['controllo_file_log_eseguito']='Control log file done.';
+$lang['dir_report_mancante']='Server report folder %s missing';
+$lang['creazione_dir_nonriuscita']='Server report folder %s creation failed';
 ?>
