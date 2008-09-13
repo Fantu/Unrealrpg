@@ -486,7 +486,7 @@ $input.=sprintf($lang['finito_resa'],$dc->nome(2),$dc->nome(1))."<br/>";
 $rep=$dc->Checkrep(2);
 if($rep[0]==2){
 if($dc->cpu(2)==0){$db->QueryMod("UPDATE caratteristiche SET reputazione=reputazione-'".$rep[1]."' WHERE userid='".$dc->id(2)."' LIMIT 1");}}
-}elseif($turni==25){//se dura troppo
+}elseif($turni==25 AND $battle['difcpu']==0){//se dura troppo e non è contro cpu
 $input=$lang['combattimento_troppo_lungo']."<br/>";
 }else{$finito=0;}
 $db->QueryMod("UPDATE battle SET tatatt='0',tatatt2='0',tatdif='0',tatdif2='0' WHERE id='".$battleid."' LIMIT 1");
