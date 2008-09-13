@@ -630,7 +630,7 @@ if($prob==100){
 $monete=rand(5,100);
 $testo=sprintf($lang['oconfini_trovato_tesoro'],$monete)."<br />";
 $db->QueryMod("UPDATE utenti SET monete=monete+'".$monete."' WHERE userid='".$userid."'");
-}elseif($prob<20){
+}elseif($prob<40){
 $pq=$db->QueryCiclo("SELECT id FROM pcpudata WHERE quest='1'");
 while($ps=$db->QueryCicloResult($pq)) {	
 $prs[]=$ps['id'];
@@ -642,7 +642,7 @@ $db->QueryMod("INSERT INTO cachequest (userid,secondi) VALUES ('".$userid."','".
 }else{
 $testo=$lang['oconfini_trovato_nulla']."<br />";
 }
-if($prob>=20){
+if($prob>=40){
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");
 Ritornoacasa($userid,$secondi);
 }
