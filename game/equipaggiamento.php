@@ -108,6 +108,32 @@ exit();
 }
 }//fine imposta scudo
 
+if (isset($_POST['impopoz'])){
+$errore="";
+$pozione=(int)$_POST['poz'];
+if ($pozione<0)
+$errore.=$lang['equip_errore1'];
+if ($eventi['id']>0 AND $evento['tipo']!=4)
+$errore.=$lang['global_errore1'];
+if($errore){
+	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
+else {
+if($userequip['poz']!=0){
+$datrasf=$db->QuerySelect("SELECT * FROM equip WHERE userid='".$user['userid']."' AND oggid='".$userequip['poz']."' LIMIT 1");
+$db->QueryMod("DELETE FROM equip WHERE id='".$datrasf['id']."' LIMIT 1");
+$db->QueryMod("INSERT INTO inoggetti (oggid,userid,usura) VALUES ('".$datrasf['oggid']."','".$datrasf['userid']."','".$datrasf['usura']."')");
+}//se c'è già un oggetto impo
+$db->QueryMod("UPDATE equipaggiamento SET poz='".$pozione."' WHERE userid='".$user['userid']."' LIMIT 1");
+if($pozione!=0){
+$datrasf=$db->QuerySelect("SELECT * FROM inoggetti WHERE userid='".$user['userid']."' AND oggid='".$pozione."' LIMIT 1");
+$db->QueryMod("DELETE FROM inoggetti WHERE id='".$datrasf['id']."' LIMIT 1");
+$db->QueryMod("INSERT INTO equip (oggid,userid,usura) VALUES ('".$datrasf['oggid']."','".$datrasf['userid']."','".$datrasf['usura']."')");
+}
+echo "<script language=\"javascript\">window.location.href='index.php?loc=equipaggiamento'</script>";
+exit();
+}
+}//fine imposta pozione
+
 //-------------------------------
 //VISUALIZZAZIONE EQUIPAGGIAMENTO
 //-------------------------------
@@ -140,6 +166,15 @@ $oggetti=$db->QueryCiclo("SELECT oggid FROM inoggetti WHERE userid='".$user['use
 while($ogg2=$db->QueryCicloResult($oggetti)) {
 if(isset($scut[$ogg2['oggid']]))
 $scudi[$ogg2['oggid']]=$lang['oggetto'.$ogg2['oggid'].'_nome'];
+}
+$oggpoz=$db->QueryCiclo("SELECT * FROM oggetti WHERE tipo='4'");
+while($ogg=$db->QueryCicloResult($oggscu)) {
+$pozt[$ogg['id']]=$ogg['id'];
+}
+$oggetti=$db->QueryCiclo("SELECT oggid FROM inoggetti WHERE userid='".$user['userid']."' GROUP BY oggid");
+while($ogg2=$db->QueryCicloResult($oggetti)) {
+if(isset($pozt[$ogg2['oggid']]))
+$pozioni[$ogg2['oggid']]=$lang['oggetto'.$ogg2['oggid'].'_nome'];
 }
 }//se ci sono oggetti
 
@@ -177,6 +212,18 @@ $scuimpo="<a href=\"index.php?loc=mostraoggetto&amp;ogg=".$userequip['scu']."&am
 $desc_imposcu=sprintf($lang['scuimpo'],$scuimpo);
 }else{
 $desc_imposcu=$lang['noscuimpo'];
+}
+
+if($userequip['poz']!=0){
+$usuraogg='';
+if($user['plus']>0){
+$usuraoggsel=$db->QuerySelect("SELECT * FROM equip WHERE userid='".$user['userid']."' AND oggid='".$userequip['scu']."' LIMIT 1");
+$usuraogg='title="'.$lang['usura_attuale'].$usuraoggsel['usura'].'"';
+}
+$pozimpo="<a href=\"index.php?loc=mostraoggetto&amp;ogg=".$userequip['poz']."&amp;da=equip\"".$usuraogg.">".$lang['oggetto'.$userequip['poz'].'_nome']."</a>";
+$desc_impopoz=sprintf($lang['pozimpo'],$pozimpo);
+}else{
+$desc_impopoz=$lang['nopozimpo'];
 }
 
 require('template/int_equipaggiamento.php');

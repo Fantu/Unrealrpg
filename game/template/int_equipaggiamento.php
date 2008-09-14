@@ -83,3 +83,30 @@ echo "<option value=\"$chiave\">$elemento</option>";} ?>
 </tr>
 </table>
 </form>
+<br />
+<br />
+<?php echo $lang['Pozioni']; ?>
+<br />
+<br />
+<?php echo $desc_impopoz; ?>
+<br />
+<form action="" method="post" name="fimpopoz">
+<table border="0">
+<tr>
+<td>
+<?php echo $lang['seleziona_poz']; ?> <select name="poz" id="poz">
+<option value="-1" selected="selected">--------</option>
+<option value="0"><?php echo $lang['Niente']; ?></option>
+<?php if($pozioni){
+foreach($pozioni as $chiave=>$elemento)
+echo "<option value=\"$chiave\">$elemento</option>";} ?>
+</select>
+</td>
+</tr>
+<tr>
+<td>
+<input type="submit" name="impopoz" value="<?php echo $lang['Imposta']; ?>" />
+</td>
+</tr>
+</table>
+</form>

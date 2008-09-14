@@ -3,48 +3,16 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	header("Location: ../../index.php?error=16");
 	exit();
 }
-$newversion="0.7.0";
+$newversion="0.7.1";
 foreach($game_server as $chiave=>$elemento){
 if($chiave!=999){
 $db->database=$chiave;
 $check=$db->QuerySelect("SELECT version FROM config WHERE id=".$chiave);
 if($check['version']!=$newversion AND $newversion==$game_revision){
 
-$db->QueryMod("INSERT INTO `pcpudata` (
-`id` ,
-`quest` ,
-`salute` ,
-`energia` ,
-`mana` ,
-`attfisico` ,
-`attmagico` ,
-`diffisica` ,
-`difmagica` ,
-`agilita` ,
-`velocita` ,
-`intelligenza` ,
-`destrezza` ,
-`livello` ,
-`eqcac` ,
-`eqarm` ,
-`eqscu` ,
-`monete`
-)
-VALUES 
-(NULL , '1', '100', '1000', '50', '100', '25', '100', '25', '150', '150', '100', '100', '1', '65', '55', '57', '10'),
-(NULL , '1', '105', '1050', '50', '200', '25', '200', '25', '160', '160', '100', '150', '2', '60', '56', '57', '15'),
-(NULL , '1', '115', '1150', '50', '300', '30', '300', '30', '180', '180', '120', '200', '4', '61', '56', '58', '20'),
-(NULL , '1', '100', '1200', '50', '200', '50', '200', '50', '200', '200', '50', '50', '3', '65', '0', '0', '10');
-");
-$db->QueryMod("ALTER TABLE `battle` CHANGE `exp` `exp` FLOAT UNSIGNED NOT NULL DEFAULT '0'");
-$db->QueryMod("ALTER TABLE `eventi` ADD `questid` SMALLINT UNSIGNED NOT NULL DEFAULT '0'");
-$db->QueryMod("CREATE TABLE `cachequest` (
-`id` INT UNSIGNED NOT NULL AUTO_INCREMENT ,
-`userid` SMALLINT UNSIGNED NOT NULL DEFAULT '0',
-`questid` SMALLINT UNSIGNED NOT NULL DEFAULT '0',
-`secondi` MEDIUMINT UNSIGNED NOT NULL DEFAULT '0',
-PRIMARY KEY ( `id` )
-) ENGINE = MYISAM");
+$db->QueryMod("ALTER TABLE `pcpudata` ADD `eqpoz` SMALLINT UNSIGNED NOT NULL DEFAULT '0' AFTER `eqscu`");
+$db->QueryMod("ALTER TABLE `equipagcpu` ADD `poz` SMALLINT UNSIGNED NOT NULL DEFAULT '0'");
+$db->QueryMod("ALTER TABLE `equipaggiamento` ADD `poz` SMALLINT UNSIGNED NOT NULL DEFAULT '0'");
 
 /*$db->QueryMod("INSERT INTO `oggetti` (
 `id` ,
