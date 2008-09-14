@@ -168,7 +168,7 @@ if(isset($scut[$ogg2['oggid']]))
 $scudi[$ogg2['oggid']]=$lang['oggetto'.$ogg2['oggid'].'_nome'];
 }
 $oggpoz=$db->QueryCiclo("SELECT * FROM oggetti WHERE tipo='4'");
-while($ogg=$db->QueryCicloResult($oggscu)) {
+while($ogg=$db->QueryCicloResult($oggpoz)) {
 $pozt[$ogg['id']]=$ogg['id'];
 }
 $oggetti=$db->QueryCiclo("SELECT oggid FROM inoggetti WHERE userid='".$user['userid']."' GROUP BY oggid");
