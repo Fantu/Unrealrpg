@@ -223,10 +223,10 @@ $energia+=$piccone2['energia'];
 $trovare=rand(0,10000)-$efficenza;
 if($trovare<10){
 $trovato=1;
-$exp-=floor($exp/100*20);
+$exp+=floor($exp/100*20);
 }else{
 $trovato=0;
-$exp+=floor($exp/100*20);}
+$exp-=floor($exp/100*20);}
 $testo=sprintf($lang['report_lavminieravecchia'],$exp,$energia,$salute)."<br />";
 if($trovato==0){
 $testo.=$lang['report_lavminieravecchia_materiali_no']."<br />";

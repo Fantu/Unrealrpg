@@ -9,6 +9,11 @@ Legenda:<br />
 </p>
 <p><strong>0.7.1</strong> (Non disponibile - In sviluppo)<br />
 + Nei combattimenti contro NPC non c'è parità se si arriva oltre i 25 "round" ma il combattimento continua<br />
+# Nelle "quest" oltre confine la velocità influisce maggiormente sul tempo richiesto per giungere a destinazione<br />
+# Aumentata la probabilità di incontrare NPC a nord oltre i confini<br />
+</p>
+<p><strong>0.7.0.1</strong> (14/09/08 - Beta)<br />
+- Corretto il calcolo dell'esperienza guadagnata in miniera vecchia<br />
 </p>
 <p><strong>0.7.0</strong> [R.1517] (13/09/08 - Beta)<br />
 + Aggiunta la possibilità di combattere contro personaggi non comandati da utenti (NPC)<br />
