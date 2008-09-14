@@ -17,6 +17,7 @@ $outputsfida=sprintf($lang['rispondi_sfida'],$sfidante['username'])." - <a href=
 $sfidante=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$evento['oggid']."'");
 $outputsfida=sprintf($lang['sfida_lanciata'],$sfidante['username'])." - <a href=\"index.php?loc=combact&amp;do=annullasfida\">".$lang['Annulla']."</a>";
 }elseif($evento['tipo']==5){
+$userequip=$db->QuerySelect("SELECT * FROM equipaggiamento WHERE userid='".$user['userid']."' LIMIT 1");
 $ev=$db->QuerySelect("SELECT * FROM eventi WHERE userid='0' AND battleid='".$evento['battleid']."' LIMIT 1");
 $sec_prox_round=($ev['datainizio']+$ev['secondi'])-$adesso;
 $filerep="inclusi/log/report/".$db->database."/".$evento['battleid'].".log";
@@ -32,6 +33,8 @@ $tattica=(int)$_GET['tattica'];
 $subtattica=(int)$_GET['subtatt'];
 if($tattica==2 AND $batt['difcpu']==1){
 $tattica=0;}//se tattica resa e contro cpu annulla
+if($tattica==4 AND $userequip['poz']==0){
+$tattica=0;}//se tattica pozione ma niente pozione
 if($tattica!=0){
 if($batt['attid']==$user['userid']){
 $db->QueryMod("UPDATE battle SET tatatt='".$tattica."',tatatt2='".$subtattica."' WHERE id='".$evento['battleid']."' LIMIT 1");
@@ -60,6 +63,9 @@ break;//fine resa
 case 3:
 $viewtattic=$lang['tattica_difesa'];
 break;//fine difesa
+case 4:
+$viewtattic=$lang['tattica_pozione'];
+break;//fine usa pozione
 }
 $viewtattic=sprintf($lang['tattica_selezionata'],$viewtattic)."<br/>";
 }

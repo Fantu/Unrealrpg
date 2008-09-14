@@ -119,7 +119,7 @@ $oggpersi=$lang['nessuno_gettato']."<br />";
 return $oggpersi;
 }/*fine Checkusurarottura*/
 
-function Usaoggetto($userid,$oggid,$equip) {
+function Usaoggetto($userid,$oggid) {
 global $db,$lang;
 $oggetto=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$oggid."' LIMIT 1");
 $nomeogg=$lang['oggetto'.$oggetto['id'].'_nome'];
@@ -155,11 +155,7 @@ switch($oggetto['tipo']){
 		break;
 		}
 if($ok==1){
-if($equip==0){
 $db->QueryMod("UPDATE inoggetti SET inuso='1' WHERE userid='".$userid."' AND oggid='".$oggid."' ORDER BY usura DESC LIMIT 1");
-}else{
-$db->QueryMod("UPDATE equip SET inuso='1' WHERE userid='".$userid."' AND oggid='".$oggid."' ORDER BY usura DESC LIMIT 1");
-}
 }//se usato
 return $output;
 }/*fine Usaoggetto*/

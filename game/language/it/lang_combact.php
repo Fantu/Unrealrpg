@@ -36,6 +36,7 @@ $lang['seleziona_tattica']='Scegli la tattica';
 $lang['tattica_attacco']='Attacco';
 $lang['tattica_difesa']='Difesa';
 $lang['tattica_resa']='Resa';
+$lang['tattica_pozione']='Usa pozione';
 $lang['tattica_attacco_cac']='corpo a corpo';
 $lang['nessuna']='Nessuna';
 $lang['tattica_selezionata']='Tattica selezionata: %s';

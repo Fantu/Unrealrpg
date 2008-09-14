@@ -61,7 +61,7 @@ if($errore){
 else {
 $cogg=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$oggselect."' LIMIT 1");	
 if($cogg['tipo']==4){
-$outputerrori.=Usaoggetto($user['userid'],$oggselect,0)."<br />";
+$outputerrori.=Usaoggetto($user['userid'],$oggselect)."<br />";
 $outputerrori.=Checkusurarottura($user['userid'],0);
 }else{
 $outputerrori=sprintf($lang['impossibile_usare_oggetto'],$lang['oggetto'.$oggselect.'_nome']);}

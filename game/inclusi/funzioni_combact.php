@@ -406,6 +406,46 @@ class Dati{
 	return $input;
 	} //fine Attaccovicino
 	
+	public function Usapozione($chi) {
+	global $db,$lang;
+	$oggetto=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$oggid."' LIMIT 1");
+	$nomeogg=$lang['oggetto'.$oggetto['id'].'_nome'];
+	$ok=1;
+	switch($oggetto['tipo']){
+		case 4://pozioni generiche
+			switch($oggetto['categoria']){
+			case 1://pozioni curative
+			$salute=$this->car($chi,'saluteattuale')+$oggetto['recsalute'];
+			if($salute>$this->car($chi,'salute'))
+			$salute=$this->car($chi,'salute');
+			$this->che[$chi]->car['saluteattuale']=$salute;
+			$output=sprintf($lang['utilizzato_4_1'],$nomeogg,$oggetto['recsalute']);
+			break;
+			case 2://pozioni energetiche
+			$energia=$this->car($chi,'energia')+$oggetto['recenergia'];
+			if($energia>$this->car($chi,'energiamax'))
+			$energia=$this->car($chi,'energiamax');
+			$this->che[$chi]->car['energia']=$energia;
+			$output=sprintf($lang['utilizzato_4_2'],$nomeogg,$oggetto['recenergia']);
+			break;
+			default:
+			$ok=0;
+			$output=sprintf($lang['errore_sistema_utilizzo_ogg'],$nomeogg);
+			break;
+			}	
+		break;
+		default:
+		$ok=0;
+		$output=sprintf($lang['errore_sistema_utilizzo_ogg'],$nomeogg);
+		break;
+		}
+	if($ok==1){
+	$this->Ogginuso($chi,'poz');
+	$output=$this->nome($chi)."<br/>".$output;
+	}//se usato
+	return $output;
+	} //fine Usapozione
+	
 } //fine classe Dati
 
 function Battledo($battleid,$turni) {
@@ -423,14 +463,18 @@ if($dc->tattica(1,1)!=2 AND $dc->tattica(2,1)!=2){
 $dc->Controllastato(1);
 $dc->Controllastato(2);
 
-if($dc->esausto(1)==1){
+if($dc->tattica(1,1)==4){
+$input.=$dc->Usapozione(1);
+}elseif($dc->esausto(1)==1){
 $input.=sprintf($lang['troppo_stanco_per_attacco'],$dc->nome(1))."<br/>";
 }elseif($dc->tattica(1,1)==3){
 $input.=sprintf($lang['resta_in_difesa'],$dc->nome(1))."<br/>";
 }else{
 $input.=$dc->Attaccovicino(1,2);
 }
-if($dc->esausto(2)==1){
+if($dc->tattica(2,1)==4){
+$input.=$dc->Usapozione(2);
+}elseif($dc->esausto(2)==1){
 $input.=sprintf($lang['troppo_stanco_per_attacco'],$dc->nome(2))."<br/>";
 }elseif($dc->tattica(2,1)==3){
 $input.=sprintf($lang['resta_in_difesa'],$dc->nome(2))."<br/>";
