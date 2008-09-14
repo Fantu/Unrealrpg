@@ -408,7 +408,7 @@ class Dati{
 	
 	public function Usapozione($chi) {
 	global $db,$lang;
-	$oggetto=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$oggid."' LIMIT 1");
+	$oggetto=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$this->equip($chi,'poz')."' LIMIT 1");
 	$nomeogg=$lang['oggetto'.$oggetto['id'].'_nome'];
 	$ok=1;
 	switch($oggetto['tipo']){
