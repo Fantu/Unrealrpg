@@ -217,7 +217,7 @@ $desc_imposcu=$lang['noscuimpo'];
 if($userequip['poz']!=0){
 $usuraogg='';
 if($user['plus']>0){
-$usuraoggsel=$db->QuerySelect("SELECT * FROM equip WHERE userid='".$user['userid']."' AND oggid='".$userequip['scu']."' LIMIT 1");
+$usuraoggsel=$db->QuerySelect("SELECT * FROM equip WHERE userid='".$user['userid']."' AND oggid='".$userequip['poz']."' LIMIT 1");
 $usuraogg='title="'.$lang['usura_attuale'].$usuraoggsel['usura'].'"';
 }
 $pozimpo="<a href=\"index.php?loc=mostraoggetto&amp;ogg=".$userequip['poz']."&amp;da=equip\"".$usuraogg.">".$lang['oggetto'.$userequip['poz'].'_nome']."</a>";
