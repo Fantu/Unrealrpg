@@ -626,6 +626,8 @@ function Completaquest($userid,$qid,$secondi){
 global $db,$adesso,$lang;
 $prob=rand(1,100);
 $titolo=$lang['le_montagne'];
+$energia=$secondi/100*3;
+$db->QueryMod("UPDATE caratteristiche SET energia=energia-'".$energia."' WHERE userid='".$userid."'");
 if($prob==100){
 $monete=rand(5,100);
 $testo=sprintf($lang['oconfini_trovato_tesoro'],$monete)."<br />";
@@ -650,6 +652,14 @@ Ritornoacasa($userid,$secondi);
 
 function Ritornoacasa($userid,$secondi){
 global $db,$adesso;
+$energia=$secondi/100*3;
+$usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");	
+if($usercar['energia']<(50+$energia)){
+$energiam=($energia+50)-$usercar['energia'];
+$secondi+=100+($energia*60);
+}else{
+$db->QueryMod("UPDATE caratteristiche SET energia=energia-'".$energia."' WHERE userid='".$userid."'");
+}
 $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo) VALUES ('".$userid."','".$adesso."','".$secondi."','16','9')");	
 } //fine Completaquest
 ?>
