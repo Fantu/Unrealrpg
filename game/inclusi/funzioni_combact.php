@@ -441,7 +441,7 @@ class Dati{
 		}
 	if($ok==1){
 	$this->Ogginuso($chi,'poz');
-	$output=$this->nome($chi)."<br/>".$output;
+	$output=$this->nome($chi)."<br/>".$output."<br/>";
 	}//se usato
 	return $output;
 	} //fine Usapozione
