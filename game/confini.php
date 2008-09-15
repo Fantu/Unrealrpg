@@ -24,7 +24,7 @@ if($errore){
 	$outputerrori="<span>".$lang['outputerroriquest']."</span><br /><span>".$errore."</span><br /><br />";}
 else {
 $secondi1+=rand(10,200);
-$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,questid) VALUES ('".$user['userid']."','".$adesso."','".$secondi."','15','8','1')");
+$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,questid) VALUES ('".$user['userid']."','".$adesso."','".$secondi1."','15','8','1')");
 echo "<script language=\"javascript\">window.location.href='index.php?loc=situazione'</script>";
 exit();
 }//se nessun errore
