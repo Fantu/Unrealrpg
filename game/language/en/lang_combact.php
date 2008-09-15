@@ -36,6 +36,7 @@ $lang['seleziona_tattica']='Scegli la tattica';
 $lang['tattica_attacco']='Attacco';
 $lang['tattica_difesa']='Difesa';
 $lang['tattica_resa']='Resa';
+$lang['tattica_pozione']='Usa pozione';
 $lang['tattica_attacco_cac']='corpo a corpo';
 $lang['nessuna']='Nessuna';
 $lang['tattica_selezionata']='Tattica selezionata: %s';
@@ -60,6 +61,7 @@ $lang['le_montagne']='Le Montagne';
 $lang['tempo_previsto_per_destinazione']='Per giungere a destinazione ci metterai circa %s minuti';
 $lang['oconfini_trovato_tesoro']='Hai trovato un piccolo tesoro dal valore di %s monete';
 $lang['oconfini_trovato_nulla']='Non hai trovato niente ne nessuno';
+$lang['ocnord_desc']='Tempo stimato: %s minuti';
 
 $lang['nomepcpu1']='CpuProva';
 $lang['nomepcpu2']='Bandito giovane';

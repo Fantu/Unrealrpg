@@ -7,7 +7,10 @@ Legenda:<br />
 - Correzione bug e patch di situazioni non previste<br />
 <br />
 </p>
-<p><strong>0.7.1</strong> (Non disponibile - In sviluppo)<br />
+<p><strong>0.7.2</strong> (Non disponibile - In sviluppo)<br />
+Niente attualmente<br />
+</p>
+<p><strong>0.7.1</strong> [R.1534] (15/09/08 - Beta)<br />
 + Nei combattimenti contro NPC non c'è parità se si arriva oltre i 25 "round" ma il combattimento continua<br />
 + Andare oltre confine comporta un consumo di energia in base al tempo impiegato e alla difficoltà del territorio<br />
 + Se durante il ritorno l'energia è molto bassa si impiegherà più tempo che all'andata<br />

@@ -7,12 +7,16 @@ Legenda:<br />
 - Correzione bug e patch di situazioni non previste<br />
 <br />
 </p>
-<p><strong>0.7.1</strong> (Non disponibile - In sviluppo)<br />
+<p><strong>0.7.2</strong> (Non disponibile - In sviluppo)<br />
+Niente attualmente<br />
+</p>
+<p><strong>0.7.1</strong> [R.1534] (15/09/08 - Beta)<br />
 + Nei combattimenti contro NPC non c'è parità se si arriva oltre i 25 "round" ma il combattimento continua<br />
 + Andare oltre confine comporta un consumo di energia in base al tempo impiegato e alla difficoltà del territorio<br />
 + Se durante il ritorno l'energia è molto bassa si impiegherà più tempo che all'andata<br />
 + Aggiunte le pozioni all'equipaggiamento<br />
 + Implementate le pozioni nei combattimenti<br />
++ Aggiunta la stima del tempo necessario per raggiungere la destinazione oltre confine<br />
 + Vari miglioramenti di sistema a sistema di utilizzo degli oggetti<br />
 # Nelle "quest" oltre confine la velocità influisce maggiormente sul tempo richiesto per giungere a destinazione<br />
 # Aumentata la probabilità di incontrare NPC a nord oltre i confini<br />

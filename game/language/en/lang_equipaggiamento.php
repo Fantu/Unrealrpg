@@ -14,4 +14,8 @@ $lang['noarmimpo']='Non hai un armatura nell`equipaggiamento.';
 $lang['seleziona_scu']='Select shield';
 $lang['scuimpo']='Your shield is %s';
 $lang['noscuimpo']='No shield equipped';
+$lang['Pozioni']='Pozioni';
+$lang['seleziona_poz']='Seleziona pozione';
+$lang['pozimpo']='La tua pozione è %s';
+$lang['nopozimpo']='Non hai una pozione nell`equipaggiamento.';
 ?>
