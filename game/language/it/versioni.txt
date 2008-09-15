@@ -13,6 +13,7 @@ Legenda:<br />
 + Se durante il ritorno l'energia è molto bassa si impiegherà più tempo che all'andata<br />
 + Aggiunte le pozioni all'equipaggiamento<br />
 + Implementate le pozioni nei combattimenti<br />
++ Aggiunta la stima del tempo necessario per raggiungere la destinazione oltre confine<br />
 + Vari miglioramenti di sistema a sistema di utilizzo degli oggetti<br />
 # Nelle "quest" oltre confine la velocità influisce maggiormente sul tempo richiesto per giungere a destinazione<br />
 # Aumentata la probabilità di incontrare NPC a nord oltre i confini<br />

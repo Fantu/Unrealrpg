@@ -5,6 +5,9 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 }
 require_once('language/'.$language.'/lang_combact.php');
 require_once('inclusi/funzioni_combact.php');
+
+$secondi1=2000/800*(800-$usercar['velocita']);
+
 if (isset($_POST['parti'])){
 $direzione=(int)$_POST['direzione'];
 $errore="";
@@ -20,8 +23,7 @@ $errore.=$lang['quest_error3'];
 if($errore){
 	$outputerrori="<span>".$lang['outputerroriquest']."</span><br /><span>".$errore."</span><br /><br />";}
 else {
-$secondi=2000/800*(800-$usercar['velocita']);
-$secondi+=rand(10,200);
+$secondi1+=rand(10,200);
 $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,questid) VALUES ('".$user['userid']."','".$adesso."','".$secondi."','15','8','1')");
 echo "<script language=\"javascript\">window.location.href='index.php?loc=situazione'</script>";
 exit();

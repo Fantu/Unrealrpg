@@ -61,6 +61,7 @@ $lang['le_montagne']='Le Montagne';
 $lang['tempo_previsto_per_destinazione']='Per giungere a destinazione ci metterai circa %s minuti';
 $lang['oconfini_trovato_tesoro']='Hai trovato un piccolo tesoro dal valore di %s monete';
 $lang['oconfini_trovato_nulla']='Non hai trovato niente e nessuno';
+$lang['ocnord_desc']='Tempo stimato: %s minuti';
 
 $lang['nomepcpu1']='CpuProva';
 $lang['nomepcpu2']='Bandito giovane';
