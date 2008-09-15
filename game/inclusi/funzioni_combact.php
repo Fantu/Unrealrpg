@@ -176,7 +176,7 @@ class Dati{
 	} //fine ogginuso
 	
 	public function Aggiornastat($chi){
-	global $db;
+	global $db,$adesso;
 	if($this->car($chi,'saluteattuale')<0)
 	$this->che[$chi]->car['saluteattuale']=0;
 	if($this->car($chi,'energia')<0)
