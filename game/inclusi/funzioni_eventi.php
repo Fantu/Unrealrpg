@@ -657,10 +657,11 @@ $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid
 if($usercar['energia']<(50+$energia)){
 $energiam=($energia+50)-$usercar['energia'];
 $secondi+=100+($energia*60);
-$db->QueryMod("UPDATE caratteristiche SET energia='50' WHERE userid='".$userid."'");
+$energia=50;
 }else{
-$db->QueryMod("UPDATE caratteristiche SET energia=energia-'".$energia."' WHERE userid='".$userid."'");
+$energia=$usercar['energia']-$energia;
 }
+$db->QueryMod("UPDATE caratteristiche SET energia='".$energia."',recuperosalute='".$adesso."',recuperoenergia='".$adesso."' WHERE userid='".$userid."'");
 $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo) VALUES ('".$userid."','".$adesso."','".$secondi."','16','9')");	
 } //fine Completaquest
 ?>

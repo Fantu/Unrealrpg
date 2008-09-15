@@ -182,7 +182,7 @@ class Dati{
 	if($this->car($chi,'energia')<0)
 	$this->che[$chi]->car['energia']=0;
 	if($this->cpu($chi)==0){
-	$db->QueryMod("UPDATE caratteristiche SET saluteattuale='".$this->car($chi,'saluteattuale')."',energia='".$this->car($chi,'energia')."' WHERE userid='".$this->id($chi)."' LIMIT 1");
+	$db->QueryMod("UPDATE caratteristiche SET saluteattuale='".$this->car($chi,'saluteattuale')."',energia='".$this->car($chi,'energia')."',recuperosalute='".$adesso."',recuperoenergia='".$adesso."' WHERE userid='".$this->id($chi)."' LIMIT 1");
 	}else{
 	$db->QueryMod("UPDATE carcpu SET saluteattuale='".$this->car($chi,'saluteattuale')."',energia='".$this->car($chi,'energia')."' WHERE cpuid='".$this->id($chi)."' LIMIT 1");
 	}
