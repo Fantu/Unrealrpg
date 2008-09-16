@@ -8,9 +8,9 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <br />
 <br />
 <?php echo $lang['Nord'].": ".$lang['le_montagne']; ?><br />
-<?php echo sprintf($lang['ocnord_desc'],round($secondi1/60)); ?><br />
-<?php echo $lang['Sud'].": Confine attualmente chiuso"; ?><br />
-<?php echo $lang['Ovest'].": Confine attualmente chiuso"; ?><br />
+<?php echo sprintf($lang['ocnord_desc'],round($secondi1/60)); ?><br /><br />
+<?php echo $lang['Sud'].": Confine attualmente chiuso"; ?><br /><br />
+<?php echo $lang['Ovest'].": Confine attualmente chiuso"; ?><br /><br />
 <?php echo $lang['Est'].": Confine attualmente chiuso"; ?><br />
 <br />
 <br />
