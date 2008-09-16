@@ -6,7 +6,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 require_once('language/'.$language.'/lang_combact.php');
 require_once('inclusi/funzioni_combact.php');
 
-$secondi1=2000/800*(800-$usercar['velocita']);
+$secondi1=2000/600*(600-$usercar['velocita']);
 
 if (isset($_POST['parti'])){
 $direzione=(int)$_POST['direzione'];

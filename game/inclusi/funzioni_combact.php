@@ -141,13 +141,15 @@ class Dati{
 	
 	public function Viewequip($chi) {
 	global $lang;
-	if($this->equip($chi,'cac')!=0 OR $this->equip($chi,'arm')!=0 OR $this->equip($chi,'scu')!=0){
+	if($this->equip($chi,'cac')!=0 OR $this->equip($chi,'arm')!=0 OR $this->equip($chi,'scu')!=0 OR $this->equip($chi,'poz')!=0){
 	if($this->equip($chi,'cac')!=0)
 	$equip.=" ".$lang['oggetto'.$this->equip($chi,'cac').'_nome'];
 	if($this->equip($chi,'arm')!=0)
 	$equip.=" ".$lang['oggetto'.$this->equip($chi,'arm').'_nome'];
 	if($this->equip($chi,'scu')!=0)
 	$equip.=" ".$lang['oggetto'.$this->equip($chi,'scu').'_nome'];
+	if($this->equip($chi,'poz')!=0)
+	$equip.=" ".$lang['oggetto'.$this->equip($chi,'poz').'_nome'];
 	}else{$equip=$lang['nessuno'];}
 	$input=sprintf($lang['equip_di'],$this->nome($chi),$this->car($chi,'livello'),$equip)."<br/>";
 	return $input;
@@ -192,7 +194,7 @@ class Dati{
 	public function Controlloogg($chi) {
 	$oggpersi=Checkusurarottura($this->id($chi),$this->cpu($chi));
 	if($oggpersi){
-	$dato.=$this->nome($chi)."<br/>".$oggpersi;
+	$dato.=$this->nome($chi).": ".$oggpersi;
 	}
 	return $dato;
 	} //fine Controlloogg
@@ -441,7 +443,7 @@ class Dati{
 		}
 	if($ok==1){
 	$this->Ogginuso($chi,'poz');
-	$output=$this->nome($chi)."<br/>".$output."<br/>";
+	$output=$this->nome($chi).": ".$output."<br/>";
 	}//se usato
 	return $output;
 	} //fine Usapozione
