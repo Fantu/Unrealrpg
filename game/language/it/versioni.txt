@@ -6,7 +6,7 @@ Legenda:<br />
 # Modifiche<br />
 - Correzione bug e patch di situazioni non previste<br />
 + Ora durante il primo "round" di combattimento viene visualizzata l'eventuale pozione nell'equipaggiamento<br />
-+ Vari miglioramenti di sistema a sistema di combattimento<br />
++ Vari miglioramenti di sistema a sistema di combattimento, Confini<br />
 # Nelle "quest" oltre confine la velocità influisce maggiormente sul tempo richiesto per giungere a destinazione<br />
 </p>
 <p><strong>0.7.2</strong> (Non disponibile - In sviluppo)<br />
