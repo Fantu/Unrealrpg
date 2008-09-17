@@ -684,7 +684,7 @@ if($se['n']>0){
 $cpud=$db->QuerySelect("SELECT * FROM carcpu WHERE pid='".$difensore."' LIMIT 1");
 $cpuid=$db->QuerySelect("SELECT * FROM pcpudata WHERE id='".$difensore."' LIMIT 1");
 $id=$cpud['cpuid'];
-$db->QueryMod("UPDATE carcpu SET saluteattuale='".$cpuid['salute']."',energia='".$cpuid['energia']."' WHERE cpuid='".$id."' LIMIT 1");}
+$db->QueryMod("UPDATE carcpu SET saluteattuale='".$cpuid['salute']."',energia='".$cpuid['energia']."' WHERE cpuid='".$id."' LIMIT 1");
 }else{$id=0;}
 return $id;
 } //fine Npcesistente
