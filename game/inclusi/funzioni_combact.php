@@ -467,6 +467,7 @@ $dc->Controllastato(2);
 
 if($dc->tattica(1,1)==4){
 $input.=$dc->Usapozione(1);
+$expb+=1;
 }elseif($dc->esausto(1)==1){
 $input.=sprintf($lang['troppo_stanco_per_attacco'],$dc->nome(1))."<br/>";
 }elseif($dc->tattica(1,1)==3){
@@ -476,6 +477,7 @@ $input.=$dc->Attaccovicino(1,2);
 }
 if($dc->tattica(2,1)==4){
 $input.=$dc->Usapozione(2);
+$expb+=1;
 }elseif($dc->esausto(2)==1){
 $input.=sprintf($lang['troppo_stanco_per_attacco'],$dc->nome(2))."<br/>";
 }elseif($dc->tattica(2,1)==3){
