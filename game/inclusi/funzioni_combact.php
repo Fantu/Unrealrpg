@@ -149,7 +149,7 @@ class Dati{
 	if($this->equip($chi,'scu')!=0)
 	$equip.=" ".$lang['oggetto'.$this->equip($chi,'scu').'_nome'];
 	if($this->equip($chi,'poz')!=0)
-	$equip.=" ".$lang['oggetto'.$this->equip($chi,'poz').'_nome'];
+	$equip.=" ".$lang['Pozione'];
 	}else{$equip=$lang['nessuno'];}
 	$input=sprintf($lang['equip_di'],$this->nome($chi),$this->car($chi,'livello'),$equip)."<br/>";
 	return $input;
