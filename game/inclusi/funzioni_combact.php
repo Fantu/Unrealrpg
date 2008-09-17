@@ -664,10 +664,10 @@ global $db,$adesso,$lang,$language;
 $cpud=$db->QuerySelect("SELECT * FROM pcpudata WHERE id='".$difensore."' LIMIT 1");
 $db->QueryMod("INSERT INTO carcpu (pid,livello,salute,saluteattuale,energia,energiamax,mana,manarimasto,attfisico,attmagico,diffisica,difmagica,agilita,velocita,intelligenza,destrezza,monete) VALUES ('".$difensore."','".$cpud['livello']."','".$cpud['salute']."','".$cpud['salute']."','".$cpud['energia']."','".$cpud['energia']."','".$cpud['mana']."','".$cpud['mana']."','".$cpud['attfisico']."','".$cpud['attmagico']."','".$cpud['diffisica']."','".$cpud['difmagica']."','".$cpud['agilita']."','".$cpud['velocita']."','".$cpud['intelligenza']."','".$cpud['destrezza']."','".$cpud['monete']."')");
 $idcpu=$db->QuerySelect("SELECT cpuid FROM carcpu ORDER BY cpuid DESC");
-$db->QueryMod("INSERT INTO equipagcpu (cpuid,cac,arm,scu,poz) VALUES ('".$dif."','".$cpud['eqcac']."','".$cpud['eqarm']."','".$cpud['eqscu']."','".$cpud['eqpoz']."')");
-if($cpud['eqcac']!=0){$db->QueryMod("INSERT INTO equipcpu (cpuid,oggid) VALUES ('".$dif."','".$cpud['eqcac']."')");}
-if($cpud['eqarm']!=0){$db->QueryMod("INSERT INTO equipcpu (cpuid,oggid) VALUES ('".$dif."','".$cpud['eqarm']."')");}
-if($cpud['eqscu']!=0){$db->QueryMod("INSERT INTO equipcpu (cpuid,oggid) VALUES ('".$dif."','".$cpud['eqscu']."')");}
-if($cpud['eqpoz']!=0){$db->QueryMod("INSERT INTO equipcpu (cpuid,oggid) VALUES ('".$dif."','".$cpud['eqpoz']."')");}
+$db->QueryMod("INSERT INTO equipagcpu (cpuid,cac,arm,scu,poz) VALUES ('".$idcpu['cpuid']."','".$cpud['eqcac']."','".$cpud['eqarm']."','".$cpud['eqscu']."','".$cpud['eqpoz']."')");
+if($cpud['eqcac']!=0){$db->QueryMod("INSERT INTO equipcpu (cpuid,oggid) VALUES ('".$idcpu['cpuid']."','".$cpud['eqcac']."')");}
+if($cpud['eqarm']!=0){$db->QueryMod("INSERT INTO equipcpu (cpuid,oggid) VALUES ('".$idcpu['cpuid']."','".$cpud['eqarm']."')");}
+if($cpud['eqscu']!=0){$db->QueryMod("INSERT INTO equipcpu (cpuid,oggid) VALUES ('".$idcpu['cpuid']."','".$cpud['eqscu']."')");}
+if($cpud['eqpoz']!=0){$db->QueryMod("INSERT INTO equipcpu (cpuid,oggid) VALUES ('".$idcpu['cpuid']."','".$cpud['eqpoz']."')");}
 return $idcpu['cpuid'];
 } //fine Inizializzanpc
