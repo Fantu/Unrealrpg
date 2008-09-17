@@ -591,7 +591,7 @@ $db->QueryMod("UPDATE `utenti` SET `monete`=`monete`+'".$monete."' WHERE `userid
 $input=sprintf($lang['c_vince_monete'],$attn['username'],$monete)."<br/>";
 }elseif($vincitore==2){//se vince contro cpu
 $db->QueryMod("UPDATE `utenti` SET `monete`='0' WHERE `userid`='".$att."' LIMIT 1");
-$db->QueryMod("UPDATE `carcpu` SET `monete`=`monete`+'".$attn['monete']."' WHERE `userid`='".$att."' LIMIT 1");
+$db->QueryMod("UPDATE `carcpu` SET `monete`=`monete`+'".$attn['monete']."' WHERE `cpuid`='".$att."' LIMIT 1");
 $input=sprintf($lang['c_perde_monete'],$attn['username'],$attn['monete'])."<br/>";
 }//se perde contro cpu
 if($vincitore>0){Inreport($battleid,$input);}
@@ -665,7 +665,7 @@ fputs($fp,$repinput);
 } //fine Inreport
 
 function Inizializzanpc($difensore) {
-global $db,$adesso;
+global $db;
 $cpud=$db->QuerySelect("SELECT * FROM pcpudata WHERE id='".$difensore."' LIMIT 1");
 $db->QueryMod("INSERT INTO carcpu (pid,livello,salute,saluteattuale,energia,energiamax,mana,manarimasto,attfisico,attmagico,diffisica,difmagica,agilita,velocita,intelligenza,destrezza,monete) VALUES ('".$difensore."','".$cpud['livello']."','".$cpud['salute']."','".$cpud['salute']."','".$cpud['energia']."','".$cpud['energia']."','".$cpud['mana']."','".$cpud['mana']."','".$cpud['attfisico']."','".$cpud['attmagico']."','".$cpud['diffisica']."','".$cpud['difmagica']."','".$cpud['agilita']."','".$cpud['velocita']."','".$cpud['intelligenza']."','".$cpud['destrezza']."','".$cpud['monete']."')");
 $idcpu=$db->QuerySelect("SELECT cpuid FROM carcpu ORDER BY cpuid DESC");
@@ -676,3 +676,15 @@ if($cpud['eqscu']!=0){$db->QueryMod("INSERT INTO equipcpu (cpuid,oggid) VALUES (
 if($cpud['eqpoz']!=0){$db->QueryMod("INSERT INTO equipcpu (cpuid,oggid) VALUES ('".$idcpu['cpuid']."','".$cpud['eqpoz']."')");}
 return $idcpu['cpuid'];
 } //fine Inizializzanpc
+
+function Npcesistente($difensore) {
+global $db;
+$se=$db->QuerySelect("SELECT COUNT(cpuid) AS n FROM carcpu WHERE pid='".$difensore."'");
+if($se['n']>0){
+$cpud=$db->QuerySelect("SELECT * FROM carcpu WHERE pid='".$difensore."' LIMIT 1");
+$cpuid=$db->QuerySelect("SELECT * FROM pcpudata WHERE id='".$difensore."' LIMIT 1");
+$id=$cpud['cpuid'];
+$db->QueryMod("UPDATE carcpu SET saluteattuale='".$cpuid['salute']."',energia='".$cpuid['energia']."' WHERE cpuid='".$id."' LIMIT 1");}
+}else{$id=0;}
+return $id;
+} //fine Npcesistente

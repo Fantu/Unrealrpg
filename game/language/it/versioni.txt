@@ -7,7 +7,7 @@ Legenda:<br />
 - Correzione bug e patch di situazioni non previste<br />
 </p>
 <p><strong>0.7.2</strong> (Non disponibile - In sviluppo)<br />
-+ Ora durante il primo "round" di combattimento viene visualizzata l'eventuale pozione nell'equipaggiamento<br />
++ Ora durante il primo "round" di combattimento viene visualizzata l'eventuale pozione nell'equipaggiamento (restando sul generico)<br />
 + Gli npc che vincono non vengono "cancellati", prendono effettivamente le monete che vincono e possono scontrarsi contro altri che vanno nella loro zona (anche l'avversario precedentemente sconfitto), al combattimento successivo hanno salute ed energia ripristinati<br />
 + Migliorato il guadagno di esperienza nei combattimenti<br />
 + Vari miglioramenti di sistema a sistema di combattimento, Confini, Banca, Locanda, sistema di inizializzazione npc<br />
