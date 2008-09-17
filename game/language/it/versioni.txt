@@ -8,7 +8,7 @@ Legenda:<br />
 </p>
 <p><strong>0.7.2</strong> (Non disponibile - In sviluppo)<br />
 + Ora durante il primo "round" di combattimento viene visualizzata l'eventuale pozione nell'equipaggiamento<br />
-+ Vari miglioramenti di sistema a sistema di combattimento, Confini, Banca, Locanda<br />
++ Vari miglioramenti di sistema a sistema di combattimento, Confini, Banca, Locanda, sistema di inizializzazione npc<br />
 # Nelle "quest" oltre confine la velocità influisce maggiormente sul tempo richiesto per giungere a destinazione<br />
 # Portati gli interessi in banca dall'1% al 2%<br />
 </p>
