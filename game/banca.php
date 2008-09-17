@@ -29,7 +29,7 @@ $userbank=$db->QuerySelect("SELECT * FROM banca WHERE userid='".$user['userid'].
 if(($userbank['interessi']+86400)<$adesso){
 	$differenzaora=$adesso-$userbank['interessi'];
 	$giorni=floor($differenzaora/86400);
-	$interessi=floor(($userbank['conto']/100)*1);
+	$interessi=floor(($userbank['conto']/100)*2);
 	if($interessi>0)
 	$interessi=$interessi*$giorni;
 	if ($interessi>0){
@@ -137,7 +137,6 @@ if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
 else{
 $db->QueryMod("UPDATE banca t1 JOIN caratteristiche t3 on t1.userid=t3.userid SET t1.conto=t1.conto-'1',t1.lotteria='1',t3.energia=t3.energia-'1' WHERE t1.userid='".$user['userid']."'");
-$db->QueryMod("UPDATE config SET banca=banca+'1'");
 }
 }//fine compra biglietto lotteria
 $partecipanti=$db->QuerySelect("SELECT COUNT(userid) AS num FROM banca WHERE lotteria>0");
