@@ -9,8 +9,10 @@ Legenda:<br />
 <p><strong>0.7.2</strong> (Non disponibile - In sviluppo)<br />
 + Ora durante il primo "round" di combattimento viene visualizzata l'eventuale pozione nell'equipaggiamento<br />
 + Vari miglioramenti di sistema a sistema di combattimento, Confini, Banca, Locanda, sistema di inizializzazione npc<br />
++ Gli npc che vincono non vengono "cancellati", prendono effettivamente le monete che vincono e possono scontrarsi contro altri che vanno nella loro zona (anche l'avversario precedentemente sconfitto), al combattimento successivo hanno salute ed energia ripristinati<br />
 # Nelle "quest" oltre confine la velocità influisce maggiormente sul tempo richiesto per giungere a destinazione<br />
 # Portati gli interessi in banca dall'1% al 2%<br />
+# Diminuito il tempo di un "round" da 90 a 60 secondi<br />
 </p>
 <p><strong>0.7.1</strong> [R.1534] (15/09/08 - Beta)<br />
 + Nei combattimenti contro NPC non c'è parità se si arriva oltre i 25 "round" ma il combattimento continua<br />

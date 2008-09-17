@@ -451,7 +451,7 @@ class Dati{
 } //fine classe Dati
 
 function Battledo($battleid,$turni) {
-global $db,$adesso,$lang,$language;
+global $db,$adesso,$lang;
 $battle=$db->QuerySelect("SELECT * FROM battle WHERE id='".$battleid."' LIMIT 1");
 $expb=$battle['exp'];
 $dc=new Dati();
@@ -556,7 +556,7 @@ Endcombact($battle['id'],$vincitore);
 }else{//continua
 if($expb!=$battle['exp']){
 $db->QueryMod("UPDATE battle SET exp='".$expb."' WHERE id='".$battleid."' LIMIT 1");}
-$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,battleid,turni) VALUES ('0','".$adesso."','90','0','6','".$battleid."','".$turni."')");
+$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,battleid,turni) VALUES ('0','".$adesso."','60','0','6','".$battleid."','".$turni."')");
 }//fine continua
 } //fine Battledo
 
@@ -589,12 +589,15 @@ $db->QueryMod("UPDATE `utenti` SET `monete`=`monete`+'".$monete."' WHERE `userid
 $input=sprintf($lang['c_vince_monete'],$attn['username'],$monete)."<br/>";
 }elseif($vincitore==2){//se vince contro cpu
 $db->QueryMod("UPDATE `utenti` SET `monete`='0' WHERE `userid`='".$att."' LIMIT 1");
+$db->QueryMod("UPDATE `carcpu` SET `monete`=`monete`+'".$attn['monete']."' WHERE `userid`='".$att."' LIMIT 1");
 $input=sprintf($lang['c_perde_monete'],$attn['username'],$attn['monete'])."<br/>";
 }//se perde contro cpu
 if($vincitore>0){Inreport($battleid,$input);}
+if($vincitore!=2){
 $db->QueryMod("DELETE FROM carcpu WHERE cpuid='".$dif."' LIMIT 1");
 $db->QueryMod("DELETE FROM equipagcpu WHERE cpuid='".$dif."' LIMIT 1");
 $db->QueryMod("DELETE FROM equipcpu WHERE cpuid='".$dif."'");
+}//se non vince cpu
 }//se cpu
 $db->QueryMod("DELETE FROM eventi WHERE battleid='".$battleid."'");
 $db->QueryMod("DELETE FROM battle WHERE id='".$battleid."'");
@@ -602,11 +605,11 @@ $db->QueryMod("UPDATE battlereport SET finito='1' WHERE id='".$battleid."' LIMIT
 } //fine Endcombact
 
 function Startcombact($attaccante,$dif,$cpu) {
-global $db,$adesso,$lang,$language;
+global $db,$adesso,$lang;
 if($cpu==1){$difcar=$db->QuerySelect("SELECT * FROM carcpu WHERE cpuid='".$dif."' LIMIT 1"); $difensore=$difcar['pid'];}
 $db->QueryMod("INSERT INTO battle (attid,difid,difcpu) VALUES ('".$attaccante."','".$dif."','".$cpu."')");
 $battle=$db->QuerySelect("SELECT id FROM battle WHERE attid='".$attaccante."' LIMIT 1");
-$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,battleid) VALUES ('0','".$adesso."','90','0','6','".$battle['id']."')");
+$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,battleid) VALUES ('0','".$adesso."','60','0','6','".$battle['id']."')");
 $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,oggid,battleid) VALUES ('".$attaccante."','".$adesso."','84600','13','5','".$difensore."','".$battle['id']."')");
 $attn=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$attaccante."' LIMIT 1");
 $attcar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$attaccante."' LIMIT 1");
@@ -660,7 +663,7 @@ fputs($fp,$repinput);
 } //fine Inreport
 
 function Inizializzanpc($difensore) {
-global $db,$adesso,$lang,$language;
+global $db,$adesso;
 $cpud=$db->QuerySelect("SELECT * FROM pcpudata WHERE id='".$difensore."' LIMIT 1");
 $db->QueryMod("INSERT INTO carcpu (pid,livello,salute,saluteattuale,energia,energiamax,mana,manarimasto,attfisico,attmagico,diffisica,difmagica,agilita,velocita,intelligenza,destrezza,monete) VALUES ('".$difensore."','".$cpud['livello']."','".$cpud['salute']."','".$cpud['salute']."','".$cpud['energia']."','".$cpud['energia']."','".$cpud['mana']."','".$cpud['mana']."','".$cpud['attfisico']."','".$cpud['attmagico']."','".$cpud['diffisica']."','".$cpud['difmagica']."','".$cpud['agilita']."','".$cpud['velocita']."','".$cpud['intelligenza']."','".$cpud['destrezza']."','".$cpud['monete']."')");
 $idcpu=$db->QuerySelect("SELECT cpuid FROM carcpu ORDER BY cpuid DESC");
