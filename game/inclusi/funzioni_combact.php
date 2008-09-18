@@ -591,7 +591,7 @@ $db->QueryMod("UPDATE `utenti` SET `monete`=`monete`+'".$monete."' WHERE `userid
 $input=sprintf($lang['c_vince_monete'],$attn['username'],$monete)."<br/>";
 }elseif($vincitore==2){//se vince contro cpu
 $db->QueryMod("UPDATE `utenti` SET `monete`='0' WHERE `userid`='".$att."' LIMIT 1");
-$db->QueryMod("UPDATE `carcpu` SET `monete`=`monete`+'".$attn['monete']."' WHERE `cpuid`='".$att."' LIMIT 1");
+$db->QueryMod("UPDATE `carcpu` SET `monete`=`monete`+'".$attn['monete']."' WHERE `cpuid`='".$dif."' LIMIT 1");
 $input=sprintf($lang['c_perde_monete'],$attn['username'],$attn['monete'])."<br/>";
 }//se perde contro cpu
 if($vincitore>0){Inreport($battleid,$input);}
