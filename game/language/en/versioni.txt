@@ -7,7 +7,8 @@ Legenda:<br />
 - Correzione bug e patch di situazioni non previste<br />
 </p>
 <p><strong>0.7.3</strong> (Non disponibile - In sviluppo)<br />
-Niente attualmente<br />
++ Gli NPC che si riscontrano e hanno perso equipaggiamento nei combattimenti precedenti è probabile che ne riprendano un altro<br />
+# Portati i "round" massimi prima del pareggio nella sfida tra utenti da 25 a 30<br />
 </p>
 <p><strong>0.7.2</strong> [R.1550] (18/09/08 - Beta)<br />
 + Ora durante il primo "round" di combattimento viene visualizzata l'eventuale pozione nell'equipaggiamento (restando sul generico)<br />
