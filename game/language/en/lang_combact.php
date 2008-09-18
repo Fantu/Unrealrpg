@@ -46,6 +46,7 @@ $lang['colpo_potente']='con un colpo potente';
 $lang['danni_subiti']='%s subisce %s danni.';
 $lang['c_vince_monete']='%s prende %s monete.';
 $lang['c_perde_monete']='%s perde %s monete.';
+$lang['Pozione']='Pozione';
 
 $lang['outputerroriquest']='Impossibile effettuare una quest per i seguenti motivi:';
 $lang['quest_error1']='- Non sei in condizioni abbastanza buone per affrontare una quest.<br />';
@@ -60,7 +61,7 @@ $lang['Est']='Est';
 $lang['le_montagne']='Le Montagne';
 $lang['tempo_previsto_per_destinazione']='Per giungere a destinazione ci metterai circa %s minuti';
 $lang['oconfini_trovato_tesoro']='Hai trovato un piccolo tesoro dal valore di %s monete';
-$lang['oconfini_trovato_nulla']='Non hai trovato niente ne nessuno';
+$lang['oconfini_trovato_nulla']='Non hai trovato niente e nessuno';
 $lang['ocnord_desc']='Tempo stimato: %s minuti';
 
 $lang['nomepcpu1']='CpuProva';
