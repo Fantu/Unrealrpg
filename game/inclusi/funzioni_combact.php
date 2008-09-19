@@ -599,7 +599,9 @@ if($vincitore!=2){
 $db->QueryMod("DELETE FROM carcpu WHERE cpuid='".$dif."' LIMIT 1");
 $db->QueryMod("DELETE FROM equipagcpu WHERE cpuid='".$dif."' LIMIT 1");
 $db->QueryMod("DELETE FROM equipcpu WHERE cpuid='".$dif."'");
-}//se non vince cpu
+}else{//se non vince cpu
+$db->QueryMod("UPDATE `carcpu` SET `inuso`='0' WHERE `cpuid`='".$dif."' LIMIT 1");
+}
 }//se cpu
 $db->QueryMod("DELETE FROM eventi WHERE battleid='".$battleid."'");
 $db->QueryMod("DELETE FROM battle WHERE id='".$battleid."'");
@@ -608,7 +610,11 @@ $db->QueryMod("UPDATE battlereport SET finito='1' WHERE id='".$battleid."' LIMIT
 
 function Startcombact($attaccante,$dif,$cpu) {
 global $db,$adesso,$lang;
-if($cpu==1){$difcar=$db->QuerySelect("SELECT * FROM carcpu WHERE cpuid='".$dif."' LIMIT 1"); $difensore=$difcar['pid'];}
+if($cpu==1){
+$difcar=$db->QuerySelect("SELECT * FROM carcpu WHERE cpuid='".$dif."' LIMIT 1");
+$difensore=$difcar['pid'];
+$db->QueryMod("UPDATE `carcpu` SET `inuso`='1' WHERE `cpuid`='".$dif."' LIMIT 1");
+}//se cpu
 $db->QueryMod("INSERT INTO battle (attid,difid,difcpu) VALUES ('".$attaccante."','".$dif."','".$cpu."')");
 $battle=$db->QuerySelect("SELECT id FROM battle WHERE attid='".$attaccante."' LIMIT 1");
 $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,battleid) VALUES ('0','".$adesso."','60','0','6','".$battle['id']."')");
@@ -679,9 +685,9 @@ return $idcpu['cpuid'];
 
 function Npcesistente($difensore) {
 global $db;
-$se=$db->QuerySelect("SELECT COUNT(cpuid) AS n FROM carcpu WHERE pid='".$difensore."'");
+$se=$db->QuerySelect("SELECT COUNT(cpuid) AS n FROM carcpu WHERE pid='".$difensore."' AND inuso='0'");
 if($se['n']>0){
-$cpud=$db->QuerySelect("SELECT * FROM carcpu WHERE pid='".$difensore."' LIMIT 1");
+$cpud=$db->QuerySelect("SELECT * FROM carcpu WHERE pid='".$difensore."' AND inuso='0' LIMIT 1");
 $id=$cpud['cpuid'];
 $cpueq=$db->QuerySelect("SELECT * FROM equipagcpu WHERE cpuid='".$id."' LIMIT 1");
 $cpuid=$db->QuerySelect("SELECT * FROM pcpudata WHERE id='".$difensore."' LIMIT 1");
