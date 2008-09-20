@@ -22,8 +22,8 @@ $db->QueryMod("DELETE FROM utenti WHERE userid='".$chi['userid']."'");
 $db->QueryMod("UPDATE config SET utenti=utenti-'1' WHERE id='".$chi['server']."'");
 }
 $tempo=$adesso-1209600;
-$dacanc=$db->QuerySelect("SELECT count(userid) AS id FROM utenti WHERE ultimologin<'".$tempo."' AND avvinattivo<'".$adesso."' AND vacanza<'0'");
-$dacanc=$db->QueryCiclo("SELECT * FROM utenti WHERE ultimologin<'".$tempo."' AND avvinattivo<'".$adesso."' AND vacanza<'0'");
+$dacanc=$db->QuerySelect("SELECT count(userid) AS id FROM utenti WHERE ultimologin<'".$tempo."' AND avvinattivo<'".$adesso."' AND vacanza<'1'");
+$dacanc=$db->QueryCiclo("SELECT * FROM utenti WHERE ultimologin<'".$tempo."' AND avvinattivo<'".$adesso."' AND vacanza<'1'");
 while($chi=$db->QueryCicloResult($dacanc)) {
 $messaggio=sprintf($lang['mail_avviso_inattivita'],$chi['username'],$game_name,$game_server[$chi['server']],$game_name);
 mail($chi['email'],$lang['Account_inutilizzato'],$messaggio,$game_intestazione_mail);
