@@ -595,11 +595,11 @@ $db->QueryMod("UPDATE `carcpu` SET `monete`=`monete`+'".$attn['monete']."' WHERE
 $input=sprintf($lang['c_perde_monete'],$attn['username'],$attn['monete'])."<br/>";
 }//se perde contro cpu
 if($vincitore>0){Inreport($battleid,$input);}
-if($vincitore!=2){
+if($vincitore==1){
 $db->QueryMod("DELETE FROM carcpu WHERE cpuid='".$dif."' LIMIT 1");
 $db->QueryMod("DELETE FROM equipagcpu WHERE cpuid='".$dif."' LIMIT 1");
 $db->QueryMod("DELETE FROM equipcpu WHERE cpuid='".$dif."'");
-}else{//se non vince cpu
+}else{//se non vince utente
 $db->QueryMod("UPDATE `carcpu` SET `inuso`='0' WHERE `cpuid`='".$dif."' LIMIT 1");
 }
 }//se cpu
