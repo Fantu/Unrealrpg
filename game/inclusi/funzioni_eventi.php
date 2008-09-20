@@ -231,9 +231,10 @@ $testo=sprintf($lang['report_lavminieravecchia'],$exp,$energia,$salute)."<br />"
 if($trovato==0){
 $testo.=$lang['report_lavminieravecchia_materiali_no']."<br />";
 }else{//inizio trovato minerale
-$efficenza=rand(0,1+($usercar['minatore']*500));
-if($efficenza>6000)
-$efficenza=6000;
+$efficenza=rand(0,1+($usercar['minatore']*400));
+$efficenza+=($efficenza/100*$piccone2['bonuseff']);
+if($efficenza>7000)
+$efficenza=7000;
 $trovare=rand(0,9999)-$efficenza;
 $oggminerali=$db->QueryCiclo("SELECT * FROM oggetti WHERE tipo='1' AND categoria='1' AND probtrovare>'".$trovare."'");
 while($oggminerale=$db->QueryCicloResult($oggminerali)) {	

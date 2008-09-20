@@ -11,6 +11,9 @@ $check=$db->QuerySelect("SELECT version FROM config WHERE id=".$chiave);
 if($check['version']!=$newversion AND $newversion==$game_revision){
 
 $db->QueryMod("ALTER TABLE `eventi` ADD `inuso` TINYINT( 1 ) UNSIGNED NOT NULL DEFAULT '0'");
+$db->QueryMod("DELETE FROM oggetti WHERE id='11' LIMIT 1");
+$db->QueryMod("DELETE FROM oggetti WHERE id='14' LIMIT 1");
+$db->QueryMod("DELETE FROM oggetti WHERE id='19' LIMIT 1");
 
 /*$db->QueryMod("INSERT INTO `oggetti` (
 `id` ,
