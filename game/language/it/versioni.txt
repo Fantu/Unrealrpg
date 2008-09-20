@@ -8,6 +8,7 @@ Legenda:<br />
 </p>
 <p><strong>0.7.3</strong> (Non disponibile - In sviluppo)<br />
 + Gli NPC che si riscontrano e hanno perso equipaggiamento nei combattimenti precedenti è probabile che ne riprendano un altro<br />
++ Aggiunto agli NPC: Vorg<br />
 # Portati i "round" massimi prima del pareggio nella sfida tra utenti da 25 a 30<br />
 # Eliminati dagli oggetti: Piccone di rame ossidato, Piccone di ferro arrugginito, Piccone di acciaio arrugginito<br />
 # Rivisto il lavoro in Miniera vecchia, reso più equilibrato<br />

@@ -15,7 +15,32 @@ $db->QueryMod("DELETE FROM oggetti WHERE id='11' LIMIT 1");
 $db->QueryMod("DELETE FROM oggetti WHERE id='14' LIMIT 1");
 $db->QueryMod("DELETE FROM oggetti WHERE id='19' LIMIT 1");
 
-/*$db->QueryMod("INSERT INTO `oggetti` (
+$db->QueryMod("INSERT INTO `pcpudata` (
+`id` ,
+`quest` ,
+`salute` ,
+`energia` ,
+`mana` ,
+`attfisico` ,
+`attmagico` ,
+`diffisica` ,
+`difmagica` ,
+`agilita` ,
+`velocita` ,
+`intelligenza` ,
+`destrezza` ,
+`livello` ,
+`eqcac` ,
+`eqarm` ,
+`eqscu` ,
+`eqpoz` ,
+`monete`
+)
+VALUES (
+NULL , '1', '150', '1500', '50', '500', '50', '500', '50', '150', '150', '100', '150', '10', '64', '0', '56', '0', '60');
+");
+
+$db->QueryMod("INSERT INTO `oggetti` (
 `id` ,
 `tipo` ,
 `categoria` ,
@@ -34,16 +59,10 @@ $db->QueryMod("DELETE FROM oggetti WHERE id='19' LIMIT 1");
 `difesafisica`
 )
 VALUES 
-(NULL , '5', '3', '200', '15', '50', '20', '0', '100', '0', '0', '0', '1', '1', '11', '0'),
-(NULL , '5', '3', '150', '30', '50', '40', '1', '100', '0', '0', '0', '3', '1', '13', '0'),
-(NULL , '5', '3', '100', '50', '50', '100', '2', '100', '0', '0', '0', '5', '1', '16', '0'),
-(NULL , '5', '4', '250', '20', '100', '20', '0', '150', '0', '0', '0', '1', '1', '13', '0'),
-(NULL , '5', '4', '200', '40', '100', '40', '0', '150', '0', '0', '0', '3', '1', '16', '0'),
-(NULL , '5', '4', '150', '70', '100', '80', '0', '150', '0', '0', '0', '5', '1', '20', '0'),
-(NULL , '5', '5', '150', '15', '60', '30', '0', '100', '0', '0', '0', '1', '1', '10', '0'),
-(NULL , '5', '5', '120', '30', '60', '60', '0', '100', '0', '0', '0', '3', '1', '12', '0'),
-(NULL , '5', '5', '90', '60', '60', '150', '1', '100', '0', '0', '0', '5', '1', '14', '0');
-");*/
+(NULL , '2', '1', '50', '100', '75', '400', '15', '60', '0', '0', '0', '0', '0', '0', '0'),
+(NULL , '2', '1', '20', '500', '70', '1000', '100', '75', '0', '0', '0', '0', '0', '0', '0');
+");
+
 	/*//creazione record per tab con 1 record per utente
 	$a=$db->QueryCiclo("SELECT userid FROM utenti WHERE conferma='1' AND personaggio='1'");
 	while($var=$db->QueryCicloResult($a))

@@ -69,4 +69,5 @@ $lang['nomepcpu2']='Bandito giovane';
 $lang['nomepcpu3']='Bandito';
 $lang['nomepcpu4']='Bandito esperto';
 $lang['nomepcpu5']='Goblin';
+$lang['nomepcpu6']='Vorg';
 ?>
