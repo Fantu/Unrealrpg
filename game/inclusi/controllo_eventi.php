@@ -7,60 +7,61 @@ require_once('inclusi/funzioni_eventi.php');
 require_once('inclusi/funzioni_combact.php');
 function Controllaeventi($numeventi) {
 global $db,$adesso;
-$evfiniti=$db->QuerySelect("SELECT COUNT(id) AS id FROM eventi WHERE ((datainizio+secondi)<'".$adesso."')");
+$evfiniti=$db->QuerySelect("SELECT COUNT(id) AS id FROM eventi WHERE ((datainizio+secondi)<'".$adesso."') AND inuso='0'");
 if ($evfiniti['id']>0){//controllo gli eventi finiti
-$evfiniti=$db->QueryCiclo("SELECT * FROM eventi WHERE ((datainizio+secondi)<'".$adesso."') LIMIT ".$numeventi);
-while($evento=$db->QueryCicloResult($evfiniti)) {
-		switch($evento['tipo']){
+$evfiniti=$db->QueryCiclo("SELECT * FROM eventi WHERE ((datainizio+secondi)<'".$adesso."') AND inuso='0' LIMIT ".$numeventi);
+while($events=$db->QueryCicloResult($evfiniti)) {
+$db->QueryMod("UPDATE `eventi` SET inuso='1' WHERE id='".$events['id']."'");
+		switch($events['tipo']){
 		case 1://lavori
-			switch($evento['lavoro']){
+			switch($events['lavoro']){
 			case 1://miniera nuova
-			Completalavminnuova($evento['userid'],$evento['ore']);
+			Completalavminnuova($events['userid'],$events['ore']);
 			break;
 			case 2://apprendista in laboratorio
-			Completalavlabapp($evento['userid'],$evento['ore']);
+			Completalavlabapp($events['userid'],$events['ore']);
 			break;
 			case 3://miniera vecchia
-			Completalavminvecchia($evento['userid'],$evento['oggid'],$evento['ore']);
+			Completalavminvecchia($events['userid'],$events['oggid'],$events['ore']);
 			break;
 			case 4://apprendista fabbro
-			Completalavfucapp($evento['userid'],$evento['ore']);
+			Completalavfucapp($events['userid'],$events['ore']);
 			break;
 			case 5://alchimista in laboratorio
-			Completalavlabalc($evento['userid'],$evento['oggid'],$evento['ore']);
+			Completalavlabalc($events['userid'],$events['oggid'],$events['ore']);
 			break;
 			case 6://studia in rocca
-			Completaroccastudia($evento['userid'],$evento['oggid'],$evento['ore']);
+			Completaroccastudia($events['userid'],$events['oggid'],$events['ore']);
 			break;
 			case 7://fabbro in fucina
-			Completalavfucfab($evento['userid'],$evento['oggid'],$evento['ore'],$evento['type']);
+			Completalavfucfab($events['userid'],$events['oggid'],$events['ore'],$events['type']);
 			break;
 			case 8://fai pratica in rocca
-			Completaroccapratica($evento['userid'],$evento['oggid'],$evento['ore'],$evento['type']);
+			Completaroccapratica($events['userid'],$events['oggid'],$events['ore'],$events['type']);
 			break;
 			}	
 		break;
 		case 2://preghiera
-		Completatempioprega($evento['userid'],$evento['ore']);
+		Completatempioprega($events['userid'],$events['ore']);
 		break;
 		case 3://resurrezione
-		Completaresurrezione($evento['userid']);
+		Completaresurrezione($events['userid']);
 		break;
 		case 4://sfida
-		Completasfida($evento['userid'],$evento['id']);
+		Completasfida($events['userid'],$events['id']);
 		break;
 		case 6://combattimento
-		Battledo($evento['battleid'],$evento['turni']);
+		Battledo($events['battleid'],$events['turni']);
 		break;
 		case 7://dormire
-		Completadormire($evento['userid'],$evento['ore']);
+		Completadormire($events['userid'],$events['ore']);
 		break;
 		case 8://quest
-		Completaquest($evento['userid'],$evento['questid'],$evento['secondi']);
+		Completaquest($events['userid'],$events['questid'],$events['secondi']);
 		break;
 		}
 		//tipo 9 è a vuoto (ritorno da quest)
-$db->QueryMod("DELETE FROM eventi WHERE id='".$evento['id']."'");
+$db->QueryMod("DELETE FROM eventi WHERE id='".$events['id']."'");
 }//fine controllo eventi
 }//fine se ci sono eventi finiti
 }//fine Controllaeventi

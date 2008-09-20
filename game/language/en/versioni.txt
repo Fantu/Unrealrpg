@@ -10,6 +10,7 @@ Legenda:<br />
 + Gli NPC che si riscontrano e hanno perso equipaggiamento nei combattimenti precedenti è probabile che ne riprendano un altro<br />
 # Portati i "round" massimi prima del pareggio nella sfida tra utenti da 25 a 30<br />
 - Ora non c'è più il recupero di salute/energia durante il viaggio di ritorno come se non si stesse facendo niente<br />
+- Ora non dovrebbe più esserci in nessun caso l'esecuzione doppia degli eventi (lavori, combattimenti ecc)<br />
 </p>
 <p><strong>0.7.2.1</strong> (19/09/08 - Beta)<br />
 - Corretto un bug nell'inizializzazione degli npc<br />
