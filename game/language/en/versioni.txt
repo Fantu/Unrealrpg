@@ -6,11 +6,19 @@ Legenda:<br />
 # Modifiche<br />
 - Correzione bug e patch di situazioni non previste<br />
 </p>
-<p><strong>0.7.3</strong> (Non disponibile - In sviluppo)<br />
+<p><strong>0.7.4</strong> (Non disponibile - In sviluppo)<br />
+Niente attualmente<br />
+</p>
+<p><strong>0.7.3</strong> [R.1563] (21/09/08 - Beta)<br />
 + Gli NPC che si riscontrano e hanno perso equipaggiamento nei combattimenti precedenti è probabile che ne riprendano un altro<br />
++ Aggiunto agli NPC: Vorg<br />
 # Portati i "round" massimi prima del pareggio nella sfida tra utenti da 25 a 30<br />
+# Eliminati dagli oggetti: Piccone di rame ossidato, Piccone di ferro arrugginito, Piccone di acciaio arrugginito<br />
+# Rivisto il lavoro in Miniera vecchia, reso più equilibrato<br />
 - Ora non c'è più il recupero di salute/energia durante il viaggio di ritorno come se non si stesse facendo niente<br />
 - Ora non dovrebbe più esserci in nessun caso l'esecuzione doppia degli eventi (lavori, combattimenti ecc)<br />
+- Ora il piccone influisce correttamente sul lavoro in miniera vecchia in ogni caso<br />
+- Corretto un bug nella spedizione della mail di avviso inattività<br />
 </p>
 <p><strong>0.7.2.1</strong> (19/09/08 - Beta)<br />
 - Corretto un bug nell'inizializzazione degli npc<br />

@@ -640,7 +640,6 @@ $prs[]=$ps['id'];
 }
 shuffle($prs);
 $pcpuid=$prs[0];
-$pcpuid=6;//Debug
 $npcid=Npcesistente($pcpuid);
 if($npcid==0){$npcid=Inizializzanpc($pcpuid);}
 Startcombact($userid,$npcid,1);

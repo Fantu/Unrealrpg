@@ -6,7 +6,10 @@ Legenda:<br />
 # Modifiche<br />
 - Correzione bug e patch di situazioni non previste<br />
 </p>
-<p><strong>0.7.3</strong> (Non disponibile - In sviluppo)<br />
+<p><strong>0.7.4</strong> (Non disponibile - In sviluppo)<br />
+Niente attualmente<br />
+</p>
+<p><strong>0.7.3</strong> [R.1563] (21/09/08 - Beta)<br />
 + Gli NPC che si riscontrano e hanno perso equipaggiamento nei combattimenti precedenti è probabile che ne riprendano un altro<br />
 + Aggiunto agli NPC: Vorg<br />
 # Portati i "round" massimi prima del pareggio nella sfida tra utenti da 25 a 30<br />
