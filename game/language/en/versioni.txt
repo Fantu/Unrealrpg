@@ -12,6 +12,7 @@ Niente attualmente<br />
 <p><strong>0.7.3</strong> [R.1563] (21/09/08 - Beta)<br />
 + Gli NPC che si riscontrano e hanno perso equipaggiamento nei combattimenti precedenti è probabile che ne riprendano un altro<br />
 + Aggiunto agli NPC: Vorg<br />
++ Aggiunti agli oggetti: Piccone di mithril, Piccone di mithril superbo<br />
 # Portati i "round" massimi prima del pareggio nella sfida tra utenti da 25 a 30<br />
 # Eliminati dagli oggetti: Piccone di rame ossidato, Piccone di ferro arrugginito, Piccone di acciaio arrugginito<br />
 # Rivisto il lavoro in Miniera vecchia, reso più equilibrato<br />
