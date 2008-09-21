@@ -662,6 +662,7 @@ $energiam=($energia+50)-$usercar['energia'];
 $secondi2=100+($energia*60);
 $energia=50;
 }else{
+$secondi2=$secondi;
 $energia=$usercar['energia']-$energia;
 }
 $db->QueryMod("UPDATE caratteristiche SET energia='".$energia."',recuperosalute='".($adesso+$secondi)."',recuperoenergia='".($adesso+$secondi)."' WHERE userid='".$userid."'");
