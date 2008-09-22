@@ -216,9 +216,7 @@ $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES
 }//fine incidente
 $piccone2=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$piccone."' LIMIT 1");
 $efficenza=($usercar['minatore']*1500)+($usercar['attfisico']*2);
-$testo.="Debug prima:".$efficenza;//Debug
 $efficenza+=($efficenza/100*$piccone2['bonuseff']);
-$testo.="Debug dopo:".$efficenza;//Debug
 if($efficenza>9950)
 $efficenza=9950;
 $energia+=$piccone2['energia'];
@@ -234,7 +232,9 @@ if($trovato==0){
 $testo.=$lang['report_lavminieravecchia_materiali_no']."<br />";
 }else{//inizio trovato minerale
 $efficenza=rand(0,1+($usercar['minatore']*400));
+$testo.="Debug prima:".$efficenza;//Debug
 $efficenza+=($efficenza/100*$piccone2['bonuseff']);
+$testo.="Debug dopo:".$efficenza;//Debug
 if($efficenza>7000)
 $efficenza=7000;
 $trovare=rand(0,9999)-$efficenza;
