@@ -216,9 +216,9 @@ $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES
 }//fine incidente
 $piccone2=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$piccone."' LIMIT 1");
 $efficenza=($usercar['minatore']*1500)+($usercar['attfisico']*2);
-$testo.="Debug prima:".$efficenza//Debug
+$testo.="Debug prima:".$efficenza;//Debug
 $efficenza+=($efficenza/100*$piccone2['bonuseff']);
-$testo.="Debug dopo:".$efficenza//Debug
+$testo.="Debug dopo:".$efficenza;//Debug
 if($efficenza>9950)
 $efficenza=9950;
 $energia+=$piccone2['energia'];
