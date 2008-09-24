@@ -13,6 +13,26 @@ if($check['version']!=$newversion AND $newversion==$game_revision){
 $db->QueryMod("UPDATE `oggetti` SET `abilitanec` = '1',`materiale` = '4' WHERE `oggetti`.`id` =68 LIMIT 1");
 $db->QueryMod("UPDATE `oggetti` SET `abilitanec` = '6',`materiale` = '4' WHERE `oggetti`.`id` =69 LIMIT 1");
 
+$db->QueryMod("INSERT INTO `oggetti` (
+`id` ,
+`tipo` ,
+`categoria` ,
+`probrottura` ,
+`costo` ,
+`energia` ,
+`usura` ,
+`bonuseff` ,
+`forzafisica` ,
+`probtrovare` ,
+`recsalute` ,
+`recenergia` ,
+`abilitanec` ,
+`materiale` ,
+`danno` ,
+`difesafisica`
+)
+VALUES (NULL , '5', '1', '40', '100', '30', '300', '0', '35', '0', '0', '0', '1', '4', '10', '0');");
+
 	/*//creazione record per tab con 1 record per utente
 	$a=$db->QueryCiclo("SELECT userid FROM utenti WHERE conferma='1' AND personaggio='1'");
 	while($var=$db->QueryCicloResult($a))

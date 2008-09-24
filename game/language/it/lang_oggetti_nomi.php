@@ -65,4 +65,5 @@ $lang['oggetto66_nome']='Mazza di rame buona';
 $lang['oggetto67_nome']='Mazza di rame eccellente';
 $lang['oggetto68_nome']='Piccone di mithrill';
 $lang['oggetto69_nome']='Piccone di mithrill superbo';
+$lang['oggetto70_nome']='Pugnale di mithrill';
 ?>
