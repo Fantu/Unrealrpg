@@ -11,6 +11,7 @@ Legenda:<br />
 + Aggiunta la possibilità di forgiare materiale di mithrill in Fucina come fabbro<br />
 + Vari miglioramenti di sistema a Fucina<br />
 # Ora l'intelligenza influisce leggermente di più nel lavoro in Fucina come fabbro<br />
+# Diminuito il tempo di un "round" da 60 a 50 secondi<br />
 </p>
 <p><strong>0.7.3</strong> [R.1563] (21/09/08 - Beta)<br />
 + Gli NPC che si riscontrano e hanno perso equipaggiamento nei combattimenti precedenti è probabile che ne riprendano un altro<br />
