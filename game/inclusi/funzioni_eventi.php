@@ -456,7 +456,7 @@ $exp+=10+(2*$usercar['fabbro']);
 $bonusabilita=$usercar['fabbro']*7;
 if($bonusabilita>50)
 $bonusabilita=50;
-$esplosione=rand(30,100)-$bonusabilita-($usercar['attfisico']/20)-($usercar['destrezza']/10)-$usercar['intelligenza']/40);
+$esplosione=rand(30,100)-$bonusabilita-($usercar['attfisico']/20)-($usercar['destrezza']/10)-($usercar['intelligenza']/40);
 $danni=0;
 if($esplosione>10){
 $esplosione=rand(30,100)-($usercar['fabbro']*5)-($usercar['agilita']/20)-($usercar['attfisico']/10)-($usercar['velocita']/50);
