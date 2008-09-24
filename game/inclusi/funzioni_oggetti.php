@@ -17,13 +17,15 @@ $catoggetti_nome=array(
 $materiali_nome=array(
 1=>$lang['Rame'],
 2=>$lang['Ferro'],
-3=>$lang['Acciaio']
+3=>$lang['Acciaio'],
+4=>$lang['Mithrill']
 );
 
 $materiali_num=array(
-1=>array(1=>1,2=>1,3=>0),
-2=>array(1=>1,2=>0,3=>1),
-3=>array(1=>1,2=>0,3=>2)
+1=>array(1=>1,2=>1,3=>0,4=>0),
+2=>array(1=>1,2=>0,3=>1,4=>0),
+3=>array(1=>2,2=>0,3=>2,4=>0),
+4=>array(1=>3,2=>0,3=>0,4=>1)
 );
 
 $oggdf_nome=array(

@@ -39,7 +39,8 @@ $monete+=$numero*($cogg['costo']/4*3);
 }
 $monete=floor($monete);
 $outputerrori=sprintf($lang['report_vendita'],$quanti,$lang['oggetto'.$oggselect.'_nome'],$monete);
-$db->QueryMod("UPDATE utenti SET monete=monete+'".$monete."' WHERE userid='".$user['userid']."'");	
+$db->QueryMod("UPDATE utenti SET monete=monete+'".$monete."' WHERE userid='".$user['userid']."'");
+$db->QueryMod("UPDATE config SET banca=banca-'".$monete."'");
 $db->QueryMod("DELETE FROM inoggetti WHERE userid='".$user['userid']."' AND oggid='".$oggselect."' LIMIT ".$quanti);
 }
 }//fine vendi

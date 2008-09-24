@@ -12,6 +12,7 @@ $lang['fucina_errore7']='- Non hai %s di rame che ti serve<br />';
 $lang['fucina_errore8']='- Non hai %s di ferro che ti serve<br />';
 $lang['fucina_errore9']='- Non hai selezionato il materiale<br />';
 $lang['fucina_errore10']='- Attualmente non può forgiare nessuno oggetto di questo tipo e/o materiale<br />';
+$lang['fucina_errore11']='- Non hai %s di mithrill che ti serve<br />';
 $lang['report_lav_fuc_app']='Hai lavorato in Fucina come apprendista per 1 ora, guadagnando %s monete e %s di esperienza come fabbro. Il duro lavoro ti ha stancato (hai perso %s di energia)e il tuo fisico ne ha risentito (hai perso %s di salute).';
 $lang['report_lavoro_fucina_app']='Completato lavoro in Fucina come apprendista';
 $lang['report_incidente_fucina']='Imprevisto durante il lavoro in Fucina!';

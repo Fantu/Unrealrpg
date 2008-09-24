@@ -129,6 +129,7 @@ $lang['utilizzato_4_2']='Utilizzato %s e recuperato %s di energia';
 $lang['Rame']='Rame';
 $lang['Ferro']='Ferro';
 $lang['Acciaio']='Acciaio';
+$lang['Mithrill']='Mithrill';
 $lang['Piccone']='Piccone';
 $lang['Pugnale']='Pugnale';
 $lang['Daga']='Daga';

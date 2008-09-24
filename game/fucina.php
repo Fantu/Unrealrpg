@@ -14,13 +14,13 @@ $ore=(int)$_POST['ore'];
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$user['userid']."' LIMIT 1");
 $userlav=$db->QuerySelect("SELECT * FROM lavori WHERE userid='".$user['userid']."' LIMIT 1");
 if ($usercar['energia']<100)
-$errore .= $lang['fucina_errore1'];
+$errore.=$lang['fucina_errore1'];
 if ($usercar['saluteattuale']<30)
-$errore .= $lang['fucina_errore2'];
+$errore.=$lang['fucina_errore2'];
 if ($adesso<($userlav['ultimolavoro']+$tempoproxlav))
-$errore .= $lang['fucina_errore3'];
+$errore.=$lang['fucina_errore3'];
 if ($eventi['id']>0)
-$errore .= $lang['global_errore1'];
+$errore.=$lang['global_errore1'];
 if($ore<1 OR $ore>3)
 $errore.=$lang['global_errore2'];
 if($errore){
@@ -50,9 +50,9 @@ if ($eventi['id']>0)
 $errore.=$lang['global_errore1'];
 if($ore<1 OR $ore>3)
 $errore.=$lang['global_errore2'];
-if ($oggettodaforgiare<1)
+if ($oggettodaforgiare<1 OR $oggettodaforgiare<6)
 $errore.=$lang['fucina_errore5'];
-if ($materiale<1)
+if ($materiale<1 OR $materiale>4)
 $errore.=$lang['fucina_errore9'];
 if ($usercar['fabbro']<1)
 $errore.=$lang['fucina_errore4'];
@@ -60,15 +60,26 @@ if($errore==""){
 $seoggdf=$db->QuerySelect("SELECT COUNT(id) AS num FROM oggetti WHERE tipo='".$oggdf_num[$oggettodaforgiare][1]."' AND categoria='".$oggdf_num[$oggettodaforgiare][2]."' AND materiale='".$materiale."' AND abilitanec<='".$usercar['fabbro']."'");
 if ($seoggdf['num']<1)
 $errore.=$lang['fucina_errore10'];
+if($materiali_num[$materiale][1]>0){
 $carbone=$db->QuerySelect("SELECT count(*) AS num FROM inoggetti WHERE userid='".$user['userid']."' AND oggid='2'");
 if ($carbone['num']<($materiali_num[$materiale][1]*$ore))
 $errore.=sprintf($lang['fucina_errore6'],($materiali_num[$materiale][1]*$ore));
+}//se necessario carbone
+if($materiali_num[$materiale][2]>0){
 $rame=$db->QuerySelect("SELECT count(*) AS num FROM inoggetti WHERE userid='".$user['userid']."' AND oggid='3'");
 if ($rame['num']<($materiali_num[$materiale][2]*$ore))
 $errore.=sprintf($lang['fucina_errore7'],($materiali_num[$materiale][2]*$ore));
+}//se necessario rame
+if($materiali_num[$materiale][3]>0){
 $ferro=$db->QuerySelect("SELECT count(*) AS num FROM inoggetti WHERE userid='".$user['userid']."' AND oggid='4'");
 if ($ferro['num']<($materiali_num[$materiale][3]*$ore))
 $errore.=sprintf($lang['fucina_errore8'],($materiali_num[$materiale][3]*$ore));
+}//se necessario ferro
+if($materiali_num[$materiale][4]>0){
+$mithrill=$db->QuerySelect("SELECT count(*) AS num FROM inoggetti WHERE userid='".$user['userid']."' AND oggid='10'");
+if ($ferro['num']<($materiali_num[$materiale][4]*$ore))
+$errore.=sprintf($lang['fucina_errore11'],($materiali_num[$materiale][4]*$ore));
+}//se necessario mithrill
 }// se non ci sono gli errori precedenti
 if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
