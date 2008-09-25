@@ -31,7 +31,10 @@ $db->QueryMod("INSERT INTO `oggetti` (
 `danno` ,
 `difesafisica`
 )
-VALUES (NULL , '5', '1', '40', '100', '30', '300', '0', '35', '0', '0', '0', '1', '4', '10', '0');");
+VALUES 
+(NULL , '5', '1', '40', '100', '30', '300', '0', '35', '0', '0', '0', '1', '4', '8', '0'),
+(NULL , '5', '1', '20', '250', '35', '750', '1', '35', '0', '0', '0', '5', '4', '11', '0');
+");
 
 	/*//creazione record per tab con 1 record per utente
 	$a=$db->QueryCiclo("SELECT userid FROM utenti WHERE conferma='1' AND personaggio='1'");
