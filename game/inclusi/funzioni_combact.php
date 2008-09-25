@@ -208,6 +208,7 @@ class Dati{
 	} //fine Controllastato
 	
 	public function Autotattic($chi) {
+	global $db;
 	if($chi==1)
 	$chi2=2;
 	else
@@ -234,6 +235,10 @@ class Dati{
 	$tattp[2]+=181;}
 	if($percenergia<5){//se esausto resa
 	$tattp[2]+=200;}
+	if($this->equip($chi,'poz')!=0){
+	$pozione=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$this->equip($chi,'poz')."' LIMIT 1");
+	if( ($percsalute<20 AND $pozione['recsalute']>0) OR ($percenergia<20 AND $pozione['recenergia']>0) ){$tattp[4]+=180;}
+	}//fine se ha pozione
 	$max=0;
 	if($this->cpu(1)==1 OR $this->cpu(2)==1){
 	$tattp[2]=0;}//se contro cpu resa non possibile

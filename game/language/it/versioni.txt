@@ -10,6 +10,7 @@ Legenda:<br />
 + Aggiunte per la creazione di "economia" del regno, oltre alla Banca, Locanda, Miniera nuova, Fucina, Laboratorio, Mercato<br />
 + Aggiunta la possibilità di forgiare materiale di mithrill in Fucina come fabbro<br />
 + Aggiunto agli oggetto: Pugnale di mithrill, Pugnale di mithrill superbo<br />
++ Implementato l'uso delle pozioni nel sistema automatico delle tattiche<br />
 + Vari miglioramenti di sistema a Fucina<br />
 # Ora l'intelligenza influisce leggermente di più nel lavoro in Fucina come fabbro<br />
 # Diminuito il tempo di un "round" da 60 a 50 secondi<br />
