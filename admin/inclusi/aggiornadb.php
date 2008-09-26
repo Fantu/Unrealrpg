@@ -36,6 +36,9 @@ VALUES
 (NULL , '5', '1', '20', '250', '35', '750', '1', '35', '0', '0', '0', '5', '4', '11', '0');
 ");
 
+$db->QueryMod("ALTER TABLE `utenti` CHANGE `puntiplus` `puntiplus` SMALLINT( 5 ) UNSIGNED NOT NULL DEFAULT '3'");
+$db->QueryMod("UPDATE utenti SET puntiplus=puntiplus+'3'");
+
 	/*//creazione record per tab con 1 record per utente
 	$a=$db->QueryCiclo("SELECT userid FROM utenti WHERE conferma='1' AND personaggio='1'");
 	while($var=$db->QueryCicloResult($a))

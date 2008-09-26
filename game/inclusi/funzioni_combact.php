@@ -11,10 +11,8 @@ class Combattente{
 	var $car;
 	var $equip;
 	var $esausto;
-	var $morto;
 	var $tattica;
 	var $subtattica;
-	var $bonusexp;
 	var $plus;
 	var $salutei;
 	var $energiai;
@@ -26,10 +24,8 @@ class Combattente{
 	$this->equip=$equip2;
 	$this->oggusati=0;
 	$this->esausto=0;
-	$this->morto=0;
 	$this->tattica=$tattica2;
 	$this->subtattica=$subtattica2;
-	$this->bonusexp=0;
 	$this->plus=$plus2;
 	$this->salutei=$car2['saluteattuale'];
 	$this->energiai=$car2['energia'];
@@ -119,20 +115,10 @@ class Dati{
 	return $dato;
 	} //fine esausto
 	
-	public function morto($chi) {
-	$dato=$this->che[$chi]->morto;
-	return $dato;
-	} //fine morto
-	
 	public function nome($chi) {
 	$dato=$this->che[$chi]->nome;
 	return $dato;
 	} //fine nome
-	
-	public function bexp($chi) {
-	$dato=$this->che[$chi]->bonusexp;
-	return $dato;
-	} //fine bexp
 	
 	public function pvar($chi) {
 	$dato=$this->che[$chi];
@@ -203,8 +189,6 @@ class Dati{
 	$percenergia=100/$this->car($chi,'energiamax')*$this->car($chi,'energia');
 	if ($percenergia<5)
 	$this->che[$chi]->esausto=1;
-	if ($this->car($chi,'saluteattuale')<1)
-	$this->che[$chi]->morto=1;
 	} //fine Controllastato
 	
 	public function Autotattic($chi) {
@@ -237,7 +221,7 @@ class Dati{
 	$tattp[2]+=200;}
 	if($this->equip($chi,'poz')!=0){
 	$pozione=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$this->equip($chi,'poz')."' LIMIT 1");
-	if( ($percsalute<20 AND $pozione['recsalute']>0) OR ($percenergia<20 AND $pozione['recenergia']>0) ){$tattp[4]+=180;}
+	if( ($percsalute<22 AND $pozione['recsalute']>0) OR ($percenergia<20 AND $pozione['recenergia']>0) ){$tattp[4]+=199;}
 	}//fine se ha pozione
 	$max=0;
 	if($this->cpu(1)==1 OR $this->cpu(2)==1){
@@ -511,13 +495,13 @@ Docombactstats($battleid,$dc->nome(1),$dc->nome(2),$dc->che[1]->car,$dc->che[2]-
 }//se nessuno si arrende
 $finito=1;
 $vincitore=0;
-if($dc->morto(1)==1){//se il secondo vince
+if($dc->car(1,'saluteattuale')<1){//se il secondo vince
 $vincitore=2;
 $input.=sprintf($lang['vincitore_combattimento'],$dc->nome(2))."<br/>";
 $rep=$dc->Checkrep(2);
 if($rep[0]==1){
 if($dc->cpu(2)==0){$db->QueryMod("UPDATE caratteristiche SET reputazione=reputazione+'".$rep[1]."' WHERE userid='".$dc->id(2)."' LIMIT 1");}}
-}elseif($dc->morto(2)==1){//se il primo vince
+}elseif($dc->car(2,'saluteattuale')<1){//se il primo vince
 $vincitore=1;
 $input.=sprintf($lang['vincitore_combattimento'],$dc->nome(1))."<br/>";
 $rep=$dc->Checkrep(1);
