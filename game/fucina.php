@@ -23,6 +23,9 @@ if ($eventi['id']>0)
 $errore.=$lang['global_errore1'];
 if($ore<1 OR $ore>3)
 $errore.=$lang['global_errore2'];
+$regno=$db->QuerySelect("SELECT banca FROM config");
+if($regno['banca']<1)
+$errore.=$lang['global_errore3'];
 if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
 else {

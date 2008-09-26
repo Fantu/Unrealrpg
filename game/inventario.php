@@ -17,13 +17,16 @@ $numogg=$db->QuerySelect("SELECT count(id) AS num FROM inoggetti WHERE userid='"
 if ($numogg['num']<1)
 $errore.=$lang['inventario_errore5'];
 if($errore==""){
+$regno=$db->QuerySelect("SELECT banca FROM config");
+if($regno['banca']<1)
+$errore.=$lang['global_errore3'];
 $numogg=$db->QuerySelect("SELECT oggid,usura,count(*) AS numero FROM inoggetti WHERE userid='".$user['userid']."' AND oggid='".$oggselect."' GROUP BY oggid");
 if ($quanti>$numogg['numero'])
 $errore.=$lang['inventario_errore3'];
 }//se almeno 1 oggetto
 }
 if ($eventi['id']>0)
-$errore .= $lang['global_errore1'];
+$errore.=$lang['global_errore1'];
 if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
 else {

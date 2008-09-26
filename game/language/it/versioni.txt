@@ -12,6 +12,7 @@ Legenda:<br />
 + Aggiunto agli oggetto: Pugnale di mithrill, Pugnale di mithrill superbo<br />
 + Implementato l'uso delle pozioni nel sistema automatico delle tattiche<br />
 + Gli utenti che si registrano ora hanno 3 punti plus, aggiunti anche a tutti gli utenti esistenti per maggiori test sul sistema automatico di selezione delle tattiche<br />
++ Se l'economia del regno è in crisi non è possibile fare le "prime parti" dei lavori e vendere oggetti<br />
 + Vari miglioramenti di sistema a Fucina, sistema di combattimento<br />
 # Ora l'intelligenza influisce leggermente di più nel lavoro in Fucina come fabbro<br />
 # Diminuito il tempo di un "round" da 60 a 50 secondi<br />

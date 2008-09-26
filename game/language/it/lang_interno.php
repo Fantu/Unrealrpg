@@ -141,6 +141,7 @@ $lang['Mazza']='Mazza';
 //inizio errori globali
 $lang['global_errore1']='- Stai facendo altro!<br />';
 $lang['global_errore2']='- Le ore di lavoro devono essere minimo di 1 e massimo di 3!<br />';
+$lang['global_errore3']='- Economia del regno in crisi<br />';
 //fine errori globali
 
 //inizio mail cancellazione/inattività
