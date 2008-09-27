@@ -26,7 +26,7 @@ $lang['Oggetti']='Oggetti';
 $lang['Citta']='Città';
 $lang['Locanda']='Locanda';
 $lang['Confini']='Confini';
-$lang['Confini']='Municipio';
+$lang['Municipio']='Municipio';
 //fine menu
 
 //inizio razze
