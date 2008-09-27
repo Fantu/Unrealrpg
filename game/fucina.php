@@ -9,7 +9,6 @@ if (isset($_POST['lavorafucapp'])){
 $errore="";
 $ore=(int)$_POST['ore'];
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$user['userid']."' LIMIT 1");
-$userlav=$db->QuerySelect("SELECT * FROM lavori WHERE userid='".$user['userid']."' LIMIT 1");
 if ($usercar['energia']<100)
 $errore.=$lang['fucina_errore1'];
 if ($usercar['saluteattuale']<30)
@@ -36,7 +35,6 @@ $ore=(int)$_POST['ore2'];
 $oggettodaforgiare=(int)$_POST['oggettodf'];
 $materiale=(int)$_POST['materiale'];
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$user['userid']."' LIMIT 1");
-$userlav=$db->QuerySelect("SELECT * FROM lavori WHERE userid='".$user['userid']."' LIMIT 1");
 if ($usercar['energia']<100)
 $errore.=$lang['fucina_errore1'];
 if ($usercar['saluteattuale']<30)

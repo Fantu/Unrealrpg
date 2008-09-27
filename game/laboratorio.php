@@ -15,7 +15,6 @@ $pozioni[$oggpozione['id']]=$lang['oggetto'.$oggpozione['id'].'_nome']." - C.i.:
 if (isset($_POST['lavoralabapp'])){
 $errore="";
 $ore=(int)$_POST['ore'];
-$userlav=$db->QuerySelect("SELECT * FROM lavori WHERE userid='".$user['userid']."' LIMIT 0,1");
 if ($usercar['energia']<100)
 $errore.=$lang['lab_errore1'];
 if ($usercar['saluteattuale']<30)
@@ -44,7 +43,6 @@ $poziones=(int)$_POST['pozione'];
 if ($poziones<1)
 $errore.=$lang['lab_errore8'];
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$user['userid']."' LIMIT 1");
-$userlav=$db->QuerySelect("SELECT * FROM lavori WHERE userid='".$user['userid']."' LIMIT 1");
 if ($usercar['energia']<100)
 $errore.=$lang['lab_errore1'];
 if ($usercar['saluteattuale']<30)

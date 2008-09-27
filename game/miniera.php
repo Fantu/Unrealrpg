@@ -22,7 +22,6 @@ if (isset($_POST['lavorainnuova'])){
 $errore="";
 $ore=(int)$_POST['ore'];
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$user['userid']."' LIMIT 1");
-$userlav=$db->QuerySelect("SELECT * FROM lavori WHERE userid='".$user['userid']."' LIMIT 1");
 if ($usercar['energia']<100)
 $errore.=$lang['miniera_errore1'];
 if ($usercar['saluteattuale']<30)
@@ -46,7 +45,6 @@ if (isset($_POST['lavorainvecchia'])){
 $errore="";
 $ore=(int)$_POST['ore2'];
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$user['userid']."' LIMIT 1");
-$userlav=$db->QuerySelect("SELECT * FROM lavori WHERE userid='".$user['userid']."' LIMIT 1");
 if ($usercar['energia']<200)
 $errore.=$lang['miniera_errore1'];
 if ($usercar['saluteattuale']<30)
