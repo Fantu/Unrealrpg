@@ -11,6 +11,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <li><a href="index.php?loc=tempio"><?php echo $lang['Tempio']; ?></a></li>
 <li><a href="index.php?loc=mercato"><?php echo $lang['Mercato']; ?></a></li>
 <li><a href="index.php?loc=locanda"><?php echo $lang['Locanda']; ?></a></li>
+<li><a href="index.php?loc=municipio"><?php echo $lang['Municipio']; ?></a></li>
 </ul></li>
 </ul>
 <ul>

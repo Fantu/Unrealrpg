@@ -12,9 +12,13 @@ Legenda:<br />
 + Aggiunto agli oggetto: Pugnale di mithrill, Pugnale di mithrill superbo<br />
 + Implementato l'uso delle pozioni nel sistema automatico delle tattiche<br />
 + Gli utenti che si registrano ora hanno 3 punti plus, aggiunti anche a tutti gli utenti esistenti per maggiori test sul sistema automatico di selezione delle tattiche<br />
++ Se l'economia del regno è in crisi non è possibile fare le "prime parti" dei lavori e vendere oggetti<br />
++ Inizio creazione Municipio, inserito nel menu all'interno di Città<br />
++ Ora non c'è più "tempo di attesa obbligato" tra un lavoro ed un altro<br />
 + Vari miglioramenti di sistema a Fucina, sistema di combattimento<br />
 # Ora l'intelligenza influisce leggermente di più nel lavoro in Fucina come fabbro<br />
 # Diminuito il tempo di un "round" da 60 a 50 secondi<br />
+# Portate le ore "di fila" che si può lavorare da 3 a 5<br />
 </p>
 <p><strong>0.7.3</strong> [R.1563] (21/09/08 - Beta)<br />
 + Gli NPC che si riscontrano e hanno perso equipaggiamento nei combattimenti precedenti è probabile che ne riprendano un altro<br />

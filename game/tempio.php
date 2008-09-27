@@ -13,7 +13,7 @@ if ($usercar['energia']<100)
 $errore.=$lang['tempio_errore1'];
 if ($user['monete']<$ore)
 $errore.=$lang['tempio_errore2'];
-if($ore<1 OR $ore>3)
+if($ore<1 OR $ore>5)
 $errore.=$lang['global_errore2'];
 if ($eventi['id']>0)
 $errore.=$lang['global_errore1'];

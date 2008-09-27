@@ -11,6 +11,7 @@ $link[]='<a href="index.php?loc=banca">'.$lang['Banca'].'</a>';
 $link[]='<a href="index.php?loc=tempio">'.$lang['Tempio'].'</a>';
 $link[]='<a href="index.php?loc=mercato">'.$lang['Mercato'].'</a>';
 $link[]='<a href="index.php?loc=locanda">'.$lang['Locanda'].'</a>';
+$link[]='<a href="index.php?loc=municipio">'.$lang['Municipio'].'</a>';
 break;
 case "lavori":
 $titolo=$lang['Lavori'];

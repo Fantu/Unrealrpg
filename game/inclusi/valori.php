@@ -7,9 +7,7 @@ $game_server=array(999=>"DEV",998=>"DEV");
 $game_language=array("it"=>"Italiano","en"=>"English");
 $game_server_lang=array(999=>"it",998=>"en");
 $game_se_code="f87d5gf945fhut";
-$game_proxlav_normal=10800;
-$game_proxlav_plus=7200;
-$game_location=array('banca','changelog','combact','fucina','guida','inventario','laboratorio','libro','logout','mercato','messaggi','miniera','mostraoggetto','opzioni','rocca','situazione','tempio','utenti','visualizzautente','equipaggiamento','levelup','submenu','locanda','archiviorep','confini');
+$game_location=array('banca','changelog','combact','fucina','guida','inventario','laboratorio','libro','logout','mercato','messaggi','miniera','mostraoggetto','opzioni','rocca','situazione','tempio','utenti','visualizzautente','equipaggiamento','levelup','submenu','locanda','archiviorep','confini','municipio');
 
 $game_intestazione_mail.="From: ".$game_name."<server@lostage.it>\r\n";
 $game_intestazione_mail.="Reply-To: ".$game_name."<server@lostage.it>\r\n";

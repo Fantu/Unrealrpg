@@ -40,7 +40,7 @@ $testo="<span>".sprintf($lang['report_lavminieranuova'],$paga,$exp,$energia,$sal
 $titolo=$lang['report_lavoro_nuova'];
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");
 $salute+=$danni;
-$db->QueryMod("UPDATE lavori t1 JOIN utenti t2 on t1.userid=t2.userid JOIN caratteristiche t3 on t2.userid=t3.userid SET t1.ultimolavoro='".$adesso."',t1.oreultimolav=t1.oreultimolav+'1',t3.expminatore=t3.expminatore+'".$exp."',t2.monete=t2.monete+'".$paga."',t3.energia=t3.energia-'".$energia."',t3.saluteattuale=t3.saluteattuale-'".$salute."',t3.recuperosalute='".$adesso."',t3.recuperoenergia='".$adesso."' WHERE t1.userid='".$userid."'");
+$db->QueryMod("UPDATE utenti t2 JOIN caratteristiche t3 on t2.userid=t3.userid SET t3.expminatore=t3.expminatore+'".$exp."',t2.monete=t2.monete+'".$paga."',t3.energia=t3.energia-'".$energia."',t3.saluteattuale=t3.saluteattuale-'".$salute."',t3.recuperosalute='".$adesso."',t3.recuperoenergia='".$adesso."' WHERE t2.userid='".$userid."'");
 $db->QueryMod("UPDATE config SET banca=banca-'".$paga."'");
 if($ore>1){
 $errore="";
@@ -96,7 +96,7 @@ $testo="<span>".sprintf($lang['report_lavlabapp'],$paga,$exp,$energia,$salute,$m
 $titolo=$lang['report_lavoro_labapp'];
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");
 $salute+=$danni;
-$db->QueryMod("UPDATE lavori t1 JOIN utenti t2 on t1.userid=t2.userid JOIN caratteristiche t3 on t2.userid=t3.userid SET t1.ultimolavoro='".$adesso."',t1.oreultimolav=t1.oreultimolav+'1',t3.expalchimista=t3.expalchimista+'".$exp."',t2.monete=t2.monete+'".$paga."',t3.energia=t3.energia-'".$energia."',t3.saluteattuale=t3.saluteattuale-'".$salute."',t3.recuperosalute='".$adesso."',t3.recuperoenergia='".$adesso."',t3.manarimasto=t3.manarimasto-'".$mana."' WHERE t1.userid='".$userid."'");
+$db->QueryMod("UPDATE utenti t2 JOIN caratteristiche t3 on t2.userid=t3.userid SET t3.expalchimista=t3.expalchimista+'".$exp."',t2.monete=t2.monete+'".$paga."',t3.energia=t3.energia-'".$energia."',t3.saluteattuale=t3.saluteattuale-'".$salute."',t3.recuperosalute='".$adesso."',t3.recuperoenergia='".$adesso."',t3.manarimasto=t3.manarimasto-'".$mana."' WHERE t2.userid='".$userid."'");
 $db->QueryMod("UPDATE config SET banca=banca-'".$paga."'");
 if($ore>1){
 $errore="";
@@ -234,9 +234,7 @@ if($trovato==0){
 $testo.=$lang['report_lavminieravecchia_materiali_no']."<br />";
 }else{//inizio trovato minerale
 $efficenza=rand(0,1+($usercar['minatore']*400));
-$testo.="Debug prima:".$efficenza;//Debug
 $efficenza+=($efficenza/100*$piccone2['bonuseff']);
-$testo.="Debug dopo:".$efficenza;//Debug
 if($efficenza>7000)
 $efficenza=7000;
 $trovare=rand(0,9999)-$efficenza;
@@ -257,7 +255,7 @@ $testo="<span>".$testo.$oggpersi."</span>";
 $titolo=$lang['report_lavoro_vecchia'];
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");
 $salute+=$danni;
-$db->QueryMod("UPDATE lavori t1 JOIN utenti t2 on t1.userid=t2.userid JOIN caratteristiche t3 on t2.userid=t3.userid SET t1.ultimolavoro='".$adesso."',t1.oreultimolav=t1.oreultimolav+'1',t3.expminatore=t3.expminatore+'".$exp."',t3.energia=t3.energia-'".$energia."',t3.saluteattuale=t3.saluteattuale-'".$salute."',t3.recuperosalute='".$adesso."',t3.recuperoenergia='".$adesso."' WHERE t1.userid='".$userid."'");
+$db->QueryMod("UPDATE utenti t2 JOIN caratteristiche t3 on t2.userid=t3.userid SET t3.expminatore=t3.expminatore+'".$exp."',t3.energia=t3.energia-'".$energia."',t3.saluteattuale=t3.saluteattuale-'".$salute."',t3.recuperosalute='".$adesso."',t3.recuperoenergia='".$adesso."' WHERE t2.userid='".$userid."'");
 if($ore>1){
 $errore="";
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");
@@ -314,15 +312,15 @@ $testo="<span>".sprintf($lang['report_lav_fuc_app'],$paga,$exp,$energia,$salute)
 $titolo=$lang['report_lavoro_fucina_app'];
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");
 $salute+=$danni;
-$db->QueryMod("UPDATE lavori t1 JOIN utenti t2 on t1.userid=t2.userid JOIN caratteristiche t3 on t2.userid=t3.userid SET t1.ultimolavoro='".$adesso."',t1.oreultimolav=t1.oreultimolav+'1',t3.expfabbro=t3.expfabbro+'".$exp."',t2.monete=t2.monete+'".$paga."',t3.energia=t3.energia-'".$energia."',t3.saluteattuale=t3.saluteattuale-'".$salute."',t3.recuperosalute='".$adesso."',t3.recuperoenergia='".$adesso."' WHERE t1.userid='".$userid."'");
+$db->QueryMod("UPDATE utenti t2 JOIN caratteristiche t3 on t2.userid=t3.userid SET t3.expfabbro=t3.expfabbro+'".$exp."',t2.monete=t2.monete+'".$paga."',t3.energia=t3.energia-'".$energia."',t3.saluteattuale=t3.saluteattuale-'".$salute."',t3.recuperosalute='".$adesso."',t3.recuperoenergia='".$adesso."' WHERE t2.userid='".$userid."'");
 $db->QueryMod("UPDATE config SET banca=banca-'".$paga."'");
 if($ore>1){
 $errore="";
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");
 if ($usercar['energia']<100)
-$errore .= $lang['fucina_errore1'];
+$errore.=$lang['fucina_errore1'];
 if ($usercar['saluteattuale']<30)
-$errore .= $lang['fucina_errore2'];
+$errore.=$lang['fucina_errore2'];
 if($errore){
 $testo=$lang['outputerrori_continualav']."<br />".$errore;
 $titolo=$lang['Impossibile_lavorare_ancora'];
@@ -388,16 +386,16 @@ $testo="<span>".$testo.$oggpersi."</span>";
 $titolo=$lang['report_lavoro_labalc'];
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");
 $salute+=$danni;
-$db->QueryMod("UPDATE lavori t1 JOIN utenti t2 on t1.userid=t2.userid JOIN caratteristiche t3 on t2.userid=t3.userid SET t1.ultimolavoro='".$adesso."',t1.oreultimolav=t1.oreultimolav+'1',t3.expalchimista=t3.expalchimista+'".$exp."',t2.monete=t2.monete-'".$costo."',t3.energia=t3.energia-'".$energia."',t3.saluteattuale=t3.saluteattuale-'".$salute."',t3.recuperosalute='".$adesso."',t3.recuperoenergia='".$adesso."',t3.manarimasto=t3.manarimasto-'".$mana."' WHERE t1.userid='".$userid."'");
+$db->QueryMod("UPDATE utenti t2 JOIN caratteristiche t3 on t2.userid=t3.userid SET t3.expalchimista=t3.expalchimista+'".$exp."',t2.monete=t2.monete-'".$costo."',t3.energia=t3.energia-'".$energia."',t3.saluteattuale=t3.saluteattuale-'".$salute."',t3.recuperosalute='".$adesso."',t3.recuperoenergia='".$adesso."',t3.manarimasto=t3.manarimasto-'".$mana."' WHERE t2.userid='".$userid."'");
 if($ore>1){
 $errore="";
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");
 if ($usercar['energia']<100)
-$errore .= $lang['lab_errore1'];
+$errore.=$lang['lab_errore1'];
 if ($usercar['saluteattuale']<30)
-$errore .= $lang['lab_errore2'];
+$errore.=$lang['lab_errore2'];
 if ($usercar['mana']<10)
-$errore .= $lang['lab_errore4'];
+$errore.=$lang['lab_errore4'];
 if($errore){
 $testo=$lang['outputerrori_continualav']."<br />".$errore;
 $titolo=$lang['Impossibile_lavorare_ancora'];
@@ -423,7 +421,7 @@ $exp+=10+(2*$usercar['magica']);
 $testo="<span>".sprintf($lang['report_lavstudiorocca'],$exp,$elementi[$elementosel],$energia)."</span>";
 $titolo=$lang['report_lavoro_roccastudio'];
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");
-$db->QueryMod("UPDATE lavori t1 JOIN caratteristiche t3 on t1.userid=t3.userid SET t1.ultimolavoro='".$adesso."',t1.oreultimolav=t1.oreultimolav+'1',t3.expmagica=t3.expmagica+'".$exp."',t3.expelmagico".$elementosel."=t3.expelmagico".$elementosel."+'".$exp."',t3.energia=t3.energia-'".$energia."',t3.recuperosalute='".$adesso."',t3.recuperoenergia='".$adesso."' WHERE t1.userid='".$userid."'");
+$db->QueryMod("UPDATE caratteristiche SET expmagica=expmagica+'".$exp."',expelmagico".$elementosel."=expelmagico".$elementosel."+'".$exp."',energia=energia-'".$energia."',recuperosalute='".$adesso."',recuperoenergia='".$adesso."' WHERE userid='".$userid."'");
 Controllamagieconosciute($userid,$elementosel);
 if($ore>1){
 $ore--;
@@ -485,7 +483,7 @@ $titolo=$lang['report_lavoro_fucina_fab'];
 $testo1=sprintf($lang['report_lav_fuc_fab'],$exp,$energia,$salute)."<br />";
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo1.$testo."','0','".$adesso."')");
 $salute+=$danni;
-$db->QueryMod("UPDATE lavori t1 JOIN utenti t2 on t1.userid=t2.userid JOIN caratteristiche t3 on t2.userid=t3.userid SET t1.ultimolavoro='".$adesso."',t1.oreultimolav=t1.oreultimolav+'1',t3.expfabbro=t3.expfabbro+'".$exp."',t2.monete=t2.monete-'1',t3.energia=t3.energia-'".$energia."',t3.saluteattuale=t3.saluteattuale-'".$salute."',t3.recuperosalute='".$adesso."',t3.recuperoenergia='".$adesso."' WHERE t1.userid='".$userid."'");
+$db->QueryMod("UPDATE utenti t2 JOIN caratteristiche t3 on t2.userid=t3.userid SET t3.expfabbro=t3.expfabbro+'".$exp."',t2.monete=t2.monete-'1',t3.energia=t3.energia-'".$energia."',t3.saluteattuale=t3.saluteattuale-'".$salute."',t3.recuperosalute='".$adesso."',t3.recuperoenergia='".$adesso."' WHERE t2.userid='".$userid."'");
 if($ore>1){
 $errore="";
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");
@@ -574,7 +572,7 @@ $testo3="<br />".$lang['report_lavroc_magia_no'];
 $testo="<span>".sprintf($lang['report_lavpraticarocca'],$exp,$elementi[$elementosel],$energia).$testo3."</span>";
 $titolo=$lang['report_lavoro_roccapratica'];
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");
-$db->QueryMod("UPDATE lavori t1 JOIN caratteristiche t3 on t1.userid=t3.userid SET t1.ultimolavoro='".$adesso."',t3.saluteattuale=t3.saluteattuale-'".$danni."',t1.oreultimolav=t1.oreultimolav+'1',t3.expmagica=t3.expmagica+'".$exp."',t3.expelmagico".$elementosel."=t3.expelmagico".$elementosel."+'".$exp."',t3.energia=t3.energia-'".$energia."',t3.recuperosalute='".$adesso."',t3.recuperoenergia='".$adesso."' WHERE t1.userid='".$userid."'");
+$db->QueryMod("UPDATE caratteristiche SET saluteattuale=saluteattuale-'".$danni."',expmagica=expmagica+'".$exp."',expelmagico".$elementosel."=expelmagico".$elementosel."+'".$exp."',energia=energia-'".$energia."',recuperosalute='".$adesso."',recuperoenergia='".$adesso."' WHERE userid='".$userid."'");
 Controllamagieconosciute($userid,$elementosel);
 if($ore>1){
 $errore="";

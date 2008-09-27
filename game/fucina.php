@@ -5,9 +5,6 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 }
 require('language/'.$language.'/lang_fucina.php');
 
-$userlav=$db->QuerySelect("SELECT * FROM lavori WHERE userid='".$user['userid']."' LIMIT 1");
-if($user['plus']==0){$tempoproxlav=$game_proxlav_normal;}else{$tempoproxlav=$game_proxlav_plus;}
-$tempoproxlav=$tempoproxlav*$userlav['oreultimolav'];
 if (isset($_POST['lavorafucapp'])){
 $errore="";
 $ore=(int)$_POST['ore'];
@@ -17,11 +14,9 @@ if ($usercar['energia']<100)
 $errore.=$lang['fucina_errore1'];
 if ($usercar['saluteattuale']<30)
 $errore.=$lang['fucina_errore2'];
-if ($adesso<($userlav['ultimolavoro']+$tempoproxlav))
-$errore.=$lang['fucina_errore3'];
 if ($eventi['id']>0)
 $errore.=$lang['global_errore1'];
-if($ore<1 OR $ore>3)
+if($ore<1 OR $ore>5)
 $errore.=$lang['global_errore2'];
 $regno=$db->QuerySelect("SELECT banca FROM config");
 if($regno['banca']<1)
@@ -29,7 +24,6 @@ $errore.=$lang['global_errore3'];
 if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
 else {
-$db->QueryMod("UPDATE lavori SET oreultimolav='0' WHERE userid='".$user['userid']."' LIMIT 1");
 $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,lavoro,ore) VALUES ('".$user['userid']."','".$adesso."','3600','6','1','4','".$ore."')");	
 echo "<script language=\"javascript\">window.location.href='index.php?loc=situazione'</script>";
 exit();
@@ -47,11 +41,9 @@ if ($usercar['energia']<100)
 $errore.=$lang['fucina_errore1'];
 if ($usercar['saluteattuale']<30)
 $errore.=$lang['fucina_errore2'];
-if ($adesso<($userlav['ultimolavoro']+$tempoproxlav))
-$errore.=$lang['fucina_errore3'];
 if ($eventi['id']>0)
 $errore.=$lang['global_errore1'];
-if($ore<1 OR $ore>3)
+if($ore<1 OR $ore>5)
 $errore.=$lang['global_errore2'];
 if ($oggettodaforgiare<1 OR $oggettodaforgiare<6)
 $errore.=$lang['fucina_errore5'];
@@ -87,7 +79,6 @@ $errore.=sprintf($lang['fucina_errore11'],($materiali_num[$materiale][4]*$ore));
 if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
 else {
-$db->QueryMod("UPDATE lavori SET oreultimolav='0' WHERE userid='".$user['userid']."' LIMIT 1");
 $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,lavoro,ore,oggid,type) VALUES ('".$user['userid']."','".$adesso."','3600','9','1','7','".$ore."','".$oggettodaforgiare."','".$materiale."')");	
 echo "<script language=\"javascript\">window.location.href='index.php?loc=situazione'</script>";
 exit();

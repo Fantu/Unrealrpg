@@ -6,7 +6,6 @@ $lang['desc_miniera_vecchia']='Puoi lavorare in Miniera vecchia cercando di trov
 $lang['lavora_miniera']='Lavora in miniera';
 $lang['miniera_errore1']='- Sei troppo stanco per poter lavorare in miniera.<br />';
 $lang['miniera_errore2']='- Attualmente, il tuo fisico non può reggere il lavoro in miniera.<br />';
-$lang['miniera_errore3']='- Devono trascorrere 3 ore per ogni ora di lavoro dall`ultimo effettuato.<br />';
 $lang['miniera_errore4']='- Non hai abbastanza torce per poter lavorare in Miniera!<br />';
 $lang['miniera_errore5']='- Non hai un piccone o non l`hai selezionato<br />';
 $lang['miniera_errore6']='- Non hai abbastanza forza fisica per poter utilizzare questo piccone.<br />';

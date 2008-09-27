@@ -2,7 +2,6 @@
 $lang['roccastudia']='Studia';
 $lang['desc_rocca_studia']='Puoi studiare un determinato elemento per guadagnare esperienza per l`abilità Sapienza magica e per quello stesso elemento.';
 $lang['rocca_errore1']='- Sei troppo stanco per poter studiare nella Rocca dell`Arcano.<br />';
-$lang['rocca_errore2']='- Devono trascorrere 3 ore, per ogni ora di lavoro, dall`ultimo effettuato.<br />';
 $lang['rocca_errore3']='- Non hai selezionato l`elemento.<br />';
 $lang['rocca_errore4']='- Non hai selezionato il tipo.<br />';
 $lang['rocca_errore5']='- Il tuo fisico non può reggere la pratica nella Rocca.<br />';

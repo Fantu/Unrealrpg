@@ -4,7 +4,6 @@ $lang['desc_fucina_app']='Puoi lavorare in Fucina come apprendista, avendo una r
 $lang['lavora_fucina']='Lavora in Fucina';
 $lang['fucina_errore1']='- Sei troppo stanco per poter lavorare in Fucina<br />';
 $lang['fucina_errore2']='- Attualmente il tuo fisico non è in grado di reggere il lavoro in Fucina<br />';
-$lang['fucina_errore3']='- Devono passare 3 ore per ogni ora di lavoro dall\'ultimo effettuato!<br />';
 $lang['fucina_errore4']='- Non sei abbastanza abile per poter forgiare oggetti<br />';
 $lang['fucina_errore5']='- Non hai selezionato l`oggetto da forgiare<br />';
 $lang['fucina_errore6']='- Non hai %s di carbone che ti serve<br />';

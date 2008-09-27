@@ -19,6 +19,8 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <option value="1" selected="selected">1</option>
 <option value="2">2</option>
 <option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
 </select>
 </td>
 </tr>
@@ -53,6 +55,8 @@ echo "<option value=\"$chiave\">$elemento</option>"; ?>
 <option value="1" selected="selected">1</option>
 <option value="2">2</option>
 <option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
 </select>
 </td>
 </tr>

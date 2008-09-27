@@ -59,4 +59,3 @@ echo $usercar['livello'];
 </table></tr>
 </table>
 <br />
-<?php echo $proxlav; ?><br />
