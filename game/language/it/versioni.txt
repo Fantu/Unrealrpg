@@ -6,14 +6,16 @@ Legenda:<br />
 # Modifiche<br />
 - Correzione bug e patch di situazioni non previste<br />
 </p>
-<p><strong>0.7.4</strong> (Non disponibile - In sviluppo)<br />
+<p><strong>0.7.5</strong> (Non disponibile - In sviluppo)<br />
++ Inizio creazione Municipio, inserito nel menu all'interno di Città<br />
+</p>
+<p><strong>0.7.4</strong> [R.1581] (27/09/08 - Beta)<br />
 + Aggiunte per la creazione di "economia" del regno, oltre alla Banca, Locanda, Miniera nuova, Fucina, Laboratorio, Mercato<br />
 + Aggiunta la possibilità di forgiare materiale di mithrill in Fucina come fabbro<br />
-+ Aggiunto agli oggetto: Pugnale di mithrill, Pugnale di mithrill superbo<br />
++ Aggiunti agli oggetti: Pugnale di mithrill, Pugnale di mithrill superbo<br />
 + Implementato l'uso delle pozioni nel sistema automatico delle tattiche<br />
 + Gli utenti che si registrano ora hanno 3 punti plus, aggiunti anche a tutti gli utenti esistenti per maggiori test sul sistema automatico di selezione delle tattiche<br />
 + Se l'economia del regno è in crisi non è possibile fare le "prime parti" dei lavori e vendere oggetti<br />
-+ Inizio creazione Municipio, inserito nel menu all'interno di Città<br />
 + Ora non c'è più "tempo di attesa obbligato" tra un lavoro ed un altro<br />
 + Vari miglioramenti di sistema a Fucina, sistema di combattimento<br />
 # Ora l'intelligenza influisce leggermente di più nel lavoro in Fucina come fabbro<br />

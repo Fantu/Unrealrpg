@@ -3,7 +3,6 @@ $lang['lav_apprendista']='Work as an apprentice';
 $lang['desc_lav_apprendista']='Puoi lavorare in Laboratorio come apprendista, avendo una retribuzione fissa di 7 monete ad ora e guadagnare esperienza per l\'abilità di alchimista, utile per avere risultati migliori con meno fatica e meno danni.';
 $lang['lab_errore1']='- Non hai sufficienti energie per poter lavorare in Laboratorio.<br />';
 $lang['lab_errore2']='- Attualmente il tuo fisico non può reggere il lavoro in Laboratorio.<br />';
-$lang['lab_errore3']='- Devono passare 3 ore per ogni ora di lavoro dall`ultimo effettuato.<br />';
 $lang['lab_errore4']='- Hai troppo poco mana!<br />';
 $lang['lab_errore5']='- Non hai abbastanza ampolle per poter effettuare esperimenti o distillare pozioni.<br />';
 $lang['lab_errore6']='- Non hai abbastanza monete per comprare gli ingredienti necessari.<br />';

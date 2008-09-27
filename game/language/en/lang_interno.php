@@ -26,6 +26,7 @@ $lang['Oggetti']='Objects';
 $lang['Citta']='City';
 $lang['Locanda']='Locanda';
 $lang['Confini']='Confini';
+$lang['Municipio']='Municipio';
 //fine menu
 
 //inizio razze
@@ -129,6 +130,7 @@ $lang['utilizzato_4_2']='Utilizzato %s e recuperato %s di energia';
 $lang['Rame']='Rame';
 $lang['Ferro']='Ferro';
 $lang['Acciaio']='Acciaio';
+$lang['Mithrill']='Mithrill';
 $lang['Piccone']='Piccone';
 $lang['Pugnale']='Pugnale';
 $lang['Daga']='Daga';
@@ -139,7 +141,8 @@ $lang['Mazza']='Mazza';
 
 //inizio errori globali
 $lang['global_errore1']='- Stai facendo altro!<br />';
-$lang['global_errore2']='- Le ore di lavoro devono essere minimo di 1 e massimo di 3!<br />';
+$lang['global_errore2']='- Le ore di lavoro devono essere minimo di 1 e massimo di 5!<br />';
+$lang['global_errore3']='- Economia del regno in crisi<br />';
 //fine errori globali
 
 //inizio mail cancellazione/inattività
@@ -148,7 +151,7 @@ $lang['Account_inutilizzato']='Account unused';
 $lang['mail_cancellato_noconferma']='Ciao %s,<br />Siamo spiacenti di informarti che il tuo account su %s sul server %s è stato cancellato perchè non confermato entro le 48 ore.<br /> Saluti,<br />%s lo Staff.';
 $lang['mail_cancellato_nopersonaggio']='Ciao %s,<br />Siamo spiacenti di informarti che il tuo account su %s sul server %s è stato cancellato perchè non è stato creato un personaggio entro le 72 ore.<br /> Saluti,<br />%s Staff.';
 $lang['mail_avviso_inattivita']='Ciao, %s!<br />Ti scriviamo per informarti che il tuo account su %s server %s risulta inattivo da pi&ugrave; di 2 settimane.<br />Se questa inattività dovesse raggiungere i 30 giorni, l`account verrà automaticamente cancellato dal sistema.<br />Saluti,<br />%s Staff.';
-$lang['mail_cancellato_inattivita']='Ciao, %s<br />! Siamo spiacenti di informarti che il tuo account su %s sul server %s è stato cancellato perchè inattivo da oltre 30 giorni.<br />Saluti,<br />%s Staff.';
+$lang['mail_cancellato_inattivita']='Ciao, %s!<br /> Siamo spiacenti di informarti che il tuo account su %s sul server %s è stato cancellato perchè inattivo da oltre 30 giorni.<br />Saluti,<br />%s Staff.';
 //fine errori cancellazione/inattività
 
 //inizio libro
