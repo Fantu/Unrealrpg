@@ -40,7 +40,6 @@ $db->QueryMod("DELETE FROM utenti WHERE userid='".$chi['userid']."'");
 $db->QueryMod("UPDATE config SET utenti=utenti-'1' WHERE id='".$chi['server']."'");
 $db->QueryMod("DELETE FROM caratteristiche WHERE userid='".$chi['userid']."'");
 $db->QueryMod("DELETE FROM banca WHERE userid='".$chi['userid']."'");
-$db->QueryMod("DELETE FROM lavori WHERE userid='".$chi['userid']."'");
 $db->QueryMod("DELETE FROM inoggetti WHERE userid='".$chi['userid']."'");
 $db->QueryMod("DELETE FROM messaggi WHERE userid='".$chi['userid']."'");
 $db->QueryMod("DELETE FROM inmagia WHERE userid='".$chi['userid']."'");
