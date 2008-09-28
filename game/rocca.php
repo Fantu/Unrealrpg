@@ -10,7 +10,6 @@ if (isset($_POST['roccastudia'])){
 $errore="";
 $elementosel=(int)$_POST['elemento'];
 $ore=(int)$_POST['ore'];
-$userlav=$db->QuerySelect("SELECT * FROM lavori WHERE userid='".$user['userid']."' LIMIT 1");
 if ($usercar['energia']<(100+(100*$ore)))
 $errore.=$lang['rocca_errore1'];
 if ($elementosel<1)
@@ -32,7 +31,6 @@ $errore="";
 $elementosel=(int)$_POST['elemento2'];
 $tiposel=(int)$_POST['tipo'];
 $ore=(int)$_POST['ore2'];
-$userlav=$db->QuerySelect("SELECT * FROM lavori WHERE userid='".$user['userid']."' LIMIT 1");
 if ($usercar['energia']<(100+(100*$ore)))
 $errore.=$lang['rocca_errore1'];
 if ($elementosel<1)
