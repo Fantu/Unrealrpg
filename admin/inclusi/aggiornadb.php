@@ -3,42 +3,14 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	header("Location: ../../index.php?error=16");
 	exit();
 }
-$newversion="0.7.4";
+$newversion="0.7.5";
 foreach($game_server as $chiave=>$elemento){
 if($chiave!=999){
 $db->database=$chiave;
 $check=$db->QuerySelect("SELECT version FROM config WHERE id=".$chiave);
 if($check['version']!=$newversion AND $newversion==$game_revision){
 
-$db->QueryMod("UPDATE `oggetti` SET `abilitanec` = '1',`materiale` = '4' WHERE `oggetti`.`id` =68 LIMIT 1");
-$db->QueryMod("UPDATE `oggetti` SET `abilitanec` = '6',`materiale` = '4' WHERE `oggetti`.`id` =69 LIMIT 1");
-
-$db->QueryMod("INSERT INTO `oggetti` (
-`id` ,
-`tipo` ,
-`categoria` ,
-`probrottura` ,
-`costo` ,
-`energia` ,
-`usura` ,
-`bonuseff` ,
-`forzafisica` ,
-`probtrovare` ,
-`recsalute` ,
-`recenergia` ,
-`abilitanec` ,
-`materiale` ,
-`danno` ,
-`difesafisica`
-)
-VALUES 
-(NULL , '5', '1', '40', '100', '30', '300', '0', '35', '0', '0', '0', '1', '4', '8', '0'),
-(NULL , '5', '1', '20', '250', '35', '750', '1', '35', '0', '0', '0', '5', '4', '11', '0');
-");
-
-$db->QueryMod("ALTER TABLE `utenti` CHANGE `puntiplus` `puntiplus` SMALLINT( 5 ) UNSIGNED NOT NULL DEFAULT '3'");
-$db->QueryMod("UPDATE utenti SET puntiplus=puntiplus+'3'");
-$db->QueryMod("DROP TABLE `lavori`");
+$db->QueryMod("UPDATE oggetti SET energia='80' WHERE tipo='5' AND categoria='4'");
 
 	/*//creazione record per tab con 1 record per utente
 	$a=$db->QueryCiclo("SELECT userid FROM utenti WHERE conferma='1' AND personaggio='1'");
