@@ -575,9 +575,8 @@ $db->QueryMod("DELETE FROM cachequest WHERE userid='".$att."'");
 if($vincitore>0){$attn=$db->QuerySelect("SELECT username,monete FROM utenti WHERE userid='".$battle['attid']."' LIMIT 1");}
 if($vincitore==1){
 $carcpu=$db->QuerySelect("SELECT * FROM carcpu WHERE cpuid='".$dif."' LIMIT 1");
-$monete=round(rand(($carcpu['monete']/100*90),$carcpu['monete']));
-$db->QueryMod("UPDATE `utenti` SET `monete`=`monete`+'".$monete."' WHERE `userid`='".$att."' LIMIT 1");
-$input=sprintf($lang['c_vince_monete'],$attn['username'],$monete)."<br/>";
+$db->QueryMod("UPDATE `utenti` SET `monete`=`monete`+'".$carcpu['monete']."' WHERE `userid`='".$att."' LIMIT 1");
+$input=sprintf($lang['c_vince_monete'],$attn['username'],$carcpu['monete'])."<br/>";
 }elseif($vincitore==2){//se vince contro cpu
 $db->QueryMod("UPDATE `utenti` SET `monete`='0' WHERE `userid`='".$att."' LIMIT 1");
 $db->QueryMod("UPDATE `carcpu` SET `monete`=`monete`+'".$attn['monete']."' WHERE `cpuid`='".$dif."' LIMIT 1");

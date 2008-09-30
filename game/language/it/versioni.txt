@@ -8,6 +8,7 @@ Legenda:<br />
 </p>
 <p><strong>0.7.5</strong> (Non disponibile - In sviluppo)<br />
 + Inizio creazione Municipio, inserito nel menu all'interno di Città<br />
++ Vari miglioramenti di sistema a Fucina, sistema di combattimento<br />
 # L'energia ora influisce di più nell'esperienza guadagnata nei lavori<br />
 # Rivista la probabilità di incidenti nei lavori, resa più equilibrata<br />
 # Modificate le asce, rese più equilibrate<br />
