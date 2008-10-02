@@ -11,6 +11,7 @@ $check=$db->QuerySelect("SELECT version FROM config WHERE id=".$chiave);
 if($check['version']!=$newversion AND $newversion==$game_revision){
 
 $db->QueryMod("UPDATE oggetti SET energia='80' WHERE tipo='5' AND categoria='4'");
+$db->QueryMod("ALTER TABLE `config` ADD `crimine` TINYINT UNSIGNED NOT NULL DEFAULT '10'");
 
 	/*//creazione record per tab con 1 record per utente
 	$a=$db->QueryCiclo("SELECT userid FROM utenti WHERE conferma='1' AND personaggio='1'");

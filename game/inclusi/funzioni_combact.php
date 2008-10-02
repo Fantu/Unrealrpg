@@ -35,7 +35,7 @@ class Combattente{
 
 class Dati{
 	public $che;
-	
+
 	public function Stabilisciordine($battle) {
 	global $db,$lang;
 	$attaccante=$battle['attid'];
@@ -72,21 +72,21 @@ class Dati{
 	if($this->plus(2)>0 AND $this->tattica(2,1)==0)
 	$this->Autotattic(2);
 	} //fine Stabilisciordine
-	
+
 	//----------------------------
 	//  VISUALIZZAZIONE DATI
 	//----------------------------
-	
+
 	public function equip($chi,$campo) {
 	$dato=$this->che[$chi]->equip[$campo];
 	return $dato;
 	} //fine equip
-	
+
 	public function car($chi,$campo) {
 	$dato=$this->che[$chi]->car[$campo];
 	return $dato;
 	} //fine car
-	
+
 	public function tattica($chi,$campo) {
 	if($campo==1)
 	$dato=$this->che[$chi]->tattica;
@@ -94,37 +94,37 @@ class Dati{
 	$dato=$this->che[$chi]->subtattica;
 	return $dato;
 	} //fine tattica
-	
+
 	public function id($chi) {
 	$dato=$this->che[$chi]->id;
 	return $dato;
 	} //fine id
-	
+
 	public function plus($chi) {
 	$dato=$this->che[$chi]->plus;
 	return $dato;
 	} //fine plus
-	
+
 	public function cpu($chi) {
 	$dato=$this->che[$chi]->cpu;
 	return $dato;
 	} //fine cpu
-	
+
 	public function esausto($chi) {
 	$dato=$this->che[$chi]->esausto;
 	return $dato;
 	} //fine esausto
-	
+
 	public function nome($chi) {
 	$dato=$this->che[$chi]->nome;
 	return $dato;
 	} //fine nome
-	
+
 	public function pvar($chi) {
 	$dato=$this->che[$chi];
 	return $dato;
 	} //fine pvar
-	
+
 	public function Viewequip($chi) {
 	global $lang;
 	if($this->equip($chi,'cac')!=0 OR $this->equip($chi,'arm')!=0 OR $this->equip($chi,'scu')!=0 OR $this->equip($chi,'poz')!=0){
@@ -140,11 +140,11 @@ class Dati{
 	$input=sprintf($lang['equip_di'],$this->nome($chi),$this->car($chi,'livello'),$equip)."<br/>";
 	return $input;
 	} //fine Viewequip
-	
+
 	//----------------------------
 	//  IMPOSTAZIONE DATI
 	//----------------------------
-	
+
 	public function Ogginuso($chi,$cosa) {
 	global $db;
 	if($this->cpu($chi)==0){
@@ -154,15 +154,15 @@ class Dati{
 	}
 	$this->che[$chi]->oggusati=1;
 	} //fine ogginuso
-	
+
 	public function Modsalute($chi,$quanto){
 	$this->che[$chi]->car['saluteattuale']-=$quanto;
 	} //fine ogginuso
-	
+
 	public function Modenergia($chi,$quanto){
 	$this->che[$chi]->car['energia']-=$quanto;
 	} //fine ogginuso
-	
+
 	public function Aggiornastat($chi){
 	global $db,$adesso;
 	if($this->car($chi,'saluteattuale')<0)
@@ -174,9 +174,9 @@ class Dati{
 	}else{
 	$db->QueryMod("UPDATE carcpu SET saluteattuale='".$this->car($chi,'saluteattuale')."',energia='".$this->car($chi,'energia')."' WHERE cpuid='".$this->id($chi)."' LIMIT 1");
 	}
-	
+
 	} //fine ogginuso
-	
+
 	public function Controlloogg($chi) {
 	$oggpersi=Checkusurarottura($this->id($chi),$this->cpu($chi));
 	if($oggpersi){
@@ -184,13 +184,13 @@ class Dati{
 	}
 	return $dato;
 	} //fine Controlloogg
-	
+
 	public function Controllastato($chi) {
 	$percenergia=100/$this->car($chi,'energiamax')*$this->car($chi,'energia');
 	if ($percenergia<5)
 	$this->che[$chi]->esausto=1;
 	} //fine Controllastato
-	
+
 	public function Autotattic($chi) {
 	global $db;
 	if($chi==1)
@@ -240,7 +240,7 @@ class Dati{
 	if($this->tattica($chi,1)==1)
 	$this->che[$chi]->subtattica==1;
 	} //fine Autotattic
-	
+
 	public function Guadagnaexp($chi,$turni,$expb,$vincitore) {
 	global $db,$lang;
 	if($chi==1)
@@ -270,7 +270,7 @@ class Dati{
 	$input=sprintf($lang['exp_guadagnata'],$this->nome($chi),$exp)."<br/>";
 	return $input;
 	} //fine Guadagnaexp
-	
+
 	public function Checkrep($chi) {
 	if($chi==1)
 	$chi2=2;
@@ -288,7 +288,7 @@ class Dati{
 	}
 	return $rep;
 	} //fine Checkrep
-	
+
 	public function Checkeqipexp($expb){
 	//controllo armi
 	if($this->equip(1,'cac')!=0)
@@ -302,7 +302,7 @@ class Dati{
 	$expb+=0.5;
 	return $expb;
 	} //fine Checkeqipexp
-	
+
 	public function Checkturnexp($expb){
 	//energia
 	if( (($this->che[1]->energiai-$this->car(1,'energia'))+($this->che[2]->energiai)-$this->car(2,'energia'))>100 )
@@ -316,7 +316,7 @@ class Dati{
 	$expb+=0.5;
 	return $expb;
 	} //fine Checkturnexp
-	
+
 	public function Attaccovicino($att,$dif) {
 	global $db,$lang;
 	if($this->equip($att,'cac')!=0){
@@ -400,7 +400,7 @@ class Dati{
 	$this->Modenergia($att,$energia);
 	return $input;
 	} //fine Attaccovicino
-	
+
 	public function Usapozione($chi) {
 	global $db,$lang;
 	$oggetto=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$this->equip($chi,'poz')."' LIMIT 1");
@@ -427,7 +427,7 @@ class Dati{
 			$ok=0;
 			$output=sprintf($lang['errore_sistema_utilizzo_ogg'],$nomeogg);
 			break;
-			}	
+			}
 		break;
 		default:
 		$ok=0;
@@ -440,7 +440,7 @@ class Dati{
 	}//se usato
 	return $output;
 	} //fine Usapozione
-	
+
 } //fine classe Dati
 
 function Battledo($battleid,$turni) {
