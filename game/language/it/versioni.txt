@@ -8,7 +8,7 @@ Legenda:<br />
 </p>
 <p><strong>0.7.5</strong> (Non disponibile - In sviluppo)<br />
 + Inizio creazione Municipio, inserito nel menu all'interno di Città<br />
-+ Ora armatura e scudo vengono usati effettivamente in ogni scontro corpo a corpo con l'avversario (non solo quando riesce a colpire), lo scudo però non vengono utilizzati se esausti<br />
++ Ora armatura e scudo vengono usati effettivamente in ogni scontro corpo a corpo con l'avversario (non solo quando riesce a colpire), lo scudo però non viene utilizzato se esausto<br />
 + Iniziata creazione criminalità<br />
 + Inserita in Municipio la visualizzazione del livello di criminalità nel regno<br />
 + Inserita in Municipio la visualizzazione del livello dell'economia del regno<br />
