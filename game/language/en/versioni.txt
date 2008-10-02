@@ -8,6 +8,7 @@ Legenda:<br />
 </p>
 <p><strong>0.7.5</strong> (Non disponibile - In sviluppo)<br />
 + Inizio creazione Municipio, inserito nel menu all'interno di Città<br />
++ Ora armatura e scudo vengono usati effettivamente in ogni scontro corpo a corpo con l'avversario (non solo quando riesce a colpire), lo scudo però non vengono utilizzati se esausti<br />
 + Vari miglioramenti di sistema a Fucina, sistema di combattimento<br />
 # L'energia ora influisce di più nell'esperienza guadagnata nei lavori<br />
 # Rivista la probabilità di incidenti nei lavori, resa più equilibrata<br />

@@ -332,6 +332,18 @@ class Dati{
 	$nomearma=$lang['pugno'];
 	$energia=50;
 	}
+	if($this->equip($dif,'arm')!=0){
+	$armatura=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$this->equip($dif,'arm')."' LIMIT 1");
+	if($armatura['energia']<=$this->car($dif,'energia')){
+	$this->Modenergia($dif,$armatura['energia']);
+	$this->Ogginuso($dif,'arm');
+	}
+	}//se il difensore ha armatura
+	if($this->esausto($dif)==0 AND $this->equip($dif,'scu')!=0){
+	$this->Ogginuso($dif,'scu');
+	$scudo=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$this->equip($dif,'scu')."' LIMIT 1");
+	$this->Modenergia($dif,$scudo['energia']);
+	}//se il difensore ha scudo e non è esausto
 	$casuale=rand(1,10);if($casuale<2){$colpisci=100;}elseif($casuale>9){$colpisci=0;}else{//casualità totale per minima prob colpire o non colpire cmq
 	$colpisci=rand(1,100)+($this->car($att,'agilita')/7-$this->car($dif,'agilita')/7)+($this->car($att,'velocita')/15-$this->car($dif,'velocita')/15)+((20/$this->car($att,'energiamax')*$this->car($att,'energia'))-(20/$this->car($dif,'energiamax')*$this->car($dif,'energia')));
 	if($this->equip($att,'cac')!=0 AND $arma['bonuseff']!=0)
@@ -351,19 +363,11 @@ class Dati{
 	$difesamax=round($this->car($dif,'diffisica')/100);
 	$difesa=rand(0,$difesamax);
 	if($this->equip($dif,'arm')!=0){
-	$armatura=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$this->equip($dif,'arm')."' LIMIT 1");
 	if($armatura['energia']<=$this->car($dif,'energia')){
-	$this->Modenergia($dif,$armatura['energia']);
 	$difesa+=round(rand(0,$armatura['difesafisica']));
-	$this->Ogginuso($dif,'arm');
 	}
 	}//se il difensore ha armatura
 	$pscudo="";
-	if($this->esausto($dif)==0 AND $this->equip($dif,'scu')!=0){
-	$this->Ogginuso($dif,'scu');
-	$scudo=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$this->equip($dif,'scu')."' LIMIT 1");
-	$this->Modenergia($dif,$scudo['energia']);
-	}//se il difensore ha scudo
 	if($this->tattica($dif,1)==3){
 	$probps=rand(0,30);}else{$probps=rand(0,90);}
 	if($this->equip($dif,'scu')!=0 AND $probps<20 AND $this->esausto($dif)==0){
@@ -374,7 +378,7 @@ class Dati{
 	$prob=50;
 	$difesa+=round(rand($scudo['difesafisica']/100*$prob,$scudo['difesafisica']));
 	}
-	}//se il difensore ha scudo
+	}//se il difensore ha scudo e non è esausto
 	$danno-=$difesa;
 	if($danno<1)
 	$danno=1;
