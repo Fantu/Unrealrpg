@@ -39,7 +39,11 @@ $db->QueryMod("UPDATE `eventi` SET inuso='1' WHERE id='".$events['id']."'");
 			case 8://fai pratica in rocca
 			Completaroccapratica($events['userid'],$events['oggid'],$events['ore'],$events['type']);
 			break;
-			}	
+			case 9://guardia
+			Completaguardia($events['userid'],$events['ore']);
+			break;
+			}
+			}
 		break;
 		case 2://preghiera
 		Completatempioprega($events['userid'],$events['ore']);

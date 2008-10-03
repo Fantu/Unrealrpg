@@ -673,4 +673,32 @@ $energia=$usercar['energia']-$energia;
 $db->QueryMod("UPDATE caratteristiche SET energia='".$energia."',recuperosalute='".($adesso+$secondi)."',recuperoenergia='".($adesso+$secondi)."' WHERE userid='".$userid."'");
 $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo) VALUES ('".$userid."','".$adesso."','".$secondi2."','16','9')");	
 } //fine Completaquest
+
+function Completaguardia($userid,$ore) {
+global $db,$adesso,$lang,$language;
+require_once('language/'.$language.'/lang_municipio.php');
+$usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");	
+$paga=3;
+$energia=30;
+$testo="<span>".sprintf($lang['report_lavronda'],$paga)."</span>";
+$titolo=$lang['report_ronda'];
+$db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");
+$db->QueryMod("UPDATE utenti t2 JOIN caratteristiche t3 on t2.userid=t3.userid SET t2.monete=t2.monete+'".$paga."',t3.energia=t3.energia-'".$energia."',t3.recuperosalute='".$adesso."',t3.recuperoenergia='".$adesso."' WHERE t2.userid='".$userid."'");
+$db->QueryMod("UPDATE config SET banca=banca-'".$paga."'");
+if($ore>1){
+$errore="";
+$usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");
+if ($usercar['energia']<300)
+$errore.=$lang['ronda_errore1'];
+if($errore){
+$testo=$lang['outputerrori_continualav']."<br />".$errore;
+$titolo=$lang['Impossibile_lavorare_ancora'];
+$db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");
+}
+else {
+$ore--;
+$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,lavoro,ore) VALUES ('".$userid."','".$adesso."','3600','17','9','1','".$ore."')");
+}//fine continua lavoro
+}//fine se la coda ha almeno un altra ora
+} //fine Completaguardia
 ?>
