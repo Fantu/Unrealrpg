@@ -14,6 +14,7 @@ Legenda:<br />
 + Inserita in Municipio la visualizzazione del livello dell'economia del regno<br />
 + Creata la Ronda cittadina (inserita in Municipio), è possibile fare la guardia in città fino a 5 ore per 3 monete ad ora<br />
 + Inserita in Municipio la visualizzazione di quante guardie stanno facendo la ronda<br />
++ Ora anche il bonus di efficenza dell'arma influenza la probabilità di un colpo potente<br />
 + Vari miglioramenti di sistema a sistema di combattimento<br />
 # L'energia ora influisce di più nell'esperienza guadagnata nei lavori<br />
 # Rivista la probabilità di incidenti nei lavori, resa più equilibrata<br />

@@ -383,12 +383,14 @@ class Dati{
 	if($danno<1)
 	$danno=1;
 	$potente="";
-	$probpot=rand(1,10);
+	$probpot=rand(10,100);
 	if((100/$this->car($att,'energiamax')*$this->car($att,'energia'))<20)
-	$probpot-=5;
+	$probpot-=50;
 	if((100/$this->car($dif,'energiamax')*$this->car($dif,'energia'))<20 AND (100/$this->car($att,'energiamax')*$this->car($att,'energia'))>40)
-	$probpot+=3;
-	if($probpot>=10){
+	$probpot+=30;
+	if($this->equip($att,'cac')!=0 AND $arma['bonuseff']!=0)
+	$probpot+=$probpot/100*$arma['bonuseff'];
+	if($probpot>=100){
 	$danno+=round($danno/2);
 	$potente=" ".$lang['colpo_potente'];
 	}//se colpo potente
