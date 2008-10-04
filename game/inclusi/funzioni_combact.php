@@ -391,8 +391,14 @@ class Dati{
 	if($this->equip($att,'cac')!=0 AND $arma['bonuseff']!=0)
 	$probpot+=$probpot/100*$arma['bonuseff'];
 	if($probpot>=100){
+	$probmpot=rand(1,10);
+	if($probmpot==10){
+	$danno+=$danno;
+	$potente=" ".$lang['colpo_molto_potente'];
+	}else{
 	$danno+=round($danno/2);
 	$potente=" ".$lang['colpo_potente'];
+	}
 	}//se colpo potente
 	$input=sprintf($lang['danno_att_vicino'],$this->nome($att),$nomearma).$potente.$pscudo.", ".sprintf($lang['danni_subiti'],$this->nome($dif),$danno)."<br/>";
 	$this->Modsalute($dif,$danno);
