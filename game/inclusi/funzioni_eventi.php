@@ -658,7 +658,7 @@ Ritornoacasa($userid,$secondi);
 }
 } //fine Completaquest
 
-function Ritornoacasa($userid,$secondi){
+function Ritornoacasa($userid,$ore){
 global $db,$adesso;
 $energia=$secondi/100*3;
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");	
@@ -694,10 +694,9 @@ if($errore){
 $testo=$lang['outputerrori_continualav']."<br />".$errore;
 $titolo=$lang['Impossibile_lavorare_ancora'];
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");
-}
-else {
+}else{
 $ore--;
-$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,lavoro,ore) VALUES ('".$userid."','".$adesso."','3600','17','9','1','".$ore."')");
+$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,lavoro,ore) VALUES ('".$userid."','".$adesso."','3600','17','1','9','".$ore."')");
 }//fine continua lavoro
 }//fine se la coda ha almeno un altra ora
 } //fine Completaguardia

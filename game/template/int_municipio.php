@@ -10,7 +10,6 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <?php echo $lang['ronda_cittadina']; ?><br />
 <br />
 <?php echo $lang['desc_ronda_cittadina']; ?><br />
-<br />
 <form action="" method="post" name="lavronda">
 <table border="0">
 <tr>
