@@ -6,7 +6,10 @@ Legenda:<br />
 # Modifiche<br />
 - Correzione bug e patch di situazioni non previste<br />
 </p>
-<p><strong>0.7.5</strong> (Non disponibile - In sviluppo)<br />
+<p><strong>0.7.6</strong> (Non disponibile - In sviluppo)<br />
+Niente attualmente<br />
+</p>
+<p><strong>0.7.5</strong> [R.1606] (05/10/08 - Beta)<br />
 + Inizio creazione Municipio, inserito nel menu all'interno di Città<br />
 + Ora armatura e scudo vengono usati effettivamente in ogni scontro corpo a corpo con l'avversario (non solo quando riesce a colpire), lo scudo però non viene utilizzato se esausto<br />
 + Iniziata creazione criminalità<br />

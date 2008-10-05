@@ -28,13 +28,11 @@ require('inclusi/morte.php');
 }//se non ha eventi, e quindi resurrezione già in corso
 }//per ogni morto
 }//se ci sono morti
-if($db->database!=998){
 if($config['atticriminali']<$adesso){
 $prob=rand(1,500);
 if($prob<=$config['crimine'])
 Controllacrimine($config);
 $db->QueryMod("UPDATE config SET atticriminali='".($adesso+3600)."'");}
-}//per sviluppo
 }//se il server non è chiuso
 }//fine ogni server
 ?>

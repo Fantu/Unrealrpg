@@ -43,6 +43,7 @@ $lang['tattica_selezionata']='Tattica selezionata: %s';
 $lang['equip_di']='%s di livello %s, equipaggiamento: %s';
 $lang['parata_con_scudo']='%s si para con lo scudo';
 $lang['colpo_potente']='con un colpo potente';
+$lang['colpo_molto_potente']='con un colpo molto potente';
 $lang['danni_subiti']='%s subisce %s danni.';
 $lang['c_vince_monete']='%s prende %s monete.';
 $lang['c_perde_monete']='%s perde %s monete.';
@@ -70,4 +71,5 @@ $lang['nomepcpu3']='Bandito';
 $lang['nomepcpu4']='Bandito esperto';
 $lang['nomepcpu5']='Goblin';
 $lang['nomepcpu6']='Vorg';
+$lang['nomepcpu7']='Kazam';
 ?>

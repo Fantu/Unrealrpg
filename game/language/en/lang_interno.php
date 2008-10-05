@@ -104,6 +104,7 @@ $lang['eventi_dettagli13']='Stai combattendo';
 $lang['eventi_dettagli14']='Stai dormendo e finirai ';
 $lang['eventi_dettagli15']='Stai andando oltre confine';
 $lang['eventi_dettagli16']='Stai tornando a casa, arriverai ';
+$lang['eventi_dettagli17']='Stai facendo la guardia e finirai ';
 //fine dettagli eventi
 
 //inizio visualizzautente
