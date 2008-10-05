@@ -13,6 +13,30 @@ if($check['version']!=$newversion AND $newversion==$game_revision){
 $db->QueryMod("UPDATE oggetti SET energia='80' WHERE tipo='5' AND categoria='4'");
 $db->QueryMod("ALTER TABLE `config` ADD `crimine` TINYINT UNSIGNED NOT NULL DEFAULT '10'");
 $db->QueryMod("ALTER TABLE `config` ADD `atticriminali` INT( 13 ) UNSIGNED NOT NULL DEFAULT '0'");
+$db->QueryMod("INSERT INTO `pcpudata` (
+`id` ,
+`quest` ,
+`salute` ,
+`energia` ,
+`mana` ,
+`attfisico` ,
+`attmagico` ,
+`diffisica` ,
+`difmagica` ,
+`agilita` ,
+`velocita` ,
+`intelligenza` ,
+`destrezza` ,
+`livello` ,
+`eqcac` ,
+`eqarm` ,
+`eqscu` ,
+`eqpoz` ,
+`monete`
+)
+VALUES (
+NULL , '1', '100', '1000', '300', '50', '150', '50', '150', '60', '60', '190', '50', '1', '71', '56', '58', '29', '15'
+);");
 
 	/*//creazione record per tab con 1 record per utente
 	$a=$db->QueryCiclo("SELECT userid FROM utenti WHERE conferma='1' AND personaggio='1'");

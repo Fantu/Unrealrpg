@@ -10,6 +10,8 @@ $adesso=strtotime("now");
 $int_security=$game_se_code;
 foreach($game_server as $chiave=>$elemento){
 $db->database=$chiave;
+$config=$db->QuerySelect("SELECT * FROM config");
+if($config['chiuso']==0){
 $language=$game_server_lang[$chiave];
 require('language/'.$language.'/lang_interno.php');
 require_once('inclusi/controllo_eventi.php');
@@ -27,12 +29,12 @@ require('inclusi/morte.php');
 }//per ogni morto
 }//se ci sono morti
 if($db->database!=998){
-$config=$db->QuerySelect("SELECT * FROM config");
 if($config['atticriminali']<$adesso){
 $prob=rand(1,500);
-//if($prob<=$config['crimine'])
+if($prob<=$config['crimine'])
 Controllacrimine($config);
 $db->QueryMod("UPDATE config SET atticriminali='".($adesso+3600)."'");}
 }//per sviluppo
+}//se il server non è chiuso
 }//fine ogni server
 ?>

@@ -16,7 +16,12 @@ Legenda:<br />
 + Inserita in Municipio la visualizzazione di quante guardie stanno facendo la ronda<br />
 + Ora anche il bonus di efficenza dell'arma influenza la probabilità di un colpo potente<br />
 + Ora se si riesce a colpire potente c'è una piccola probabilità che il colpo sia molto più potente<br />
-+ Vari miglioramenti di sistema a sistema di combattimento<br />
++ Criminali agiscono all'interno del regno, la frequenza è data dal livello di criminalità attuale<br />
++ Se ci sono guardie quando ci sono criminali che agiscono si scontrano<br />
++ Se non ci sono guardie quando i criminali agiscono la criminalità aumenta e i criminali attaccano cittadini o fanno danni/saccheggi nel regno<br />
++ Aggiunti agli "NPC criminali" Bandito giovane e Bandito<br />
++ Aggiunto agli NPC: Kazam<br />
++ Vari miglioramenti di sistema a sistema di combattimento, sistema query, sistema di base interno<br />
 # L'energia ora influisce di più nell'esperienza guadagnata nei lavori<br />
 # Rivista la probabilità di incidenti nei lavori, resa più equilibrata<br />
 # Modificate le asce, rese più equilibrate<br />
