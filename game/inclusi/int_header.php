@@ -24,7 +24,7 @@ if(($user['refertime']!=0) AND ($user['refertime']<$adesso)){
 	if($refercheck2['id']>0){
 	$revisit=$adesso+2592000;
 	$db->QueryMod("UPDATE utenti SET refertime='".$revisit."' WHERE userid='".$user['userid']."'");
-	$db->QueryMod("UPDATE utenti SET puntiplus=puntiplus+'2' WHERE userid='".$referuserid."'");	
+	$db->QueryMod("UPDATE utenti SET puntiplus=puntiplus+'2' WHERE userid='".$referuserid."'");
 	}else{//fine se referente esiste
 	$db->QueryMod("UPDATE utenti SET refertime='0',refer='0' WHERE userid='".$user['userid']."'");
 	}//se non esiste annullamento refer
@@ -34,7 +34,7 @@ if($user['plus']<$adesso){
 $db->QueryMod("UPDATE utenti SET plus='0' WHERE userid='".$user['userid']."'");
 $user=$db->QuerySelect("SELECT * FROM utenti WHERE userid='".$user['userid']."' LIMIT 1");
 }//se account plus scaduto
-$usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$user['userid']."' LIMIT 1");	
+$usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$user['userid']."' LIMIT 1");
 if($eventi['id']==0) {
 if ($usercar['saluteattuale']<1){
 require('inclusi/morte.php');
@@ -49,29 +49,8 @@ if ($adesso>($usercar['decfede']+3600)){
 		$db->QueryMod("UPDATE caratteristiche SET decfede=decfede+'".($ore*3600)."',fede='".$fede."' WHERE userid='".$user['userid']."'");
 	}
 	else{$db->QueryMod("UPDATE caratteristiche SET decfede='".$adesso."' WHERE userid='".$user['userid']."'");}
-}//fine decremento fede	
-if ($adesso>($usercar['recuperosalute']+3600)){
-	if ($usercar['saluteattuale']<=$usercar['salute']){
-		$differenzaora=$adesso-$usercar['recuperosalute'];
-		$ore=floor($differenzaora/3600);
-		$salute=$usercar['saluteattuale']+round($usercar['salute']/100*$ore);
-		if ($salute>$usercar['salute'])
-		$salute=$usercar['salute'];
-		$db->QueryMod("UPDATE caratteristiche SET recuperosalute=recuperosalute+'".($ore*3600)."',saluteattuale='".($salute)."' WHERE userid='".$user['userid']."'");
-	}
-	else{$db->QueryMod("UPDATE caratteristiche SET recuperosalute='".$adesso."' WHERE userid='".$user['userid']."'");}
-}//fine recupero salute con tempo
-if ($adesso>($usercar['recuperoenergia']+60)){
-	if ($usercar['energia']<=$usercar['energiamax']){
-		$differenzaora=$adesso-$usercar['recuperoenergia'];
-		$ore=floor($differenzaora/60);
-		$energia=$usercar['energia']+round($usercar['energiamax']/1000*$ore);
-		if ($energia>$usercar['energiamax'])
-		$energia=$usercar['energiamax'];
-		$db->QueryMod("UPDATE caratteristiche SET recuperoenergia=recuperoenergia+'".($ore*60)."',energia='".($energia)."' WHERE userid='".$user['userid']."'");
-	}
-	else{$db->QueryMod("UPDATE caratteristiche SET recuperoenergia='".$adesso."' WHERE userid='".$user['userid']."'");}
-}//fine recupero energia con tempo
+}//fine decremento fede
+recenergiasalute($user['userid'],$usercar);
 }else{/*fine se non ci sono eventi in corso*/
 $evento=$db->QuerySelect("SELECT * FROM eventi WHERE userid='".$user['userid']."' LIMIT 1");
 }//se ci sono eventi in corso

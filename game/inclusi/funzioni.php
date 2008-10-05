@@ -47,6 +47,34 @@ $energia=$lang['perfetta'];
 return $energia;
 }//fine testoenergia
 
+function recenergiasalute($userid,$usercar){
+global $db;
+if($usercar==0)
+$usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");
+if ($adesso>($usercar['recuperosalute']+3600)){
+	if ($usercar['saluteattuale']<=$usercar['salute']){
+		$differenzaora=$adesso-$usercar['recuperosalute'];
+		$ore=floor($differenzaora/3600);
+		$salute=$usercar['saluteattuale']+round($usercar['salute']/100*$ore);
+		if ($salute>$usercar['salute'])
+		$salute=$usercar['salute'];
+		$db->QueryMod("UPDATE caratteristiche SET recuperosalute=recuperosalute+'".($ore*3600)."',saluteattuale='".($salute)."' WHERE userid='".$userid."'");
+	}
+	else{$db->QueryMod("UPDATE caratteristiche SET recuperosalute='".$adesso."' WHERE userid='".$userid."'");}
+}//fine recupero salute con tempo
+if ($adesso>($usercar['recuperoenergia']+60)){
+	if ($usercar['energia']<=$usercar['energiamax']){
+		$differenzaora=$adesso-$usercar['recuperoenergia'];
+		$ore=floor($differenzaora/60);
+		$energia=$usercar['energia']+round($usercar['energiamax']/1000*$ore);
+		if ($energia>$usercar['energiamax'])
+		$energia=$usercar['energiamax'];
+		$db->QueryMod("UPDATE caratteristiche SET recuperoenergia=recuperoenergia+'".($ore*60)."',energia='".($energia)."' WHERE userid='".$userid."'");
+	}
+	else{$db->QueryMod("UPDATE caratteristiche SET recuperoenergia='".$adesso."' WHERE userid='".$userid."'");}
+}//fine recupero energia con tempo
+}//fine recenergiasalute
+
 function Showbanner($banner){
 $quale=array_rand($banner);
 echo $banner[$quale];

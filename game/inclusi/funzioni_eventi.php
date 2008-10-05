@@ -708,6 +708,18 @@ $combact=0;
 if($g['n']==0){//se non ci sono guardie
 if($config['crimine']<100)
 $db->QueryMod("UPDATE config SET crimine=crimine+'1'");
+$utenti=$db->QueryCiclo("SELECT userid FROM utenti WHERE personaggio='1'");
+while($utente=$db->QueryCicloResult($utenti)){	
+$u[]=$utente['userid'];
+}
+$quale=array_rand($u);
+$userid=$ut[$quale];
+$eu=$db->QuerySelect("SELECT COUNT(id) AS n FROM eventi WHERE userid='".$userid."'");
+if($eu==0){
+$combact=1;
+recenergiasalute($userid,0);
+}else{
+}
 }else{//se ci sono guardie
 $combact=1;
 $g=$db->QuerySelect("SELECT userid FROM eventi WHERE lavoro='9' LIMIT 1");
