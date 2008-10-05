@@ -48,7 +48,7 @@ return $energia;
 }//fine testoenergia
 
 function recenergiasalute($userid,$usercar){
-global $db;
+global $db,$adesso;
 if($usercar==0)
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");
 if ($adesso>($usercar['recuperosalute']+3600)){
