@@ -672,7 +672,7 @@ $energia=$usercar['energia']-$energia;
 }
 $db->QueryMod("UPDATE caratteristiche SET energia='".$energia."',recuperosalute='".($adesso+$secondi)."',recuperoenergia='".($adesso+$secondi)."' WHERE userid='".$userid."'");
 $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo) VALUES ('".$userid."','".$adesso."','".$secondi2."','16','9')");	
-} //fine Completaquest
+} //fine Ritornoacasa
 
 function Completaguardia($userid,$ore) {
 global $db,$adesso,$lang,$language;
@@ -700,4 +700,28 @@ $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,lavor
 }//fine continua lavoro
 }//fine se la coda ha almeno un altra ora
 } //fine Completaguardia
+
+function Controllacrimine($config){
+global $db,$adesso,$lang;
+$g=$db->QueryCiclo("SELECT COUNT(id) AS n FROM eventi WHERE lavoro='9'");
+$combact=0;
+if($g['n']==0){//se non ci sono guardie
+if($config['crimine']<100)
+$db->QueryMod("UPDATE config SET crimine=crimine+'1'");
+}else{//se ci sono guardie
+$combact=1;
+$g=$db->QueryCiclo("SELECT userid FROM eventi WHERE lavoro='9' LIMIT 1");
+$userid=$g['userid'];
+$db->QueryMod("DELETE FROM eventi WHERE userid='".$userid."'");
+}//fine se ci sono guardie
+if($combact==1){
+$prs=array(2,3);
+$quale=array_rand($prs);
+$pcpuid=$prs[$quale];
+$npcid=Npcesistente($pcpuid);
+if($npcid==0){$npcid=Inizializzanpc($pcpuid);}
+Startcombact($userid,$npcid,1);
+}//fine se criminale ingaggia battaglia
+$db->QueryMod("UPDATE config SET atticriminali='".($adesso+3600)."'");
+} //fine Controllacrimine
 ?>
