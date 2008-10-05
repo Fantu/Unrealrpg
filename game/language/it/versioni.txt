@@ -20,7 +20,7 @@ Legenda:<br />
 + Se ci sono guardie quando ci sono criminali che agiscono si scontrano<br />
 + Se non ci sono guardie quando i criminali agiscono la criminalità aumenta e i criminali attaccano cittadini o fanno danni/saccheggi nel regno<br />
 + Aggiunti agli "NPC criminali" Bandito giovane e Bandito<br />
-+ Vari miglioramenti di sistema a sistema di combattimento<br />
++ Vari miglioramenti di sistema a sistema di combattimento, sistema query<br />
 # L'energia ora influisce di più nell'esperienza guadagnata nei lavori<br />
 # Rivista la probabilità di incidenti nei lavori, resa più equilibrata<br />
 # Modificate le asce, rese più equilibrate<br />

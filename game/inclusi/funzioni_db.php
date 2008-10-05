@@ -10,7 +10,7 @@ class ConnessioniMySQL {
 	var $dbpass="3sWBVeNJN4YbB5MQ";
 
 	function StampaErroreMysql($query,$err,$mess) {
-	$data = date("d/m/y - H:i")." ".$query;
+	$data = date("d/m/y - H:i")." - Db:".$this->database." - ".$query;
 	$file="inclusi/log/mysql.log";
 	if (!file_exists($file)){
     $file = "game/inclusi/log/mysq.log";
