@@ -703,14 +703,14 @@ $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,lavor
 
 function Controllacrimine($config){
 global $db,$adesso,$lang;
-$g=$db->QueryCiclo("SELECT COUNT(id) AS n FROM eventi WHERE lavoro='9'");
+$g=$db->QuerySelect("SELECT COUNT(id) AS n FROM eventi WHERE lavoro='9'");
 $combact=0;
 if($g['n']==0){//se non ci sono guardie
 if($config['crimine']<100)
 $db->QueryMod("UPDATE config SET crimine=crimine+'1'");
 }else{//se ci sono guardie
 $combact=1;
-$g=$db->QueryCiclo("SELECT userid FROM eventi WHERE lavoro='9' LIMIT 1");
+$g=$db->QuerySelect("SELECT userid FROM eventi WHERE lavoro='9' LIMIT 1");
 $userid=$g['userid'];
 $db->QueryMod("DELETE FROM eventi WHERE userid='".$userid."'");
 }//fine se ci sono guardie
