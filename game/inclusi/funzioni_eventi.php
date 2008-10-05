@@ -715,12 +715,12 @@ $u[]=$utente['userid'];
 $quale=array_rand($u);
 $userid=$u[$quale];
 $eu=$db->QuerySelect("SELECT COUNT(id) AS n FROM eventi WHERE userid='".$userid."'");
-if($eu==0){
+if($eu['n']==0){
 $combact=1;
 recenergiasalute($userid,0);
 }else{
 $danni=rand(10,100);
-$db->QueryMod("UPDATE config SET banca=banca+'".$danni."'");
+$db->QueryMod("UPDATE config SET banca=banca-'".$danni."'");
 }
 }else{//se ci sono guardie
 $combact=1;
