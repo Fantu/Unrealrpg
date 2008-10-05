@@ -722,6 +722,5 @@ $npcid=Npcesistente($pcpuid);
 if($npcid==0){$npcid=Inizializzanpc($pcpuid);}
 Startcombact($userid,$npcid,1);
 }//fine se criminale ingaggia battaglia
-$db->QueryMod("UPDATE config SET atticriminali='".($adesso+3600)."'");
 } //fine Controllacrimine
 ?>

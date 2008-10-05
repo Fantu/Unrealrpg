@@ -31,6 +31,6 @@ if($config['atticriminali']<$adesso){
 $prob=rand(1,500);
 if($prob<=$config['crimine'])
 Controllacrimine($config);
-}
+$db->QueryMod("UPDATE config SET atticriminali='".($adesso+3600)."'");}
 }//fine ogni server
 ?>
