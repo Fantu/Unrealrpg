@@ -26,7 +26,7 @@ require('inclusi/morte.php');
 }//se non ha eventi, e quindi resurrezione già in corso
 }//per ogni morto
 }//se ci sono morti
-if($db!=998){
+if($db->database!=998){
 $config=$db->QuerySelect("SELECT * FROM config");
 if($config['atticriminali']<$adesso){
 $prob=rand(1,500);
