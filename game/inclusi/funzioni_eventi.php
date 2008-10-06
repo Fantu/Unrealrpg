@@ -726,6 +726,7 @@ $db->QueryMod("UPDATE config SET banca=banca-'".$danni."'");
 $combact=1;
 $g=$db->QuerySelect("SELECT userid FROM eventi WHERE lavoro='9' LIMIT 1");
 $userid=$g['userid'];
+$db->QueryMod("INSERT INTO cachequest (userid,questid) VALUES ('".$userid."','5')");
 $db->QueryMod("UPDATE caratteristiche SET reputazione=reputazione+'1' WHERE userid='".$userid."' LIMIT 1");
 $db->QueryMod("DELETE FROM eventi WHERE userid='".$userid."'");
 }//fine se ci sono guardie

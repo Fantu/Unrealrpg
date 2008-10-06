@@ -578,10 +578,19 @@ $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES
 $cq=$db->QuerySelect("SELECT count(id) AS n FROM cachequest WHERE userid='".$att."'");
 if($cq['n']>0){
 $cq=$db->QuerySelect("SELECT * FROM cachequest WHERE userid='".$att."'");
+if($cq['secondi']>0){
 $caruser=$db->QuerySelect("SELECT saluteattuale FROM caratteristiche WHERE userid='".$att."'");
 if($caruser['saluteattuale']>0){
 Ritornoacasa($att,$cq['secondi']);
 }//se non è morto
+}//se esplorazione oltre confine
+if($cq['questid']==5){
+if($vincitore==1){
+$config=$db->QuerySelect("SELECT * FROM config");
+if($config['crimine']>10)
+$db->QueryMod("UPDATE config SET crimine=crimine-'1'");
+}//se vince la guardia
+}//se guardia in ronda cittadina
 $db->QueryMod("DELETE FROM cachequest WHERE userid='".$att."'");
 }//se esiste cache quest
 if($vincitore>0){$attn=$db->QuerySelect("SELECT username,monete FROM utenti WHERE userid='".$battle['attid']."' LIMIT 1");}
