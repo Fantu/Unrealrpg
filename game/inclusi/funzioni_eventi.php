@@ -658,7 +658,7 @@ Ritornoacasa($userid,$secondi);
 }
 } //fine Completaquest
 
-function Ritornoacasa($userid,$ore){
+function Ritornoacasa($userid,$secondi){
 global $db,$adesso;
 $energia=$secondi/100*3;
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");	
