@@ -2,10 +2,10 @@
 $lang['tempo_gen_pagina']='Tempo di generazione della pagina: %s secondi - Query eseguite: %s';
 $lang['Login']='Login';
 $lang['Username']='Username';
-$lang['Server']='Server';
+$lang['Server']='Regno';
 $lang['Password']='Password';
 $lang['Email']='Email';
-$lang['Informazioni_sui_server']='Informazioni sui server:';
+$lang['Informazioni_sui_server']='Informazioni sui regni:';
 $lang['Nome']='Nome';
 $lang['Utenti_registrati']='Utenti registrati';
 $lang['Ultima_settimana']='Ultima settimana';
@@ -25,7 +25,7 @@ $lang['Newsletter']='Newsletter';
 $lang['scarica_firefox']='Scarica Firefox';
 $lang['desc_firefox']='Stai utilizzando Internet Explorer che purtroppo, attualmente, neppure nell`ultima versione non supporta appieno gli standard web, in particolare i css. Ti consigliamo di utilizzare Firefox, browser gratuito, più sicuro, efficiente e con maggiore rispetto degli standard. Per scaricare l`ultima versione ufficiale clicca sul banner sottostante.';
 
-$lang['reg_error1']='- Non hai selezionato il server!<br />';
+$lang['reg_error1']='- Non hai selezionato il regno!<br />';
 $lang['reg_error2']='- Non hai scritto il tuo username!<br />';
 $lang['reg_error3']='- L`username deve essere almeno di 3 caratteri!<br />';
 $lang['reg_error4']='- Non hai scritto la password!<br />';
@@ -33,7 +33,7 @@ $lang['reg_error5']='- La password deve essere lunga almeno 6 caratteri.<br />';
 $lang['reg_error6']='- Non hai inserito l`indirizzo e-mail!<br />';
 $lang['reg_error7']='- L`indirizzo e-mail inserito non sembra essere corretto.<br />';
 $lang['reg_error8']='- L`username che hai scelto è già stato utilizzato!<br />';
-$lang['reg_error9']='- Questo server è al momento troppo affollato, scegline un altro.<br />';
+$lang['reg_error9']='- Questo regno è al momento troppo affollato, scegline un altro.<br />';
 
 $lang['ext_error1']='Login fallito\\nUsername inesistente!';
 $lang['ext_error2']='Login fallito\\nQuesto account non è ancora stato confermato.';

@@ -3,40 +3,36 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	header("Location: ../../index.php?error=16");
 	exit();
 }
-$newversion="0.7.5";
+$newversion="0.7.6";
 foreach($game_server as $chiave=>$elemento){
 if($chiave!=999){
 $db->database=$chiave;
 $check=$db->QuerySelect("SELECT version FROM config WHERE id=".$chiave);
 if($check['version']!=$newversion AND $newversion==$game_revision){
 
-$db->QueryMod("UPDATE oggetti SET energia='80' WHERE tipo='5' AND categoria='4'");
-$db->QueryMod("ALTER TABLE `config` ADD `crimine` TINYINT UNSIGNED NOT NULL DEFAULT '10'");
-$db->QueryMod("ALTER TABLE `config` ADD `atticriminali` INT( 13 ) UNSIGNED NOT NULL DEFAULT '0'");
-$db->QueryMod("INSERT INTO `pcpudata` (
+$db->QueryMod("INSERT INTO `oggetti` (
 `id` ,
-`quest` ,
-`salute` ,
+`tipo` ,
+`categoria` ,
+`probrottura` ,
+`costo` ,
 `energia` ,
-`mana` ,
-`attfisico` ,
-`attmagico` ,
-`diffisica` ,
-`difmagica` ,
-`agilita` ,
-`velocita` ,
-`intelligenza` ,
-`destrezza` ,
-`livello` ,
-`eqcac` ,
-`eqarm` ,
-`eqscu` ,
-`eqpoz` ,
-`monete`
+`usura` ,
+`bonuseff` ,
+`forzafisica` ,
+`probtrovare` ,
+`recsalute` ,
+`recenergia` ,
+`abilitanec` ,
+`materiale` ,
+`danno` ,
+`difesafisica`
 )
-VALUES (
-NULL , '1', '100', '1000', '300', '50', '150', '50', '150', '60', '60', '190', '50', '1', '71', '56', '58', '29', '15'
-);");
+VALUES 
+(NULL , '6', '1', '180', '15', '5', '30', '0', '20', '0', '0', '0', '1', '1', '0', '6'),
+(NULL , '6', '1', '150', '25', '7', '60', '0', '40', '0', '0', '0', '1', '2', '0', '7'),
+(NULL , '6', '1', '120', '35', '8', '100', '0', '60', '0', '0', '0', '1', '3', '0', '8');
+");
 
 	/*//creazione record per tab con 1 record per utente
 	$a=$db->QueryCiclo("SELECT userid FROM utenti WHERE conferma='1' AND personaggio='1'");

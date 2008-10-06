@@ -67,4 +67,7 @@ $lang['oggetto68_nome']='Piccone di mithrill';
 $lang['oggetto69_nome']='Piccone di mithrill superbo';
 $lang['oggetto70_nome']='Pugnale di mithrill';
 $lang['oggetto71_nome']='Pugnale di mithrill superbo';
+$lang['oggetto72_nome']='Armatura di rame scadente';
+$lang['oggetto73_nome']='Armatura di ferro scadente';
+$lang['oggetto74_nome']='Armatura di acciaio scadente';
 ?>

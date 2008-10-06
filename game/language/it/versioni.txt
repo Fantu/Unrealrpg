@@ -10,7 +10,9 @@ Legenda:<br />
 + Se mentre si è di guardia si combatte contro criminali la reputazione sale di 1 (sia che si vinca, sia che si perda)<br />
 + Aggiornati i testi in inglese (26% tradotto su totale)<br />
 + Se una guardia sconfigge un criminale la criminalità diminuisce<br />
++ Aggiunti agli oggetti: Armatura di rame scadente, Armatura di ferro scadente, Armatura di acciaio scadente<br />
 # Portare le ore massime di affitto di una stanza in Locanda da 6 a 8<br />
+# Ora i "server" di gioco si chiamano regni<br />
 </p>
 <p><strong>0.7.5.1</strong> (06/10/08 - Beta)<br />
 - Corretto il rientro dopo l'esplorazione oltre confine<br />
