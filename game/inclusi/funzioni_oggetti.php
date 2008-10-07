@@ -34,7 +34,8 @@ $oggdf_nome=array(
 3=>$lang['Daga'],
 4=>$lang['Spada'],
 5=>$lang['Ascia'],
-6=>$lang['Mazza']
+6=>$lang['Mazza'],
+7=>$lang['Armatura']
 );
 
 $oggdf_num=array(
@@ -43,7 +44,8 @@ $oggdf_num=array(
 3=>array(1=>5,2=>2),
 4=>array(1=>5,2=>3),
 5=>array(1=>5,2=>4),
-6=>array(1=>5,2=>5)
+6=>array(1=>5,2=>5),
+7=>array(1=>6,2=>1)
 );
 
 function Checkusurarottura($userid,$cpu) {
