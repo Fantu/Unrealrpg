@@ -37,6 +37,9 @@ VALUES
 (NULL , '6', '2', '120', '35', '16', '100', '0', '90', '0', '0', '0', '1', '3', '0', '12');
 ");
 
+$db->QueryMod("UPDATE `oggetti` SET `energia` = '9' WHERE `oggetti`.`id` =57 LIMIT 1");
+$db->QueryMod("UPDATE `oggetti` SET `energia` = '10' WHERE `oggetti`.`id` =58 LIMIT 1");
+
 	/*//creazione record per tab con 1 record per utente
 	$a=$db->QueryCiclo("SELECT userid FROM utenti WHERE conferma='1' AND personaggio='1'");
 	while($var=$db->QueryCicloResult($a))

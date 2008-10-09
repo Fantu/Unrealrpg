@@ -14,6 +14,7 @@ Legenda:<br />
 + Aggiunte le armature fra gli oggetti forgiabili in fucina<br />
 # Portare le ore massime di affitto di una stanza in Locanda da 6 a 8<br />
 # Ora i "server" di gioco si chiamano regni<br />
+# Rivisti scudo di legno e scudo di legno rinforzato, resi più equilibrati<br />
 </p>
 <p><strong>0.7.5.1</strong> (06/10/08 - Beta)<br />
 - Corretto il rientro dopo l'esplorazione oltre confine<br />
