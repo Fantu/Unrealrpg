@@ -43,7 +43,7 @@ if ($eventi['id']>0)
 $errore.=$lang['global_errore1'];
 if($ore<1 OR $ore>5)
 $errore.=$lang['global_errore2'];
-if ($oggettodaforgiare<1 OR $oggettodaforgiare>6)
+if ($oggettodaforgiare<1 OR $oggettodaforgiare>8)
 $errore.=$lang['fucina_errore5'];
 if ($materiale<1 OR $materiale>4)
 $errore.=$lang['fucina_errore9'];
