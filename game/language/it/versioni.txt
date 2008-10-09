@@ -11,7 +11,7 @@ Legenda:<br />
 + Aggiornati i testi in inglese (26% tradotto su totale)<br />
 + Se una guardia sconfigge un criminale la criminalità diminuisce<br />
 + Aggiunti agli oggetti: Armatura di rame scadente, Armatura di ferro scadente, Armatura di acciaio scadente, Scudo di rame scadente, Scudo di ferro scadente, Scudo di acciaio scadente <br />
-+ Aggiunte le armature fra gli oggetti forgiabili in fucina<br />
++ Aggiunte le armature e gli scudi fra gli oggetti forgiabili in fucina<br />
 # Portare le ore massime di affitto di una stanza in Locanda da 6 a 8<br />
 # Ora i "server" di gioco si chiamano regni<br />
 # Rivisti scudo di legno e scudo di legno rinforzato, resi più equilibrati<br />

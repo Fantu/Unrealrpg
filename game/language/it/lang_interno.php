@@ -139,6 +139,7 @@ $lang['Spada']='Spada';
 $lang['Ascia']='Ascia';
 $lang['Mazza']='Mazza';
 $lang['Armatura']='Armatura';
+$lang['Scudo']='Scudo';
 //fine funz_ogg
 
 //inizio errori globali
