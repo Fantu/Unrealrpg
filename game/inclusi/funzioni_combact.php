@@ -379,8 +379,6 @@ class Dati{
 	$difesa+=round(rand($scudo['difesafisica']/100*$prob,$scudo['difesafisica']));
 	}
 	}//se il difensore ha scudo e non è esausto
-	if($danno<1)
-	$danno=1;
 	$potente="";
 	$probpot=rand(10,100);
 	if((100/$this->car($att,'energiamax')*$this->car($att,'energia'))<20)
@@ -400,6 +398,8 @@ class Dati{
 	}
 	}//se colpo potente
 	$danno-=$difesa;
+	if($danno<1)
+	$danno=1;
 	$input=sprintf($lang['danno_att_vicino'],$this->nome($att),$nomearma).$potente.$pscudo.", ".sprintf($lang['danni_subiti'],$this->nome($dif),$danno)."<br/>";
 	$this->Modsalute($dif,$danno);
 	}else{
