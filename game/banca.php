@@ -33,13 +33,13 @@ if(($userbank['interessi']+86400)<$adesso){
 	if($interessi>0)
 	$interessi=$interessi*$giorni;
 	if ($interessi>0){
-		$db->QueryMod("UPDATE banca SET conto=conto+'".$interessi."',interessi=interessi+'".(86400*$giorni)."' WHERE userid='".$user['userid']."'");
+	$db->QueryMod("UPDATE banca SET conto=conto+'".$interessi."',interessi=interessi+'".(86400*$giorni)."' WHERE userid='".$user['userid']."'");
 	}
 	else{$db->QueryMod("UPDATE banca SET interessi='".$adesso."' WHERE userid='".$user['userid']."'");}
 	$userbank=$db->QuerySelect("SELECT * FROM banca WHERE userid='".$user['userid']."' LIMIT 1");
 }//fine controllo interessi
 if($userbank['dataincprestito']>0){
-if(($userbank['dataincprestito']+1209600)<$adesso){
+if(($userbank['dataincprestito']+604800)<$adesso){
 $db->QueryMod("UPDATE banca SET incprestito=incprestito+'1',dataincprestito='".$adesso."' WHERE userid='".$user['userid']."'");
 }//fine controllo prestito
 }//fine se ci sono prestiti
@@ -48,14 +48,14 @@ if (isset($_POST['deposita'])){
 $errore="";
 $dadepositare=(int)$_POST['dadepositare'];
 if (!is_numeric($dadepositare)){
-$errore .= $lang['banca_errore1'];}
+$errore.=$lang['banca_errore1'];}
 else{
 if ($eventi['id']>0)
-$errore .= $lang['global_errore1'];
+$errore.=$lang['global_errore1'];
 if ($dadepositare<1)
-$errore .= $lang['banca_errore2'];
+$errore.=$lang['banca_errore2'];
 if ($dadepositare>$user['monete'])
-$errore .= $lang['banca_errore3'];
+$errore.=$lang['banca_errore3'];
 }
 if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
@@ -68,18 +68,18 @@ if (isset($_POST['preleva'])){
 $errore="";
 $daprelevare=(int)$_POST['daprelevare'];
 if (!is_numeric($daprelevare)){
-$errore .= $lang['banca_errore1'];}
+$errore.=$lang['banca_errore1'];}
 else{
 if ($eventi['id']>0)
-$errore .= $lang['global_errore1'];
+$errore.=$lang['global_errore1'];
 if ($daprelevare<1)
-$errore .= $lang['banca_errore4'];
+$errore.=$lang['banca_errore4'];
 $userbank=$db->QuerySelect("SELECT conto FROM banca WHERE userid='".$user['userid']."' LIMIT 1");
 if ($daprelevare>$userbank['conto'])
-$errore .= $lang['banca_errore5'];
+$errore.=$lang['banca_errore5'];
 $deposito = $db->QuerySelect("SELECT banca FROM config");
 if ($daprelevare>$deposito['banca'])
-$errore .= $lang['banca_errore6'];
+$errore.=$lang['banca_errore6'];
 }
 if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
@@ -92,7 +92,7 @@ if(isset($_POST['chiediprestito'])){
 $errore="";
 $prestito=(int)$_POST['inprestito'];
 if(!is_numeric($prestito)){
-$errore .= $lang['banca_errore1'];}
+$errore.=$lang['banca_errore1'];}
 else{
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$user['userid']."' LIMIT 1");
 $prestitopossibile=($usercar['livello']*100)-$userbank['prestito'];
