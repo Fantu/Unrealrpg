@@ -21,6 +21,12 @@ $salute=1;
 $exp=floor($usercar['saluteattuale']/30+$usercar['energia']/200+$usercar['attfisico']/8);
 $exp=floor(rand(($exp/100*80),$exp));
 $exp+=10+(2*$usercar['minatore']);
+$prob=rand(1,10);
+if($prob==1)
+$esplosione=1;
+elseif($prob==10)
+$esplosione=100;
+else
 $esplosione=rand(30,110)-($usercar['minatore']*5)-($usercar['attfisico']/20);
 $danni=0;
 if($esplosione>10){
@@ -77,6 +83,11 @@ $salute=1;
 $exp=floor($usercar['saluteattuale']/30+$usercar['energia']/200+$usercar['attmagico']/13+$usercar['intelligenza']/20);
 $exp=floor(rand(($exp/100*80),$exp));
 $exp+=10+(2*$usercar['alchimista']);
+if($prob==1)
+$esplosione=1;
+elseif($prob==10)
+$esplosione=100;
+else
 $esplosione=rand(30,110)-($usercar['alchimista']*5)-($usercar['attmagico']/20);
 $danni=0;
 if($esplosione>10){
@@ -201,6 +212,11 @@ $salute=1;
 $exp=floor($usercar['saluteattuale']/30+$usercar['energia']/200+$usercar['attfisico']/8);
 $exp=floor(rand(($exp/100*80),$exp));
 $exp+=10+(2*$usercar['minatore']);
+if($prob==1)
+$esplosione=1;
+elseif($prob==10)
+$esplosione=100;
+else
 $esplosione=rand(30,110)-($usercar['minatore']*5)-($usercar['attfisico']/20);
 $danni=0;
 if($esplosione>10){
@@ -293,6 +309,11 @@ $salute=1;
 $exp=floor($usercar['saluteattuale']/30+$usercar['energia']/200+$usercar['attfisico']/30+$usercar['destrezza']/20+$usercar['intelligenza']/40);
 $exp=floor(rand(($exp/100*80),$exp));
 $exp+=10+(2*$usercar['fabbro']);
+if($prob==1)
+$esplosione=1;
+elseif($prob==10)
+$esplosione=100;
+else
 $esplosione=rand(30,110)-($usercar['fabbro']*5)-($usercar['attfisico']/20)-($usercar['destrezza']/10);
 $danni=0;
 if($esplosione>10){
@@ -357,10 +378,14 @@ if($bonusabilita>0)
 $bonusabilita=$bonusabilita*17;
 if($bonusabilita>70)
 $bonusabilita=70;
+if($prob==1)
+$esplosione=1;
+elseif($prob==10)
+$esplosione=100;
+else
 $esplosione=rand(70,100)-$bonusabilita-($usercar['attmagico']/15)-$usercar['intelligenza']/25;
 $danni=0;
-$probinc=rand(1,10);
-if($esplosione>10 OR $probinc==10){
+if($esplosione>10){
 $esplosione=rand(30,110)-($usercar['alchimista']*5)-($usercar['agilita']/20)-($usercar['attmagico']/10)-($usercar['velocita']/50);
 if($esplosione<10){
 $testo2="<span>".$lang['report_esplosione_lab1']."</span>";
@@ -454,6 +479,11 @@ $exp+=10+(2*$usercar['fabbro']);
 $bonusabilita=$usercar['fabbro']*7;
 if($bonusabilita>50)
 $bonusabilita=50;
+if($prob==1)
+$esplosione=1;
+elseif($prob==10)
+$esplosione=100;
+else
 $esplosione=rand(30,110)-$bonusabilita-($usercar['attfisico']/20)-($usercar['destrezza']/10)-($usercar['intelligenza']/40);
 $danni=0;
 if($esplosione>10){
