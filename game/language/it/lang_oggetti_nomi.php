@@ -73,4 +73,6 @@ $lang['oggetto74_nome']='Armatura di acciaio scadente';
 $lang['oggetto75_nome']='Scudo di rame scadente';
 $lang['oggetto76_nome']='Scudo di ferro scadente';
 $lang['oggetto77_nome']='Scudo di acciaio scadente';
+$lang['oggetto78_nome']='Daga di mithrill';
+$lang['oggetto79_nome']='Daga di mithrill superbo';
 ?>
