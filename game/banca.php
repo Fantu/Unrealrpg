@@ -20,6 +20,8 @@ $db->QueryMod("UPDATE config SET lotteria='".$adesso."'");
 $db->QueryMod("UPDATE banca SET lotteria='0',vincitore='0'");
 $db->QueryMod("UPDATE banca SET conto=conto+'".$vincita."',vincitore='1' WHERE userid='".$vincitore['userid']."'");
 $testo=sprintf($lang['hai_vinto_lotteria'],$vincita);
+$vdata=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$vincitore['userid']."'");
+inbacheca(sprintf($lang['ha_vinto_alla_lotteria'],$vdata['username'],$vincita));
 $titolo=$lang['Lotteria'];
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$vincitore['userid']."','".$titolo."','".$testo."','0','".$adesso."')");
 }//se c'è almeno un partecipante

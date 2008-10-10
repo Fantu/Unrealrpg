@@ -37,3 +37,8 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <br />
 <?php echo $liveconomia; ?><br />
 <br />
+<br />
+<?php echo $lang['desc_bacheca']; ?><br />
+<br />
+<?php echo $bacheca; ?><br />
+<br />

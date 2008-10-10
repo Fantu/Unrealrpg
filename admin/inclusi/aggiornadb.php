@@ -41,8 +41,12 @@ VALUES
 
 $db->QueryMod("UPDATE `oggetti` SET `energia` = '9' WHERE `oggetti`.`id` =57 LIMIT 1");
 $db->QueryMod("UPDATE `oggetti` SET `energia` = '10' WHERE `oggetti`.`id` =58 LIMIT 1");
-$db->QueryMod("");
-$db->QueryMod("");
+$db->QueryMod(" CREATE TABLE `bacheca` (
+`id` INT UNSIGNED NOT NULL AUTO_INCREMENT ,
+`testo` TEXT NOT NULL ,
+`data` INT( 13 ) UNSIGNED NOT NULL ,
+PRIMARY KEY ( `id` )
+) ENGINE = MYISAM");
 
 	/*//creazione record per tab con 1 record per utente
 	$a=$db->QueryCiclo("SELECT userid FROM utenti WHERE conferma='1' AND personaggio='1'");

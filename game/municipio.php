@@ -50,5 +50,13 @@ $liveconomia=sprintf($lang['liv_economia'],$liveconomia);
 $guardie=$db->QuerySelect("SELECT COUNT(id) AS n FROM eventi WHERE lavoro='9'");
 $nguardie=sprintf($lang['guardie_presenti'],$guardie['n']);
 
+$bacheca="";
+$bdata=$db->QuerySelect("SELECT COUNT(id) AS n FROM bacheca");
+if($bdata['n']>0){
+$bd=$db->QueryCiclo("SELECT * FROM bacheca ORDER BY data DESC");
+while($br=$db->QueryCicloResult($bd)) {
+$bacheca=date("d/m/y - H:i",$br['data'])." - ".$br['testo']."<br/>";
+}
+
 require('template/int_municipio.php');
 ?>

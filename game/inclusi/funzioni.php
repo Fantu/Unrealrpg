@@ -75,6 +75,11 @@ if ($adesso>($usercar['recuperoenergia']+60)){
 }//fine recupero energia con tempo
 }//fine recenergiasalute
 
+function inbacheca($testo){
+global $db,$adesso;
+$db->QueryMod("INSERT INTO bacheca (testo,data) VALUES ('".$testo."','".$adesso."')");
+}//fine inbacheca
+
 function Showbanner($banner){
 $quale=array_rand($banner);
 echo $banner[$quale];

@@ -10,4 +10,5 @@ $lang['ronda_errore1']='- Non sei in condizioni abbastanza buone per fare la gua
 $lang['guardie_presenti']='Attualmente ci sono %s guardie.';
 $lang['report_ronda']='Report ronda cittadina';
 $lang['report_lavronda']='Hai fatto 1 ora di guardia senza incontrare nessun problema ed hai guadagnato %s monete.';
+$lang['desc_bacheca']='Bacheca: ultimi eventi dal regno';
 ?>

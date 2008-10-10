@@ -31,4 +31,5 @@ $lang['info_partecipanti']='L`attuale numero di partecipanti è %s ';
 $lang['info_vincitore']='Il vincitore della scorsa estrazione è %s';
 $lang['data_estrazione']='La prossima estrazione della Lotteria sarà  ';
 $lang['hai_vinto_lotteria']='Sei il vincitore della lotteria! Il premio in palio è di %s monete.';
+$lang['ha_vinto_alla_lotteria']='%s ha vinto %s monete alla lotteria.';
 ?>
