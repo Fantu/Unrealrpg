@@ -11,4 +11,5 @@ $lang['guardie_presenti']='Attualmente ci sono %s guardie.';
 $lang['report_ronda']='Report ronda cittadina';
 $lang['report_lavronda']='Hai fatto 1 ora di guardia senza incontrare nessun problema ed hai guadagnato %s monete.';
 $lang['desc_bacheca']='Bacheca: ultimi eventi dal regno';
+$lang['nessun_evento_recente']='Nessun evento recente';
 ?>
