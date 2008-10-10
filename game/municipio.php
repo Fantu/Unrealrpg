@@ -57,6 +57,7 @@ $bd=$db->QueryCiclo("SELECT * FROM bacheca ORDER BY data DESC");
 while($br=$db->QueryCicloResult($bd)) {
 $bacheca=date("d/m/y - H:i",$br['data'])." - ".$br['testo']."<br/>";
 }
+}//se ci sono eventi
 
 require('template/int_municipio.php');
 ?>
