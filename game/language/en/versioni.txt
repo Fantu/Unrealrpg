@@ -13,11 +13,16 @@ Legenda:<br />
 + Aggiunti agli oggetti: Armatura di rame scadente, Armatura di ferro scadente, Armatura di acciaio scadente, Scudo di rame scadente, Scudo di ferro scadente, Scudo di acciaio scadente, Daga di mithrill, Daga di mithrill superbo<br />
 + Aggiunte le armature e gli scudi fra gli oggetti forgiabili in fucina<br />
 + Nei lavori ora c'è sempre una piccola probabillità di non subire incidenti anche con abilità e caratteristiche pessime e subirli anche con abilità e caratteristiche ottime<br />
++ Aggiunta in Municipio la bacheca con gli eventi del regno<br />
++ Aggiunta in bacheca la visualizzazione del vincitore della lotteria<br />
++ Aggiunto in bacheca quando un criminale agisce e cosa fa<br />
++ Gli eventi visualizzati in bacheca più vecchi di 72 ore vengono cancellati<br />
 + Vari miglioramenti di sistema a sistema di combattimento<br />
 # Portare le ore massime di affitto di una stanza in Locanda da 6 a 8<br />
 # Ora i "server" di gioco si chiamano regni<br />
 # Rivisti scudo di legno e scudo di legno rinforzato, resi più equilibrati<br />
 # Ora gli oggetti persi dagli NPC sopravvissuti vengono sempre ripristinati nelle battaglie successive<br />
+# Ora l'incremento del prestito è ogni 7 giorni<br />
 </p>
 <p><strong>0.7.5.1</strong> (06/10/08 - Beta)<br />
 - Corretto il rientro dopo l'esplorazione oltre confine<br />

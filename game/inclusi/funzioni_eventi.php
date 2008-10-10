@@ -748,9 +748,12 @@ $eu=$db->QuerySelect("SELECT COUNT(id) AS n FROM eventi WHERE userid='".$userid.
 if($eu['n']==0){
 $combact=1;
 recenergiasalute($userid,0);
+$eu=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$userid."'");
+inbacheca(sprintf($lang['criminale_attacca_utente'],$eu['username']));
 }else{
 $danni=rand(10,100);
 $db->QueryMod("UPDATE config SET banca=banca-'".$danni."'");
+inbacheca(sprintf($lang['criminale_attacca_regno'],$danni));
 }
 }else{//se ci sono guardie
 $combact=1;
@@ -759,6 +762,7 @@ $userid=$g['userid'];
 $db->QueryMod("INSERT INTO cachequest (userid,questid) VALUES ('".$userid."','5')");
 $db->QueryMod("UPDATE caratteristiche SET reputazione=reputazione+'1' WHERE userid='".$userid."' LIMIT 1");
 $db->QueryMod("DELETE FROM eventi WHERE userid='".$userid."'");
+inbacheca($lang['criminale_attacca_guardia']);
 }//fine se ci sono guardie
 if($combact==1){
 $prs=array(2,3);
