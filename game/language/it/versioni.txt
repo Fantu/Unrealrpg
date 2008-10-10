@@ -15,6 +15,7 @@ Legenda:<br />
 + Nei lavori ora c'è sempre una piccola probabillità di non subire incidenti anche con abilità e caratteristiche pessime e subirli anche con abilità e caratteristiche ottime<br />
 + Aggiunta in Municipio la bacheca con gli eventi del regno<br />
 + Aggiunta in bacheca la visualizzazione del vincitore della lotteria<br />
++ Gli eventi visualizzati in bacheca più vecchi di 72 ore vengono cancellati<br />
 + Vari miglioramenti di sistema a sistema di combattimento<br />
 # Portare le ore massime di affitto di una stanza in Locanda da 6 a 8<br />
 # Ora i "server" di gioco si chiamano regni<br />

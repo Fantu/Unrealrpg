@@ -57,6 +57,8 @@ $bd=$db->QueryCiclo("SELECT * FROM bacheca ORDER BY data DESC");
 while($br=$db->QueryCicloResult($bd)) {
 $bacheca=date("d/m/y - H:i",$br['data'])." - ".$br['testo']."<br/>";
 }
+$bdataold=$db->QuerySelect("SELECT COUNT(id) AS n FROM bacheca WHERE data<'".($adesso-259200)."'");
+if($bdataold['n']>0)$db->QueryMod("DELETE FROM bacheca WHERE data<'".($adesso-259200)."'");
 }//se ci sono eventi
 
 require('template/int_municipio.php');
