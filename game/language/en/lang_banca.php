@@ -18,7 +18,7 @@ $lang['banca_errore10']='- Possiedi già un biglietto!';
 $lang['saldo_conto']='Il saldo attuale del tuo conto corrisponde a:';
 $lang['saldo_utente']='The pieces (that) you have with you are:';
 $lang['info_interessi']='La Banca paga gli interessi sulle monete depositate sul conto del 2% al giorno, la prossima volta sarà ';
-$lang['desc_prestito']='Puoi chiedere un prestito alla Banca per un massimo di 100 monete per ogni livello del personaggio. L\'interesse sul prestito &egrave; fisso al 10%.';
+$lang['desc_prestito']='Puoi chiedere un prestito alla Banca per un massimo di 100 monete per ogni livello del personaggio. L\'interesse sul prestito è fisso al 10% più 10% ogni settimana che passa dalla richiesta del prestito.';
 $lang['quanto_prestito_chiedere']='Insert here the amount of money you want to ask for:';
 $lang['restituzione_prestito']='Le monete che devi restituire alla Banca, interessi inclusi, sono %s';
 $lang['Restituisci_prestito']='Pay back the loan';
@@ -31,4 +31,5 @@ $lang['info_partecipanti']='L`attuale numero di partecipanti è %s ';
 $lang['info_vincitore']='Il vincitore della scorsa estrazione è %s';
 $lang['data_estrazione']='Next extraction will be  ';
 $lang['hai_vinto_lotteria']='You are the winner! Your prize is %s coins.';
+$lang['ha_vinto_alla_lotteria']='%s ha vinto %s monete alla lotteria.';
 ?>

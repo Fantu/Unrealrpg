@@ -25,8 +25,8 @@ $lang['Informazioni']='Information';
 $lang['Oggetti']='Objects';
 $lang['Citta']='City';
 $lang['Locanda']='Locanda';
-$lang['Confini']='Confini';
-$lang['Municipio']='Municipio';
+$lang['Confini']='Borders';
+$lang['Municipio']='City Hall';
 //fine menu
 
 //inizio razze
@@ -84,7 +84,7 @@ $lang['ab_alchimista']='Alchemist';
 $lang['ab_fabbro']='Smith';
 $lang['ab_magica']='Magical wisdom';
 $lang['Monete']='Coins';
-$lang['Reputazione']='Reputazione';
+$lang['Reputazione']='Reputation';
 //fine caratteristiche
 
 //inizio dettagli eventi
@@ -100,7 +100,7 @@ $lang['eventi_dettagli9']='Stai lavorando in Fucina come fabbro e finirai ';
 $lang['eventi_dettagli10']='Stai facendo pratica in Rocca dell`Arcano e finirai ';
 $lang['eventi_dettagli11']='Hai lanciato una sfida e stai aspettando una risposta entro ';
 $lang['eventi_dettagli12']='Ti hanno sfidato e devi dare una risposta entro ';
-$lang['eventi_dettagli13']='Stai combattendo';
+$lang['eventi_dettagli13']='You\'re fighting';
 $lang['eventi_dettagli14']='Stai dormendo e finirai ';
 $lang['eventi_dettagli15']='Stai andando oltre confine';
 $lang['eventi_dettagli16']='Stai tornando a casa, arriverai ';
@@ -118,7 +118,7 @@ $lang['ottima']='Excellent';
 $lang['perfetta']='Perfect';
 $lang['morto']='Dead';
 $lang['esausto']='Exhausted';
-$lang['utente_inesistente']='Utente inesistente';
+$lang['utente_inesistente']='User not exist';
 //fine visualizzautente
 
 //inizio funz_ogg
@@ -138,6 +138,8 @@ $lang['Daga']='Daga';
 $lang['Spada']='Spada';
 $lang['Ascia']='Ascia';
 $lang['Mazza']='Mazza';
+$lang['Armatura']='Armatura';
+$lang['Scudo']='Scudo';
 //fine funz_ogg
 
 //inizio errori globali
@@ -182,7 +184,10 @@ $lang['seleziona_ore_lavoro']='Seleziona quante ore:';
 $lang['ore_in_coda']='(%s hours remaining)';
 $lang['nessuno']='Nobody';
 $lang['sfida']='Sfida';
-$lang['Accetta']='Accetta';
-$lang['Rifiuta']='Rifiuta';
+$lang['Accetta']='Accept';
+$lang['Rifiuta']='Reject';
 $lang['usura_attuale']='Usura attuale: ';
+$lang['criminale_attacca_guardia']='Un criminale mentre agiva è stato avvistato da una guardia che lo ha attaccato';
+$lang['criminale_attacca_utente']='Un criminale attacca %s';
+$lang['criminale_attacca_regno']='Un criminale fa danni/saccheggi nel regno per un totale di %s monete';
 ?>

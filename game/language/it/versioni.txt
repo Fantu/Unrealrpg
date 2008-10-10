@@ -6,7 +6,10 @@ Legenda:<br />
 # Modifiche<br />
 - Correzione bug e patch di situazioni non previste<br />
 </p>
-<p><strong>0.7.6</strong> (Non disponibile - In sviluppo)<br />
+<p><strong>0.7.7</strong> (Non disponibile - In sviluppo)<br />
+Niente attualmente<br />
+</p>
+<p><strong>0.7.6</strong> [R.1630] (10/10/08 - Beta)<br />
 + Se mentre si è di guardia si combatte contro criminali la reputazione sale di 1 (sia che si vinca, sia che si perda)<br />
 + Aggiornati i testi in inglese (26% tradotto su totale)<br />
 + Se una guardia sconfigge un criminale la criminalità diminuisce<br />

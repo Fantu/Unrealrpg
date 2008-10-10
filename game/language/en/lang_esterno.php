@@ -33,15 +33,15 @@ $lang['reg_error5']='- The password has to be at least 6 characters long.<br />'
 $lang['reg_error6']='- Non hai inserito l`indirizzo e-mail!<br />';
 $lang['reg_error7']='- L`indirizzo e-mail inserito non sembra essere corretto.<br />';
 $lang['reg_error8']='- L`username che hai scelto è già stato utilizzato!<br />';
-$lang['reg_error9']='- Questo server è al momento troppo affollato, scegline un altro.<br />';
+$lang['reg_error9']='- Questo regno è al momento troppo affollato, scegline un altro.<br />';
 
 $lang['ext_error1']='Login failed\\nUsername doesn\'t exist';
 $lang['ext_error2']='Login failed\\nThis account has not yet been confirmed.';
 $lang['ext_error3']='Tempo limite scaduto!\\nNuovo login necessario.';
 $lang['ext_error4']='Login failed\\nPassword wrong!';
 $lang['ext_error5']='Unable to confirm this account!\\nLink wrong, check and try again.';
-$lang['ext_error6']='Unable to confirm this account!\\nThis account has been already confirmed.';
-$lang['ext_error7']='Account confirmed!\\nNow you can login and play.';
+$lang['ext_error6']='Unable to confirm this account!\\nThis account has been already confirmed.';
+$lang['ext_error7']='Account confirmed!\\nNow you can login and play.';
 $lang['ext_error8']='You have been blocked for an hour after 5 login attempts failed.';
 $lang['ext_error12']='Server temporarily closed for installation upgrades or maintenance. Please try again later. Thank you.';
 $lang['ext_error13']='Accesso negato!\\nHai tentato di entrare in una pagina riservata agli utenti loggati.';
