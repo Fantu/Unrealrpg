@@ -702,8 +702,6 @@ $cpueq=$db->QuerySelect("SELECT * FROM equipagcpu WHERE cpuid='".$id."' LIMIT 1"
 $cpuid=$db->QuerySelect("SELECT * FROM pcpudata WHERE id='".$difensore."' LIMIT 1");
 $db->QueryMod("UPDATE carcpu SET saluteattuale='".$cpuid['salute']."',energia='".$cpuid['energia']."' WHERE cpuid='".$id."' LIMIT 1");
 if( ($cpuid['eqcac']!=0 AND $cpueq['cac']==0) OR ($cpuid['eqarm']!=0 AND $cpueq['arm']==0) OR ($cpuid['eqscu']!=0 AND $cpueq['scu']==0) OR ($cpuid['eqpoz']!=0 AND $cpueq['poz']==0) ){
-$prob=rand(1,2);
-if($prob==1){
 if($cpuid['eqcac']!=0 AND $cpueq['cac']==0){
 $db->QueryMod("INSERT INTO equipcpu (cpuid,oggid) VALUES ('".$id."','".$cpuid['eqcac']."')");
 }
@@ -717,7 +715,6 @@ if($cpuid['eqpoz']!=0 AND $cpueq['poz']==0){
 $db->QueryMod("INSERT INTO equipcpu (cpuid,oggid) VALUES ('".$id."','".$cpuid['eqpoz']."')");
 }
 $db->QueryMod("UPDATE equipagcpu SET cac='".$cpud['eqcac']."',arm='".$cpud['eqarm']."',scu='".$cpud['eqscu']."',poz='".$cpud['eqpoz']."' WHERE cpuid='".$id."' LIMIT 1");
-}//se gli viene rimesso
 }//se ha perso qualche equipaggiamento
 }else{$id=0;}
 return $id;

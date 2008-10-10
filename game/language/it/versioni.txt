@@ -16,6 +16,7 @@ Legenda:<br />
 # Portare le ore massime di affitto di una stanza in Locanda da 6 a 8<br />
 # Ora i "server" di gioco si chiamano regni<br />
 # Rivisti scudo di legno e scudo di legno rinforzato, resi più equilibrati<br />
+# Ora gli oggetti persi dagli NPC sopravvissuti vengono sempre ripristinati nelle battaglie successive<br />
 </p>
 <p><strong>0.7.5.1</strong> (06/10/08 - Beta)<br />
 - Corretto il rientro dopo l'esplorazione oltre confine<br />
