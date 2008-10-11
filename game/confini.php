@@ -13,7 +13,7 @@ $direzione=(int)$_POST['direzione'];
 $errore="";
 if ($eventi['id']>0)
 $errore.=$lang['global_errore1'];
-if ((100/$usercar['salute']*$usercar['saluteattuale'])<40 OR (100/$usercar['energiamax']*$usercar['energia'])<40)
+if ((100/$usercar['salute']*$usercar['saluteattuale'])<60 OR (100/$usercar['energiamax']*$usercar['energia'])<60)
 $errore.=$lang['quest_error1'];
 $expinc=1+floor($usercar['livello']/2);
 if ($usercar['exp']>=$expinc*(120*$usercar['livello']))

@@ -7,7 +7,9 @@ Legenda:<br />
 - Correzione bug e patch di situazioni non previste<br />
 </p>
 <p><strong>0.7.7</strong> (Non disponibile - In sviluppo)<br />
++ Aggiornati i testi in inglese (27% tradotto su totale)<br />
 + Vari miglioramenti di sistema a Inventario<br />
+# Per andare oltre confine ora bisogna avere almeno il 60% di salute ed energia al posto di 40%<br />
 - Ora in inventario gli oggetti si vedono sempre nella lingua corretta<br />
 </p>
 <p><strong>0.7.6</strong> [R.1630] (10/10/08 - Beta)<br />
