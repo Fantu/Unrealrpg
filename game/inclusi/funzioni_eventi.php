@@ -383,7 +383,7 @@ $esplosione=1;
 elseif($prob==10)
 $esplosione=100;
 else
-$esplosione=rand(70,100)-$bonusabilita-($usercar['attmagico']/15)-$usercar['intelligenza']/25;
+$esplosione=rand(70,110)-$bonusabilita-($usercar['attmagico']/15)-$usercar['intelligenza']/25;
 $danni=0;
 if($esplosione>10){
 $esplosione=rand(30,110)-($usercar['alchimista']*5)-($usercar['agilita']/20)-($usercar['attmagico']/10)-($usercar['velocita']/50);
