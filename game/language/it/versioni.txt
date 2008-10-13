@@ -14,6 +14,9 @@ Legenda:<br />
 # Rivisto il lavoro in Laboratorio come alchimista, reso più equilibrato<br />
 - Ora in inventario gli oggetti si vedono sempre nella lingua corretta<br />
 </p>
+<p><strong>0.7.6.1</strong> (13/10/08 - Beta)<br />
+- Corretta l'inizializzazione di NPC "già esistenti"<br />
+</p>
 <p><strong>0.7.6</strong> [R.1630] (10/10/08 - Beta)<br />
 + Se mentre si è di guardia si combatte contro criminali la reputazione sale di 1 (sia che si vinca, sia che si perda)<br />
 + Aggiornati i testi in inglese (26% tradotto su totale)<br />

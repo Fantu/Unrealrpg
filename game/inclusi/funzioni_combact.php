@@ -714,7 +714,7 @@ $db->QueryMod("INSERT INTO equipcpu (cpuid,oggid) VALUES ('".$id."','".$cpuid['e
 if($cpuid['eqpoz']!=0 AND $cpueq['poz']==0){
 $db->QueryMod("INSERT INTO equipcpu (cpuid,oggid) VALUES ('".$id."','".$cpuid['eqpoz']."')");
 }
-$db->QueryMod("UPDATE equipagcpu SET cac='".$cpud['eqcac']."',arm='".$cpud['eqarm']."',scu='".$cpud['eqscu']."',poz='".$cpud['eqpoz']."' WHERE cpuid='".$id."' LIMIT 1");
+$db->QueryMod("UPDATE equipagcpu SET cac='".$cpuid['eqcac']."',arm='".$cpuid['eqarm']."',scu='".$cpuid['eqscu']."',poz='".$cpuid['eqpoz']."' WHERE cpuid='".$id."' LIMIT 1");
 }//se ha perso qualche equipaggiamento
 }else{$id=0;}
 return $id;
