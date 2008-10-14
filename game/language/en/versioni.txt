@@ -12,6 +12,7 @@ Legenda:<br />
 # Per andare oltre confine ora bisogna avere almeno il 60% di salute ed energia al posto di 40%<br />
 # Rivista la criminalità, resa più equilibrata<br />
 # Rivisto il lavoro in Laboratorio come alchimista, reso più equilibrato<br />
+# L'estrazione della lotteria ora è ogni 2 giorni al posto di 3<br />
 - Ora in inventario gli oggetti si vedono sempre nella lingua corretta<br />
 </p>
 <p><strong>0.7.6.1</strong> (13/10/08 - Beta)<br />

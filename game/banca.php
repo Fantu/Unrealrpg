@@ -6,7 +6,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 require('language/'.$language.'/lang_banca.php');
 $checklotteria = $db->QuerySelect("SELECT lotteria FROM config");
 if($checklotteria['lotteria']==0){$db->QueryMod("UPDATE config SET lotteria='".$adesso."'");}else{
-if(($checklotteria['lotteria']+259200)<$adesso){
+if(($checklotteria['lotteria']+172800)<$adesso){
 $partecipanti=$db->QuerySelect("SELECT COUNT(userid) AS num FROM banca WHERE lotteria>0");
 if($partecipanti['num']>0){
 $estratto=0;
@@ -93,7 +93,7 @@ $db->QueryMod("UPDATE config SET banca=banca-'".$daprelevare."'");
 if(isset($_POST['chiediprestito'])){
 $errore="";
 $prestito=(int)$_POST['inprestito'];
-if(!is_numeric($prestito)){
+if(!is_numeric($prestito) OR $prestito<10){
 $errore.=$lang['banca_errore1'];}
 else{
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$user['userid']."' LIMIT 1");
@@ -152,7 +152,7 @@ $nomevincitore=$vincitore['username'];}else
 $infovincitore=sprintf($lang['info_vincitore'],$nomevincitore);
 $userbank=$db->QuerySelect("SELECT * FROM banca WHERE userid='".$user['userid']."' LIMIT 1");
 $prestito=$userbank['prestito']+(floor(($userbank['prestito']/100)*(10*$userbank['incprestito'])));
-$proxestrazionedata=date($lang['dataora'],($checklotteria['lotteria']+259200));
+$proxestrazionedata=date($lang['dataora'],($checklotteria['lotteria']+172800));
 $user=$db->QuerySelect("SELECT * FROM utenti WHERE userid='".$user['userid']."' LIMIT 1");
 require('template/int_banca.php');
 ?>
