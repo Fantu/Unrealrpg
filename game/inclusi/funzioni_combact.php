@@ -557,7 +557,7 @@ if($battle['attid']==$dc->id($vincitore)){$vincitore=1;}else{$vincitore=2;}
 Inreport($battleid,$input);
 Endcombact($battle['id'],$vincitore);
 }else{//continua
-if($expb!=$battle['exp']){
+if($expb!=$battle['exp'] AND ($dc->tattica(1,1)!=3 OR $dc->tattica(2,1)!=3)){
 $db->QueryMod("UPDATE battle SET exp='".$expb."' WHERE id='".$battleid."' LIMIT 1");}
 $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,battleid,turni) VALUES ('0','".$adesso."','50','0','6','".$battleid."','".$turni."')");
 }//fine continua
