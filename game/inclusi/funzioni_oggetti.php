@@ -11,6 +11,7 @@ $catoggetti_nome=array(
 3,
 4=>array(1,2),
 5=>array(1,2,3,4,5),
+7=>array(1),
 6=>array(1,2)
 );
 
