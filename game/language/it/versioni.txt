@@ -10,6 +10,7 @@ Legenda:<br />
 + Non si può chiedere un prestito minore di 10 monete<br />
 + Se entrambi i combattenti rimangono in difensiva per quel "round" non ricevono esperienza in nessun caso<br />
 + Aggiunta la destrezza necessaria alla visualizzazione dettagliata degli oggetti<br />
++ Nella visualizzazione dettagliata degli oggetti forza fisica e destrezza necessari non appaiono se non ci sono per l'oggetto visualizzato<br />
 + Aggiornati i testi in inglese (27% tradotto su totale)<br />
 + Vari miglioramenti di sistema a Inventario, sistema di controllo usura/rottura degli oggetti, visualizzazione dettagliata degli oggetti<br />
 # Per andare oltre confine ora bisogna avere almeno il 60% di salute ed energia al posto di 40%<br />

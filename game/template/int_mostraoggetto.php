@@ -4,18 +4,18 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	exit();
 }?>
 <center><h2><?php echo $nomeoggetto; ?></h2></center><br />
-<?php echo $lang['Costo']; ?>: <?php echo $oggetto['costo']; ?><br />
-<?php echo $lang['Usura']; ?>: <?php echo $oggetto['usura']; ?><br />
-<?php echo $lang['energianec']; ?>: <?php echo $oggetto['energia']; ?><br />
-<?php echo $lang['forzafisicanec']; ?>: <?php echo $oggetto['forzafisica']; ?><br />
-<?php echo $lang['destrezzanec']; ?>: <?php echo $oggetto['destrezza']; ?><br />
-<?php echo $lang['bonuseff']; ?>: <?php echo $oggetto['bonuseff']; ?>&#37;<br />
-<?php echo $lang['probtrovare']; ?>: <?php echo $oggetto['probtrovare']; ?><br />
-<?php echo $lang['probrottura']; ?>: <?php echo $oggetto['probrottura']; ?><br />
-<?php echo $lang['recsalute']; ?>: <?php echo $oggetto['recsalute']; ?><br />
-<?php echo $lang['recenergia']; ?>: <?php echo $oggetto['recenergia']; ?><br />
-<?php echo $lang['danno']; ?>: <?php echo $oggetto['danno']; ?><br />
-<?php echo $lang['difesafisica']; ?>: <?php echo $oggetto['difesafisica']; ?><br />
+<?php echo $lang['Costo'].": ".$oggetto['costo']; ?><br />
+<?php echo $lang['Usura'].": ".$oggetto['usura']; ?><br />
+<?php echo $lang['energianec'].": ".$oggetto['energia']; ?><br />
+<?php if($oggetto['forzafisica']>0){ echo $lang['forzafisicanec'].": ".$oggetto['forzafisica']; } ?><br />
+<?php if($oggetto['destrezza']>0){ echo $lang['destrezzanec'].": ".$oggetto['destrezza']; } ?><br />
+<?php echo $lang['bonuseff'].": ".$oggetto['bonuseff']; ?>&#37;<br />
+<?php echo $lang['probtrovare'].": ".$oggetto['probtrovare']; ?><br />
+<?php echo $lang['probrottura'].": ".$oggetto['probrottura']; ?><br />
+<?php echo $lang['recsalute'].": ".$oggetto['recsalute']; ?><br />
+<?php echo $lang['recenergia'].": ".$oggetto['recenergia']; ?><br />
+<?php echo $lang['danno'].": ".$oggetto['danno']; ?><br />
+<?php echo $lang['difesafisica'].": ".$oggetto['difesafisica']; ?><br />
 <br />
 <br />
 <?php echo $indietro; ?>
