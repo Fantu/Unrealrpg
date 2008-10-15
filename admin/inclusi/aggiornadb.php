@@ -3,50 +3,14 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	header("Location: ../../index.php?error=16");
 	exit();
 }
-$newversion="0.7.6";
+$newversion="0.7.7";
 foreach($game_server as $chiave=>$elemento){
 if($chiave!=999){
 $db->database=$chiave;
 $check=$db->QuerySelect("SELECT version FROM config WHERE id=".$chiave);
 if($check['version']!=$newversion AND $newversion==$game_revision){
 
-$db->QueryMod("INSERT INTO `oggetti` (
-`id` ,
-`tipo` ,
-`categoria` ,
-`probrottura` ,
-`costo` ,
-`energia` ,
-`usura` ,
-`bonuseff` ,
-`forzafisica` ,
-`probtrovare` ,
-`recsalute` ,
-`recenergia` ,
-`abilitanec` ,
-`materiale` ,
-`danno` ,
-`difesafisica`
-)
-VALUES 
-(NULL , '6', '1', '180', '15', '5', '30', '0', '20', '0', '0', '0', '1', '1', '0', '6'),
-(NULL , '6', '1', '150', '25', '7', '60', '0', '40', '0', '0', '0', '1', '2', '0', '7'),
-(NULL , '6', '1', '120', '35', '8', '100', '0', '60', '0', '0', '0', '1', '3', '0', '8'),
-(NULL , '6', '2', '180', '15', '12', '30', '0', '35', '0', '0', '0', '1', '1', '0', '9'),
-(NULL , '6', '2', '150', '25', '14', '60', '0', '70', '0', '0', '0', '1', '2', '0', '11'),
-(NULL , '6', '2', '120', '35', '16', '100', '0', '90', '0', '0', '0', '1', '3', '0', '12'),
-(NULL , '5', '2', '40', '150', '60', '450', '2', '90', '0', '0', '0', '1', '4', '18', '0'),
-(NULL , '5', '2', '20', '400', '60', '1000', '5', '90', '0', '0', '0', '6', '4', '22', '0');
-");
-
-$db->QueryMod("UPDATE `oggetti` SET `energia` = '9' WHERE `oggetti`.`id` =57 LIMIT 1");
-$db->QueryMod("UPDATE `oggetti` SET `energia` = '10' WHERE `oggetti`.`id` =58 LIMIT 1");
-$db->QueryMod(" CREATE TABLE `bacheca` (
-`id` INT UNSIGNED NOT NULL AUTO_INCREMENT ,
-`testo` TEXT NOT NULL ,
-`data` INT( 13 ) UNSIGNED NOT NULL ,
-PRIMARY KEY ( `id` )
-) ENGINE = MYISAM");
+$db->QueryMod("ALTER TABLE `oggetti` ADD `destrezza` SMALLINT UNSIGNED NOT NULL DEFAULT '0' AFTER `forzafisica`");
 
 	/*//creazione record per tab con 1 record per utente
 	$a=$db->QueryCiclo("SELECT userid FROM utenti WHERE conferma='1' AND personaggio='1'");

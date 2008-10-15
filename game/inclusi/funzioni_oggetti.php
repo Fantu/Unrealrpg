@@ -66,12 +66,14 @@ if($usura>=$oggetto['usura']){
 $rotto=1;
 $oggpersi.=sprintf($lang['oggetto_usurato'],$lang['oggetto'.$ogg['oggid'].'_nome'])."<br />";
 }else{
+if($oggetto['probrottura']!=0){
 $rottura=floor($oggetto['probrottura']/$oggetto['usura']*$usura);
 $prob=rand(1,10000);
 if($prob<$rottura){
 $rotto=1;
 $oggpersi.=sprintf($lang['oggetto_rotto'],$lang['oggetto'.$ogg['oggid'].'_nome'])."<br />";
-}
+}//se si rompe
+}//se può rompersi
 }
 if($rotto==1){
 $db->QueryMod("DELETE FROM inoggetti WHERE id='".$ogg['id']."'");
