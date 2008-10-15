@@ -46,6 +46,7 @@ $liveconomia=$lang['in_crisi'];
 }else{
 $liveconomia=$lang['prospera'];}
 $liveconomia=sprintf($lang['liv_economia'],$liveconomia);
+$montesoreria=sprintf($lang['monete_tesoreria_regno'],$leconomia);
 
 $guardie=$db->QuerySelect("SELECT COUNT(id) AS n FROM eventi WHERE lavoro='9'");
 $nguardie=sprintf($lang['guardie_presenti'],$guardie['n']);
