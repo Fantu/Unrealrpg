@@ -7,8 +7,8 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <?php echo $lang['Costo'].": ".$oggetto['costo']; ?><br />
 <?php echo $lang['Usura'].": ".$oggetto['usura']; ?><br />
 <?php echo $lang['energianec'].": ".$oggetto['energia']; ?><br />
-<?php if($oggetto['forzafisica']>0){ echo $lang['forzafisicanec'].": ".$oggetto['forzafisica']; } ?><br />
-<?php if($oggetto['destrezza']>0){ echo $lang['destrezzanec'].": ".$oggetto['destrezza']; } ?><br />
+<?php if($oggetto['forzafisica']>0){ echo $lang['forzafisicanec'].": ".$oggetto['forzafisica']."<br />"; } ?>
+<?php if($oggetto['destrezza']>0){ echo $lang['destrezzanec'].": ".$oggetto['destrezza']."<br />"; } ?>
 <?php echo $lang['bonuseff'].": ".$oggetto['bonuseff']; ?>&#37;<br />
 <?php echo $lang['probtrovare'].": ".$oggetto['probtrovare']; ?><br />
 <?php echo $lang['probrottura'].": ".$oggetto['probrottura']; ?><br />
