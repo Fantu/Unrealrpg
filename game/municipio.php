@@ -49,7 +49,14 @@ $liveconomia=sprintf($lang['liv_economia'],$liveconomia);
 $montesoreria=sprintf($lang['monete_tesoreria_regno'],$leconomia);
 
 $guardie=$db->QuerySelect("SELECT COUNT(id) AS n FROM eventi WHERE lavoro='9'");
-$nguardie=sprintf($lang['guardie_presenti'],$guardie['n']);
+if($guardie['n']>0){
+$eg=$db->QueryCiclo("SELECT * FROM eventi WHERE lavoro='9'");
+while($gd=$db->QueryCicloResult($eg)) {
+$du=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$gd['userid']."'");
+$sguardie.=" ".$du['username'];
+}//per ogni guardia
+}else{$sguardie=$lang['nessuno'];}
+$nguardie=sprintf($lang['guardie_presenti'],$sguardie);
 
 $bacheca="";
 $bdata=$db->QuerySelect("SELECT COUNT(id) AS n FROM bacheca");
@@ -57,7 +64,7 @@ if($bdata['n']>0){
 $bd=$db->QueryCiclo("SELECT * FROM bacheca ORDER BY data DESC");
 while($br=$db->QueryCicloResult($bd)) {
 $bacheca.=date("d/m/y - H:i",$br['data'])." - ".$br['testo']."<br/>";
-}
+}//per ogni evento
 $bdataold=$db->QuerySelect("SELECT COUNT(id) AS n FROM bacheca WHERE data<'".($adesso-259200)."'");
 if($bdataold['n']>0)$db->QueryMod("DELETE FROM bacheca WHERE data<'".($adesso-259200)."'");
 }else{//se ci sono eventi

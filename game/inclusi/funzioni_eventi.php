@@ -762,7 +762,8 @@ $userid=$g['userid'];
 $db->QueryMod("INSERT INTO cachequest (userid,questid) VALUES ('".$userid."','5')");
 $db->QueryMod("UPDATE caratteristiche SET reputazione=reputazione+'1' WHERE userid='".$userid."' LIMIT 1");
 $db->QueryMod("DELETE FROM eventi WHERE userid='".$userid."'");
-inbacheca($lang['criminale_attacca_guardia']);
+$eu=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$userid."'");
+inbacheca(sprintf($lang['criminale_attacca_guardia'],$eu['username']));
 }//fine se ci sono guardie
 if($combact==1){
 $prs=array(2,3);
