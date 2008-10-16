@@ -2,10 +2,10 @@
 $lang['tempo_gen_pagina']='Page loaded in: %s seconds - Queries done: %s';
 $lang['Login']='Login';
 $lang['Username']='Username';
-$lang['Server']='Server';
+$lang['Server']='Regno';
 $lang['Password']='Password';
 $lang['Email']='Email';
-$lang['Informazioni_sui_server']='Servers information:';
+$lang['Informazioni_sui_server']='Informazioni sui regni:';
 $lang['Nome']='Name';
 $lang['Utenti_registrati']='Registered users';
 $lang['Ultima_settimana']='Last week';
@@ -25,7 +25,7 @@ $lang['Newsletter']='Newsletter';
 $lang['scarica_firefox']='Download Firefox';
 $lang['desc_firefox']='You are using Internet Explorer that, actually, the last version doesn\'t support fully the web\'s standards, particulary the css. We recommend using Mozilla Firefox, free browser, more secure, powerful and with more respect of the standards. To download the last ufficial version click on the banner below.';
 
-$lang['reg_error1']='- You haven`t selected the server!<br />';
+$lang['reg_error1']='- Non hai selezionato il regno!<br />';
 $lang['reg_error2']='- You haven`t write your username!<br />';
 $lang['reg_error3']='- The username must be at least 3 characters!<br />';
 $lang['reg_error4']='- Non hai scritto la password!<br />';

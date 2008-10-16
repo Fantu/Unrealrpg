@@ -7,9 +7,10 @@ $lang['ronda_cittadina']='Ronda cittadina';
 $lang['desc_ronda_cittadina']='Puoi fare la guardia avendo una retribuzione di 3 monete, può sembrare poco ma è un lavoro necessario per fare in modo che la criminalità non proliferi e danneggi il regno.';
 $lang['fai_ronda']='Fai la ronda';
 $lang['ronda_errore1']='- Non sei in condizioni abbastanza buone per fare la guardia.<br />';
-$lang['guardie_presenti']='Attualmente ci sono %s guardie.';
+$lang['guardie_presenti']='Actually there are %s guards.';
 $lang['report_ronda']='Report ronda cittadina';
 $lang['report_lavronda']='Hai fatto 1 ora di guardia senza incontrare nessun problema ed hai guadagnato %s monete.';
 $lang['desc_bacheca']='Bacheca: ultimi eventi dal regno';
 $lang['nessun_evento_recente']='Nessun evento recente';
+$lang['monete_tesoreria_regno']='Tesoreria del regno: %s monete';
 ?>
