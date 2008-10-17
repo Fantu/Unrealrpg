@@ -32,7 +32,7 @@ if($config['atticriminali']<$adesso){
 $prob=rand(1,500);
 if($prob<=$config['crimine'])
 Controllacrimine($config);
-$tempopcrimine=3600-(200*floor($config['utenti']/10));
+$tempopcrimine=3600-($config['utenti']*20);
 if($tempopcrimine<600){$tempopcrimine=600;}
 $db->QueryMod("UPDATE config SET atticriminali='".($adesso+$tempopcrimine)."'");}
 }//se il server non è chiuso
