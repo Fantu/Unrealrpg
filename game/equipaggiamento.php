@@ -44,6 +44,40 @@ exit();
 }
 }//fine imposta arma corpo a corpo
 
+if (isset($_POST['impoadi'])){
+$errore="";
+$aadi=(int)$_POST['aadi'];
+if ($aadi<0)
+$errore.=$lang['equip_errore1'];
+if($errore=="" AND $aadi>0){
+$usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$user['userid']."' LIMIT 1");
+$aadisel=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$aadi."' LIMIT 1");
+if ($usercar['attfisico']<$aadisel['forzafisica'])
+$errore.=$lang['equip_errore2'];
+if ($usercar['destrezza']<$aadisel['destrezza'])
+$errore.=$lang['equip_errore3'];
+}//se arma selezionata
+if ($eventi['id']>0 AND $evento['tipo']!=4)
+$errore.=$lang['global_errore1'];
+if($errore){
+	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
+else {
+if($userequip['adi']!=0){
+$datrasf=$db->QuerySelect("SELECT * FROM equip WHERE userid='".$user['userid']."' AND oggid='".$userequip['adi']."' LIMIT 1");
+$db->QueryMod("DELETE FROM equip WHERE id='".$datrasf['id']."' LIMIT 1");
+$db->QueryMod("INSERT INTO inoggetti (oggid,userid,usura) VALUES ('".$datrasf['oggid']."','".$datrasf['userid']."','".$datrasf['usura']."')");
+}//se c'è già un oggetto impo
+$db->QueryMod("UPDATE equipaggiamento SET adi='".$aadi."' WHERE userid='".$user['userid']."' LIMIT 1");
+if($aadi!=0){
+$datrasf=$db->QuerySelect("SELECT * FROM inoggetti WHERE userid='".$user['userid']."' AND oggid='".$aadi."' LIMIT 1");
+$db->QueryMod("DELETE FROM inoggetti WHERE id='".$datrasf['id']."' LIMIT 1");
+$db->QueryMod("INSERT INTO equip (oggid,userid,usura) VALUES ('".$datrasf['oggid']."','".$datrasf['userid']."','".$datrasf['usura']."')");
+}
+echo "<script language=\"javascript\">window.location.href='index.php?loc=equipaggiamento'</script>";
+exit();
+}
+}//fine imposta arma a distanza
+
 if (isset($_POST['impoarm'])){
 $errore="";
 $armatura=(int)$_POST['arm'];
@@ -143,39 +177,48 @@ if($seogg['id']>0){
 $oggacac=$db->QueryCiclo("SELECT * FROM oggetti WHERE tipo='5'");
 while($ogg=$db->QueryCicloResult($oggacac)) {
 $armicact[$ogg['id']]=$ogg['id'];
-}
+}//cache tutte armi corpo a corpo
 $oggetti=$db->QueryCiclo("SELECT oggid FROM inoggetti WHERE userid='".$user['userid']."' GROUP BY oggid");
 while($ogg2=$db->QueryCicloResult($oggetti)) {
 if(isset($armicact[$ogg2['oggid']]))
 $armicac[$ogg2['oggid']]=$lang['oggetto'.$ogg2['oggid'].'_nome'];
-}
+}//cache proprie armi corpo a corpo
+$oggaadi=$db->QueryCiclo("SELECT * FROM oggetti WHERE tipo='7'");
+while($ogg=$db->QueryCicloResult($oggacac)) {
+$armiadit[$ogg['id']]=$ogg['id'];
+}//cache tutte armi a distanza
+$oggetti=$db->QueryCiclo("SELECT oggid FROM inoggetti WHERE userid='".$user['userid']."' GROUP BY oggid");
+while($ogg2=$db->QueryCicloResult($oggetti)) {
+if(isset($armiadit[$ogg2['oggid']]))
+$armiadi[$ogg2['oggid']]=$lang['oggetto'.$ogg2['oggid'].'_nome'];
+}//cache proprie armi a distanza
 $oggarm=$db->QueryCiclo("SELECT * FROM oggetti WHERE tipo='6' AND categoria='1'");
 while($ogg=$db->QueryCicloResult($oggarm)) {
 $armt[$ogg['id']]=$ogg['id'];
-}
+}//cache tutte armature
 $oggetti=$db->QueryCiclo("SELECT oggid FROM inoggetti WHERE userid='".$user['userid']."' GROUP BY oggid");
 while($ogg2=$db->QueryCicloResult($oggetti)) {
 if(isset($armt[$ogg2['oggid']]))
 $armature[$ogg2['oggid']]=$lang['oggetto'.$ogg2['oggid'].'_nome'];
-}
+}//cache proprie armature
 $oggscu=$db->QueryCiclo("SELECT * FROM oggetti WHERE tipo='6' AND categoria='2'");
 while($ogg=$db->QueryCicloResult($oggscu)) {
 $scut[$ogg['id']]=$ogg['id'];
-}
+}//cache tutti scudi
 $oggetti=$db->QueryCiclo("SELECT oggid FROM inoggetti WHERE userid='".$user['userid']."' GROUP BY oggid");
 while($ogg2=$db->QueryCicloResult($oggetti)) {
 if(isset($scut[$ogg2['oggid']]))
 $scudi[$ogg2['oggid']]=$lang['oggetto'.$ogg2['oggid'].'_nome'];
-}
+}//cache propri scudi
 $oggpoz=$db->QueryCiclo("SELECT * FROM oggetti WHERE tipo='4'");
 while($ogg=$db->QueryCicloResult($oggpoz)) {
 $pozt[$ogg['id']]=$ogg['id'];
-}
+}//cache tutte pozioni
 $oggetti=$db->QueryCiclo("SELECT oggid FROM inoggetti WHERE userid='".$user['userid']."' GROUP BY oggid");
 while($ogg2=$db->QueryCicloResult($oggetti)) {
 if(isset($pozt[$ogg2['oggid']]))
 $pozioni[$ogg2['oggid']]=$lang['oggetto'.$ogg2['oggid'].'_nome'];
-}
+}//cache proprie pozioni
 }//se ci sono oggetti
 
 if($userequip['cac']!=0){
@@ -188,6 +231,18 @@ $armacacimpo="<a href=\"index.php?loc=mostraoggetto&amp;ogg=".$userequip['cac'].
 $desc_impocac=sprintf($lang['armacacimpo'],$armacacimpo);
 }else{
 $desc_impocac=$lang['noarmacacimpo'];
+}
+
+if($userequip['adi']!=0){
+$usuraogg='';
+if($user['plus']>0){
+$usuraoggsel=$db->QuerySelect("SELECT * FROM equip WHERE userid='".$user['userid']."' AND oggid='".$userequip['adi']."' LIMIT 1");
+$usuraogg='title="'.$lang['usura_attuale'].$usuraoggsel['usura'].'"';
+}
+$armaadiimpo="<a href=\"index.php?loc=mostraoggetto&amp;ogg=".$userequip['adi']."&amp;da=equip\"".$usuraogg.">".$lang['oggetto'.$userequip['adi'].'_nome']."</a>";
+$desc_impoadi=sprintf($lang['armaadiimpo'],$armacacimpo);
+}else{
+$desc_impoadi=$lang['noarmaadiimpo'];
 }
 
 if($userequip['arm']!=0){

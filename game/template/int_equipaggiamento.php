@@ -34,6 +34,30 @@ echo "<option value=\"$chiave\">$elemento</option>";} ?>
 </form>
 <br />
 <br />
+<?php echo $desc_impoadi; ?>
+<br />
+<form action="" method="post" name="fimpoadi">
+<table border="0">
+<tr>
+<td>
+<?php echo $lang['seleziona_adi']; ?> <select name="aadi" id="aadi">
+<option value="-1" selected="selected">--------</option>
+<option value="0"><?php echo $lang['Niente']; ?></option>
+<?php if($armiadi){
+foreach($armiadi as $chiave=>$elemento)
+echo "<option value=\"$chiave\">$elemento</option>";} ?>
+</select>
+</td>
+</tr>
+<tr>
+<td>
+<input type="submit" name="impoadi" value="<?php echo $lang['Imposta']; ?>" />
+</td>
+</tr>
+</table>
+</form>
+<br />
+<br />
 <?php echo $lang['Equipdifensivo']; ?>
 <br />
 <br />

@@ -35,6 +35,9 @@ VALUES
 (NULL , '7', '1', '0', '8', '15', '10', '0', '30', '50', '0', '0', '0', '0', '0', '9', '0');
 ");
 
+$db->QueryMod("ALTER TABLE `equipaggiamento` ADD `adi` SMALLINT UNSIGNED NOT NULL DEFAULT '0'");
+$db->QueryMod("ALTER TABLE `equipagcpu` ADD `adi` SMALLINT UNSIGNED NOT NULL DEFAULT '0'");
+
 	/*//creazione record per tab con 1 record per utente
 	$a=$db->QueryCiclo("SELECT userid FROM utenti WHERE conferma='1' AND personaggio='1'");
 	while($var=$db->QueryCicloResult($a))
