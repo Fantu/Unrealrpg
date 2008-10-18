@@ -7,6 +7,7 @@ Legenda:<br />
 - Correzione bug e patch di situazioni non previste<br />
 </p>
 <p><strong>0.7.8</strong> (Non disponibile - In sviluppo)<br />
++ Aggiunti agli oggetti: Coltelli di rame, Coltelli di ferro, Coltelli di acciaio<br />
 + Vari miglioramenti di sistema a Municipio<br />
 # Rivista la criminalità, resa più equilibrata<br />
 </p>
