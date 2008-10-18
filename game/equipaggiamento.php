@@ -184,7 +184,7 @@ if(isset($armicact[$ogg2['oggid']]))
 $armicac[$ogg2['oggid']]=$lang['oggetto'.$ogg2['oggid'].'_nome'];
 }//cache proprie armi corpo a corpo
 $oggaadi=$db->QueryCiclo("SELECT * FROM oggetti WHERE tipo='7'");
-while($ogg=$db->QueryCicloResult($oggacac)) {
+while($ogg=$db->QueryCicloResult($oggaadi)) {
 $armiadit[$ogg['id']]=$ogg['id'];
 }//cache tutte armi a distanza
 $oggetti=$db->QueryCiclo("SELECT oggid FROM inoggetti WHERE userid='".$user['userid']."' GROUP BY oggid");
