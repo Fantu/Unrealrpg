@@ -127,9 +127,11 @@ class Dati{
 
 	public function Viewequip($chi) {
 	global $lang;
-	if($this->equip($chi,'cac')!=0 OR $this->equip($chi,'arm')!=0 OR $this->equip($chi,'scu')!=0 OR $this->equip($chi,'poz')!=0){
+	if($this->equip($chi,'cac')!=0 OR $this->equip($chi,'arm')!=0 OR $this->equip($chi,'scu')!=0 OR $this->equip($chi,'poz')!=0 OR $this->equip($chi,'adi')!=0){
 	if($this->equip($chi,'cac')!=0)
 	$equip.=" ".$lang['oggetto'.$this->equip($chi,'cac').'_nome'];
+	if($this->equip($chi,'adi')!=0)
+	$equip.=" ".$lang['oggetto'.$this->equip($chi,'adi').'_nome'];
 	if($this->equip($chi,'arm')!=0)
 	$equip.=" ".$lang['oggetto'.$this->equip($chi,'arm').'_nome'];
 	if($this->equip($chi,'scu')!=0)
