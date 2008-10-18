@@ -240,7 +240,7 @@ $usuraoggsel=$db->QuerySelect("SELECT * FROM equip WHERE userid='".$user['userid
 $usuraogg='title="'.$lang['usura_attuale'].$usuraoggsel['usura'].'"';
 }
 $armaadiimpo="<a href=\"index.php?loc=mostraoggetto&amp;ogg=".$userequip['adi']."&amp;da=equip\"".$usuraogg.">".$lang['oggetto'.$userequip['adi'].'_nome']."</a>";
-$desc_impoadi=sprintf($lang['armaadiimpo'],$armacacimpo);
+$desc_impoadi=sprintf($lang['armaadiimpo'],$armaadiimpo);
 }else{
 $desc_impoadi=$lang['noarmaadiimpo'];
 }
