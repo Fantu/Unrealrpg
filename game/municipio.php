@@ -53,6 +53,7 @@ if($guardie['n']>0){
 $eg=$db->QueryCiclo("SELECT * FROM eventi WHERE lavoro='9'");
 while($gd=$db->QueryCicloResult($eg)) {
 $du=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$gd['userid']."'");
+if($sguardie){$sguardie.=",";}
 $sguardie.=" ".$du['username'];
 }//per ogni guardia
 }else{$sguardie=$lang['nessuno'];}
