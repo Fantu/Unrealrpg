@@ -12,6 +12,8 @@ Legenda:<br />
 + Aggiunte le armi a distanza nella visualizzazione dell'equipaggiamento durante il primo "round" di un combattimento<br />
 + Vari miglioramenti di sistema a Municipio<br />
 # Rivista la criminalità, resa più equilibrata<br />
+# Rivisto il lavoro in Laboratorio come alchimista, reso più equilibrato<br />
+- Corretto un bug nel calcolo della probabilità di incidente nei lavori<br />
 </p>
 <p><strong>0.7.7</strong> [R.1652] (16/10/08 - Beta)<br />
 + Non si può chiedere un prestito minore di 10 monete<br />
