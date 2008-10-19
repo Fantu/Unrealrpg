@@ -29,7 +29,7 @@ $db->QueryMod("INSERT INTO `oggetti` (
 `danno` ,
 `difesafisica`
 )
-VALUES 
+VALUES
 (NULL , '7', '1', '0', '5', '10', '10', '0', '10', '50', '0', '0', '0', '0', '0', '6', '0'),
 (NULL , '7', '1', '0', '7', '13', '10', '0', '25', '50', '0', '0', '0', '0', '0', '8', '0'),
 (NULL , '7', '1', '0', '8', '15', '10', '0', '30', '50', '0', '0', '0', '0', '0', '9', '0');
@@ -37,6 +37,8 @@ VALUES
 
 $db->QueryMod("ALTER TABLE `equipaggiamento` ADD `adi` SMALLINT UNSIGNED NOT NULL DEFAULT '0'");
 $db->QueryMod("ALTER TABLE `equipagcpu` ADD `adi` SMALLINT UNSIGNED NOT NULL DEFAULT '0'");
+$db->QueryMod("ALTER TABLE `utenti` DROP `server`");
+$db->QueryMod("ALTER TABLE `utenti` DROP `language`");
 
 	/*//creazione record per tab con 1 record per utente
 	$a=$db->QueryCiclo("SELECT userid FROM utenti WHERE conferma='1' AND personaggio='1'");
@@ -72,8 +74,8 @@ $db->QueryMod("UPDATE caratteristiche SET agilita='".$agilita."',attfisico='".$a
 }//se livello maggiore di 1
 }//per ogni utente
 // FINE SISTEMAZIONE CARATTERISTICHE E RITORNO A LIVELLO 1*/
-	
-	
+
+
 
 $db->QueryMod("UPDATE `config` SET version='".$newversion."' WHERE id=".$chiave);
 echo sprintf($lang['aggiornato_db_server'],$chiave,$newversion)."<br />";

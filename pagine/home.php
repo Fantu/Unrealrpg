@@ -3,7 +3,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	header("Location: ../index.php?error=16");
 	exit();
 }
-		if( $_POST['step']=="registrazione" ) {
+		if( $_POST['step']=="registrazione" ){
 			$errore="";
 			$server=(int)$_POST['server'];
 			foreach($game_server as $chiave=>$elemento){
@@ -23,18 +23,18 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 					$errore.=$lang['reg_error5'];
 				if(!$_POST['email'])
 					$errore.=$lang['reg_error6'];
-				if(!eregi("^.+@.+\..{2,3}$",$_POST['email']))	
+				if(!eregi("^.+@.+\..{2,3}$",$_POST['email']))
 					$errore.=$lang['reg_error7'];
-			if( empty($errore) ) {
+			if(empty($errore)){
 				$username=htmlspecialchars($_POST['username'],ENT_QUOTES);
-				$a=$db->QuerySelect("SELECT maxutenti AS Max, utenti AS Ut FROM config WHERE id='".$server."'");	
-				$a2=$db->QuerySelect("SELECT COUNT(*) AS Us1 FROM utenti WHERE username='".$username."'");				
+				$a=$db->QuerySelect("SELECT maxutenti AS Max, utenti AS Ut FROM config WHERE id='".$server."'");
+				$a2=$db->QuerySelect("SELECT COUNT(*) AS Us1 FROM utenti WHERE username='".$username."'");
 				if($a2['Us1']>0)
 					$errore.=$lang['reg_error8'];
 				if($a['Ut']>=$a['Max'])
 					$errore.=$lang['reg_error9'];
 			}
-			
+
 			if($errore){
 				$outputreg="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
 			else {
@@ -51,7 +51,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 				$newsletter=(int)$_POST['newsletter'];
 				if($newsletter!=0 AND $newsletter!=1)
 				$newsletter=1;
-				$db->QueryMod("INSERT INTO utenti (username,password,codice,email,dataiscrizione,ipreg,server,ultimazione,refer,refertime,ultimologin,language,mailnews) VALUES ('".$username."','".$pass."','".$cod."','".$_POST['email']."','".$adesso."','".$ip."','".$server."','".$adesso."','".$refer."','".$refertime."','".$adesso."','".$language."','".$newsletter."')");
+				$db->QueryMod("INSERT INTO utenti (username,password,codice,email,dataiscrizione,ipreg,ultimazione,refer,refertime,ultimologin,mailnews) VALUES ('".$username."','".$pass."','".$cod."','".$_POST['email']."','".$adesso."','".$ip."','".$adesso."','".$refer."','".$refertime."','".$adesso."','".$newsletter."')");
 				$messaggio=sprintf($lang['testo_mail_conferma'],$game_name,$game_link,$server,$cod,$game_name);
 				mail($_POST['email'],$lang['Conferma_account'].$game_name,$messaggio,$game_intestazione_mail);
 				$outputreg=$lang['account_creato_ok'];
@@ -78,5 +78,5 @@ foreach($game_language as $chiave=>$elemento){
 if($chiave!=$language)
 $lingue[$chiave]="<a href=\"index_".$chiave.".php\">".$elemento."</a> ";
 }//fine per ogni lingua
-require('game/template/est_pagina_home.php');	  
+require('game/template/est_pagina_home.php');
 ?>
