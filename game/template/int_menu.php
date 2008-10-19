@@ -28,7 +28,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 </ul></li>
 </ul>
 <ul>
-<li><a href="index.php?loc=submenu&amp;menu=confini"><?php echo $game_server[$user['server']]; ?></a><ul>
+<li><a href="index.php?loc=submenu&amp;menu=confini"><?php echo $game_server[$config['id']]; ?></a><ul>
 <li><a href="index.php?loc=confini"><?php echo $lang['Confini']; ?></a></li>
 </ul></li>
 </ul>
