@@ -40,7 +40,7 @@ echo "<option value=\"$chiave\">$elemento</option>"; ?>
 <?php echo $lang['desc_attivare_plus_con_punti']; ?>
 <br />
 <?php if($user['puntiplus']<3){
-echo $lang['non_puoi_attivare_nessun_plus'];	
+echo $lang['non_puoi_attivare_nessun_plus'];
 }else{ ?>
 <a href="index.php?loc=opzioni&amp;attivaplus=1"><?php echo $lang['attiva_plus_con_punti1']; ?></a>
 <?php }
@@ -52,7 +52,7 @@ if($user['puntiplus']>99){ ?>
 <?php } ?>
 <br />
 <br />
-<?php echo sprintf($lang['desc_link_refer'],$game_name,$game_server[$user['server']]); ?><br />
+<?php echo sprintf($lang['desc_link_refer'],$game_name,$game_server[$config['id']]); ?><br />
 <?php echo "<blockquote>".$linkref."</blockquote>"; ?><br />
 <br />
 <?php echo $newsletters; ?><br />

@@ -26,7 +26,7 @@ if($magie[$chiave]['tipo']==$chiavetm AND $magie[$chiave]['elemento']==$chiaveel
 $outputmagie[$elementoel][$elementotm][$chiave]=$elemento;
 }//se corrispondente
 }//mostra ogni magia
-}//per ogni tipo 
+}//per ogni tipo
 }//per ogni elemento
 }/*fine mostra incantesimi*/
 

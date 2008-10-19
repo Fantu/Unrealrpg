@@ -3,7 +3,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	header("Location: ../index.php?error=16");
 	exit();
 }
-require('language/'.$language.'/lang_laboratorio.php');
+require_once('language/'.$language.'/lang_laboratorio.php');
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$user['userid']."' LIMIT 1");
 $oggpozioni=$db->QuerySelect("SELECT count(id) AS id FROM oggetti WHERE tipo='4' AND abilitanec<='".$usercar['alchimista']."'");
 if($oggpozioni['id']>0){
@@ -25,15 +25,14 @@ if ($eventi['id']>0)
 $errore.=$lang['global_errore1'];
 if($ore<1 OR $ore>5)
 $errore.=$lang['global_errore2'];
-$regno=$db->QuerySelect("SELECT banca FROM config");
-if($regno['banca']<1)
+if($config['banca']<1)
 $errore.=$lang['global_errore3'];
 if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
-else {
-$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,lavoro,ore) VALUES ('".$user['userid']."','".$adesso."','3600','2','1','2','".$ore."')");	
+else{
+$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,lavoro,ore) VALUES ('".$user['userid']."','".$adesso."','3600','2','1','2','".$ore."')");
 echo "<script language=\"javascript\">window.location.href='index.php?loc=situazione'</script>";
-exit();	
+exit();
 }
 }//fine lavora come apprendista
 if (isset($_POST['lavoralabalc'])){
@@ -65,10 +64,10 @@ $errore.=$lang['lab_errore7'];
 }//se è stata selezionata una pozione controllo altri errori
 if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
-else {
-$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,lavoro,oggid,ore) VALUES ('".$user['userid']."','".$adesso."','3600','7','1','5','".$poziones."','".$ore."')");	
+else{
+$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,lavoro,oggid,ore) VALUES ('".$user['userid']."','".$adesso."','3600','7','1','5','".$poziones."','".$ore."')");
 echo "<script language=\"javascript\">window.location.href='index.php?loc=situazione'</script>";
-exit();	
+exit();
 }
 }//fine lavora come alchimista
 require('template/int_laboratorio.php');

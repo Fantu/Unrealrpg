@@ -3,7 +3,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	header("Location: ../index.php?error=16");
 	exit();
 }
-require('language/'.$language.'/lang_utenti.php');
+require_once('language/'.$language.'/lang_utenti.php');
 $totutenti=$db->QuerySelect("SELECT COUNT(userid) AS numero FROM utenti");
 $utentireg=$totutenti['numero'];
 $seonline=$adesso-600;

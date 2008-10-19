@@ -3,18 +3,18 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	header("Location: ../index.php?error=16");
 	exit();
 }
-require('language/'.$language.'/lang_locanda.php');
+require_once('language/'.$language.'/lang_locanda.php');
 
-if (isset($_POST['dormi'])){
+if(isset($_POST['dormi'])){
 $errore="";
 $ore=(int)$_POST['ore'];
 if($ore<1 OR $ore>8)
 $errore.=$lang['locanda_errore1'];
-if ($eventi['id']>0)
+if($eventi['id']>0)
 $errore .=$lang['global_errore1'];
 $monete=ceil($ore/2);
-if ($user['monete']<$monete)
-$errore .=sprintf($lang['locanda_errore2'],$ore,$monete);
+if($user['monete']<$monete)
+$errore.=sprintf($lang['locanda_errore2'],$ore,$monete);
 if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
 else {

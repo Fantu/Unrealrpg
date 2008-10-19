@@ -618,7 +618,7 @@ $db->QueryMod("DELETE FROM battle WHERE id='".$battleid."'");
 $db->QueryMod("UPDATE battlereport SET finito='1' WHERE id='".$battleid."' LIMIT 1");
 } //fine Endcombact
 
-function Startcombact($attaccante,$dif,$cpu) {
+function Startcombact($attaccante,$dif,$cpu){
 global $db,$adesso,$lang;
 if($cpu==1){
 $difcar=$db->QuerySelect("SELECT * FROM carcpu WHERE cpuid='".$dif."' LIMIT 1");
@@ -644,7 +644,7 @@ $difname=$lang['nomepcpu'.$difensore];
 Docombactstats($battle['id'],$attn['username'],$difname,$attcar,$difcar);
 } //fine Startcombact
 
-function Docombactstats($battleid,$attaccante,$difensore,$attcar,$difcar) {
+function Docombactstats($battleid,$attaccante,$difensore,$attcar,$difcar){
 global $db,$lang;
 $server=$db->database;
 umask(0000);
@@ -669,7 +669,7 @@ $repinput.="</td></tr>";
 fputs($fp,$repinput);
 } //fine Docombactstats
 
-function Inreport($battleid,$input) {
+function Inreport($battleid,$input){
 global $db;
 $server=$db->database;
 umask(0000);
@@ -680,7 +680,7 @@ $repinput.="</td></tr>";
 fputs($fp,$repinput);
 } //fine Inreport
 
-function Inizializzanpc($difensore) {
+function Inizializzanpc($difensore){
 global $db;
 $cpud=$db->QuerySelect("SELECT * FROM pcpudata WHERE id='".$difensore."' LIMIT 1");
 $db->QueryMod("INSERT INTO carcpu (pid,livello,salute,saluteattuale,energia,energiamax,mana,manarimasto,attfisico,attmagico,diffisica,difmagica,agilita,velocita,intelligenza,destrezza,monete) VALUES ('".$difensore."','".$cpud['livello']."','".$cpud['salute']."','".$cpud['salute']."','".$cpud['energia']."','".$cpud['energia']."','".$cpud['mana']."','".$cpud['mana']."','".$cpud['attfisico']."','".$cpud['attmagico']."','".$cpud['diffisica']."','".$cpud['difmagica']."','".$cpud['agilita']."','".$cpud['velocita']."','".$cpud['intelligenza']."','".$cpud['destrezza']."','".$cpud['monete']."')");
@@ -693,7 +693,7 @@ if($cpud['eqpoz']!=0){$db->QueryMod("INSERT INTO equipcpu (cpuid,oggid) VALUES (
 return $idcpu['cpuid'];
 } //fine Inizializzanpc
 
-function Npcesistente($difensore) {
+function Npcesistente($difensore){
 global $db;
 $se=$db->QuerySelect("SELECT COUNT(cpuid) AS n FROM carcpu WHERE pid='".$difensore."' AND inuso='0'");
 if($se['n']>0){

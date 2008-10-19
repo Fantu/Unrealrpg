@@ -6,10 +6,10 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <center><h2><?php echo $lang['Situazione']; ?></h2></center><br />
 <br />
 <?php
-if (!empty($newscom['news']))
-echo "<span><strong>".$lang['news']."</strong>".$newscom['news']."</span><br /><br />";
-if (!empty($newscom['comunicazione']))
-echo "<span><strong>".$lang['comunicazione']."</strong>".$newscom['comunicazione']."</span><br /><br />";
+if (!empty($config['news']))
+echo "<span><strong>".$lang['news']."</strong>".$config['news']."</span><br /><br />";
+if (!empty($config['comunicazione']))
+echo "<span><strong>".$lang['comunicazione']."</strong>".$config['comunicazione']."</span><br /><br />";
 ?>
 <div align="center">
 <?php echo $newmsg; ?><br />

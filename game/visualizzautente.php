@@ -3,8 +3,8 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	header("Location: ../index.php?error=16");
 	exit();
 }
-require('inclusi/personaggio.php');
-require('language/'.$language.'/lang_utenti.php');
+require_once('inclusi/personaggio.php');
+require_once('language/'.$language.'/lang_utenti.php');
 $utente=(int)$_GET['id'];
 $u=$db->QuerySelect("SELECT count(userid) AS n FROM utenti WHERE userid='".$utente."'");
 if($u['n']>0){

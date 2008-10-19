@@ -99,7 +99,7 @@ else {
 $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,type,oggid) VALUES ('".$user['userid']."','".$adesso."','600','11','4','1','".$idp."')");
 $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,type,oggid) VALUES ('".$idp."','".$adesso."','600','12','4','2','".$user['userid']."')");
 echo "<script language=\"javascript\">window.location.href='index.php?loc=situazione'</script>";
-exit();	
+exit();
 }
 break;//fine sfidda
 case "rispsfida":
@@ -109,7 +109,7 @@ $idp=(int)$evento['oggid'];
 $db->QueryMod("DELETE FROM eventi WHERE userid='".$user['userid']."'");
 $db->QueryMod("DELETE FROM eventi WHERE userid='".$idp."'");
 if($risp==1){
-Startcombact($user['userid'],$idp,$user['server'],0);
+Startcombact($user['userid'],$idp,0);
 echo "<script language=\"javascript\">window.location.href='index.php?loc=combact'</script>";
 exit();
 }else{
@@ -139,7 +139,7 @@ $errore.=$lang['combact_errore3'];
 if($errore==""){
 $repbatt=$db->QuerySelect("SELECT * FROM battlereport WHERE id='".$repid."' LIMIT 1");
 if($repbatt['attid']!=$user['userid'] AND $repbatt['difid']!=$user['userid'])
-$errore.=$lang['combact_errore8'];	
+$errore.=$lang['combact_errore8'];
 }
 if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}

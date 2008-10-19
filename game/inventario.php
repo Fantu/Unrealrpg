@@ -17,8 +17,7 @@ $numogg=$db->QuerySelect("SELECT count(id) AS num FROM inoggetti WHERE userid='"
 if ($numogg['num']<1)
 $errore.=$lang['inventario_errore5'];
 if($errore==""){
-$regno=$db->QuerySelect("SELECT banca FROM config");
-if($regno['banca']<1)
+if($config['banca']<1)
 $errore.=$lang['global_errore3'];
 $numogg=$db->QuerySelect("SELECT oggid,usura,count(*) AS numero FROM inoggetti WHERE userid='".$user['userid']."' AND oggid='".$oggselect."' GROUP BY oggid");
 if ($quanti>$numogg['numero'])
@@ -30,7 +29,7 @@ $errore.=$lang['global_errore1'];
 if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
 else {
-$cogg=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$oggselect."' LIMIT 1");	
+$cogg=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$oggselect."' LIMIT 1");
 if($cogg['usura']>1){
 $monete=($cogg['costo']/4*3)/$cogg['usura']*($cogg['usura']-$numogg['usura']);
 }else{
@@ -48,22 +47,22 @@ $db->QueryMod("DELETE FROM inoggetti WHERE userid='".$user['userid']."' AND oggi
 }
 }//fine vendi
 
-if (isset($_POST['usa'])){
+if(isset($_POST['usa'])){
 $errore="";
 $oggselect=(int)$_POST['oggselect'];
-if ($oggselect<1)
+if($oggselect<1)
 $errore.=$lang['inventario_errore4'];
-if ($eventi['id']>0)
+if($eventi['id']>0)
 $errore.=$lang['global_errore1'];
 if($errore==""){
 $numogg=$db->QuerySelect("SELECT count(id) AS num FROM inoggetti WHERE userid='".$user['userid']."' AND oggid='".$oggselect."'");
-if ($numogg['num']<1)
+if($numogg['num']<1)
 $errore.=$lang['inventario_errore5'];
 }
 if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
-else {
-$cogg=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$oggselect."' LIMIT 1");	
+else{
+$cogg=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$oggselect."' LIMIT 1");
 if($cogg['tipo']==4){
 $outputerrori.=Usaoggetto($user['userid'],$oggselect)."<br />";
 $outputerrori.=Checkusurarottura($user['userid'],0);
@@ -76,7 +75,7 @@ $seoggetti=$db->QuerySelect("SELECT COUNT(*) AS id FROM inoggetti WHERE userid='
 if ($seoggetti['id']==0){
 $nessunogg=$lang['nessun_oggetto_posseduto'];
 }else{
-require_once('language/'.$language.'/lang_oggetti_nomi.php');	
+require_once('language/'.$language.'/lang_oggetti_nomi.php');
 $oggposseduti=$db->QueryCiclo("SELECT oggid,count(*) AS numero FROM inoggetti WHERE userid='".$user['userid']."' GROUP BY oggid");
 while($ogg=$db->QueryCicloResult($oggposseduti)) {
 $i++;

@@ -3,7 +3,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	header("Location: ../index.php?error=16");
 	exit();
 }
-require('language/'.$language.'/lang_mercato.php');
+require_once('language/'.$language.'/lang_mercato.php');
 require_once('language/'.$language.'/lang_oggetti_categorie.php');
 require_once('language/'.$language.'/lang_oggetti_nomi.php');
 require_once('inclusi/funzioni_oggetti.php');
@@ -42,9 +42,9 @@ if($mostraogg==1){
 $seoggetti=$db->QuerySelect("SELECT COUNT(*) AS id FROM oggetti WHERE tipo='".$categoria."' AND categoria='".$sottocat."'");
 if ($seoggetti['id']==0){
 $nessunogg=$lang['nessun_oggetto_esistente'];
-}else{	
+}else{
 $oggposseduti=$db->QueryCiclo("SELECT id,costo FROM oggetti WHERE tipo='".$categoria."' AND categoria='".$sottocat."'");
-while($ogg=$db->QueryCicloResult($oggposseduti)) {
+while($ogg=$db->QueryCicloResult($oggposseduti)){
 $i++;
 $oggetti['id'][$i]=$ogg['id'];
 $oggetti['nome'][$i]="<a href=\"index.php?loc=mostraoggetto&amp;ogg=".$ogg['id']."&amp;da=mercato&amp;cat=".$categoria."&amp;scat=".$sottocat."\">".$lang['oggetto'.$ogg['id'].'_nome']."</a>";
@@ -71,13 +71,13 @@ $errore.=$lang['mercato_errore3'];
 }//controllo altri errori
 if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
-else {
+else{
 $outputerrori=sprintf($lang['report_compera'],$quanti,$lang['oggetto'.$oggselect.'_nome'],$prezzo);
 $db->QueryMod("UPDATE utenti SET monete=monete-'".$prezzo."' WHERE userid='".$user['userid']."'");
 $db->QueryMod("UPDATE config SET banca=banca+'".$prezzo."'");
 for($i=1; $i<=$quanti; $i++){
 $db->QueryMod("INSERT INTO inoggetti (oggid,userid) VALUES ('".$oggselect."','".$user['userid']."')");
-}
+}//per ogni pezzo
 }
 }//fine compra
 

@@ -3,24 +3,24 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	header("Location: ../index.php?error=16");
 	exit();
 }
-require('language/'.$language.'/lang_situazione.php');
+require_once('language/'.$language.'/lang_situazione.php');
 $expnewmin=100+($usercar['minatore']*1200);
-if($usercar['expminatore']>99) {
+if($usercar['expminatore']>99){
 	if($usercar['expminatore']>=$expnewmin)
 	$db->QueryMod("UPDATE caratteristiche t1 SET t1.minatore=t1.minatore+'1',t1.expminatore=t1.expminatore-'".$expnewmin."' WHERE t1.userid='".$user['userid']."'");
 }//fine controllo aumento liv minatore
 $expnewmin2=100+($usercar['alchimista']*1200);
-if($usercar['expalchimista']>99) {
+if($usercar['expalchimista']>99){
 	if($usercar['expalchimista']>=$expnewmin2)
 	$db->QueryMod("UPDATE caratteristiche t1 SET t1.alchimista=t1.alchimista+'1',t1.expalchimista=t1.expalchimista-'".$expnewmin2."' WHERE t1.userid='".$user['userid']."'");
 }//fine controllo aumento liv alchimista
 $expnewmin3=100+($usercar['fabbro']*1200);
-if($usercar['expfabbro']>99) {
+if($usercar['expfabbro']>99){
 	if($usercar['expfabbro']>=$expnewmin3)
 	$db->QueryMod("UPDATE caratteristiche t1 SET t1.fabbro=t1.fabbro+'1',t1.expfabbro=t1.expfabbro-'".$expnewmin3."' WHERE t1.userid='".$user['userid']."'");
 }//fine controllo aumento liv fabbro
 $expnewmin4=100+($usercar['magica']*1200);
-if($usercar['expmagica']>99) {
+if($usercar['expmagica']>99){
 	if($usercar['expmagica']>=$expnewmin4)
 	$db->QueryMod("UPDATE caratteristiche t1 SET t1.magica=t1.magica+'1',t1.expmagica=t1.expmagica-'".$expnewmin4."' WHERE t1.userid='".$user['userid']."'");
 }//fine controllo aumento liv magica
@@ -37,7 +37,7 @@ $expinc=1+floor($usercar['livello']/2);
 $expnewlevel=$expinc*(120*$usercar['livello']);
 if($snm['id']==0){
 $newmsg=$lang['nessun_nuovo_msg'];
-} elseif($snm['id']==1){
+}elseif($snm['id']==1){
 $newmsg="<a href=\"index.php?loc=messaggi\">".$lang['un_nuovo_msg']."</a>";
 }else{
 $newmsg="<a href=\"index.php?loc=messaggi\">".sprintf($lang['nuovi_msg'],$snm['id'])."</a>";
@@ -60,7 +60,6 @@ if($eventi['id']>0){
 }
 if(!$event)
 $event=$lang['nessun_evento'];
-$newscom=$db->QuerySelect("SELECT news,comunicazione FROM config LIMIT 1");
-require('inclusi/personaggio.php');
+require_once('inclusi/personaggio.php');
 require('template/int_situazione.php');
 ?>

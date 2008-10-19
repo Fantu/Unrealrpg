@@ -3,7 +3,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	header("Location: ../index.php?error=16");
 	exit();
 }
-require('language/'.$language.'/lang_opzioni.php');
+require_once('language/'.$language.'/lang_opzioni.php');
 if (isset($_POST['cambias'])){
 $errore="";
 $sesso=$_POST['sesso'];
@@ -11,13 +11,13 @@ if(!is_numeric($sesso))
 $errore.=$lang['opzioni_error1']."<br />";
 if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
-else {
+else{
 $db->QueryMod("UPDATE caratteristiche SET sesso='".$sesso."' WHERE userid='".$user['userid']."'");
 $outputerrori="<span>".$lang['sesso_modificato']."</span><br /><br />";
 }
 }//fine cambia sesso
 
-if (isset($_POST['cambiap'])){
+if(isset($_POST['cambiap'])){
 $errore="";
 $vpassword=htmlspecialchars($_POST['vpassword'],ENT_QUOTES);
 $vpass=md5($vpassword);
@@ -73,13 +73,13 @@ else {
 if($user['plus']==0){
 $db->QueryMod("UPDATE utenti SET plus=('".$adesso."'+'".$tattivazioneplus."'),puntiplus=puntiplus-'".$punti."' WHERE userid='".$user['userid']."'");
 }else{
-$db->QueryMod("UPDATE utenti SET plus=plus+'".$tattivazioneplus."',puntiplus=puntiplus-'".$punti."' WHERE userid='".$user['userid']."'");	
+$db->QueryMod("UPDATE utenti SET plus=plus+'".$tattivazioneplus."',puntiplus=puntiplus-'".$punti."' WHERE userid='".$user['userid']."'");
 }
 $user=$db->QuerySelect("SELECT * FROM utenti WHERE userid='".$user['userid']."' LIMIT 1");
 }
 }//fine attivazione plus con punti plus
 
-$linkref=$game_link."/index.php?refer=".$user['userid']."&amp;server=".$user['server'];
+$linkref=$game_link."/index.php?refer=".$user['userid']."&amp;server=".$config['id'];
 
 if($user['mailnews']==0)
 $newsletters=$lang['newsletter_disattiva']." <a href=\"index.php?loc=opzioni&amp;newsletter=1\">".$lang['attiva']."</a>";
@@ -91,6 +91,6 @@ $vacanza=$lang['vacanza_disattiva']." <a href=\"index.php?loc=opzioni&amp;vacanz
 else
 $vacanza=$lang['vacanza_attiva']." <a href=\"index.php?loc=opzioni&amp;vacanza=0\">".$lang['disattiva']."</a>";
 
-require('inclusi/personaggio.php');
+require_once('inclusi/personaggio.php');
 require('template/int_opzioni.php');
 ?>

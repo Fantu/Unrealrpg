@@ -3,21 +3,21 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	header("Location: ../index.php?error=16");
 	exit();
 }
-require('language/'.$language.'/lang_situazione.php');
+require_once('language/'.$language.'/lang_situazione.php');
 
 $expinc=1+floor($usercar['livello']/2);
 $expnewlevel=$expinc*(120*$usercar['livello']);
 if($usercar['exp']<$expnewlevel){
 echo "<script language=\"javascript\">window.location.href='index.php?loc=situazione'</script>";
 exit();
-}
+}//se nn ha abbastanza esperienza per salire
 
-if (isset($_POST['sali'])){
+if(isset($_POST['sali'])){
 $errore="";
 $salute=(int)$_POST['salute'];
 $energia=(int)$_POST['energia'];
 $mana=(int)$_POST['mana'];
-if (($salute+$energia+$mana)!=10)
+if(($salute+$energia+$mana)!=10)
 $errore.=$lang['levelup_errore1'];
 $caratteristichelup=array('attfisico','attmagico','diffisica','difmagica','velocita','agilita','intelligenza','destrezza');
 $somma=0;
@@ -28,11 +28,11 @@ if($carattuale>2)
 $troppi=1;
 $somma+=$carattuale;
 }//per caratteristica
-if ($troppi==1)
+if($troppi==1)
 $errore.=$lang['levelup_errore2'];
-if ($somma!=4)
+if($somma!=4)
 $errore.=$lang['levelup_errore3'];
-if ($eventi['id']>0)
+if($eventi['id']>0)
 $errore.=$lang['global_errore1'];
 if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}

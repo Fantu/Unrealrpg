@@ -10,7 +10,7 @@ Legenda:<br />
 + Aggiunti agli oggetti: Coltelli di rame, Coltelli di ferro, Coltelli di acciaio<br />
 + Aggiunte le armi a distanza nell'equipaggiamento<br />
 + Aggiunte le armi a distanza nella visualizzazione dell'equipaggiamento durante il primo "round" di un combattimento<br />
-+ Vari miglioramenti di sistema a Municipio, Equipaggiamento, sistema di base interno, login<br />
++ Vari miglioramenti di sistema a Municipio, Equipaggiamento, sistema di base interno, login, sistema di combattimento, sistema query, Info versione, Banca, Combattimenti, crezione personaggio, Fucina, Inventario, Laboratorio, sistema messaggi, Miniera, Opzioni, Tempio<br />
 # Rivista la criminalità, resa più equilibrata<br />
 # Rivisto il lavoro in Laboratorio come alchimista, reso più equilibrato<br />
 - Corretto un bug nel calcolo della probabilità di incidente nei lavori<br />

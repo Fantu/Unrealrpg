@@ -4,9 +4,8 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	exit();
 }
 require('language/'.$language.'/lang_banca.php');
-$checklotteria = $db->QuerySelect("SELECT lotteria FROM config");
-if($checklotteria['lotteria']==0){$db->QueryMod("UPDATE config SET lotteria='".$adesso."'");}else{
-if(($checklotteria['lotteria']+172800)<$adesso){
+if($config['lotteria']==0){$db->QueryMod("UPDATE config SET lotteria='".$adesso."'");}else{
+if(($config['lotteria']+172800)<$adesso){
 $partecipanti=$db->QuerySelect("SELECT COUNT(userid) AS num FROM banca WHERE lotteria>0");
 if($partecipanti['num']>0){
 $estratto=0;
@@ -79,8 +78,7 @@ $errore.=$lang['banca_errore4'];
 $userbank=$db->QuerySelect("SELECT conto FROM banca WHERE userid='".$user['userid']."' LIMIT 1");
 if ($daprelevare>$userbank['conto'])
 $errore.=$lang['banca_errore5'];
-$deposito = $db->QuerySelect("SELECT banca FROM config");
-if ($daprelevare>$deposito['banca'])
+if ($daprelevare>$config['banca'])
 $errore.=$lang['banca_errore6'];
 }
 if($errore){
@@ -102,8 +100,7 @@ if ($eventi['id']>0)
 $errore.=$lang['global_errore1'];
 if ($prestito<1)
 $errore.=$lang['banca_errore7'];
-$deposito=$db->QuerySelect("SELECT banca FROM config");
-if ($prestito>$deposito['banca'])
+if ($prestito>$config['banca'])
 $errore.=$lang['banca_errore6'];
 if ($prestito>$prestitopossibile)
 $errore.=sprintf($lang['banca_errore8'],$prestitopossibile);

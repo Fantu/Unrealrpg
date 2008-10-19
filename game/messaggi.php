@@ -54,7 +54,7 @@ echo "<script language=\"javascript\">window.location.href='index.php?loc=messag
 exit();
 break;
 case "dorisp":// invia risposta
-	$errore="";	
+	$errore="";
 	if(!$_POST['mymess'])
 		$errore.=$lang['messaggi_error1']."<br />";
 	if(!$_POST['messid'])
@@ -78,7 +78,7 @@ case "dorisp":// invia risposta
 		$messaggio=htmlspecialchars($_POST['mymess'],ENT_QUOTES);
 		$db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$a['mittenteid']."','".$titolo."','".$messaggio."','".$user['userid']."','".$adesso."')");
 		echo "<script language=\"javascript\">window.location.href='index.php?loc=messaggi'</script>";
-		exit();		
+		exit();
 	}
 break;
 case "doscrivi":// invia nuovo messaggio
@@ -86,11 +86,11 @@ case "doscrivi":// invia nuovo messaggio
 	if(!$_POST['mymess'])
 		$errore.=$lang['messaggi_error1']."<br />";
 	if(!$_POST['titolo'])
-		$errore=$lang['messaggi_error4']."<br />";		
+		$errore=$lang['messaggi_error4']."<br />";
 	if(!$_POST['achi'])
 		$errore.=$lang['messaggi_error2']."<br />";
 	if($user['plus']==0 && strlen($_POST['mymess'])>500)
-		$errore.=$lang['messaggi_error3']."<br />";	
+		$errore.=$lang['messaggi_error3']."<br />";
 	if($user['plus']>0 && strlen($_POST['mymess'])>10000)
 		$errore.=$lang['messaggi_error5']."<br />";
 	$achi=(int)$_POST['achi'];
@@ -111,7 +111,7 @@ case "doscrivi":// invia nuovo messaggio
 exit();
 break;
 case "risp":// scrivi risposta
-$errore="";	
+$errore="";
 $m=$db->QuerySelect("SELECT count(id) AS n FROM messaggi WHERE id='".$id."'");
 if($m['n']==0)
 $errore.=$lang['messaggi_error7']."<br />";
@@ -126,7 +126,7 @@ else {
     <td><?php echo $lang['istruzioni_scrivi_msg']; ?></td>
   </tr>
   <tr>
-    <td><textarea name="mymess" cols="45" rows="4" id="mymess" onkeyup="conteggio()" onmousemove="conteggio()"></textarea>      
+    <td><textarea name="mymess" cols="45" rows="4" id="mymess" onkeyup="conteggio()" onmousemove="conteggio()"></textarea>
 	  <br /><?php echo $lang['caratteri_disponibili']; ?><div id="caratteri" name="caratteri"><?php if($user['plus']==0) echo "500"; else echo "10000";?></div>
   </td></tr>
   <tr>
@@ -189,8 +189,8 @@ $semsg=$db->QuerySelect("SELECT count(id) AS numero FROM messaggi WHERE userid='
 		<td><?php echo "<strong><span>".$mess['titolo']."</span></strong><br />".$mess['testo']; ?></td>
 	  </tr>
 	  <tr>
-		<td colspan="2" align="right"> 
-		<?php 
+		<td colspan="2" align="right">
+		<?php
 		if($mess['mittenteid']==0)
 			echo "[ <a href=\"index.php?loc=messaggi&amp;do=elim&amp;id=".$mess['id']."\">".$lang['elimina']."</a> ]";
 		else
