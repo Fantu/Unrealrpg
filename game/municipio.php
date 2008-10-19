@@ -26,7 +26,6 @@ exit();
 }
 }//fine fai ronda
 
-$config=$db->QuerySelect("SELECT banca,crimine FROM config LIMIT 1");
 $lcrimine=$config['crimine'];
 if($lcrimine>=10 AND $lcrimine<20){
 $livcrimine=$lang['molto_bassa'];

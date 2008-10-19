@@ -178,7 +178,6 @@ $oggetti=$db->QueryCiclo("SELECT oggid FROM inoggetti WHERE userid='".$user['use
 while($ogg2=$db->QueryCicloResult($oggetti)) {
 $oggcache[]=$ogg2['oggid'];
 }//cache di tutti i propri oggetti
-
 $oggacac=$db->QueryCiclo("SELECT * FROM oggetti WHERE tipo='5'");
 while($ogg=$db->QueryCicloResult($oggacac)) {
 $armicact[$ogg['id']]=$ogg['id'];
@@ -195,11 +194,6 @@ foreach($oggcache as $chiave=>$elemento){
 if(isset($armiadit[$elemento]))
 $armiadi[$elemento]=$lang['oggetto'.$elemento.'_nome'];
 }//cache proprie armi a distanza
-/*$oggetti=$db->QueryCiclo("SELECT oggid FROM inoggetti WHERE userid='".$user['userid']."' GROUP BY oggid");
-while($ogg2=$db->QueryCicloResult($oggetti)) {
-if(isset($armiadit[$ogg2['oggid']]))
-$armiadi[$ogg2['oggid']]=$lang['oggetto'.$ogg2['oggid'].'_nome'];
-}//cache proprie armi a distanza*/
 $oggarm=$db->QueryCiclo("SELECT * FROM oggetti WHERE tipo='6' AND categoria='1'");
 while($ogg=$db->QueryCicloResult($oggarm)) {
 $armt[$ogg['id']]=$ogg['id'];
@@ -208,11 +202,6 @@ foreach($oggcache as $chiave=>$elemento){
 if(isset($armt[$elemento]))
 $armature[$elemento]=$lang['oggetto'.$elemento.'_nome'];
 }//cache proprie armature
-/*$oggetti=$db->QueryCiclo("SELECT oggid FROM inoggetti WHERE userid='".$user['userid']."' GROUP BY oggid");
-while($ogg2=$db->QueryCicloResult($oggetti)) {
-if(isset($armt[$ogg2['oggid']]))
-$armature[$ogg2['oggid']]=$lang['oggetto'.$ogg2['oggid'].'_nome'];
-}//cache proprie armature*/
 $oggscu=$db->QueryCiclo("SELECT * FROM oggetti WHERE tipo='6' AND categoria='2'");
 while($ogg=$db->QueryCicloResult($oggscu)) {
 $scut[$ogg['id']]=$ogg['id'];
@@ -221,11 +210,6 @@ foreach($oggcache as $chiave=>$elemento){
 if(isset($scut[$elemento]))
 $scudi[$elemento]=$lang['oggetto'.$elemento.'_nome'];
 }//cache propri scudi
-/*$oggetti=$db->QueryCiclo("SELECT oggid FROM inoggetti WHERE userid='".$user['userid']."' GROUP BY oggid");
-while($ogg2=$db->QueryCicloResult($oggetti)) {
-if(isset($scut[$ogg2['oggid']]))
-$scudi[$ogg2['oggid']]=$lang['oggetto'.$ogg2['oggid'].'_nome'];
-}//cache propri scudi*/
 $oggpoz=$db->QueryCiclo("SELECT * FROM oggetti WHERE tipo='4'");
 while($ogg=$db->QueryCicloResult($oggpoz)) {
 $pozt[$ogg['id']]=$ogg['id'];
@@ -234,11 +218,6 @@ foreach($oggcache as $chiave=>$elemento){
 if(isset($pozt[$elemento]))
 $pozioni[$elemento]=$lang['oggetto'.$elemento.'_nome'];
 }//cache proprie pozioni
-/*$oggetti=$db->QueryCiclo("SELECT oggid FROM inoggetti WHERE userid='".$user['userid']."' GROUP BY oggid");
-while($ogg2=$db->QueryCicloResult($oggetti)) {
-if(isset($pozt[$ogg2['oggid']]))
-$pozioni[$ogg2['oggid']]=$lang['oggetto'.$ogg2['oggid'].'_nome'];
-}//cache proprie pozioni*/
 }//se ci sono oggetti
 
 if($userequip['cac']!=0){

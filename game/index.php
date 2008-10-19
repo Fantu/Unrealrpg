@@ -6,12 +6,12 @@ require_once('inclusi/funzioni.php');
 if($_COOKIE['urbglogin'])
 	{$lg=explode("|||",$_COOKIE['urbglogin']);}else{header("Location: ../index.php?error=3"); exit(); }
 $adesso=strtotime("now");
-require('inclusi/funzioni_db.php');
-$db = new ConnessioniMySQL();
+require_once('inclusi/funzioni_db.php');
+$db=new ConnessioniMySQL();
 $language=htmlentities($lg[4]);
-require('language/'.$language.'/lang_interno.php');
+require_once('language/'.$language.'/lang_interno.php');
 
-$esistenza=0;		
+$esistenza=0;
 	foreach($game_server as $chiave=>$elemento){
 	if ($chiave==$lg[3]){$esistenza=1;}
 	}
@@ -21,8 +21,8 @@ if($esistenza==0){
 } else{
 	$db->database=(int)$lg[3];}
 
-$check=$db->QuerySelect("SELECT chiuso FROM config");
-if( $check['chiuso']==1 ) {
+$config=$db->QuerySelect("SELECT * FROM config");
+if( $config['chiuso']==1 ) {
 	header("Location: ../index.php?error=12");
 	exit();
 }
@@ -43,7 +43,7 @@ require_once('inclusi/int_header.php');
 		<table width="715" border="0" align="right" cellpadding="1" cellspacing="1">
 		  <tr>
 			<td width="565" valign="top">
-			<div id="contenuto">		
+			<div id="contenuto">
 <?php
 if ($user['personaggio']==0){
 	require('creapersonaggio.php');	}
@@ -54,7 +54,7 @@ if ($user['personaggio']==0){
 		require($location.'.php');
 		}
 ?>
-			</div> 
+			</div>
 			</td>
 			<td width="30">&nbsp;</td>
 			<td width="120" valign="top">
@@ -69,7 +69,7 @@ if ($user['personaggio']==0){
 				?>
 			 </td>
 		  </tr>
-		</table>	
+		</table>
 	</td>
     <td>&nbsp;</td>
   </tr>

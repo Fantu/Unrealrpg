@@ -35,10 +35,10 @@ $db->QueryMod("UPDATE utenti SET plus='0' WHERE userid='".$user['userid']."'");
 $user=$db->QuerySelect("SELECT * FROM utenti WHERE userid='".$user['userid']."' LIMIT 1");
 }//se account plus scaduto
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$user['userid']."' LIMIT 1");
-if($eventi['id']==0) {
+if($eventi['id']==0){
 if ($usercar['saluteattuale']<1){
 require('inclusi/morte.php');
-}
+}//se morto
 if ($adesso>($usercar['decfede']+3600)){
 	if ($usercar['fede']>0){
 		$differenzaora=$adesso-$usercar['decfede'];
@@ -47,7 +47,7 @@ if ($adesso>($usercar['decfede']+3600)){
 		if ($fede<0)
 		$fede=0;
 		$db->QueryMod("UPDATE caratteristiche SET decfede=decfede+'".($ore*3600)."',fede='".$fede."' WHERE userid='".$user['userid']."'");
-	}
+	}//se ha fede
 	else{$db->QueryMod("UPDATE caratteristiche SET decfede='".$adesso."' WHERE userid='".$user['userid']."'");}
 }//fine decremento fede
 recenergiasalute($user['userid'],$usercar);

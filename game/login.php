@@ -1,11 +1,11 @@
 <?php
-require('inclusi/funzioni_db.php');
-require('inclusi/valori.php');
+require_once('inclusi/funzioni_db.php');
+require_once('inclusi/valori.php');
 require_once('inclusi/funzioni.php');
 $adesso=strtotime("now");
-$db = new ConnessioniMySQL();
+$db=new ConnessioniMySQL();
 $esistenza=0;
-$server=(int)$_POST['login_server'];		
+$server=(int)$_POST['login_server'];
 	foreach($game_server as $chiave=>$elemento){
 	if ($chiave==$server){$esistenza=1;}
 	}
@@ -42,38 +42,38 @@ if($user['conferma']==0){
 	header("Location: ../index.php?error=2");
 	exit();
 /*} else if($user['bloccato']>0 && strtotime("now")<$user['bloccato']) {
-	header("Location: ../index.php?error=11&t=".$user['bloccato']);	
+	header("Location: ../index.php?error=11&t=".$user['bloccato']);
 	exit();*/
 }
-$check=$db->QuerySelect("SELECT chiuso FROM config");
-if($check['chiuso']==1){
+$config=$db->QuerySelect("SELECT * FROM config");
+if($config['chiuso']==1){
 	header("Location: ../index.php?error=12");
 	exit();
 } else {
-	$int_security=$game_se_code;      
-	setcookie ("urbglogin", $user['userid']."|||".md5($user['username'])."|||".$user['password']."|||".$user['server']."|||".$user['language'],time()+10800);
+	$int_security=$game_se_code;
+	setcookie ("urbglogin", $user['userid']."|||".md5($user['username'])."|||".$user['password']."|||".$config['id']."|||".$config['language'],time()+10800);
 	$db->QueryMod("UPDATE utenti SET ultimologin='".$adesso."',ipattuale='".$_SERVER['REMOTE_ADDR']."' WHERE userid='".$user['userid']."'");
 	$scaduto=$adesso-2592000;
 	$quantimess=$db->QuerySelect("SELECT COUNT(id) AS id FROM messaggi WHERE data<'".$scaduto."'");
 	if($quantimess['id']>0){
 	$db->QueryMod("DELETE FROM messaggi WHERE data<'".$scaduto."'");
-	}
+	}//eliminazione di tutti i msg del regno più vecchi di 30 giorni
 	$scaduto=$adesso-604800;
 	$quantimess=$db->QuerySelect("SELECT COUNT(id) AS id FROM messaggi WHERE data<'".$scaduto."' AND letto='1'");
 	if($quantimess['id']>0){
 	$db->QueryMod("DELETE FROM messaggi WHERE data<'".$scaduto."' AND letto='1'");
-	}
+	}//eliminazione di tutti i msg letti del regno più vecchi di 7 giorni
 	$quantirep=$db->QuerySelect("SELECT COUNT(id) AS id FROM battlereport WHERE data<'".$scaduto."'");
 	if($quantirep['id']>0){
 	$repscaduti=$db->QueryCiclo("SELECT id FROM battlereport WHERE data<'".$scaduto."'");
 	while($reps=$db->QueryCicloResult($repscaduti)) {
 	$db->QueryMod("DELETE FROM battlereport WHERE id='".$reps['id']."' LIMIT 1");
-	unlink("inclusi/log/report/".$user['server']."/".$reps['id'].".log");
-	}
-	}
-	$language=$user['language'];
-	require('inclusi/cancellazione.php');
+	unlink("inclusi/log/report/".$config['id']."/".$reps['id'].".log");
+	}//eliminazione di tutti i report del regno più vecchi di 7 giorni
+	}//se ci sono report più vecchi di 7 giorni nel regno
+	$language=$config['language'];
+	require_once('inclusi/cancellazione.php');
 	header("Location: index.php?loc=situazione");
-	exit();	
+	exit();
 }
 ?>
