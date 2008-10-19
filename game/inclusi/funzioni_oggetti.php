@@ -156,7 +156,7 @@ switch($oggetto['tipo']){
 			$ok=0;
 			$output=sprintf($lang['errore_sistema_utilizzo_ogg'],$nomeogg);
 			break;
-			}	
+			}
 		break;
 		default:
 		$ok=0;

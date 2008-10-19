@@ -566,7 +566,7 @@ $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,battl
 } //fine Battledo
 
 function Endcombact($battleid,$vincitore){
-global $db,$adesso,$lang;
+global $db,$adesso,$lang,$config;
 $battle=$db->QuerySelect("SELECT * FROM battle WHERE id='".$battleid."' LIMIT 1");
 $link="<a href=\"index.php?loc=combact&do=repview&id=".$battleid."\">qui</a>";
 $titolo="Combattimento finito";
@@ -588,7 +588,6 @@ Ritornoacasa($att,$cq['secondi']);
 }//se esplorazione oltre confine
 if($cq['questid']==5){
 if($vincitore==1){
-$config=$db->QuerySelect("SELECT * FROM config");
 if($config['crimine']>10)
 $db->QueryMod("UPDATE config SET crimine=crimine-'1'");
 }//se vince la guardia
