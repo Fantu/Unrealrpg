@@ -28,6 +28,13 @@ function cambiaseltuttimsg(formogg, imposta)
 function conteggio() {
 	window.document.getElementById("caratteri").innerHTML=(<?php if($user['plus']==0) echo "500"; else echo "10000";?>-window.document.getElementById("mymess").value.length);
 }
+function Visualizza(id) {
+	var identity=document.getElementById(id);
+	if(identity.className==nascosto){
+	identity.className=visibile;
+	}else{
+	identity.className=nascosto;}
+}
 </script>
 <div align="center">
 <?php
@@ -136,7 +143,7 @@ else {
     </div></td>
   </tr>
   <tr>
-    <td><?php $msgorig=$db->QuerySelect("SELECT * FROM messaggi WHERE id='".$id."'");
+    <td><?php $msgorig=$db->QuerySelect("SELECT * FROM messaggi WHERE id='".$id."' LIMIT 1");
     echo $lang['msg_orig']."<br/>";
     echo $msgorig['testo'];
     ?>
@@ -170,31 +177,35 @@ break;
 default:// visualizza messaggi
 $semsg=$db->QuerySelect("SELECT count(id) AS numero FROM messaggi WHERE userid='".$user['userid']."'");
 	if($semsg['numero']>0){
+	$a=$db->QueryCiclo("SELECT * FROM messaggi WHERE userid='".$user['userid']."' ORDER BY id desc");
+	while($mess=$db->QueryCicloResult($a)){
+	$cachemsg[]=$mess;
+	}//per ogni messaggio
+	
 	echo "<form action=\"index.php?loc=messaggi&amp;do=canc\" method=\"post\" name=\"canctutt\">";
 	$i=0;
-	$a=$db->QueryCiclo("SELECT * FROM messaggi WHERE userid='".$user['userid']."' ORDER BY id desc");
-	while($mess=$db->QueryCicloResult($a)) {
+	foreach($cachemsg as $chiave=>$mc){
 		$i++;
-		if ($mess['mittenteid']!=0)
-		$mit=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$mess['mittenteid']."'");
+		if($mc['mittenteid']!=0)
+		$mit=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$mc['mittenteid']."'");
 
 	?>
 	<table width="505"  border="0" cellspacing="2" cellpadding="2">
 	  <tr>
-		<td width="5%"><?php echo "<input name=\"messaggioid".$i."\" type=\"checkbox\" id=\"messaggioid".$i."\" value=\"".$mess['id']."\" />"; ?></td>
-		<td width="95%"><div align="center"><?php echo $lang['messaggio_da']; if ($mess['mittenteid']==0){echo "Sistema";}else{echo $mit['username'];} echo " "; echo date($lang['dataora'],$mess['data']); ?> </div></td>
+		<td width="5%"><?php echo "<input name=\"messaggioid".$i."\" type=\"checkbox\" id=\"messaggioid".$i."\" value=\"".$mc['id']."\" />"; ?></td>
+		<td width="95%"><div align="center"><?php echo $lang['messaggio_da']; if ($mc['mittenteid']==0){echo $lang['sistema'];}else{echo $mit['username'];} echo " "; echo date($lang['dataora'],$mc['data']); ?> </div></td>
 	  </tr>
 	  <tr>
 		<td>&nbsp;</td>
-		<td><?php echo "<strong><span>".$mess['titolo']."</span></strong><br />".$mess['testo']; ?></td>
+		<td><?php echo "<strong><span>".$mc['titolo']."</span></strong><br />".$mc['testo']; ?></td>
 	  </tr>
 	  <tr>
 		<td colspan="2" align="right">
 		<?php
-		if($mess['mittenteid']==0)
-			echo "[ <a href=\"index.php?loc=messaggi&amp;do=elim&amp;id=".$mess['id']."\">".$lang['elimina']."</a> ]";
+		if($mc['mittenteid']==0)
+			echo "[ <a href=\"index.php?loc=messaggi&amp;do=elim&amp;id=".$mc['id']."\">".$lang['elimina']."</a> ]";
 		else
-			echo "[ <a href=\"index.php?loc=messaggi&amp;do=risp&amp;id=".$mess['id']."\">".$lang['rispondi']."</a> ] - [ <a href=\"index.php?loc=messaggi&amp;do=elim&amp;id=".$mess['id']."\">".$lang['elimina']."</a> ]"; ?></td>
+			echo "[ <a href=\"index.php?loc=messaggi&amp;do=risp&amp;id=".$mc['id']."\">".$lang['rispondi']."</a> ] - [ <a href=\"index.php?loc=messaggi&amp;do=elim&amp;id=".$mc['id']."\">".$lang['elimina']."</a> ]"; ?></td>
 	  </tr>
 	</table>
 	<?php
@@ -202,6 +213,8 @@ $semsg=$db->QuerySelect("SELECT count(id) AS numero FROM messaggi WHERE userid='
 	echo "<br /><table width=\"505\"  border=\"0\" cellspacing=\"2\" cellpadding=\"2\"><tr>"
     ."<td align=\"center\"><input name=\"contatore\" type=\"hidden\" value=\"".$i."\" /><input type=\"checkbox\" name=\"tuttimsg\" id=\"selezionatutti\" onclick=\"cambiaseltuttimsg(this.form, this.form.tuttimsg.checked);\" /> ".$lang['sel_desel_tutti']." <input name=\"asd\" type=\"submit\" value=\"".$lang['cancella_selezionati']."\" /></td>"
 	."</tr></table></form>";
+	
+	
 	$db->QueryMod("UPDATE messaggi SET letto=1 WHERE userid='".$user['userid']."'");
 	}else{echo $lang['nessun_messaggio'];}
 break;

@@ -7,7 +7,7 @@ Legenda:<br />
 - Correzione bug e patch di situazioni non previste<br />
 </p>
 <p><strong>0.7.9</strong> (Non disponibile - In sviluppo)<br />
-Niente attualmente<br />
++ Vari miglioramenti di sistema a sistema messaggi<br />
 </p>
 <p><strong>0.7.8</strong> [R.1669] (20/10/08 - Beta)<br />
 + Aggiunti agli oggetti: Coltelli di rame, Coltelli di ferro, Coltelli di acciaio<br />

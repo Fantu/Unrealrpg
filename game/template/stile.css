@@ -62,3 +62,11 @@ display: none;
 left: 150px;
 top: 0;
 }
+.nascosto{
+visibility:hidden;
+position:absolute;
+}
+.visibile{
+visibility:visible;
+position:relative;
+}
