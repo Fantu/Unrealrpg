@@ -40,6 +40,12 @@ $db->QueryMod("ALTER TABLE `equipagcpu` ADD `adi` SMALLINT UNSIGNED NOT NULL DEF
 $db->QueryMod("ALTER TABLE `utenti` DROP `server`");
 $db->QueryMod("ALTER TABLE `utenti` DROP `language`");
 
+$db->QueryMod("CREATE TABLE `cacheuserid` (
+`userid` SMALLINT UNSIGNED NOT NULL ,
+`data` INT( 13 ) UNSIGNED NOT NULL ,
+PRIMARY KEY ( `userid` )
+) ENGINE = MYISAM");
+
 	/*//creazione record per tab con 1 record per utente
 	$a=$db->QueryCiclo("SELECT userid FROM utenti WHERE conferma='1' AND personaggio='1'");
 	while($var=$db->QueryCicloResult($a))

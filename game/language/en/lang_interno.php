@@ -187,7 +187,8 @@ $lang['sfida']='Sfida';
 $lang['Accetta']='Accept';
 $lang['Rifiuta']='Reject';
 $lang['usura_attuale']='Usura attuale: ';
-$lang['criminale_attacca_guardia']='Un criminale mentre agiva è stato avvistato da una guardia che lo ha attaccato';
+$lang['criminale_attacca_guardia']='%s durante la ronda ha avvistato un criminale e lo ha attaccato';
 $lang['criminale_attacca_utente']='Un criminale attacca %s';
 $lang['criminale_attacca_regno']='Un criminale fa danni/saccheggi nel regno per un totale di %s monete';
+$lang['leggi_changelog_interi']='Per leggere i changelog completi più aggiornati dell`intero progetto clicca %s qui %s';
 ?>

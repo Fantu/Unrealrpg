@@ -11,6 +11,7 @@ while($chi=$db->QueryCicloResult($dacanc)) {
 $messaggio=sprintf($lang['mail_cancellato_noconferma'],$chi['username'],$game_name,$game_server[$chi['server']],$game_name);
 mail($chi['email'],$lang['Account_cancellato'],$messaggio,$game_intestazione_mail);
 $db->QueryMod("DELETE FROM utenti WHERE userid='".$chi['userid']."'");
+$db->QueryMod("INSERT INTO cacheuserid (userid,data) VALUES ('".$chi['userid']."','".$adesso."')");
 }
 $tempo=$adesso-259200;
 $dacanc=$db->QuerySelect("SELECT count(userid) AS id FROM utenti WHERE dataiscrizione<'".$tempo."' AND personaggio='0'");
@@ -19,6 +20,7 @@ while($chi=$db->QueryCicloResult($dacanc)) {
 $messaggio=sprintf($lang['mail_cancellato_nopersonaggio'],$chi['username'],$game_name,$game_server[$chi['server']],$game_name);
 mail($chi['email'],$lang['Account_cancellato'],$messaggio,$game_intestazione_mail);
 $db->QueryMod("DELETE FROM utenti WHERE userid='".$chi['userid']."'");
+$db->QueryMod("INSERT INTO cacheuserid (userid,data) VALUES ('".$chi['userid']."','".$adesso."')");
 $db->QueryMod("UPDATE config SET utenti=utenti-'1' WHERE id='".$chi['server']."'");
 }
 $tempo=$adesso-1209600;
@@ -37,6 +39,7 @@ while($chi=$db->QueryCicloResult($dacanc)) {
 $messaggio=sprintf($lang['mail_cancellato_inattivita'],$chi['username'],$game_name,$game_server[$chi['server']],$game_name);
 mail($chi['email'],$lang['Account_cancellato'],$messaggio,$game_intestazione_mail);
 $db->QueryMod("DELETE FROM utenti WHERE userid='".$chi['userid']."'");
+$db->QueryMod("INSERT INTO cacheuserid (userid,data) VALUES ('".$chi['userid']."','".$adesso."')");
 $db->QueryMod("UPDATE config SET utenti=utenti-'1' WHERE id='".$chi['server']."'");
 $db->QueryMod("DELETE FROM caratteristiche WHERE userid='".$chi['userid']."'");
 $db->QueryMod("DELETE FROM banca WHERE userid='".$chi['userid']."'");
