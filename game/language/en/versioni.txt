@@ -6,10 +6,14 @@ Legenda:<br />
 # Modifiche<br />
 - Correzione bug e patch di situazioni non previste<br />
 </p>
-<p><strong>0.7.8</strong> (Non disponibile - In sviluppo)<br />
+<p><strong>0.7.9</strong> (Non disponibile - In sviluppo)<br />
+Niente attualmente<br />
+</p>
+<p><strong>0.7.8</strong> [R.1669] (20/10/08 - Beta)<br />
 + Aggiunti agli oggetti: Coltelli di rame, Coltelli di ferro, Coltelli di acciaio<br />
 + Aggiunte le armi a distanza nell'equipaggiamento<br />
 + Aggiunte le armi a distanza nella visualizzazione dell'equipaggiamento durante il primo "round" di un combattimento<br />
++ Ora gli id degli utenti cancellati vengono "reciclati" per motivi di efficenza e semplicità (per utenti e operatori), per evitare problemi quali acquisizione punti plus non propri e di altri contenuti che verranno inseriti gli id verranno riusati solo dopo 2 mesi la cancellazione del precedente account<br />
 + Vari miglioramenti di sistema a Municipio, Equipaggiamento, sistema di base interno, login, sistema di combattimento, sistema query, Info versione, Banca, Combattimenti, crezione personaggio, Fucina, Inventario, Laboratorio, sistema messaggi, Miniera, Opzioni, Tempio, sistema di registrazione<br />
 # Rivista la criminalità, resa più equilibrata<br />
 # Rivisto il lavoro in Laboratorio come alchimista, reso più equilibrato<br />

@@ -6,7 +6,10 @@ Legenda:<br />
 # Modifiche<br />
 - Correzione bug e patch di situazioni non previste<br />
 </p>
-<p><strong>0.7.8</strong> (Non disponibile - In sviluppo)<br />
+<p><strong>0.7.9</strong> (Non disponibile - In sviluppo)<br />
+Niente attualmente<br />
+</p>
+<p><strong>0.7.8</strong> [R.1669] (20/10/08 - Beta)<br />
 + Aggiunti agli oggetti: Coltelli di rame, Coltelli di ferro, Coltelli di acciaio<br />
 + Aggiunte le armi a distanza nell'equipaggiamento<br />
 + Aggiunte le armi a distanza nella visualizzazione dell'equipaggiamento durante il primo "round" di un combattimento<br />
