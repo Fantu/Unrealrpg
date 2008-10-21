@@ -191,6 +191,8 @@ class Dati{
 	$percenergia=100/$this->car($chi,'energiamax')*$this->car($chi,'energia');
 	if ($percenergia<5)
 	$this->che[$chi]->esausto=1;
+	else
+	$this->che[$chi]->esausto=0;
 	} //fine Controllastato
 
 	public function Autotattic($chi) {
@@ -495,13 +497,10 @@ if($dc->che[2]->oggusati==1){
 $input.=$dc->Controlloogg(2);}
 $input.="<br/>";
 
-$input.="Debug energia prima: ".$dc->car(1,'energia')." - ".$dc->car(2,'energia')."<br/>";
 $dc->Aggiornastat(1);
 $dc->Aggiornastat(2);
-$input.="Debug energia dopo: ".$dc->car(1,'energia')." - ".$dc->car(2,'energia')."<br/>";
 $dc->Controllastato(1);
 $dc->Controllastato(2);
-$input.="Esausto: ".$dc->esausto(1)." - ".$dc->esausto(2)."<br/>";
 $expb=$dc->Checkturnexp($expb);
 
 $turni++;
