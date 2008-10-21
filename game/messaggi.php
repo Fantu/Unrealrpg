@@ -222,7 +222,8 @@ $semsg=$db->QuerySelect("SELECT count(id) AS numero FROM messaggi WHERE userid='
     ."<td align=\"center\"><input name=\"contatore\" type=\"hidden\" value=\"".$i."\" /><input type=\"checkbox\" name=\"tuttimsg\" id=\"selezionatutti\" onclick=\"cambiaseltuttimsg(this.form, this.form.tuttimsg.checked);\" /> ".$lang['sel_desel_tutti']." <input name=\"asd\" type=\"submit\" value=\"".$lang['cancella_selezionati']."\" /></td>"
 	."</tr></table></form>";
 	echo "</div>";
-	}else{echo $lang['nessun_messaggio'];}
+	}else{echo $lang['nessun_messaggio']."<br />";}
+	echo "<br />";
 	}//fine Visualizzacategoria
 	$letti=0;
 	foreach($cachemsg as $chiave=>$mc){
