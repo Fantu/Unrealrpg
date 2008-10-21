@@ -225,22 +225,22 @@ $semsg=$db->QuerySelect("SELECT count(id) AS numero FROM messaggi WHERE userid='
 	}else{echo $lang['nessun_messaggio'];}
 	}//fine Visualizzacategoria
 	$letti=0;
-	$msgutenti=0;
 	foreach($cachemsg as $chiave=>$mc){
 	if($mc['letto']==0)
 	$letti++;
 	if($mc['mittenteid']!=0)
 	$msgutenti[]=$mc;
 	}//per ogni msg
+	if(!$msgutenti){$msgutenti=0;}
 	Visualizzacategoria($msgutenti,$letti);
 	$letti=0;
-	$msgsistema=0;
 	foreach($cachemsg as $chiave=>$mc){
 	if($mc['letto']==0)
 	$letti++;
 	if($mc['mittenteid']==0)
 	$msgsistema[]=$mc;
 	}//per ogni msg
+	if(!$msgsistema){$msgsistema=0;}
 	Visualizzacategoria($msgsistema,$letti);
 	
 	$db->QueryMod("UPDATE messaggi SET letto=1 WHERE userid='".$user['userid']."'");
