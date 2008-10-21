@@ -177,7 +177,7 @@ break;
 default:// visualizza messaggi
 $semsg=$db->QuerySelect("SELECT count(id) AS numero FROM messaggi WHERE userid='".$user['userid']."'");
 	if($semsg['numero']>0){
-	$a=$db->QueryCiclo("SELECT * FROM messaggi WHERE userid='".$user['userid']."' ORDER BY id desc");
+	$a=$db->QueryCiclo("SELECT * FROM messaggi WHERE userid='".$user['userid']."' ORDER BY id desc LIMIT 50");
 	while($mess=$db->QueryCicloResult($a)){
 	$cachemsg[]=$mess;
 	}//per ogni messaggio

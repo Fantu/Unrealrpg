@@ -11,6 +11,7 @@ Legenda:<br />
 + Le categorie sono apribili/chiudibili con click sul nome della categoria<br />
 + In parte al nome della categoria c'è anche scritto il numero di messaggi al proprio interno, nuovi (se ce ne sono) e totali<br />
 + Viene visualizzato nessun messaggio sia globalmente che per categoria<br />
++ Si possono visualizzare massimo 50 messaggi (i più recenti), ovviamente gli altri non vengono cancellati (se non abbastanza vecchi)<br />
 + Vari miglioramenti di sistema a sistema messaggi, sistema di combattimento<br />
 - Corretto un bug nella conferma dell'account<br />
 </p>
