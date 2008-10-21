@@ -192,7 +192,7 @@ $semsg=$db->QuerySelect("SELECT count(id) AS numero FROM messaggi WHERE userid='
 	$conti.=$letti." ".$lang['nuovi']." - ";
 	$conti.=$nummsg." ".$lang['totali'];
 	echo "<a href=\"javascript:;\" onclick=\"Cambiavista('cat".$num."')\">".$nomecat." (".$conti.")</a>";
-	echo "<div id=\"cat".$num."\" class=\"nascosto\">";
+	echo "<div id=\"cat".$num."\" class=\"nascosto\"><br />";
 	if($cachemsg!=0){
 	echo "<form action=\"index.php?loc=messaggi&amp;do=canc\" method=\"post\" name=\"canctutt".$num."\">";
 	$i=100*$num;
