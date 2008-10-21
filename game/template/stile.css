@@ -62,11 +62,11 @@ display: none;
 left: 150px;
 top: 0;
 }
-.nascosto{
+div.nascosto{
 visibility:hidden;
 position:absolute;
 }
-.visibile{
+div.visibile{
 visibility:visible;
 position:relative;
 }
