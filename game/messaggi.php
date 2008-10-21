@@ -182,15 +182,15 @@ $semsg=$db->QuerySelect("SELECT count(id) AS numero FROM messaggi WHERE userid='
 	$cachemsg[]=$mess;
 	}//per ogni messaggio
 	
-	function Visualizzacategoria($cachemsg,$letti){
+	function Visualizzacategoria($cachemsg,$letti,$nomecat){
 	global $db,$lang,$user;
-	if($cachemsg!=0){
 	$nummsg=count($cachemsg);
 	if($letti>0)
 	$conti.=$letti." ".$lang['nuovi']." - ";
 	$conti.=$nummsg." ".$lang['totali'];
-	echo "<a href=\"javascript:;\" onclick=\"Cambiavista('provat')\">TUTTI I MESSAGGI (".$conti.")</a>";
+	echo "<a href=\"javascript:;\" onclick=\"Cambiavista('provat')\">".$nomecat." (".$conti.")</a>";
 	echo "<div id=\"provat\" class=\"nascosto\">";
+	if($cachemsg!=0){
 	echo "<form action=\"index.php?loc=messaggi&amp;do=canc\" method=\"post\" name=\"canctutt\">";
 	$i=0;
 	foreach($cachemsg as $chiave=>$mc){
@@ -221,9 +221,9 @@ $semsg=$db->QuerySelect("SELECT count(id) AS numero FROM messaggi WHERE userid='
 	echo "<br /><table width=\"505\"  border=\"0\" cellspacing=\"2\" cellpadding=\"2\"><tr>"
     ."<td align=\"center\"><input name=\"contatore\" type=\"hidden\" value=\"".$i."\" /><input type=\"checkbox\" name=\"tuttimsg\" id=\"selezionatutti\" onclick=\"cambiaseltuttimsg(this.form, this.form.tuttimsg.checked);\" /> ".$lang['sel_desel_tutti']." <input name=\"asd\" type=\"submit\" value=\"".$lang['cancella_selezionati']."\" /></td>"
 	."</tr></table></form>";
-	echo "</div>";
+	//echo "</div>";
 	}else{echo $lang['nessun_messaggio']."<br />";}
-	echo "<br />";
+	echo "</div><br />";
 	}//fine Visualizzacategoria
 	$letti=0;
 	foreach($cachemsg as $chiave=>$mc){
@@ -233,7 +233,7 @@ $semsg=$db->QuerySelect("SELECT count(id) AS numero FROM messaggi WHERE userid='
 	$msgutenti[]=$mc;
 	}//per ogni msg
 	if(!$msgutenti){$msgutenti=0;}
-	Visualizzacategoria($msgutenti,$letti);
+	Visualizzacategoria($msgutenti,$letti,$lang['messaggi_dagli utenti']);
 	$letti=0;
 	foreach($cachemsg as $chiave=>$mc){
 	if($mc['letto']==0)
@@ -242,7 +242,7 @@ $semsg=$db->QuerySelect("SELECT count(id) AS numero FROM messaggi WHERE userid='
 	$msgsistema[]=$mc;
 	}//per ogni msg
 	if(!$msgsistema){$msgsistema=0;}
-	Visualizzacategoria($msgsistema,$letti);
+	Visualizzacategoria($msgsistema,$letti,$lang['messaggi_dal_sistema']);
 	
 	$db->QueryMod("UPDATE messaggi SET letto=1 WHERE userid='".$user['userid']."'");
 	}else{echo $lang['nessun_messaggio'];}
