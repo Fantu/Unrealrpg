@@ -187,7 +187,7 @@ $semsg=$db->QuerySelect("SELECT count(id) AS numero FROM messaggi WHERE userid='
 	if($cachemsg!=0){
 	$nummsg=count($cachemsg);
 	if($letti>0)
-	$conti.=$letti.." "$lang['nuovi']." - ";
+	$conti.=$letti." ".$lang['nuovi']." - ";
 	$conti.=$nummsg." ".$lang['totali'];
 	echo "<a href=\"javascript:;\" onclick=\"Cambiavista('provat')\">TUTTI I MESSAGGI (".$conti.")</a>";
 	echo "<div id=\"provat\" class=\"nascosto\">";
