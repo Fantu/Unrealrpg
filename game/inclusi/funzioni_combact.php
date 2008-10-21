@@ -453,7 +453,7 @@ class Dati{
 
 } //fine classe Dati
 
-function Battledo($battleid,$turni) {
+function Battledo($battleid,$turni){
 global $db,$adesso,$lang;
 $battle=$db->QuerySelect("SELECT * FROM battle WHERE id='".$battleid."' LIMIT 1");
 $expb=$battle['exp'];
@@ -495,10 +495,13 @@ if($dc->che[2]->oggusati==1){
 $input.=$dc->Controlloogg(2);}
 $input.="<br/>";
 
+$input.="Debug energia prima: ".$dc->car(1,'energia')." - ".$dc->car(2,'energia')."<br/>";
 $dc->Aggiornastat(1);
 $dc->Aggiornastat(2);
+$input.="Debug energia dopo: ".$dc->car(1,'energia')." - ".$dc->car(2,'energia')."<br/>";
 $dc->Controllastato(1);
 $dc->Controllastato(2);
+$input.="Esausto: ".$dc->esausto(1)." - ".$dc->esausto(2)."<br/>";
 $expb=$dc->Checkturnexp($expb);
 
 $turni++;
