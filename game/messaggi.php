@@ -182,16 +182,16 @@ $semsg=$db->QuerySelect("SELECT count(id) AS numero FROM messaggi WHERE userid='
 	$cachemsg[]=$mess;
 	}//per ogni messaggio
 	
-	function Visualizzacategoria($cachemsg,$letti,$nomecat){
+	function Visualizzacategoria($cachemsg,$letti,$nomecat,$num){
 	global $db,$lang,$user;
 	$nummsg=count($cachemsg);
 	if($letti>0)
 	$conti.=$letti." ".$lang['nuovi']." - ";
 	$conti.=$nummsg." ".$lang['totali'];
-	echo "<a href=\"javascript:;\" onclick=\"Cambiavista('provat')\">".$nomecat." (".$conti.")</a>";
-	echo "<div id=\"provat\" class=\"nascosto\">";
+	echo "<a href=\"javascript:;\" onclick=\"Cambiavista('cat".$num."')\">".$nomecat." (".$conti.")</a>";
+	echo "<div id=\"cat".$num."\" class=\"nascosto\">";
 	if($cachemsg!=0){
-	echo "<form action=\"index.php?loc=messaggi&amp;do=canc\" method=\"post\" name=\"canctutt\">";
+	echo "<form action=\"index.php?loc=messaggi&amp;do=canc\" method=\"post\" name=\"canctutt".$num."\">";
 	$i=0;
 	foreach($cachemsg as $chiave=>$mc){
 		$i++;
@@ -233,7 +233,7 @@ $semsg=$db->QuerySelect("SELECT count(id) AS numero FROM messaggi WHERE userid='
 	$msgutenti[]=$mc;
 	}//per ogni msg
 	if(!$msgutenti){$msgutenti=0;}
-	Visualizzacategoria($msgutenti,$letti,$lang['messaggi_dagli utenti']);
+	Visualizzacategoria($msgutenti,$letti,$lang['messaggi_dagli utenti'],1);
 	$letti=0;
 	foreach($cachemsg as $chiave=>$mc){
 	if($mc['letto']==0)
@@ -242,7 +242,7 @@ $semsg=$db->QuerySelect("SELECT count(id) AS numero FROM messaggi WHERE userid='
 	$msgsistema[]=$mc;
 	}//per ogni msg
 	if(!$msgsistema){$msgsistema=0;}
-	Visualizzacategoria($msgsistema,$letti,$lang['messaggi_dal_sistema']);
+	Visualizzacategoria($msgsistema,$letti,$lang['messaggi_dal_sistema'],2);
 	
 	$db->QueryMod("UPDATE messaggi SET letto=1 WHERE userid='".$user['userid']."'");
 	}else{echo $lang['nessun_messaggio'];}
