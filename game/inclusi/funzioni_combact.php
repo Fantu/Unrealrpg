@@ -570,7 +570,7 @@ $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,battl
 function Endcombact($battleid,$vincitore){
 global $db,$adesso,$lang,$config;
 $battle=$db->QuerySelect("SELECT * FROM battle WHERE id='".$battleid."' LIMIT 1");
-$link="<a href=\"index.php?loc=combact&do=repview&id=".$battleid."\">qui</a>";
+$link="<a href=\"index.php?loc=combact&amp;do=repview&amp;id=".$battleid."\">qui</a>";
 $titolo="Combattimento finito";
 $testo="Nella versione attuale non si pu&ograve; definire ancora un combattimento, per&ograve; usabile comunque per rilevare eventuali errori o problemi di alcuni sistemi in sviluppo che saranno alla base del sistema di combattimento, per visualizzare il report clicca ".$link;
 $att=$battle['attid'];
