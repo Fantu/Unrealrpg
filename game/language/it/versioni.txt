@@ -9,7 +9,7 @@ Legenda:<br />
 <p><strong>0.7.9</strong> (Non disponibile - In sviluppo)<br />
 + La visualizzazione dei messaggi è ora divisa in 2 categorie, una con quelli di altri utenti e l'altra con quelli di sistema<br />
 + Le categorie sono apribili/chiudibili con click sul nome della categoria<br />
-+ In parte al nome della categoria c'è anche scritto il numero di messaggi al proprio interno<br />
++ In parte al nome della categoria c'è anche scritto il numero di messaggi al proprio interno, nuovi (se ce ne sono) e totali<br />
 + Viene visualizzato nessun messaggio sia globalmente che per categoria<br />
 + Vari miglioramenti di sistema a sistema messaggi, sistema di combattimento<br />
 </p>
