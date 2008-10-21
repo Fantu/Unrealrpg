@@ -230,19 +230,21 @@ $semsg=$db->QuerySelect("SELECT count(id) AS numero FROM messaggi WHERE userid='
 	}//fine Visualizzacategoria
 	$letti=0;
 	foreach($cachemsg as $chiave=>$mc){
+	if($mc['mittenteid']!=0){
 	if($mc['letto']==0)
 	$letti++;
-	if($mc['mittenteid']!=0)
 	$msgutenti[]=$mc;
+	}
 	}//per ogni msg
 	if(!$msgutenti){$msgutenti=0;}
 	Visualizzacategoria($msgutenti,$letti,$lang['messaggi_dagli utenti'],1);
 	$letti=0;
 	foreach($cachemsg as $chiave=>$mc){
+	if($mc['mittenteid']==0){
 	if($mc['letto']==0)
 	$letti++;
-	if($mc['mittenteid']==0)
 	$msgsistema[]=$mc;
+	}
 	}//per ogni msg
 	if(!$msgsistema){$msgsistema=0;}
 	Visualizzacategoria($msgsistema,$letti,$lang['messaggi_dal_sistema'],2);
