@@ -30,10 +30,10 @@ function conteggio() {
 }
 function Cambiavista(id) {
 	var identity=document.getElementById(id);
-	if(identity.className==nascosto){
-	identity.className=visibile;
+	if(identity.className=='nascosto'){
+	identity.className='visibile';
 	}else{
-	identity.className=nascosto;}
+	identity.className='nascosto';}
 }
 </script>
 <div align="center">
