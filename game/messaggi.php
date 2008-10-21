@@ -184,7 +184,10 @@ $semsg=$db->QuerySelect("SELECT count(id) AS numero FROM messaggi WHERE userid='
 	
 	function Visualizzacategoria($cachemsg,$letti,$nomecat,$num){
 	global $db,$lang,$user;
+	if($cachemsg!=0)
 	$nummsg=count($cachemsg);
+	else
+	$nummsg=0;
 	if($letti>0)
 	$conti.=$letti." ".$lang['nuovi']." - ";
 	$conti.=$nummsg." ".$lang['totali'];
@@ -192,7 +195,7 @@ $semsg=$db->QuerySelect("SELECT count(id) AS numero FROM messaggi WHERE userid='
 	echo "<div id=\"cat".$num."\" class=\"nascosto\">";
 	if($cachemsg!=0){
 	echo "<form action=\"index.php?loc=messaggi&amp;do=canc\" method=\"post\" name=\"canctutt".$num."\">";
-	$i=0;
+	$i=100*$num;
 	foreach($cachemsg as $chiave=>$mc){
 		$i++;
 		if($mc['mittenteid']!=0)
