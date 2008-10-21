@@ -28,7 +28,7 @@ function cambiaseltuttimsg(formogg, imposta)
 function conteggio() {
 	window.document.getElementById("caratteri").innerHTML=(<?php if($user['plus']==0) echo "500"; else echo "10000";?>-window.document.getElementById("mymess").value.length);
 }
-function Visualizza(id) {
+function Cambiavista(id) {
 	var identity=document.getElementById(id);
 	if(identity.className==nascosto){
 	identity.className=visibile;
@@ -184,6 +184,8 @@ $semsg=$db->QuerySelect("SELECT count(id) AS numero FROM messaggi WHERE userid='
 	
 	function Visualizzacategoria($cachemsg){
 	global $db,$lang,$user;
+	echo "<a href=\"javascript:;\" onclick=\"Cambiavista('provat')\">TUTTI I MESSAGGI</a>";
+	echo "<div id=\"provat\" class=\"nascosto\">";
 	echo "<form action=\"index.php?loc=messaggi&amp;do=canc\" method=\"post\" name=\"canctutt\">";
 	$i=0;
 	foreach($cachemsg as $chiave=>$mc){
@@ -214,6 +216,7 @@ $semsg=$db->QuerySelect("SELECT count(id) AS numero FROM messaggi WHERE userid='
 	echo "<br /><table width=\"505\"  border=\"0\" cellspacing=\"2\" cellpadding=\"2\"><tr>"
     ."<td align=\"center\"><input name=\"contatore\" type=\"hidden\" value=\"".$i."\" /><input type=\"checkbox\" name=\"tuttimsg\" id=\"selezionatutti\" onclick=\"cambiaseltuttimsg(this.form, this.form.tuttimsg.checked);\" /> ".$lang['sel_desel_tutti']." <input name=\"asd\" type=\"submit\" value=\"".$lang['cancella_selezionati']."\" /></td>"
 	."</tr></table></form>";
+	echo "</div>";
 	}//fine Visualizzacategoria
 	Visualizzacategoria($cachemsg);
 	
