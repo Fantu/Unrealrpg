@@ -223,7 +223,7 @@ $semsg=$db->QuerySelect("SELECT count(id) AS numero FROM messaggi WHERE userid='
 	."</tr></table></form>";
 	//echo "</div>";
 	}else{echo $lang['nessun_messaggio']."<br />";}
-	echo "</div><br />";
+	echo "</div><br /><br /><br />";
 	}//fine Visualizzacategoria
 	$letti=0;
 	foreach($cachemsg as $chiave=>$mc){
