@@ -19,6 +19,6 @@ $lang['nessun_messaggio']='Non ci sono messaggi.';
 $lang['sel_desel_tutti']='Seleziona o deseleziona tutti';
 $lang['msg_orig']='Messaggio originale:';
 $lang['sistema']='Sistema';
-$lang['totali']='totali';
-$lang['nuovi']='nuovi';
+$lang['totali']='Totali';
+$lang['nuovi']='Nuovi';
 ?>
