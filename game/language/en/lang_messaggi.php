@@ -18,4 +18,9 @@ $lang['cancella_selezionati']='Cancel selected messages';
 $lang['nessun_messaggio']='There are no messages.';
 $lang['sel_desel_tutti']='Select/Deselect all';
 $lang['msg_orig']='Original message:';
+$lang['sistema']='Sistema';
+$lang['totali']='Totali';
+$lang['nuovi']='Nuovi';
+$lang['messaggi_dagli utenti']='Messaggi dagli utenti';
+$lang['messaggi_dal_sistema']='Messaggi dal sistema';
 ?>

@@ -21,6 +21,6 @@ $lang['msg_orig']='Messaggio originale:';
 $lang['sistema']='Sistema';
 $lang['totali']='Totali';
 $lang['nuovi']='Nuovi';
-$lang['messaggi_dagli utenti']='MESSAGGI DAGLI UTENTI';
-$lang['messaggi_dal_sistema']='MESSAGGI DAL SISTEMA';
+$lang['messaggi_dagli utenti']='Messaggi dagli utenti';
+$lang['messaggi_dal_sistema']='Messaggi dal sistema';
 ?>
