@@ -184,7 +184,9 @@ $semsg=$db->QuerySelect("SELECT count(id) AS numero FROM messaggi WHERE userid='
 	
 	function Visualizzacategoria($cachemsg){
 	global $db,$lang,$user;
-	echo "<a href=\"javascript:;\" onclick=\"Cambiavista('provat')\">TUTTI I MESSAGGI</a>";
+	if($cachemsg!=0){
+	$nummsg=count($cachemsg);
+	echo "<a href=\"javascript:;\" onclick=\"Cambiavista('provat')\">TUTTI I MESSAGGI (".$nummsg.")</a>";
 	echo "<div id=\"provat\" class=\"nascosto\">";
 	echo "<form action=\"index.php?loc=messaggi&amp;do=canc\" method=\"post\" name=\"canctutt\">";
 	$i=0;
@@ -217,6 +219,7 @@ $semsg=$db->QuerySelect("SELECT count(id) AS numero FROM messaggi WHERE userid='
     ."<td align=\"center\"><input name=\"contatore\" type=\"hidden\" value=\"".$i."\" /><input type=\"checkbox\" name=\"tuttimsg\" id=\"selezionatutti\" onclick=\"cambiaseltuttimsg(this.form, this.form.tuttimsg.checked);\" /> ".$lang['sel_desel_tutti']." <input name=\"asd\" type=\"submit\" value=\"".$lang['cancella_selezionati']."\" /></td>"
 	."</tr></table></form>";
 	echo "</div>";
+	}else{echo $lang['nessun_messaggio'];}
 	}//fine Visualizzacategoria
 	Visualizzacategoria($cachemsg);
 	
