@@ -18,7 +18,7 @@ if(!$_GET['cod']) {
 	exit();
 }
 $code=htmlspecialchars($_GET['cod'],ENT_QUOTES);
-$a=$db->QuerySelect("SELECT userid,conferma,server FROM utenti WHERE codice='".$code."' LIMIT 1");
+$a=$db->QuerySelect("SELECT userid,conferma FROM utenti WHERE codice='".$code."' LIMIT 1");
 
 if(!$a['userid']) {
 	header("Location: index.php?error=5");
@@ -30,7 +30,7 @@ else if($a['conferma']==1) {
 } else {	
 	$ora=strtotime("now");
 	$db->QueryMod("UPDATE utenti SET conferma='1' WHERE userid='".$a['userid']."'");
-	$db->QueryMod("UPDATE config SET utenti=utenti+'1' WHERE id='".$a['server']."'");						
+	$db->QueryMod("UPDATE config SET utenti=utenti+'1'");						
 	
 	header("Location: index.php?error=7");
 	exit();
