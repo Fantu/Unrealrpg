@@ -276,7 +276,7 @@ $semsg=$db->QuerySelect("SELECT count(id) AS numero FROM messaggi WHERE userid='
 	}//per ogni messaggio
 	
 	$num=9;
-	$conti.=$nummsg." ".$lang['totali'];
+	$conti.=count($cachemsg)." ".$lang['totali'];
 	echo "<a href=\"javascript:;\" onclick=\"Cambiavista('cat".$num."')\">".$lang['messaggi_inviati']." (".$conti.")</a>";
 	echo "<div id=\"cat".$num."\" class=\"nascosto\"><br />";
 	echo "<form action=\"index.php?loc=messaggi&amp;do=canc\" method=\"post\" name=\"canctutt".$num."\">";
