@@ -43,12 +43,6 @@ function Cambiavista(id) {
 </script>
 <div align="center">
 <?php
-//cancello messaggi vecchi
-if($user['plus']==0)
-	$scaduto=$adesso-172800;
-else
-	$scaduto=$adesso-432000;
-$db->QueryMod("DELETE FROM messaggi WHERE userid='".$user['userid']."' AND letto='1' AND data<'".$scaduto."'");
 $db->QueryMod("DELETE FROM msginviati WHERE data<'".($adesso-172800)."'");// cancellazione di tutti i msg inviati del regno più vecchi di 2 giorni
 switch($_GET['do']){
 case "elim"://cancella msg singolo
@@ -264,6 +258,8 @@ $semsg=$db->QuerySelect("SELECT count(id) AS numero FROM messaggi WHERE userid='
 	if(!$msgsistema){$msgsistema=0;}
 	Visualizzacategoria($msgsistema,$letti,$lang['messaggi_dal_sistema'],2);
 	
+	if($user['plus']==0){$scaduto=$adesso-172800;}else{$scaduto=$adesso-432000;}
+	$db->QueryMod("DELETE FROM messaggi WHERE userid='".$user['userid']."' AND letto='1' AND data<'".$scaduto."'");//cancello messaggi vecchi
 	$db->QueryMod("UPDATE messaggi SET letto=1 WHERE userid='".$user['userid']."'");
 	}else{echo $lang['nessun_messaggio']."<br /><br /><br />";}
 	
