@@ -263,7 +263,7 @@ $semsg=$db->QuerySelect("SELECT count(id) AS numero FROM messaggi WHERE userid='
 	Visualizzacategoria($msgsistema,$letti,$lang['messaggi_dal_sistema'],2);
 	
 	$db->QueryMod("UPDATE messaggi SET letto=1 WHERE userid='".$user['userid']."'");
-	}else{echo $lang['nessun_messaggio'];}
+	}else{echo $lang['nessun_messaggio']."<br /><br /><br />";}
 	
 	if($user['plus']>0){
 	$semsg=$db->QuerySelect("SELECT count(id) AS numero FROM msginviati WHERE userid='".$user['userid']."'");
@@ -303,11 +303,12 @@ $semsg=$db->QuerySelect("SELECT count(id) AS numero FROM messaggi WHERE userid='
 	echo "<br /><table width=\"505\"  border=\"0\" cellspacing=\"2\" cellpadding=\"2\"><tr>"
     ."<td align=\"center\"><input name=\"contatore\" type=\"hidden\" value=\"".$i."\" /><input name=\"catp\" type=\"hidden\" value=\"".$num."\" /><input name=\"tipo\" type=\"hidden\" value=\"2\" /><input type=\"checkbox\" name=\"tuttimsg\" id=\"selezionatutti".$num."\" onclick=\"cambiaseltuttimsg(this.form, this.form.tuttimsg.checked);\" /> ".$lang['sel_desel_tutti']." <input name=\"cms\" type=\"submit\" value=\"".$lang['cancella_selezionati']."\" /></td>"
 	."</tr></table></form>";
-	echo "</div><br /><br /><br />";
+	echo "</div><br />";
 	
 	}else{//fine se ha msg inviati
 	echo $lang['nessun_messaggio_inviato']."<br />";
 	}//se nn ha msg inviati
+	echo "<br /><br />";
 	}//se ha il plus
 break;
 }
