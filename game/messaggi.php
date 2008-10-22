@@ -184,18 +184,19 @@ case "scrivi":// scrivi nuovo
 <?php
 break;
 default:// visualizza messaggi
+
+	function Nomeutente($userid){
+	global $db;
+	$mit=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$userid."'");
+	return $mit['username'];
+	}//fine Nomeutente
+
 $semsg=$db->QuerySelect("SELECT count(id) AS numero FROM messaggi WHERE userid='".$user['userid']."'");
 	if($semsg['numero']>0){
 	$a=$db->QueryCiclo("SELECT * FROM messaggi WHERE userid='".$user['userid']."' ORDER BY id desc LIMIT 50");
 	while($mess=$db->QueryCicloResult($a)){
 	$cachemsg[]=$mess;
 	}//per ogni messaggio
-	
-	function Nomeutente($userid){
-	global $db;
-	$mit=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$userid."'");
-	return $mit['username'];
-	}//fine Nomeutente
 	
 	function Visualizzacategoria($cachemsg,$letti,$nomecat,$num){
 	global $lang;
