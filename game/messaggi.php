@@ -8,8 +8,8 @@ require('template/int_messaggi.php');
 $id=(int)$_GET['id'];
 $tipo=(int)$_POST['tipo'];
 
-function Cancellamsg($id,$tipo){
-global $db,$user;
+function Cancellamsg($id){
+global $db,$user,$tipo;
 if($tipo==1)
 $tab="messaggi";
 else
@@ -57,7 +57,8 @@ exit();
 break;
 case "canc"://cancella mess selezionati
 $contatore=(int)$_POST['contatore'];
-while($contatore>0){
+$catp=(int)$_POST['catm'];
+while($contatore>($catp*100)){
 	$msgid=(int)$_POST['messaggioid'.$contatore];
 	Cancellamsg($msgid);
 	$contatore--;
@@ -235,7 +236,7 @@ $semsg=$db->QuerySelect("SELECT count(id) AS numero FROM messaggi WHERE userid='
 	<?php
 	}
 	echo "<br /><table width=\"505\"  border=\"0\" cellspacing=\"2\" cellpadding=\"2\"><tr>"
-    ."<td align=\"center\"><input name=\"contatore\" type=\"hidden\" value=\"".$i."\" /><input name=\"tipo\" type=\"hidden\" value=\"1\" /><input type=\"checkbox\" name=\"tuttimsg\" id=\"selezionatutti".$num."\" onclick=\"cambiaseltuttimsg(this.form, this.form.tuttimsg.checked);\" /> ".$lang['sel_desel_tutti']." <input name=\"cms\" type=\"submit\" value=\"".$lang['cancella_selezionati']."\" /></td>"
+    ."<td align=\"center\"><input name=\"contatore\" type=\"hidden\" value=\"".$i."\" /><input name=\"catp\" type=\"hidden\" value=\"".$num."\" /><input name=\"tipo\" type=\"hidden\" value=\"1\" /><input type=\"checkbox\" name=\"tuttimsg\" id=\"selezionatutti".$num."\" onclick=\"cambiaseltuttimsg(this.form, this.form.tuttimsg.checked);\" /> ".$lang['sel_desel_tutti']." <input name=\"cms\" type=\"submit\" value=\"".$lang['cancella_selezionati']."\" /></td>"
 	."</tr></table></form>";
 	}else{echo $lang['nessun_messaggio']."<br />";}
 	echo "</div><br /><br /><br />";
@@ -300,7 +301,7 @@ $semsg=$db->QuerySelect("SELECT count(id) AS numero FROM messaggi WHERE userid='
 	<?php
 	}
 	echo "<br /><table width=\"505\"  border=\"0\" cellspacing=\"2\" cellpadding=\"2\"><tr>"
-    ."<td align=\"center\"><input name=\"contatore\" type=\"hidden\" value=\"".$i."\" /><input name=\"tipo\" type=\"hidden\" value=\"1\" /><input type=\"checkbox\" name=\"tuttimsg\" id=\"selezionatutti".$num."\" onclick=\"cambiaseltuttimsg(this.form, this.form.tuttimsg.checked);\" /> ".$lang['sel_desel_tutti']." <input name=\"cms\" type=\"submit\" value=\"".$lang['cancella_selezionati']."\" /></td>"
+    ."<td align=\"center\"><input name=\"contatore\" type=\"hidden\" value=\"".$i."\" /><input name=\"catp\" type=\"hidden\" value=\"".$num."\" /><input name=\"tipo\" type=\"hidden\" value=\"2\" /><input type=\"checkbox\" name=\"tuttimsg\" id=\"selezionatutti".$num."\" onclick=\"cambiaseltuttimsg(this.form, this.form.tuttimsg.checked);\" /> ".$lang['sel_desel_tutti']." <input name=\"cms\" type=\"submit\" value=\"".$lang['cancella_selezionati']."\" /></td>"
 	."</tr></table></form>";
 	echo "</div><br /><br /><br />";
 	
