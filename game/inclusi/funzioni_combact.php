@@ -569,7 +569,7 @@ $expb+=1;
 $input.=sprintf($lang['troppo_stanco_per_attacco'],$dc->nome(1))."<br/>";
 }elseif($dc->tattica(1,1)==3){
 $input.=sprintf($lang['resta_in_difesa'],$dc->nome(1))."<br/>";
-}elseif($dc->tattica(1,1)==1){
+}else{
 if($dc->tattica(1,2)==2)
 $input.=$dc->Attaccolontano(1,2);
 else
@@ -582,7 +582,7 @@ $expb+=1;
 $input.=sprintf($lang['troppo_stanco_per_attacco'],$dc->nome(2))."<br/>";
 }elseif($dc->tattica(2,1)==3){
 $input.=sprintf($lang['resta_in_difesa'],$dc->nome(2))."<br/>";
-}elseif($dc->tattica(2,1)==1){
+}else{
 if($dc->tattica(2,2)==2)
 $input.=$dc->Attaccolontano(2,1);
 else
