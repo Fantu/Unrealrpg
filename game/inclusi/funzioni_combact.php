@@ -245,8 +245,7 @@ class Dati{
 	if(($this->equip($chi,'cac')!=0) AND ($this->equip($chi,'adi')==0)){
 	$this->che[$chi]->subtattica==1;
 	}elseif(($this->equip($chi,'cac')==0) AND ($this->equip($chi,'adi')!=0)){
-	$this->che[$chi]->tattica=3;
-	//$this->che[$chi]->subtattica==2;
+	$this->che[$chi]->subtattica==2;
 	}else{
 	$armavi=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$this->equip($att,'cac')."' LIMIT 1");
 	$armadi=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$this->equip($att,'adi')."' LIMIT 1");
@@ -574,7 +573,7 @@ $input.=$dc->Viewequip(2);}
 if($dc->tattica(1,1)!=2 AND $dc->tattica(2,1)!=2){
 $dc->Controllastato(1);
 $dc->Controllastato(2);
-
+$input.=$dc->tattica(1,2)."-".$dc->tattica(2,2)."<br/>";
 if($dc->tattica(1,1)==4){
 $input.=$dc->Usapozione(1);
 $expb+=1;
