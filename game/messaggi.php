@@ -180,9 +180,14 @@ break;
 default:// visualizza messaggi
 
 	function Nomeutente($userid){
-	global $db;
+	global $db,$cacheun;
+	if($cacheun[$userid]){
+	$username=$cacheun[$userid];
+	}else{
 	$mit=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$userid."'");
-	return $mit['username'];
+	$username=$mit['username']." NEW";
+	$cacheun[$userid]=$username;}
+	return $username;
 	}//fine Nomeutente
 
 $semsg=$db->QuerySelect("SELECT count(id) AS numero FROM messaggi WHERE userid='".$user['userid']."'");

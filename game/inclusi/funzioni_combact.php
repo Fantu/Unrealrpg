@@ -687,11 +687,12 @@ global $db;
 $cpud=$db->QuerySelect("SELECT * FROM pcpudata WHERE id='".$difensore."' LIMIT 1");
 $db->QueryMod("INSERT INTO carcpu (pid,livello,salute,saluteattuale,energia,energiamax,mana,manarimasto,attfisico,attmagico,diffisica,difmagica,agilita,velocita,intelligenza,destrezza,monete) VALUES ('".$difensore."','".$cpud['livello']."','".$cpud['salute']."','".$cpud['salute']."','".$cpud['energia']."','".$cpud['energia']."','".$cpud['mana']."','".$cpud['mana']."','".$cpud['attfisico']."','".$cpud['attmagico']."','".$cpud['diffisica']."','".$cpud['difmagica']."','".$cpud['agilita']."','".$cpud['velocita']."','".$cpud['intelligenza']."','".$cpud['destrezza']."','".$cpud['monete']."')");
 $idcpu=$db->QuerySelect("SELECT cpuid FROM carcpu ORDER BY cpuid DESC");
-$db->QueryMod("INSERT INTO equipagcpu (cpuid,cac,arm,scu,poz) VALUES ('".$idcpu['cpuid']."','".$cpud['eqcac']."','".$cpud['eqarm']."','".$cpud['eqscu']."','".$cpud['eqpoz']."')");
+$db->QueryMod("INSERT INTO equipagcpu (cpuid,cac,arm,scu,poz,adi) VALUES ('".$idcpu['cpuid']."','".$cpud['eqcac']."','".$cpud['eqarm']."','".$cpud['eqscu']."','".$cpud['eqpoz']."','".$cpud['eqadi']."')");
 if($cpud['eqcac']!=0){$db->QueryMod("INSERT INTO equipcpu (cpuid,oggid) VALUES ('".$idcpu['cpuid']."','".$cpud['eqcac']."')");}
 if($cpud['eqarm']!=0){$db->QueryMod("INSERT INTO equipcpu (cpuid,oggid) VALUES ('".$idcpu['cpuid']."','".$cpud['eqarm']."')");}
 if($cpud['eqscu']!=0){$db->QueryMod("INSERT INTO equipcpu (cpuid,oggid) VALUES ('".$idcpu['cpuid']."','".$cpud['eqscu']."')");}
 if($cpud['eqpoz']!=0){$db->QueryMod("INSERT INTO equipcpu (cpuid,oggid) VALUES ('".$idcpu['cpuid']."','".$cpud['eqpoz']."')");}
+if($cpud['eqadi']!=0){$db->QueryMod("INSERT INTO equipcpu (cpuid,oggid) VALUES ('".$idcpu['cpuid']."','".$cpud['eqadi']."')");}
 return $idcpu['cpuid'];
 } //fine Inizializzanpc
 
@@ -704,7 +705,7 @@ $id=$cpud['cpuid'];
 $cpueq=$db->QuerySelect("SELECT * FROM equipagcpu WHERE cpuid='".$id."' LIMIT 1");
 $cpuid=$db->QuerySelect("SELECT * FROM pcpudata WHERE id='".$difensore."' LIMIT 1");
 $db->QueryMod("UPDATE carcpu SET saluteattuale='".$cpuid['salute']."',energia='".$cpuid['energia']."' WHERE cpuid='".$id."' LIMIT 1");
-if( ($cpuid['eqcac']!=0 AND $cpueq['cac']==0) OR ($cpuid['eqarm']!=0 AND $cpueq['arm']==0) OR ($cpuid['eqscu']!=0 AND $cpueq['scu']==0) OR ($cpuid['eqpoz']!=0 AND $cpueq['poz']==0) ){
+if( ($cpuid['eqcac']!=0 AND $cpueq['cac']==0) OR ($cpuid['eqarm']!=0 AND $cpueq['arm']==0) OR ($cpuid['eqscu']!=0 AND $cpueq['scu']==0) OR ($cpuid['eqpoz']!=0 AND $cpueq['poz']==0) OR ($cpuid['eqadi']!=0 AND $cpueq['adi']==0) ){
 if($cpuid['eqcac']!=0 AND $cpueq['cac']==0){
 $db->QueryMod("INSERT INTO equipcpu (cpuid,oggid) VALUES ('".$id."','".$cpuid['eqcac']."')");
 }
@@ -717,7 +718,10 @@ $db->QueryMod("INSERT INTO equipcpu (cpuid,oggid) VALUES ('".$id."','".$cpuid['e
 if($cpuid['eqpoz']!=0 AND $cpueq['poz']==0){
 $db->QueryMod("INSERT INTO equipcpu (cpuid,oggid) VALUES ('".$id."','".$cpuid['eqpoz']."')");
 }
-$db->QueryMod("UPDATE equipagcpu SET cac='".$cpuid['eqcac']."',arm='".$cpuid['eqarm']."',scu='".$cpuid['eqscu']."',poz='".$cpuid['eqpoz']."' WHERE cpuid='".$id."' LIMIT 1");
+if($cpuid['eqadi']!=0 AND $cpueq['adi']==0){
+$db->QueryMod("INSERT INTO equipcpu (cpuid,oggid) VALUES ('".$id."','".$cpuid['eqadi']."')");
+}
+$db->QueryMod("UPDATE equipagcpu SET cac='".$cpuid['eqcac']."',arm='".$cpuid['eqarm']."',scu='".$cpuid['eqscu']."',poz='".$cpuid['eqpoz']."',adi='".$cpuid['eqadi']."' WHERE cpuid='".$id."' LIMIT 1");
 }//se ha perso qualche equipaggiamento
 }else{$id=0;}
 return $id;
