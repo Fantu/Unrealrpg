@@ -6,14 +6,19 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 require('language/'.$language.'/lang_messaggi.php');
 require('template/int_messaggi.php');
 $id=(int)$_GET['id'];
+$tipo=(int)$_POST['tipo'];
 
-function Cancellamsg($id){
+function Cancellamsg($id,$tipo){
 global $db,$user;
-$m=$db->QuerySelect("SELECT count(id) AS n FROM messaggi WHERE id='".$id."'");
+if($tipo==1)
+$tab="messaggi";
+else
+$tab="msginviati";
+$m=$db->QuerySelect("SELECT count(id) AS n FROM ".$tab." WHERE id='".$id."'");
 if($m['n']>0){
-$m=$db->QuerySelect("SELECT userid FROM messaggi WHERE id='".$id."'");
+$m=$db->QuerySelect("SELECT userid FROM ".$tab." WHERE id='".$id."'");
 if($m['userid']==$user['userid']){
-$db->QueryMod("DELETE FROM messaggi WHERE id='".$id."'");
+$db->QueryMod("DELETE FROM ".$tab." WHERE id='".$id."'");
 }//se è un proprio messaggio
 }//se esiste
 }//fine Cancellamsg
@@ -84,6 +89,7 @@ case "dorisp":// invia risposta
 		$titolo="RE: ".$a['titolo'];
 		$messaggio=htmlspecialchars($_POST['mymess'],ENT_QUOTES);
 		$db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$a['mittenteid']."','".$titolo."','".$messaggio."','".$user['userid']."','".$adesso."')");
+		if($user['plus>0']){$db->QueryMod("INSERT INTO msginviati (userid,titolo,testo,riceventeid,data) VALUES ('".$user['userid']."','".$titolo."','".$messaggio."','".$a['mittenteid']."','".$adesso."')");}
 		echo "<script language=\"javascript\">window.location.href='index.php?loc=messaggi'</script>";
 		exit();
 	}
@@ -113,6 +119,7 @@ case "doscrivi":// invia nuovo messaggio
 		$titolo=htmlspecialchars($_POST['titolo'],ENT_QUOTES);
 		$messaggio=htmlspecialchars($_POST['mymess'],ENT_QUOTES);
 		$db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$achi."','".$titolo."','".$messaggio."','".$user['userid']."','".$adesso."')");
+		if($user['plus>0']){$db->QueryMod("INSERT INTO msginviati (userid,titolo,testo,riceventeid,data) VALUES ('".$user['userid']."','".$titolo."','".$messaggio."','".$achi."','".$adesso."')");}
 		echo "<script language=\"javascript\">window.location.href='index.php?loc=messaggi'</script>";
 	}
 exit();
@@ -182,8 +189,14 @@ $semsg=$db->QuerySelect("SELECT count(id) AS numero FROM messaggi WHERE userid='
 	$cachemsg[]=$mess;
 	}//per ogni messaggio
 	
+	function Nomeutente($userid){
+	global $db;
+	$mit=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$userid."'");
+	return $mit['username'];
+	}//fine Nomeutente
+	
 	function Visualizzacategoria($cachemsg,$letti,$nomecat,$num){
-	global $db,$lang,$user;
+	global $lang;
 	if($cachemsg!=0)
 	$nummsg=count($cachemsg);
 	else
@@ -199,12 +212,12 @@ $semsg=$db->QuerySelect("SELECT count(id) AS numero FROM messaggi WHERE userid='
 	foreach($cachemsg as $chiave=>$mc){
 		$i++;
 		if($mc['mittenteid']!=0)
-		$mit=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$mc['mittenteid']."'");
+		$mit=Nomeutente($mc['mittenteid']);
 	?>
 	<table width="505"  border="0" cellspacing="2" cellpadding="2">
 	  <tr>
 		<td width="5%"><?php echo "<input name=\"messaggioid".$i."\" type=\"checkbox\" id=\"messaggioid".$i."\" value=\"".$mc['id']."\" />"; ?></td>
-		<td width="95%"><div align="center"><?php echo $lang['messaggio_da']; if ($mc['mittenteid']==0){echo $lang['sistema'];}else{echo $mit['username'];} echo " "; echo date($lang['dataora'],$mc['data']); ?> </div></td>
+		<td width="95%"><div align="center"><?php echo $lang['messaggio_da']; if ($mc['mittenteid']==0){echo $lang['sistema'];}else{echo $mit;} echo " "; echo date($lang['dataora'],$mc['data']); ?> </div></td>
 	  </tr>
 	  <tr>
 		<td>&nbsp;</td>
@@ -222,9 +235,8 @@ $semsg=$db->QuerySelect("SELECT count(id) AS numero FROM messaggi WHERE userid='
 	<?php
 	}
 	echo "<br /><table width=\"505\"  border=\"0\" cellspacing=\"2\" cellpadding=\"2\"><tr>"
-    ."<td align=\"center\"><input name=\"contatore\" type=\"hidden\" value=\"".$i."\" /><input type=\"checkbox\" name=\"tuttimsg\" id=\"selezionatutti".$num."\" onclick=\"cambiaseltuttimsg(this.form, this.form.tuttimsg.checked);\" /> ".$lang['sel_desel_tutti']." <input name=\"asd\" type=\"submit\" value=\"".$lang['cancella_selezionati']."\" /></td>"
+    ."<td align=\"center\"><input name=\"contatore\" type=\"hidden\" value=\"".$i."\" /><input name=\"tipo\" type=\"hidden\" value=\"1\" /><input type=\"checkbox\" name=\"tuttimsg\" id=\"selezionatutti".$num."\" onclick=\"cambiaseltuttimsg(this.form, this.form.tuttimsg.checked);\" /> ".$lang['sel_desel_tutti']." <input name=\"cms\" type=\"submit\" value=\"".$lang['cancella_selezionati']."\" /></td>"
 	."</tr></table></form>";
-	//echo "</div>";
 	}else{echo $lang['nessun_messaggio']."<br />";}
 	echo "</div><br /><br /><br />";
 	}//fine Visualizzacategoria
@@ -251,6 +263,51 @@ $semsg=$db->QuerySelect("SELECT count(id) AS numero FROM messaggi WHERE userid='
 	
 	$db->QueryMod("UPDATE messaggi SET letto=1 WHERE userid='".$user['userid']."'");
 	}else{echo $lang['nessun_messaggio'];}
+	
+	if($user['plus>0']){
+	$semsg=$db->QuerySelect("SELECT count(id) AS numero FROM msginviati WHERE userid='".$user['userid']."'");
+	if($semsg['numero']>0){
+	$a=$db->QueryCiclo("SELECT * FROM msginviati WHERE userid='".$user['userid']."' ORDER BY id desc LIMIT 50");
+	while($mess=$db->QueryCicloResult($a)){
+	$cachemsg[]=$mess;
+	}//per ogni messaggio
+	
+	$num=9;
+	$conti.=$nummsg." ".$lang['totali'];
+	echo "<a href=\"javascript:;\" onclick=\"Cambiavista('cat".$num."')\">".$lang['messaggi_inviati']." (".$conti.")</a>";
+	echo "<div id=\"cat".$num."\" class=\"nascosto\"><br />";
+	echo "<form action=\"index.php?loc=messaggi&amp;do=canc\" method=\"post\" name=\"canctutt".$num."\">";
+	$i=100*$num;
+	foreach($cachemsg as $chiave=>$mc){
+		$i++;
+		$ric=Nomeutente($mc['riceventeid']);
+	?>
+	<table width="505"  border="0" cellspacing="2" cellpadding="2">
+	  <tr>
+		<td width="5%"><?php echo "<input name=\"messaggioid".$i."\" type=\"checkbox\" id=\"messaggioid".$i."\" value=\"".$mc['id']."\" />"; ?></td>
+		<td width="95%"><div align="center"><?php echo $lang['messaggio_inviato_a'].$ric." ".date($lang['dataora'],$mc['data']); ?> </div></td>
+	  </tr>
+	  <tr>
+		<td>&nbsp;</td>
+		<td><?php echo "<strong><span>".$mc['titolo']."</span></strong><br />".$mc['testo']; ?></td>
+	  </tr>
+	  <tr>
+		<td colspan="2" align="right">
+		<?php echo "[ <a href=\"index.php?loc=messaggi&amp;do=elim&amp;id=".$mc['id']."\">".$lang['elimina']."</a> ]"; ?>
+		</td>
+	  </tr>
+	</table>
+	<?php
+	}
+	echo "<br /><table width=\"505\"  border=\"0\" cellspacing=\"2\" cellpadding=\"2\"><tr>"
+    ."<td align=\"center\"><input name=\"contatore\" type=\"hidden\" value=\"".$i."\" /><input name=\"tipo\" type=\"hidden\" value=\"1\" /><input type=\"checkbox\" name=\"tuttimsg\" id=\"selezionatutti".$num."\" onclick=\"cambiaseltuttimsg(this.form, this.form.tuttimsg.checked);\" /> ".$lang['sel_desel_tutti']." <input name=\"cms\" type=\"submit\" value=\"".$lang['cancella_selezionati']."\" /></td>"
+	."</tr></table></form>";
+	echo "</div><br /><br /><br />";
+	
+	}else{//fine se ha msg inviati
+	echo $lang['nessun_messaggio_inviato']."<br />";
+	}//se nn ha msg inviati
+	}//se ha il plus
 break;
 }
 ?>

@@ -23,4 +23,7 @@ $lang['totali']='Totali';
 $lang['nuovi']='Nuovi';
 $lang['messaggi_dagli utenti']='Messaggi dagli utenti';
 $lang['messaggi_dal_sistema']='Messaggi dal sistema';
+$lang['messaggi_inviati']='Messaggi inviati';
+$lang['nessun_messaggio_inviato']='Non ci sono messaggi inviati.';
+$lang['messaggio_inviato_a']='Messaggio inviato a ';
 ?>

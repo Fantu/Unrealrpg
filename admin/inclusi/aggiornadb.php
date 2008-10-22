@@ -3,47 +3,20 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	header("Location: ../../index.php?error=16");
 	exit();
 }
-$newversion="0.7.8";
+$newversion="0.7.10";
 foreach($game_server as $chiave=>$elemento){
 if($chiave!=999){
 $db->database=$chiave;
 $check=$db->QuerySelect("SELECT version FROM config WHERE id=".$chiave);
 if($check['version']!=$newversion AND $newversion==$game_revision){
 
-$db->QueryMod("INSERT INTO `oggetti` (
-`id` ,
-`tipo` ,
-`categoria` ,
-`probrottura` ,
-`costo` ,
-`energia` ,
-`usura` ,
-`bonuseff` ,
-`forzafisica` ,
-`destrezza` ,
-`probtrovare` ,
-`recsalute` ,
-`recenergia` ,
-`abilitanec` ,
-`materiale` ,
-`danno` ,
-`difesafisica`
-)
-VALUES
-(NULL , '7', '1', '0', '5', '10', '10', '0', '10', '50', '0', '0', '0', '0', '0', '6', '0'),
-(NULL , '7', '1', '0', '7', '13', '10', '0', '25', '50', '0', '0', '0', '0', '0', '8', '0'),
-(NULL , '7', '1', '0', '8', '15', '10', '0', '30', '50', '0', '0', '0', '0', '0', '9', '0');
-");
-
-$db->QueryMod("ALTER TABLE `equipaggiamento` ADD `adi` SMALLINT UNSIGNED NOT NULL DEFAULT '0'");
-$db->QueryMod("ALTER TABLE `equipagcpu` ADD `adi` SMALLINT UNSIGNED NOT NULL DEFAULT '0'");
-$db->QueryMod("ALTER TABLE `utenti` DROP `server`");
-$db->QueryMod("ALTER TABLE `utenti` DROP `language`");
-
-$db->QueryMod("CREATE TABLE `cacheuserid` (
+$db->QueryMod("CREATE TABLE `msginviati` (
+`id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY ,
 `userid` SMALLINT UNSIGNED NOT NULL ,
-`data` INT( 13 ) UNSIGNED NOT NULL ,
-PRIMARY KEY ( `userid` )
+`titolo` VARCHAR( 100 ) NOT NULL ,
+`testo` VARCHAR( 11000 ) NOT NULL ,
+`riceventeid` SMALLINT UNSIGNED NOT NULL ,
+`data` INT( 13 ) UNSIGNED NOT NULL
 ) ENGINE = MYISAM");
 
 	/*//creazione record per tab con 1 record per utente
