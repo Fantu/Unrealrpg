@@ -91,7 +91,7 @@ case "dorisp":// invia risposta
 		$titolo="RE: ".$a['titolo'];
 		$messaggio=htmlspecialchars($_POST['mymess'],ENT_QUOTES);
 		$db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$a['mittenteid']."','".$titolo."','".$messaggio."','".$user['userid']."','".$adesso."')");
-		if($user['plus>0']){$db->QueryMod("INSERT INTO msginviati (userid,titolo,testo,riceventeid,data) VALUES ('".$user['userid']."','".$titolo."','".$messaggio."','".$a['mittenteid']."','".$adesso."')");}
+		if($user['plus']>0){$db->QueryMod("INSERT INTO msginviati (userid,titolo,testo,riceventeid,data) VALUES ('".$user['userid']."','".$titolo."','".$messaggio."','".$a['mittenteid']."','".$adesso."')");}
 		echo "<script language=\"javascript\">window.location.href='index.php?loc=messaggi'</script>";
 		exit();
 	}
@@ -121,7 +121,7 @@ case "doscrivi":// invia nuovo messaggio
 		$titolo=htmlspecialchars($_POST['titolo'],ENT_QUOTES);
 		$messaggio=htmlspecialchars($_POST['mymess'],ENT_QUOTES);
 		$db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$achi."','".$titolo."','".$messaggio."','".$user['userid']."','".$adesso."')");
-		if($user['plus>0']){$db->QueryMod("INSERT INTO msginviati (userid,titolo,testo,riceventeid,data) VALUES ('".$user['userid']."','".$titolo."','".$messaggio."','".$achi."','".$adesso."')");}
+		if($user['plus']>0){$db->QueryMod("INSERT INTO msginviati (userid,titolo,testo,riceventeid,data) VALUES ('".$user['userid']."','".$titolo."','".$messaggio."','".$achi."','".$adesso."')");}
 		echo "<script language=\"javascript\">window.location.href='index.php?loc=messaggi'</script>";
 	}
 exit();
