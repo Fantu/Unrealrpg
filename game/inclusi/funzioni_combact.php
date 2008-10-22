@@ -242,19 +242,20 @@ class Dati{
 	$this->che[$chi]->tattica=1;
 	}//se difesa prob di attacco
 	if($this->tattica($chi,1)==1){
-	$this->che[$chi]->tattica=3;
-	/*if(($this->equip($chi,'cac')!=0) AND ($this->equip($chi,'adi')==0)){
+	if(($this->equip($chi,'cac')!=0) AND ($this->equip($chi,'adi')==0)){
 	$this->che[$chi]->subtattica==1;
 	}elseif(($this->equip($chi,'cac')==0) AND ($this->equip($chi,'adi')!=0)){
 	$this->che[$chi]->subtattica==2;
 	}else{
-	$armavi=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$this->equip($att,'cac')."' LIMIT 1");
+	$this->che[$chi]->tattica=3;
+	/*$armavi=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$this->equip($att,'cac')."' LIMIT 1");
 	$armadi=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$this->equip($att,'adi')."' LIMIT 1");
 	if($armavi['danno']>$armadi['danno'])
 	$this->che[$chi]->subtattica==1;
 	else
-	$this->che[$chi]->subtattica==2;
-	}//se ha entrambe le armi*/
+	$this->che[$chi]->subtattica==2;*/
+	
+	}//se ha entrambe le armi
 	}//se si attacca
 	}//fine Autotattic
 
