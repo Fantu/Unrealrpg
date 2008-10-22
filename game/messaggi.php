@@ -45,10 +45,11 @@ function Cambiavista(id) {
 <?php
 //cancello messaggi vecchi
 if($user['plus']==0)
-	$scaduto=strtotime("now")-172800;
+	$scaduto=$adesso-172800;
 else
-	$scaduto=strtotime("now")-432000;
+	$scaduto=$adesso-432000;
 $db->QueryMod("DELETE FROM messaggi WHERE userid='".$user['userid']."' AND letto='1' AND data<'".$scaduto."'");
+$db->QueryMod("DELETE FROM msginviati WHERE data<'".($adesso-172800)."'");// cancellazione di tutti i msg inviati del regno più vecchi di 2 giorni
 switch($_GET['do']){
 case "elim"://cancella msg singolo
 Cancellamsg($id);

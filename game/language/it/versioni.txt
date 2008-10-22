@@ -7,6 +7,10 @@ Legenda:<br />
 - Correzione bug e patch di situazioni non previste<br />
 </p>
 <p><strong>0.7.10</strong> (Non disponibile - In sviluppo)<br />
++ Creato sistema di messaggi inviati (attualmente solo per plus)<br />
++ Aggiunta la visualizzazione dei messaggi inviati in Messaggi in una categoria propria<br />
++ Si possono visualizzare massimo 50 messaggi inviati (i più recenti), ovviamente gli altri non vengono cancellati (se non abbastanza vecchi)<br />
++ I messaggi inviati più vecchi di 2 giorni vengono cancellati automaticamente<br />
 + Vari miglioramenti di sistema a sistema messaggi<br />
 </p>
 <p><strong>0.7.9.1</strong> (21/10/08 - Beta)<br />
