@@ -195,7 +195,7 @@ class Dati{
 	$this->che[$chi]->esausto=0;
 	} //fine Controllastato
 
-	public function Autotattic($chi) {
+	public function Autotattic($chi){
 	global $db;
 	if($chi==1)
 	$chi2=2;
@@ -241,9 +241,21 @@ class Dati{
 	if($prob==1)
 	$this->che[$chi]->tattica=1;
 	}//se difesa prob di attacco
-	if($this->tattica($chi,1)==1)
+	if($this->tattica($chi,1)==1){
+	if(($this->equip($chi,'cac')!=0) AND ($this->equip($chi,'adi')==0)){
 	$this->che[$chi]->subtattica==1;
-	} //fine Autotattic
+	}elseif(($this->equip($chi,'cac')==0) AND ($this->equip($chi,'adi')!=0)){
+	$this->che[$chi]->subtattica==2;
+	}else{
+	$armavi=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$this->equip($att,'cac')."' LIMIT 1");
+	$armadi=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$this->equip($att,'adi')."' LIMIT 1");
+	if($armavi['danno']>$armadi['danno'])
+	$this->che[$chi]->subtattica==1;
+	else
+	$this->che[$chi]->subtattica==2;
+	}//se ha entrambe le armi
+	}//se si attacca
+	}//fine Autotattic
 
 	public function Guadagnaexp($chi,$turni,$expb,$vincitore) {
 	global $db,$lang;

@@ -18,6 +18,7 @@ Legenda:<br />
 + Implementati nel combattimento a distanza armature e scudi<br />
 + Implementata la tattica difensiva nel difensore che riceve un attacco a distanza<br />
 + Aggiunta la tattica attacco a distanza nel menu delle tattiche<br />
++ Implementato l'attacco a distanza nel sistema di selezione automatica delle tattiche<br />
 + Vari miglioramenti di sistema a sistema messaggi<br />
 </p>
 <p><strong>0.7.9.1</strong> (21/10/08 - Beta)<br />
