@@ -264,7 +264,7 @@ $semsg=$db->QuerySelect("SELECT count(id) AS numero FROM messaggi WHERE userid='
 	$db->QueryMod("UPDATE messaggi SET letto=1 WHERE userid='".$user['userid']."'");
 	}else{echo $lang['nessun_messaggio'];}
 	
-	if($user['plus>0']){
+	if($user['plus']>0){
 	$semsg=$db->QuerySelect("SELECT count(id) AS numero FROM msginviati WHERE userid='".$user['userid']."'");
 	if($semsg['numero']>0){
 	$a=$db->QueryCiclo("SELECT * FROM msginviati WHERE userid='".$user['userid']."' ORDER BY id desc LIMIT 50");
