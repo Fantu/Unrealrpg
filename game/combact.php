@@ -55,7 +55,8 @@ case 0:
 $viewtattic=$lang['nessuna'];
 break;//fine nessuna
 case 1:
-$viewtattic=$lang['tattica_attacco']." ".$lang['tattica_attacco_cac'];
+if($subtattica==1){$subv=$lang['tattica_attacco_cac'];}else{$subv=$lang['tattica_attacco_adi'];}
+$viewtattic=$lang['tattica_attacco']." ".$subv;
 break;//fine attacco
 case 2:
 $viewtattic=$lang['tattica_resa'];
@@ -68,7 +69,7 @@ $viewtattic=$lang['tattica_pozione'];
 break;//fine usa pozione
 }
 $viewtattic=sprintf($lang['tattica_selezionata'],$viewtattic)."<br/>";
-}
+}//se combattimento in corso
 }//se ci sono eventi
 
 switch($do){

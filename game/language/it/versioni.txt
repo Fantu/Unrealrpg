@@ -11,6 +11,13 @@ Legenda:<br />
 + Aggiunta la visualizzazione dei messaggi inviati in Messaggi in una categoria propria<br />
 + Si possono visualizzare massimo 50 messaggi inviati (i più recenti), ovviamente gli altri non vengono cancellati (se non abbastanza vecchi)<br />
 + I messaggi inviati più vecchi di 2 giorni vengono cancellati automaticamente<br />
++ Implementato l'uso delle armi a distanza nei combattimenti<br />
++ Se non si ha un arma a distanza ma combatte a distanza lancia un sasso<br />
++ Nella probabilità di colpire a distanza influiscono destrezza, agilità, energia e leggermente intelligenza e salute<br />
++ Nella probabilità di colpire in corpo a corpo ora influisce leggermente anche intelligenza<br />
++ Implementati nel combattimento a distanza armature e scudi<br />
++ Implementata la tattica difensiva nel difensore che riceve un attacco a distanza<br />
++ Aggiunta la tattica attacco a distanza nel menu delle tattiche<br />
 + Vari miglioramenti di sistema a sistema messaggi<br />
 </p>
 <p><strong>0.7.9.1</strong> (21/10/08 - Beta)<br />

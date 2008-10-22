@@ -25,6 +25,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <li><a href="#"><?php echo $lang['tattica_attacco']; ?></a>
 <ul>
 <li><a href="index.php?loc=combact&amp;tattica=1&amp;subtatt=1#fondo"><?php echo $lang['tattica_attacco_cac']; ?></a></li>
+<li><a href="index.php?loc=combact&amp;tattica=1&amp;subtatt=2#fondo"><?php echo $lang['tattica_attacco_adi']; ?></a></li>
 </ul></li>
 <li><a href="index.php?loc=combact&amp;tattica=3#fondo"><?php echo $lang['tattica_difesa']; ?></a></li>
 <?php if($userequip['poz']!=0){ ?><li><a href="index.php?loc=combact&amp;tattica=4#fondo"><?php echo $lang['tattica_pozione']; ?></a></li><?php }/*se pozione in equip*/ ?>

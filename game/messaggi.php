@@ -185,8 +185,8 @@ default:// visualizza messaggi
 	$username=$cacheun[$userid];
 	}else{
 	$mit=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$userid."'");
-	$username=$mit['username']." NEW";
-	$cacheun[$userid]=$mit['username'];}
+	$username=$mit['username'];
+	$cacheun[$userid]=$username;}
 	return $username;
 	}//fine Nomeutente
 

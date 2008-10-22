@@ -349,7 +349,7 @@ class Dati{
 	$this->Modenergia($dif,$scudo['energia']);
 	}//se il difensore ha scudo e non è esausto
 	$casuale=rand(1,10);if($casuale<2){$colpisci=100;}elseif($casuale>9){$colpisci=0;}else{//casualità totale per minima prob colpire o non colpire cmq
-	$colpisci=rand(1,100)+($this->car($att,'agilita')/7-$this->car($dif,'agilita')/7)+($this->car($att,'velocita')/15-$this->car($dif,'velocita')/15)+((20/$this->car($att,'energiamax')*$this->car($att,'energia'))-(20/$this->car($dif,'energiamax')*$this->car($dif,'energia')));
+	$colpisci=rand(1,100)+($this->car($att,'agilita')/7-$this->car($dif,'agilita')/7)+($this->car($att,'intelligenza')/25-$this->car($dif,'intelligenza')/25)+($this->car($att,'velocita')/15-$this->car($dif,'velocita')/15)+((20/$this->car($att,'energiamax')*$this->car($att,'energia'))-(20/$this->car($dif,'energiamax')*$this->car($dif,'energia')));
 	if($this->equip($att,'cac')!=0 AND $arma['bonuseff']!=0)
 	$colpisci+=$colpisci/100*$arma['bonuseff'];
 	if($this->tattica($dif,1)==3 AND $this->esausto($dif)==0)
@@ -411,9 +411,9 @@ class Dati{
 	}
 	$this->Modenergia($att,$energia);
 	return $input;
-	} //fine Attaccovicino
+	}//fine Attaccovicino
 
-	public function Usapozione($chi) {
+	public function Usapozione($chi){
 	global $db,$lang;
 	$oggetto=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$this->equip($chi,'poz')."' LIMIT 1");
 	$nomeogg=$lang['oggetto'.$oggetto['id'].'_nome'];
@@ -451,7 +451,99 @@ class Dati{
 	$output=$this->nome($chi).": ".$output."<br/>";
 	}//se usato
 	return $output;
-	} //fine Usapozione
+	}//fine Usapozione
+	
+	public function Attaccolontano($att,$dif){
+	global $db,$lang;
+	if($this->equip($att,'adi')!=0){
+	$arma=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$this->equip($att,'adi')."' LIMIT 1");
+	$energia=$arma['energia'];
+	}//se ha l'arma a distanza
+	if($this->equip($att,'adi')!=0 AND $this->car($att,'energia')>$energia){
+	$danno=$arma['danno'];
+	$nomearma=$lang['oggetto'.$this->equip($att,'adi').'_nome'];
+	$this->Ogginuso($att,'adi');
+	}else{
+	$danno=rand(2,4)+round($this->car($att,'attfisico')/80);
+	$nomearma=$lang['sasso'];
+	$energia=50;
+	}//se nn ha l'arma
+	if($this->equip($dif,'arm')!=0){
+	$armatura=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$this->equip($dif,'arm')."' LIMIT 1");
+	if($armatura['energia']<=$this->car($dif,'energia')){
+	$this->Modenergia($dif,$armatura['energia']);
+	$this->Ogginuso($dif,'arm');
+	}//se il difensore ha abbastanza energia
+	}//se il difensore ha armatura
+	if($this->esausto($dif)==0 AND $this->equip($dif,'scu')!=0){
+	$this->Ogginuso($dif,'scu');
+	$scudo=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$this->equip($dif,'scu')."' LIMIT 1");
+	$this->Modenergia($dif,$scudo['energia']);
+	}//se il difensore ha scudo e non è esausto
+	$casuale=rand(1,10);if($casuale<2){$colpisci=100;}elseif($casuale>9){$colpisci=0;}else{//casualità totale per minima prob colpire o non colpire cmq
+	$colpisci=rand(1,100)+($this->car($att,'agilita')/10-$this->car($dif,'agilita')/9)+($this->car($att,'intelligenza')/25-$this->car($dif,'intelligenza')/25)+($this->car($att,'destrezza')/5-$this->car($dif,'destrezza')/6)+((20/$this->car($att,'energiamax')*$this->car($att,'energia'))-(20/$this->car($dif,'energiamax')*$this->car($dif,'energia')));
+	if($this->equip($att,'adi')!=0 AND $arma['bonuseff']!=0)
+	$colpisci+=$colpisci/100*$arma['bonuseff'];
+	if($this->tattica($dif,1)==3 AND $this->esausto($dif)==0)
+	$colpisci-=rand(10,20);
+	if((100/$this->car($att,'energiamax')*$this->car($att,'energia'))<20)
+	$colpisci-=20;
+	if((100/$this->car($dif,'energiamax')*$this->car($dif,'energia'))<20)
+	$colpisci+=20;
+	if((100/$this->car($att,'salute')*$this->car($att,'saluteattuale'))<10)
+	$colpisci-=20;
+	if((100/$this->car($dif,'salute')*$this->car($dif,'saluteattuale'))<10)
+	$colpisci+=20;
+	}//se colpire o no non sicuro
+	if($colpisci>50 OR $this->esausto($dif)==1){
+	$difesamax=round($this->car($dif,'diffisica')/100);
+	$difesa=rand(0,$difesamax);
+	if($this->equip($dif,'arm')!=0){
+	if($armatura['energia']<=$this->car($dif,'energia')){
+	$difesa+=round(rand(0,$armatura['difesafisica']));
+	}//se ha sufficente energia
+	}//se il difensore ha armatura
+	$pscudo="";
+	if($this->tattica($dif,1)==3){
+	$probps=rand(0,30);}else{$probps=rand(0,90);}
+	if($this->equip($dif,'scu')!=0 AND $probps<20 AND $this->esausto($dif)==0){
+	if($scudo['energia']<=$this->car($dif,'energia')){
+	$pscudo=", ".sprintf($lang['parata_con_scudo'],$this->nome($dif));
+	$prob=10;
+	if($this->tattica($dif,1)==3)
+	$prob=50;
+	$difesa+=round(rand($scudo['difesafisica']/100*$prob,$scudo['difesafisica']));
+	}
+	}//se il difensore ha scudo e non è esausto
+	$potente="";
+	$probpot=rand(10,100);
+	if((100/$this->car($att,'energiamax')*$this->car($att,'energia'))<20)
+	$probpot-=50;
+	if((100/$this->car($dif,'energiamax')*$this->car($dif,'energia'))<20 AND (100/$this->car($att,'energiamax')*$this->car($att,'energia'))>40)
+	$probpot+=30;
+	if($this->equip($att,'adi')!=0 AND $arma['bonuseff']!=0)
+	$probpot+=$probpot/100*$arma['bonuseff'];
+	if($probpot>=100){
+	$probmpot=rand(1,10);
+	if($probmpot==10){
+	$danno+=$danno;
+	$potente=" ".$lang['colpo_molto_potente'];
+	}else{
+	$danno+=round($danno/2);
+	$potente=" ".$lang['colpo_potente'];
+	}
+	}//se colpo potente
+	$danno-=$difesa;
+	if($danno<1)
+	$danno=1;
+	$input=sprintf($lang['danno_att_vicino'],$this->nome($att),$nomearma).$potente.$pscudo.", ".sprintf($lang['danni_subiti'],$this->nome($dif),$danno)."<br/>";
+	$this->Modsalute($dif,$danno);
+	}else{//fine colpisce
+	$input=sprintf($lang['niente_att_vicino'],$this->nome($att),$this->nome($dif),$nomearma)."<br/>";
+	}//nn colpisce
+	$this->Modenergia($att,$energia);
+	return $input;
+	}//fine Attaccolontano
 
 } //fine classe Dati
 
@@ -477,7 +569,10 @@ $expb+=1;
 $input.=sprintf($lang['troppo_stanco_per_attacco'],$dc->nome(1))."<br/>";
 }elseif($dc->tattica(1,1)==3){
 $input.=sprintf($lang['resta_in_difesa'],$dc->nome(1))."<br/>";
-}else{
+}elseif($dc->tattica(1,1)==1){
+if($dc->tattica(1,2)==2)
+$input.=$dc->Attaccolontano(1,2);
+else
 $input.=$dc->Attaccovicino(1,2);
 }
 if($dc->tattica(2,1)==4){
@@ -487,7 +582,10 @@ $expb+=1;
 $input.=sprintf($lang['troppo_stanco_per_attacco'],$dc->nome(2))."<br/>";
 }elseif($dc->tattica(2,1)==3){
 $input.=sprintf($lang['resta_in_difesa'],$dc->nome(2))."<br/>";
-}else{
+}elseif($dc->tattica(2,1)==1){
+if($dc->tattica(2,2)==2)
+$input.=$dc->Attaccolontano(2,1);
+else
 $input.=$dc->Attaccovicino(2,1);
 }
 

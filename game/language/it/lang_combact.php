@@ -38,6 +38,7 @@ $lang['tattica_difesa']='Difesa';
 $lang['tattica_resa']='Resa';
 $lang['tattica_pozione']='Usa pozione';
 $lang['tattica_attacco_cac']='corpo a corpo';
+$lang['tattica_attacco_adi']='a distanza';
 $lang['nessuna']='Nessuna';
 $lang['tattica_selezionata']='Tattica selezionata: %s';
 $lang['equip_di']='%s di livello %s, equipaggiamento: %s';
@@ -48,6 +49,7 @@ $lang['danni_subiti']='%s subisce %s danni.';
 $lang['c_vince_monete']='%s prende %s monete.';
 $lang['c_perde_monete']='%s perde %s monete.';
 $lang['Pozione']='Pozione';
+$lang['sasso']='sasso';
 
 $lang['outputerroriquest']='Impossibile effettuare una quest per i seguenti motivi:';
 $lang['quest_error1']='- Non sei in condizioni abbastanza buone per affrontare una quest.<br />';
