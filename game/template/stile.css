@@ -7,6 +7,7 @@ body{
 #menu{
 position: fixed;
 text-align: center;
+z-index: 2;
 }
 #tattic{
 text-align: center;
