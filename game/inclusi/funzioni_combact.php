@@ -259,11 +259,7 @@ class Dati{
 
 	public function Guadagnaexp($chi,$turni,$expb,$vincitore) {
 	global $db,$lang;
-	if($chi==1)
-	$chi2=2;
-	else
-	$chi2=1;
-	//$exp=1*$turni;
+	if($chi==1){$chi2=2;}else{$chi2=1;}
 	$exp=5+$expb;
 	$exp=round(rand(($exp/100*95),$exp));
 	if($vincitore==$chi2){
@@ -556,6 +552,25 @@ class Dati{
 	$this->Modenergia($att,$energia);
 	return $input;
 	}//fine Attaccolontano
+	
+	public function Allontanamento($chi){
+	global $db,$lang;
+	if($chi==1){$chi2=2;}else{$chi2=1;}
+	if(($this->tattica($chi2,1)==3) OR (($this->tattica($chi2,1)==1) AND ($this->tattica($chi2,2)==2)) OR ($this->tattica($chi2,1)==4)){
+	$lontano=1;
+	}else{//fine allontanarsi sicuro
+	$prob=rand(1,100);
+	if($chi==1){$prob+=30;}else{$prob-=30;}
+	if($prob<30){$lontano=1;}else{$lontano=0;}
+	}//fine allontanarsi non sicuro
+	if($lontano==1){
+	$output=" ";
+	}else{//fine se riesce ad allontanarsi
+	$output=sprintf($lang['non_riuscito_ad_allontanarsi'],$this->nome($chi))."<br/>";
+	$this->che[$chi]->subtattica=1;
+	}//fine se non riesce ad allontanarsi
+	return $output;
+	}//fine Allontanamento
 
 } //fine classe Dati
 
@@ -583,6 +598,8 @@ $input.=sprintf($lang['troppo_stanco_per_attacco'],$dc->nome(1))."<br/>";
 $input.=sprintf($lang['resta_in_difesa'],$dc->nome(1))."<br/>";
 }else{
 if($dc->tattica(1,2)==2)
+$input.=$dc->Allontanamento(1);
+if($dc->tattica(1,2)==2)
 $input.=$dc->Attaccolontano(1,2);
 else
 $input.=$dc->Attaccovicino(1,2);
@@ -595,6 +612,8 @@ $input.=sprintf($lang['troppo_stanco_per_attacco'],$dc->nome(2))."<br/>";
 }elseif($dc->tattica(2,1)==3){
 $input.=sprintf($lang['resta_in_difesa'],$dc->nome(2))."<br/>";
 }else{
+if($dc->tattica(2,2)==2)
+$input.=$dc->Allontanamento(2);
 if($dc->tattica(2,2)==2)
 $input.=$dc->Attaccolontano(2,1);
 else

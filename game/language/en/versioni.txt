@@ -7,7 +7,22 @@ Legenda:<br />
 - Correzione bug e patch di situazioni non previste<br />
 </p>
 <p><strong>0.7.10</strong> (Non disponibile - In sviluppo)<br />
-Niente attualmente<br />
++ Creato sistema di messaggi inviati (attualmente solo per plus)<br />
++ Aggiunta la visualizzazione dei messaggi inviati in Messaggi in una categoria propria<br />
++ Si possono visualizzare massimo 50 messaggi inviati (i più recenti), ovviamente gli altri non vengono cancellati (se non abbastanza vecchi)<br />
++ I messaggi inviati più vecchi di 2 giorni vengono cancellati automaticamente<br />
++ Implementato l'uso delle armi a distanza nei combattimenti<br />
++ Se non si ha un arma a distanza ma combatte a distanza lancia un sasso<br />
++ Nella probabilità di colpire a distanza influiscono destrezza, agilità, energia e leggermente intelligenza e salute<br />
++ Nella probabilità di colpire in corpo a corpo ora influisce leggermente anche intelligenza<br />
++ Implementati nel combattimento a distanza armature e scudi<br />
++ Implementata la tattica difensiva nel difensore che riceve un attacco a distanza<br />
++ Aggiunta la tattica attacco a distanza nel menu delle tattiche<br />
++ Implementato l'attacco a distanza nel sistema di selezione automatica delle tattiche<br />
++ Se il combattente che vuole effettuare un attacco a distanza non riesce ad allontarsi a sufficenza dal nemico attacca invece corpo a corpo<br />
++ Se l'avversario sta sulla difensiva, attacca a distanza o usa una pozione è sempre possibile allontanarsi a sufficenza per l'attacco a distanza<br />
++ Vari miglioramenti di sistema a sistema messaggi<br />
+# Modificati i seguenti NPC: Bandito esperto<br />
 </p>
 <p><strong>0.7.9.1</strong> (21/10/08 - Beta)<br />
 - Corretta la visualizzazione della data della successiva estrazione della lotteria<br />

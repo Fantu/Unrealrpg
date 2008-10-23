@@ -19,6 +19,8 @@ Legenda:<br />
 + Implementata la tattica difensiva nel difensore che riceve un attacco a distanza<br />
 + Aggiunta la tattica attacco a distanza nel menu delle tattiche<br />
 + Implementato l'attacco a distanza nel sistema di selezione automatica delle tattiche<br />
++ Se il combattente che vuole effettuare un attacco a distanza non riesce ad allontarsi a sufficenza dal nemico attacca invece corpo a corpo<br />
++ Se l'avversario sta sulla difensiva, attacca a distanza o usa una pozione è sempre possibile allontanarsi a sufficenza per l'attacco a distanza<br />
 + Vari miglioramenti di sistema a sistema messaggi<br />
 # Modificati i seguenti NPC: Bandito esperto<br />
 </p>

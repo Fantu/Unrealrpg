@@ -50,6 +50,7 @@ $lang['c_vince_monete']='%s prende %s monete.';
 $lang['c_perde_monete']='%s perde %s monete.';
 $lang['Pozione']='Pozione';
 $lang['sasso']='sasso';
+$lang['non_riuscito_ad_allontanarsi']='%s non è riuscito ad allontanarsi a sufficenza per un attacco a distanza';
 
 $lang['outputerroriquest']='Impossibile effettuare una quest per i seguenti motivi:';
 $lang['quest_error1']='- Non sei in condizioni abbastanza buone per affrontare una quest.<br />';
