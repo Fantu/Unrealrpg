@@ -19,6 +19,7 @@ $db->QueryMod("CREATE TABLE `msginviati` (
 `data` INT( 13 ) UNSIGNED NOT NULL
 ) ENGINE = MYISAM");
 $db->QueryMod("ALTER TABLE `pcpudata` ADD `eqadi` SMALLINT UNSIGNED NOT NULL DEFAULT '0' AFTER `eqcac`");
+$db->QueryMod("UPDATE `pcpudata` SET `eqadi` = '82' WHERE `pcpudata`.`id` =4 LIMIT 1");
 
 	/*//creazione record per tab con 1 record per utente
 	$a=$db->QueryCiclo("SELECT userid FROM utenti WHERE conferma='1' AND personaggio='1'");

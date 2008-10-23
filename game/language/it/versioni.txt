@@ -20,6 +20,7 @@ Legenda:<br />
 + Aggiunta la tattica attacco a distanza nel menu delle tattiche<br />
 + Implementato l'attacco a distanza nel sistema di selezione automatica delle tattiche<br />
 + Vari miglioramenti di sistema a sistema messaggi<br />
+# Modificati i seguenti NPC: Bandito esperto<br />
 </p>
 <p><strong>0.7.9.1</strong> (21/10/08 - Beta)<br />
 - Corretta la visualizzazione della data della successiva estrazione della lotteria<br />

@@ -573,7 +573,7 @@ $input.=$dc->Viewequip(2);}
 if($dc->tattica(1,1)!=2 AND $dc->tattica(2,1)!=2){
 $dc->Controllastato(1);
 $dc->Controllastato(2);
-$input.=$dc->tattica(1,2)."-".$dc->tattica(2,2)."<br/>";
+
 if($dc->tattica(1,1)==4){
 $input.=$dc->Usapozione(1);
 $expb+=1;
