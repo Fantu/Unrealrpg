@@ -247,12 +247,11 @@ class Dati{
 	}elseif(($this->equip($chi,'cac')==0) AND ($this->equip($chi,'adi')!=0)){
 	$this->che[$chi]->subtattica=2;
 	}elseif(($this->equip($chi,'cac')!=0) AND ($this->equip($chi,'adi')!=0)){
-	$armavi=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$this->equip($att,'cac')."' LIMIT 1");
-	$armadi=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$this->equip($att,'adi')."' LIMIT 1");
+	$armavi=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$this->equip($chi,'cac')."' LIMIT 1");
+	$armadi=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$this->equip($chi,'adi')."' LIMIT 1");
 	if($armavi['danno']>$armadi['danno']){
 	$this->che[$chi]->subtattica=1;
 	}else{
-	$this->che[$chi]->tattica=3;
 	$this->che[$chi]->subtattica=2;}
 	}else{//se ha entrambe le armi
 	$this->che[$chi]->subtattica=2;
@@ -587,7 +586,7 @@ $expb=$dc->Checkeqipexp($expb);
 if($turni==0){
 $input.=$dc->Viewequip(1);
 $input.=$dc->Viewequip(2);}
-$input.="Debug tattiche: ".$dc->tattica(1,2)." - ".$dc->tattica(2,2)."<br/>";//visualizzazione tattiche per debug
+//$input.="Debug tattiche: ".$dc->tattica(1,2)." - ".$dc->tattica(2,2)."<br/>";//visualizzazione tattiche per debug
 if($dc->tattica(1,1)!=2 AND $dc->tattica(2,1)!=2){
 $dc->Controllastato(1);
 $dc->Controllastato(2);
