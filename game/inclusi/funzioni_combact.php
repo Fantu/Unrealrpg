@@ -254,8 +254,9 @@ class Dati{
 	else
 	$this->che[$chi]->subtattica=2;
 	}else{//se ha entrambe le armi
+	$this->che[$chi]->tattica=3;
 	$this->che[$chi]->subtattica=2;
-	}
+	}//se nessuna
 	}//se si attacca
 	}//fine Autotattic
 
