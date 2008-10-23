@@ -274,16 +274,16 @@ break;
 	if($semsg['numero']>0){
 	$a=$db->QueryCiclo("SELECT * FROM msginviati WHERE userid='".$user['userid']."' ORDER BY id desc LIMIT 50");
 	while($mess=$db->QueryCicloResult($a)){
-	$cachemsg[]=$mess;
+	$cachemsgi[]=$mess;
 	}//per ogni messaggio
 	
 	$num=9;
-	$conti.=count($cachemsg)." ".$lang['totali'];
+	$conti.=count($cachemsgi)." ".$lang['totali'];
 	echo "<a href=\"javascript:;\" onclick=\"Cambiavista('cat".$num."')\">".$lang['messaggi_inviati']." (".$conti.")</a>";
 	echo "<div id=\"cat".$num."\" class=\"nascosto\"><br />";
 	echo "<form action=\"index.php?loc=messaggi&amp;do=canc\" method=\"post\" name=\"canctutt".$num."\">";
 	$i=100*$num;
-	foreach($cachemsg as $chiave=>$mc){
+	foreach($cachemsgi as $chiave=>$mc){
 		$i++;
 		$ric=Nomeutente($mc['riceventeid']);
 	?>
