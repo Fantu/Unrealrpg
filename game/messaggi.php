@@ -53,6 +53,7 @@ $contatore=(int)$_POST['contatore'];
 $catp=(int)$_POST['catp'];
 while($contatore>($catp*100)){
 	$msgid=(int)$_POST['messaggioid'.$contatore];
+	if($msgid!=0)
 	Cancellamsg($msgid);
 	$contatore--;
 }//per ogni msg della categoria
