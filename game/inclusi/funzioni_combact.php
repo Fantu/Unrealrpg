@@ -562,7 +562,7 @@ class Dati{
 	$lontano=1;
 	}else{//fine allontanarsi sicuro
 	$prob=rand(1,100);
-	if($chi==1){$prob+=30;}else{$prob-=30;}
+	if($chi==1){$prob-=30;}else{$prob+=30;}
 	if($prob<30){$lontano=1;}else{$lontano=0;}
 	}//fine allontanarsi non sicuro
 	if($lontano==1){
