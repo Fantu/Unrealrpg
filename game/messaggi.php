@@ -52,7 +52,7 @@ exit();*/
 break;
 case "canc"://cancella mess selezionati
 $contatore=(int)$_POST['contatore'];
-$catp=(int)$_POST['catm'];
+$catp=(int)$_POST['catp'];
 while($contatore>($catp*100)){
 	$msgid=(int)$_POST['messaggioid'.$contatore];
 	Cancellamsg($msgid);
