@@ -6,7 +6,10 @@ Legenda:<br />
 # Modifiche<br />
 - Correzione bug e patch di situazioni non previste<br />
 </p>
-<p><strong>0.7.10</strong> (Non disponibile - In sviluppo)<br />
+<p><strong>0.7.11</strong> (Non disponibile - In sviluppo)<br />
+Niente attualmente<br />
+</p>
+<p><strong>0.7.10</strong> [R.1733] (23/10/08 - Beta)<br />
 + Creato sistema di messaggi inviati (attualmente solo per plus)<br />
 + Aggiunta la visualizzazione dei messaggi inviati in Messaggi in una categoria propria<br />
 + Si possono visualizzare massimo 50 messaggi inviati (i più recenti), ovviamente gli altri non vengono cancellati (se non abbastanza vecchi)<br />
@@ -21,7 +24,8 @@ Legenda:<br />
 + Implementato l'attacco a distanza nel sistema di selezione automatica delle tattiche<br />
 + Se il combattente che vuole effettuare un attacco a distanza non riesce ad allontarsi a sufficenza dal nemico attacca invece corpo a corpo<br />
 + Se l'avversario sta sulla difensiva, attacca a distanza o usa una pozione è sempre possibile allontanarsi a sufficenza per l'attacco a distanza<br />
-+ Vari miglioramenti di sistema a sistema messaggi<br />
++ Se l'avversario è esausto è sempre possibile allontanarsi a sufficenza per l'attacco a distanza<br />
++ Vari miglioramenti di sistema a sistema messaggi, sistema di combattimento<br />
 # Modificati i seguenti NPC: Bandito esperto<br />
 </p>
 <p><strong>0.7.9.1</strong> (21/10/08 - Beta)<br />
