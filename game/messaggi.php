@@ -47,8 +47,8 @@ $db->QueryMod("DELETE FROM msginviati WHERE data<'".($adesso-172800)."'");// can
 switch($_GET['do']){
 case "elim"://cancella msg singolo
 Cancellamsg($id);
-echo "<script language=\"javascript\">window.location.href='index.php?loc=messaggi'</script>";
-exit();
+/*echo "<script language=\"javascript\">window.location.href='index.php?loc=messaggi'</script>";
+exit();*/
 break;
 case "canc"://cancella mess selezionati
 $contatore=(int)$_POST['contatore'];
