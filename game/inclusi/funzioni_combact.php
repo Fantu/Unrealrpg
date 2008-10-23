@@ -252,6 +252,7 @@ class Dati{
 	if($armavi['danno']>$armadi['danno']){
 	$this->che[$chi]->subtattica=1;
 	}else{
+	$this->che[$chi]->tattica=3;
 	$this->che[$chi]->subtattica=2;}
 	}else{//se ha entrambe le armi
 	$this->che[$chi]->subtattica=2;
