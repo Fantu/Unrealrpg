@@ -58,8 +58,8 @@ while($contatore>($catp*100)){
 	Cancellamsg($msgid);
 	$contatore--;
 }
-echo "<script language=\"javascript\">window.location.href='index.php?loc=messaggi'</script>";
-exit();
+/*echo "<script language=\"javascript\">window.location.href='index.php?loc=messaggi'</script>";
+exit();*/
 break;
 case "dorisp":// invia risposta
 	$errore="";
@@ -86,8 +86,8 @@ case "dorisp":// invia risposta
 		$messaggio=htmlspecialchars($_POST['mymess'],ENT_QUOTES);
 		$db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$a['mittenteid']."','".$titolo."','".$messaggio."','".$user['userid']."','".$adesso."')");
 		if($user['plus']>0){$db->QueryMod("INSERT INTO msginviati (userid,titolo,testo,riceventeid,data) VALUES ('".$user['userid']."','".$titolo."','".$messaggio."','".$a['mittenteid']."','".$adesso."')");}
-		echo "<script language=\"javascript\">window.location.href='index.php?loc=messaggi'</script>";
-		exit();
+		/*echo "<script language=\"javascript\">window.location.href='index.php?loc=messaggi'</script>";
+		exit();*/
 	}
 break;
 case "doscrivi":// invia nuovo messaggio
@@ -116,9 +116,9 @@ case "doscrivi":// invia nuovo messaggio
 		$messaggio=htmlspecialchars($_POST['mymess'],ENT_QUOTES);
 		$db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$achi."','".$titolo."','".$messaggio."','".$user['userid']."','".$adesso."')");
 		if($user['plus']>0){$db->QueryMod("INSERT INTO msginviati (userid,titolo,testo,riceventeid,data) VALUES ('".$user['userid']."','".$titolo."','".$messaggio."','".$achi."','".$adesso."')");}
-		echo "<script language=\"javascript\">window.location.href='index.php?loc=messaggi'</script>";
+		/*echo "<script language=\"javascript\">window.location.href='index.php?loc=messaggi'</script>";
+		exit();*/
 	}
-exit();
 break;
 case "risp":// scrivi risposta
 $errore="";
@@ -177,7 +177,8 @@ case "scrivi":// scrivi nuovo
 </form>
 <?php
 break;
-default:// visualizza messaggi
+}
+// visualizza messaggi
 
 	function Nomeutente($userid){
 	global $db,$cacheun;
@@ -190,7 +191,7 @@ default:// visualizza messaggi
 	return $username;
 	}//fine Nomeutente
 
-$semsg=$db->QuerySelect("SELECT count(id) AS numero FROM messaggi WHERE userid='".$user['userid']."'");
+	$semsg=$db->QuerySelect("SELECT count(id) AS numero FROM messaggi WHERE userid='".$user['userid']."'");
 	if($semsg['numero']>0){
 	$a=$db->QueryCiclo("SELECT * FROM messaggi WHERE userid='".$user['userid']."' ORDER BY id desc LIMIT 50");
 	while($mess=$db->QueryCicloResult($a)){
@@ -313,7 +314,6 @@ $semsg=$db->QuerySelect("SELECT count(id) AS numero FROM messaggi WHERE userid='
 	}//se nn ha msg inviati
 	echo "<br /><br />";
 	}//se ha il plus
-break;
-}
+
 ?>
 </div>
