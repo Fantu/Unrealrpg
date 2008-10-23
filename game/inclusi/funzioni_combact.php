@@ -247,13 +247,12 @@ class Dati{
 	}elseif(($this->equip($chi,'cac')==0) AND ($this->equip($chi,'adi')!=0)){
 	$this->che[$chi]->subtattica=2;
 	}elseif(($this->equip($chi,'cac')!=0) AND ($this->equip($chi,'adi')!=0)){
-	$this->che[$chi]->tattica=3;
 	$armavi=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$this->equip($att,'cac')."' LIMIT 1");
 	$armadi=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$this->equip($att,'adi')."' LIMIT 1");
-	if($armavi['danno']>$armadi['danno'])
+	if($armavi['danno']>$armadi['danno']){
 	$this->che[$chi]->subtattica=1;
-	else
-	$this->che[$chi]->subtattica=2;
+	}else{
+	$this->che[$chi]->subtattica=2;}
 	}else{//se ha entrambe le armi
 	$this->che[$chi]->subtattica=2;
 	}//se nessuna
