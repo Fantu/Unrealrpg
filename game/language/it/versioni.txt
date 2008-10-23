@@ -21,7 +21,8 @@ Legenda:<br />
 + Implementato l'attacco a distanza nel sistema di selezione automatica delle tattiche<br />
 + Se il combattente che vuole effettuare un attacco a distanza non riesce ad allontarsi a sufficenza dal nemico attacca invece corpo a corpo<br />
 + Se l'avversario sta sulla difensiva, attacca a distanza o usa una pozione è sempre possibile allontanarsi a sufficenza per l'attacco a distanza<br />
-+ Vari miglioramenti di sistema a sistema messaggi<br />
++ Se l'avversario è esausto è sempre possibile allontanarsi a sufficenza per l'attacco a distanza<br />
++ Vari miglioramenti di sistema a sistema messaggi, sistema di combattimento<br />
 # Modificati i seguenti NPC: Bandito esperto<br />
 </p>
 <p><strong>0.7.9.1</strong> (21/10/08 - Beta)<br />

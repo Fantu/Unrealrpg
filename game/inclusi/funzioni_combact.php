@@ -556,7 +556,7 @@ class Dati{
 	public function Allontanamento($chi){
 	global $db,$lang;
 	if($chi==1){$chi2=2;}else{$chi2=1;}
-	if(($this->tattica($chi2,1)==3) OR (($this->tattica($chi2,1)==1) AND ($this->tattica($chi2,2)==2)) OR ($this->tattica($chi2,1)==4)){
+	if(($this->tattica($chi2,1)==3) OR (($this->tattica($chi2,1)==1) AND ($this->tattica($chi2,2)==2)) OR ($this->tattica($chi2,1)==4) OR ($dc->esausto($chi2)==1)){
 	$lontano=1;
 	}else{//fine allontanarsi sicuro
 	$prob=rand(1,100);
