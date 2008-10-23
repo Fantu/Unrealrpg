@@ -10,7 +10,7 @@ $tipo=(int)$_POST['tipo'];
 
 function Cancellamsg($id){
 global $db,$user,$tipo;
-if($tipo==1)
+if($tipo!=2)
 $tab="messaggi";
 else
 $tab="msginviati";
@@ -295,11 +295,6 @@ break;
 	  <tr>
 		<td>&nbsp;</td>
 		<td><?php echo "<strong><span>".$mc['titolo']."</span></strong><br />".$mc['testo']; ?></td>
-	  </tr>
-	  <tr>
-		<td colspan="2" align="right">
-		<?php echo "[ <a href=\"index.php?loc=messaggi&amp;do=elim&amp;id=".$mc['id']."\">".$lang['elimina']."</a> ]"; ?>
-		</td>
 	  </tr>
 	</table>
 	<?php
