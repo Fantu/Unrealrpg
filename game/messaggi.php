@@ -47,8 +47,6 @@ $db->QueryMod("DELETE FROM msginviati WHERE data<'".($adesso-172800)."'");// can
 switch($_GET['do']){
 case "elim"://cancella msg singolo
 Cancellamsg($id);
-/*echo "<script language=\"javascript\">window.location.href='index.php?loc=messaggi'</script>";
-exit();*/
 break;
 case "canc"://cancella mess selezionati
 $contatore=(int)$_POST['contatore'];
@@ -57,9 +55,7 @@ while($contatore>($catp*100)){
 	$msgid=(int)$_POST['messaggioid'.$contatore];
 	Cancellamsg($msgid);
 	$contatore--;
-}
-/*echo "<script language=\"javascript\">window.location.href='index.php?loc=messaggi'</script>";
-exit();*/
+}//per ogni msg della categoria
 break;
 case "dorisp":// invia risposta
 	$errore="";
@@ -86,8 +82,6 @@ case "dorisp":// invia risposta
 		$messaggio=htmlspecialchars($_POST['mymess'],ENT_QUOTES);
 		$db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$a['mittenteid']."','".$titolo."','".$messaggio."','".$user['userid']."','".$adesso."')");
 		if($user['plus']>0){$db->QueryMod("INSERT INTO msginviati (userid,titolo,testo,riceventeid,data) VALUES ('".$user['userid']."','".$titolo."','".$messaggio."','".$a['mittenteid']."','".$adesso."')");}
-		/*echo "<script language=\"javascript\">window.location.href='index.php?loc=messaggi'</script>";
-		exit();*/
 	}
 break;
 case "doscrivi":// invia nuovo messaggio
@@ -116,8 +110,6 @@ case "doscrivi":// invia nuovo messaggio
 		$messaggio=htmlspecialchars($_POST['mymess'],ENT_QUOTES);
 		$db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$achi."','".$titolo."','".$messaggio."','".$user['userid']."','".$adesso."')");
 		if($user['plus']>0){$db->QueryMod("INSERT INTO msginviati (userid,titolo,testo,riceventeid,data) VALUES ('".$user['userid']."','".$titolo."','".$messaggio."','".$achi."','".$adesso."')");}
-		/*echo "<script language=\"javascript\">window.location.href='index.php?loc=messaggi'</script>";
-		exit();*/
 	}
 break;
 case "risp":// scrivi risposta
