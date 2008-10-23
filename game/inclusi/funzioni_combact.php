@@ -586,7 +586,7 @@ $expb=$dc->Checkeqipexp($expb);
 if($turni==0){
 $input.=$dc->Viewequip(1);
 $input.=$dc->Viewequip(2);}
-//$input.="Debug tattiche: ".$dc->tattica(1,1)." - ".$dc->tattica(2,1)."<br/>";//visualizzazione tattiche per debug
+$input.="Debug tattiche: ".$dc->tattica(1,2)." - ".$dc->tattica(2,2)."<br/>";//visualizzazione tattiche per debug
 if($dc->tattica(1,1)!=2 AND $dc->tattica(2,1)!=2){
 $dc->Controllastato(1);
 $dc->Controllastato(2);
@@ -598,14 +598,14 @@ $expb+=1;
 $input.=sprintf($lang['troppo_stanco_per_attacco'],$dc->nome(1))."<br/>";
 }elseif($dc->tattica(1,1)==3){
 $input.=sprintf($lang['resta_in_difesa'],$dc->nome(1))."<br/>";
-}else{
+}else{//inizio se attacco
 if($dc->tattica(1,2)==2)
 $input.=$dc->Allontanamento(1);
 if($dc->tattica(1,2)==2)
 $input.=$dc->Attaccolontano(1,2);
 else
 $input.=$dc->Attaccovicino(1,2);
-}
+}//fine se attacco
 if($dc->tattica(2,1)==4){
 $input.=$dc->Usapozione(2);
 $expb+=1;
@@ -613,14 +613,14 @@ $expb+=1;
 $input.=sprintf($lang['troppo_stanco_per_attacco'],$dc->nome(2))."<br/>";
 }elseif($dc->tattica(2,1)==3){
 $input.=sprintf($lang['resta_in_difesa'],$dc->nome(2))."<br/>";
-}else{
+}else{//inizio se attacco
 if($dc->tattica(2,2)==2)
 $input.=$dc->Allontanamento(2);
 if($dc->tattica(2,2)==2)
 $input.=$dc->Attaccolontano(2,1);
 else
 $input.=$dc->Attaccovicino(2,1);
-}
+}//fine se attacco
 
 if($dc->che[1]->oggusati==1){
 $input.=$dc->Controlloogg(1);}
