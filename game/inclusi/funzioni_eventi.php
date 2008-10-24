@@ -6,39 +6,35 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 require_once('inclusi/funzioni_oggetti.php');
 require_once('inclusi/funzioni_magia.php');
 
-function Completalavminnuova($userid,$ore) {
+function Completalavminnuova($userid,$ore){
 global $db,$adesso,$lang,$language;
 require_once('language/'.$language.'/lang_miniera.php');
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");
 $paga=7;
 $energia=100-(5*$usercar['minatore']);
-if ($energia<50)
+if($energia<50)
 $energia=50;
 $resistenza=$usercar['diffisica']/20;
 $salute=rand(5,15)-($usercar['minatore'])-rand(floor($resistenza/2),floor($resistenza));
-if ($salute<1)
+if($salute<1)
 $salute=1;
 $exp=floor($usercar['saluteattuale']/30+$usercar['energia']/200+$usercar['attfisico']/8);
 $exp=floor(rand(($exp/100*80),$exp));
 $exp+=10+(2*$usercar['minatore']);
-$prob=rand(1,10);
-if($prob==1)
-$esplosione=1;
-elseif($prob==10)
-$esplosione=100;
-else
+$prob=rand(1,10); if($prob==1){$esplosione=1;}elseif($prob==10){$esplosione=100;}else
 $esplosione=rand(30,110)-($usercar['minatore']*5)-($usercar['attfisico']/20);
 $danni=0;
 if($esplosione>10){
+$prob=rand(1,10); if($prob==1){$esplosione=1;}elseif($prob==10){$esplosione=100;}else
 $esplosione=rand(30,100)-($usercar['minatore']*5)-($usercar['agilita']/20)-($usercar['attfisico']/10)-($usercar['velocita']/50);
 if($esplosione<10){
 $testo="<span>".$lang['report_incidente_min1']."</span>";
-}else{
+}else{//fine se schivato
 $danni=rand(20,25)-rand(floor($resistenza/2),floor($resistenza));
-if ($danni<1)
+if($danni<1)
 $danni=1;
 $testo="<span>".sprintf($lang['report_incidente_min2'],$danni)."</span>";
-}
+}//fine se beccato
 $titolo=$lang['report_incidente_miniera'];
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");
 }//fine incidente
@@ -51,23 +47,22 @@ $db->QueryMod("UPDATE config SET banca=banca-'".$paga."'");
 if($ore>1){
 $errore="";
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");
-if ($usercar['energia']<100)
+if($usercar['energia']<100)
 $errore.=$lang['miniera_errore1'];
-if ($usercar['saluteattuale']<30)
+if($usercar['saluteattuale']<30)
 $errore.=$lang['miniera_errore2'];
 if($errore){
 $testo=$lang['outputerrori_continualav']."<br />".$errore;
 $titolo=$lang['Impossibile_lavorare_ancora'];
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");
-}
-else {
+}else{//fine se nn continua
 $ore--;
 $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,lavoro,ore) VALUES ('".$userid."','".$adesso."','3600','1','1','1','".$ore."')");
 }//fine continua lavoro
 }//fine se la coda ha almeno un altra ora
 } //fine Completalavminnuova
 
-function Completalavlabapp($userid,$ore) {
+function Completalavlabapp($userid,$ore){
 global $db,$adesso,$lang,$language;
 require_once('language/'.$language.'/lang_laboratorio.php');
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");
@@ -83,24 +78,20 @@ $salute=1;
 $exp=floor($usercar['saluteattuale']/30+$usercar['energia']/200+$usercar['attmagico']/13+$usercar['intelligenza']/20);
 $exp=floor(rand(($exp/100*80),$exp));
 $exp+=10+(2*$usercar['alchimista']);
-$prob=rand(1,10);
-if($prob==1)
-$esplosione=1;
-elseif($prob==10)
-$esplosione=100;
-else
+$prob=rand(1,10); if($prob==1){$esplosione=1;}elseif($prob==10){$esplosione=100;}else
 $esplosione=rand(30,110)-($usercar['alchimista']*5)-($usercar['attmagico']/20);
 $danni=0;
 if($esplosione>10){
+$prob=rand(1,10); if($prob==1){$esplosione=1;}elseif($prob==10){$esplosione=100;}else
 $esplosione=rand(30,100)-($usercar['alchimista']*5)-($usercar['agilita']/20)-($usercar['attmagico']/10)-($usercar['velocita']/50);
 if($esplosione<10){
 $testo="<span>".$lang['report_esplosione_lab1']."</span>";
-}else{
+}else{//fine se schivato
 $danni=rand(20,25)-rand(floor($resistenza/2),floor($resistenza));
-if ($danni<1)
+if($danni<1)
 $danni=1;
 $testo="<span>".sprintf($lang['report_esplosione_lab2'],$danni)."</span>";
-}
+}//fine se beccato
 $titolo=$lang['report_esplosione_laboratorio'];
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");
 }//fine esplosione
@@ -113,25 +104,24 @@ $db->QueryMod("UPDATE config SET banca=banca-'".$paga."'");
 if($ore>1){
 $errore="";
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");
-if ($usercar['energia']<100)
-$errore .= $lang['lab_errore1'];
-if ($usercar['saluteattuale']<30)
-$errore .= $lang['lab_errore2'];
-if ($usercar['mana']<10)
-$errore .= $lang['lab_errore4'];
+if($usercar['energia']<100)
+$errore.=$lang['lab_errore1'];
+if($usercar['saluteattuale']<30)
+$errore.=$lang['lab_errore2'];
+if($usercar['mana']<10)
+$errore.=$lang['lab_errore4'];
 if($errore){
 $testo=$lang['outputerrori_continualav']."<br />".$errore;
 $titolo=$lang['Impossibile_lavorare_ancora'];
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");
-}
-else {
+}else{//fine se nn continua
 $ore--;
 $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,lavoro,ore) VALUES ('".$userid."','".$adesso."','3600','2','1','2','".$ore."')");
 }//fine continua lavoro
 }//fine se la coda ha almeno un altra ora
 } //fine Completalavlabapp
 
-function Completatempioprega($userid,$ore) {
+function Completatempioprega($userid,$ore){
 global $db,$adesso,$lang,$language;
 require_once('language/'.$language.'/lang_tempio.php');
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");
@@ -141,7 +131,7 @@ $mana=floor($usercar['mana']/10);
 $mana+=$usercar['manarimasto'];
 if($mana>$usercar['mana'])
 $mana=$usercar['mana'];
-}
+}//se mana nn al max
 $energiapersa=10;
 $energia=$usercar['energia']-$energiapersa;
 $salute=$usercar['saluteattuale'];
@@ -170,18 +160,18 @@ $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,ore) 
 }//fine se la coda ha almeno un altra ora
 } //fine Completatempioprega
 
-function Completaresurrezione($userid) {
+function Completaresurrezione($userid){
 global $db,$adesso;
 $user=$db->QuerySelect("SELECT * FROM utenti WHERE userid='".$userid."' LIMIT 1");
 if ($user['resuscita']=='1'){
 $db->QueryMod("UPDATE utenti t2 JOIN caratteristiche t3 on t2.userid=t3.userid SET t2.resuscita='0',t3.energia=t3.energiamax,t3.saluteattuale=t3.salute,t3.recuperoenergia='".$adesso."',t3.recuperosalute='".$adesso."',t3.decfede='".$adesso."',t3.manarimasto=t3.mana WHERE t2.userid='".$userid."'");
-}else{
+}else{//fine se chierici
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");
 if($usercar['fede']<5000){
 $mana=$usercar['manarimasto'];
 $salute=round($usercar['salute']/2);
 $energia=round($usercar['energiamax']/2);
-}else{
+}else{//fine se fede bassa
 $bonus=10*($usercar['fede']/5000);
 $mana=$usercar['manarimasto']+round($usercar['mana']/100*$bonus);
 if($mana>$usercar['mana'])
@@ -192,45 +182,41 @@ $salute=$usercar['salute'];
 $energia=$usercar['energia']+round($usercar['energiamax']/100*$bonus);
 if($energia>$usercar['energiamax'])
 $energia=$usercar['energiamax'];
-}
+}//fine se fede alta
 $db->QueryMod("UPDATE caratteristiche SET energia='".$energia."',saluteattuale='".$salute."',recuperoenergia='".$adesso."',recuperosalute='".$adesso."',decfede='".$adesso."',manarimasto='".$mana."' WHERE userid='".$userid."'");
-}
+}//fine se nn chierici
 } //fine Completaresurrezione
 
-function Completalavminvecchia($userid,$piccone,$ore) {
+function Completalavminvecchia($userid,$piccone,$ore){
 global $db,$adesso,$lang,$language;
 $db->QueryMod("UPDATE inoggetti SET inuso='1' WHERE userid='".$userid."' AND oggid='".$piccone."' ORDER BY usura DESC LIMIT 1");
 $db->QueryMod("UPDATE inoggetti SET inuso='1' WHERE userid='".$userid."' AND oggid='1' ORDER BY usura DESC LIMIT 1");
 require_once('language/'.$language.'/lang_miniera.php');
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");
 $energia=70-(5*$usercar['minatore']);
-if ($energia<30)
+if($energia<30)
 $energia=30;
 $resistenza=$usercar['diffisica']/20;
 $salute=rand(5,15)-($usercar['minatore'])-rand(floor($resistenza/2),floor($resistenza));
-if ($salute<1)
+if($salute<1)
 $salute=1;
 $exp=floor($usercar['saluteattuale']/30+$usercar['energia']/200+$usercar['attfisico']/8);
 $exp=floor(rand(($exp/100*80),$exp));
 $exp+=10+(2*$usercar['minatore']);
-$prob=rand(1,10);
-if($prob==1)
-$esplosione=1;
-elseif($prob==10)
-$esplosione=100;
-else
+$prob=rand(1,10); if($prob==1){$esplosione=1;}elseif($prob==10){$esplosione=100;}else
 $esplosione=rand(30,110)-($usercar['minatore']*5)-($usercar['attfisico']/20);
 $danni=0;
 if($esplosione>10){
+$prob=rand(1,10); if($prob==1){$esplosione=1;}elseif($prob==10){$esplosione=100;}else
 $esplosione=rand(30,100)-($usercar['minatore']*5)-($usercar['agilita']/20)-($usercar['attfisico']/10)-($usercar['velocita']/50);
 if($esplosione<10){
 $testo="<span>".$lang['report_incidente_min1']."</span>";
-}else{
+}else{//fine se schivato
 $danni=rand(20,25)-rand(floor($resistenza/2),floor($resistenza));
-if ($danni<1)
+if($danni<1)
 $danni=1;
 $testo="<span>".sprintf($lang['report_incidente_min2'],$danni)."</span>";
-}
+}//fine se beccato
 $titolo=$lang['report_incidente_miniera'];
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");
 }//fine incidente
@@ -259,13 +245,13 @@ $trovare=rand(0,9999)-$efficenza;
 $oggminerali=$db->QueryCiclo("SELECT * FROM oggetti WHERE tipo='1' AND categoria='1' AND probtrovare>'".$trovare."'");
 while($oggminerale=$db->QueryCicloResult($oggminerali)) {
 $minerali[]=$oggminerale['id'];
-}
+}//per ogni minerale che può trovare
 shuffle($minerali);
 $minerale=$lang['oggetto'.$minerali[0].'_nome'];
 $quantimin=rand(1,2+floor($usercar['minatore']/3));
 for($i=1; $i<=$quantimin; $i++){
 $db->QueryMod("INSERT INTO inoggetti (oggid,userid) VALUES ('".$minerali[0]."','".$userid."')");
-}
+}//per ogni pezzo
 $testo.=sprintf($lang['report_lavminieravecchia_materiali_si'],$quantimin,$minerale)."<br />";
 }//fine trovato minerale
 $oggpersi=Checkusurarottura($userid,0);
@@ -277,58 +263,53 @@ $db->QueryMod("UPDATE utenti t2 JOIN caratteristiche t3 on t2.userid=t3.userid S
 if($ore>1){
 $errore="";
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");
-if ($usercar['energia']<200)
+if($usercar['energia']<200)
 $errore .= $lang['miniera_errore1'];
-if ($usercar['saluteattuale']<30)
+if($usercar['saluteattuale']<30)
 $errore .= $lang['miniera_errore2'];
 $picconesel=$db->QuerySelect("SELECT COUNT(id) AS num FROM inoggetti WHERE oggid='".$piccone."' AND userid='".$userid."'");
-if ($picconesel['num']<1)
+if($picconesel['num']<1)
 $errore.=$lang['miniera_errore5'];
 if($errore){
 $testo=$lang['outputerrori_continualav']."<br />".$errore;
 $titolo=$lang['Impossibile_lavorare_ancora'];
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");
-}
-else {
+}else{//fine se non continua
 $ore--;
 $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,lavoro,oggid,ore) VALUES ('".$userid."','".$adesso."','3600','5','1','3','".$piccone."','".$ore."')");
 }//fine continua lavoro
 }//fine se la coda ha almeno un altra ora
-} //fine Completalavminvecchia
+}//fine Completalavminvecchia
 
-function Completalavfucapp($userid,$ore) {
+function Completalavfucapp($userid,$ore){
 global $db,$adesso,$lang,$language;
 require_once('language/'.$language.'/lang_fucina.php');
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");
 $paga=7;
 $energia=100-(5*$usercar['fabbro']);
-if ($energia<50)
+if($energia<50)
 $energia=50;
 $resistenza=$usercar['diffisica']/20;
 $salute=rand(5,15)-($usercar['fabbro'])-rand(floor($resistenza/2),floor($resistenza));
-if ($salute<1)
+if($salute<1)
 $salute=1;
 $exp=floor($usercar['saluteattuale']/30+$usercar['energia']/200+$usercar['attfisico']/30+$usercar['destrezza']/20+$usercar['intelligenza']/40);
 $exp=floor(rand(($exp/100*80),$exp));
 $exp+=10+(2*$usercar['fabbro']);
-$prob=rand(1,10);
-if($prob==1)
-$esplosione=1;
-elseif($prob==10)
-$esplosione=100;
-else
+$prob=rand(1,10); if($prob==1){$esplosione=1;}elseif($prob==10){$esplosione=100;}else
 $esplosione=rand(30,110)-($usercar['fabbro']*5)-($usercar['attfisico']/20)-($usercar['destrezza']/10);
 $danni=0;
 if($esplosione>10){
+$prob=rand(1,10); if($prob==1){$esplosione=1;}elseif($prob==10){$esplosione=100;}else
 $esplosione=rand(30,100)-($usercar['fabbro']*5)-($usercar['agilita']/20)-($usercar['attfisico']/10)-($usercar['velocita']/50);
 if($esplosione<10){
 $testo="<span>".$lang['report_incidente_fuc1']."</span>";
-}else{
+}else{//fine se schivato
 $danni=rand(20,25)-rand(floor($resistenza/2),floor($resistenza));
 if ($danni<1)
 $danni=1;
 $testo="<span>".sprintf($lang['report_incidente_fuc2'],$danni)."</span>";
-}
+}//fine se beccato
 $titolo=$lang['report_incidente_fucina'];
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");
 }//fine incidente
@@ -341,23 +322,22 @@ $db->QueryMod("UPDATE config SET banca=banca-'".$paga."'");
 if($ore>1){
 $errore="";
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");
-if ($usercar['energia']<100)
+if($usercar['energia']<100)
 $errore.=$lang['fucina_errore1'];
-if ($usercar['saluteattuale']<30)
+if($usercar['saluteattuale']<30)
 $errore.=$lang['fucina_errore2'];
 if($errore){
 $testo=$lang['outputerrori_continualav']."<br />".$errore;
 $titolo=$lang['Impossibile_lavorare_ancora'];
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");
-}
-else {
+}else{//fine se nn continua
 $ore--;
 $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,lavoro,ore) VALUES ('".$userid."','".$adesso."','3600','6','1','4','".$ore."')");
 }//fine continua lavoro
 }//fine se la coda ha almeno un altra ora
-} //fine Completalavfucapp
+}//fine Completalavfucapp
 
-function Completalavlabalc($userid,$pozionesel,$ore) {
+function Completalavlabalc($userid,$pozionesel,$ore){
 global $db,$adesso,$lang,$language;
 $db->QueryMod("UPDATE inoggetti SET inuso='1' WHERE userid='".$userid."' AND oggid='36' ORDER BY usura DESC LIMIT 1");
 require_once('language/'.$language.'/lang_laboratorio.php');
@@ -367,38 +347,32 @@ $nomepozione=$lang['oggetto'.$pozione['id'].'_nome'];
 $mana=rand(5,10);
 $costo=floor($pozione['costo']/5);
 $energia=100-(5*$usercar['alchimista']);
-if ($energia<50)
+if($energia<50)
 $energia=50;
 $resistenza=$usercar['difmagica']/20;
 $salute=rand(2,10)-($usercar['alchimista'])-rand(floor($resistenza/2),floor($resistenza));
-if ($salute<1)
+if($salute<1)
 $salute=1;
 $exp=floor($usercar['saluteattuale']/30+$usercar['energia']/200+$usercar['attmagico']/13+$usercar['intelligenza']/20);
 $exp=floor(rand(($exp/100*80),$exp));
 $exp+=10+(2*$usercar['alchimista']);
 $bonusabilita=$usercar['alchimista']-$pozione['abilitanec'];
-if($bonusabilita>0)
-$bonusabilita=$bonusabilita*17;
-if($bonusabilita>70)
-$bonusabilita=70;
-$prob=rand(1,10);
-if($prob==1)
-$esplosione=1;
-elseif($prob==10)
-$esplosione=100;
-else
+if($bonusabilita>0){$bonusabilita=$bonusabilita*17;}
+if($bonusabilita>70){$bonusabilita=70;}
+$prob=rand(1,10); if($prob==1){$esplosione=1;}elseif($prob==10){$esplosione=100;}else
 $esplosione=rand(70,120)-$bonusabilita-($usercar['attmagico']/15)-$usercar['intelligenza']/25;
 $danni=0;
 if($esplosione>10){
+$prob=rand(1,10); if($prob==1){$esplosione=1;}elseif($prob==10){$esplosione=100;}else
 $esplosione=rand(30,110)-($usercar['alchimista']*5)-($usercar['agilita']/20)-($usercar['attmagico']/10)-($usercar['velocita']/50);
 if($esplosione<10){
 $testo2="<span>".$lang['report_esplosione_lab1']."</span>";
-}else{
+}else{//fine se schivato
 $danni=rand(20,25)-rand(floor($resistenza/2),floor($resistenza));
 if ($danni<1)
 $danni=1;
 $testo2="<span>".sprintf($lang['report_esplosione_lab2'],$danni)."</span>";
-}
+}//fine se beccato
 $titolo=$lang['report_esplosione_laboratorio'];
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo2."','0','".$adesso."')");
 $testo3=sprintf($lang['report_lavlab_pozione_no'],$nomepozione)."<br />";
@@ -429,15 +403,14 @@ if($errore){
 $testo=$lang['outputerrori_continualav']."<br />".$errore;
 $titolo=$lang['Impossibile_lavorare_ancora'];
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");
-}
-else {
+}else{//fine se nn continua
 $ore--;
 $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,lavoro,ore,oggid) VALUES ('".$userid."','".$adesso."','3600','7','1','5','".$ore."','".$pozionesel."')");
 }//fine continua lavoro
 }//fine se la coda ha almeno un altra ora
-} //fine Completalavlabalc
+}//fine Completalavlabalc
 
-function Completaroccastudia($userid,$elementosel,$ore) {
+function Completaroccastudia($userid,$elementosel,$ore){
 global $db,$adesso,$lang,$language,$elementi;
 require_once('language/'.$language.'/lang_rocca.php');
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");
@@ -456,7 +429,7 @@ if($ore>1){
 $ore--;
 $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,lavoro,oggid,ore) VALUES ('".$userid."','".$adesso."','3600','8','1','6','".$elementosel."','".$ore."')");
 }//fine se deve lavorare ancora
-} //fine Completaroccastudia
+}//fine Completaroccastudia
 
 function Completalavfucfab($userid,$oggdf,$ore,$materiale) {
 global $db,$adesso,$lang,$language,$materiali_num,$oggdf_num;
@@ -471,11 +444,11 @@ $db->QueryMod("UPDATE inoggetti SET inuso='1' WHERE userid='".$userid."' AND ogg
 if($materiali_num[$materiale][4]>0)
 $db->QueryMod("UPDATE inoggetti SET inuso='1' WHERE userid='".$userid."' AND oggid='10' LIMIT ".$materiali_num[$materiale][4]);
 $energia=100-(5*$usercar['fabbro']);
-if ($energia<50)
+if($energia<50)
 $energia=50;
 $resistenza=$usercar['diffisica']/20;
 $salute=rand(5,15)-($usercar['fabbro'])-rand(floor($resistenza/2),floor($resistenza));
-if ($salute<1)
+if($salute<1)
 $salute=1;
 $exp=floor($usercar['saluteattuale']/30+$usercar['energia']/200+$usercar['attfisico']/30+$usercar['destrezza']/20+$usercar['intelligenza']/40);
 $exp=floor(rand(($exp/100*80),$exp));
@@ -483,24 +456,20 @@ $exp+=10+(2*$usercar['fabbro']);
 $bonusabilita=$usercar['fabbro']*7;
 if($bonusabilita>50)
 $bonusabilita=50;
-$prob=rand(1,10);
-if($prob==1)
-$esplosione=1;
-elseif($prob==10)
-$esplosione=100;
-else
+$prob=rand(1,10); if($prob==1){$esplosione=1;}elseif($prob==10){$esplosione=100;}else
 $esplosione=rand(30,110)-$bonusabilita-($usercar['attfisico']/20)-($usercar['destrezza']/10)-($usercar['intelligenza']/40);
 $danni=0;
 if($esplosione>10){
+$prob=rand(1,10); if($prob==1){$esplosione=1;}elseif($prob==10){$esplosione=100;}else
 $esplosione=rand(30,100)-($usercar['fabbro']*5)-($usercar['agilita']/20)-($usercar['attfisico']/10)-($usercar['velocita']/50);
 if($esplosione<10){
 $testo2="<span>".$lang['report_incidente_fuc1']."</span>";
-}else{
+}else{//fine se schivato
 $danni=rand(20,25)-rand(floor($resistenza/2),floor($resistenza));
-if ($danni<1)
+if($danni<1)
 $danni=1;
 $testo2="<span>".sprintf($lang['report_incidente_fuc2'],$danni)."</span>";
-}
+}//fine se beccato
 $titolo2=$lang['report_incidente_fucina'];
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo2."','".$testo2."','0','".$adesso."')");
 $testo=$lang['report_lavfuc_forgia_no']."<br />";
@@ -522,23 +491,22 @@ $db->QueryMod("UPDATE utenti t2 JOIN caratteristiche t3 on t2.userid=t3.userid S
 if($ore>1){
 $errore="";
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");
-if ($usercar['energia']<100)
+if($usercar['energia']<100)
 $errore.=$lang['fucina_errore1'];
-if ($usercar['saluteattuale']<30)
+if($usercar['saluteattuale']<30)
 $errore.=$lang['fucina_errore2'];
 if($errore){
 $testo=$lang['outputerrori_continualav']."<br />".$errore;
 $titolo=$lang['Impossibile_lavorare_ancora'];
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");
-}
-else {
+}else{//fine se nn continua
 $ore--;
 $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,lavoro,ore,oggid,type) VALUES ('".$userid."','".$adesso."','3600','9','1','7','".$ore."','".$oggdf."','".$materiale."')");
 }//fine continua lavoro
 }//fine se la coda ha almeno un altra ora
-} //fine Completalavfucfab
+}//fine Completalavfucfab
 
-function Completaroccapratica($userid,$elementosel,$ore,$tiposel) {
+function Completaroccapratica($userid,$elementosel,$ore,$tiposel){
 global $db,$adesso,$lang,$language,$elementi,$tipimagia;
 require_once('language/'.$language.'/lang_rocca.php');
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");
@@ -554,12 +522,12 @@ $danni=0;
 $inmagie=$db->QuerySelect("SELECT COUNT(id) AS num FROM inmagia WHERE userid='".$userid."' AND stato='0'");
 if($inmagie['num']>0){
 $inmagieq=$db->QueryCiclo("SELECT * FROM inmagia WHERE userid='".$userid."' AND stato='0'");
-while($chem=$db->QueryCicloResult($inmagieq)) {
-	$inmagie[$chem['magid']]=$chem['magid'];
+while($chem=$db->QueryCicloResult($inmagieq)){
+$inmagie[$chem['magid']]=$chem['magid'];
 }//fine mostra risultati
 $magieq=$db->QueryCiclo("SELECT * FROM magia WHERE elemento='".$elementosel."'");
-while($chem=$db->QueryCicloResult($magieq)) {
-	$magie[$chem['id']]=$chem['tipo'];
+while($chem=$db->QueryCicloResult($magieq)){
+$magie[$chem['id']]=$chem['tipo'];
 }//fine mostra risultati
 foreach($inmagie as $chiave=>$elemento){
 if($magie[$chiave]==$tiposel AND isset($magie[$chiave])){
@@ -589,21 +557,21 @@ $testo3="<br />".sprintf($lang['report_lavroc_magia_si'],$lang['magia'.$magiasel
 }//se riuscito
 }//se trovata una magia
 if($riuscito==0){
+$prob=rand(1,10); if($prob==1){$esplosione=1;}elseif($prob==10){$esplosione=100;}else
 $esplosione=rand(30,100)-($usercar['magica']*5)-($usercar['agilita']/20)-($usercar['attmagico']/10);
 if($esplosione<10){
 $testo2="<span>".$lang['report_esplosione_roc1']."</span>";
-}else{
+}else{//fine se schivato
 $resistenza=$usercar['difmagica']/20;
 $danni=rand(20,25)-rand(floor($resistenza/2),floor($resistenza));
-if ($danni<1)
+if($danni<1)
 $danni=1;
 $testo2="<span>".sprintf($lang['report_esplosione_roc2'],$danni)."</span>";
-}
+}//fine se beccato
 $titolo=$lang['report_esplosione_rocca'];
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo2."','0','".$adesso."')");
 $testo3="<br />".$lang['report_lavroc_magia_no'];
-}
-
+}//fine se nn riuscito
 $testo="<span>".sprintf($lang['report_lavpraticarocca'],$exp,$elementi[$elementosel],$energia).$testo3."</span>";
 $titolo=$lang['report_lavoro_roccapratica'];
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");
@@ -612,21 +580,20 @@ Controllamagieconosciute($userid,$elementosel);
 if($ore>1){
 $errore="";
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");
-if ($usercar['saluteattuale']<30)
+if($usercar['saluteattuale']<30)
 $errore.=$lang['rocca_errore5'];
 if($errore){
 $testo=$lang['outputerrori_continualav']."<br />".$errore;
 $titolo=$lang['Impossibile_lavorare_ancora'];
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");
-}
-else {
+}else{//fine se nn continua
 $ore--;
 $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,lavoro,oggid,ore,type) VALUES ('".$userid."','".$adesso."','3600','10','1','8','".$elementosel."','".$ore."','".$tiposel."')");
 }//fine continua lavoro
 }//fine se deve lavorare ancora
-} //fine Completaroccapratica
+}//fine Completaroccapratica
 
-function Completasfida($userid,$eid) {
+function Completasfida($userid,$eid){
 global $db,$adesso,$lang,$language;
 require_once('language/'.$language.'/lang_combact.php');
 $sfida=$db->QuerySelect("SELECT * FROM eventi WHERE id='".$eid."' LIMIT 1");
@@ -640,7 +607,7 @@ $titolo=$lang['sfida_annullata'];
 $testo=sprintf($lang['report_sfida_annullata2'],$sfidante['username']);
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");
 }
-} //fine Completasfida
+}//fine Completasfida
 
 function Completadormire($userid,$ore){
 global $db,$adesso,$lang,$language;
@@ -709,7 +676,7 @@ $db->QueryMod("UPDATE caratteristiche SET energia='".$energia."',recuperosalute=
 $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo) VALUES ('".$userid."','".$adesso."','".$secondi2."','16','9')");
 } //fine Ritornoacasa
 
-function Completaguardia($userid,$ore) {
+function Completaguardia($userid,$ore){
 global $db,$adesso,$lang,$language;
 require_once('language/'.$language.'/lang_municipio.php');
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");
@@ -723,18 +690,18 @@ $db->QueryMod("UPDATE config SET banca=banca-'".$paga."'");
 if($ore>1){
 $errore="";
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");
-if ($usercar['energia']<300)
+if($usercar['energia']<300)
 $errore.=$lang['ronda_errore1'];
 if($errore){
 $testo=$lang['outputerrori_continualav']."<br />".$errore;
 $titolo=$lang['Impossibile_lavorare_ancora'];
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");
-}else{
+}else{//fine se non continua
 $ore--;
 $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,lavoro,ore) VALUES ('".$userid."','".$adesso."','3600','17','1','9','".$ore."')");
 }//fine continua lavoro
 }//fine se la coda ha almeno un altra ora
-} //fine Completaguardia
+}//fine Completaguardia
 
 function Controllacrimine($config){
 global $db,$adesso,$lang;
@@ -746,7 +713,7 @@ $db->QueryMod("UPDATE config SET crimine=crimine+'1'");
 $utenti=$db->QueryCiclo("SELECT userid FROM utenti WHERE personaggio='1'");
 while($utente=$db->QueryCicloResult($utenti)){
 $u[]=$utente['userid'];
-}
+}//per ogni utente
 $quale=array_rand($u);
 $userid=$u[$quale];
 $eu=$db->QuerySelect("SELECT COUNT(id) AS n FROM eventi WHERE userid='".$userid."'");
@@ -755,11 +722,11 @@ $combact=1;
 recenergiasalute($userid,0);
 $eu=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$userid."'");
 inbacheca(sprintf($lang['criminale_attacca_utente'],$eu['username']));
-}else{
+}else{//fine attacca utente
 $danni=rand(10,100);
 $db->QueryMod("UPDATE config SET banca=banca-'".$danni."'");
 inbacheca(sprintf($lang['criminale_attacca_regno'],$danni));
-}
+}//fine attacca regno
 }else{//se ci sono guardie
 $combact=1;
 $g=$db->QuerySelect("SELECT userid FROM eventi WHERE lavoro='9' LIMIT 1");
@@ -778,5 +745,5 @@ $npcid=Npcesistente($pcpuid);
 if($npcid==0){$npcid=Inizializzanpc($pcpuid);}
 Startcombact($userid,$npcid,1);
 }//fine se criminale ingaggia battaglia
-} //fine Controllacrimine
+}//fine Controllacrimine
 ?>
