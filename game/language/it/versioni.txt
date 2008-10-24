@@ -7,7 +7,7 @@ Legenda:<br />
 - Correzione bug e patch di situazioni non previste<br />
 </p>
 <p><strong>0.7.11</strong> (Non disponibile - In sviluppo)<br />
-Niente attualmente<br />
++ Vari miglioramenti di sistema a sistema di combattimento<br />
 </p>
 <p><strong>0.7.10.1</strong> (23/10/08 - Beta)<br />
 - Corretto un bug nel sistema automatico di selezione delle tattiche<br />

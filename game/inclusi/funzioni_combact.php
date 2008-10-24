@@ -331,7 +331,7 @@ class Dati{
 	return $expb;
 	} //fine Checkturnexp
 
-	public function Attaccovicino($att,$dif) {
+	public function Attaccovicino($att,$dif){
 	global $db,$lang;
 	if($this->equip($att,'cac')!=0){
 	$arma=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$this->equip($att,'cac')."' LIMIT 1");
@@ -386,7 +386,7 @@ class Dati{
 	$probps=rand(0,30);}else{$probps=rand(0,90);}
 	if($this->equip($dif,'scu')!=0 AND $probps<20 AND $this->esausto($dif)==0){
 	if($scudo['energia']<=$this->car($dif,'energia')){
-	$pscudo=$lang['parata_con_scudo'].", ";
+	$pscudo=" ".$lang['parata_con_scudo'].", ";
 	$prob=10;
 	if($this->tattica($dif,1)==3)
 	$prob=50;
@@ -518,7 +518,7 @@ class Dati{
 	$probps=rand(0,30);}else{$probps=rand(0,90);}
 	if($this->equip($dif,'scu')!=0 AND $probps<20 AND $this->esausto($dif)==0){
 	if($scudo['energia']<=$this->car($dif,'energia')){
-	$pscudo=$lang['parata_con_scudo'].", ";
+	$pscudo=" ".$lang['parata_con_scudo'].", ";
 	$prob=10;
 	if($this->tattica($dif,1)==3)
 	$prob=50;
