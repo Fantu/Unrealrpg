@@ -11,7 +11,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <div align="center">
 <?php if(!empty($nessunogg)){ echo $nessunogg."<br />";}else{ ?>
 <form action="" method="post" name="formvendi">
-<table align="center" border="1">	
+<table align="center" border="1">
 <?php
 foreach($oggetti['nome'] as $chiave=>$elemento){?>
 <tr><td><input type="radio" name="oggselect" value="<?php echo $oggetti['id'][$chiave]; ?>" />
