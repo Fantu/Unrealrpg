@@ -57,7 +57,7 @@ $evento=$db->QuerySelect("SELECT * FROM eventi WHERE userid='".$user['userid']."
 }//fine se personaggio creato
 require_once('template/int_header.php');
 } //fine if userid
-else {
+else{
 	header("Location: ../index.php?error=13");
 	exit();
 }

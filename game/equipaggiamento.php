@@ -18,7 +18,6 @@ $acac=(int)$_POST['acac'];
 if($acac<0)
 $errore.=$lang['equip_errore1'];
 if($errore=="" AND $acac>0){
-$usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$user['userid']."' LIMIT 1");
 $acacsel=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$acac."' LIMIT 1");
 if($usercar['attfisico']<$acacsel['forzafisica'])
 $errore.=$lang['equip_errore2'];
@@ -49,7 +48,6 @@ $aadi=(int)$_POST['aadi'];
 if($aadi<0)
 $errore.=$lang['equip_errore1'];
 if($errore=="" AND $aadi>0){
-$usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$user['userid']."' LIMIT 1");
 $aadisel=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$aadi."' LIMIT 1");
 if($usercar['attfisico']<$aadisel['forzafisica'])
 $errore.=$lang['equip_errore2'];
@@ -82,7 +80,6 @@ $armatura=(int)$_POST['arm'];
 if($armatura<0)
 $errore.=$lang['equip_errore1'];
 if($errore=="" AND $armatura>0){
-$usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$user['userid']."' LIMIT 1");
 $armsel=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$armatura."' LIMIT 1");
 if($usercar['attfisico']<$armsel['forzafisica'])
 $errore.=$lang['equip_errore2'];
@@ -113,7 +110,6 @@ $scudo=(int)$_POST['scu'];
 if($scudo<0)
 $errore.=$lang['equip_errore1'];
 if($errore=="" AND $scudo>0){
-$usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$user['userid']."' LIMIT 1");
 $scusel=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$scudo."' LIMIT 1");
 if($usercar['attfisico']<$scusel['forzafisica'])
 $errore.=$lang['equip_errore2'];
