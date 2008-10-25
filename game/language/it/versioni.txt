@@ -10,6 +10,7 @@ Legenda:<br />
 + Ora nei lavori c'è sempre una piccola probabilità di schivare gli incidenti (se succedono) anche con caratteristiche e abilità elevate e viceversa<br />
 + Aggiunti negli oggetti: Coltelli di mithrill<br />
 + Vari miglioramenti di sistema a sistema di combattimento, lavori, Equipaggiamento, sistema automatico degli eventi<br />
+# Modificati i seguenti oggetti, resi più equilibrati: Coltelli di acciaio<br />
 - Corretto un problema di lingua nei report generati dal sistema automatico degli eventi di gioco<br />
 </p>
 <p><strong>0.7.10.1</strong> (23/10/08 - Beta)<br />

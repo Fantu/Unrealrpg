@@ -32,6 +32,7 @@ $db->QueryMod("INSERT INTO `oggetti` (
 VALUES 
 (NULL , '7', '1', '0', '11', '14', '10', '1', '30', '50', '0', '0', '0', '0', '0', '10', '0');
 ");
+$db->QueryMod("UPDATE `oggetti` SET `forzafisica` = '35' WHERE `oggetti`.`id` =82 LIMIT 1");
 
 	/*//creazione record per tab con 1 record per utente
 	$a=$db->QueryCiclo("SELECT userid FROM utenti WHERE conferma='1' AND personaggio='1'");
