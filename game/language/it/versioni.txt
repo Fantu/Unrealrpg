@@ -8,7 +8,8 @@ Legenda:<br />
 </p>
 <p><strong>0.7.11</strong> (Non disponibile - In sviluppo)<br />
 + Ora nei lavori c'è sempre una piccola probabilità di schivare gli incidenti (se succedono) anche con caratteristiche e abilità elevate e viceversa<br />
-+ Vari miglioramenti di sistema a sistema di combattimento, lavori, Equipaggiamento<br />
++ Vari miglioramenti di sistema a sistema di combattimento, lavori, Equipaggiamento, sistema automatico degli eventi<br />
+- Corretto un problema di lingua nei report generati dal sistema automatico degli eventi di gioco<br />
 </p>
 <p><strong>0.7.10.1</strong> (23/10/08 - Beta)<br />
 - Corretto un bug nel sistema automatico di selezione delle tattiche<br />
