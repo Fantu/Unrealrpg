@@ -78,6 +78,7 @@ class ConnessioniMySQL{
 		return $var;
 	}
 	function Dbdump($sqlfile){
+		$this->Config();
 		$backup="mysqldump -u ".$this->dbuser." --password=".$this->dbpass." ".$this->dbname." > ".$sqlfile;
 		exec($backup);
 		return $backup;

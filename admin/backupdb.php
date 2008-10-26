@@ -11,7 +11,6 @@ foreach($game_server as $chiave=>$elemento){
 $db->database=$chiave;
 $sqlfile=realpath(".")."/cache/".$chiave."_".date('Y_m_d').".sql";
 $fatto=$db->Dbdump($sqlfile);
-echo $fatto;
 }//per ogni regno
 
 
