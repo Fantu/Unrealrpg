@@ -46,7 +46,7 @@ $encoded_attach=chunk_split(base64_encode($contents));
 
 // INTESTAZIONI DELLA MAIL
 $mail_headers="MIME-version: 1.0\n";
-$mail_headers.= "Content-type: multipart/mixed; boundary=\"".$boundary".\"";
+$mail_headers.="Content-type: multipart/mixed; boundary=\"".$boundary."\"";
 $mail_headers.="X-attachments: ".$allegato."\n";
 $mail_headers.="From: ".$mail."\r\n"; 
 
