@@ -4,12 +4,12 @@ require('../game/inclusi/funzioni_db.php');
 $db=new ConnessioniMySQL();
 
 if(!is_dir('/cache/')){
-mkdir('/cache/', 0777);
+mkdir('cache/', 0777);
 }//se la cartella non esiste
 
 foreach($game_server as $chiave=>$elemento){
 $db->database=$chiave;
-$sqlfile="/cache/".$chiave."_".date('Y_m_d').".sql";
+$sqlfile="cache/".$chiave."_".date('Y_m_d').".sql";
 $db->Dbdump($sqlfile);
 }//per ogni regno
 
