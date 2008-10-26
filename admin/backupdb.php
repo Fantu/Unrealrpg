@@ -12,7 +12,7 @@ $db->Dbdump($sqlfile);
 }//per ogni regno
 
 
-$prefix=$game_name." - ".$game_version;
+$prefix="Backupdb-".$game_version;
 $allegato=$prefix.date('Y_m_d').".tgz";
 $tar="tar cvzf ".$path.$allegato." ".$path."*";
 exec($tar);
