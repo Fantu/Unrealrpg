@@ -9,7 +9,7 @@ class ConnessioniMySQL{
 	var $dbuser="rpg";
 	var $dbpass="3sWBVeNJN4YbB5MQ";
 
-	function StampaErroreMysql($query,$err,$mess) {
+	function StampaErroreMysql($query,$err,$mess){
 	$data=date("d/m/y - H:i")." - Db:".$this->database." - ".$query;
 	$file="inclusi/log/mysql.log";
 	if (!file_exists($file)){
@@ -23,7 +23,7 @@ class ConnessioniMySQL{
 	function Config(){
 		$this->dbname=$this->suffix.$this->database;
 	}
-	function QuerySelect ($query) { //$var=$db->QuerySelect("SELECT * FROM table");
+	function QuerySelect($query){//$var=$db->QuerySelect("SELECT * FROM table");
 		global $numquery;
 		$this->Config();
 		$connect=mysql_connect($this->server,$this->dbuser,$this->dbpass);
@@ -44,7 +44,7 @@ class ConnessioniMySQL{
 		mysql_close($connect);
 		return $var;
 	}
-	function QueryMod ($query) { //$db->QueryMod("UPDATE table SET colonna='1'");
+	function QueryMod($query){//$db->QueryMod("UPDATE table SET colonna='1'");
 		global $numquery;
 		$this->Config();
 		$connect=mysql_connect($this->server,$this->dbuser,$this->dbpass);
@@ -58,7 +58,7 @@ class ConnessioniMySQL{
 		}
 		mysql_close($connect);
 	}
-	function QueryCiclo ($query) { //$guarda_bene=$db->QueryCiclo("SELECT * FROM table"); -- collegata a quella di sotto
+	function QueryCiclo($query){//$guarda_bene=$db->QueryCiclo("SELECT * FROM table"); -- collegata a quella di sotto
 		global $numquery;
 		$this->Config();
 		$connect=mysql_connect($this->server,$this->dbuser,$this->dbpass);
@@ -73,9 +73,13 @@ class ConnessioniMySQL{
 		mysql_close($connect);
 		return $result;
 	}
-	function QueryCicloResult ($result) { //while($var=$db->QueryCicloResult($guarda_bene)) -- collegata a quella di sopra
+	function QueryCicloResult($result){//while($var=$db->QueryCicloResult($guarda_bene)) -- collegata a quella di sopra
 		$var=mysql_fetch_array($result);
 		return $var;
+	}
+	function Dbdump($sqlfile){
+		$backup="mysqldump -u ".$this->dbuser." --password=".$this->dbpass." ".$this->dbname." > ".$sqlfile;
+		exec($backup);
 	}
 
 }//fine ConnessioniMySQL

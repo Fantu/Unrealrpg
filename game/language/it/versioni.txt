@@ -8,8 +8,9 @@ Legenda:<br />
 </p>
 <p><strong>0.7.11</strong> (Non disponibile - In sviluppo)<br />
 + Ora nei lavori c'è sempre una piccola probabilità di schivare gli incidenti (se succedono) anche con caratteristiche e abilità elevate e viceversa<br />
-+ Aggiunti negli oggetti: Coltelli di mithrill<br />
-+ Vari miglioramenti di sistema a sistema di combattimento, lavori, Equipaggiamento, sistema automatico degli eventi<br />
++ Aggiunti i seguenti oggetti: Coltelli di mithrill<br />
++ Aggiunto backup automatico giornaliero<br />
++ Vari miglioramenti di sistema a sistema di combattimento, lavori, Equipaggiamento, sistema automatico degli eventi, sistema query<br />
 # Modificati i seguenti oggetti, resi più equilibrati: Coltelli di acciaio<br />
 - Corretto un problema di lingua nei report generati dal sistema automatico degli eventi di gioco<br />
 </p>
