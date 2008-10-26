@@ -9,7 +9,7 @@ mkdir('cache/', 0777);
 
 foreach($game_server as $chiave=>$elemento){
 $db->database=$chiave;
-echo realpath("../");
+echo realpath("/cache");
 $sqlfile="cache/".$chiave."_".date('Y_m_d').".sql";
 $db->Dbdump($sqlfile);
 }//per ogni regno
