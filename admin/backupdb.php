@@ -3,9 +3,9 @@ require('../game/inclusi/valori.php');
 require('../game/inclusi/funzioni_db.php');
 $db=new ConnessioniMySQL();
 
-if(!is_dir('/cache/')){
+/*if(!is_dir('cache/')){
 mkdir('cache/', 0777);
-}//se la cartella non esiste
+}//se la cartella non esiste*/
 
 foreach($game_server as $chiave=>$elemento){
 $db->database=$chiave;
