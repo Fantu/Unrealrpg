@@ -54,7 +54,7 @@ $mail_headers.="From: ".$mail."\r\n";
 // COSTRUIAMO IL CORPO DELLA MAIL
 $mail_body="Content-disposition: attachment; filename =\"".$allegato."\"\n\n";
 $mail_body.="--".$boundary."--\n";
-$mail_body.="Content-Type: text/plain; charset=utf8\n";
+$mail_body.="Content-Type: text/plain; charset=ascii\n";
 $mail_body.="Content-Transfer-Encoding: 7bit\n\n";
 $mail_body.="Contenuto: ".$contenuto."\n\n";
 $mail_body.="Soggetto: ".$oggetto."\n\n";
