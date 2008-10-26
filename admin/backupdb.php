@@ -3,30 +3,29 @@ require('../game/inclusi/valori.php');
 require('../game/inclusi/funzioni_db.php');
 $db=new ConnessioniMySQL();
 
-/*if(!is_dir('cache/')){
-mkdir('cache/', 0777);
-}//se la cartella non esiste*/
+$path=realpath(".")."/cache/";
 
 foreach($game_server as $chiave=>$elemento){
 $db->database=$chiave;
-$sqlfile=realpath(".")."/cache/".$chiave."_".date('Y_m_d').".sql";
-$fatto=$db->Dbdump($sqlfile);
+$sqlfile=$path.$chiave."_".date('Y_m_d').".sql";
+$db->Dbdump($sqlfile);
 }//per ogni regno
 
 
-/*$prefix = "lostagedb_";
-$attachment = $tmpDir.$prefix.date('Y_m_d').".tgz";
-$createZip = "tar cvzf $attachment /var/www/www.lostage.it/web/backup/dump/*";
-exec($createZip);
+$prefix=$game_name." - ".$game_version;
+$allegato=$prefix.date('Y_m_d').".tgz";
+$tar="tar cvzf ".$path.$allegato." ".$path."*";
+exec($tar);
 
-unlink($sqlFile1);
-unlink($sqlFile3);
-unlink($sqlFile4);
+foreach($game_server as $chiave=>$elemento){
+$sqlfile=realpath(".")."/cache/".$chiave."_".date('Y_m_d').".sql";
+unlink($sqlfile);
+}//per ogni regno
 
-
+/*
 error_reporting(E_ALL);
 
-$_FILES = $HTTP_POST_FILES;
+$_FILES=$HTTP_POST_FILES;
 
 // RIPULIAMO I VARI CAMPI DEL MODULO
 $Soggetto = "LostAge altri DB Backup ".date('d/m/Y');
