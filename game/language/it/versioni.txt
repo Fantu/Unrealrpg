@@ -8,7 +8,7 @@ Legenda:<br />
 </p>
 <p><strong>0.7.11</strong> (Non disponibile - In sviluppo)<br />
 + Ora nei lavori c'è sempre una piccola probabilità di schivare gli incidenti (se succedono) anche con caratteristiche e abilità elevate e viceversa<br />
-+ Aggiunti i seguenti oggetti: Coltelli di mithrill<br />
++ Aggiunti i seguenti oggetti: Coltelli di mithrill, Armatura di rame buona, Armatura di ferro buona, Armatura di acciaio buona<br />
 + Aggiunto backup automatico giornaliero<br />
 + Vari miglioramenti di sistema a sistema di combattimento, lavori, Equipaggiamento, sistema automatico degli eventi, sistema query<br />
 # Modificati i seguenti oggetti, resi più equilibrati: Coltelli di acciaio<br />
