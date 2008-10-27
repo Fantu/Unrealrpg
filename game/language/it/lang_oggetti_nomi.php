@@ -82,4 +82,7 @@ $lang['oggetto83_nome']='Coltelli di mithrill';
 $lang['oggetto84_nome']='Armatura di rame buona';
 $lang['oggetto85_nome']='Armatura di ferro buona';
 $lang['oggetto86_nome']='Armatura di acciaio buona';
+$lang['oggetto87_nome']='Scudo di rame buono';
+$lang['oggetto88_nome']='Scudo di ferro buono';
+$lang['oggetto89_nome']='Scudo di acciaio buono';
 ?>
