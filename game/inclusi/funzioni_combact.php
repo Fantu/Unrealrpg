@@ -372,6 +372,8 @@ class Dati{
 	$colpisci-=20;
 	if((100/$this->car($dif,'salute')*$this->car($dif,'saluteattuale'))<10)
 	$colpisci+=20;
+	if($dif==1 AND ($this->tattica($dif,1)==1 AND $this->tattica($dif,2)==2))
+	$colpisci-=10;
 	}//se colpire o no non sicuro
 	if($colpisci>50 OR $this->esausto($dif)==1){
 	$difesamax=round($this->car($dif,'diffisica')/100);

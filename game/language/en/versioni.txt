@@ -8,8 +8,11 @@ Legenda:<br />
 </p>
 <p><strong>0.7.11</strong> (Non disponibile - In sviluppo)<br />
 + Ora nei lavori c'è sempre una piccola probabilità di schivare gli incidenti (se succedono) anche con caratteristiche e abilità elevate e viceversa<br />
-+ Aggiunti negli oggetti: Coltelli di mithrill<br />
-+ Vari miglioramenti di sistema a sistema di combattimento, lavori, Equipaggiamento, sistema automatico degli eventi<br />
++ Aggiunti i seguenti oggetti: Coltelli di mithrill, Armatura di rame buona, Armatura di ferro buona, Armatura di acciaio buona, Scudo di rame buono, Scudo di ferro buono, Scudo di acciaio buono<br />
++ Aggiunto backup automatico giornaliero<br />
++ Se l'avversario riesce ad attaccare a distanza sarà più difficile colpirlo se si cerca di attaccare corpo a corpo<br />
++ Vari miglioramenti di sistema a sistema di combattimento, lavori, Equipaggiamento, sistema automatico degli eventi, sistema query<br />
+# Modificati i seguenti oggetti, resi più equilibrati: Coltelli di acciaio<br />
 - Corretto un problema di lingua nei report generati dal sistema automatico degli eventi di gioco<br />
 </p>
 <p><strong>0.7.10.1</strong> (23/10/08 - Beta)<br />
