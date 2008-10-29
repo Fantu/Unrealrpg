@@ -122,8 +122,8 @@ $lang['utente_inesistente']='Utente inesistente';
 //fine visualizzautente
 
 //inizio funz_ogg
-$lang['oggetto_usurato']='Oggetto %s gettato, in quanto usurato';
-$lang['oggetto_rotto']='Oggetto %s gettato, in quanto rotto.';
+$lang['oggetto_usurato']='%s, oggetto usurato o esaurito.';
+$lang['oggetto_rotto']='%s, oggetto rotto.';
 $lang['nessuno_gettato']='Nessuno oggetto gettato.';
 $lang['errore_sistema_utilizzo_ogg']='Errore di sistema: impossibile utilizzare %s!';
 $lang['utilizzato_4_1']='Utilizzato %s e recuperato %s di salute';
@@ -173,11 +173,10 @@ $lang['outputerrori']='Si sono verificati i seguenti errori:';
 $lang['outputerrori_continualav']='Non è stato possibile continuare a lavorare per i seguenti motivi:';
 $lang['Impossibile_lavorare_ancora']='Impossibile lavorare ancora!';
 $lang['nessun_evento']='Nessun evento in corso.';
-$lang['error_eventi_incorso']='Sei occupato a fare altro!';
 $lang['Stato']='Stato';
 $lang['Adesso']='Adesso';
 $lang['Indietro']='Indietro';
-$lang['dataora']='\i\l \g\i\o\r\n\o d/m/y \a\l\l\e \o\r\e H:i';
+$lang['dataora']='\i\l \g\i\o\r\n\o d/m/y \a\l\l\e \o\r\e H:i';//vedere  http://php.net/date
 $lang['tempo_gen_pagina']='Tempo di generazione della pagina: %s secondi - Query eseguite: %s';
 $lang['Annulla']='Annulla';
 $lang['seleziona_ore_lavoro']='Seleziona quante ore:';

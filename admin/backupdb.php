@@ -32,36 +32,6 @@ $contenuto="Backup db:".$dbsalvati;
 
 $tipofile=filetype($pallegato);
 $dimfile=filesize($pallegato);
-/*
-// DELIMITATORE
-$boundary=md5(uniqid(microtime()));
-
-// APRIAMO L'ALLEGATO PER LEGGERLO E CODIFICARLO
-$file=@fopen($pallegato, "r");
-$contents=@fread($file, $dimfile);
-$encoded_attach=chunk_split(base64_encode($contents));
-@fclose($file);
-
-// INTESTAZIONI DELLA MAIL
-$mail_headers="MIME-version: 1.0\n";
-$mail_headers.="Content-type: multipart/mixed; boundary=\"".$boundary."\"";
-$mail_headers.="X-attachments: ".$allegato."\n";
-$mail_headers.="From: ".$mail."\r\n";
-
-
-// COSTRUIAMO IL CORPO DELLA MAIL
-$mail_body="Content-disposition: attachment; filename =\"".$allegato."\"\n\n";
-$mail_body.="--".$boundary."--\n";
-$mail_body.="Content-Type: text/plain; charset=ascii\n";
-$mail_body.="Content-Transfer-Encoding: 7bit\n\n";
-$mail_body.="Contenuto: ".$contenuto."\n\n";
-$mail_body.="Soggetto: ".$oggetto."\n\n";
-$mail_body.="--".$boundary."\n";
-$mail_body.="Content-type: ".$tipofile."; name=\"".$allegato."\"\n";
-$mail_body.="Content-Transfer-Encoding: base64\n";
-$mail_body.="".$encoded_attach."\n";
-$mail_body.="--".$boundary."--\n";
-*/
 
 $mail_boundary = md5(uniqid(microtime()));
 

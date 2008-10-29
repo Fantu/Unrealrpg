@@ -12,7 +12,7 @@ Legenda:<br />
 + Aggiunto backup automatico giornaliero<br />
 + Se l'avversario riesce ad attaccare a distanza sarà più difficile colpirlo se si cerca di attaccare corpo a corpo<br />
 + Aggiunto agli NPC rapinatore ed implementato oltre confine a nord e criminale nel regno<br />
-+ Vari miglioramenti di sistema a sistema di combattimento, lavori, Equipaggiamento, sistema automatico degli eventi, sistema query, sistema messaggi<br />
++ Vari miglioramenti di sistema a sistema di combattimento, lavori, Equipaggiamento, sistema automatico degli eventi, sistema query, sistema messaggi, sistema oggetti<br />
 # Modificati i seguenti oggetti, resi più equilibrati: Coltelli di acciaio<br />
 - Corretto un problema di lingua nei report generati dal sistema automatico degli eventi di gioco<br />
 </p>
