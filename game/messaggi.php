@@ -162,7 +162,7 @@ case "scrivi":// scrivi nuovo
   <tr><td align="center"><strong><?php echo $lang['titolo']; ?></strong><br /><input name="titolo" type="text" /></td></tr>
   <tr>
     <td align="center"><strong><?php echo $lang['messaggio']; ?></strong><br /><textarea name="mymess" cols="45" rows="4" id="mymess" onkeyup="conteggio()" onmousemove="conteggio()"></textarea>
-	<br /><?php echo $lang['caratteri_disponibili']; ?><div id="caratteri" name="caratteri"><?php if($user['plus']==0) echo "500"; else echo "10000";?></div></td></tr>
+	<br /><?php echo $lang['caratteri_disponibili']; ?><span id="caratteri"><?php if($user['plus']==0) echo "500"; else echo "10000";?></span></td></tr>
   <tr>
     <td><div align="center">
       <?php echo "<input type=\"hidden\" name=\"achi\" value=\"".$id."\" />"; ?>
