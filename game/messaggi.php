@@ -133,7 +133,7 @@ else{
   </tr>
   <tr>
     <td><textarea name="mymess" cols="45" rows="4" id="mymess" onkeyup="conteggio()" onmousemove="conteggio()"></textarea>
-	  <br /><?php echo $lang['caratteri_disponibili']; ?><div id="caratteri" name="caratteri"><?php if($user['plus']==0) echo "500"; else echo "10000";?></div>
+	  <br /><?php echo $lang['caratteri_disponibili']; ?><span id="caratteri"><?php if($user['plus']==0) echo "500"; else echo "10000";?></span>
   </td></tr>
   <tr>
     <td><div align="center">
