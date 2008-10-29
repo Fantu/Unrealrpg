@@ -122,8 +122,8 @@ $lang['utente_inesistente']='User not exist';
 //fine visualizzautente
 
 //inizio funz_ogg
-$lang['oggetto_usurato']='Object %s thrown away,because it has been used';
-$lang['oggetto_rotto']='Oggetto %s gettato, in quanto rotto.';
+$lang['oggetto_usurato']='%s, oggetto usurato o esaurito.';
+$lang['oggetto_rotto']='%s, oggetto rotto.';
 $lang['nessuno_gettato']='Nessuno oggetto gettato.';
 $lang['errore_sistema_utilizzo_ogg']='Errore di sistema: impossibile utilizzare %s!';
 $lang['utilizzato_4_1']='Utilizzato %s e recuperato %s di salute';
@@ -173,7 +173,6 @@ $lang['outputerrori']='The following errors have occurred:';
 $lang['outputerrori_continualav']='Non è stato possibile continuare a lavorare per i seguenti motivi:';
 $lang['Impossibile_lavorare_ancora']='Impossibile lavorare ancora!';
 $lang['nessun_evento']='Nessun evento in corso.';
-$lang['error_eventi_incorso']='Sei occupato a fare altro!';
 $lang['Stato']='Status';
 $lang['Adesso']='Now';
 $lang['Indietro']='Back';

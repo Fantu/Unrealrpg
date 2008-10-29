@@ -7,6 +7,9 @@ Legenda:<br />
 - Correzione bug e patch di situazioni non previste<br />
 </p>
 <p><strong>0.7.11</strong> (Non disponibile - In sviluppo)<br />
+Nienta attualmente<br />
+</p>
+<p><strong>0.7.11</strong> [R.1780] (29/10/08 - Beta)<br />
 + Ora nei lavori c'è sempre una piccola probabilità di schivare gli incidenti (se succedono) anche con caratteristiche e abilità elevate e viceversa<br />
 + Aggiunti i seguenti oggetti: Coltelli di mithrill, Armatura di rame buona, Armatura di ferro buona, Armatura di acciaio buona, Scudo di rame buono, Scudo di ferro buono, Scudo di acciaio buono<br />
 + Aggiunto backup automatico giornaliero<br />
