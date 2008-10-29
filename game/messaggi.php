@@ -7,6 +7,7 @@ require('language/'.$language.'/lang_messaggi.php');
 require('template/int_messaggi.php');
 $id=(int)$_GET['id'];
 $tipo=(int)$_POST['tipo'];
+$do=htmlspecialchars($_GET['do'],ENT_QUOTES);
 
 function Cancellamsg($id){
 global $db,$user,$tipo;
@@ -44,7 +45,7 @@ function Cambiavista(id) {
 <div align="center">
 <?php
 $db->QueryMod("DELETE FROM msginviati WHERE data<'".($adesso-172800)."'");// cancellazione di tutti i msg inviati del regno più vecchi di 2 giorni
-switch($_GET['do']){
+switch($do){
 case "elim"://cancella msg singolo
 Cancellamsg($id);
 break;
@@ -170,7 +171,10 @@ case "scrivi":// scrivi nuovo
 </form>
 <?php
 break;
-case default:
+}// fine switch do
+// visualizza messaggi
+
+if($do!="scrivi" AND $do!="risp"){
 
 	function Nomeutente($userid){
 	global $db,$cacheun;
@@ -302,9 +306,6 @@ case default:
 	echo "<br /><br />";
 	}//se ha il plus
 
-break;
-}// fine switch do
-// visualizza messaggi
-
+}//fine visualizzazione msg
 ?>
 </div>
