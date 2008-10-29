@@ -170,8 +170,7 @@ case "scrivi":// scrivi nuovo
 </form>
 <?php
 break;
-}
-// visualizza messaggi
+case default:
 
 	function Nomeutente($userid){
 	global $db,$cacheun;
@@ -302,6 +301,10 @@ break;
 	}//se nn ha msg inviati
 	echo "<br /><br />";
 	}//se ha il plus
+
+break;
+}// fine switch do
+// visualizza messaggi
 
 ?>
 </div>
