@@ -39,6 +39,30 @@ VALUES
 (NULL , '6', '2', '60', '85', '18', '240', '0', '90', '0', '0', '0', '0', '3', '3', '0', '16');
 ");
 $db->QueryMod("UPDATE `oggetti` SET `forzafisica` = '35' WHERE `oggetti`.`id` =82 LIMIT 1");
+$db->QueryMod("INSERT INTO `pcpudata` (
+`id` ,
+`quest` ,
+`salute` ,
+`energia` ,
+`mana` ,
+`attfisico` ,
+`attmagico` ,
+`diffisica` ,
+`difmagica` ,
+`agilita` ,
+`velocita` ,
+`intelligenza` ,
+`destrezza` ,
+`livello` ,
+`eqcac` ,
+`eqadi` ,
+`eqarm` ,
+`eqscu` ,
+`eqpoz` ,
+`monete`
+)
+VALUES (NULL , '1', '110', '1000', '50', '120', '50', '120', '50', '220', '210', '150', '100', '2', '70', '83', '84', '0', '28', '14');
+");
 
 	/*//creazione record per tab con 1 record per utente
 	$a=$db->QueryCiclo("SELECT userid FROM utenti WHERE conferma='1' AND personaggio='1'");

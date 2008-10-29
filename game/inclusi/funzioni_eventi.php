@@ -738,7 +738,7 @@ $eu=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$userid."'");
 inbacheca(sprintf($lang['criminale_attacca_guardia'],$eu['username']));
 }//fine se ci sono guardie
 if($combact==1){
-$prs=array(2,3);
+$prs=array(2,3,8);
 $quale=array_rand($prs);
 $pcpuid=$prs[$quale];
 $npcid=Npcesistente($pcpuid);
