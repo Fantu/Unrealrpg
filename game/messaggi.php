@@ -78,7 +78,7 @@ case "dorisp":// invia risposta
 	if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";
 	echo $outputerrori;}
-	else {
+	else{
 		$a=$db->QuerySelect("SELECT titolo,mittenteid FROM messaggi WHERE id='".$msgid."'");
 		$titolo="RE: ".$a['titolo'];
 		$messaggio=htmlspecialchars($_POST['mymess'],ENT_QUOTES);
@@ -91,7 +91,7 @@ case "doscrivi":// invia nuovo messaggio
 	if(!$_POST['mymess'])
 		$errore.=$lang['messaggi_error1']."<br />";
 	if(!$_POST['titolo'])
-		$errore=$lang['messaggi_error4']."<br />";
+		$errore.=$lang['messaggi_error4']."<br />";
 	if(!$_POST['achi'])
 		$errore.=$lang['messaggi_error2']."<br />";
 	if($user['plus']==0 && strlen($_POST['mymess'])>500)
@@ -107,7 +107,7 @@ case "doscrivi":// invia nuovo messaggio
 	if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";
 	echo $outputerrori;}
-	else {
+	else{
 		$titolo=htmlspecialchars($_POST['titolo'],ENT_QUOTES);
 		$messaggio=htmlspecialchars($_POST['mymess'],ENT_QUOTES);
 		$db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$achi."','".$titolo."','".$messaggio."','".$user['userid']."','".$adesso."')");
@@ -122,7 +122,7 @@ $errore.=$lang['messaggi_error7']."<br />";
 if($errore){
 $outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";
 echo $outputerrori;}
-else {
+else{
 ?>
 <form action="index.php?loc=messaggi&amp;do=dorisp" method="post" name="formrisp">
 <table width="505"  border="0" cellspacing="2" cellpadding="2">
