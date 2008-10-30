@@ -6,7 +6,7 @@ Legenda:<br />
 # Modifiche<br />
 - Correzione bug e patch di situazioni non previste<br />
 </p>
-<p><strong>0.7.11</strong> (Non disponibile - In sviluppo)<br />
+<p><strong>0.7.12</strong> (Non disponibile - In sviluppo)<br />
 Nienta attualmente<br />
 </p>
 <p><strong>0.7.11</strong> [R.1780] (29/10/08 - Beta)<br />
