@@ -177,7 +177,7 @@ $lang['Stato']='Stato';
 $lang['Adesso']='Adesso';
 $lang['Indietro']='Indietro';
 $lang['dataora']='\i\l \g\i\o\r\n\o d/m/y \a\l\l\e \o\r\e H:i';//vedere  http://php.net/date
-$lang['tempo_gen_pagina']='Tempo di generazione della pagina: %1\$s secondi - Query eseguite: %2\$s';// %1\$s=secondi %2\$s=query
+$lang['tempo_gen_pagina']='Tempo di generazione della pagina: %1\$s secondi - Query eseguite: %2\$s';// %1$s=secondi %2$s=query
 $lang['Annulla']='Annulla';
 $lang['seleziona_ore_lavoro']='Seleziona quante ore:';
 $lang['ore_in_coda']='(%s ore in coda)';
