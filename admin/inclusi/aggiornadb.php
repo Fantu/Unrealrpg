@@ -3,66 +3,15 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	header("Location: ../../index.php?error=16");
 	exit();
 }
-$newversion="0.7.11";
+$newversion="0.7.12";
 foreach($game_server as $chiave=>$elemento){
 if($chiave!=999){
 $db->database=$chiave;
 $check=$db->QuerySelect("SELECT version FROM config WHERE id=".$chiave);
 if($check['version']!=$newversion AND $newversion==$game_revision){
 
-$db->QueryMod("INSERT INTO `oggetti` (
-`id` ,
-`tipo` ,
-`categoria` ,
-`probrottura` ,
-`costo` ,
-`energia` ,
-`usura` ,
-`bonuseff` ,
-`forzafisica` ,
-`destrezza` ,
-`probtrovare` ,
-`recsalute` ,
-`recenergia` ,
-`abilitanec` ,
-`materiale` ,
-`danno` ,
-`difesafisica`
-)
-VALUES 
-(NULL , '7', '1', '0', '11', '14', '10', '1', '30', '50', '0', '0', '0', '0', '0', '10', '0'),
-(NULL , '6', '1', '90', '40', '6', '70', '0', '20', '0', '0', '0', '0', '3', '1', '0', '8'),
-(NULL , '6', '1', '75', '60', '8', '135', '0', '40', '0', '0', '0', '0', '3', '2', '0', '9'),
-(NULL , '6', '1', '60', '85', '9', '240', '0', '60', '0', '0', '0', '0', '3', '3', '0', '11'),
-(NULL , '6', '2', '90', '40', '13', '70', '0', '35', '0', '0', '0', '0', '3', '1', '0', '11'),
-(NULL , '6', '2', '75', '60', '15', '135', '0', '70', '0', '0', '0', '0', '3', '2', '0', '13'),
-(NULL , '6', '2', '60', '85', '18', '240', '0', '90', '0', '0', '0', '0', '3', '3', '0', '16');
-");
-$db->QueryMod("UPDATE `oggetti` SET `forzafisica` = '35' WHERE `oggetti`.`id` =82 LIMIT 1");
-$db->QueryMod("INSERT INTO `pcpudata` (
-`id` ,
-`quest` ,
-`salute` ,
-`energia` ,
-`mana` ,
-`attfisico` ,
-`attmagico` ,
-`diffisica` ,
-`difmagica` ,
-`agilita` ,
-`velocita` ,
-`intelligenza` ,
-`destrezza` ,
-`livello` ,
-`eqcac` ,
-`eqadi` ,
-`eqarm` ,
-`eqscu` ,
-`eqpoz` ,
-`monete`
-)
-VALUES (NULL , '1', '110', '1000', '50', '120', '50', '120', '50', '220', '210', '150', '100', '2', '70', '83', '84', '0', '28', '14');
-");
+$db->QueryMod("UPDATE `pcpudata` SET `eqarm` = '86' WHERE `pcpudata`.`id` =6 LIMIT 1");
+$db->QueryMod("UPDATE `pcpudata` SET `eqarm` = '85',`eqscu` = '88' WHERE `pcpudata`.`id` =4 LIMIT 1");
 
 	/*//creazione record per tab con 1 record per utente
 	$a=$db->QueryCiclo("SELECT userid FROM utenti WHERE conferma='1' AND personaggio='1'");

@@ -6,8 +6,8 @@ Legenda:<br />
 # Modifiche<br />
 - Correzione bug e patch di situazioni non previste<br />
 </p>
-<p><strong>0.7.11</strong> (Non disponibile - In sviluppo)<br />
-Nienta attualmente<br />
+<p><strong>0.7.12</strong> (Non disponibile - In sviluppo)<br />
+# Migliorati i seguenti NPC: Vorg, Bandito esperto<br />
 </p>
 <p><strong>0.7.11</strong> [R.1780] (29/10/08 - Beta)<br />
 + Ora nei lavori c'è sempre una piccola probabilità di schivare gli incidenti (se succedono) anche con caratteristiche e abilità elevate e viceversa<br />
