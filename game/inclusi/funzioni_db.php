@@ -79,7 +79,7 @@ class ConnessioniMySQL{
 	}
 	function Dbdump($sqlfile){
 		$this->Config();
-		$backup="mysqldump -u ".$this->dbuser." --password=".$this->dbpass." ".$this->dbname." > ".$sqlfile;
+		$backup="mysqldump -u ".$this->dbuser." --password=".$this->dbpass." ".$this->dbname." --skip-extended-insert > ".$sqlfile;
 		exec($backup);
 	}
 
