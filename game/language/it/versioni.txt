@@ -7,6 +7,7 @@ Legenda:<br />
 - Correzione bug e patch di situazioni non previste<br />
 </p>
 <p><strong>0.7.12</strong> (Non disponibile - In sviluppo)<br />
++ Ora la Banca da massimo 100 monete di interessi al giorno (per evitare incrementi smisurati)<br />
 + Iniziata creazione log degli utenti<br />
 + Iniziata creazione log di sistema (per loggare parti che generano errori o imprevisti di cui non si capisce quale è il problema o dove è)<br />
 # Migliorati i seguenti NPC: Vorg, Bandito esperto<br />

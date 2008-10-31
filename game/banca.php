@@ -31,6 +31,8 @@ if(($userbank['interessi']+86400)<$adesso){
 	$differenzaora=$adesso-$userbank['interessi'];
 	$giorni=floor($differenzaora/86400);
 	$interessi=floor(($userbank['conto']/100)*2);
+	if($interessi>100)
+	$interessi=100;
 	if($interessi>0)
 	$interessi=$interessi*$giorni;
 	if ($interessi>0){
