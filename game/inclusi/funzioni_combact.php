@@ -285,7 +285,7 @@ class Dati{
 	return $input;
 	} //fine Guadagnaexp
 
-	public function Checkrep($chi) {
+	public function Checkrep($chi){
 	if($chi==1)
 	$chi2=2;
 	else
@@ -301,21 +301,36 @@ class Dati{
 	$rep[0]=2;//più forte
 	}
 	return $rep;
-	} //fine Checkrep
+	}//fine Checkrep
 
 	public function Checkeqipexp($expb){
-	//controllo armi
+	//controllo armi corpo a corpo
 	if($this->equip(1,'cac')!=0)
-	$expb+=0.5;
+	$expb+=0.2;
 	if($this->equip(2,'cac')!=0)
-	$expb+=0.5;
-	//controllo difese
-	if($this->equip(1,'arm')!=0 OR $this->equip(1,'scu')!=0)
-	$expb+=0.5;
-	if($this->equip(2,'arm')!=0 OR $this->equip(2,'scu')!=0)
-	$expb+=0.5;
+	$expb+=0.2;
+	//controllo armi a distanza
+	if($this->equip(1,'adi')!=0)
+	$expb+=0.2;
+	if($this->equip(2,'adi')!=0)
+	$expb+=0.2;
+	//controllo armature
+	if($this->equip(1,'arm')!=0)
+	$expb+=0.2;
+	if($this->equip(2,'arm')!=0)
+	$expb+=0.2;
+	//controllo scudi
+	if($this->equip(1,'scu')!=0)
+	$expb+=0.2;
+	if($this->equip(2,'scu')!=0)
+	$expb+=0.2;
+	//controllo pozioni
+	if($this->equip(1,'poz')!=0)
+	$expb+=0.2;
+	if($this->equip(2,'poz')!=0)
+	$expb+=0.2;
 	return $expb;
-	} //fine Checkeqipexp
+	}//fine Checkeqipexp
 
 	public function Checkturnexp($expb){
 	//energia
