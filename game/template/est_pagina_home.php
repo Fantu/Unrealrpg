@@ -3,7 +3,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	header("Location: ../../index.php?error=16");
 	exit();
 }?>
-<table width="750" border="0" align="center">
+<table width="590" border="0" align="center">
   <tr>
     <td>
     	<?php echo $outputreg; ?>
