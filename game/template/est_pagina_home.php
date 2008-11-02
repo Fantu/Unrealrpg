@@ -3,9 +3,6 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	header("Location: ../../index.php?error=16");
 	exit();
 }?>
-<table width="590" border="0" align="center">
-  <tr>
-    <td>
     	<?php echo $outputreg; ?>
 	    <span><?php echo $lang['Registrazione']; ?></span><br />
 		<form action="" method="post" name="formregistrazione">
@@ -45,7 +42,4 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
           </tr>
         </table>
 		</form>
-    </td>
-  </tr>
-</table>
 <br /><br />
