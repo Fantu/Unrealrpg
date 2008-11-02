@@ -90,7 +90,7 @@ $lang['Reputazione']='Reputazione';
 $lang['eventi_dettagli1']='Stai lavorando in Miniera nuova e finirai ';
 $lang['eventi_dettagli2']='Stai lavorando in Laboratorio come apprendista e finirai ';
 $lang['eventi_dettagli3']='Sei nel Tempio a pregare e finirai ';
-$lang['eventi_dettagli4']='Resurrezione in corso, tornerai in vita ';
+$lang['eventi_dettagli4']='Sei morto, resusciterai ';
 $lang['eventi_dettagli5']='Stai lavorando in Miniera vecchia e finirai ';
 $lang['eventi_dettagli6']='Stai lavorando in Fucina come apprendista e finirai ';
 $lang['eventi_dettagli7']='Stai lavorando in Laboratorio come alchimista e finirai ';
@@ -185,7 +185,7 @@ $lang['sfida']='Sfida';
 $lang['Accetta']='Accetta';
 $lang['Rifiuta']='Rifiuta';
 $lang['usura_attuale']='Usura attuale: ';
-$lang['criminale_attacca_guardia']='%s durante la ronda ha avvistato un criminale e lo ha attaccato';
+$lang['criminale_attacca_guardia']='%s durante la ronda avvista un criminale e lo ha attaccato';// %s=nome della guardia
 $lang['criminale_attacca_utente']='Un criminale attacca %s';
 $lang['criminale_attacca_regno']='Un criminale fa danni/saccheggi nel regno per un totale di %s monete';
 $lang['leggi_changelog_interi']='Per leggere i changelog completi più aggiornati dell`intero progetto clicca %s qui %s';

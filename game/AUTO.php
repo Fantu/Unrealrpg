@@ -8,6 +8,7 @@ require('inclusi/funzioni_db.php');
 $db=new ConnessioniMySQL();
 $adesso=strtotime("now");
 $int_security=$game_se_code;
+$optimize=0;
 foreach($game_language as $chiavel=>$elementol){
 $language=$chiavel;
 require('language/'.$language.'/lang_interno.php');
@@ -19,6 +20,7 @@ $config=$db->QuerySelect("SELECT * FROM config");
 if($config['chiuso']==0){
 require_once('inclusi/controllo_eventi.php');
 Controllaeventi(3);
+if($config['ottimizzazioni']<$adesso AND $optimize==0){
 $semorti=$db->QuerySelect("SELECT COUNT(userid) AS id FROM caratteristiche WHERE saluteattuale<'1'");
 if($semorti['id']>0){//se ci sono morti
 $morti=$db->QueryCiclo("SELECT * FROM caratteristiche WHERE saluteattuale<'1'");
@@ -31,6 +33,9 @@ require('inclusi/morte.php');
 }//se non ha eventi, e quindi resurrezione già in corso
 }//per ogni morto
 }//se ci sono morti
+$optimize=1;
+$db->QueryMod("UPDATE config SET ottimizzazioni='".($adesso+86400)."'");
+}//se bisogna ottimizzare e nn è stato fatto in altri regni durante questa sessione
 if($config['atticriminali']<$adesso){
 $prob=rand(1,500);
 if($prob<=$config['crimine'])
