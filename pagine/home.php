@@ -37,7 +37,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 
 			if($errore){
 				$outputreg="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
-			else {
+			else{
 				$ip=$_SERVER['REMOTE_ADDR'];
 				$password=htmlspecialchars($_POST['password'],ENT_QUOTES);
 				$pass=md5($password);

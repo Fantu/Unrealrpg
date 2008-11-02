@@ -71,16 +71,3 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
   </tr>
 </table>
 <br /><br />
-<?php echo $lang['Informazioni_sui_server']; ?>
-<table width="750" border="0" align="center">
-<tr>
-<td><?php echo $lang['Nome']; ?></td><td><?php echo $lang['Utenti_registrati']; ?></td><td><?php echo $lang['Ultima_settimana']; ?></td><td><?php echo $lang['Utenti_online']; ?></td><td><?php echo $lang['Ultimo_giorno']; ?></td>
-</tr>
-<?php foreach($game_server as $chiave=>$elemento){ ?>
-<tr>
-<td><?php echo $infoserver['nome'][$chiave]; ?></td><td><?php echo $infoserver['utenti'][$chiave]; ?></td><td><?php echo $infoserver['utentilw'][$chiave]; ?></td><td><?php echo $infoserver['online'][$chiave]; ?></td><td><?php echo $infoserver['online24'][$chiave]; ?></td>
-</tr>
-<?php }/* fine per ogni server*/ ?>
-</table>
-<br /><br />
-<?php echo sprintf($lang['altre_lingue'],$game_name); foreach($lingue as $chiave=>$elemento) echo $lingue[$chiave]; ?>

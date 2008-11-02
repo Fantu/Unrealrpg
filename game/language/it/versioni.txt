@@ -7,6 +7,7 @@ Legenda:<br />
 - Correzione bug e patch di situazioni non previste<br />
 </p>
 <p><strong>0.7.12</strong> (Non disponibile - In sviluppo)<br />
++ Iniziato rifacimento sistema esterno<br />
 + Ora la Banca da massimo 100 monete di interessi al giorno (per evitare incrementi smisurati)<br />
 + Alcune operazioni di sistema di routine riguardanti i messaggi e i report dei combattimenti che venivano fatte durante l'esecuzione delle pagine caricate dagli utenti ora vengono fatte in automatico dal server<br />
 + Iniziata creazione log degli utenti<br />
