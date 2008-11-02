@@ -33,9 +33,9 @@ echo "<div align=\"center\">".$lang['Informazioni_sui_server']; ?>
 <a href="http://www.mysql.com" target="_blank">
 	<img id="mysql" src="game/template/immagini/mysql_grigio.gif" alt="" border="0" onmouseover="CambiaImg('mysql', true);" onmouseout="CambiaImg('mysql', false);" />
 </a>&nbsp;&nbsp;<br /><br />
-<div id="tempogenpag">
+<p id="tempogenpag">
 <?php echo $page_gen; ?>
-</div><br />
+</p><br />
 <script type="text/javascript">
 <!--
 var uri = 'http://imp.tradedoubler.com/imp?type(js)pool(274958)a(1316148)' + new String (Math.random()).substring (2, 11);
