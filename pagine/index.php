@@ -22,7 +22,7 @@ echo "<table width=\"750\" border=\"0\"><tr><td width=\"160\" valign=\"top\">";
 require('game/template/est_menu.php');
 echo "</td></td>";
 require('pagine/'.$pagina.'.php');
-echo </td></tr></table>;
+echo "</td></tr></table>";
 foreach($game_server as $chiave=>$elemento){
 if($language==$game_server_lang[$chiave]){
 $infoserver['nome'][$chiave]=$elemento;
