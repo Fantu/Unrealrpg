@@ -33,8 +33,27 @@ require('inclusi/morte.php');
 }//se non ha eventi, e quindi resurrezione già in corso
 }//per ogni morto
 }//se ci sono morti
+$db->QueryMod("DELETE FROM msginviati WHERE data<'".($adesso-172800)."'");// cancellazione di tutti i msg inviati del regno più vecchi di 2 giorni
+$scaduto=$adesso-2592000;
+$quantimess=$db->QuerySelect("SELECT COUNT(id) AS n FROM messaggi WHERE data<'".$scaduto."'");
+if($quantimess['n']>0){
+$db->QueryMod("DELETE FROM messaggi WHERE data<'".$scaduto."'");
+}//eliminazione di tutti i msg del regno più vecchi di 30 giorni
+$scaduto=$adesso-604800;
+$quantimess=$db->QuerySelect("SELECT COUNT(id) AS n FROM messaggi WHERE data<'".$scaduto."' AND letto='1'");
+if($quantimess['n']>0){
+$db->QueryMod("DELETE FROM messaggi WHERE data<'".$scaduto."' AND letto='1'");
+}//eliminazione di tutti i msg letti del regno più vecchi di 7 giorni
+$quantirep=$db->QuerySelect("SELECT COUNT(id) AS n FROM battlereport WHERE data<'".$scaduto."'");
+if($quantirep['n']>0){
+$repscaduti=$db->QueryCiclo("SELECT id FROM battlereport WHERE data<'".$scaduto."'");
+while($reps=$db->QueryCicloResult($repscaduti)) {
+$db->QueryMod("DELETE FROM battlereport WHERE id='".$reps['id']."' LIMIT 1");
+unlink("inclusi/log/report/".$config['id']."/".$reps['id'].".log");
+}//eliminazione di tutti i report del regno più vecchi di 7 giorni
+}//se ci sono report più vecchi di 7 giorni nel regno
 $optimize=1;
-$db->QueryMod("UPDATE config SET ottimizzazioni='".($adesso+86400)."'");
+$db->QueryMod("UPDATE config SET ottimizzazioni='".($adesso+3600)."'");//prossima "ottimizzazione" fra 1 ora
 }//se bisogna ottimizzare e nn è stato fatto in altri regni durante questa sessione
 if($config['atticriminali']<$adesso){
 $prob=rand(1,500);

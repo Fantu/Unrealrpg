@@ -44,7 +44,6 @@ function Cambiavista(id) {
 </script>
 <div align="center">
 <?php
-$db->QueryMod("DELETE FROM msginviati WHERE data<'".($adesso-172800)."'");// cancellazione di tutti i msg inviati del regno più vecchi di 2 giorni
 switch($do){
 case "elim"://cancella msg singolo
 Cancellamsg($id);
