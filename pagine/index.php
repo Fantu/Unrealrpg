@@ -20,7 +20,7 @@ $pagina="home";
 require('game/template/est_header.php');
 echo "<table width=\"750\" border=\"0\"><tr><td width=\"160\" valign=\"top\">";
 require('game/template/est_menu.php');
-echo "</td></td>";
+echo "</td></td width=\"590\">";
 require('pagine/'.$pagina.'.php');
 echo "</td></tr></table>";
 foreach($game_server as $chiave=>$elemento){
