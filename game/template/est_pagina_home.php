@@ -3,34 +3,12 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	header("Location: ../../index.php?error=16");
 	exit();
 }?>
-<span><?php echo $lang['Login']; ?></span><br />
-		<form action="game/login.php" method="post" name="formlogin">
-		<table width="750" border="0">
-		  <tr>
-			<td><?php echo $lang['Username']; ?></td>
-			<td><input name="login_username" type="text" maxlength="25" /></td>
-			<td><?php echo $lang['Server']; ?></td>
-			<td><select name="login_server">
-			<?php foreach($game_server as $chiave=>$elemento){
-				if($language==$game_server_lang[$chiave])
-			  	echo "<option value=\"$chiave\">$elemento</option>";} ?>
-			</select></td>
-		  </tr>
-		  <tr>
-			<td><?php echo $lang['Password']; ?></td>
-			<td><input name="login_password" type="password" maxlength="20" /></td>
-			<td><input name="Submit" type="submit" value="<?php echo $lang['Entra']; ?>" /></td>
-		  </tr>
-		</table>
-      	</form>
-<br /><br />
 <table width="750" border="0" align="center">
   <tr>
     <td>
     	<?php echo $outputreg; ?>
 	    <span><?php echo $lang['Registrazione']; ?></span><br />
 		<form action="" method="post" name="formregistrazione">
-		<input name="step" type="hidden" value="registrazione" />
 	    <table border="0">
           <tr>
             <td><?php echo $lang['Username']; ?></td>
@@ -63,7 +41,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
             </select></td>
           </tr>
           <tr>
-            <td><input name="Submit2" type="submit" value="<?php echo $lang['Registrati']; ?>" /></td>
+            <td><input name="registra" type="submit" value="<?php echo $lang['Registrati']; ?>" /></td>
           </tr>
         </table>
 		</form>

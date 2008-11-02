@@ -3,7 +3,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	header("Location: ../index.php?error=16");
 	exit();
 }
-		if( $_POST['step']=="registrazione" ){
+		if(isset($_POST['registra'])){
 			$errore="";
 			$server=(int)$_POST['server'];
 			foreach($game_server as $chiave=>$elemento){
@@ -62,27 +62,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 				mail($_POST['email'],$lang['Conferma_account'].$game_name,$messaggio,$game_intestazione_mail);
 				$outputreg=$lang['account_creato_ok'];
 			}
-		}
-foreach($game_server as $chiave=>$elemento){
-if($language==$game_server_lang[$chiave]){
-$infoserver['nome'][$chiave]=$elemento;
-$db->database=$chiave;
-$utenti=$db->QuerySelect("SELECT COUNT(*) AS id FROM utenti");
-$infoserver['utenti'][$chiave]=$utenti['id'];
-$sereg=$adesso-604800;
-$online=$db->QuerySelect("SELECT COUNT(*) AS id FROM utenti WHERE dataiscrizione>'".$sereg."'");
-$infoserver['utentilw'][$chiave]=$online['id'];
-$seonline=$adesso-600;
-$online=$db->QuerySelect("SELECT COUNT(*) AS id FROM utenti WHERE ultimazione>'".$seonline."'");
-$infoserver['online'][$chiave]=$online['id'];
-$seonline=$adesso-86400;
-$online=$db->QuerySelect("SELECT COUNT(*) AS id FROM utenti WHERE ultimazione>'".$seonline."'");
-$infoserver['online24'][$chiave]=$online['id'];
-}
-}//fine info server
-foreach($game_language as $chiave=>$elemento){
-if($chiave!=$language)
-$lingue[$chiave]="<a href=\"index_".$chiave.".php\">".$elemento."</a> ";
-}//fine per ogni lingua
+		}//fine registrazione
+
 require('game/template/est_pagina_home.php');
 ?>
