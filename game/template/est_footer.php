@@ -2,7 +2,7 @@
 if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	header("Location: ../../index.php?error=16");
 	exit();}
-echo "<div align=\"center\">".$lang['Informazioni_sui_server']; ?>
+echo $lang['Informazioni_sui_server']; ?>
 <table width="750" border="0" align="center">
 <tr>
 <td><?php echo $lang['Nome']."</td><td>".$lang['Utenti_registrati']."</td><td>".$lang['Ultima_settimana']."</td><td>".$lang['Utenti_online']."</td><td>".$lang['Ultimo_giorno']; ?></td>
@@ -19,6 +19,7 @@ echo "<div align=\"center\">".$lang['Informazioni_sui_server']; ?>
 </tr>
 </table>
 <br /><br />
+<div align="center">
 <?php echo $game_name; ?> &copy; 2007 Powered by <a href="http://www.lostgames.net" target="_blank">Lostgames.net</a>
 <br /><br />
 <a href="http://validator.w3.org/check?uri=referer" target="_blank">
