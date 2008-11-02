@@ -57,5 +57,10 @@ if(ereg("MSIE",$_SERVER['HTTP_USER_AGENT']) AND ($pagina=="home")){ ?>
 <?php echo $game_name; echo" "; echo $game_version; echo" "; echo $game_revision; ?>
 </h1></center>
 <?php require('pagine/'.$pagina.'.php');
+$end_time=time()+microtime();
+$gen_time=number_format($end_time-$start_time, 4, '.', '');
+$page_gen=sprintf($lang['tempo_gen_pagina'],$gen_time,$numquery);
 require('game/template/est_footer.php');
+if($_GET['error']){
+require("game/inclusi/errori.php");}
 ?>

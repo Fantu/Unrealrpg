@@ -35,13 +35,8 @@ echo $lang['Informazioni_sui_server']; ?>
 	<img id="mysql" src="game/template/immagini/mysql_grigio.gif" alt="" border="0" onmouseover="CambiaImg('mysql', true);" onmouseout="CambiaImg('mysql', false);" />
 </a>&nbsp;&nbsp;<br /><br />
 <div id="tempogenpag">
-<?php
-if($_GET['error']){
-require("game/inclusi/errori.php");}
-$end_time=time()+microtime();
-$gen_time=number_format($end_time-$start_time, 4, '.', '');
-echo sprintf($lang['tempo_gen_pagina'],$gen_time,$numquery);
-?></div><br />
+<?php echo $page_gen; ?>
+</div><br />
 <script type="text/javascript">
 <!--
 var uri = 'http://imp.tradedoubler.com/imp?type(js)pool(274958)a(1316148)' + new String (Math.random()).substring (2, 11);
