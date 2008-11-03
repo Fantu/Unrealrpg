@@ -15,7 +15,7 @@ if(is_numeric($refer) AND is_numeric($server))
 setcookie("urbgrefer", $refer."|".$server,time()+604800);
 }//se refer
 $pagina=htmlspecialchars($_GET['pag'],ENT_QUOTES);
-if(!file_exists('pagine/'.$pagina.'.php'))
+if(!file_exists('pagine/'.$pagina.'.php') OR $pagina=="index")
 $pagina="home";
 require('game/template/est_header.php');
 echo "<table width=\"750\" border=\"0\" align=\"center\"><tr><td width=\"160\" valign=\"top\">";
