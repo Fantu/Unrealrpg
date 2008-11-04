@@ -18,11 +18,11 @@ $pagina=htmlspecialchars($_GET['pag'],ENT_QUOTES);
 if(!file_exists('pagine/'.$pagina.'.php') OR $pagina=="index")
 $pagina="home";
 require('game/template/est_header.php');
-echo "<div style=\"height:200px;overflow:auto;\"><table width=\"750\" border=\"0\" align=\"center\"><tr><td width=\"160\" valign=\"top\">";
+echo "<table width=\"750\" border=\"0\" align=\"center\"><tr><td width=\"160\" valign=\"top\">";
 require('game/template/est_menu.php');
-echo "</td><td width=\"590\">";
+echo "</td><div style=\"height:220px;overflow:auto;\"><td width=\"590\">";
 require('pagine/'.$pagina.'.php');
-echo "</td></tr></table></div>";
+echo "</td></div></tr></table>";
 foreach($game_server as $chiave=>$elemento){
 if($language==$game_server_lang[$chiave]){
 $infoserver['nome'][$chiave]=$elemento;
