@@ -98,7 +98,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 				mail($user['email'],$lang['Conferma_account'].$game_name,$messaggio,$game_intestazione_mail_testo);
 				$outputreg=$lang['codice_spedito'];
 				}else{
-				$link=$game_link."%s/conferma.php?t=".$server."&cod=".$codice;
+				$link=$game_link."/conferma.php?t=".$server."&cod=".$codice;
 				echo "<script language=\"javascript\">window.location.href='".$link."'</script>";
 				exit();
 				}
