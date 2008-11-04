@@ -42,7 +42,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
           </tr>
         </table>
 		</form>
-<br /><br />
+<br />
 <?php echo $lang['Attivazione_manuale']; ?><br />
 <?php echo $lang['Desc_attivazione_manuale']; ?><br />
 <form action="" method="post" name="fattivazione">
