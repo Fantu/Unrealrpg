@@ -18,7 +18,7 @@ $pagina=htmlspecialchars($_GET['pag'],ENT_QUOTES);
 if(!file_exists('pagine/'.$pagina.'.php') OR $pagina=="index")
 $pagina="home";
 require('game/template/est_header.php');
-echo "<table width=\"750\" border=\"0\" align=\"center\"><tr><td width=\"160\" valign=\"top\"  style=\"height:250px;\">";
+echo "<table width=\"750\" border=\"0\" align=\"center\" style=\"height:250px;\"><tr><td width=\"160\" valign=\"top\">";
 require('game/template/est_menu.php');
 echo "</td><td width=\"590\" height=\"250\">";
 require('pagine/'.$pagina.'.php');
