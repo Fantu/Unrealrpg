@@ -20,9 +20,9 @@ $pagina="home";
 require('game/template/est_header.php');
 echo "<table width=\"750\" border=\"0\" align=\"center\"><tr><td width=\"160\" valign=\"top\">";
 require('game/template/est_menu.php');
-echo "</td><div style=\"height:220px;overflow:auto;\"><td width=\"590\">";
+echo "</td><td width=\"590\" style=\"height:220px;overflow:auto;\">";
 require('pagine/'.$pagina.'.php');
-echo "</td></div></tr></table>";
+echo "</td></tr></table>";
 foreach($game_server as $chiave=>$elemento){
 if($language==$game_server_lang[$chiave]){
 $infoserver['nome'][$chiave]=$elemento;
