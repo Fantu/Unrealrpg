@@ -24,6 +24,11 @@ $lang['attiva']='Attiva';
 $lang['Newsletter']='Newsletter';
 $lang['scarica_firefox']='Scarica Firefox';
 $lang['desc_firefox']='Stai utilizzando Internet Explorer che purtroppo, attualmente, neppure nell`ultima versione non supporta appieno gli standard web, in particolare i css. Ti consigliamo di utilizzare Firefox, browser gratuito, più sicuro, efficiente e con maggiore rispetto degli standard. Per scaricare l`ultima versione ufficiale clicca sul banner sottostante.';
+$lang['Attivazione_manuale']='Attivazione manuale';
+$lang['Codice']='Codice';
+$lang['Desc_attivazione_manuale']='Inserisci username, seleziona il regno e clicca su attivazione manuale, ti verrà spedita una mail di solo testo contenente un codice alfanumerico, copialo qui sotto, riseleziona il regno, riclicca su attivazione e l`account verrà attivato senza problemi di link separati o modificati dal client di posta e la mail di solo testo senza link arriverà sicuramente e senza finire in altre cartelle quali antispam e simili.';
+$lang['codice_spedito']='Il codice per la conferma ti è stato spedito in una mail di solo testo e senza link che come tale sarà leggibile da qualsiasi client di posta senza problemi e non sarà ostacolata da antispam o simili.<br /><br />';
+$lang['testo_mail_codice_conferma']='Ciao %3$s,<br />Per confermare manualmente l`iscrizione a %1$s utilizza il codice sottostante:<br /> %2$s<br />Saluti,<br />%1$s Staff';// %1$s=nome del gioco %2$s=codice %3$s=username
 
 $lang['reg_error1']='- Non hai selezionato il regno!<br />';
 $lang['reg_error2']='- Non hai scritto il tuo username!<br />';
@@ -34,6 +39,9 @@ $lang['reg_error6']='- Non hai inserito l`indirizzo e-mail!<br />';
 $lang['reg_error7']='- L`indirizzo e-mail inserito non sembra essere corretto.<br />';
 $lang['reg_error8']='- L`username che hai scelto è già stato utilizzato!<br />';
 $lang['reg_error9']='- Questo regno è al momento troppo affollato, scegline un altro.<br />';
+$lang['reg_error10']='- Devi inserire username o codice.<br />';
+$lang['reg_error11']='- L`username che hai inserito è inesistente!<br />';
+$lang['reg_error12']='- Il codice che hai inserito non è valido!<br />';
 
 $lang['ext_error1']='Login fallito\\nUsername inesistente!';
 $lang['ext_error2']='Login fallito\\nQuesto account non è ancora stato confermato.';
