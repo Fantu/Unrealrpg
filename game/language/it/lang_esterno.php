@@ -28,7 +28,7 @@ $lang['Attivazione_manuale']='Attivazione manuale';
 $lang['Codice']='Codice';
 $lang['Desc_attivazione_manuale']='Inserisci username, seleziona il regno e clicca su attivazione manuale, ti verrà spedita una mail di solo testo contenente un codice alfanumerico, copialo qui sotto, riseleziona il regno, riclicca su attivazione e l`account verrà attivato senza problemi di link separati o modificati dal client di posta e la mail di solo testo senza link arriverà sicuramente e senza finire in altre cartelle quali antispam e simili.';
 $lang['codice_spedito']='Il codice per la conferma ti è stato spedito in una mail di solo testo e senza link che come tale sarà leggibile da qualsiasi client di posta senza problemi e non sarà ostacolata da antispam o simili.<br /><br />';
-$lang['testo_mail_codice_conferma']='Ciao %3$s,\r\nPer confermare manualmente l`iscrizione a %1$s utilizza il codice sottostante:\n %2$s\nSaluti,\n%1$s Staff';// %1$s=nome del gioco %2$s=codice %3$s=username
+$lang['testo_mail_codice_conferma']='Ciao %3$s, Per confermare manualmente l`iscrizione a %1$s utilizza il codice seguente: %2$s Saluti, %1$s Staff';// %1$s=nome del gioco %2$s=codice %3$s=username
 
 $lang['reg_error1']='- Non hai selezionato il regno!<br />';
 $lang['reg_error2']='- Non hai scritto il tuo username!<br />';
