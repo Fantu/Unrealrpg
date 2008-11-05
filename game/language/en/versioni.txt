@@ -6,13 +6,15 @@ Legenda:<br />
 # Modifiche<br />
 - Correzione bug e patch di situazioni non previste<br />
 </p>
-<p><strong>0.7.12</strong> (Non disponibile - In sviluppo)<br />
+<p><strong>0.7.13</strong> (Non disponibile - In sviluppo)<br />
++ Iniziata creazione log degli utenti<br />
++ Iniziata creazione log di sistema (per loggare parti che generano errori o imprevisti di cui non si capisce quale è il problema o dove è)<br />
+</p>
+<p><strong>0.7.12</strong> [R.1849] (05/11/08 - Beta)<br />
 + Rifatto sistema esterno, ha una struttura di base statica più una parte dinamica che cambia in base alla pagina selezionata, per ora c'è solo la principale di default (Home) contenente la registrazione, aggiunto anche un menu contenente per ora Home e Forum<br />
 + Aggiunta nella pagina Home l'attivazione manuale<br />
 + Ora la Banca da massimo 100 monete di interessi al giorno (per evitare incrementi smisurati)<br />
 + Alcune operazioni di sistema di routine riguardanti i messaggi e i report dei combattimenti che venivano fatte durante l'esecuzione delle pagine caricate dagli utenti ora vengono fatte in automatico dal server<br />
-+ Iniziata creazione log degli utenti<br />
-+ Iniziata creazione log di sistema (per loggare parti che generano errori o imprevisti di cui non si capisce quale è il problema o dove è)<br />
 + Vari miglioramenti di sistema a sistema di combattimento, sistema automatico degli eventi, sistema query<br />
 # Migliorati i seguenti NPC: Vorg, Bandito esperto<br />
 # Migliorato il guadagno di esperienza nei combattimenti<br />

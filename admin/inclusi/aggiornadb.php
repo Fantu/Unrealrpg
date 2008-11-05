@@ -23,7 +23,7 @@ $db->QueryMod("CREATE TABLE `systemlog` (
 `testo` TEXT NOT NULL ,
 `data` INT( 13 ) UNSIGNED NOT NULL
 ) ENGINE = MYISAM");
-//$db->QueryMod("ALTER TABLE `config` ADD `ottimizzazioni` INT( 13 ) UNSIGNED NOT NULL"); già eseguito per 998
+$db->QueryMod("ALTER TABLE `config` ADD `ottimizzazioni` INT( 13 ) UNSIGNED NOT NULL");
 
 $db->QueryMod("UPDATE `config` SET version='".$newversion."' WHERE id=".$chiave);
 echo sprintf($lang['aggiornato_db_server'],$chiave,$newversion)."<br />";

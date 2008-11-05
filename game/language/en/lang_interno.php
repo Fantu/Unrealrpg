@@ -1,5 +1,4 @@
 <?php
-
 //inizio menu
 $lang['Situazione']='Situation';
 $lang['Banca']='Bank';
@@ -91,7 +90,7 @@ $lang['Reputazione']='Reputation';
 $lang['eventi_dettagli1']='You are working at the New Mine,you`ll finish at ';
 $lang['eventi_dettagli2']='You are working at the Laboratory,you`ll finish at ';
 $lang['eventi_dettagli3']='You are praying at the Temple,you`ll finish at ';
-$lang['eventi_dettagli4']='In ressurrection, you`ll be revived on ';
+$lang['eventi_dettagli4']='Sei morto. Tornerai in vita il: ';
 $lang['eventi_dettagli5']='You are working at the Old Mine,you`ll finish at ';
 $lang['eventi_dettagli6']='You are working at the Forge as apprentice,you`ll finish at ';
 $lang['eventi_dettagli7']='You are working at the Laboratory as alchemist,you`ll finish at ';
@@ -177,7 +176,7 @@ $lang['Stato']='Status';
 $lang['Adesso']='Now';
 $lang['Indietro']='Back';
 $lang['dataora']='\i\l \g\i\o\r\n\o d/m/y \a\l\l\e \o\r\e H:i';
-$lang['tempo_gen_pagina']='Page loaded in: %s seconds - Done queries : %s';
+$lang['tempo_gen_pagina']='Tempo di generazione della pagina: %1$s secondi - Query eseguite: %2$s';// %1$s=secondi %2$s=query
 $lang['Annulla']='Cancel';
 $lang['seleziona_ore_lavoro']='Seleziona quante ore:';
 $lang['ore_in_coda']='(%s hours remaining)';
@@ -186,7 +185,7 @@ $lang['sfida']='Sfida';
 $lang['Accetta']='Accept';
 $lang['Rifiuta']='Reject';
 $lang['usura_attuale']='Usura attuale: ';
-$lang['criminale_attacca_guardia']='%s durante la ronda ha avvistato un criminale e lo ha attaccato';
+$lang['criminale_attacca_guardia']='%s durante la ronda avvista un criminale e lo ha attaccato';
 $lang['criminale_attacca_utente']='Un criminale attacca %s';
 $lang['criminale_attacca_regno']='Un criminale fa danni/saccheggi nel regno per un totale di %s monete';
 $lang['leggi_changelog_interi']='Per leggere i changelog completi più aggiornati dell`intero progetto clicca %s qui %s';
