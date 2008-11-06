@@ -8,8 +8,7 @@ require_once('inclusi/funzioni_combact.php');
 $do=htmlspecialchars($_GET['do'],ENT_QUOTES);
 $combactview=0;
 
-$outputsfida=$lang['nessuna_sfida'];
-if ($eventi['id']>0){
+if($eventi['id']>0){
 if($evento['tipo']==4 AND $evento['type']==2){
 $sfidante=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$evento['oggid']."'");
 $outputsfida=sprintf($lang['rispondi_sfida'],$sfidante['username'])." - <a href=\"index.php?loc=combact&amp;do=rispsfida&amp;risp=0\">".$lang['Rifiuta']."</a> - <a href=\"index.php?loc=combact&amp;do=rispsfida&amp;risp=1\">".$lang['Accetta']."</a>";
@@ -70,7 +69,7 @@ break;//fine usa pozione
 }
 $viewtattic=sprintf($lang['tattica_selezionata'],$viewtattic)."<br/>";
 }//se combattimento in corso
-}//se ci sono eventi
+}/*se ci sono eventi*/else{$outputsfida=$lang['nessuna_sfida'];}
 
 switch($do){
 case "sfida":
