@@ -7,11 +7,12 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <?php echo $outputerrori; ?>
 <br />
 <br />
-<?php echo $outputsfida; ?>
+<div align="center" style="text-align:center">
+<?php if($outputsfida){ echo $outputsfida; ?>
 <br />
 <br />
 <br />
-<div align="center" style="text-align:center"><?php if($combactview==1 OR $combactview==2) echo $titleoutputcombact; ?><br />
+<?php }/*se c'è outputsfida*/ if($combactview==1 OR $combactview==2) echo $titleoutputcombact; ?><br />
 <br />
 <?php echo $outputcombact; ?>
 <br />
