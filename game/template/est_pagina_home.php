@@ -15,6 +15,10 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
             <td><?php echo $lang['Password']; ?></td>
             <td><input name="password" type="password" id="password" maxlength="20" /></td>
           </tr>
+		  <tr>
+            <td><?php echo $lang['Password']; ?></td>
+            <td><input name="password2" type="password" id="password2" maxlength="20" /></td>
+          </tr>
           <tr>
             <td><?php echo $lang['Email']; ?></td>
             <td><input name="email" type="text" id="email" maxlength="50" /></td>

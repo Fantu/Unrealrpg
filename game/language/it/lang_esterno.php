@@ -42,6 +42,7 @@ $lang['reg_error9']='- Questo regno è al momento troppo affollato, scegline un 
 $lang['reg_error10']='- Devi inserire username o codice.<br />';
 $lang['reg_error11']='- L`username che hai inserito è inesistente!<br />';
 $lang['reg_error12']='- Il codice che hai inserito non è valido!<br />';
+$lang['reg_error13']='- La password non corrisponde alla sua ripetizione<br />';
 
 $lang['ext_error1']='Login fallito\\nUsername inesistente!';
 $lang['ext_error2']='Login fallito\\nQuesto account non è ancora stato confermato.';

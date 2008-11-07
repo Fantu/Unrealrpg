@@ -9,6 +9,7 @@ Legenda:<br />
 <p><strong>0.7.13</strong> (Non disponibile - In sviluppo)<br />
 + Iniziata creazione log degli utenti<br />
 + Iniziata creazione log di sistema (per loggare parti che generano errori o imprevisti di cui non si capisce quale è il problema o dove è)<br />
++ Aggiunta nella registrazione la conferma della password<br />
 + Vari miglioramenti di sistema a Combattimenti, sistema esterno<br />
 </p>
 <p><strong>0.7.12</strong> [R.1849] (05/11/08 - Beta)<br />

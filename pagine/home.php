@@ -26,6 +26,8 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 				if(!eregi("^.+@.+\..{2,3}$",$_POST['email']))
 					$errore.=$lang['reg_error7'];
 			if(empty($errore)){
+				if($_POST['password']!=$_POST['password2'])
+					$errore.=$lang['reg_error13'];
 				$username=htmlspecialchars($_POST['username'],ENT_QUOTES);
 				$a=$db->QuerySelect("SELECT maxutenti AS Max, utenti AS Ut FROM config WHERE id='".$server."'");
 				$a2=$db->QuerySelect("SELECT COUNT(*) AS Us1 FROM utenti WHERE username='".$username."'");
