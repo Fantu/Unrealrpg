@@ -56,4 +56,6 @@ $lang['ext_error12']='Server momentaneamente chiuso per installazione aggiorname
 $lang['ext_error13']='Accesso negato!\\nHai tentato di entrare in una pagina riservata agli utenti loggati.';
 $lang['ext_error14']='Accesso negato!\\nIl tuo IP è cambiato dal momento del login.\\nLoggati nuovamente.';
 $lang['ext_error16']='Link errato!\\nPer favore, segui i link del gioco.';
+
+$lang['help1']='Ripeti la password per evitare di registrarti con una password errata';
 ?>
