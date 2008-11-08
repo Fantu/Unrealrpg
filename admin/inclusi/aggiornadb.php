@@ -3,27 +3,18 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	header("Location: ../../index.php?error=16");
 	exit();
 }
-$newversion="0.7.12";
+$newversion="0.7.13";
 foreach($game_server as $chiave=>$elemento){
 if($chiave!=999){
 $db->database=$chiave;
 $check=$db->QuerySelect("SELECT version FROM config WHERE id=".$chiave);
 if($check['version']!=$newversion AND $newversion==$game_revision){
 
-$db->QueryMod("UPDATE `pcpudata` SET `eqarm` = '86' WHERE `pcpudata`.`id` =6 LIMIT 1");
-$db->QueryMod("UPDATE `pcpudata` SET `eqarm` = '85',`eqscu` = '88' WHERE `pcpudata`.`id` =4 LIMIT 1");
-$db->QueryMod("CREATE TABLE `userlog` (
-`id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY ,
-`userid` SMALLINT UNSIGNED NOT NULL ,
-`testo` VARCHAR( 1000 ) NOT NULL ,
-`data` INT( 13 ) UNSIGNED NOT NULL
-) ENGINE = MYISAM");
-$db->QueryMod("CREATE TABLE `systemlog` (
-`id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY ,
-`testo` TEXT NOT NULL ,
-`data` INT( 13 ) UNSIGNED NOT NULL
-) ENGINE = MYISAM");
-$db->QueryMod("ALTER TABLE `config` ADD `ottimizzazioni` INT( 13 ) UNSIGNED NOT NULL");
+$db->QueryMod("UPDATE oggetti SET danno=danno-'2' WHERE tipo='5' AND categoria='5'");
+$db->QueryMod("UPDATE oggetti SET danno=danno-'2' WHERE tipo='5' AND categoria='3'");
+$db->QueryMod("UPDATE `oggetti` SET `costo` = '60' WHERE `oggetti`.`id` =61 LIMIT 1");
+$db->QueryMod("UPDATE oggetti SET danno=danno-'2' WHERE tipo='5' AND categoria='4'");
+$db->QueryMod("UPDATE `oggetti` SET `costo` = '78' WHERE `oggetti`.`id` =64 LIMIT 1");
 
 $db->QueryMod("UPDATE `config` SET version='".$newversion."' WHERE id=".$chiave);
 echo sprintf($lang['aggiornato_db_server'],$chiave,$newversion)."<br />";
