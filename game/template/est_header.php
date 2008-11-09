@@ -7,9 +7,9 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title><?php echo $game_name; echo" "; echo $game_version; echo" "; echo $game_revision; ?></title>
+<title><?php echo $game_name." ".$game_version." ".$game_revision; ?></title>
 <?php include('game/inclusi/meta.php'); ?>
-<link href="game/template/stile.css" rel="stylesheet" type="text/css" title="all"></link>
+<link href="game/template/stile.css?version=<?php echo $game_revision; ?>" rel="stylesheet" type="text/css" title="all"></link>
 <script type="text/javascript">
 <!--
 function CambiaImg(id,bool) {
