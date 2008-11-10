@@ -85,4 +85,13 @@ $lang['oggetto86_nome']='Armatura di acciaio buona';
 $lang['oggetto87_nome']='Scudo di rame buono';
 $lang['oggetto88_nome']='Scudo di ferro buono';
 $lang['oggetto89_nome']='Scudo di acciaio buono';
+$lang['oggetto90_nome']='Spada di ferro scadente';
+$lang['oggetto91_nome']='Spada di ferro buona';
+$lang['oggetto92_nome']='Spada di ferro eccellente';
+$lang['oggetto93_nome']='Ascia di ferro scadente';
+$lang['oggetto94_nome']='Ascia di ferro buona';
+$lang['oggetto95_nome']='Ascia di ferro eccellente';
+$lang['oggetto96_nome']='Mazza di ferro scadente';
+$lang['oggetto97_nome']='Mazza di ferro buona';
+$lang['oggetto98_nome']='Mazza di ferro eccellente';
 ?>

@@ -11,6 +11,7 @@ Legenda:<br />
 + Iniziata creazione log di sistema (per loggare parti che generano errori o imprevisti di cui non si capisce quale è il problema o dove è)<br />
 + Aggiunta nella registrazione la conferma della password con in parte la propria spiegazione<br />
 + Ora la cache del file css viene aggiornata automaticamente ad ogni versione<br />
++ Aggiunti i seguenti oggetti: Spada di ferro scadente, Spada di ferro buona, Spada di ferro eccellente, Ascia di ferro scadente, Ascia di ferro buona, Ascia di ferro eccellente, Mazza di ferro scadente, Mazza di ferro buona, Mazza di ferro eccellente<br />
 + Aggiornati i testi in inglese<br />
 + Vari miglioramenti di sistema a Combattimenti, sistema esterno<br />
 # Modificate le spade, asce e mazze, rese più equilibrate<br />
