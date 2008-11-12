@@ -7,7 +7,7 @@ require_once('language/'.$language.'/lang_opzioni.php');
 if (isset($_POST['cambias'])){
 $errore="";
 $sesso=$_POST['sesso'];
-if(!is_numeric($sesso))
+if($sesso<0 AND $sesso>2)
 $errore.=$lang['opzioni_error1']."<br />";
 if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
@@ -65,11 +65,11 @@ $user=$db->QuerySelect("SELECT * FROM utenti WHERE userid='".$user['userid']."' 
 }
 
 if(!empty($tattivazioneplus)){
-if ($user['puntiplus']<$punti)
-$errore .= $lang['opzioni_error2']."<br />";
+if($user['puntiplus']<$punti)
+$errore.=$lang['opzioni_error2']."<br />";
 if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
-else {
+else{
 if($user['plus']==0){
 $db->QueryMod("UPDATE utenti SET plus=('".$adesso."'+'".$tattivazioneplus."'),puntiplus=puntiplus-'".$punti."' WHERE userid='".$user['userid']."'");
 }else{
