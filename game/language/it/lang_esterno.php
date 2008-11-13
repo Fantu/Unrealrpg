@@ -32,9 +32,9 @@ $lang['testo_mail_codice_conferma']='Ciao %3$s, Per confermare manualmente l`isc
 
 $lang['reg_error1']='- Non hai selezionato il regno!<br />';
 $lang['reg_error2']='- Non hai scritto il tuo username!<br />';
-$lang['reg_error3']='- L`username deve essere almeno di 3 caratteri!<br />';
+$lang['reg_error3']='- L`username deve essere almeno di 3 caratteri e massimo 20.<br />';
 $lang['reg_error4']='- Non hai scritto la password!<br />';
-$lang['reg_error5']='- La password deve essere lunga almeno 6 caratteri.<br />';
+$lang['reg_error5']='- La password deve essere lunga almeno 6 caratteri e massimo 20.<br />';
 $lang['reg_error6']='- Non hai inserito l`indirizzo e-mail!<br />';
 $lang['reg_error7']='- L`indirizzo e-mail inserito non sembra essere corretto.<br />';
 $lang['reg_error8']='- L`username che hai scelto è già stato utilizzato!<br />';

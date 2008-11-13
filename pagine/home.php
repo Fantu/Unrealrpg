@@ -12,14 +12,15 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 			if($esistenza==1){
 			$db->database=$server;}
 			else{
+				$username=htmlspecialchars($_POST['username'],ENT_QUOTES);
 				$errore.=$lang['reg_error1'];}
 				if(!$_POST['username'])
 					$errore.=$lang['reg_error2'];
-				if( strlen($_POST['username'])<3 )
+				if(strlen($username)<3 OR strlen($username)>20)
 					$errore.=$lang['reg_error3'];
 				if(!$_POST['password'])
 					$errore.=$lang['reg_error4'];
-				if(strlen($_POST['password'])<6)
+				if(strlen($_POST['password'])<6 OR strlen($_POST['password'])>20)
 					$errore.=$lang['reg_error5'];
 				if(!$_POST['email'])
 					$errore.=$lang['reg_error6'];
@@ -28,7 +29,6 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 			if(empty($errore)){
 				if($_POST['password']!=$_POST['password2'])
 					$errore.=$lang['reg_error13'];
-				$username=htmlspecialchars($_POST['username'],ENT_QUOTES);
 				$a=$db->QuerySelect("SELECT maxutenti AS Max, utenti AS Ut FROM config WHERE id='".$server."'");
 				$a2=$db->QuerySelect("SELECT COUNT(*) AS Us1 FROM utenti WHERE username='".$username."'");
 				if($a2['Us1']>0)
@@ -43,7 +43,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 				$ip=$_SERVER['REMOTE_ADDR'];
 				$password=htmlspecialchars($_POST['password'],ENT_QUOTES);
 				$pass=md5($password);
-				$cod=md5($_POST['username']);
+				$cod=md5($username);
 				$refer=0;
 				$refertime=0;
 				if($_COOKIE['urbgrefer']){

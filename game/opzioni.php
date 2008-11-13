@@ -28,9 +28,11 @@ if($vpass!=$user['password'])
 $errore.=$lang['opzioni_error3']."<br />";
 if($npassword!=$rpassword)
 $errore.=$lang['opzioni_error4']."<br />";
+if(strlen($npassword)<6 OR strlen($npassword)>20)
+$errore.=$lang['opzioni_error5']."<br />";
 if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
-else {
+else{
 $db->QueryMod("UPDATE utenti SET password='".$npass."' WHERE userid='".$user['userid']."'");
 header("Location: ../index.php");
 exit();
