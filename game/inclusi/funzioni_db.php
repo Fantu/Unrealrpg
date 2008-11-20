@@ -31,9 +31,9 @@ class ConnessioniMySQL{
 		$result=mysql_query($query,$connect);
 		$numquery++;
 		if(!$result){
-			$error=mysql_error();
-			$errorn=mysql_errno();
-			$this->StampaErroreMysql($query,$errorn,$error);
+			//$error=mysql_error();
+			//$errorn=mysql_errno();
+			$this->StampaErroreMysql($query,mysql_errno(),mysql_error());
 		}else{
 		$var=mysql_fetch_array($result);
 		if(!$var){
