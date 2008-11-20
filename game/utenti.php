@@ -18,7 +18,7 @@ $errore="";
 if(!$_POST['nome']){
 	$errore=$lang['utenti_error1'];}elseif(strlen($_POST['nome'])<3){
 	$errore=$lang['utenti_error3'];
-	}else {
+	}else{
 	$nomdacercare=htmlspecialchars($_POST['nome'],ENT_QUOTES);
 	$utentecercato=$db->QuerySelect("SELECT count(userid) AS id FROM utenti WHERE username LIKE '%".$nomdacercare."%' AND conferma='1' AND personaggio='1'");
 	if($utentecercato['id']==0)

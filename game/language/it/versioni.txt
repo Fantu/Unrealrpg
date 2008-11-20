@@ -13,7 +13,7 @@ Legenda:<br />
 + Ora la cache del file css viene aggiornata automaticamente ad ogni versione<br />
 + Aggiunti i seguenti oggetti: Spada di ferro scadente, Spada di ferro buona, Spada di ferro eccellente, Ascia di ferro scadente, Ascia di ferro buona, Ascia di ferro eccellente, Mazza di ferro scadente, Mazza di ferro buona, Mazza di ferro eccellente<br />
 + Aggiornati i testi in inglese<br />
-+ Vari miglioramenti di sistema a Combattimenti, sistema esterno, Opzioni<br />
++ Vari miglioramenti di sistema a Combattimenti, sistema esterno, Opzioni, sistema query<br />
 # Modificate le spade, asce e mazze, rese più equilibrate<br />
 # Ora la Banca da massimo 80 monete di interessi al giorno<br />
 - Patch: ora nella registrazione username e password sono limitati a 20 caratteri effetivamente in ogni caso (non solo campi nel form)<br />

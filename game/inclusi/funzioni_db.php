@@ -1,29 +1,28 @@
 <?php
-
 class ConnessioniMySQL{
 
-	var $database; //da settare dopo il require -- $db->database=1;
-	var $suffix="unrealff_rpg";
-	var $dbname;
-	var $server="localhost";
-	var $dbuser="rpg";
-	var $dbpass="3sWBVeNJN4YbB5MQ";
+	public var $database; //$db->database=1; da settare dopo l'inclusione di questa classe e la creazione di un nuovo oggetto
+	private var $suffix="unrealff_rpg";
+	private var $dbname;
+	private var $server="localhost";
+	private var $dbuser="rpg";
+	private var $dbpass="3sWBVeNJN4YbB5MQ";
 
-	function StampaErroreMysql($query,$err,$mess){
+	private function StampaErroreMysql($query,$err,$mess){
 	$data=date("d/m/y - H:i")." - Db:".$this->database." - ".$query;
 	$file="inclusi/log/mysql.log";
-	if (!file_exists($file)){
+	if(!file_exists($file)){
     $file="game/inclusi/log/mysq.log";
-    if (!file_exists($file)){
+    if(!file_exists($file)){
     $file="../game/inclusi/log/mysql.log";}}
 	$fp=fopen($file,"a+");
 	fputs($fp,$data."\r\n--------\r\n".$err.": ".$mess."\r\n\r\n");
 	fclose($fp);
 	}
-	function Config(){
+	private function Config(){
 		$this->dbname=$this->suffix.$this->database;
 	}
-	function QuerySelect($query){//$var=$db->QuerySelect("SELECT * FROM table");
+	public function QuerySelect($query){//$var=$db->QuerySelect("SELECT * FROM table");
 		global $numquery;
 		$this->Config();
 		$connect=mysql_connect($this->server,$this->dbuser,$this->dbpass);
@@ -44,7 +43,7 @@ class ConnessioniMySQL{
 		mysql_close($connect);
 		return $var;
 	}
-	function QueryMod($query){//$db->QueryMod("UPDATE table SET colonna='1'");
+	public function QueryMod($query){//$db->QueryMod("UPDATE table SET colonna='1'");
 		global $numquery;
 		$this->Config();
 		$connect=mysql_connect($this->server,$this->dbuser,$this->dbpass);
@@ -58,7 +57,7 @@ class ConnessioniMySQL{
 		}
 		mysql_close($connect);
 	}
-	function QueryCiclo($query){//$guarda_bene=$db->QueryCiclo("SELECT * FROM table"); -- collegata a quella di sotto
+	public function QueryCiclo($query){//$guarda_bene=$db->QueryCiclo("SELECT * FROM table"); -- collegata a quella di sotto
 		global $numquery;
 		$this->Config();
 		$connect=mysql_connect($this->server,$this->dbuser,$this->dbpass);
@@ -73,16 +72,15 @@ class ConnessioniMySQL{
 		mysql_close($connect);
 		return $result;
 	}
-	function QueryCicloResult($result){//while($var=$db->QueryCicloResult($guarda_bene)) -- collegata a quella di sopra
+	public function QueryCicloResult($result){//while($var=$db->QueryCicloResult($guarda_bene)) -- collegata a quella di sopra
 		$var=mysql_fetch_array($result);
 		return $var;
 	}
-	function Dbdump($sqlfile){
+	public function Dbdump($sqlfile){
 		$this->Config();
 		$backup="mysqldump -u ".$this->dbuser." --password=".$this->dbpass." ".$this->dbname." --skip-extended-insert > ".$sqlfile;
 		exec($backup);
 	}
 
 }//fine ConnessioniMySQL
-
 ?>
