@@ -34,13 +34,14 @@ class ConnessioniMySQL{
 			$error=mysql_error();
 			$errorn=mysql_errno();
 			$this->StampaErroreMysql($query,$errorn,$error);
-		}
+		}else{
 		$var=mysql_fetch_array($result);
 		if(!$var){
 			$error=mysql_error();
 			$errorn=mysql_errno();
 			$this->StampaErroreMysql($query,$errorn,$error);
 		}
+		}//se query esatta
 		mysql_close($connect);
 		return $var;
 	}
