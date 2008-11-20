@@ -1,12 +1,12 @@
 <?php
 class ConnessioniMySQL{
 
-	public var $database; //$db->database=1; da settare dopo l'inclusione di questa classe e la creazione di un nuovo oggetto
-	private var $suffix="unrealff_rpg";
-	private var $dbname;
-	private var $server="localhost";
-	private var $dbuser="rpg";
-	private var $dbpass="3sWBVeNJN4YbB5MQ";
+	public $database; //$db->database=1; da settare dopo l'inclusione di questa classe e la creazione di un nuovo oggetto
+	private $suffix="unrealff_rpg";
+	private $dbname;
+	private $server="localhost";
+	private $dbuser="rpg";
+	private $dbpass="3sWBVeNJN4YbB5MQ";
 
 	private function StampaErroreMysql($query,$err,$mess){
 	$data=date("d/m/y - H:i")." - Db:".$this->database." - ".$query;
