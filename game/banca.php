@@ -140,7 +140,7 @@ else{
 $db->QueryMod("UPDATE banca t1 JOIN caratteristiche t3 on t1.userid=t3.userid SET t1.conto=t1.conto-'1',t1.lotteria='1',t3.energia=t3.energia-'1' WHERE t1.userid='".$user['userid']."'");
 }
 }//fine compra biglietto lotteria
-$partecipanti=$db->QuerySelect("SELECT COUNT(userid) AS num FROM banca WHERE lotteria>0");
+$partecipanti=$db->QuerySelect("SELECT COUNT(userid) AS num FROM banca2 WHERE lotteria>0");
 $infopartecipanti=sprintf($lang['info_partecipanti'],$partecipanti['num']);
 $vincitore=$db->QuerySelect("SELECT COUNT(userid) AS num FROM banca WHERE vincitore>0 LIMIT 1");
 if($vincitore['num']>0){
