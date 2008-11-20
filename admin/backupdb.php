@@ -3,7 +3,7 @@ require('../game/inclusi/valori.php');
 require('../game/inclusi/funzioni_db.php');
 $db=new ConnessioniMySQL();
 
-$path=realpath(".")."/cache/";
+$path=MAIN_PATH."/admin/cache/";
 
 foreach($game_server as $chiave=>$elemento){
 $db->database=$chiave;
@@ -57,7 +57,7 @@ $mail_body.=$file."\r\n\r\n";
 $mail_body.="--".$mail_boundary."--\r\n";
 	
 // INVIO DELLA MAIL
-if(@mail("fantonifabio@tiscali.it",$oggetto,$mail_body,$mail_headers)){// SE L'INVIO E' ANDATO A BUON FINE...
+if(@mail("fantuf@gmail.com",$oggetto,$mail_body,$mail_headers)){// SE L'INVIO E' ANDATO A BUON FINE...
 echo "<p>La mail è stata inoltrata con successo.</p>";
 }else{// ALTRIMENTI...
 echo "<p>Si sono verificati dei problemi nell'invio della mail.</p>";
