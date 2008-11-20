@@ -7,7 +7,7 @@ class ConnessioniMySQL{
 	private $server="localhost";
 	private $dbuser="rpg";
 	private $dbpass="3sWBVeNJN4YbB5MQ";
-	private $errorlog=MAIN_PATH."game/inclusi/log/mysq.log";//path completa file log errori query
+	private $errorlog="MAIN_PATHgame/inclusi/log/mysq.log";//path completa file log errori query
 
 	private function StampaErroreMysql($query,$err,$mess){
 	$data=date("d/m/y - H:i")." - Db:".$this->database." - ".$query;
