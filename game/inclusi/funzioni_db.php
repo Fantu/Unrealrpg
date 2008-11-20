@@ -7,7 +7,7 @@ class ConnessioniMySQL{
 	private $server="localhost";
 	private $dbuser="rpg";
 	private $dbpass="3sWBVeNJN4YbB5MQ";
-	private $errorlog=realpath(dirname(__FILE__).'/../../../')."/game/inclusi/log/mysq.log";//path completa file log errori query
+	private $errorlog="/game/inclusi/log/mysq.log";//path completa file log errori query
 
 	private function StampaErroreMysql($query,$err,$mess){
 	$data=date("d/m/y - H:i")." - Db:".$this->database." - ".$query;
@@ -16,7 +16,7 @@ class ConnessioniMySQL{
     $file="game/inclusi/log/mysq.log";
     if(!file_exists($file)){
     $file="../game/inclusi/log/mysql.log";}}*/
-	$fp=fopen($this->errorlog,"a+");
+	$fp=fopen(MAIN_PATH.$this->errorlog,"a+");
 	fputs($fp,$data."\r\n--------\r\n".$err.": ".$mess."\r\n\r\n");
 	fclose($fp);
 	}
