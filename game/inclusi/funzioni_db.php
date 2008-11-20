@@ -11,11 +11,6 @@ class ConnessioniMySQL{
 
 	private function StampaErroreMysql($query,$err,$mess){
 	$data=date("d/m/y - H:i")." - Db:".$this->database." - ".$query;
-	/*$file="inclusi/log/mysql.log";
-	if(!file_exists($file)){
-    $file="game/inclusi/log/mysq.log";
-    if(!file_exists($file)){
-    $file="../game/inclusi/log/mysql.log";}}*/
 	$fp=fopen(MAIN_PATH.$this->errorlog,"a+");
 	fputs($fp,$data."\r\n--------\r\n".$err.": ".$mess."\r\n\r\n");
 	fclose($fp);
@@ -30,17 +25,10 @@ class ConnessioniMySQL{
 		mysql_select_db($this->dbname,$connect);
 		$result=mysql_query($query,$connect);
 		$numquery++;
-		if(!$result){
-			//$error=mysql_error();
-			//$errorn=mysql_errno();
-			$this->StampaErroreMysql($query,mysql_errno(),mysql_error());
+		if(!$result){$this->StampaErroreMysql($query,mysql_errno(),mysql_error());
 		}else{
 		$var=mysql_fetch_array($result);
-		if(!$var){
-			$error=mysql_error();
-			$errorn=mysql_errno();
-			$this->StampaErroreMysql($query,$errorn,$error);
-		}
+		if(!$var){$this->StampaErroreMysql($query,mysql_errno(),mysql_error());}
 		}//se query esatta
 		mysql_close($connect);
 		return $var;
@@ -52,11 +40,7 @@ class ConnessioniMySQL{
 		mysql_select_db($this->dbname,$connect);
 		$result=mysql_query($query,$connect);
 		$numquery++;
-		if(!$result){
-			$error=mysql_error();
-			$errorn=mysql_errno();
-			$this->StampaErroreMysql($query,$errorn,$error);
-		}
+		if(!$result){$this->StampaErroreMysql($query,mysql_errno(),mysql_error());}
 		mysql_close($connect);
 	}
 	public function QueryCiclo($query){//$guarda_bene=$db->QueryCiclo("SELECT * FROM table"); -- collegata a quella di sotto
@@ -66,11 +50,7 @@ class ConnessioniMySQL{
 		mysql_select_db($this->dbname,$connect);
 		$result=mysql_query($query,$connect);
 		$numquery++;
-		if(!$result){
-			$error=mysql_error();
-			$errorn=mysql_errno();
-			$this->StampaErroreMysql($query,$errorn,$error);
-		}
+		if(!$result){$this->StampaErroreMysql($query,mysql_errno(),mysql_error());}
 		mysql_close($connect);
 		return $result;
 	}
