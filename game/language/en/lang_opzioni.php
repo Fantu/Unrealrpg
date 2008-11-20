@@ -5,6 +5,7 @@ $lang['opzioni_error1']='- Gender: invalid input value!';
 $lang['opzioni_error2']='- Non hai abbastanza punti Plus.';
 $lang['opzioni_error3']='- Vecchia password errata.';
 $lang['opzioni_error4']='- La nuova password e la sua ripetizione non coincidono.';
+$lang['opzioni_error5']='- La password deve essere lunga almeno 6 caratteri e massimo 20.';
 $lang['plus_fino_a']='Account plus active until: ';
 $lang['plus_non_attivo']='Account plus not active.';
 $lang['quanti_punti_plus']='Hai %s punti Plus.';

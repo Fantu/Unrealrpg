@@ -6,13 +6,15 @@ Legenda:<br />
 # Modifiche<br />
 - Correzione bug e patch di situazioni non previste<br />
 </p>
-<p><strong>0.7.13</strong> (Non disponibile - In sviluppo)<br />
+<p><strong>0.7.14</strong> (Non disponibile - In sviluppo)<br />
 + Iniziata creazione log degli utenti<br />
 + Iniziata creazione log di sistema (per loggare parti che generano errori o imprevisti di cui non si capisce quale è il problema o dove è)<br />
+</p>
+<p><strong>0.7.13</strong> [R.1882] (20/11/08 - Beta)<br />
 + Aggiunta nella registrazione la conferma della password con in parte la propria spiegazione<br />
 + Ora la cache del file css viene aggiornata automaticamente ad ogni versione<br />
 + Aggiunti i seguenti oggetti: Spada di ferro scadente, Spada di ferro buona, Spada di ferro eccellente, Ascia di ferro scadente, Ascia di ferro buona, Ascia di ferro eccellente, Mazza di ferro scadente, Mazza di ferro buona, Mazza di ferro eccellente<br />
-+ Aggiornati i testi in inglese<br />
++ Aggiornati i testi in inglese, traduzione al 26% (296 stringhe su 752)<br />
 + Vari miglioramenti di sistema a Combattimenti, sistema esterno, Opzioni, sistema query<br />
 # Modificate le spade, asce e mazze, rese più equilibrate<br />
 # Ora la Banca da massimo 80 monete di interessi al giorno<br />
