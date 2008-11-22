@@ -15,7 +15,7 @@ $outputsfida=sprintf($lang['rispondi_sfida'],$sfidante['username'])." - <a href=
 }elseif($evento['tipo']==4 AND $evento['type']==1){
 $sfidante=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$evento['oggid']."'");
 $outputsfida=sprintf($lang['sfida_lanciata'],$sfidante['username'])." - <a href=\"index.php?loc=combact&amp;do=annullasfida\">".$lang['Annulla']."</a>";
-}elseif($evento['tipo']==5){
+}elseif($evento['tipo']==5){/*se combattimento in corso*/
 $userequip=$db->QuerySelect("SELECT * FROM equipaggiamento WHERE userid='".$user['userid']."' LIMIT 1");
 $ev=$db->QuerySelect("SELECT * FROM eventi WHERE userid='0' AND battleid='".$evento['battleid']."' LIMIT 1");
 $sec_prox_round=($ev['datainizio']+$ev['secondi'])-$adesso;
@@ -68,8 +68,8 @@ $viewtattic=$lang['tattica_pozione'];
 break;//fine usa pozione
 }
 $viewtattic=sprintf($lang['tattica_selezionata'],$viewtattic)."<br/>";
-}//se combattimento in corso
-}/*se ci sono eventi*/else{$outputsfida=$lang['nessuna_sfida'];}
+}else{$outputsfida=$lang['nessuna_sfida'];}
+}/*se ci sono eventi*/
 
 switch($do){
 case "sfida":
