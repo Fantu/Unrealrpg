@@ -12,11 +12,11 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <br />
 <br />
 <br />
-<?php }/*se c'è outputsfida*/ if($combactview==1 OR $combactview==2) echo $titleoutputcombact; ?><br />
+<?php }/*se c'è outputsfida*/ if($combactview==1 OR $combactview==2){ echo $titleoutputcombact; ?><br />
 <br />
 <?php echo $outputcombact; ?>
 <br />
-<?php if($combactview==2){ ?>
+<?php } if($combactview==2){ ?>
 
 <?php echo "<a name=\"fondo\">".$lang['seleziona_tattica']."</a>"; ?>
 <div id="tattic">

@@ -75,23 +75,23 @@ switch($do){
 case "sfida":
 $idp=(int)$_GET['id'];
 $errore="";
-if ($eventi['id']>0)
+if($eventi['id']>0)
 $errore.=$lang['global_errore1'];
 $eventisfidato=$db->QuerySelect("SELECT COUNT(id) AS id FROM eventi WHERE userid='".$idp."'");
-if ($eventisfidato['id']>0)
+if($eventisfidato['id']>0)
 $errore.=$lang['combact_errore1'];
-if ($idp==$user['userid'])
+if($idp==$user['userid'])
 $errore.=$lang['combact_errore2'];
-if ((100/$usercar['salute']*$usercar['saluteattuale'])<40 OR (100/$usercar['energiamax']*$usercar['energia'])<40)
+if((100/$usercar['salute']*$usercar['saluteattuale'])<40 OR (100/$usercar['energiamax']*$usercar['energia'])<40)
 $errore.=$lang['combact_errore5'];
 $pcar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$idp."' LIMIT 1");
-if ((100/$pcar['salute']*$pcar['saluteattuale'])<40 OR (100/$pcar['energiamax']*$pcar['energia'])<40)
+if((100/$pcar['salute']*$pcar['saluteattuale'])<40 OR (100/$pcar['energiamax']*$pcar['energia'])<40)
 $errore.=$lang['combact_errore4'];
 $expinc=1+floor($usercar['livello']/2);
-if ($usercar['exp']>=$expinc*(120*$usercar['livello']))
+if($usercar['exp']>=$expinc*(120*$usercar['livello']))
 $errore.=$lang['combact_errore6'];
 $expinc=1+floor($pcar['livello']/2);
-if ($pcar['exp']>=$expinc*(120*$pcar['livello']))
+if($pcar['exp']>=$expinc*(120*$pcar['livello']))
 $errore.=$lang['combact_errore7'];
 if($errore){
 	$outputerrori="<span>".$lang['outputerrorisfida']."</span><br /><span>".$errore."</span><br /><br />";}
@@ -155,5 +155,5 @@ $outputcombact="<table width=\"500\" align=\"center\">".$report."</table>";
 break;//fine sfidda
 }
 
-require('template/int_combact.php');
+require(TPL_PATH.'int_combact.php');
 ?>
