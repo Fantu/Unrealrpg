@@ -69,7 +69,7 @@ break;//fine usa pozione
 }
 $viewtattic=sprintf($lang['tattica_selezionata'],$viewtattic)."<br/>";
 }else{$outputsfida=$lang['nessuna_sfida'];}
-}/*se ci sono eventi*/
+}/*se ci sono eventi*/else{$outputsfida=$lang['nessuna_sfida'];}
 
 switch($do){
 case "sfida":
