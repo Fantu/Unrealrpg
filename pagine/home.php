@@ -16,8 +16,8 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 				$errore.=$lang['reg_error1'];}
 				if(!$_POST['username'])
 					$errore.=$lang['reg_error2'];
-				if(strlen($_POST['username'])<3 OR strlen($_POST['username'])>20)
-					$errore.=$lang['reg_error3'];
+				if(strlen($username)<3 OR strlen($username)>20)
+					$errore.=$username."-".$lang['reg_error3'];//$errore.=$lang['reg_error3'];
 				if(!$_POST['password'])
 					$errore.=$lang['reg_error4'];
 				if(strlen($_POST['password'])<6 OR strlen($_POST['password'])>20)

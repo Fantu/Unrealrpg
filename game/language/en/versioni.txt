@@ -6,6 +6,9 @@ Legenda:<br />
 # Modifiche<br />
 - Correzione bug e patch di situazioni non previste<br />
 </p>
+<p><strong>0.7.14.1</strong> (25/11/08 - Beta)<br />
+- Corretto un bug nella registrazione<br />
+</p>
 <p><strong>0.7.14</strong> (Non disponibile - In sviluppo)<br />
 + Iniziata creazione log degli utenti<br />
 + Iniziata creazione log di sistema (per loggare parti che generano errori o imprevisti di cui non si capisce quale è il problema o dove è)<br />

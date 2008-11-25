@@ -13,6 +13,9 @@ Legenda:<br />
 + Vari miglioramenti di sistema a Combattimenti<br />
 - Corretto un bug di visualizzazione in Combattimenti<br />
 </p>
+<p><strong>0.7.13.1</strong> (25/11/08 - Beta)<br />
+- Corretto un bug nella registrazione<br />
+</p>
 <p><strong>0.7.13</strong> [R.1882] (20/11/08 - Beta)<br />
 + Aggiunta nella registrazione la conferma della password con in parte la propria spiegazione<br />
 + Ora la cache del file css viene aggiornata automaticamente ad ogni versione<br />
