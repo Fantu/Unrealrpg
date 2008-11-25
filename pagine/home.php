@@ -10,14 +10,13 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 			if ($chiave==$server){$esistenza=1;}
 			}
 			if($esistenza==1){
-			$db->database=$server;}
-			else{
+			$db->database=$server;
+			}else{$errore.=$lang['reg_error1'];}
 				$username=htmlspecialchars($_POST['username'],ENT_QUOTES);
-				$errore.=$lang['reg_error1'];}
 				if(!$_POST['username'])
 					$errore.=$lang['reg_error2'];
 				if(strlen($username)<3 OR strlen($username)>20)
-					$errore.=$username."-".$lang['reg_error3'];//$errore.=$lang['reg_error3'];
+					$errore.=$lang['reg_error3'];
 				if(!$_POST['password'])
 					$errore.=$lang['reg_error4'];
 				if(strlen($_POST['password'])<6 OR strlen($_POST['password'])>20)
