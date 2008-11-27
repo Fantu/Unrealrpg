@@ -36,7 +36,7 @@ while($chi=$db->QueryCicloResult($utentecercato)) {
 	$utentit['nome'][$i]=$chi['nome'];
 	$utentit['userid'][$i]=$chi['id'];
 	$utentit['livello'][$i]=$chi['liv'];
-	if ($chi['azione']>$seonline){
+	if($chi['azione']>$seonline){
 	$utentit['online'][$i]=1;}else
 	{$utentit['online'][$i]=0;}
 }
@@ -64,17 +64,16 @@ if($num['id']<($perpag+1)){
 $iniziale=0;
 }else{
 $inizio=(int)$_GET['inizio'];
-if($inizio<1){
-$iniziale=0;}else{
+if($inizio>0 AND $inizio<$num['id']){
 $iniziale=$inizio;
-}
+}else{
+$iniziale=0;}
 if($num['id']>($iniziale+$perpag)){
 $prox=$iniziale+$perpag;
 $prox="<a href=\"index.php?loc=utenti&amp;ordine=".$cheordine."&amp;inizio=".$prox."\">".$perpag." ".$lang['seguenti']."</a>";}
 if($iniziale!=0){
 $prec=$iniziale-$perpag;
 $prec="<a href=\"index.php?loc=utenti&amp;ordine=".$cheordine."&amp;inizio=".$prec."\">".$perpag." ".$lang['precedenti']."</a>";}
-
 }//fine se maggiore di per pagina
 $a=$db->QueryCiclo("SELECT t1.userid AS id,t1.username AS nome,t1.ultimazione AS azione,t2.livello AS liv FROM utenti AS t1 JOIN caratteristiche t2 ON t1.userid=t2.userid WHERE t1.conferma='1' AND t1.personaggio='1' ".$ordine." LIMIT ".$iniziale.",".$perpag);
 $i=0;
@@ -85,7 +84,7 @@ while($chi=$db->QueryCicloResult($a)) {
 	$utenti['userid'][$i]=$chi['id'];
 	$utenti['link'][$i]="index.php?loc=visualizzautente&amp;id=".$chi['id']."&amp;ordine=".$cheordine."&amp;inizio=".$iniziale;
 	$utenti['livello'][$i]=$chi['liv'];
-	if ($chi['azione']>$seonline){
+	if($chi['azione']>$seonline){
 	$utenti['online'][$i]=1;}else
 	{$utenti['online'][$i]=0;}
 }
