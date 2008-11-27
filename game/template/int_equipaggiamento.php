@@ -19,7 +19,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <?php echo $lang['seleziona_cac']; ?> <select name="acac" id="acac">
 <option value="-1" selected="selected">--------</option>
 <?php if($userequip['cac']!=0){
-echo "<option value=\"0\">".$lang['Niente']".</option>";}
+echo "<option value=\"0\">".$lang['Niente']."</option>";}
 if($armicac){
 foreach($armicac as $chiave=>$elemento)
 echo "<option value=\"$chiave\">$elemento</option>";} ?>
@@ -44,7 +44,7 @@ echo "<option value=\"$chiave\">$elemento</option>";} ?>
 <?php echo $lang['seleziona_adi']; ?> <select name="aadi" id="aadi">
 <option value="-1" selected="selected">--------</option>
 <?php if($userequip['adi']!=0){
-echo "<option value=\"0\">".$lang['Niente']".</option>";}
+echo "<option value=\"0\">".$lang['Niente']."</option>";}
 if($armiadi){
 foreach($armiadi as $chiave=>$elemento)
 echo "<option value=\"$chiave\">$elemento</option>";} ?>
@@ -72,7 +72,7 @@ echo "<option value=\"$chiave\">$elemento</option>";} ?>
 <?php echo $lang['seleziona_arm']; ?> <select name="arm" id="arm">
 <option value="-1" selected="selected">--------</option>
 <?php if($userequip['arm']!=0){
-echo "<option value=\"0\">".$lang['Niente']".</option>";}
+echo "<option value=\"0\">".$lang['Niente']."</option>";}
 if($armature){
 foreach($armature as $chiave=>$elemento)
 echo "<option value=\"$chiave\">$elemento</option>";} ?>
@@ -97,7 +97,7 @@ echo "<option value=\"$chiave\">$elemento</option>";} ?>
 <?php echo $lang['seleziona_scu']; ?> <select name="scu" id="scu">
 <option value="-1" selected="selected">--------</option>
 <?php if($userequip['scu']!=0){
-echo "<option value=\"0\">".$lang['Niente']".</option>";}
+echo "<option value=\"0\">".$lang['Niente']."</option>";}
 if($scudi){
 foreach($scudi as $chiave=>$elemento)
 echo "<option value=\"$chiave\">$elemento</option>";} ?>
@@ -125,7 +125,7 @@ echo "<option value=\"$chiave\">$elemento</option>";} ?>
 <?php echo $lang['seleziona_poz']; ?> <select name="poz" id="poz">
 <option value="-1" selected="selected">--------</option>
 <?php if($userequip['poz']!=0){
-echo "<option value=\"0\">".$lang['Niente']".</option>";}
+echo "<option value=\"0\">".$lang['Niente']."</option>";}
 if($pozioni){
 foreach($pozioni as $chiave=>$elemento)
 echo "<option value=\"$chiave\">$elemento</option>";} ?>
