@@ -10,7 +10,7 @@ Legenda:<br />
 + Iniziata creazione log degli utenti<br />
 + Iniziata creazione log di sistema (per loggare parti che generano errori o imprevisti di cui non si capisce quale è il problema o dove è)<br />
 + Aggiornati i testi in inglese<br />
-+ Vari miglioramenti di sistema a Combattimenti<br />
++ Vari miglioramenti di sistema a Combattimenti, Equipaggiamento<br />
 - Corretto un bug di visualizzazione in Combattimenti<br />
 </p>
 <p><strong>0.7.13.1</strong> (25/11/08 - Beta)<br />
