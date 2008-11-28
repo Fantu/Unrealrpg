@@ -6,6 +6,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 $numquery=0;
 require('game/language/'.$language.'/lang_esterno.php');
 require('game/inclusi/funzioni_db.php');
+require('game/inclusi/funzioni.php');
 $db=new ConnessioniMySQL();
 $adesso=strtotime("now");
 if(!empty($_GET['refer'])){

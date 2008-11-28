@@ -84,4 +84,27 @@ function Showbanner($banner){
 $quale=array_rand($banner);
 echo $banner[$quale];
 }//fine Showbanner
+
+class Email{
+
+	private $header;
+
+	private function Config(){
+		global $game_name,$game_mail;
+		$this->header.="From: ".$game_name."<".$game_mail.">\r\n";
+		$this->header.="Reply-To: ".$game_name."<".$game_mail.">\r\n";
+		$this->header.="Message-ID: <".time()."-".$game_mail.">\r\n";
+		$this->header.="X-Mailer: PHP v".phpversion()."\r\n";
+	}
+	private function Email($tipo,$destinatario,$titolo,$messaggio){ //$email=new Email(1,$destinatario,$titolo,$messaggio); primo parametro è se mail html (1=sì e 0=no)
+		$this->Config();
+		if($tipo==1){
+		$this->header.="MIME-Version: 1.0\r\n";
+		$this->header.="Content-Type: text/html; charset=utf8\r\n";
+		$messaggio="<html><body>".$messaggio."</body></html>";
+		}
+		mail($destinatario,$titolo,$messaggio,$this->header);
+	}
+
+}//fine Email
 ?>

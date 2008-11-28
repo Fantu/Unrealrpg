@@ -60,7 +60,8 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 				$db->QueryMod("INSERT INTO utenti (username,password,codice,email,dataiscrizione,ipreg,ultimazione,refer,refertime,ultimologin,mailnews) VALUES ('".$username."','".$pass."','".$cod."','".$_POST['email']."','".$adesso."','".$ip."','".$adesso."','".$refer."','".$refertime."','".$adesso."','".$newsletter."')");
 				}//se non si prende userid reciclato
 				$messaggio=sprintf($lang['testo_mail_conferma'],$game_name,$game_link,$server,$cod,$game_name);
-				mail($_POST['email'],$lang['Conferma_account'].$game_name,$messaggio,$game_intestazione_mail);
+				//mail($_POST['email'],$lang['Conferma_account'].$game_name,$messaggio,$game_intestazione_mail);
+				$email=new Email(1,$_POST['email'],$lang['Conferma_account'].$game_name,$messaggio);
 				$outputreg=$lang['account_creato_ok'];
 			}
 		}//fine registrazione
