@@ -10,7 +10,7 @@ Legenda:<br />
 + Iniziata creazione log degli utenti<br />
 + Iniziata creazione log di sistema (per loggare parti che generano errori o imprevisti di cui non si capisce quale è il problema o dove è)<br />
 + Creato un nuovo sistema per la spedizione delle mail in modo migliore<br />
-+ Ora la mail di conferma registrazione utilizza il nuovo sistema<br />
++ Ora le mail di registrazione, attivazione manuale, cancellazione e avviso inattività utilizzano il nuovo sistema<br />
 + Aggiornati i testi in inglese<br />
 + Vari miglioramenti di sistema a Combattimenti, Equipaggiamento, Elenco personaggi<br />
 - Corretto un bug di visualizzazione in Combattimenti<br />

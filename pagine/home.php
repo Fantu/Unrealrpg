@@ -61,7 +61,6 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 				}//se non si prende userid reciclato
 				$messaggio=sprintf($lang['testo_mail_conferma'],$game_name,$game_link,$server,$cod,$game_name);
 				$email=new Email(1,$_POST['email'],$lang['Conferma_account'].$game_name,$messaggio);
-				$email=new Email(1,$_POST['email'],"prova".$game_name,$messaggio);
 				$outputreg=$lang['account_creato_ok'];
 			}
 		}//fine registrazione
@@ -97,7 +96,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 				if($step==1){
 				$user=$db->QuerySelect("SELECT username,email,codice FROM utenti WHERE username='".$username."'");
 				$messaggio=sprintf($lang['testo_mail_codice_conferma'],$game_name,$user['codice'],$user['username']);
-				mail($user['email'],$lang['Conferma_account'].$game_name,$messaggio,$game_intestazione_mail_testo);
+				$email=new Email(0,$user['email'],$lang['Conferma_account'].$game_name,$messaggio);
 				$outputreg=$lang['codice_spedito'];
 				}else{
 				$link=$game_link."/conferma.php?t=".$server."&cod=".$codice;
