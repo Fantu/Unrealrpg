@@ -35,8 +35,8 @@ echo "<a name=\"fondo\">".$lang['seleziona_tattica']."</a>"; ?>
 </table>
 </div>
 <?php echo $viewtattic; } ?>
+<br />
+<br />
+<br />
+<a href="index.php?loc=archiviorep"><?php echo $lang['archivio_report']; ?></a>
 </div>
-<br />
-<br />
-<br />
-<center><a href="index.php?loc=archiviorep"><?php echo $lang['archivio_report']; ?></a></center>
