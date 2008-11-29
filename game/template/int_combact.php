@@ -34,7 +34,7 @@ echo "<a name=\"fondo\">".$lang['seleziona_tattica']."</a>"; ?>
 </td></tr>
 </table>
 </div>
-<?php echo "<center>".$viewtattic."</center>"; } ?>
+<?php echo $viewtattic; } ?>
 </div>
 <br />
 <br />
