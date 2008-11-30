@@ -15,7 +15,7 @@ if ($titolo==""){ echo "Manca il titolo";
 	$op=$db->QueryCiclo("SELECT email FROM utenti WHERE conferma='1' AND mailnews='1'");
 	while($var=$db->QueryCicloResult($op)){
 		$to=$var['email'];
-		$email=new Email(0,$to,$titolo,$msg);
+		$email=new Email(1,$to,$titolo,$msg);
 		$n++;
 	}
 	echo $n++." Mail spedite";
