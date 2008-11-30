@@ -1,12 +1,12 @@
 <?php
 $lang['combact_errore1']='- Il personaggio che vuoi sfidare sta facendo altro.<br />';
 $lang['combact_errore2']='- Non puoi sfidare te stesso.<br />';
-$lang['combact_errore3']='- Report non esistente.<br />';
+$lang['combact_errore3']='- The report doesn\'t exists.<br />';
 $lang['combact_errore4']='- Il personaggio che vuoi sfidare non è in condizioni abbastanza buone per affrontare un combattimento.<br />';
-$lang['combact_errore5']='- Non sei in condizioni abbastanza buone per affrontare un combattimento.<br />';
+$lang['combact_errore5']='- Your condition doesn\'t allow you to engage a fight.<br/>';
 $lang['combact_errore6']='- Puoi salire di livello, non puoi lanciare una sfida finchè non lo farai.<br />';
 $lang['combact_errore7']='- Il personaggio che vuoi sfidare può salire di livello, non puoi lanciargli una sfida finchè non lo farà.<br />';
-$lang['combact_errore8']='- Questo report non è tuo.<br />';
+$lang['combact_errore8']='- This report is not yours.<br />';
 $lang['outputerrorisfida']='Impossibile lanciare la sfida per i seguenti motivi:';
 $lang['sfida_annullata']='Sfida annullata';
 $lang['report_sfida_annullata1']='La sfida che hai lanciato a %s è stata annullata per mancata risposta entro i 10 minuti.';

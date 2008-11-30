@@ -5,7 +5,7 @@ $lang['Username']='Username';
 $lang['Server']='Kingdom';
 $lang['Password']='Password';
 $lang['Email']='Email';
-$lang['Informazioni_sui_server']='Informazioni sui regni:';
+$lang['Informazioni_sui_server']='About kingdoms:';
 $lang['Nome']='Name';
 $lang['Utenti_registrati']='Registered users';
 $lang['Ultima_settimana']='Last week';
@@ -32,9 +32,9 @@ $lang['testo_mail_codice_conferma']='Hello%3$s, To confirm manually %1$s registr
 
 $lang['reg_error1']='- You haven`t selected the kingdom!<br />';
 $lang['reg_error2']='- You haven`t write your username!<br />';
-$lang['reg_error3']='- L`username deve essere almeno di 3 caratteri e massimo 20.<br />';
+$lang['reg_error3']='- The username must be at least 3 charactersand maximum 20.<br />';
 $lang['reg_error4']='- You haven`t written the password!<br />';
-$lang['reg_error5']='- La password deve essere lunga almeno 6 caratteri e massimo 20.<br />';
+$lang['reg_error5']='- The password has to be at least 6 characters long and maximum 20.<br />';
 $lang['reg_error6']='- You haven`t enter the e-mail!<br />';
 $lang['reg_error7']='- The e-mail address does not appear to be correct.<br />';
 $lang['reg_error8']='- The username you chose has already been used!<br />';
@@ -42,7 +42,7 @@ $lang['reg_error9']='- This kingdom is full at the moment, please choose another
 $lang['reg_error10']='- You must enter username or code.<br />';
 $lang['reg_error11']='- The username you entered does not exist!<br />';
 $lang['reg_error12']='- The code you entered is not valid!<br />';
-$lang['reg_error13']='- La password non corrisponde alla sua ripetizione<br />';
+$lang['reg_error13']='- The password does not match its repetition<br />';
 
 $lang['ext_error1']='Login failed\\nUsername doesn\'t exist';
 $lang['ext_error2']='Login failed\\nThis account has not yet been confirmed.';
@@ -57,5 +57,5 @@ $lang['ext_error13']='Access Denied!\\nYou tried to enter a page reserved for us
 $lang['ext_error14']='Access Denied!\\nYour IP address has changed since the time of login.\\nLogged again.';
 $lang['ext_error16']='Link broken!\\nPlease follow the link of the game.';
 
-$lang['help1']='Ripeti la password per evitare di registrarti con una password errata';
+$lang['help1']='Repeat your password to avoid signing up with an incorrect password';
 ?>

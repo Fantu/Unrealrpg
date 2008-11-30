@@ -1,14 +1,14 @@
 <?php
 $lang['Armi']='Armi';
-$lang['seleziona_cac']='Seleziona arma corpo a corpo';
-$lang['armacacimpo']='La tua arma corpo a corpo è %s';
-$lang['noarmacacimpo']='Non hai un arma corpo a corpo nell`equipaggiamento.';
-$lang['seleziona_adi']='Seleziona arma a distanza';
-$lang['armaadiimpo']='La tua arma a distanza è %s';
-$lang['noarmaadiimpo']='Non hai un arma a distanza nell`equipaggiamento.';
-$lang['Imposta']='Imposta';
-$lang['equip_errore1']='- Nessuna selezione<br />';
-$lang['equip_errore2']='- Non sei abbastanza forte per equipaggiarti con questo oggetto.<br />';
+$lang['seleziona_cac']='Select an hand-to-hand combat weapon';
+$lang['armacacimpo']='Your hand-to-hand combat weapon is %s';
+$lang['noarmacacimpo']='You haven\'t hand-to-hand combat weapon equipped';
+$lang['seleziona_adi']='Select a trowing weapon';
+$lang['armaadiimpo']='Your trowing weapon is %s';
+$lang['noarmaadiimpo']='You haven\'t a trowing weapon equipped';
+$lang['Imposta']='Fit';
+$lang['equip_errore1']='- No selection<br />';
+$lang['equip_errore2']='- You aren`t strong enought to equip this item.<br />';
 $lang['equip_errore3']='- Non hai abbastanza destrezza per equipaggiarti con questo oggetto.<br />';
 $lang['Niente']='Niente';
 $lang['Equipdifensivo']='Equipaggiamento difensivo';

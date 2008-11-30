@@ -6,12 +6,14 @@ Legenda:<br />
 # Modifiche<br />
 - Correzione bug e patch di situazioni non previste<br />
 </p>
-<p><strong>0.7.14</strong> (Non disponibile - In sviluppo)<br />
+<p><strong>0.7.15</strong> (Non disponibile - In sviluppo)<br />
 + Iniziata creazione log degli utenti<br />
 + Iniziata creazione log di sistema (per loggare parti che generano errori o imprevisti di cui non si capisce quale è il problema o dove è)<br />
+</p>
+<p><strong>0.7.14</strong> [R.1906] (30/11/08 - Beta)<br />
 + Creato un nuovo sistema per la spedizione delle mail in modo migliore<br />
 + Ora le mail di registrazione, attivazione manuale, cancellazione e avviso inattività utilizzano il nuovo sistema<br />
-+ Aggiornati i testi in inglese<br />
++ Aggiornati i testi in inglese, traduzione al 36% (362 stringhe su 752)<br />
 + Vari miglioramenti di sistema a Combattimenti, Equipaggiamento, Elenco personaggi<br />
 - Corretto un bug di visualizzazione in Combattimenti<br />
 </p>
