@@ -1,6 +1,7 @@
 <?php
 require('../game/inclusi/valori.php');
 require('../game/inclusi/funzioni_db.php');
+require('../game/inclusi/funzioni.php');
 $db=new ConnessioniMySQL();
 $db->database=1000;
 if($_COOKIE['urbglanguage']){

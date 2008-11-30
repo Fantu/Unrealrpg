@@ -11,13 +11,6 @@ $game_location=array('banca','changelog','combact','fucina','guida','inventario'
 define('MAIN_PATH', realpath(dirname(__FILE__).'/../../'));
 define('TPL_PATH', MAIN_PATH.'/game/template/');
 $game_mail="server@lostage.it";
-$game_intestazione_mail_testo.="From: ".$game_name."<".$game_mail.">\r\n";
-$game_intestazione_mail_testo.="Reply-To: ".$game_name."<".$game_mail.">\r\n";
-$game_intestazione_mail_testo.="Message-ID: <".time()."-".$game_mail.">\r\n";
-$game_intestazione_mail_testo.="X-Mailer: PHP v".phpversion()."\r\n";
-$game_intestazione_mail=$game_intestazione_mail_testo;
-$game_intestazione_mail.="MIME-Version: 1.0\r\n";
-$game_intestazione_mail.="Content-Type: text/html; charset=utf8\r\n";
 
 //banner 120*600
 $banner1=array(

@@ -24,6 +24,9 @@ echo "Account plus: ".$plus['id']."<br/><br/>";
 <br/>
 <strong>Changelog</strong><br/>
 <br/>
+<p><strong>1.0.5</strong> - 30/11/08<br />
+- Migliorato il sistema di spedizione mail news<br />
+</p>
 <p><strong>1.0.4</strong> - 24/05/08<br />
 - Iniziata creazione situazione server in home<br />
 </p>
