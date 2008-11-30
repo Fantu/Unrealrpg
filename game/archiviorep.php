@@ -11,7 +11,7 @@ if($rep['finito']==1){
 if($rep['attid']==$user['userid']){
 if($rep['difid']==0){$sfidante=$lang['nomepcpu'.$rep['cpuid']];}else{$s=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$rep['difid']."' LIMIT 1"); $sfidante=$s['username'];}
 }else{$s=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$rep['attid']."' LIMIT 1"); $sfidante=$s['username'];}
-$link[]='<a href="index.php?loc=combact&do=repview&id='.$rep['id'].'">'.sprintf($lang['combact_avvenuto'],$sfidante).date($lang['dataora'],$rep['data']).'</a>';
+$link[]='<a href="index.php?loc=combact&amp;do=repview&idamp;='.$rep['id'].'">'.sprintf($lang['combact_avvenuto'],$sfidante).date($lang['dataora'],$rep['data']).'</a>';
 }//se finito
 }//per ogni report
 }//se ci sono report
