@@ -8,7 +8,7 @@ $tempo=$adesso-172800;
 $dacanc=$db->QuerySelect("SELECT count(userid) AS id FROM utenti WHERE dataiscrizione<'".$tempo."' AND conferma='0'");
 $dacanc=$db->QueryCiclo("SELECT * FROM utenti WHERE dataiscrizione<'".$tempo."' AND conferma='0'");
 while($chi=$db->QueryCicloResult($dacanc)){
-$messaggio=sprintf($lang['mail_cancellato_noconferma'],$chi['username'],$game_name,$game_server[$chi['server']],$game_name);
+$messaggio=sprintf($lang['mail_cancellato_noconferma'],$chi['username'],$game_name,$game_server[$chi['server']]);
 $email=new Email(1,$chi['email'],$lang['Account_cancellato'],$messaggio);
 $db->QueryMod("DELETE FROM utenti WHERE userid='".$chi['userid']."'");
 $db->QueryMod("INSERT INTO cacheuserid (userid,data) VALUES ('".$chi['userid']."','".$adesso."')");
@@ -17,7 +17,7 @@ $tempo=$adesso-259200;
 $dacanc=$db->QuerySelect("SELECT count(userid) AS id FROM utenti WHERE dataiscrizione<'".$tempo."' AND personaggio='0'");
 $dacanc=$db->QueryCiclo("SELECT * FROM utenti WHERE dataiscrizione<'".$tempo."' AND personaggio='0'");
 while($chi=$db->QueryCicloResult($dacanc)){
-$messaggio=sprintf($lang['mail_cancellato_nopersonaggio'],$chi['username'],$game_name,$game_server[$chi['server']],$game_name);
+$messaggio=sprintf($lang['mail_cancellato_nopersonaggio'],$chi['username'],$game_name,$game_server[$chi['server']]);
 $email=new Email(1,$chi['email'],$lang['Account_cancellato'],$messaggio);
 $db->QueryMod("DELETE FROM utenti WHERE userid='".$chi['userid']."'");
 $db->QueryMod("INSERT INTO cacheuserid (userid,data) VALUES ('".$chi['userid']."','".$adesso."')");
@@ -27,7 +27,7 @@ $tempo=$adesso-1209600;
 $dacanc=$db->QuerySelect("SELECT count(userid) AS id FROM utenti WHERE ultimologin<'".$tempo."' AND avvinattivo<'".$adesso."' AND vacanza<'1'");
 $dacanc=$db->QueryCiclo("SELECT * FROM utenti WHERE ultimologin<'".$tempo."' AND avvinattivo<'".$adesso."' AND vacanza<'1'");
 while($chi=$db->QueryCicloResult($dacanc)){
-$messaggio=sprintf($lang['mail_avviso_inattivita'],$chi['username'],$game_name,$game_server[$chi['server']],$game_name);
+$messaggio=sprintf($lang['mail_avviso_inattivita'],$chi['username'],$game_name,$game_server[$chi['server']]);
 $email=new Email(1,$chi['email'],$lang['Account_inutilizzato'],$messaggio);
 $avviso=$adesso+604800;
 $db->QueryMod("UPDATE utenti SET avvinattivo='".$avviso."' WHERE userid='".$chi['userid']."'");
@@ -38,7 +38,7 @@ $dacanc=$db->QueryCiclo("SELECT * FROM utenti WHERE ultimologin<'".$tempo."' AND
 while($chi=$db->QueryCicloResult($dacanc)){
 $eventi=$db->QuerySelect("SELECT count(id) AS n FROM eventi WHERE userid='".$chi['userid']."'");
 if($eventi['n']==0){
-$messaggio=sprintf($lang['mail_cancellato_inattivita'],$chi['username'],$game_name,$game_server[$chi['server']],$game_name);
+$messaggio=sprintf($lang['mail_cancellato_inattivita'],$chi['username'],$game_name,$game_server[$chi['server']]);
 $email=new Email(1,$chi['email'],$lang['Account_cancellato'],$messaggio);
 $db->QueryMod("DELETE FROM utenti WHERE userid='".$chi['userid']."'");
 $db->QueryMod("INSERT INTO cacheuserid (userid,data) VALUES ('".$chi['userid']."','".$adesso."')");

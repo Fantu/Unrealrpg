@@ -9,6 +9,7 @@ Legenda:<br />
 <p><strong>0.7.15</strong> (Non disponibile - In sviluppo)<br />
 + Iniziata creazione log degli utenti<br />
 + Iniziata creazione log di sistema (per loggare parti che generano errori o imprevisti di cui non si capisce quale è il problema o dove è)<br />
++ Migliorati i messaggi nelle mail di registrazione, avviso inattività e cancellazione<br />
 + Vari miglioramenti di sistema a Combattimenti<br />
 </p>
 <p><strong>0.7.14</strong> [R.1906] (30/11/08 - Beta)<br />
