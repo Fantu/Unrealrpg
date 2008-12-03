@@ -150,7 +150,7 @@ $lang['global_errore3']='- Economia del regno in crisi<br />';
 //inizio mail cancellazione/inattività
 $lang['Account_cancellato']='Account cancellato';
 $lang['Account_inutilizzato']='Account inutilizzato';
-$lang['mail_cancellato_noconferma']='Ciao %1$s,<br />Siamo spiacenti di informarti che il tuo account su %2$s, nel regno %3$s è stato cancellato perchè non confermato entro le 48 ore.<br /> Saluti,<br />%2$s lo Staff.'; //%1$s=username %2$s=nome del gioco %3$s=regno
+$lang['mail_cancellato_noconferma']='Ciao %1$s,<br />Siamo spiacenti di informarti che il tuo account su %2$s, nel regno %3$s è stato cancellato perchè non confermato entro le 48 ore.<br /> Saluti,<br />%2$s Staff.'; //%1$s=username %2$s=nome del gioco %3$s=regno
 $lang['mail_cancellato_nopersonaggio']='Ciao %1$s,<br />Siamo spiacenti di informarti che il tuo account su %2$s, nel regno %3$s è stato cancellato perchè non è stato creato un personaggio entro le 72 ore.<br /> Saluti,<br />%2$s Staff.'; //%1$s=username %2$s=nome del gioco %3$s=regno
 $lang['mail_avviso_inattivita']='Ciao %1$s,<br />Ti scriviamo per informarti che il tuo account su %2$s, nel regno %3$s risulta inattivo da più di 2 settimane.<br />Se questa inattività dovesse raggiungere i 30 giorni, l`account verrà automaticamente cancellato dal sistema.<br />Saluti,<br />%2$s Staff.'; //%1$s=username %2$s=nome del gioco %3$s=regno
 $lang['mail_cancellato_inattivita']='Ciao %1$s,<br />Siamo spiacenti di informarti che il tuo account su %2$s, nel regno %3$s è stato cancellato perchè inattivo da oltre 30 giorni.<br />Saluti,<br />%2$s Staff.'; //%1$s=username %2$s=nome del gioco %3$s=regno
