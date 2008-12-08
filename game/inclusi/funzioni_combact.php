@@ -650,7 +650,7 @@ $dc->Controllastato(2);
 $expb=$dc->Checkturnexp($expb);
 
 $turni++;
-$input.="---------------------------------<( ".($turni+1)." )>---------------------------------";
+$input.="----------------<( ".($turni+1)." )>----------------";
 Inreport($battleid,$input);
 $input="";
 Docombactstats($battleid,$dc->nome(1),$dc->nome(2),$dc->che[1]->car,$dc->che[2]->car);
