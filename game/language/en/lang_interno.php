@@ -16,14 +16,14 @@ $lang['Inventario']='Inventory';
 $lang['Fucina']='Forge';
 $lang['Rocca_arcano']='Mage tower';
 $lang['Libro_incantesimi']='Spellbook';
-$lang['Combattimenti']='Combattimenti';
+$lang['Combattimenti']='Fightings';
 $lang['Equipaggiamento']='Equipment';
 $lang['Lavori']='Work';
-$lang['Magia']='Magia';
+$lang['Magia']='Magic';
 $lang['Informazioni']='Information';
 $lang['Oggetti']='Objects';
 $lang['Citta']='City';
-$lang['Locanda']='Locanda';
+$lang['Locanda']='Inn';
 $lang['Confini']='Borders';
 $lang['Municipio']='City Hall';
 //fine menu
@@ -69,7 +69,7 @@ $lang['Attfisico']='Physical force';
 $lang['Attmagico']='Magical force';
 $lang['Diffisica']='Physical resistance';
 $lang['Difmagica']='Magical resistance';
-$lang['Velocita']='Velocità';
+$lang['Velocita']='Speed';
 $lang['Intelligenza']='Intelligence';
 $lang['Destrezza']='Dexterity';
 $lang['Mana']='Mana';
@@ -90,20 +90,20 @@ $lang['Reputazione']='Reputation';
 $lang['eventi_dettagli1']='You are working at the New Mine,you`ll finish at ';
 $lang['eventi_dettagli2']='You are working at the Laboratory,you`ll finish at ';
 $lang['eventi_dettagli3']='You are praying at the Temple,you`ll finish at ';
-$lang['eventi_dettagli4']='Sei morto. Tornerai in vita ';
+$lang['eventi_dettagli4']='You are dead. Will back in life ';
 $lang['eventi_dettagli5']='You are working at the Old Mine,you`ll finish at ';
 $lang['eventi_dettagli6']='You are working at the Forge as apprentice,you`ll finish at ';
 $lang['eventi_dettagli7']='You are working at the Laboratory as alchemist,you`ll finish at ';
 $lang['eventi_dettagli8']='You are studying at the Mage Tower,you`ll finish at ';
 $lang['eventi_dettagli9']='Stai lavorando in Fucina come fabbro e finirai ';
 $lang['eventi_dettagli10']='Stai facendo pratica in Rocca dell`Arcano e finirai ';
-$lang['eventi_dettagli11']='Hai lanciato una sfida e stai aspettando una risposta entro ';
-$lang['eventi_dettagli12']='Ti hanno sfidato e devi dare una risposta entro ';
-$lang['eventi_dettagli13']='You\'re fighting';
-$lang['eventi_dettagli14']='Stai dormendo e finirai ';
-$lang['eventi_dettagli15']='Stai andando oltre confine';
-$lang['eventi_dettagli16']='Stai tornando a casa, arriverai ';
-$lang['eventi_dettagli17']='Stai facendo la guardia e finirai ';
+$lang['eventi_dettagli11']='You have launched a challenge and you are waiting a response in ';
+$lang['eventi_dettagli12']='You were challanged and you must give a response in ';
+$lang['eventi_dettagli13']='You are fighting';
+$lang['eventi_dettagli14']='You are sleeping and will finish ';
+$lang['eventi_dettagli15']='You are going across the border';
+$lang['eventi_dettagli16']='You are coming home, will arrive ';
+$lang['eventi_dettagli17']='You are doing the guard and will finish ';
 //fine dettagli eventi
 
 //inizio visualizzautente
@@ -121,24 +121,24 @@ $lang['utente_inesistente']='User not exist';
 //fine visualizzautente
 
 //inizio funz_ogg
-$lang['oggetto_usurato']='%s, oggetto usurato o esaurito.';
-$lang['oggetto_rotto']='%s, oggetto rotto.';
+$lang['oggetto_usurato']='%s, object usered or worn out.';
+$lang['oggetto_rotto']='%s, object broken';
 $lang['nessuno_gettato']='Nessuno oggetto gettato.';
 $lang['errore_sistema_utilizzo_ogg']='Errore di sistema: impossibile utilizzare %s!';
 $lang['utilizzato_4_1']='Utilizzato %s e recuperato %s di salute';
 $lang['utilizzato_4_2']='Utilizzato %s e recuperato %s di energia';
-$lang['Rame']='Rame';
-$lang['Ferro']='Ferro';
-$lang['Acciaio']='Acciaio';
+$lang['Rame']='Copper';
+$lang['Ferro']='Iron';
+$lang['Acciaio']='Steel';
 $lang['Mithrill']='Mithrill';
-$lang['Piccone']='Piccone';
-$lang['Pugnale']='Pugnale';
-$lang['Daga']='Daga';
-$lang['Spada']='Spada';
-$lang['Ascia']='Ascia';
-$lang['Mazza']='Mazza';
-$lang['Armatura']='Armatura';
-$lang['Scudo']='Scudo';
+$lang['Piccone']='Pickaxe';
+$lang['Pugnale']='Dagger';
+$lang['Daga']='Dagger';
+$lang['Spada']='Sword';
+$lang['Ascia']='Axe';
+$lang['Mazza']='Mace';
+$lang['Armatura']='Armour';
+$lang['Scudo']='Shield';
 //fine funz_ogg
 
 //inizio errori globali
@@ -150,15 +150,15 @@ $lang['global_errore3']='- Economia del regno in crisi<br />';
 //inizio mail cancellazione/inattività
 $lang['Account_cancellato']='Account deleted';
 $lang['Account_inutilizzato']='Account unused';
-$lang['mail_cancellato_noconferma']='Ciao %s,<br />Siamo spiacenti di informarti che il tuo account su %s sul server %s è stato cancellato perchè non confermato entro le 48 ore.<br /> Saluti,<br />%s lo Staff.';
-$lang['mail_cancellato_nopersonaggio']='Ciao %s,<br />Siamo spiacenti di informarti che il tuo account su %s sul server %s è stato cancellato perchè non è stato creato un personaggio entro le 72 ore.<br /> Saluti,<br />%s Staff.';
-$lang['mail_avviso_inattivita']='Ciao, %s!<br />Ti scriviamo per informarti che il tuo account su %s server %s risulta inattivo da pi&ugrave; di 2 settimane.<br />Se questa inattività dovesse raggiungere i 30 giorni, l`account verrà automaticamente cancellato dal sistema.<br />Saluti,<br />%s Staff.';
-$lang['mail_cancellato_inattivita']='Ciao, %s!<br /> Siamo spiacenti di informarti che il tuo account su %s sul server %s è stato cancellato perchè inattivo da oltre 30 giorni.<br />Saluti,<br />%s Staff.';
+$lang['mail_cancellato_noconferma']='Ciao %1$s,<br />Siamo spiacenti di informarti che il tuo account su %2$s, nel regno %3$s è stato cancellato perchè non confermato entro le 48 ore.<br /> Saluti,<br />%2$s Staff.'; //%1$s=username %2$s=nome del gioco %3$s=regno
+$lang['mail_cancellato_nopersonaggio']='Ciao %1$s,<br />Siamo spiacenti di informarti che il tuo account su %2$s, nel regno %3$s è stato cancellato perchè non è stato creato un personaggio entro le 72 ore.<br /> Saluti,<br />%2$s Staff.'; //%1$s=username %2$s=nome del gioco %3$s=regno
+$lang['mail_avviso_inattivita']='Ciao %1$s,<br />Ti scriviamo per informarti che il tuo account su %2$s, nel regno %3$s risulta inattivo da più di 2 settimane.<br />Se questa inattività dovesse raggiungere i 30 giorni, l`account verrà automaticamente cancellato dal sistema.<br />Saluti,<br />%2$s Staff.'; //%1$s=username %2$s=nome del gioco %3$s=regno
+$lang['mail_cancellato_inattivita']='Ciao %1$s,<br />Siamo spiacenti di informarti che il tuo account su %2$s, nel regno %3$s è stato cancellato perchè inattivo da oltre 30 giorni.<br />Saluti,<br />%2$s Staff.'; //%1$s=username %2$s=nome del gioco %3$s=regno
 //fine errori cancellazione/inattività
 
 //inizio libro
-$lang['nessuna_magia_presente']='Non conosci nessun incantesimo';
-$lang['appreso']='Appreso';
+$lang['nessuna_magia_presente']='You don\'t know any spell';
+$lang['appreso']='Learn';
 //fine libro
 
 //inizio archivio report

@@ -1,5 +1,5 @@
 <?php
-$lang['elenco_razze']='Sono presenti le seguenti razze:';
+$lang['elenco_razze']='You can choose among the following races:';
 $lang['val_fissi_iniziali']='Stats are the following (same for every player):';
 $lang['elenco_classi']='Queste le varie classi con caratteristiche iniziali differenti per ognuna:';
 $lang['recuperi_con_tempo']='Salute ed energia si recuperano con il passare del tempo. Se non si stanno svolgendo lavori, il recupero dell`energia è dell`1/1000 al minuto e quello della salute di 1% ad ora.';

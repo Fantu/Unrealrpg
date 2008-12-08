@@ -3,12 +3,12 @@ $lang['Costo']='Price';
 $lang['Usura']='Consumption';
 $lang['energianec']='Energia che si consuma nel suo utilizzo';
 $lang['forzafisicanec']='Body strength required for its use';
-$lang['destrezzanec']='Destrezza necessaria per il suo utilizzo';
+$lang['destrezzanec']='Agility required for its use';
 $lang['bonuseff']='Efficiency bonus';
-$lang['probtrovare']='Probabilità di trovare';
-$lang['probrottura']='Probabilità di rottura massima';
+$lang['probtrovare']='Chance to find';
+$lang['probrottura']='Maximum break chance';
 $lang['recsalute']='Health restored';
 $lang['recenergia']='Energy restored';
 $lang['danno']='Danno';
-$lang['difesafisica']='Difesa fisica massima';
+$lang['difesafisica']='Max physical defense';
 ?>
