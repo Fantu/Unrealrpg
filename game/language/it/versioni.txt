@@ -13,7 +13,7 @@ Legenda:<br />
 + Aggiunti i seguenti oggetti: Armatura di rame eccellente, Armatura di ferro eccellente, Armatura di acciaio eccellente<br />
 + Aggiornati i testi in inglese<br />
 + Vari miglioramenti di sistema a Combattimenti, sistema di combattimento<br />
-# Modificati i seguenti NPC, resi più equilibrati: Rapinatore<br />
+# Modificati i seguenti NPC, resi più equilibrati: Rapinatore, Kazam<br />
 # Rivisto il lavoro in Laboratorio come alchimista, reso più equilibrato<br />
 # Rivisto il guadagno di esperienza nei lavori, reso più equilibrato<br />
 </p>

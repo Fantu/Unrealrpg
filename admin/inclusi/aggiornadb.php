@@ -11,6 +11,7 @@ $check=$db->QuerySelect("SELECT version FROM config WHERE id=".$chiave);
 if($check['version']!=$newversion AND $newversion==$game_revision){
 
 $db->QueryMod("UPDATE `pcpudata` SET `eqpoz` = '27' WHERE `pcpudata`.`id` =8 LIMIT 1");
+$db->QueryMod("UPDATE `pcpudata` SET `eqpoz` = '27' WHERE `pcpudata`.`id` =7 LIMIT 1");
 $db->QueryMod("INSERT INTO `oggetti` (
 `id` ,
 `tipo` ,
