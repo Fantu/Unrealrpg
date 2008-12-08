@@ -94,4 +94,7 @@ $lang['oggetto95_nome']='Ascia di ferro eccellente';
 $lang['oggetto96_nome']='Mazza di ferro scadente';
 $lang['oggetto97_nome']='Mazza di ferro buona';
 $lang['oggetto98_nome']='Mazza di ferro eccellente';
+$lang['oggetto99_nome']='Armatura di rame eccellente';
+$lang['oggetto100_nome']='Armatura di ferro eccellente';
+$lang['oggetto101_nome']='Armatura di acciaio eccellente';
 ?>
