@@ -6,12 +6,14 @@ Legenda:<br />
 # Modifiche<br />
 - Correzione bug e patch di situazioni non previste<br />
 </p>
-<p><strong>0.7.15</strong> (Non disponibile - In sviluppo)<br />
+<p><strong>0.7.16</strong> (Non disponibile - In sviluppo)<br />
 + Iniziata creazione log degli utenti<br />
 + Iniziata creazione log di sistema (per loggare parti che generano errori o imprevisti di cui non si capisce quale è il problema o dove è)<br />
+</p>
+<p><strong>0.7.15</strong> [R.1922] (10/12/08 - Beta)<br />
 + Migliorati i messaggi nelle mail di registrazione, avviso inattività e cancellazione<br />
 + Aggiunti i seguenti oggetti: Armatura di rame eccellente, Armatura di ferro eccellente, Armatura di acciaio eccellente, Scudo di rame eccellente, Scudo di ferro eccellente, Scudo di acciaio eccellente<br />
-+ Aggiornati i testi in inglese<br />
++ Aggiornati i testi in inglese, traduzione al 57% (585 stringhe su 758)<br />
 + Vari miglioramenti di sistema a Combattimenti, sistema di combattimento<br />
 # Modificati i seguenti NPC, resi più equilibrati: Rapinatore, Kazam<br />
 # Rivisto il lavoro in Laboratorio come alchimista, reso più equilibrato<br />

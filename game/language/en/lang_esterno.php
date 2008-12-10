@@ -17,7 +17,7 @@ $lang['Registrati']='Register';
 $lang['outputerrori']='The following errors have occured:';
 $lang['account_creato_ok']='<strong>Account created succesfully!!</strong><br />Before playing you have to confirm the registration by opening the link contained in the email that has been sent to the email address you have inserted.<br />If you can`t find the email try looking in the unwanted mail folder or similar.<br /><br />';
 $lang['Conferma_account']='Confirm account ';
-$lang['testo_mail_conferma']='Ciao %1$s,<br />Per confermare l`iscrizione a %2$s, nel regno %6$s devi visitare il link sottostante:<br /> <a href="%3$s/conferma.php?t=%4$s&cod=%5$s">Conferma account</a> <br /><br />Finchè l`account non verrà confermato, non potrai accedere al gioco.<br />Saluti,<br />%2$s Staff'; //%1$s=username %2$s=nome del gioco %3$s=link base %4$s=regno %5$s=codice %6$s=nome regno
+$lang['testo_mail_conferma']='Hi %1$s,<br />To confirm your registration at %2$s, in the realm %6$s you must open the link below:<br /> <a href="%3$s/conferma.php?t=%4$s&cod=%5$s">Conferma account</a> <br /><br />Until the account will not be confirmed, you can not access the game.<br />Greetings,<br />%2$s Staff';
 $lang['altre_lingue']='%s is also available in the following languages: ';
 $lang['disattiva']='Disable';
 $lang['attiva']='Enable';

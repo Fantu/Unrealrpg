@@ -1,5 +1,5 @@
 <?php
-$lang['Armi']='Armi';
+$lang['Armi']='Weapons';
 $lang['seleziona_cac']='Select an hand-to-hand combat weapon';
 $lang['armacacimpo']='Your hand-to-hand combat weapon is %s';
 $lang['noarmacacimpo']='You haven\'t hand-to-hand combat weapon equipped';

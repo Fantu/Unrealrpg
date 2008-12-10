@@ -34,11 +34,11 @@ $lang['Elfi']='Elf';
 $lang['Non_morti']='Undead';
 $lang['Orchi']='Orc';
 $lang['Nani']='Dwarf';
-$lang['desc_umani']='Descrizione Umani';
-$lang['desc_elfi']='Descrizione Elfi';
-$lang['desc_non_morti']='Descrizione Non morti';
-$lang['desc_orchi']='Descrizione Orchi';
-$lang['desc_nani']='Descrizione Nani';
+$lang['desc_umani']='Human description';
+$lang['desc_elfi']='Elf description';
+$lang['desc_non_morti']='Undead description';
+$lang['desc_orchi']='Orc description';
+$lang['desc_nani']='Dwarf description';
 //fine razze
 
 //inizio classi
@@ -48,12 +48,12 @@ $lang['Ladro']='Thief';
 $lang['Ranger']='Ranger';
 $lang['Ninja']='Ninja';
 $lang['Berserk']='Berserk';
-$lang['desc_guerriero']='Descrizione Guerriero';
-$lang['desc_mago']='Descrizione Mago';
-$lang['desc_ladro']='Descrizione Ladro';
-$lang['desc_ranger']='Descrizione Ranger';
-$lang['desc_ninja']='Descrizione Ninja';
-$lang['desc_berserk']='Descrizione Berserk';
+$lang['desc_guerriero']='Warrior description';
+$lang['desc_mago']='Mage description';
+$lang['desc_ladro']='Thief description';
+$lang['desc_ranger']='Ranger description';
+$lang['desc_ninja']='Ninja description';
+$lang['desc_berserk']='Berserk description';
 //fine classi
 
 //inizio caratteristiche
@@ -64,7 +64,7 @@ $lang['Livello']='Level';
 $lang['Esperienza']='Experience';
 $lang['Salute']='Health';
 $lang['Energia']='Energy';
-$lang['Agilita']='Agilità';
+$lang['Agilita']='Skills';
 $lang['Attfisico']='Physical force';
 $lang['Attmagico']='Magical force';
 $lang['Diffisica']='Physical resistance';
@@ -123,7 +123,7 @@ $lang['utente_inesistente']='User not exist';
 //inizio funz_ogg
 $lang['oggetto_usurato']='%s, object usered or worn out.';
 $lang['oggetto_rotto']='%s, object broken';
-$lang['nessuno_gettato']='Nessuno oggetto gettato.';
+$lang['nessuno_gettato']='No object has been thrown away.';
 $lang['errore_sistema_utilizzo_ogg']='Errore di sistema: impossibile utilizzare %s!';
 $lang['utilizzato_4_1']='Utilizzato %s e recuperato %s di salute';
 $lang['utilizzato_4_2']='Utilizzato %s e recuperato %s di energia';
@@ -143,7 +143,7 @@ $lang['Scudo']='Shield';
 
 //inizio errori globali
 $lang['global_errore1']='- Stai facendo altro!<br />';
-$lang['global_errore2']='- Le ore di lavoro devono essere minimo di 1 e massimo di 5!<br />';
+$lang['global_errore2']='- The work hours must be between 1 and 5<br />';
 $lang['global_errore3']='- Economia del regno in crisi<br />';
 //fine errori globali
 
@@ -184,9 +184,9 @@ $lang['nessuno']='Nobody';
 $lang['sfida']='Sfida';
 $lang['Accetta']='Accept';
 $lang['Rifiuta']='Reject';
-$lang['usura_attuale']='Usura attuale: ';
-$lang['criminale_attacca_guardia']='%s durante la ronda avvista un criminale e lo attacca';
-$lang['criminale_attacca_utente']='Un criminale attacca %s';
+$lang['usura_attuale']='Actual usury: ';
+$lang['criminale_attacca_guardia']='%s during the patrol sight a criminal and attack him';
+$lang['criminale_attacca_utente']='A criminal attack %s';
 $lang['criminale_attacca_regno']='Un criminale fa danni/saccheggi nel regno per un totale di %s monete';
-$lang['leggi_changelog_interi']='Per leggere i changelog completi più aggiornati dell`intero progetto clicca %s qui %s';
+$lang['leggi_changelog_interi']='To read the complete changelog more updated of the entire project click %s here %s';
 ?>
