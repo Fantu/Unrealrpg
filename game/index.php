@@ -10,7 +10,7 @@ $db=new ConnessioniMySQL();
 
 $esistenza=0;
 	foreach($game_server as $chiave=>$elemento){
-	if ($chiave==$lg[3]){$esistenza=1;}
+	if(md5($chiave)==$lg[3]){$esistenza=1;}
 	}
 if($esistenza==0){
 	header("Location: ../index.php?error=3");
