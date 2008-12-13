@@ -3,13 +3,10 @@ $start_time=time()+microtime();
 $numquery=0;
 require('inclusi/valori.php');
 require_once('inclusi/funzioni.php');
-if($_COOKIE['urbglogin'])
-	{$lg=explode("|||",$_COOKIE['urbglogin']);}else{header("Location: ../index.php?error=3"); exit(); }
-$adesso=strtotime("now");
+if($_COOKIE['userlogin'])
+	{$lg=explode("-",$_COOKIE['userlogin']);}else{header("Location: ../index.php?error=3"); exit();}
 require_once('inclusi/funzioni_db.php');
 $db=new ConnessioniMySQL();
-$language=htmlentities($lg[4]);
-require_once('language/'.$language.'/lang_interno.php');
 
 $esistenza=0;
 	foreach($game_server as $chiave=>$elemento){
@@ -26,6 +23,8 @@ if( $config['chiuso']==1 ) {
 	header("Location: ../index.php?error=12");
 	exit();
 }
+$language=$config['language'];
+require_once('language/'.$language.'/lang_interno.php');
 $int_security=$game_se_code;
 require_once('inclusi/int_header.php');
 ?>

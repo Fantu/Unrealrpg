@@ -11,6 +11,7 @@ $game_location=array('banca','changelog','combact','fucina','guida','inventario'
 define('MAIN_PATH', realpath(dirname(__FILE__).'/../../'));
 define('TPL_PATH', MAIN_PATH.'/game/template/');
 $game_mail="server@lostage.it";
+$adesso=strtotime("now");
 
 //banner 120*600
 $banner1=array(

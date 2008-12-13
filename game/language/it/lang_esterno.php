@@ -46,7 +46,7 @@ $lang['reg_error13']='- La password non corrisponde alla sua ripetizione<br />';
 
 $lang['ext_error1']='Login fallito\\nUsername inesistente!';
 $lang['ext_error2']='Login fallito\\nQuesto account non è ancora stato confermato.';
-$lang['ext_error3']='Tempo limite scaduto!\\nNuovo login necessario.';
+$lang['ext_error3']='Autentificazione non valida o scaduta\\nNuovo login necessario.';
 $lang['ext_error4']='Login fallito\\nPassword errata!';
 $lang['ext_error5']='Impossibile confermare questo account!\\nLink errato, controlla e riprova.';
 $lang['ext_error6']='Impossibile confermare questo account!\\nQuesto account è già stato confermato.';

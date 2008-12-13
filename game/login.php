@@ -1,8 +1,7 @@
 <?php
-require_once('inclusi/funzioni_db.php');
 require_once('inclusi/valori.php');
+require_once('inclusi/funzioni_db.php');
 require_once('inclusi/funzioni.php');
-$adesso=strtotime("now");
 $db=new ConnessioniMySQL();
 $esistenza=0;
 $server=(int)$_POST['login_server'];
@@ -41,9 +40,6 @@ if($user['password']!=md5($password)){
 if($user['conferma']==0){
 	header("Location: ../index.php?error=2");
 	exit();
-/*} else if($user['bloccato']>0 && strtotime("now")<$user['bloccato']) {
-	header("Location: ../index.php?error=11&t=".$user['bloccato']);
-	exit();*/
 }
 $config=$db->QuerySelect("SELECT * FROM config");
 if($config['chiuso']==1){
@@ -51,7 +47,7 @@ if($config['chiuso']==1){
 	exit();
 }else{
 	$int_security=$game_se_code;
-	setcookie ("urbglogin", $user['userid']."|||".md5($user['username'])."|||".$user['password']."|||".$config['id']."|||".$config['language'],time()+10800);
+	setcookie("userlogin", $user['userid']."-".md5($user['username'])."-".$user['password']."-".$config['id'],time()+10800);
 	$db->QueryMod("UPDATE utenti SET ultimologin='".$adesso."',ipattuale='".$_SERVER['REMOTE_ADDR']."' WHERE userid='".$user['userid']."'");
 	$language=$config['language'];
 	require_once('inclusi/cancellazione.php');

@@ -1,6 +1,5 @@
 <?php
 require('game/inclusi/valori.php');
-$adesso=strtotime("now");
 if(!empty($_GET['refer'])){
 $refer=htmlspecialchars($_GET['refer'],ENT_QUOTES);
 $server=htmlspecialchars($_GET['server'],ENT_QUOTES);
