@@ -354,7 +354,7 @@ $salute=rand(2,10)-($usercar['alchimista'])-rand(floor($resistenza/2),floor($res
 if($salute<1)
 $salute=1;
 $exp=floor($usercar['saluteattuale']/30+$usercar['energia']/200+$usercar['attmagico']/13+$usercar['intelligenza']/20);
-$exp+=10+(1$usercar['alchimista']);
+$exp+=10+(1*$usercar['alchimista']);
 $exp=floor(rand(($exp/100*80),$exp));
 $bonusabilita=$usercar['alchimista']-$pozione['abilitanec'];
 if($bonusabilita>0){$bonusabilita=$bonusabilita*17;}
