@@ -76,7 +76,7 @@ $salute=rand(2,10)-($usercar['alchimista'])-rand(floor($resistenza/2),floor($res
 if ($salute<1)
 $salute=1;
 $exp=floor($usercar['saluteattuale']/30+$usercar['energia']/200+$usercar['attmagico']/13+$usercar['intelligenza']/20);
-$exp+=10+(1$usercar['alchimista']);
+$exp+=10+(1*$usercar['alchimista']);
 $exp=floor(rand(($exp/100*80),$exp));
 $prob=rand(1,10); if($prob==1){$esplosione=1;}elseif($prob==10){$esplosione=100;}else
 $esplosione=rand(30,110)-($usercar['alchimista']*5)-($usercar['attmagico']/20);
