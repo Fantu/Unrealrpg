@@ -3,7 +3,7 @@ $start_time=time()+microtime();
 $numquery=0;
 require('inclusi/valori.php');
 require_once('inclusi/funzioni.php');
-if($_COOKIE['userlogin'] AND preg_match("/[0-9]*(-)[a-z0-9]{32}/",$_COOKIE['userlogin']))
+if($_COOKIE['userlogin'] AND preg_match("/[0-9]*(-)[a-z0-9]{33}/",$_COOKIE['userlogin']))
 	{$lg=explode("-",$_COOKIE['userlogin']);}else{header("Location: ../index.php?error=3"); exit();}
 require_once('inclusi/funzioni_db.php');
 $db=new ConnessioniMySQL();
