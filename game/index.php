@@ -10,13 +10,12 @@ $db=new ConnessioniMySQL();
 
 $esistenza=0;
 	foreach($game_server as $chiave=>$elemento){
-	if(md5($chiave)==$lg[3]){$esistenza=1;}
+	if(md5($chiave)==$lg[3]){$esistenza=1; $db->database=$chiave;}
 	}
 if($esistenza==0){
 	header("Location: ../index.php?error=3");
 	exit();
-} else{
-	$db->database=(int)$lg[3];}
+}
 
 $config=$db->QuerySelect("SELECT * FROM config");
 if( $config['chiuso']==1 ) {
