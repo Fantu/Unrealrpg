@@ -47,7 +47,7 @@ if($config['chiuso']==1){
 }else{
 	$int_security=$game_se_code;
 	setcookie("userlogin",md5($user['userid'])."-".$user['password']."-".md5($config['id'])."-".md5($adesso),time()+10800);
-	$db->QueryMod("UPDATE utenti SET ultimologin='".$adesso."',ipattuale='".$_SERVER['REMOTE_ADDR']."' WHERE userid='".$user['userid']."'");
+	$db->QueryMod("UPDATE utenti SET ultimologin='".$adesso."' WHERE userid='".$user['userid']."'");
 	$c=$db->QuerySelect("SELECT count(id) AS n FROM sessione WHERE id='".md5($user['userid'])."' LIMIT 1");
 	if($c['n']!=0)
 	$db->QueryMod("UPDATE sessione SET ip='".$_SERVER['REMOTE_ADDR']."',time='".$adesso."',password='".$user['password']."' WHERE id='".md5($user['userid'])."'");
