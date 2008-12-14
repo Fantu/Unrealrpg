@@ -31,8 +31,8 @@ if(($userbank['interessi']+86400)<$adesso){
 	$differenzaora=$adesso-$userbank['interessi'];
 	$giorni=floor($differenzaora/86400);
 	$interessi=floor(($userbank['conto']/100)*2);
-	if($interessi>80)
-	$interessi=80;
+	if($interessi>50)
+	$interessi=50;
 	if($interessi>0)
 	$interessi=$interessi*$giorni;
 	if ($interessi>0){
@@ -62,7 +62,7 @@ $errore.=$lang['banca_errore3'];
 }
 if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
-else {
+else{
 $db->QueryMod("UPDATE banca t1 JOIN utenti t2 on t1.userid=t2.userid JOIN caratteristiche t3 on t2.userid=t3.userid SET t1.conto=t1.conto+'".$dadepositare."',t1.interessi='".$adesso."',t2.monete=t2.monete-'".$dadepositare."',t3.energia=t3.energia-'1' WHERE t1.userid='".$user['userid']."'");
 $db->QueryMod("UPDATE config SET banca=banca+'".$dadepositare."'");
 }
@@ -70,22 +70,22 @@ $db->QueryMod("UPDATE config SET banca=banca+'".$dadepositare."'");
 if (isset($_POST['preleva'])){
 $errore="";
 $daprelevare=(int)$_POST['daprelevare'];
-if (!is_numeric($daprelevare)){
+if(!is_numeric($daprelevare)){
 $errore.=$lang['banca_errore1'];}
 else{
-if ($eventi['id']>0)
+if($eventi['id']>0)
 $errore.=$lang['global_errore1'];
-if ($daprelevare<1)
+if($daprelevare<1)
 $errore.=$lang['banca_errore4'];
 $userbank=$db->QuerySelect("SELECT conto FROM banca WHERE userid='".$user['userid']."' LIMIT 1");
-if ($daprelevare>$userbank['conto'])
+if($daprelevare>$userbank['conto'])
 $errore.=$lang['banca_errore5'];
-if ($daprelevare>$config['banca'])
+if($daprelevare>$config['banca'])
 $errore.=$lang['banca_errore6'];
 }
 if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
-else {
+else{
 $db->QueryMod("UPDATE banca t1 JOIN utenti t2 on t1.userid=t2.userid JOIN caratteristiche t3 on t2.userid=t3.userid SET t1.conto=t1.conto-'".$daprelevare."',t2.monete=t2.monete+'".$daprelevare."',t3.energia=t3.energia-'1' WHERE t1.userid='".$user['userid']."'");
 $db->QueryMod("UPDATE config SET banca=banca-'".$daprelevare."'");
 }
@@ -98,18 +98,18 @@ $errore.=$lang['banca_errore1'];}
 else{
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$user['userid']."' LIMIT 1");
 $prestitopossibile=($usercar['livello']*100)-$userbank['prestito'];
-if ($eventi['id']>0)
+if($eventi['id']>0)
 $errore.=$lang['global_errore1'];
-if ($prestito<1)
+if($prestito<1)
 $errore.=$lang['banca_errore7'];
-if ($prestito>$config['banca'])
+if($prestito>$config['banca'])
 $errore.=$lang['banca_errore6'];
-if ($prestito>$prestitopossibile)
+if($prestito>$prestitopossibile)
 $errore.=sprintf($lang['banca_errore8'],$prestitopossibile);
 }
 if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
-else {
+else{
 $db->QueryMod("UPDATE banca t1 JOIN utenti t2 on t1.userid=t2.userid JOIN caratteristiche t3 on t2.userid=t3.userid SET t1.prestito=t1.prestito+'".$prestito."',t1.incprestito='1',t2.monete=t2.monete+'".$prestito."',t1.dataincprestito='".$adesso."',t3.energia=t3.energia-'1' WHERE t1.userid='".$user['userid']."'");
 $db->QueryMod("UPDATE config SET banca=banca-'".$prestito."'");
 }
