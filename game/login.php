@@ -21,7 +21,6 @@ exit();
 $username=htmlspecialchars($_POST['login_username'],ENT_QUOTES);
 $password=htmlspecialchars($_POST['login_password'],ENT_QUOTES);
 $user=$db->QuerySelect("SELECT count(userid) AS n FROM utenti WHERE username='".$username."' LIMIT 1");
-
 if($user['n']>0){
 $user=$db->QuerySelect("SELECT * FROM utenti WHERE username='".$username."' LIMIT 1");
 if($user['password']!=md5($password)){
@@ -47,7 +46,7 @@ if($config['chiuso']==1){
 	exit();
 }else{
 	$int_security=$game_se_code;
-	setcookie("userlogin",md5($user['userid'])."-".$user['password']."-".md5($config['id']),time()+10800);
+	setcookie("userlogin",md5($user['userid'])."-".$user['password']."-".md5($config['id'])."-".md5($adesso),time()+10800);
 	$db->QueryMod("UPDATE utenti SET ultimologin='".$adesso."',ipattuale='".$_SERVER['REMOTE_ADDR']."' WHERE userid='".$user['userid']."'");
 	$c=$db->QuerySelect("SELECT count(id) AS n FROM sessione WHERE id='".md5($user['userid'])."' LIMIT 1");
 	if($c['n']!=0)

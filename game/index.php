@@ -3,7 +3,7 @@ $start_time=time()+microtime();
 $numquery=0;
 require('inclusi/valori.php');
 require_once('inclusi/funzioni.php');
-if($_COOKIE['userlogin'] AND preg_match("/[a-z0-9]{32}(-)[a-z0-9]{32}(-)[a-z0-9]{32}/",$_COOKIE['userlogin']))
+if($_COOKIE['userlogin'] AND preg_match("/[a-z0-9]{32}(-)[a-z0-9]{32}(-)[a-z0-9]{32}(-)[a-z0-9]{32}/",$_COOKIE['userlogin']))
 	{$uc=explode("-",$_COOKIE['userlogin']);}else{header("Location: ../index.php?error=3"); exit();}
 require_once('inclusi/funzioni_db.php');
 $db=new ConnessioniMySQL();
@@ -16,7 +16,7 @@ if($esistenza==0){
 	exit();
 }//se regno inesistente
 $config=$db->QuerySelect("SELECT * FROM config");
-if( $config['chiuso']==1 ) {
+if( $config['chiuso']==1 ){
 	header("Location: ../index.php?error=12");
 	exit();
 }//se regno chiuso

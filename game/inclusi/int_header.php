@@ -14,6 +14,9 @@ echo "<script language=\"javascript\">window.location.href='../index.php?error=3
 if($s['ip']!=$_SERVER['REMOTE_ADDR']){
 echo "<script language=\"javascript\">window.location.href='../index.php?error=3'</script>"; exit();
 }//se ip non corrisponde
+if(md5($s['time'])!=$uc[3]){
+echo "<script language=\"javascript\">window.location.href='../index.php?error=3'</script>"; exit();
+}//se il tempo non corrisponde
 $user=$db->QuerySelect("SELECT * FROM utenti WHERE userid='".$s['userid']."' AND conferma=1 LIMIT 1");
 if($user['userid']){
 $db->QueryMod("UPDATE utenti SET ultimazione='".$adesso."' WHERE userid='".$user['userid']."'");

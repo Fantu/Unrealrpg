@@ -9,6 +9,7 @@ Legenda:<br />
 <p><strong>0.7.16</strong> (Non disponibile - In sviluppo)<br />
 + Iniziata creazione log degli utenti<br />
 + Iniziata creazione log di sistema (per loggare parti che generano errori o imprevisti di cui non si capisce quale è il problema o dove è)<br />
++ Rifatto il sistema di autentificazione, ora è molto più sicuro<br />
 + Aggiornati i testi in inglese<br />
 + Vari miglioramenti di sistema a login, sistema di base interno, sistema di base esterno, logout<br />
 + Vari miglioramenti di sicurezza<br />
