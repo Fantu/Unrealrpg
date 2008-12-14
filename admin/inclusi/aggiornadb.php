@@ -19,6 +19,7 @@ $db->QueryMod("CREATE TABLE `sessione` (
 PRIMARY KEY ( `id` )
 ) ENGINE = MYISAM");
 $db->QueryMod("ALTER TABLE `sessione` CHANGE `time` `time` INT UNSIGNED NOT NULL");
+$db->QueryMod("ALTER TABLE `utenti` DROP `ipattuale`");
 
 $db->QueryMod("UPDATE `config` SET version='".$newversion."' WHERE id=".$chiave);
 echo sprintf($lang['aggiornato_db_server'],$chiave,$newversion)."<br />";

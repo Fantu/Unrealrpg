@@ -4,7 +4,9 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	exit();
 }
 $user=$db->QuerySelect("SELECT * FROM utenti WHERE userid='".$s['userid']."' AND conferma=1 LIMIT 1");
-if($user['userid']){
+if(!$user['userid']){
+header("Location: ../index.php?error=13"); exit();
+}//se non loggato
 $db->QueryMod("UPDATE utenti SET ultimazione='".$adesso."' WHERE userid='".$user['userid']."'");
 require_once('inclusi/controllo_eventi.php');
 Controllaeventi(2);
@@ -50,9 +52,4 @@ $evento=$db->QuerySelect("SELECT * FROM eventi WHERE userid='".$user['userid']."
 }//se ci sono eventi in corso
 }//fine se personaggio creato
 require_once('template/int_header.php');
-}//fine if userid
-else{
-header("Location: ../index.php?error=13");
-exit();
-}
 ?>
