@@ -3,20 +3,6 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	header("Location: ../../index.php?error=16");
 	exit();
 }
-$s=$db->QuerySelect("SELECT count(id) AS n FROM sessione WHERE id='".$uc[0]."' LIMIT 1");
-if($s['n']==0){
-echo "<script language=\"javascript\">window.location.href='../index.php?error=3'</script>"; exit();
-}//se sessione non esistente
-$s=$db->QuerySelect("SELECT * FROM sessione WHERE id='".$uc[0]."' LIMIT 1");
-if($s['password']!=$uc[1]){
-echo "<script language=\"javascript\">window.location.href='../index.php?error=3'</script>"; exit();
-}//se password non corrisponde
-if($s['ip']!=$_SERVER['REMOTE_ADDR']){
-echo "<script language=\"javascript\">window.location.href='../index.php?error=3'</script>"; exit();
-}//se ip non corrisponde
-if(md5($s['time'])!=$uc[3]){
-echo "<script language=\"javascript\">window.location.href='../index.php?error=3'</script>"; exit();
-}//se il tempo non corrisponde
 $user=$db->QuerySelect("SELECT * FROM utenti WHERE userid='".$s['userid']."' AND conferma=1 LIMIT 1");
 if($user['userid']){
 $db->QueryMod("UPDATE utenti SET ultimazione='".$adesso."' WHERE userid='".$user['userid']."'");
