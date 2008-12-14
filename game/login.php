@@ -5,9 +5,9 @@ require_once('inclusi/funzioni.php');
 $db=new ConnessioniMySQL();
 $esistenza=0;
 $server=(int)$_POST['login_server'];
-	foreach($game_server as $chiave=>$elemento){
-	if ($chiave==$server){$esistenza=1;}
-	}
+foreach($game_server as $chiave=>$elemento){
+if ($chiave==$server){$esistenza=1;}
+}//per ogni server
 if($esistenza==0){
 	header("Location: ../index.php?error=3");
 	exit();

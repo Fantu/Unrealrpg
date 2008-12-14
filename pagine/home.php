@@ -23,7 +23,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 					$errore.=$lang['reg_error5'];
 				if(!$_POST['email'])
 					$errore.=$lang['reg_error6'];
-				if(!eregi("^.+@.+\..{2,3}$",$_POST['email']))
+				if(!preg_match("/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/",$_POST['email']))
 					$errore.=$lang['reg_error7'];
 			if(empty($errore)){
 				if($_POST['password']!=$_POST['password2'])
