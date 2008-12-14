@@ -10,7 +10,7 @@ Legenda:<br />
 + Iniziata creazione log degli utenti<br />
 + Iniziata creazione log di sistema (per loggare parti che generano errori o imprevisti di cui non si capisce quale è il problema o dove è)<br />
 + Aggiornati i testi in inglese<br />
-+ Vari miglioramenti di sistema a login, sistema di base interno, sistema di base esterno<br />
++ Vari miglioramenti di sistema a login, sistema di base interno, sistema di base esterno, logout<br />
 + Vari miglioramenti di sicurezza<br />
 # Rivisto il guadagno di esperienza nei lavori, reso più equilibrato<br />
 </p>

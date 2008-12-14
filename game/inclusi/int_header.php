@@ -3,14 +3,19 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	header("Location: ../../index.php?error=16");
 	exit();
 }
-$userid=htmlspecialchars($lg[0],ENT_QUOTES);
-$password=htmlspecialchars($lg[2],ENT_QUOTES);
-$user=$db->QuerySelect("SELECT * FROM utenti WHERE userid='".$userid."' AND password='".$password."' AND conferma=1 LIMIT 1");
-if($user['userid']){
-if($user['ipattuale']!=$_SERVER['REMOTE_ADDR']){
-echo "<script language=\"javascript\">window.location.href='../index.php?error=14'</script>";
-exit();
+$s=$db->QuerySelect("SELECT count(id) AS n FROM sessione WHERE id='".$uc[0]."' LIMIT 1");
+if($s['n']==0){
+echo "<script language=\"javascript\">window.location.href='../index.php?error=3'</script>"; exit();
+}//se sessione non esistente
+$s=$db->QuerySelect("SELECT * FROM sessione WHERE id='".$uc[0]."' LIMIT 1");
+if($s['password']!=$uc[1]){
+echo "<script language=\"javascript\">window.location.href='../index.php?error=3'</script>"; exit();
+}//se password non corrisponde
+if($s['ip']!=$_SERVER['REMOTE_ADDR']){
+echo "<script language=\"javascript\">window.location.href='../index.php?error=3'</script>"; exit();
 }//se ip non corrisponde
+$user=$db->QuerySelect("SELECT * FROM utenti WHERE userid='".$s['userid']."' AND conferma=1 LIMIT 1");
+if($user['userid']){
 $db->QueryMod("UPDATE utenti SET ultimazione='".$adesso."' WHERE userid='".$user['userid']."'");
 require_once('inclusi/controllo_eventi.php');
 Controllaeventi(2);
@@ -56,9 +61,9 @@ $evento=$db->QuerySelect("SELECT * FROM eventi WHERE userid='".$user['userid']."
 }//se ci sono eventi in corso
 }//fine se personaggio creato
 require_once('template/int_header.php');
-} //fine if userid
+}//fine if userid
 else{
-	header("Location: ../index.php?error=13");
-	exit();
+header("Location: ../index.php?error=13");
+exit();
 }
 ?>

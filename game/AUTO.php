@@ -30,6 +30,7 @@ require('inclusi/morte.php');
 }//se non ha eventi, e quindi resurrezione già in corso
 }//per ogni morto
 }//se ci sono morti
+$db->QueryMod("DELETE FROM sessione WHERE time<'".($adesso-10800)."'");// cancellazione di tutte le sessioni più vecchie di 3 ore
 $db->QueryMod("DELETE FROM msginviati WHERE data<'".($adesso-172800)."'");// cancellazione di tutti i msg inviati del regno più vecchi di 2 giorni
 $scaduto=$adesso-2592000;
 $quantimess=$db->QuerySelect("SELECT COUNT(id) AS n FROM messaggi WHERE data<'".$scaduto."'");

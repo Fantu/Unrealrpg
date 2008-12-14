@@ -3,25 +3,23 @@ $start_time=time()+microtime();
 $numquery=0;
 require('inclusi/valori.php');
 require_once('inclusi/funzioni.php');
-if($_COOKIE['userlogin'] AND preg_match("/[0-9]*(-)[a-z0-9]{32}(-)[a-z0-9]{32}(-)[a-z0-9]{32}/",$_COOKIE['userlogin']))
-	{$lg=explode("-",$_COOKIE['userlogin']);}else{header("Location: ../index.php?error=3"); exit();}
+if($_COOKIE['userlogin'] AND preg_match("/[a-z0-9]{32}(-)[a-z0-9]{32}(-)[a-z0-9]{32}/",$_COOKIE['userlogin']))
+	{$uc=explode("-",$_COOKIE['userlogin']);}else{header("Location: ../index.php?error=3"); exit();}
 require_once('inclusi/funzioni_db.php');
 $db=new ConnessioniMySQL();
-
 $esistenza=0;
-	foreach($game_server as $chiave=>$elemento){
-	if(md5($chiave)==$lg[3]){$esistenza=1; $db->database=$chiave;}
-	}
+foreach($game_server as $chiave=>$elemento){
+if(md5($chiave)==$uc[2]){$esistenza=1; $db->database=$chiave;}
+}//per ogni regno
 if($esistenza==0){
 	header("Location: ../index.php?error=3");
 	exit();
-}
-
+}//se regno inesistente
 $config=$db->QuerySelect("SELECT * FROM config");
 if( $config['chiuso']==1 ) {
 	header("Location: ../index.php?error=12");
 	exit();
-}
+}//se regno chiuso
 $language=$config['language'];
 require_once('language/'.$language.'/lang_interno.php');
 $int_security=$game_se_code;

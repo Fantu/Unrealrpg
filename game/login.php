@@ -12,8 +12,8 @@ if($esistenza==0){
 	header("Location: ../index.php?error=3");
 	exit();
 } else{$db->database=$server;}
-if($_COOKIE['urbgloginc']){
-$loginfalliti=(int)$_COOKIE['urbgloginc'];}else{$loginfalliti=0;}
+if($_COOKIE['userloginc']){
+$loginfalliti=(int)$_COOKIE['userloginc'];}else{$loginfalliti=0;}
 if($loginfalliti>4){
 header("Location: ../index.php?error=8");
 exit();
@@ -27,13 +27,13 @@ $user=$db->QuerySelect("SELECT * FROM utenti WHERE username='".$username."' LIMI
 if($user['password']!=md5($password)){
 	header("Location: ../index.php?error=4");
 	$loginfalliti++;
-	setcookie ("urbgloginc",$loginfalliti,time()+3600);
+	setcookie ("userloginc",$loginfalliti,time()+3600);
 	exit();
 }//se password errata
 }else{
 	header("Location: ../index.php?error=1");
 	$loginfalliti++;
-	setcookie ("urbgloginc",$loginfalliti,time()+3600);
+	setcookie ("userloginc",$loginfalliti,time()+3600);
 	exit();
 }//se username inesistente
 
@@ -47,8 +47,13 @@ if($config['chiuso']==1){
 	exit();
 }else{
 	$int_security=$game_se_code;
-	setcookie("userlogin", $user['userid']."-".md5($user['username'])."-".$user['password']."-".md5($config['id']),time()+10800);
+	setcookie("userlogin",md5($user['userid'])."-".$user['password']."-".md5($config['id']),time()+10800);
 	$db->QueryMod("UPDATE utenti SET ultimologin='".$adesso."',ipattuale='".$_SERVER['REMOTE_ADDR']."' WHERE userid='".$user['userid']."'");
+	$c=$db->QuerySelect("SELECT count(id) AS n FROM sessione WHERE id='".md5($user['userid'])."' LIMIT 1");
+	if($c['n']!=0)
+	$db->QueryMod("UPDATE sessione SET ip='".$_SERVER['REMOTE_ADDR']."',time='".$adesso."',password='".$user['password']."' WHERE id='".md5($user['userid'])."'");
+	else
+	$db->QueryMod("INSERT INTO sessione (id,userid,password,ip,time) VALUES ('".md5($user['userid'])."','".$user['userid']."','".$user['password']."','".$_SERVER['REMOTE_ADDR']."','".$adesso."')");
 	$language=$config['language'];
 	require_once('inclusi/cancellazione.php');
 	header("Location: index.php?loc=situazione");
