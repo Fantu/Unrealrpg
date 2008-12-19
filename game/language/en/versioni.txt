@@ -16,6 +16,7 @@ Legenda:<br />
 + Vari miglioramenti di sicurezza<br />
 # Rivisto il guadagno di esperienza nei lavori, reso più equilibrato<br />
 # Ora la Banca da massimo 50 monete di interessi al giorno<br />
+# Modificata la probabilità di colpire in attacco corpo a corpo, resa più equilibrata<br />
 </p>
 <p><strong>0.7.15</strong> [R.1922] (10/12/08 - Beta)<br />
 + Migliorati i messaggi nelle mail di registrazione, avviso inattività e cancellazione<br />
