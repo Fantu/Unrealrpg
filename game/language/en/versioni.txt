@@ -14,7 +14,7 @@ Legenda:<br />
 + Rifatto il sistema di autentificazione, ora è molto più sicuro<br />
 + Rifatto il controllo di "correttezza" della mail nella registrazione<br />
 + Aggiornati i testi in inglese<br />
-+ Vari miglioramenti di sistema a login, sistema di base interno, sistema di base esterno, logout, sistema di attivazione manuale<br />
++ Vari miglioramenti di sistema a login, sistema di base interno, sistema di base esterno, logout, sistema di attivazione manuale, registrazione<br />
 + Vari miglioramenti di sicurezza<br />
 # Rivisto il guadagno di esperienza nei lavori, reso più equilibrato<br />
 # Ora la Banca da massimo 50 monete di interessi al giorno<br />

@@ -6,12 +6,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 		if(isset($_POST['registra'])){
 			$errore="";
 			$server=(int)$_POST['server'];
-			foreach($game_server as $chiave=>$elemento){
-			if ($chiave==$server){$esistenza=1;}
-			}
-			if($esistenza==1){
-			$db->database=$server;
-			}else{$errore.=$lang['reg_error1'];}
+			if(isset($game_server[$server])){$db->database=$server;}else{$errore.=$lang['reg_error1'];}
 				$username=htmlspecialchars($_POST['username'],ENT_QUOTES);
 				if(!$_POST['username'])
 					$errore.=$lang['reg_error2'];
@@ -68,11 +63,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 		if(isset($_POST['attivazione'])){
 			$errore="";
 			$server=(int)$_POST['serveratt'];
-			foreach($game_server as $chiave=>$elemento){
-			if ($chiave==$server){$esistenza=1;}}
-			if($esistenza==1){$db->database=$server;}
-			else{
-				$errore.=$lang['reg_error1'];}
+			if(isset($game_server[$server])){$db->database=$server;}else{$errore.=$lang['reg_error1'];}
 				if(!$_POST['usernameatt'] AND !$_POST['codice'])
 					$errore.=$lang['reg_error10'];
 			if(empty($errore)){
