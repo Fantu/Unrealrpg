@@ -28,7 +28,7 @@ Spedizione mail news agli utenti<br />
 <?php echo $lang['Regno']; ?>: <select name="server" id="server">
               <option value="-1" selected="selected">--------</option>
               <?php foreach($game_server as $chiave=>$elemento){
-			  echo "<option value=\"$chiave\">$elemento</option>";} ?>
+			  echo "<option value=\"$chiave\">$elemento ($game_server_lang[$chiave])</option>";} ?>
             </select> 
 <input type="submit" name="spedisci" value="Spedisci" />
 </form>
