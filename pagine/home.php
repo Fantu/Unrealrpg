@@ -79,8 +79,12 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 			if(!$_POST['codice']){
 				$username=htmlspecialchars($_POST['usernameatt'],ENT_QUOTES);
 				$a=$db->QuerySelect("SELECT COUNT(*) AS U FROM utenti WHERE username='".$username."'");
-				if($a['U']==0)
-					$errore.=$lang['reg_error11'];
+				if($a['U']==0){$errore.=$lang['reg_error11'];
+				}else{
+				$a=$db->QuerySelect("SELECT conferma FROM utenti WHERE username='".$username."'");
+				if($a['conferma']==1)
+				$errore.=$lang['reg_error14'];
+				}
 				$step=1;
 				}else{
 				$codice=htmlspecialchars($_POST['codice'],ENT_QUOTES);
