@@ -6,9 +6,11 @@ Legenda:<br />
 # Modifiche<br />
 - Correzione bug e patch di situazioni non previste<br />
 </p>
-<p><strong>0.7.16</strong> (Non disponibile - In sviluppo)<br />
+<p><strong>0.7.17</strong> (Non disponibile - In sviluppo)<br />
 + Iniziata creazione log degli utenti<br />
 + Iniziata creazione log di sistema (per loggare parti che generano errori o imprevisti di cui non si capisce quale è il problema o dove è)<br />
+</p>
+<p><strong>0.7.16</strong> (Stimato entro il 25/12/08 - In sviluppo)<br />
 + Rifatto il sistema di autentificazione, ora è molto più sicuro<br />
 + Rifatto il controllo di "correttezza" della mail nella registrazione<br />
 + Aggiornati i testi in inglese<br />

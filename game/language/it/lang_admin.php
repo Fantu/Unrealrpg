@@ -18,4 +18,8 @@ $lang['creato_log_query']='Creato file log delle query';
 $lang['controllo_file_log_eseguito']='Controllo file log eseguito';
 $lang['dir_report_mancante']='Cartella report dei regni %s mancante';
 $lang['creazione_dir_nonriuscita']='Creazione cartella report dei regni %s non riuscita';
+$lang['Titolo']='Titolo';
+$lang['Messaggio']='Messaggio';
+$lang['Regno']='Regno';
+$lang['regno_errato']='Non hai selezionato correttamente un regno';
 ?>
