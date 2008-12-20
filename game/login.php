@@ -3,21 +3,10 @@ require_once('inclusi/valori.php');
 require_once('inclusi/funzioni_db.php');
 require_once('inclusi/funzioni.php');
 $db=new ConnessioniMySQL();
-$esistenza=0;
 $server=(int)$_POST['login_server'];
-foreach($game_server as $chiave=>$elemento){
-if ($chiave==$server){$esistenza=1;}
-}//per ogni server
-if($esistenza==0){
-	header("Location: ../index.php?error=3");
-	exit();
-} else{$db->database=$server;}
-if($_COOKIE['userloginc']){
-$loginfalliti=(int)$_COOKIE['userloginc'];}else{$loginfalliti=0;}
-if($loginfalliti>4){
-header("Location: ../index.php?error=8");
-exit();
-}
+if(isset($game_server[$server])){$db->database=$server;}else{header("Location: ../index.php?error=3"); exit();}
+if($_COOKIE['userloginc']){$loginfalliti=(int)$_COOKIE['userloginc'];}else{$loginfalliti=0;}
+if($loginfalliti>4){header("Location: ../index.php?error=8"); exit();}
 $username=htmlspecialchars($_POST['login_username'],ENT_QUOTES);
 $password=htmlspecialchars($_POST['login_password'],ENT_QUOTES);
 $user=$db->QuerySelect("SELECT count(userid) AS n FROM utenti WHERE username='".$username."' LIMIT 1");

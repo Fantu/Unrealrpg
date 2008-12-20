@@ -11,29 +11,15 @@ $esistenza=0;
 foreach($game_server as $chiave=>$elemento){
 if(md5($chiave)==$uc[2]){$esistenza=1; $db->database=$chiave;}
 }//per ogni regno
-if($esistenza==0){
-	header("Location: ../index.php?error=3");
-	exit();
-}//se regno inesistente
+if($esistenza==0){header("Location: ../index.php?error=3"); exit();}//se regno inesistente
 $config=$db->QuerySelect("SELECT * FROM config");
-if($config['chiuso']==1){
-	header("Location: ../index.php?error=12");
-	exit();
-}//se regno chiuso
+if($config['chiuso']==1){header("Location: ../index.php?error=12"); exit();}//se regno chiuso
 $s=$db->QuerySelect("SELECT count(id) AS n FROM sessione WHERE id='".$uc[0]."' LIMIT 1");
-if($s['n']==0){
-header("Location: ../index.php?error=3"); exit();
-}//se sessione non esistente
+if($s['n']==0){header("Location: ../index.php?error=3"); exit();}//se sessione non esistente
 $s=$db->QuerySelect("SELECT * FROM sessione WHERE id='".$uc[0]."' LIMIT 1");
-if($s['password']!=$uc[1]){
-header("Location: ../index.php?error=3"); exit();
-}//se password non corrisponde
-if($s['ip']!=$_SERVER['REMOTE_ADDR']){
-header("Location: ../index.php?error=3"); exit();
-}//se ip non corrisponde
-if(md5($s['time'])!=$uc[3]){
-header("Location: ../index.php?error=3"); exit();
-}//se il tempo non corrisponde
+if($s['password']!=$uc[1]){header("Location: ../index.php?error=3"); exit();}//se password non corrisponde
+if($s['ip']!=$_SERVER['REMOTE_ADDR']){header("Location: ../index.php?error=3"); exit();}//se ip non corrisponde
+if(md5($s['time'])!=$uc[3]){header("Location: ../index.php?error=3"); exit();}//se il tempo non corrisponde
 $language=$config['language'];
 require_once('language/'.$language.'/lang_interno.php');
 $int_security=$game_se_code;

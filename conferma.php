@@ -15,7 +15,7 @@ if(!$a['userid']){
 	header("Location: index.php?error=5");
 	exit();
 }
-else if($a['conferma']==1){
+elseif($a['conferma']==1){
 	header("Location: index.php?error=6");
 	exit();
 }else{
