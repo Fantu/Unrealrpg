@@ -10,10 +10,10 @@ Legenda:<br />
 + Iniziata creazione log degli utenti<br />
 + Iniziata creazione log di sistema (per loggare parti che generano errori o imprevisti di cui non si capisce quale è il problema o dove è)<br />
 </p>
-<p><strong>0.7.16</strong> (Stimato entro il 25/12/08 - In sviluppo)<br />
+<p><strong>0.7.16</strong> [R.1952] (22/12/08 - Beta)<br />
 + Rifatto il sistema di autentificazione, ora è molto più sicuro<br />
 + Rifatto il controllo di "correttezza" della mail nella registrazione<br />
-+ Aggiornati i testi in inglese<br />
++ Aggiornati i testi in inglese, traduzione al 59% (591 stringhe su 762)<br />
 + Vari miglioramenti di sistema a login, sistema di base interno, sistema di base esterno, logout, sistema di attivazione manuale, registrazione, attivazione<br />
 + Vari miglioramenti di sicurezza<br />
 # Rivisto il guadagno di esperienza nei lavori, reso più equilibrato<br />

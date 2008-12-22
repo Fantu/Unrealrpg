@@ -43,10 +43,11 @@ $lang['reg_error10']='- You must enter username or code.<br />';
 $lang['reg_error11']='- The username you entered does not exist!<br />';
 $lang['reg_error12']='- The code you entered is not valid!<br />';
 $lang['reg_error13']='- The password does not match its repetition<br />';
+$lang['reg_error14']='- Questo account è già attivo<br />';
 
 $lang['ext_error1']='Login failed\\nUsername doesn\'t exist';
 $lang['ext_error2']='Login failed\\nThis account has not yet been confirmed.';
-$lang['ext_error3']='Time limit expired!\\nNew login required.';
+$lang['ext_error3']='Autentificazione non valida o scaduta\\nNecessario nuovo login.';
 $lang['ext_error4']='Login failed\\nPassword wrong!';
 $lang['ext_error5']='Unable to confirm this account!\\nLink wrong, check and try again.';
 $lang['ext_error6']='Unable to confirm this account!\\nThis account has been already confirmed.';
@@ -54,7 +55,6 @@ $lang['ext_error7']='Account confirmed!\\nNow you can login and play.';
 $lang['ext_error8']='You have been blocked for an hour after 5 login attempts failed.';
 $lang['ext_error12']='Server temporarily closed for installation upgrades or maintenance. Please try again later. Thank you.';
 $lang['ext_error13']='Access Denied!\\nYou tried to enter a page reserved for users logged.';
-$lang['ext_error14']='Access Denied!\\nYour IP address has changed since the time of login.\\nLogged again.';
 $lang['ext_error16']='Link broken!\\nPlease follow the link of the game.';
 
 $lang['help1']='Repeat your password to avoid signing up with an incorrect password';
