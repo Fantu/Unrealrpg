@@ -6,7 +6,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 $newversion="0.7.16";
 foreach($game_server as $chiave=>$elemento){
 if($chiave!=999){
-$db->database=$chiave;
+$db->Setdb($chiave);
 $check=$db->QuerySelect("SELECT version FROM config WHERE id=".$chiave);
 if($check['version']!=$newversion AND $newversion==$game_revision){
 

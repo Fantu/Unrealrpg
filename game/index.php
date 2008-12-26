@@ -8,7 +8,7 @@ require_once('inclusi/funzioni_db.php');
 $db=new ConnessioniMySQL();
 $esistenza=0;
 foreach($game_server as $chiave=>$elemento){
-if(md5($chiave)==$uc[2]){$esistenza=1; $db->database=$chiave;}
+if(md5($chiave)==$uc[2]){$esistenza=1; $db->Setdb($chiave);}
 }//per ogni regno
 if($esistenza==0){header("Location: ../index.php?error=3"); exit();}//se regno inesistente
 $config=$db->QuerySelect("SELECT * FROM config");

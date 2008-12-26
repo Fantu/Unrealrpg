@@ -6,7 +6,7 @@ $db=new ConnessioniMySQL();
 $path=MAIN_PATH."/admin/cache/";
 
 foreach($game_server as $chiave=>$elemento){
-$db->database=$chiave;
+$db->Setdb($chiave);
 $sqlfile=$path.$chiave."_".date('Y_m_d').".sql";
 $db->Dbdump($sqlfile);
 $dbsalvati.=" ".$chiave;

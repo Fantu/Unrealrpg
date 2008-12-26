@@ -1,7 +1,7 @@
 <?php
 class ConnessioniMySQL{
 
-	private $database; //$db->database=1; da settare dopo l'inclusione di questa classe e la creazione di un nuovo oggetto
+	public $database;
 	private $suffix="unrealff_rpg";
 	private $dbname;
 	private $server="localhost";

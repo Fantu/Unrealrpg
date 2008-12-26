@@ -9,7 +9,7 @@ $msg=$_POST['msg'];
 if($titolo==""){ echo "Manca il titolo"; 
 }elseif($msg==""){ echo "Manca il messaggio";
 	}elseif(!$game_server[$_POST['server']]){echo $lang['regno_errato'];}else{
-	$db->database=$_POST['server'];
+	$db->Setdb($_POST['server']);
 	$n=0;
 	$op=$db->QueryCiclo("SELECT email FROM utenti WHERE conferma='1' AND mailnews='1'");
 	while($var=$db->QueryCicloResult($op)){

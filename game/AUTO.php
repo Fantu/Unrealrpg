@@ -12,7 +12,7 @@ require('language/'.$language.'/lang_interno.php');
 require('language/'.$language.'/lang_oggetti_nomi.php');
 foreach($game_server as $chiave=>$elemento){
 if($game_server_lang[$chiave]==$chiavel){
-$db->database=$chiave;
+$db->Setdb($chiave);
 $config=$db->QuerySelect("SELECT * FROM config");
 if($config['chiuso']==0){
 require_once('inclusi/controllo_eventi.php');
