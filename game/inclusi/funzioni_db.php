@@ -8,6 +8,7 @@ class ConnessioniMySQL{
 	private $dbuser="rpg";
 	private $dbpass="3sWBVeNJN4YbB5MQ";
 	private $errorlog="/game/inclusi/log/mysql.log";//path da quella base per il file log errori query
+	public $nquery;
 
 	private function StampaErroreMysql($query,$err,$mess){
 	$data=date("d/m/y - H:i")." - Db:".$this->database." - ".$query;
@@ -19,12 +20,11 @@ class ConnessioniMySQL{
 		$this->dbname=$this->suffix.$this->database;
 	}
 	public function QuerySelect($query){//$var=$db->QuerySelect("SELECT * FROM table");
-		global $numquery;
 		$this->Config();
 		$connect=mysql_connect($this->server,$this->dbuser,$this->dbpass);
 		mysql_select_db($this->dbname,$connect);
 		$result=mysql_query($query,$connect);
-		$numquery++;
+		$this->nquery++;
 		if(!$result){$this->StampaErroreMysql($query,mysql_errno(),mysql_error());
 		}else{
 		$var=mysql_fetch_array($result);
@@ -34,22 +34,20 @@ class ConnessioniMySQL{
 		return $var;
 	}
 	public function QueryMod($query){//$db->QueryMod("UPDATE table SET colonna='1'");
-		global $numquery;
 		$this->Config();
 		$connect=mysql_connect($this->server,$this->dbuser,$this->dbpass);
 		mysql_select_db($this->dbname,$connect);
 		$result=mysql_query($query,$connect);
-		$numquery++;
+		$this->nquery++;
 		if(!$result){$this->StampaErroreMysql($query,mysql_errno(),mysql_error());}
 		mysql_close($connect);
 	}
 	public function QueryCiclo($query){//$guarda_bene=$db->QueryCiclo("SELECT * FROM table"); -- collegata a quella di sotto
-		global $numquery;
 		$this->Config();
 		$connect=mysql_connect($this->server,$this->dbuser,$this->dbpass);
 		mysql_select_db($this->dbname,$connect);
 		$result=mysql_query($query,$connect);
-		$numquery++;
+		$this->nquery++;
 		if(!$result){$this->StampaErroreMysql($query,mysql_errno(),mysql_error());}
 		mysql_close($connect);
 		return $result;

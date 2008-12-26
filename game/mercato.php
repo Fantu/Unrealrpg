@@ -40,7 +40,7 @@ break;
 
 if($mostraogg==1){
 $seoggetti=$db->QuerySelect("SELECT COUNT(*) AS id FROM oggetti WHERE tipo='".$categoria."' AND categoria='".$sottocat."'");
-if ($seoggetti['id']==0){
+if($seoggetti['id']==0){
 $nessunogg=$lang['nessun_oggetto_esistente'];
 }else{
 $oggposseduti=$db->QueryCiclo("SELECT id,costo FROM oggetti WHERE tipo='".$categoria."' AND categoria='".$sottocat."'");
@@ -62,11 +62,11 @@ $errore.=$lang['mercato_errore2'];
 if($errore==""){
 $costoogg=$db->QuerySelect("SELECT costo FROM oggetti WHERE id='".$oggselect."' LIMIT 1");
 $prezzo=$costoogg['costo']*$quanti;
-if ($eventi['id']>0)
+if($eventi['id']>0)
 $errore.=$lang['global_errore1'];
-if ($user['monete']<$prezzo)
+if($user['monete']<$prezzo)
 $errore.=$lang['mercato_errore1'];
-if ($quanti<1)
+if($quanti<1)
 $errore.=$lang['mercato_errore3'];
 }//controllo altri errori
 if($errore){
