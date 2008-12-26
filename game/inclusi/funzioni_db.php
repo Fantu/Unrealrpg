@@ -9,6 +9,10 @@ class ConnessioniMySQL{
 	private $dbpass="3sWBVeNJN4YbB5MQ";
 	private $errorlog="/game/inclusi/log/mysql.log";//path da quella base per il file log errori query
 	public $nquery;
+	
+	function __construct(){
+       $this->nquery=0;
+	}
 
 	private function StampaErroreMysql($query,$err,$mess){
 	$data=date("d/m/y - H:i")." - Db:".$this->database." - ".$query;

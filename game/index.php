@@ -1,6 +1,5 @@
 <?php
 $start_time=time()+microtime();
-$numquery=0;
 require('inclusi/valori.php');
 require_once('inclusi/funzioni.php');
 if($_COOKIE['userlogin'] AND preg_match("/[a-z0-9]{32}(-)[a-z0-9]{32}(-)[a-z0-9]{32}(-)[a-z0-9]{32}/",$_COOKIE['userlogin']) AND strlen($_COOKIE['userlogin'])==131)

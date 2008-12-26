@@ -3,7 +3,6 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	header("Location: ../index.php?error=16");
 	exit();
 }
-$numquery=0;
 require('game/language/'.$language.'/lang_esterno.php');
 require('game/inclusi/funzioni_db.php');
 require('game/inclusi/funzioni.php');
@@ -47,7 +46,7 @@ $lingue[$chiave]="<a href=\"index_".$chiave.".php\">".$elemento."</a> ";
 }//fine per ogni lingua
 $end_time=time()+microtime();
 $gen_time=number_format($end_time-$start_time, 4, '.', '');
-$page_gen=sprintf($lang['tempo_gen_pagina'],$gen_time,$numquery);
+$page_gen=sprintf($lang['tempo_gen_pagina'],$gen_time,$db->nquery);
 require('game/template/est_footer.php');
 if($_GET['error']){
 require("game/inclusi/errori.php");}
