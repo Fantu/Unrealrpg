@@ -26,7 +26,7 @@ echo "</div></td></tr></table>";
 foreach($game_server as $chiave=>$elemento){
 if($language==$game_server_lang[$chiave]){
 $infoserver['nome'][$chiave]=$elemento;
-$db->database=$chiave;
+$db->Setdb($chiave);
 $utenti=$db->QuerySelect("SELECT COUNT(*) AS id FROM utenti");
 $infoserver['utenti'][$chiave]=$utenti['id'];
 $sereg=$adesso-604800;

@@ -1,5 +1,5 @@
 <?php
-if($_GET['code']!='autourbg'){header("Location: index.php?error=16"); exit();}
+if($_GET['code']!='autourbg2'){header("Location: index.php?error=16"); exit();}
 require('inclusi/valori.php');
 require_once('inclusi/funzioni.php');
 require('inclusi/funzioni_db.php');

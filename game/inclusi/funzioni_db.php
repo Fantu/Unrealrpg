@@ -1,7 +1,7 @@
 <?php
 class ConnessioniMySQL{
 
-	public $database; //$db->database=1; da settare dopo l'inclusione di questa classe e la creazione di un nuovo oggetto
+	private $database; //$db->database=1; da settare dopo l'inclusione di questa classe e la creazione di un nuovo oggetto
 	private $suffix="unrealff_rpg";
 	private $dbname;
 	private $server="localhost";
@@ -9,9 +9,27 @@ class ConnessioniMySQL{
 	private $dbpass="3sWBVeNJN4YbB5MQ";
 	private $errorlog="/game/inclusi/log/mysql.log";//path da quella base per il file log errori query
 	public $nquery;
+	private $connect;
 	
 	function __construct(){
        $this->nquery=0;
+	   $this->database=-1;
+	}
+	
+	function __destruct(){
+		mysql_close($this->connect);
+	}
+	
+	public function Setdb($d){//$db->Setdb(1); impostare il db da utilizzare
+		if($this->database==-1){
+		$this->database=$d;
+		$this->dbname=$this->suffix.$this->database;
+		$this->connect=mysql_connect($this->server,$this->dbuser,$this->dbpass);
+		}else{
+		$this->database=$d;
+		$this->dbname=$this->suffix.$this->database;
+		}
+		mysql_select_db($this->dbname,$this->connect);
 	}
 
 	private function StampaErroreMysql($query,$err,$mess){
@@ -20,40 +38,25 @@ class ConnessioniMySQL{
 	fputs($fp,$data."\r\n--------\r\n".$err.": ".$mess."\r\n\r\n");
 	fclose($fp);
 	}
-	private function Config(){
-		$this->dbname=$this->suffix.$this->database;
-	}
 	public function QuerySelect($query){//$var=$db->QuerySelect("SELECT * FROM table");
-		$this->Config();
-		$connect=mysql_connect($this->server,$this->dbuser,$this->dbpass);
-		mysql_select_db($this->dbname,$connect);
-		$result=mysql_query($query,$connect);
+		$result=mysql_query($query,$this->connect);
 		$this->nquery++;
 		if(!$result){$this->StampaErroreMysql($query,mysql_errno(),mysql_error());
 		}else{
 		$var=mysql_fetch_array($result);
 		if(!$var){$this->StampaErroreMysql($query,mysql_errno(),mysql_error());}
 		}//se query esatta
-		mysql_close($connect);
 		return $var;
 	}
 	public function QueryMod($query){//$db->QueryMod("UPDATE table SET colonna='1'");
-		$this->Config();
-		$connect=mysql_connect($this->server,$this->dbuser,$this->dbpass);
-		mysql_select_db($this->dbname,$connect);
-		$result=mysql_query($query,$connect);
+		$result=mysql_query($query,$this->connect);
 		$this->nquery++;
 		if(!$result){$this->StampaErroreMysql($query,mysql_errno(),mysql_error());}
-		mysql_close($connect);
 	}
 	public function QueryCiclo($query){//$guarda_bene=$db->QueryCiclo("SELECT * FROM table"); -- collegata a quella di sotto
-		$this->Config();
-		$connect=mysql_connect($this->server,$this->dbuser,$this->dbpass);
-		mysql_select_db($this->dbname,$connect);
-		$result=mysql_query($query,$connect);
+		$result=mysql_query($query,$this->connect);
 		$this->nquery++;
 		if(!$result){$this->StampaErroreMysql($query,mysql_errno(),mysql_error());}
-		mysql_close($connect);
 		return $result;
 	}
 	public function QueryCicloResult($result){//while($var=$db->QueryCicloResult($guarda_bene)) -- collegata a quella di sopra
@@ -61,7 +64,6 @@ class ConnessioniMySQL{
 		return $var;
 	}
 	public function Dbdump($sqlfile){
-		$this->Config();
 		$backup="mysqldump -u ".$this->dbuser." --password=".$this->dbpass." ".$this->dbname." --skip-extended-insert > ".$sqlfile;
 		exec($backup);
 	}
