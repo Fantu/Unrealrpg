@@ -352,6 +352,7 @@ class Dati{
 	}
 	if($this->equip($att,'cac')!=0 AND $this->car($att,'energia')>$energia){
 	$danno=$arma['danno'];
+	if($danno>4){$danno=round(rand(($danno/100*80),$danno));}
 	$nomearma=$lang['oggetto'.$this->equip($att,'cac').'_nome'];
 	$this->Ogginuso($att,'cac');
 	}else{
@@ -486,6 +487,7 @@ class Dati{
 	}//se ha l'arma a distanza
 	if($this->equip($att,'adi')!=0 AND $this->car($att,'energia')>$energia){
 	$danno=$arma['danno'];
+	if($danno>4){$danno=round(rand(($danno/100*80),$danno));}
 	$nomearma=$lang['oggetto'.$this->equip($att,'adi').'_nome'];
 	$this->Ogginuso($att,'adi');
 	}else{
