@@ -28,10 +28,12 @@ class Menu{
 	}
 	
 	private function Sv($n,$l){//genera un valore singolo
+		global $lang;
 		$this->menu.='<a href="index.php?loc='.$n.'">'.$lang[$l].'</a>';
 	}
 	
 	private function Mv($s){//genera un sottomenu
+		global $lang;
 		$v=explode("|",$s);
 		$this->menu.='<ul><li><a href="index.php?loc=submenu&amp;menu='.$v[0].'">'.$lang[$v[1]].'</a><ul>';
 		foreach($this->dati[$s] as $chiave=>$elemento){
