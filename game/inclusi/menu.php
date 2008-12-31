@@ -24,7 +24,7 @@ class Menu{
 		}
 		}//se non è array
 		}//per dato
-		return $menu;
+		return $this->menu;
 	}
 	
 	private function Sv($n,$l){//genera un valore singolo
