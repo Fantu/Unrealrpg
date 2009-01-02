@@ -3,7 +3,7 @@ $snm=$db->QuerySelect("SELECT COUNT(*) AS id FROM messaggi WHERE userid='".$user
 
 class Menu{
 
-	public $sezioni=array('mostraoggetto','visualizzautente','levelup','submenu','archiviorep');
+	public $sezioni=array('mostraoggetto','visualizzautente','levelup','submenu','archiviorep');//sezioni "speciali"
 	private $dati=array(
 	'situazione'=>'Situazione',
 	'citta'=>array('banca'=>'Banca','tempio'=>'Tempio','mercato'=>'Mercato','locanda'=>'Locanda','municipio'=>'Municipio'),

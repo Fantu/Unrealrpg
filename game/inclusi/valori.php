@@ -7,7 +7,6 @@ $game_server=array(999=>"DEV",998=>"DEV");
 $game_language=array("it"=>"Italiano","en"=>"English");
 $game_server_lang=array(999=>"it",998=>"en");
 $game_se_code="f87d5gf945fhut";
-$game_location=array('mostraoggetto','visualizzautente','levelup','submenu','archiviorep');
 define('MAIN_PATH', realpath(dirname(__FILE__).'/../../'));
 define('TPL_PATH', MAIN_PATH.'/game/template/');
 $game_mail="server@lostage.it";

@@ -11,6 +11,8 @@ Legenda:<br />
 + Iniziata creazione log di sistema (per loggare parti che generano errori o imprevisti di cui non si capisce quale è il problema o dove è)<br />
 + Rifatto il sistema query in modo migliore e più efficente<br />
 + Migliorato il danno il danno in combattimento<br />
++ Rifatti i sistemi riguardanti il menu<br />
++ Vari miglioramenti di sistema a sistema di base interno<br />
 </p>
 <p><strong>0.7.16</strong> [R.1952] (22/12/08 - Beta)<br />
 + Rifatto il sistema di autentificazione, ora è molto più sicuro<br />
