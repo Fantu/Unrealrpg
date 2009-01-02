@@ -3,8 +3,10 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	header("Location: ../index.php?error=16");
 	exit();
 }
-$menu=htmlspecialchars($_GET['menu'],ENT_QUOTES);
-switch($menu){
+$sottomenu=htmlspecialchars($_GET['menu'],ENT_QUOTES);
+$titolo=$lang[$sottomenu];
+$link=$menu->Sm($sottomenu);
+/*switch($menu){
 case "citta":
 $titolo=$lang['Citta'];
 $link[]='<a href="index.php?loc=banca">'.$lang['Banca'].'</a>';
@@ -38,6 +40,6 @@ case "confini":
 $titolo=$game_server[$user['server']];
 $link[]='<a href="index.php?loc=confini">'.$lang['Confini'].'</a>';
 break;
-}
+}*/
 require('template/int_submenu.php');
 ?>

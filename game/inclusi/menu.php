@@ -20,22 +20,14 @@ class Menu{
 	);
 	private $menu;
 	
-	/*public function View(){//genera e restituisce la visualizzazione del menu
-		foreach($this->dati as $chiave=>$elemento){
-		if(is_array($elemento)){
-		$this->Mv($chiave);
-		foreach($elemento as $chiave2=>$elemento2){
-		$this->sezioni[]=$chiave2;
-		}//per ogni elemento dell'array
-		}else{//se è un array
-		if($chiave!='S'){
-		$this->sezioni[]=$chiave;
+	public function Sm($sm){//genera e restituisce i dati del sottomenu di testo
+		foreach($this->dati[$sm] as $chiave=>$elemento){
+		$this->menu='';//azzera eventuale precedente
 		$this->Sv($chiave,$elemento);
-		}
-		}//se non è array
+		$link[]=$this->menu;
 		}//per dato
-		return $this->menu;
-	}*/
+		return $link;
+	}
 	
 	function __construct() {
 		foreach($this->dati as $chiave=>$elemento){
