@@ -50,7 +50,7 @@ class Menu{
 		}elseif($tipo=='m'){
 		$this->Mv($dato);
 		}
-		return $this->menu;
+		echo $this->menu;
 	}
 	
 	private function Sv($n,$l){//genera un valore singolo
