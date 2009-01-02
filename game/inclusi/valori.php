@@ -7,7 +7,7 @@ $game_server=array(999=>"DEV",998=>"DEV");
 $game_language=array("it"=>"Italiano","en"=>"English");
 $game_server_lang=array(999=>"it",998=>"en");
 $game_se_code="f87d5gf945fhut";
-$game_location=array('banca','changelog','combact','fucina','guida','inventario','laboratorio','libro','logout','mercato','messaggi','miniera','mostraoggetto','opzioni','rocca','situazione','tempio','utenti','visualizzautente','equipaggiamento','levelup','submenu','locanda','archiviorep','confini','municipio');
+$game_location=array('mostraoggetto','visualizzautente','levelup','submenu','archiviorep');
 define('MAIN_PATH', realpath(dirname(__FILE__).'/../../'));
 define('TPL_PATH', MAIN_PATH.'/game/template/');
 $game_mail="server@lostage.it";
