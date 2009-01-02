@@ -9,7 +9,7 @@ class Menu{
 	'citta'=>array('banca'=>'Banca','tempio'=>'Tempio','mercato'=>'Mercato','locanda'=>'Locanda','municipio'=>'Municipio'),
 	'lavori'=>array('miniera'=>'Miniera','laboratorio'=>'Laboratorio','fucina'=>'Fucina'),
 	'magia'=>array('rocca'=>'Rocca_arcano','libro'=>'Libro_incantesimi'),
-	'regno'=>'regno',
+	'regno'=>array('confini'=>'Confini'),
 	'combact'=>'Combattimenti',
 	
 	);

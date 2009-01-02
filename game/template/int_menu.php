@@ -8,35 +8,8 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 $menu->View('v','situazione');
 $menu->View('m','citta');
 $menu->View('m','lavori');
-$menu->View('m','magia'); ?>
-<a href="index.php?loc=situazione"><?php echo $lang['Situazione']; ?></a>
-<ul>
-<li><a href="index.php?loc=submenu&amp;menu=citta"><?php echo $lang['Citta']; ?></a><ul>
-<li><a href="index.php?loc=banca"><?php echo $lang['Banca']; ?></a></li>
-<li><a href="index.php?loc=tempio"><?php echo $lang['Tempio']; ?></a></li>
-<li><a href="index.php?loc=mercato"><?php echo $lang['Mercato']; ?></a></li>
-<li><a href="index.php?loc=locanda"><?php echo $lang['Locanda']; ?></a></li>
-<li><a href="index.php?loc=municipio"><?php echo $lang['Municipio']; ?></a></li>
-</ul></li>
-</ul>
-<ul>
-<li><a href="index.php?loc=submenu&amp;menu=lavori"><?php echo $lang['Lavori']; ?></a><ul>
-<li><a href="index.php?loc=miniera"><?php echo $lang['Miniera']; ?></a></li>
-<li><a href="index.php?loc=laboratorio"><?php echo $lang['Laboratorio']; ?></a></li>
-<li><a href="index.php?loc=fucina"><?php echo $lang['Fucina']; ?></a></li>
-</ul></li>
-</ul>
-<ul>
-<li><a href="index.php?loc=submenu&amp;menu=magia"><?php echo $lang['Magia']; ?></a><ul>
-<li><a href="index.php?loc=rocca"><?php echo $lang['Rocca_arcano']; ?></a></li>
-<li><a href="index.php?loc=libro"><?php echo $lang['Libro_incantesimi']; ?></a></li>
-</ul></li>
-</ul>
-<ul>
-<li><a href="index.php?loc=submenu&amp;menu=confini"><?php echo $game_server[$config['id']]; ?></a><ul>
-<li><a href="index.php?loc=confini"><?php echo $lang['Confini']; ?></a></li>
-</ul></li>
-</ul>
+$menu->View('m','magia');
+$menu->View('m','regno'); ?>
 <a href="index.php?loc=combact"><?php if(($evento['tipo']==4 AND $evento['type']==2) OR $evento['tipo']==5){echo "<strong>";} echo $lang['Combattimenti']; if(($evento['tipo']==4 AND $evento['type']==2) OR $evento['tipo']==5){echo "</strong>";} ?></a>
 <ul>
 <li><a href="index.php?loc=submenu&amp;menu=oggetti"><?php echo $lang['Oggetti']; ?></a><ul>
