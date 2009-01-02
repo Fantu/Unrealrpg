@@ -7,8 +7,9 @@ class Menu{
 	private $dati=array(
 	'situazione'=>'Situazione',
 	'citta'=>array('banca'=>'Banca','tempio'=>'Tempio','mercato'=>'Mercato','locanda'=>'Locanda','municipio'=>'Municipio'),
-	'lavori'=>array('miniera'=>'Miniera','rocca'=>'Rocca_arcano','libro'=>'Libro_incantesimi'),
-	'regno'=>array('miniera'=>'Miniera','rocca'=>'Rocca_arcano','libro'=>'Libro_incantesimi'),
+	'lavori'=>array('miniera'=>'Miniera','laboratorio'=>'Laboratorio','fucina'=>'Fucina'),
+	'magia'=>array('rocca'=>'Rocca_arcano','libro'=>'Libro_incantesimi'),
+	'regno'=>'regno',
 	'combact'=>'Combattimenti',
 	
 	);
