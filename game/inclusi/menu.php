@@ -6,11 +6,15 @@ class Menu{
 	public $sezioni;
 	private $dati=array(
 	'situazione'=>'Situazione',
-	'citta|Citta'=>array('banca'=>'Banca','tempio'=>'Tempio','mercato'=>'Mercato','locanda'=>'Locanda','municipio'=>'Municipio')
+	'citta'=>array('banca'=>'Banca','tempio'=>'Tempio','mercato'=>'Mercato','locanda'=>'Locanda','municipio'=>'Municipio'),
+	'lavori'=>array('miniera'=>'Miniera','rocca'=>'Rocca_arcano','libro'=>'Libro_incantesimi'),
+	'regno'=>array('miniera'=>'Miniera','rocca'=>'Rocca_arcano','libro'=>'Libro_incantesimi'),
+	'combact'=>'Combattimenti',
+	
 	);
 	private $menu;
 	
-	public function View(){//genera e restituisce la visualizzazione del menu
+	/*public function View(){//genera e restituisce la visualizzazione del menu
 		foreach($this->dati as $chiave=>$elemento){
 		if(is_array($elemento)){
 		$this->Mv($chiave);
@@ -25,6 +29,28 @@ class Menu{
 		}//se non è array
 		}//per dato
 		return $this->menu;
+	}*/
+	
+	function __construct() {
+		foreach($this->dati as $chiave=>$elemento){
+		if(is_array($elemento)){
+		foreach($elemento as $chiave2=>$elemento2){
+		$this->sezioni[]=$chiave2;
+		}//per ogni elemento dell'array
+		}else{//se è un array
+		$this->sezioni[]=$chiave;
+		}//se non è array
+		}//per dato
+	}
+	
+	public function View($tipo,$dato){//genera e restituisce la visualizzazione del menu
+		$this->menu='';//azzera eventuale precedente
+		if($tipo=='v'){
+		$this->Sv($dato,$this->dati[$dato]);
+		}elseif($tipo=='m'){
+		$this->Mv($dato);
+		}
+		echo $this->menu;
 	}
 	
 	private function Sv($n,$l){//genera un valore singolo
@@ -34,8 +60,7 @@ class Menu{
 	
 	private function Mv($s){//genera un sottomenu
 		global $lang;
-		$v=explode("|",$s);
-		$this->menu.='<ul><li><a href="index.php?loc=submenu&amp;menu='.$v[0].'">'.$lang[$v[1]].'</a><ul>';
+		$this->menu.='<ul><li><a href="index.php?loc=submenu&amp;menu='.$s.'">'.$lang[$s].'</a><ul>';
 		foreach($this->dati[$s] as $chiave=>$elemento){
 		$this->menu.='<li>';
 		$this->Sv($chiave,$elemento);

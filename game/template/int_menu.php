@@ -4,7 +4,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	exit();
 }?>
 <div id="menu">
-<?php echo $menu->View(); ?>
+<?php $menu->View('s','situazione'); ?>
 <a href="index.php?loc=situazione"><?php echo $lang['Situazione']; ?></a>
 <ul>
 <li><a href="index.php?loc=submenu&amp;menu=citta"><?php echo $lang['Citta']; ?></a><ul>

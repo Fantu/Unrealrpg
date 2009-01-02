@@ -18,14 +18,15 @@ $lang['Rocca_arcano']='Rocca dell`Arcano';
 $lang['Libro_incantesimi']='Libro degli incantesimi';
 $lang['Combattimenti']='Combattimenti';
 $lang['Equipaggiamento']='Equipaggiamento';
-$lang['Lavori']='Lavori';
+$lang['lavori']='Lavori';
 $lang['Magia']='Magia';
 $lang['Informazioni']='Informazioni';
 $lang['Oggetti']='Oggetti';
-$lang['Citta']='Città';
+$lang['citta']='Città';
 $lang['Locanda']='Locanda';
 $lang['Confini']='Confini';
 $lang['Municipio']='Municipio';
+$lang['regno']='regno';
 //fine menu
 
 //inizio razze
