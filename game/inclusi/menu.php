@@ -20,15 +20,6 @@ class Menu{
 	);
 	private $menu;
 	
-	public function Sm($sm){//genera e restituisce i dati del sottomenu di testo
-		foreach($this->dati[$sm] as $chiave=>$elemento){
-		$this->menu='';//azzera eventuale precedente
-		$this->Sv($chiave,$elemento);
-		$link[]=$this->menu;
-		}//per dato
-		return $link;
-	}
-	
 	function __construct() {
 		foreach($this->dati as $chiave=>$elemento){
 		if(is_array($elemento)){
@@ -39,6 +30,15 @@ class Menu{
 		$this->sezioni[]=$chiave;
 		}//se non è array
 		}//per dato
+	}
+	
+	public function Sm($sm){//genera e restituisce i dati del sottomenu di testo
+		foreach($this->dati[$sm] as $chiave=>$elemento){
+		$this->menu='';//azzera eventuale precedente
+		$this->Sv($chiave,$elemento);
+		$link[]=$this->menu;
+		}//per dato
+		return $link;
 	}
 	
 	public function View($tipo,$dato){//genera e restituisce la visualizzazione del menu
