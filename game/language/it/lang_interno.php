@@ -20,13 +20,13 @@ $lang['Combattimenti']='Combattimenti';
 $lang['Equipaggiamento']='Equipaggiamento';
 $lang['lavori']='Lavori';
 $lang['magia']='Magia';
-$lang['Informazioni']='Informazioni';
-$lang['Oggetti']='Oggetti';
+$lang['info']='Informazioni';
+$lang['oggetti']='Oggetti';
 $lang['citta']='Città';
 $lang['Locanda']='Locanda';
 $lang['Confini']='Confini';
 $lang['Municipio']='Municipio';
-$lang['regno']='regno';
+$lang['regno']='Regno';
 //fine menu
 
 //inizio razze

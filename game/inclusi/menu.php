@@ -11,7 +11,12 @@ class Menu{
 	'magia'=>array('rocca'=>'Rocca_arcano','libro'=>'Libro_incantesimi'),
 	'regno'=>array('confini'=>'Confini'),
 	'combact'=>'Combattimenti',
-	
+	'oggetti'=>array('inventario'=>'Inventario','equipaggiamento'=>'Equipaggiamento'),
+	'messaggi'=>'Messaggi',
+	'utenti'=>'Lista_utenti',
+	'info'=>array('guida'=>'Guida','changelog'=>'Changelog'),
+	'opzioni'=>'Opzioni',
+	'logout'=>'Logout'
 	);
 	private $menu;
 	
