@@ -51,6 +51,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 				if($ue['n']>0){
 				$ue=$db->QuerySelect("SELECT userid FROM cacheuserid WHERE data<'".($adesso-5184000)."' LIMIT 1");
 				$db->QueryMod("INSERT INTO utenti (userid,username,password,codice,email,dataiscrizione,ipreg,ultimazione,refer,refertime,ultimologin,mailnews) VALUES ('".$ue['userid']."','".$username."','".$pass."','".$cod."','".$_POST['email']."','".$adesso."','".$ip."','".$adesso."','".$refer."','".$refertime."','".$adesso."','".$newsletter."')");
+				$db->QueryMod("DELETE FROM cacheuserid WHERE userid='".$ue['userid']."'");
 				}else{//fine se si prende userid reciclato
 				$db->QueryMod("INSERT INTO utenti (username,password,codice,email,dataiscrizione,ipreg,ultimazione,refer,refertime,ultimologin,mailnews) VALUES ('".$username."','".$pass."','".$cod."','".$_POST['email']."','".$adesso."','".$ip."','".$adesso."','".$refer."','".$refertime."','".$adesso."','".$newsletter."')");
 				}//se non si prende userid reciclato
