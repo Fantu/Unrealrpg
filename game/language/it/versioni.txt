@@ -14,7 +14,7 @@ Legenda:<br />
 + Rifatti i sistemi riguardanti il menu<br />
 + Vari miglioramenti di sistema a sistema di base interno<br />
 </p>
-<p><strong>0.7.16.2</strong> (06/01/09 - Beta)<br />
+<p><strong>0.7.16.2</strong> (20/01/09 - Beta)<br />
 - Corretto un bug nell`attivazione<br />
 </p>
 <p><strong>0.7.16.1</strong> (06/01/09 - Beta)<br />
