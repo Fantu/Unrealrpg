@@ -37,12 +37,6 @@ echo $lang['Informazioni_sui_server']; ?>
 <p id="tempogenpag">
 <?php echo $page_gen; ?>
 </p><br />
-<script type="text/javascript">
-<!--
-var uri = 'http://imp.tradedoubler.com/imp?type(js)pool(274958)a(1316148)' + new String (Math.random()).substring (2, 11);
-document.write('<sc'+'ript type="text/javascript" src="'+uri+'" charset="ISO-8859-1"></sc'+'ript>');
-//-->
-</script>
 </div>
 </body>
 </html>
