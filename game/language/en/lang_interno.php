@@ -18,14 +18,15 @@ $lang['Rocca_arcano']='Mage tower';
 $lang['Libro_incantesimi']='Spellbook';
 $lang['Combattimenti']='Fightings';
 $lang['Equipaggiamento']='Equipment';
-$lang['Lavori']='Work';
-$lang['Magia']='Magic';
-$lang['Informazioni']='Information';
-$lang['Oggetti']='Objects';
-$lang['Citta']='City';
+$lang['lavori']='Work';
+$lang['magia']='Magic';
+$lang['info']='Information';
+$lang['oggetti']='Objects';
+$lang['citta']='City';
 $lang['Locanda']='Inn';
 $lang['Confini']='Borders';
 $lang['Municipio']='City Hall';
+$lang['regno']='Kingdom';
 //fine menu
 
 //inizio razze
@@ -95,8 +96,8 @@ $lang['eventi_dettagli5']='You are working at the Old Mine,you`ll finish at ';
 $lang['eventi_dettagli6']='You are working at the Forge as apprentice,you`ll finish at ';
 $lang['eventi_dettagli7']='You are working at the Laboratory as alchemist,you`ll finish at ';
 $lang['eventi_dettagli8']='You are studying at the Mage Tower,you`ll finish at ';
-$lang['eventi_dettagli9']='Stai lavorando in Fucina come fabbro e finirai ';
-$lang['eventi_dettagli10']='Stai facendo pratica in Rocca dell`Arcano e finirai ';
+$lang['eventi_dettagli9']='You are working at the Forge as smith,you`ll finish at ';
+$lang['eventi_dettagli10']='You are pratice at the Mage Tower,you`ll finish at ';
 $lang['eventi_dettagli11']='You have launched a challenge and you are waiting a response in ';
 $lang['eventi_dettagli12']='You were challanged and you must give a response in ';
 $lang['eventi_dettagli13']='You are fighting';
@@ -122,11 +123,11 @@ $lang['utente_inesistente']='User not exist';
 
 //inizio funz_ogg
 $lang['oggetto_usurato']='%s, object usered or worn out.';
-$lang['oggetto_rotto']='%s, object broken';
+$lang['oggetto_rotto']='%s, object broken.';
 $lang['nessuno_gettato']='No object has been thrown away.';
-$lang['errore_sistema_utilizzo_ogg']='Errore di sistema: impossibile utilizzare %s!';
-$lang['utilizzato_4_1']='Utilizzato %s e recuperato %s di salute';
-$lang['utilizzato_4_2']='Utilizzato %s e recuperato %s di energia';
+$lang['errore_sistema_utilizzo_ogg']='System error: It`s impossible to use %s!';
+$lang['utilizzato_4_1']='Used %s and recovered %s of health';
+$lang['utilizzato_4_2']='Used %s and recovered %s of energy';
 $lang['Rame']='Copper';
 $lang['Ferro']='Iron';
 $lang['Acciaio']='Steel';
@@ -142,18 +143,18 @@ $lang['Scudo']='Shield';
 //fine funz_ogg
 
 //inizio errori globali
-$lang['global_errore1']='- Stai facendo altro!<br />';
+$lang['global_errore1']='- You`re doing something else!<br />';
 $lang['global_errore2']='- The work hours must be between 1 and 5<br />';
-$lang['global_errore3']='- Economia del regno in crisi<br />';
+$lang['global_errore3']='- Economy of the kingdom in crisis<br />';
 //fine errori globali
 
 //inizio mail cancellazione/inattività
 $lang['Account_cancellato']='Account deleted';
 $lang['Account_inutilizzato']='Account unused';
-$lang['mail_cancellato_noconferma']='Ciao %1$s,<br />Siamo spiacenti di informarti che il tuo account su %2$s, nel regno %3$s è stato cancellato perchè non confermato entro le 48 ore.<br /> Saluti,<br />%2$s Staff.'; //%1$s=username %2$s=nome del gioco %3$s=regno
-$lang['mail_cancellato_nopersonaggio']='Ciao %1$s,<br />Siamo spiacenti di informarti che il tuo account su %2$s, nel regno %3$s è stato cancellato perchè non è stato creato un personaggio entro le 72 ore.<br /> Saluti,<br />%2$s Staff.'; //%1$s=username %2$s=nome del gioco %3$s=regno
-$lang['mail_avviso_inattivita']='Ciao %1$s,<br />Ti scriviamo per informarti che il tuo account su %2$s, nel regno %3$s risulta inattivo da più di 2 settimane.<br />Se questa inattività dovesse raggiungere i 30 giorni, l`account verrà automaticamente cancellato dal sistema.<br />Saluti,<br />%2$s Staff.'; //%1$s=username %2$s=nome del gioco %3$s=regno
-$lang['mail_cancellato_inattivita']='Ciao %1$s,<br />Siamo spiacenti di informarti che il tuo account su %2$s, nel regno %3$s è stato cancellato perchè inattivo da oltre 30 giorni.<br />Saluti,<br />%2$s Staff.'; //%1$s=username %2$s=nome del gioco %3$s=regno
+$lang['mail_cancellato_noconferma']='Hi %1$s,<br />We are sorry to tell you that your account on %2$s, on kingdom %3$s has been deleted because it hasn`t been confirmed in 48 hours.<br />Regards,<br />%2$s Staff.';
+$lang['mail_cancellato_nopersonaggio']='Hi %1$s,<br />We are sorry to tell you that your account on %2$s, on kingdom %3$s has been deleted because no character has been created in 72 hours.<br />Regards,<br />%2$s Staff.';
+$lang['mail_avviso_inattivita']='Hi %1$s,<br />We are writing  this mail to inform you that your account on %2$s, on kingdom %3$s is inactive from 2 weeks.<br />If this inactivity reaches the 30 days, your account will be deleted from the system.<br />Regards,<br />%2$s Staff.';
+$lang['mail_cancellato_inattivita']='Hi %1$s,<br />We are sorry to tell you that your account on %2$s, on kingdom %3$s has been deleted for 30 days inactivity.<br />Regards,<br />%2$s Staff.';
 //fine errori cancellazione/inattività
 
 //inizio libro
@@ -162,31 +163,31 @@ $lang['appreso']='Learn';
 //fine libro
 
 //inizio archivio report
-$lang['archivio_report']='Archivio report';
-$lang['desc_archivio_report']='Qui sono presente tutti i report dei tuoi combattimenti attualmente presenti in archivio (degli ultimi 7 giorni).';
-$lang['nessun_report_presente']='Nessun report presente attualmente.';
-$lang['combact_avvenuto']='Combattimento contro %s avvenuto ';
+$lang['archivio_report']='Archive report';
+$lang['desc_archivio_report']='Here are all of the fighting report in the database (the last 7 days).';
+$lang['nessun_report_presente']='No report.';
+$lang['combact_avvenuto']='Combat against %s occurred ';
 //fine archivio report
 
 $lang['outputerrori']='The following errors have occurred:';
-$lang['outputerrori_continualav']='Non è stato possibile continuare a lavorare per i seguenti motivi:';
-$lang['Impossibile_lavorare_ancora']='Impossibile lavorare ancora!';
-$lang['nessun_evento']='Nessun evento in corso.';
+$lang['outputerrori_continualav']='You weren\'t able to go on working due to the following reasons:';
+$lang['Impossibile_lavorare_ancora']='It is impossible to work another time!';
+$lang['nessun_evento']='No events in progress.';
 $lang['Stato']='Status';
 $lang['Adesso']='Now';
 $lang['Indietro']='Back';
 $lang['dataora']='\i\l \g\i\o\r\n\o d/m/y \a\l\l\e \o\r\e H:i';
-$lang['tempo_gen_pagina']='Tempo di generazione della pagina: %1$s secondi - Query eseguite: %2$s';// %1$s=secondi %2$s=query
+$lang['tempo_gen_pagina']='Page loaded in: %1$s seconds - Done queries : %2$s';
 $lang['Annulla']='Cancel';
-$lang['seleziona_ore_lavoro']='Seleziona quante ore:';
+$lang['seleziona_ore_lavoro']='Choose how many hours:';
 $lang['ore_in_coda']='(%s hours remaining)';
 $lang['nessuno']='Nobody';
-$lang['sfida']='Sfida';
+$lang['sfida']='Challenge';
 $lang['Accetta']='Accept';
 $lang['Rifiuta']='Reject';
 $lang['usura_attuale']='Actual usury: ';
 $lang['criminale_attacca_guardia']='%s during the patrol sight a criminal and attack him';
 $lang['criminale_attacca_utente']='A criminal attack %s';
-$lang['criminale_attacca_regno']='Un criminale fa danni/saccheggi nel regno per un totale di %s monete';
+$lang['criminale_attacca_regno']='A criminal damage/looting in the kingdom for a total of %s coins';
 $lang['leggi_changelog_interi']='To read the complete changelog more updated of the entire project click %s here %s';
 ?>

@@ -1,7 +1,7 @@
 <?php
 $lang['depositare']='You can deposit your money in Bank where they`ll be in safety';
 $lang['prelevare']='You can draw money from your Bank account';
-$lang['quanto_depositare']='Insert the number of money (that) you will deposit';
+$lang['quanto_depositare']='Inserisci il numero di monete che vuoi depositare:';
 $lang['Deposita']='Deposit';
 $lang['quanto_prelevare']='Insert the number of coins you want to withdraw';
 $lang['Preleva']='Withdraw';
@@ -16,7 +16,7 @@ $lang['banca_errore8']='- You can\'t ask a so high quantity of coins but max: %s
 $lang['banca_errore9']='- You haven\'t enought coins on your deposit account to buy a ticket!<br />';
 $lang['banca_errore10']='- Possiedi già un biglietto!';
 $lang['saldo_conto']='Il saldo attuale del tuo conto corrisponde a:';
-$lang['saldo_utente']='The pieces (that) you have with you are:';
+$lang['saldo_utente']='Le monete che hai con te sono:';
 $lang['info_interessi']='La Banca paga gli interessi sulle monete depositate sul conto del 2% al giorno fino ad un massimo di 50 monete, la prossima volta sarà ';
 $lang['desc_prestito']='You can ask a loan from the bank for a max of 100 coins for every level of the characters. The interest on the loan is fixed to 10% more 10% every week that pass from the asking of the loan.';
 $lang['quanto_prestito_chiedere']='Insert here the amount of money you want to ask for:';
