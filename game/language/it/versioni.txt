@@ -10,7 +10,7 @@ Legenda:<br />
 + Iniziata creazione log degli utenti<br />
 + Iniziata creazione log di sistema (per loggare parti che generano errori o imprevisti di cui non si capisce quale è il problema o dove è)<br />
 </p>
-<p><strong>0.7.17</strong> (Rilascio imminente - Pronta)<br />
+<p><strong>0.7.17</strong> [R.1980] (05/02/09 - Beta)<br />
 + Rifatto il sistema query in modo migliore e più efficente<br />
 + Migliorato il danno in combattimento<br />
 + Rifatti i sistemi riguardanti il menu<br />
