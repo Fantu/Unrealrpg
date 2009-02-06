@@ -10,7 +10,7 @@ if($_COOKIE['urbglanguage']){
 $language=htmlspecialchars($_COOKIE['urbglanguage'],ENT_QUOTES);
 $link="index_".$language.".php";
 if($_GET['error']){
-$errore=(int)$_GET['error'];
+$errore=$_GET['error'];
 $errore="?error=".$errore;
 }
 if(file_exists($link)){

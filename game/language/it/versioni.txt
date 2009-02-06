@@ -10,6 +10,7 @@ Legenda:<br />
 + Iniziato il rifacimento dei sistemi riguardanti gli incantesimi<br />
 + Iniziata creazione log degli utenti<br />
 + Iniziata creazione log di sistema (per loggare parti che generano errori o imprevisti di cui non si capisce quale è il problema o dove è)<br />
++ Vari miglioramenti di sistema a sistema di base esterno<br />
 </p>
 <p><strong>0.7.17.1</strong> (06/02/09 - Beta)<br />
 - Corretto un bug nella cancellazione<br />

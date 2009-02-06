@@ -48,6 +48,9 @@ break;
 case 16:
 $msg=$lang['ext_error16'];
 break;
+default:
+$msg=$lang['error_unknown'];
+break;
 }
 if($msg)
 	echo "<script language=\"javascript\"> alert('$msg'); </script>";

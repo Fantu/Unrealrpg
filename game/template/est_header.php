@@ -39,7 +39,7 @@ if(preg_match("/MSIE/",$_SERVER['HTTP_USER_AGENT']) AND ($pagina=="home")){ ?>
 <tr>
 <td>
 <center><h1>
-<?php echo $game_name; echo" "; echo $game_version; echo" "; echo $game_revision; ?>
+<?php echo $game_name." ".$game_version." ".$game_revision; ?>
 </h1></center>
 <span><?php echo $lang['Login']; ?></span><br />
 		<form action="game/login.php" method="post" name="formlogin">
