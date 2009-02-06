@@ -21,7 +21,7 @@ $messaggio=sprintf($lang['mail_cancellato_nopersonaggio'],$chi['username'],$game
 $email=new Email(1,$chi['email'],$lang['Account_cancellato'],$messaggio);
 $db->QueryMod("DELETE FROM utenti WHERE userid='".$chi['userid']."'");
 $db->QueryMod("INSERT INTO cacheuserid (userid,data) VALUES ('".$chi['userid']."','".$adesso."')");
-$db->QueryMod("UPDATE config SET utenti=utenti-'1' WHERE id='".$chi['server']."'");
+$db->QueryMod("UPDATE config SET utenti=utenti-'1' LIMIT 1");
 }//cancellazione senza personaggio
 $tempo=$adesso-1209600;
 $dacanc=$db->QuerySelect("SELECT count(userid) AS id FROM utenti WHERE ultimologin<'".$tempo."' AND avvinattivo<'".$adesso."' AND vacanza<'1'");
@@ -42,7 +42,7 @@ $messaggio=sprintf($lang['mail_cancellato_inattivita'],$chi['username'],$game_na
 $email=new Email(1,$chi['email'],$lang['Account_cancellato'],$messaggio);
 $db->QueryMod("DELETE FROM utenti WHERE userid='".$chi['userid']."'");
 $db->QueryMod("INSERT INTO cacheuserid (userid,data) VALUES ('".$chi['userid']."','".$adesso."')");
-$db->QueryMod("UPDATE config SET utenti=utenti-'1' WHERE id='".$chi['server']."'");
+$db->QueryMod("UPDATE config SET utenti=utenti-'1' LIMIT 1");
 $db->QueryMod("DELETE FROM caratteristiche WHERE userid='".$chi['userid']."'");
 $db->QueryMod("DELETE FROM banca WHERE userid='".$chi['userid']."'");
 $db->QueryMod("DELETE FROM inoggetti WHERE userid='".$chi['userid']."'");
