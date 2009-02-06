@@ -7,8 +7,8 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title><?php echo $game_name." ".$game_version; ?></title>
+<title><?php echo $game_name." ".$game_state; ?></title>
 <?php include('inclusi/meta.php'); ?>
-<link href="template/stile.css?version=<?php echo $game_revision; ?>" rel="stylesheet" type="text/css" title="all"></link>
+<link href="template/stile.css?version=<?php echo $game_version; ?>" rel="stylesheet" type="text/css" title="all"></link>
 </head>
 <body>

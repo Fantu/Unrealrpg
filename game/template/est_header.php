@@ -7,9 +7,9 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title><?php echo $game_name." ".$game_version." ".$game_revision; ?></title>
+<title><?php echo $game_name." ".$game_state." ".$game_version; ?></title>
 <?php include('game/inclusi/meta.php'); ?>
-<link href="game/template/stile.css?version=<?php echo $game_revision; ?>" rel="stylesheet" type="text/css" title="all"></link>
+<link href="game/template/stile.css?version=<?php echo $game_version; ?>" rel="stylesheet" type="text/css" title="all"></link>
 <script type="text/javascript">
 <!--
 function CambiaImg(id,bool) {
@@ -39,7 +39,7 @@ if(preg_match("/MSIE/",$_SERVER['HTTP_USER_AGENT']) AND ($pagina=="home")){ ?>
 <tr>
 <td>
 <center><h1>
-<?php echo $game_name." ".$game_version." ".$game_revision; ?>
+<?php echo $game_name." ".$game_state." ".$game_version; ?>
 </h1></center>
 <span><?php echo $lang['Login']; ?></span><br />
 		<form action="game/login.php" method="post" name="formlogin">

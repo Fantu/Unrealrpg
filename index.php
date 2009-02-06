@@ -22,7 +22,7 @@ exit();}
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title><?php echo $game_name; echo" "; echo $game_version; echo" "; echo $game_revision; ?></title>
+<title><?php echo $game_name." ".$game_state." ".$game_version; ?></title>
 <meta name="author" content="Fantoni Fabio"></meta>
 <meta name="language" content="it,en"></meta>
 <meta name="revisit-after" content="7 days"></meta>
@@ -44,7 +44,7 @@ function CambiaImg(id,bool) {
 <body>
 <div align="center">
 <h1>
-<?php echo $game_name; echo" "; echo $game_version; echo" "; echo $game_revision; ?>
+<?php echo $game_name." ".$game_state." ".$game_version; ?>
 <br />
 <?php foreach($game_language as $chiave=>$elemento) 
 echo "<br /><br /><a href=\"index_".$chiave.".php\">".$elemento."</a>" ?>

@@ -13,7 +13,7 @@ $dbsalvati.=" ".$chiave;
 }//per ogni regno
 
 
-$prefix="Backupdb-".$game_version;
+$prefix="Backupdb-".$game_state;
 $allegato=$prefix."-".date('Y_m_d').".tgz";
 $pallegato=$path.$allegato;
 $tar="tar cvzf ".$pallegato." ".$path."*";
@@ -26,7 +26,7 @@ unlink($sqlfile);
 
 error_reporting(E_ALL);
 
-$oggetto=$game_name." - ".$game_version." DB Backup ".date('d/m/Y');
+$oggetto=$game_name." - ".$game_state." DB Backup ".date('d/m/Y');
 $mail="server@lostage.it";
 $contenuto="Backup db:".$dbsalvati;
 

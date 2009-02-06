@@ -8,7 +8,7 @@ foreach($game_server as $chiave=>$elemento){
 if($chiave!=999){
 $db->Setdb($chiave);
 $check=$db->QuerySelect("SELECT version FROM config WHERE id=".$chiave);
-if($check['version']!=$newversion AND $newversion==$game_revision){
+if($check['version']!=$newversion AND $newversion==$game_version){
 
 $db->QueryMod("UPDATE `pcpudata` SET `salute` = '105',`energia` = '1050',`eqpoz` = '0' WHERE `pcpudata`.`id` =8 LIMIT 1");
 
