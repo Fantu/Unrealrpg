@@ -5,7 +5,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 }?>
 <center><h2><?php echo $lang['Libro_incantesimi']; ?></h2></center><br />
 <?php
-if($semagie!=1){echo $lang['nessuna_magia_presente'];}else{
+if($semagie!=1){echo "<center>".$lang['nessuna_magia_presente']."</center>";}else{
 foreach($elementi as $chiaveel=>$elementoel){
 if(is_array($outputmagie[$elementoel])){
 echo "<br />".$elementoel."<br />";

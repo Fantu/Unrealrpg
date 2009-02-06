@@ -6,7 +6,8 @@ Legenda:<br />
 # Modifiche<br />
 - Correzione bug e patch di situazioni non previste<br />
 </p>
-<p><strong>0.7.18</strong> (Non disponibile - In sviluppo)<br />
+<p><strong>0.8.0</strong> (Non disponibile - In sviluppo)<br />
++ Iniziato il rifacimento dei sistemi riguardanti gli incantesimi<br />
 + Iniziata creazione log degli utenti<br />
 + Iniziata creazione log di sistema (per loggare parti che generano errori o imprevisti di cui non si capisce quale è il problema o dove è)<br />
 </p>
