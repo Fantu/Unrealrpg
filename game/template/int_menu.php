@@ -17,6 +17,6 @@ $menu->View('m','regno'); ?>
 $menu->View('v','utenti');
 $menu->View('m','info');
 $menu->View('v','opzioni'); ?>
-<a href="http://www.lostgames.net/forum/forumdisplay.php?f=33" target="_blank">Forum</a>
+<ul><li><a href="#">Link</a><ul><li><a href="http://www.lostgames.net/forum/forumdisplay.php?f=33" target="_blank">Forum</a></li><li><a href="http://fantu.eu:8080" target="_blank">Traduzione</a></li><li><a href="http://fantu.eu/bugtracker" target="_blank">Bugs/Richieste</a></li></ul></li></ul>
 <?php $menu->View('v','logout'); ?>
 </div>
