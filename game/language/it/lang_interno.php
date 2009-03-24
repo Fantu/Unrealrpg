@@ -27,6 +27,9 @@ $lang['Locanda']='Locanda';
 $lang['Confini']='Confini';
 $lang['Municipio']='Municipio';
 $lang['regno']='Regno';
+$lang['Link']='Collegamenti';
+$lang['Traduzione']='Traduzione';
+$lang['Bugtracker']='Errori/Richieste';
 //fine menu
 
 //inizio razze
