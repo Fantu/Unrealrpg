@@ -17,7 +17,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <br />
 <table border="1" cellspacing="2" cellpadding="2" align="center">
   <tr>
-    <td><?php echo $lang['Personaggio']; ?></td>
+    <td><?php echo $lang['Nome']; ?></td>
     <td><?php echo $lang['Stato']; ?></td>
     <td><?php echo $lang['Livello']; ?></td>
   </tr>
@@ -63,7 +63,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <br />
 <table border="1" cellspacing="2" cellpadding="2" align="center">
   <tr>
-    <td><a href="index.php?loc=utenti&amp;ordine=personaggio"><?php echo $lang['Personaggio']; ?></a></td>
+    <td><a href="index.php?loc=utenti&amp;ordine=personaggio"><?php echo $lang['Nome']; ?></a></td>
     <td><a href="index.php?loc=utenti&amp;ordine=stato"><?php echo $lang['Stato']; ?></a></td>
     <td><a href="index.php?loc=utenti&amp;ordine=livello"><?php echo $lang['Livello']; ?></a></td>
   </tr>

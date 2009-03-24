@@ -1,6 +1,5 @@
 <?php
 $lang['nessun_oggetto_esistente']='Nessun oggetto è presente, attualmente.';
-$lang['Nome']='Nome';
 $lang['Costo']='Costo';
 $lang['Compra']='Acquista';
 $lang['Quanti']='Quantità';

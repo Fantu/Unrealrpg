@@ -61,7 +61,7 @@ $lang['desc_berserk']='Descrizione Berserk';
 //fine classi
 
 //inizio caratteristiche
-$lang['Personaggio']='Personaggio';
+$lang['Nome']='Nome';
 $lang['Razza']='Razza';
 $lang['Classe']='Classe';
 $lang['Livello']='Livello';

@@ -17,7 +17,7 @@ echo "<span><strong>".$lang['comunicazione']."</strong>".$config['comunicazione'
 <?php echo $event; ?><br />
 </div>
 <br />
-<?php echo $lang['Personaggio']; ?>: <?php echo $user['username']; ?><br />
+<?php echo $lang['Nome']; ?>: <?php echo $user['username']; ?><br />
 <?php echo $lang['Razza']; ?>: <?php echo $razze['nome'][$usercar['razza']]; ?><br />
 <?php echo $lang['Classe']; ?>: <?php echo $classi['nome'][$usercar['classe']]; ?><br />
 <?php echo $lang['Sesso']; ?>: <?php echo $sessi['nome'][$usercar['sesso']]; ?><br />
