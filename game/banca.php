@@ -4,8 +4,9 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	exit();
 }
 require('language/'.$language.'/lang_banca.php');
+$tempolotteria=259200;//impostare qui la distanza fra le estrazioni, adesso 3 giorni
 if($config['lotteria']==0){$db->QueryMod("UPDATE config SET lotteria='".$adesso."'");}else{
-if(($config['lotteria']+172800)<$adesso){
+if(($config['lotteria']+$tempolotteria)<$adesso){
 $partecipanti=$db->QuerySelect("SELECT COUNT(userid) AS num FROM banca WHERE lotteria>0");
 if($partecipanti['num']>0){
 $estratto=0;
@@ -134,8 +135,7 @@ if($userbank['conto']<1)
 $errore.=$lang['banca_errore9'];
 if($userbank['lotteria']>0)
 $errore.=$lang['banca_errore10'];
-if($errore){
-	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
+if($errore){$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
 else{
 $db->QueryMod("UPDATE banca t1 JOIN caratteristiche t3 on t1.userid=t3.userid SET t1.conto=t1.conto-'1',t1.lotteria='1',t3.energia=t3.energia-'1' WHERE t1.userid='".$user['userid']."'");
 }
@@ -151,7 +151,7 @@ $nomevincitore=$vincitore['username'];}else
 $infovincitore=sprintf($lang['info_vincitore'],$nomevincitore);
 $userbank=$db->QuerySelect("SELECT * FROM banca WHERE userid='".$user['userid']."' LIMIT 1");
 $prestito=$userbank['prestito']+(floor(($userbank['prestito']/100)*(10*$userbank['incprestito'])));
-$proxestrazionedata=date($lang['dataora'],($config['lotteria']+172800));
+$proxestrazionedata=date($lang['dataora'],($config['lotteria']+$tempolotteria));
 $user=$db->QuerySelect("SELECT * FROM utenti WHERE userid='".$user['userid']."' LIMIT 1");
 require('template/int_banca.php');
 ?>

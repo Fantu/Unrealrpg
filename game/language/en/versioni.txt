@@ -13,7 +13,8 @@ Legenda:<br />
 </p>
 <p><strong>0.7.18</strong> (Non disponibile - In sviluppo)<br />
 + Aggiunto il sottomenu Link contenente i collegamenti a forum, sistema di traduzione e bug tracker ed eliminata la voce forum singola<br />
-+ Vari miglioramenti di sistema a sistema di base esterno, sistema query<br />
+# Le estrazioni della lotteria ora sono ogni 3 giorni al posto di 2<br />
++ Vari miglioramenti di sistema a sistema di base esterno, sistema query, Banca<br />
 </p>
 <p><strong>0.7.17.1</strong> (06/02/09 - Beta)<br />
 - Corretto un bug nella cancellazione<br />
