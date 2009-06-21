@@ -31,7 +31,7 @@ class ConnessioniMySQL{
 	}
 
 	private function StampaErroreMysql($query,$err,$mess){
-	$data=date("d/m/y - H:i")." - Db:".$this->database." - ".$query;
+	$data=date("d/m/y - H:i")." - Db:".$this->database." - ".$query." - Location:".$_SERVER['PHP_SELF']."?".$_SERVER['QUERY_STRING'];
 	$fp=fopen(MAIN_PATH.$this->errorlog,"a+");
 	fputs($fp,$data."\r\n--------\r\n".$err.": ".$mess."\r\n\r\n");
 	fclose($fp);
@@ -44,6 +44,13 @@ class ConnessioniMySQL{
 		$var=mysql_fetch_array($result);
 		if(!$var){$this->StampaErroreMysql($query,mysql_errno(),mysql_error());}
 		}//se query esatta
+		return $var;
+	}
+	public function QuerySelectC($query){//$var=$db->QuerySelect("SELECT * FROM table");
+		$result=mysql_query($query,$this->connect);
+		$this->nquery++;
+		$var=mysql_fetch_array($result);
+		if(mysql_errno()>0){$this->StampaErroreMysql($query,mysql_errno(),mysql_error());}
 		return $var;
 	}
 	public function QueryMod($query){//$db->QueryMod("UPDATE table SET colonna='1'");
