@@ -53,8 +53,6 @@ class ConnessioniMySQL{
 		$result=mysql_query($query,$this->connect);
 		$this->nquery++;
 		if(!$result){$this->StampaErroreMysql($query,mysql_errno(),mysql_error());}
-		$var=mysql_fetch_array($result);
-		if(!$var){$this->StampaErroreMysql($query,mysql_errno(),mysql_error());}
 		return $result;
 	}
 	public function QueryCicloResult($result){//while($var=$db->QueryCicloResult($guarda_bene)) -- collegata a quella di sopra
