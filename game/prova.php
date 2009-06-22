@@ -3,7 +3,7 @@ require('inclusi/valori.php');
 require_once('inclusi/funzioni_db.php');
 $db=new ConnessioniMySQL();
 $db->Setdb(999);
-$query=$db->QueryCiclo("SELECT * FROM utenti");
+$query=$db->QueryCiclo("SELECT * FROM utenti WHERE vacanza='1'");
 while($rec=$db->QueryCicloResult($query)){
 echo $rec['username']."<br/>";
 }
