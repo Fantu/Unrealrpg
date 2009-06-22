@@ -13,6 +13,7 @@ Legenda:<br />
 </p>
 <p><strong>0.7.18</strong> (Non disponibile - In sviluppo)<br />
 + Aggiunto il sottomenu Link contenente i collegamenti a forum, sistema di traduzione e bug tracker ed eliminata la voce forum singola<br />
+# Modificata leggermente la probabilità di parata con scudo, resa più equilibrata<br />
 # Le estrazioni della lotteria ora sono ogni 3 giorni al posto di 2<br />
 # Eliminati dai banner i circuiti esterni<br />
 + Vari miglioramenti di sistema a sistema di base esterno, sistema query, Banca<br />

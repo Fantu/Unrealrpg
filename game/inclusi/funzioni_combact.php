@@ -399,7 +399,7 @@ class Dati{
 	}//se il difensore ha armatura
 	$pscudo="";
 	if($this->tattica($dif,1)==3){
-	$probps=rand(0,30);}else{$probps=rand(0,90);}
+	$probps=rand(0,35);}else{$probps=rand(0,100);}
 	if($this->equip($dif,'scu')!=0 AND $probps<20 AND $this->esausto($dif)==0){
 	if($scudo['energia']<=$this->car($dif,'energia')){
 	$pscudo=" ".$lang['parata_con_scudo'].", ";
@@ -532,7 +532,7 @@ class Dati{
 	}//se il difensore ha armatura
 	$pscudo="";
 	if($this->tattica($dif,1)==3){
-	$probps=rand(0,30);}else{$probps=rand(0,90);}
+	$probps=rand(0,35);}else{$probps=rand(0,100);}
 	if($this->equip($dif,'scu')!=0 AND $probps<20 AND $this->esausto($dif)==0){
 	if($scudo['energia']<=$this->car($dif,'energia')){
 	$pscudo=" ".$lang['parata_con_scudo'].", ";
