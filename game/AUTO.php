@@ -17,7 +17,7 @@ $config=$db->QuerySelect("SELECT * FROM config");
 if($config['chiuso']==0){
 require_once('inclusi/controllo_eventi.php');
 Controllaeventi(3);
-$morti=$db->QueryCiclo("SELECT * FROM caratteristiche WHERE saluteattuale<'1'");
+$morti=$db->QueryCiclo("SELECT database FROM caratteristiche WHERE saluteattuale<'1'");
 while($morto=$db->QueryCicloResult($morti)){
 }
 if($config['ottimizzazioni']<$adesso AND $optimize==0){
