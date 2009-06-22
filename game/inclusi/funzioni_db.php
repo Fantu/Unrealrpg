@@ -41,7 +41,6 @@ class ConnessioniMySQL{
 		$this->nquery++;
 		if((!$result AND ($count==0)) OR mysql_errno()>0){$this->StampaErroreMysql($query,mysql_errno(),mysql_error());
 		}else{$var=mysql_fetch_array($result);}
-		}
 		return $var;
 	}
 	public function QueryMod($query){//$db->QueryMod("UPDATE table SET colonna='1'");
