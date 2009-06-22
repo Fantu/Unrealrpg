@@ -39,9 +39,9 @@ class ConnessioniMySQL{
 	public function QuerySelect($query,$count=0){//$var=$db->QuerySelect("SELECT * FROM table");
 		$result=mysql_query($query,$this->connect);
 		$this->nquery++;
-		if(!$result AND ($count==0)) OR mysql_errno()>0){$this->StampaErroreMysql($query,mysql_errno(),mysql_error());
+		if((!$result AND ($count==0)) OR mysql_errno()>0){$this->StampaErroreMysql($query,mysql_errno(),mysql_error());
 		}else{$var=mysql_fetch_array($result);
-		if(!$var AND ($count==0)) OR mysql_errno()>0){$this->StampaErroreMysql($query,mysql_errno(),mysql_error());}
+		}
 		return $var;
 	}
 	public function QueryMod($query){//$db->QueryMod("UPDATE table SET colonna='1'");
