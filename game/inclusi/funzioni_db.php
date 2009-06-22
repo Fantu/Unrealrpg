@@ -52,7 +52,8 @@ class ConnessioniMySQL{
 	public function QueryCiclo($query){//$guarda_bene=$db->QueryCiclo("SELECT * FROM table"); -- collegata a quella di sotto
 		$result=mysql_query($query,$this->connect);
 		$this->nquery++;
-		if(!$result){$this->StampaErroreMysql($query,mysql_errno(),mysql_error());}
+		//if(!$result){$this->StampaErroreMysql($query,mysql_errno(),mysql_error());}
+		$this->StampaErroreMysql($query,mysql_errno(),$result);
 		return $result;
 	}
 	public function QueryCicloResult($result){//while($var=$db->QueryCicloResult($guarda_bene)) -- collegata a quella di sopra
