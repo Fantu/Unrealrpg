@@ -54,7 +54,6 @@ class ConnessioniMySQL{
 		$this->nquery++;
 		//if(!$result){$this->StampaErroreMysql($query,mysql_errno(),mysql_error());}
 		$this->StampaErroreMysql($query,mysql_errno(),mysql_affected_rows());
-		}
 		return $result;
 	}
 	public function QueryCicloResult($result){//while($var=$db->QueryCicloResult($guarda_bene)) -- collegata a quella di sopra
