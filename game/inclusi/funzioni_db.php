@@ -49,11 +49,11 @@ class ConnessioniMySQL{
 		$this->nquery++;
 		if(!$result){$this->StampaErroreMysql($query,mysql_errno(),mysql_error());}
 	}
-	public function QueryCiclo($query){//$guarda_bene=$db->QueryCiclo("SELECT * FROM table"); -- collegata a quella di sotto
+	public function QueryCiclo($query,$count=0){//$guarda_bene=$db->QueryCiclo("SELECT * FROM table"); -- collegata a quella di sotto
 		$result=mysql_query($query,$this->connect);
 		$this->nquery++;
-		//if(!$result){$this->StampaErroreMysql($query,mysql_errno(),mysql_error());}
-		$this->StampaErroreMysql($query,mysql_errno(),mysql_affected_rows());
+		if(!$result){$this->StampaErroreMysql($query,mysql_errno(),mysql_error());}
+		else{if(mysql_affected_rows()==0 AND ($count==0)) $this->StampaErroreMysql($query,mysql_errno(),mysql_error());}
 		return $result;
 	}
 	public function QueryCicloResult($result){//while($var=$db->QueryCicloResult($guarda_bene)) -- collegata a quella di sopra
