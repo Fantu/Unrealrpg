@@ -24,12 +24,12 @@ $lang['restituzione_prestito']='The amount of coins you owe to the bank, interes
 $lang['Restituisci_prestito']='Pay back the loan';
 $lang['Chiedi_prestito']='Ask for a loan';
 $lang['Lotteria']='Lotterìa';
-$lang['desc_lotteria']='La Lotteria è organizzata dalla Banca, dove è possibile acquistare un singolo biglietto per ogni estrazione. Il biglietto ha il costo di 1 moneta, che viene prelevata direttamente dal tuo conto. L`estrazione avviene 1 volta ogni 2 giorni e maggiore è il numero di partecipanti, maggiore sarà il numero di monete in palio,  fino ad un massimo di 100 monete ad estrazione. Il restante montepremi resterà alla Banca a copertura spese.';
+$lang['desc_lotteria']='La Lotteria è organizzata dalla Banca, dove è possibile acquistare un singolo biglietto per ogni estrazione. Il biglietto ha il costo di 1 moneta, che viene prelevata direttamente dal tuo conto. L`estrazione avviene 1 volta ogni 3 giorni e maggiore è il numero di partecipanti, maggiore sarà il numero di monete in palio,  fino ad un massimo di 100 monete ad estrazione. Il restante montepremi resterà alla Banca a copertura spese.';
 $lang['Compra_biglietto']='Buy a ticket';
 $lang['hai_gia_biglietto']='You already have a ticket';
 $lang['info_partecipanti']='L`attuale numero di partecipanti è %s';
 $lang['info_vincitore']='Il vincitore della scorsa estrazione è %s';
 $lang['data_estrazione']='Next extraction will be  ';
 $lang['hai_vinto_lotteria']='You are the winner! Your prize is %s coins.';
-$lang['ha_vinto_alla_lotteria']='%1$s win %2$s coins from the lottery.';
+$lang['ha_vinto_alla_lotteria']='%1$s win %2$s coins from the lottery.';// %1$s=nome del vincitore %2$s=monete vinte
 ?>

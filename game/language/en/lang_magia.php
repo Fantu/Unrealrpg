@@ -16,7 +16,7 @@ $lang['magia6']='MUD';
 $lang['magia7']='FLAME BURST';
 $lang['magia8']='DEFENSIVE FIRE';
 
-$lang['dmagia1']='The wizard throws some water underneath the enemy, unconscious of what\'s happening. Soon he finds himself inside a steam cloud that weakens him.';
+$lang['dmagia1']='The wizard throws some water underneath the enemy, unconscious of what`s happening. Soon he finds himself inside a steam cloud that weakens him.';
 $lang['dmagia2']='A big water bubble wraps the wizard, protecting him from enemies weak attacks.';
 $lang['dmagia3']='A strong wind shot hits the enemy, throwing him at the ground and stunning him for a while.';
 $lang['dmagia4']='A wind wall around the wizard makes the enemy attacks more difficult.';

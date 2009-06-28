@@ -7,13 +7,14 @@ Legenda:<br />
 - Correzione bug e patch di situazioni non previste<br />
 </p>
 <p><strong>0.8.0</strong> (Non disponibile - In sviluppo)<br />
-+ Iniziato il rifacimento dei sistemi riguardanti gli incantesimi<br />
++ Iniziato il rifacimento dei sistemi riguardanti gli incantesimi (attualmente sospeso)<br />
 + Iniziata creazione log degli utenti<br />
 + Iniziata creazione log di sistema (per loggare parti che generano errori o imprevisti di cui non si capisce quale è il problema o dove è)<br />
 </p>
 <p><strong>0.7.18</strong> (Non disponibile - In sviluppo)<br />
 + Aggiunto il sottomenu Link contenente i collegamenti a forum, sistema di traduzione e bug tracker ed eliminata la voce forum singola<br />
 + FS#6 - Aggiunto nella registrazione il doppio inserimento della e-mail per conferma<br />
++ Aggiornati i testi in inglese, traduzione al 63% (608 stringhe su 768)<br />
 # Modificata leggermente la probabilità di parata con scudo, resa più equilibrata<br />
 # Le estrazioni della lotteria ora sono ogni 3 giorni al posto di 2<br />
 # Eliminati dai banner i circuiti esterni<br />

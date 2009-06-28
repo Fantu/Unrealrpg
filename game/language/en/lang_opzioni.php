@@ -8,7 +8,7 @@ $lang['opzioni_error4']='- The new password and its repetition don\'t match.';
 $lang['opzioni_error5']='- The password must be from 6 to 20 characters long.';
 $lang['plus_fino_a']='Account plus active until: ';
 $lang['plus_non_attivo']='Account plus not active.';
-$lang['quanti_punti_plus']='Hai %s punti Plus.';
+$lang['quanti_punti_plus']='You have %s plus points.';
 $lang['desc_attivare_plus_con_punti']='I punti Plus, servono per poter avere un Account Plus per tot. tempo: 3 punti= 1 settimana; 10 punti= 1 mese; 100 punti= 1 anno.';
 $lang['non_puoi_attivare_nessun_plus']='Non hai abbastanza punti per attivare nessun tipo di Account Plus.';
 $lang['attiva_plus_con_punti1']='Attiva Account Plus di 1 settimana';

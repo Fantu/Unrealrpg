@@ -27,6 +27,9 @@ $lang['Locanda']='Inn';
 $lang['Confini']='Borders';
 $lang['Municipio']='City Hall';
 $lang['regno']='Kingdom';
+$lang['Link']='Collegamenti';
+$lang['Traduzione']='Traduzione';
+$lang['Bugtracker']='Errori/Richieste';
 //fine menu
 
 //inizio razze
@@ -58,7 +61,7 @@ $lang['desc_berserk']='Berserk description';
 //fine classi
 
 //inizio caratteristiche
-$lang['Personaggio']='Character';
+$lang['Nome']='Nome';
 $lang['Razza']='Race';
 $lang['Classe']='Class';
 $lang['Livello']='Level';
@@ -151,10 +154,10 @@ $lang['global_errore3']='- Economy of the kingdom in crisis<br />';
 //inizio mail cancellazione/inattività
 $lang['Account_cancellato']='Account deleted';
 $lang['Account_inutilizzato']='Account unused';
-$lang['mail_cancellato_noconferma']='Hi %1$s,<br />We are sorry to tell you that your account on %2$s, on kingdom %3$s has been deleted because it hasn`t been confirmed in 48 hours.<br />Regards,<br />%2$s Staff.';
-$lang['mail_cancellato_nopersonaggio']='Hi %1$s,<br />We are sorry to tell you that your account on %2$s, on kingdom %3$s has been deleted because no character has been created in 72 hours.<br />Regards,<br />%2$s Staff.';
-$lang['mail_avviso_inattivita']='Hi %1$s,<br />We are writing  this mail to inform you that your account on %2$s, on kingdom %3$s is inactive from 2 weeks.<br />If this inactivity reaches the 30 days, your account will be deleted from the system.<br />Regards,<br />%2$s Staff.';
-$lang['mail_cancellato_inattivita']='Hi %1$s,<br />We are sorry to tell you that your account on %2$s, on kingdom %3$s has been deleted for 30 days inactivity.<br />Regards,<br />%2$s Staff.';
+$lang['mail_cancellato_noconferma']='Hi %1$s,<br />We are sorry to tell you that your account on %2$s, on kingdom %3$s has been deleted because it hasn`t been confirmed in 48 hours.<br />Regards,<br />%2$s Staff.'; //%1$s=username %2$s=nome del gioco %3$s=regno
+$lang['mail_cancellato_nopersonaggio']='Hi %1$s,<br />We are sorry to tell you that your account on %2$s, on kingdom %3$s has been deleted because no character has been created in 72 hours.<br />Regards,<br />%2$s Staff.'; //%1$s=username %2$s=nome del gioco %3$s=regno
+$lang['mail_avviso_inattivita']='Hi %1$s,<br />We are writing  this mail to inform you that your account on %2$s, on kingdom %3$s is inactive from 2 weeks.<br />If this inactivity reaches the 30 days, your account will be deleted from the system.<br />Regards,<br />%2$s Staff.'; //%1$s=username %2$s=nome del gioco %3$s=regno
+$lang['mail_cancellato_inattivita']='Hi %1$s,<br />We are sorry to tell you that your account on %2$s, on kingdom %3$s has been deleted for 30 days inactivity.<br />Regards,<br />%2$s Staff.'; //%1$s=username %2$s=nome del gioco %3$s=regno
 //fine errori cancellazione/inattività
 
 //inizio libro
@@ -176,8 +179,8 @@ $lang['nessun_evento']='No events in progress.';
 $lang['Stato']='Status';
 $lang['Adesso']='Now';
 $lang['Indietro']='Back';
-$lang['dataora']='\i\l \g\i\o\r\n\o d/m/y \a\l\l\e \o\r\e H:i';
-$lang['tempo_gen_pagina']='Page loaded in: %1$s seconds - Done queries : %2$s';
+$lang['dataora']='\i\l \g\i\o\r\n\o d/m/y \a\l\l\e \o\r\e H:i';//vedere  http://php.net/date
+$lang['tempo_gen_pagina']='Page loaded in: %1$s seconds - Done queries : %2$s';// %1$s=secondi %2$s=query
 $lang['Annulla']='Cancel';
 $lang['seleziona_ore_lavoro']='Choose how many hours:';
 $lang['ore_in_coda']='(%s hours remaining)';
@@ -186,7 +189,7 @@ $lang['sfida']='Challenge';
 $lang['Accetta']='Accept';
 $lang['Rifiuta']='Reject';
 $lang['usura_attuale']='Actual usury: ';
-$lang['criminale_attacca_guardia']='%s during the patrol sight a criminal and attack him';
+$lang['criminale_attacca_guardia']='%s during the patrol sight a criminal and attack him';// %s=nome della guardia
 $lang['criminale_attacca_utente']='A criminal attack %s';
 $lang['criminale_attacca_regno']='A criminal damage/looting in the kingdom for a total of %s coins';
 $lang['leggi_changelog_interi']='To read the complete changelog more updated of the entire project click %s here %s';

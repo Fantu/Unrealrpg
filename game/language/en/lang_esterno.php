@@ -17,7 +17,7 @@ $lang['Registrati']='Register';
 $lang['outputerrori']='The following errors have occured:';
 $lang['account_creato_ok']='<strong>Account created succesfully!!</strong><br />Before playing you have to confirm the registration by opening the link contained in the email that has been sent to the email address you have inserted.<br />If you can`t find the email try looking in the unwanted mail folder or similar.<br /><br />';
 $lang['Conferma_account']='Confirm account ';
-$lang['testo_mail_conferma']='Hi %1$s,<br />To confirm your registration at %2$s, in the realm %6$s you must open the link below:<br /> <a href="%3$s/conferma.php?t=%4$s&cod=%5$s">Conferma account</a> <br /><br />Until the account will not be confirmed, you can not access the game.<br />Greetings,<br />%2$s Staff';
+$lang['testo_mail_conferma']='Hi %1$s,<br />To confirm your registration at %2$s, in the realm %6$s you must open the link below:<br /> <a href="%3$s/conferma.php?t=%4$s&cod=%5$s">Conferma account</a> <br /><br />Until the account will not be confirmed, you can not access the game.<br />Greetings,<br />%2$s Staff'; //%1$s=username %2$s=nome del gioco %3$s=link base %4$s=regno %5$s=codice %6$s=nome regno
 $lang['altre_lingue']='%s is also available in the following languages: ';
 $lang['disattiva']='Disable';
 $lang['attiva']='Enable';
@@ -28,7 +28,7 @@ $lang['Attivazione_manuale']='Manual activation';
 $lang['Codice']='Code';
 $lang['Desc_attivazione_manuale']='Enter username, select the kingdom and click on manual activation, you\'ll be sent an text-only email containing an alphanumeric code, copy it below, select the kingdom, click on manual activation and will be activated without problems of links separated or modified by the client email and mail a text-only link will come without doubt and without ending up in other folders such as spam and the like.';
 $lang['codice_spedito']='The confirmation code has been sended in a text-only e-mail (without any link) to prevent it from being junked by anti-spam programs, and to be readable by any e-mail client.<br /><br />';
-$lang['testo_mail_codice_conferma']='Hello%3$s, To confirm manually %1$s registration use the following code: %2$s Redards, %1$s Staff';
+$lang['testo_mail_codice_conferma']='Hello%3$s, To confirm manually %1$s registration use the following code: %2$s Redards, %1$s Staff';// %1$s=nome del gioco %2$s=codice %3$s=username
 
 $lang['reg_error1']='- You haven`t selected the kingdom!<br />';
 $lang['reg_error2']='- You haven`t written your username!<br />';
@@ -44,18 +44,21 @@ $lang['reg_error11']='- The username you entered does not exist!<br />';
 $lang['reg_error12']='- The code you entered is not valid!<br />';
 $lang['reg_error13']='- The password does not match its repetition<br />';
 $lang['reg_error14']='- Questo account è già attivo<br />';
+$lang['reg_error15']='- L`indirizzo e-mail non corrisponde alla sua ripetizione<br />';
 
-$lang['ext_error1']='Login failed\\nUsername doesn\'t exist';
-$lang['ext_error2']='Login failed\\nThis account has not yet been confirmed.';
-$lang['ext_error3']='Autentificazione non valida o scaduta\\nNecessario nuovo login.';
-$lang['ext_error4']='Login failed\\nPassword wrong!';
-$lang['ext_error5']='Unable to confirm this account!\\nLink wrong, check and try again.';
-$lang['ext_error6']='Unable to confirm this account!\\nThis account has been already confirmed.';
-$lang['ext_error7']='Account confirmed!\\nNow you can login and play.';
+$lang['ext_error1']='Login fallito\\nUsername inesistente!';
+$lang['ext_error2']='Login fallito\\nQuesto account non è ancora stato confermato.';
+$lang['ext_error3']='Autentificazione non valida o scaduta\nNecessario nuovo login.';
+$lang['ext_error4']='Login fallito\\nPassword errata!';
+$lang['ext_error5']='Impossibile confermare questo account!\\nLink errato, controlla e riprova.';
+$lang['ext_error6']='Impossibile confermare questo account!\\nQuesto account è già stato confermato.';
+$lang['ext_error7']='Account confermato!\\nAdesso puoi entrare e iniziare a giocare.';
 $lang['ext_error8']='You have been blocked for an hour after 5 login attempts failed.';
 $lang['ext_error12']='Server temporarily closed for installation upgrades or maintenance. Please try again later. Thank you.';
-$lang['ext_error13']='Access Denied!\\nYou tried to enter a page reserved for users logged.';
-$lang['ext_error16']='Link broken!\\nPlease follow the link of the game.';
+$lang['ext_error13']='Accesso negato!\\nHai tentato di entrare in una pagina riservata agli utenti loggati.';
+$lang['ext_error16']='Link errato!\\nPer favore, segui i link del gioco.';
+$lang['error_unknown']='Si è verificato un errore sconosciuto';
 
 $lang['help1']='Repeat your password to avoid signing up with an incorrect password';
+$lang['help2']='Ripeti l`indirizzo e-mail per evitare di sbagliarlo';
 ?>
