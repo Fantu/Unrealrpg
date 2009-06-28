@@ -44,6 +44,7 @@ $lang['reg_error11']='- L`username che hai inserito è inesistente!<br />';
 $lang['reg_error12']='- Il codice che hai inserito non è valido!<br />';
 $lang['reg_error13']='- La password non corrisponde alla sua ripetizione<br />';
 $lang['reg_error14']='- Questo account è già attivo<br />';
+$lang['reg_error15']='- L`indirizzo e-mail non corrisponde alla sua ripetizione<br />';
 
 $lang['ext_error1']='Login fallito\\nUsername inesistente!';
 $lang['ext_error2']='Login fallito\\nQuesto account non è ancora stato confermato.';
@@ -59,4 +60,5 @@ $lang['ext_error16']='Link errato!\\nPer favore, segui i link del gioco.';
 $lang['error_unknown']='Si è verificato un errore sconosciuto';
 
 $lang['help1']='Ripeti la password per evitare di registrarti con una password errata';
+$lang['help2']='Ripeti l`indirizzo e-mail per evitare di sbagliarlo';
 ?>

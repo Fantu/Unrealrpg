@@ -24,6 +24,11 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
             <td><?php echo $lang['Email']; ?></td>
             <td><input name="email" type="text" id="email" maxlength="50" /></td>
           </tr>
+		  <tr>
+            <td><?php echo $lang['Email']; ?></td>
+            <td><input name="email2" type="text" id="email2" maxlength="50" /></td>
+			<td><img src="game/template/immagini/help.png" title="<?php echo $lang['help2']; ?>" width="16" height="16" border="0" alt="" /></td>
+          </tr>
           <tr>
             <td><?php echo $lang['Server']; ?></td>
             <td>

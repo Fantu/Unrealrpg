@@ -23,6 +23,8 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 			if(empty($errore)){
 				if($_POST['password']!=$_POST['password2'])
 					$errore.=$lang['reg_error13'];
+				if($_POST['email']!=$_POST['email2'])
+					$errore.=$lang['reg_error15'];
 				$a=$db->QuerySelect("SELECT maxutenti AS Max, utenti AS Ut FROM config WHERE id='".$server."'");
 				$a2=$db->QuerySelect("SELECT COUNT(*) AS Us1 FROM utenti WHERE username='".$username."'");
 				if($a2['Us1']>0)
