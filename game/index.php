@@ -23,23 +23,7 @@ $language=$config['language'];
 require_once('language/'.$language.'/lang_interno.php');
 $int_security=$game_se_code;
 require_once('inclusi/int_header.php');
-?>
-<table width="910" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr>
-    <td width="155" rowspan="2" valign="top"><?php include('inclusi/menu.php'); ?>
-    </td>
-    <td width="20">&nbsp;</td>
-    <td width="715">&nbsp;</td>
-    <td width="20">&nbsp;</td>
-  </tr>
-  <tr>
-	<td>&nbsp;</td>
-    <td valign="top" align="center">
-		<table width="715" border="0" align="right" cellpadding="1" cellspacing="1">
-		  <tr>
-			<td width="565" valign="top">
-			<div id="contenuto">
-<?php
+
 if ($user['personaggio']==0){
 	require('creapersonaggio.php');	}
 	else{
@@ -48,27 +32,6 @@ if ($user['personaggio']==0){
 		$location="situazione";
 		require($location.'.php');
 		}
-?>
-			</div>
-			</td>
-			<td width="30">&nbsp;</td>
-			<td width="120" valign="top">
-				<?php
-				if($user['plus']==0) {
-				?>
-					<div id="ads" align="right">
-					<?php Showbanner($banner1); ?>
-					</div>
-				<?php
-				} //fine se plus attivo
-				?>
-			 </td>
-		  </tr>
-		</table>
-	</td>
-    <td>&nbsp;</td>
-  </tr>
-</table>
-<?php
+
 require_once('template/int_footer.php');
 ?>
