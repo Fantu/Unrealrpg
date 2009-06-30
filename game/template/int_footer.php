@@ -3,7 +3,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	header("Location: ../../index.php?error=16");
 	exit();
 }?>
-			</div>
+/*			</div>
 			</td>
 			<td width="30">&nbsp;</td>
 			<td width="120" valign="top">
@@ -22,7 +22,19 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	</td>
     <td>&nbsp;</td>
   </tr>
-</table>
+</table> */
+	</div>
+	</div>
+	<?php
+				if($user['plus']==0) {
+				?>
+					<div id=banner>
+					<?php Showbanner($banner1); ?>
+					</div>
+				<?php
+				} //fine se plus attivo
+				?>
+		
 <br /><div id="tempogenpag">
 <?php
 $end_time=time()+microtime();

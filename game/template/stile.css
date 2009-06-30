@@ -1,9 +1,62 @@
 body{
 	background-color: #60ACD7;
 	font-family: "Century Gothic", Verdana;
+	text-align: center;
 }
+#contenitore {
+	background-color: #60ACD7;
+	font-family: "Century Gothic", Verdana;
+	margin: 0 auto;
+	padding: 0;
+	width: 910px;
+	height: 900px;
+	position: relative;
+}
+#latosx {
+	width: 165px;
+	height: 900px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	font-family: "Century Gothic", Verdana;
+	margin: 0;
+	padding: 0;
+}
+
+#corpocentrale {
+	width: 565px;
+	height: 900px;
+	position: absolute;
+	top: 0px;
+	left: 170px;
+	font-family: "Century Gothic", Verdana;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+}	
+#banner {
+	font-family: "Century Gothic", Verdana;	
+	width: 120px;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.titolo {
+	font-size: 150%;
+	font-weight: 600;
+	text-align: center;
+}
+
+#messaggi {
+	width: 600px;
+	height: 70px;
+	overflow: auto;
+}
+
 .sfondoverde {background-color: #008000;  height: 5px;}
 .sfondorosso {background-color: #FF0000;  height: 5px;}
+
 #menu{
 position: fixed;
 text-align: center;
@@ -29,6 +82,9 @@ background-color: #ff9977;
 border: groove #ff9977;
 }
 #tempogenpag{
+position: absolute;
+left:166px;
+bottom: 0px;
 text-align: center;
 font-size: small;
 }

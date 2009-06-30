@@ -12,10 +12,13 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <link href="template/stile.css?version=<?php echo $game_version; ?>" rel="stylesheet" type="text/css" title="all"></link>
 </head>
 <body>
-<table width="910" border="0" align="center" cellpadding="0" cellspacing="0">
+<div id=contenitore>
+	<div id=latosx>
+/*	<table width="910" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
-    <td width="155" rowspan="2" valign="top"><?php include('inclusi/menu.php'); ?>
-    </td>
+    <td width="155" rowspan="2" valign="top"> */
+    <?php include('inclusi/menu.php'); ?>
+/*    </td>
     <td width="20">&nbsp;</td>
     <td width="715">&nbsp;</td>
     <td width="20">&nbsp;</td>
@@ -25,5 +28,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
     <td valign="top" align="center">
 		<table width="715" border="0" align="right" cellpadding="1" cellspacing="1">
 		  <tr>
-			<td width="565" valign="top">
-			<div id="contenuto">
+			<td width="565" valign="top"> */
+	</div>
+	<div id=corpocentrale> 
+		<div id="contenuto">
