@@ -14,8 +14,9 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 				<?php
 				} //fine se plus attivo
 				?>
-		
-<br /><div id="tempogenpag">
+</div>
+<br />
+<div id="tempogenpag">
 <?php
 $end_time=time()+microtime();
 $gen_time=number_format($end_time-$start_time, 4, '.', '');
