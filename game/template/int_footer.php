@@ -4,7 +4,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	exit();
 }?>
 	</div>
-	</div>
+	//</div>
 	<?php
 				if($user['plus']==0) {
 				?>
