@@ -9,12 +9,12 @@ body{
 	margin: 0 auto;
 	padding: 0;
 	width: 910px;
-	//height: 800px;
+	height: 900px;
 	position: relative;
 }
 #latosx {
 	width: 165px;
-	height: 800px;
+	height: 900px;
 	position: absolute;
 	top: 0px;
 	left: 0px;
@@ -25,7 +25,7 @@ body{
 
 #corpocentrale {
 	width: 565px;
-	height: 800px;
+	height: 900px;
 	position: absolute;
 	top: 0px;
 	left: 170px;
