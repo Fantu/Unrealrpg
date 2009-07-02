@@ -1,10 +1,10 @@
 body{
-	background-color: #60ACD7;
+	background-color: rgb(75, 84, 87);
 	font-family: "Century Gothic", Verdana;
 	text-align: center;
 }
 #contenitore {
-	background-color: rgb(113, 127, 129);
+	background-color: rgb(75, 84, 87);
 	font-family: "Century Gothic", Verdana;
 	margin: 0 auto;
 	padding: 0;
