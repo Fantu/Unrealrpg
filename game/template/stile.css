@@ -5,7 +5,6 @@ body{
 }
 #contenitore {
 	background-color: rgb(75, 84, 87);
-	font: birch std;
 	font-family: "Century Gothic", Verdana;
 	margin: 0 auto;
 	padding: 0;
@@ -25,6 +24,7 @@ body{
 }
 
 #corpocentrale {
+	font: birch std;
 	background-image: url(immagini/pergamena01.png);
 	background-repeat: no-repeat;
 	width: 615px;
