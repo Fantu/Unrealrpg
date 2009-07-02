@@ -5,7 +5,8 @@ body{
 }
 #contenitore {
 	background-color: rgb(75, 84, 87);
-	font-family: birch std, "Century Gothic", Verdana;
+	font: birch std;
+	font-family: "Century Gothic", Verdana;
 	margin: 0 auto;
 	padding: 0;
 	width: 1000px;
