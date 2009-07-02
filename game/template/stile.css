@@ -38,6 +38,7 @@ body{
 }	
 #banner {
 	font-family: "Century Gothic", Verdana;	
+	background-color: green;
 	width: 120px;
 	position: absolute;
 	top: 0;
