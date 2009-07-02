@@ -4,6 +4,7 @@ body{
 	text-align: center;
 }
 #contenitore {
+	color: blue;
 	background-color: rgb(75, 84, 87);
 	font-family: fantasy, "Century Gothic", Verdana;
 	margin: 0 auto;
