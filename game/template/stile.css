@@ -9,7 +9,7 @@ body{
 	margin: 0 auto;
 	padding: 0;
 	width: 1000px;
-	height: 1150px;
+	height: 1050px;
 	position: relative;
 }
 #latosx {
@@ -24,7 +24,6 @@ body{
 }
 
 #corpocentrale {
-	text-color: green;
 	background-image: url(immagini/pergamena01.png);
 	background-repeat: no-repeat;
 	width: 615px;
