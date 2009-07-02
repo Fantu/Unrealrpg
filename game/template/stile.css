@@ -13,7 +13,7 @@ body{
 	position: relative;
 }
 #latosx {
-	width: 165px;
+	width: 150px;
 	height: 900px;
 	position: absolute;
 	top: 0px;
@@ -30,7 +30,7 @@ body{
 	height: 900px;
 	position: absolute;
 	top: 0px;
-	left: 170px;
+	left: 155px;
 	font-family: "Century Gothic", Verdana;
 	margin: 0px;
 	padding: 50px;
