@@ -24,7 +24,7 @@ body{
 }
 
 #corpocentrale {
-	background-image: url(immagini/pergamena01.gif);
+	background-image: url(immagini/pergamena01.png);
 	background-repeat: no-repeat;
 	width: 565px;
 	height: 900px;
@@ -33,7 +33,7 @@ body{
 	left: 170px;
 	font-family: "Century Gothic", Verdana;
 	margin: 0;
-	padding: 15px;
+	padding: 25px;
 	text-align: left;
 }	
 #banner {
