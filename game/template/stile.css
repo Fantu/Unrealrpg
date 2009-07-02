@@ -24,8 +24,8 @@ body{
 }
 
 #corpocentrale {
-	background-image: url(immagini/pergamena.png);
-	background-repeat: repeat;
+	background-image: url(immagini/pergamena03.jpg);
+	background-repeat: no-repeat;
 	width: 565px;
 	height: 900px;
 	position: absolute;
