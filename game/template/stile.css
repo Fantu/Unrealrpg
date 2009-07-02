@@ -1,11 +1,10 @@
 body{
-	background-color: rgb(75, 84, 87);
+	background-color: black;
 	font-family: fantasy, "Century Gothic", Verdana;
 	text-align: center;
 }
 #contenitore {
-	color: blue;
-	background-color: rgb(75, 84, 87);
+	background-color: black;
 	font-family: fantasy, "Century Gothic", Verdana;
 	margin: 0 auto;
 	padding: 0;
@@ -87,6 +86,7 @@ background-color: #ff9977;
 border: groove #ff9977;
 }
 #tempogenpag{
+	color: white;
 position: absolute;
 left:166px;
 bottom: 0px;
