@@ -24,7 +24,6 @@ body{
 }
 
 #corpocentrale {
-	font: birch std;
 	background-image: url(immagini/pergamena01.png);
 	background-repeat: no-repeat;
 	width: 615px;
@@ -32,7 +31,7 @@ body{
 	position: absolute;
 	top: 0px;
 	left: 155px;
-	font-family: "Century Gothic", Verdana;
+	font-family: fantasy, "Century Gothic", Verdana;
 	margin: 0px;
 	padding: 50px;
 	text-align: left;
