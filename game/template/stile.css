@@ -1,11 +1,11 @@
 body{
 	background-color: rgb(75, 84, 87);
-	font-family: "Century Gothic", Verdana;
+	font-family: fantasy, "Century Gothic", Verdana;
 	text-align: center;
 }
 #contenitore {
 	background-color: rgb(75, 84, 87);
-	font-family: "Century Gothic", Verdana;
+	font-family: fantasy, "Century Gothic", Verdana;
 	margin: 0 auto;
 	padding: 0;
 	width: 1000px;
@@ -18,7 +18,7 @@ body{
 	position: absolute;
 	top: 0px;
 	left: 0px;
-	font-family: "Century Gothic", Verdana;
+	font-family: fantasy, "Century Gothic", Verdana;
 	margin: 0;
 	padding: 0;
 }
@@ -32,7 +32,7 @@ body{
 	top: 0px;
 	left: 155px;
 	font-family: fantasy, "Century Gothic", Verdana;
-	line-height: 1.0;
+	line-height: 1.2;
 	margin: 0px;
 	padding: 50px;
 	text-align: left;
