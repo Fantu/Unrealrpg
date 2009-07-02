@@ -1,12 +1,12 @@
 body{
-	background-color: rgb(75, 84, 87);
+	background-color: rgb(62, 69, 69);
 	margin: 0;
 	padding: 0;
 	font-family: fantasy, "Century Gothic", Verdana;
 	text-align: center;
 }
 #contenitore {
-	background-color: black;
+	background-color: rgb(62, 69, 69);
 	font-family: fantasy, "Century Gothic", Verdana;
 	margin: 0 ;
 	padding: 0;
