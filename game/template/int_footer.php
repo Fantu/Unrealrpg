@@ -22,6 +22,8 @@ $gen_time=number_format($end_time-$start_time, 4, '.', '');
 echo sprintf($lang['tempo_gen_pagina'],$gen_time,$db->nquery);
 ?> 
 </div>
+<div id=testaperg> <img src="template/immagini/testa.png">  </div>
+<div id=fondoperg> <img src="template/immagini/fondo.png">  </div>
 </div>
 </body>
 </html>

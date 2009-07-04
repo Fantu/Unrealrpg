@@ -10,7 +10,7 @@ body{
 	font-family: fantasy, "Century Gothic", Verdana;
 	margin: 0 ;
 	padding: 0;
-	width: 1000px;
+	width: 950px;
 	height: 1050px;
 	position: relative;
 }
@@ -25,9 +25,29 @@ body{
 	padding: 0;
 }
 
+#testaperg {
+	position: absolute;
+	width: 615px:
+	height: 1px;
+	top:0;
+	left: 160px;
+	margin: 5px;
+	z-index: 5;
+}
+
+#fondoperg {
+	background-color: rgb(62, 69, 69);
+	position: absolute;
+	width: 615px:
+	height: 20px;
+	top: 900px;
+	left: 160px;
+	margin: 5px;
+	z-index: 5;
+}
 #corpocentrale {
-	background-image: url(immagini/pergamena01.png);
-	background-repeat: no-repeat;
+	background-image: url(immagini/corpo.png);
+	background-repeat: repeat-y;
 	width: 615px;
 	height: 900px;
 	position: absolute;
@@ -35,8 +55,9 @@ body{
 	left: 160px;
 	font-family: fantasy, "Century Gothic", Verdana;
 	line-height: 1.2;
-	margin: 0px;
-	padding: 50px;
+	margin-top: 28px;
+	margin-left: 5px;
+	padding: 10px;
 	text-align: left;
 }	
 #banner {
