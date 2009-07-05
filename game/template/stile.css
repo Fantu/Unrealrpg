@@ -35,6 +35,14 @@ body{
 	z-index: 1;
 }
 
+
+#fondop {
+	background-color: rgb(62, 69, 69);
+	margin-left: -10px;
+	margin-right: -10px;
+	margin-bottom: -10px;
+}
+	
 #fondoperg {
 	background-color: rgb(62, 69, 69);
 	position: absolute;
@@ -49,7 +57,7 @@ body{
 	background-image: url(immagini/corpo.png);
 	background-repeat: repeat-y;
 	width: 615px;
-	height: 900px;
+	//height: 900px;
 	position: absolute;
 	top: 0px;
 	left: 160px;
@@ -109,10 +117,11 @@ background-color: #ff9977;
 border: groove #ff9977;
 }
 #tempogenpag{
-	color: white;
+color: white;
 position: absolute;
-left:166px;
-bottom: 0px;
+margin-top: 20px;
+//left:166px;
+//bottom: 0px;
 text-align: center;
 font-size: small;
 }

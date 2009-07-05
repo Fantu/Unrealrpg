@@ -4,6 +4,14 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	exit();
 }?>
 	</div>
+	<div id=fondop> <img src="template/immagini/fondo.png">  </div>
+	<div id="tempogenpag"> 
+	<?php
+	$end_time=time()+microtime();
+	$gen_time=number_format($end_time-$start_time, 4, '.', '');
+	echo sprintf($lang['tempo_gen_pagina'],$gen_time,$db->nquery);
+	?> 
+	</div>
 	</div>
 	<?php
 				if($user['plus']==0) {
@@ -14,16 +22,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 				<?php
 				} //fine se plus attivo
 				?>
-<br />
-<div id="tempogenpag"> 
-<?php
-$end_time=time()+microtime();
-$gen_time=number_format($end_time-$start_time, 4, '.', '');
-echo sprintf($lang['tempo_gen_pagina'],$gen_time,$db->nquery);
-?> 
-</div>
 <div id=testaperg> <img src="template/immagini/testa.png">  </div>
-<div id=fondoperg> <img src="template/immagini/fondo.png">  </div>
 </div>
 </body>
 </html>
