@@ -4,7 +4,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	exit();
 }?>
 	</div>
-	<div id=fondop> <img src="template/immagini/fondo.png">  </div>
+	<div id=fondop> <img src="template/immagini/fondo.png" />  </div>
 	<div id="tempogenpag"> 
 	<?php
 	$end_time=time()+microtime();
@@ -22,7 +22,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 				<?php
 				} //fine se plus attivo
 				?>
-<div id=testaperg> <img src="template/immagini/testa.png">  </div>
+<div id=testaperg> <img src="template/immagini/testa.png" />  </div>
 </div>
 </body>
 </html>
