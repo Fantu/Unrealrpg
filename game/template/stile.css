@@ -8,9 +8,9 @@ body{
 #contenitore {
 	background-color: rgb(62, 69, 69);
 	font-family: fantasy, "Century Gothic", Verdana;
-	margin: 0 ;
+	margin-left: 10%;
 	padding: 0;
-	width: 950px;
+	width: 980px;
 	height: 1050px;
 	position: relative;
 }
@@ -19,7 +19,7 @@ body{
 	height: 900px;
 	position: absolute;
 	top: 0px;
-	left: 0px;
+	left: 20px;
 	font-family: fantasy, "Century Gothic", Verdana;
 	margin: 0;
 	padding: 0;
@@ -30,7 +30,7 @@ body{
 	width: 615px:
 	height: 1px;
 	top:0;
-	left: 160px;
+	left: 200px;
 	margin: 5px;
 	z-index: 1;
 }
@@ -60,7 +60,7 @@ body{
 	//height: 900px;
 	position: absolute;
 	top: 0px;
-	left: 160px;
+	left: 200px;
 	font-family: fantasy, "Century Gothic", Verdana;
 	line-height: 1.2;
 	margin-top: 28px;
