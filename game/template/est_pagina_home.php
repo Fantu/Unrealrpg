@@ -3,7 +3,9 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	header("Location: ../../index.php?error=16");
 	exit();
 }?>
+		
     	<?php echo $outputreg; ?>
+    	<div id=reg_est>
 	    <span><?php echo $lang['Registrazione']; ?></span><br />
 		<form action="" method="post" name="fregistrazione">
 	    <table border="0">

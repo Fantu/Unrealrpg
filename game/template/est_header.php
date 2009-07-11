@@ -24,9 +24,8 @@ function CambiaImg(id,bool) {
 </script>
 </head>
 <body>
-<table width="750" border="0" align="center" cellpadding="0" cellspacing="0">
-<tr>
-<td>
+<div id=cont_est>
+<div id=login_est>
 <?php
 if(preg_match("/MSIE/",$_SERVER['HTTP_USER_AGENT']) AND ($pagina=="home")){ ?>
 <?php echo $lang['desc_firefox']; ?><br />
@@ -34,10 +33,6 @@ if(preg_match("/MSIE/",$_SERVER['HTTP_USER_AGENT']) AND ($pagina=="home")){ ?>
 <center><a href="http://www.mozilla-europe.org/firefox/"><img src="game/template/immagini/firefox.png" alt="<?php echo $lang['scarica_firefox']; ?>" border="0" /></a></center>
 <br />
 <?php } ?>
-</td>
-</tr>
-<tr>
-<td>
 <center><h1>
 <?php echo $game_name." ".$game_state." ".$game_version; ?>
 </h1></center>
