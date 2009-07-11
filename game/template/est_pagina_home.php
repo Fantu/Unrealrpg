@@ -68,4 +68,5 @@ echo "<option value=\"$chiave\">$elemento</option>";} ?>
 </select><br />
 <input name="attivazione" type="submit" value="<?php echo $lang['Attivazione_manuale']; ?>" />
 </form>
+</div>
 <br /><br />
