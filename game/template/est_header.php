@@ -35,8 +35,8 @@ if(preg_match("/MSIE/",$_SERVER['HTTP_USER_AGENT']) AND ($pagina=="home")){ ?>
 <center><h1>
 <?php echo $game_name." ".$game_state." ".$game_version; ?>
 </h1></center>
-<div id=login_est>
 <span><?php echo $lang['Login']; ?></span><br />
+	<div id=login_est>
 		<form action="game/login.php" method="post" name="formlogin">
 		<table width="750" border="0">
 		  <tr>
