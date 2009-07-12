@@ -5,7 +5,6 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 }?>
 		
     	<?php echo $outputreg; ?>
-    	<div id=reg_est>
 	    <span><?php echo $lang['Registrazione']; ?></span><br />
 		<form action="" method="post" name="fregistrazione">
 	    <table border="0">
@@ -68,5 +67,5 @@ echo "<option value=\"$chiave\">$elemento</option>";} ?>
 </select><br />
 <input name="attivazione" type="submit" value="<?php echo $lang['Attivazione_manuale']; ?>" />
 </form>
-</div>
+
 <br /><br />

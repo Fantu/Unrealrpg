@@ -24,7 +24,7 @@ function CambiaImg(id,bool) {
 </script>
 </head>
 <body>
-<div id=cont_est>
+
 <?php
 if(preg_match("/MSIE/",$_SERVER['HTTP_USER_AGENT']) AND ($pagina=="home")){ ?>
 <?php echo $lang['desc_firefox']; ?><br />
@@ -36,7 +36,8 @@ if(preg_match("/MSIE/",$_SERVER['HTTP_USER_AGENT']) AND ($pagina=="home")){ ?>
 <?php echo $game_name." ".$game_state." ".$game_version; ?>
 </h1></center>
 <span><?php echo $lang['Login']; ?></span><br />
-	<div id=login_est>
+<div id=cont_est>
+		<div id=login_est>
 		<form action="game/login.php" method="post" name="formlogin">
 		<table width="750" border="0">
 		  <tr>
