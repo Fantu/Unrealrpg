@@ -67,6 +67,4 @@ $bdataold=$db->QuerySelect("SELECT COUNT(id) AS n FROM bacheca WHERE data<'".($a
 if($bdataold['n']>0)$db->QueryMod("DELETE FROM bacheca WHERE data<'".($adesso-259200)."'");
 }else{//se ci sono eventi
 $bacheca=$lang['nessun_evento_recente'];}//se nn ci sono
-
-require('template/int_municipio.php');
 ?>

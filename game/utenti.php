@@ -88,5 +88,4 @@ while($chi=$db->QueryCicloResult($a)) {
 	$utenti['online'][$i]=1;}else
 	{$utenti['online'][$i]=0;}
 }
-require('template/int_utenti.php');
 ?>

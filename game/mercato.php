@@ -80,6 +80,4 @@ $db->QueryMod("INSERT INTO inoggetti (oggid,userid) VALUES ('".$oggselect."','".
 }//per ogni pezzo
 }
 }//fine compra
-
-require('template/int_mercato.php');
 ?>

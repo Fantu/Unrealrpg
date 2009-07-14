@@ -29,6 +29,4 @@ echo "<script language=\"javascript\">window.location.href='index.php?loc=situaz
 exit();
 }//se nessun errore
 }//fine parti
-
-require('template/int_confini.php');
 ?>

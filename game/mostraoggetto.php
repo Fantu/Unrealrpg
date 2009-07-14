@@ -27,6 +27,4 @@ break;
 $oggid=(int)$_GET['ogg'];
 $oggetto=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$oggid."' LIMIT 1");
 $nomeoggetto=$lang['oggetto'.$oggetto['id'].'_nome'];
-
-require('template/int_mostraoggetto.php');
 ?>

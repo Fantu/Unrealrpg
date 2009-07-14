@@ -82,6 +82,4 @@ $oggetti['numero'][$i]=$ogg['numero'];
 $oggetti['nome'][$i]="<a href=\"index.php?loc=mostraoggetto&amp;ogg=".$ogg['oggid']."&amp;da=inventario\">".$lang['oggetto'.$ogg['oggid'].'_nome']."</a>";
 }//per ogni oggetto differente
 }//fine mostra oggetti
-
-require('template/int_inventario.php');
 ?>

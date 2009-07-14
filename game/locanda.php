@@ -24,7 +24,5 @@ $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,ore) 
 echo "<script language=\"javascript\">window.location.href='index.php?loc=situazione'</script>";
 exit();
 }
-}//fine lavora in miniera nuova
-
-require('template/int_locanda.php');
+}//fine dormi
 ?>

@@ -94,5 +94,4 @@ else
 $vacanza=$lang['vacanza_attiva']." <a href=\"index.php?loc=opzioni&amp;vacanza=0\">".$lang['disattiva']."</a>";
 
 require_once('inclusi/personaggio.php');
-require('template/int_opzioni.php');
 ?>

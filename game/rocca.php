@@ -51,5 +51,4 @@ echo "<script language=\"javascript\">window.location.href='index.php?loc=situaz
 exit();
 }
 }//fine pratica
-require('template/int_rocca.php');
 ?>

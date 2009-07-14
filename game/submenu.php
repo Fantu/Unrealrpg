@@ -6,5 +6,4 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 $sottomenu=htmlspecialchars($_GET['menu'],ENT_QUOTES);
 $titolo=$lang[$sottomenu];
 $link=$menu->Sm($sottomenu);
-require('template/int_submenu.php');
 ?>

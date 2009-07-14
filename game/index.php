@@ -25,10 +25,15 @@ if ($user['personaggio']==0){
 	require('creapersonaggio.php');	}
 	else{
 		$location=htmlspecialchars($_GET['loc'],ENT_QUOTES);
-		if(!in_array($location,$menu->sezioni))
-		$location="situazione";
+			if(!in_array($location,$menu->sezioni))
+				$location="situazione";
 		require($location.'.php');
+		if($location!="messaggi" AND in_array($location,$menu->inmenu))
+		require(TPL_PATH."int_headerpag".'.php');
+		if($location!="messaggi")
+		require(TPL_PATH."int_".$location.'.php');
 		}
+		
 
 require_once('template/int_footer.php');
 ?>

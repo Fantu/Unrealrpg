@@ -4,5 +4,5 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	exit();
 }
 
-require('template/int_changelog.php');
+//require('template/int_changelog.php');
 ?>

@@ -15,5 +15,4 @@ $link[]='<a href="index.php?loc=combact&amp;do=repview&amp;id='.$rep['id'].'">'.
 }//se finito
 }//per ogni report
 }//se ci sono report
-require('template/int_archiviorep.php');
 ?>

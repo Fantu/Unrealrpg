@@ -271,6 +271,4 @@ $desc_impopoz=sprintf($lang['pozimpo'],$pozimpo);
 }else{
 $desc_impopoz=$lang['nopozimpo'];
 }
-
-require('template/int_equipaggiamento.php');
 ?>

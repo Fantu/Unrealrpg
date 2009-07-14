@@ -61,5 +61,4 @@ if($eventi['id']>0){
 if(!$event)
 $event=$lang['nessun_evento'];
 require_once('inclusi/personaggio.php');
-require('template/int_situazione.php');
 ?>

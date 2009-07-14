@@ -153,5 +153,4 @@ $userbank=$db->QuerySelect("SELECT * FROM banca WHERE userid='".$user['userid'].
 $prestito=$userbank['prestito']+(floor(($userbank['prestito']/100)*(10*$userbank['incprestito'])));
 $proxestrazionedata=date($lang['dataora'],($config['lotteria']+$tempolotteria));
 $user=$db->QuerySelect("SELECT * FROM utenti WHERE userid='".$user['userid']."' LIMIT 1");
-require('template/int_banca.php');
 ?>

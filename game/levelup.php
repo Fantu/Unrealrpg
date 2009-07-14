@@ -53,6 +53,4 @@ echo "<script language=\"javascript\">window.location.href='index.php?loc=situaz
 exit();
 }//incremento di livello se ok
 }//fine incrementa di livello
-
-require('template/int_levelup.php');
 ?>

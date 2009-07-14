@@ -81,6 +81,4 @@ echo "<script language=\"javascript\">window.location.href='index.php?loc=situaz
 exit();
 }
 }//fine lavora in Fucina come fabbro
-
-require('template/int_fucina.php');
 ?>

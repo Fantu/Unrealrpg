@@ -73,5 +73,4 @@ echo "<script language=\"javascript\">window.location.href='index.php?loc=situaz
 exit();
 }
 }//fine lavora in miniera vecchia
-require('template/int_miniera.php');
 ?>

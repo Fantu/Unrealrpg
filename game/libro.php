@@ -29,6 +29,4 @@ $outputmagie[$elementoel][$elementotm][$chiave]=$elemento;
 }//per ogni tipo
 }//per ogni elemento
 }/*fine mostra incantesimi*/
-
-require('template/int_libro.php');
 ?>

@@ -154,6 +154,4 @@ $outputcombact="<table width=\"500\" align=\"center\">".$report."</table>";
 }
 break;//fine sfidda
 }
-
-require(TPL_PATH.'int_combact.php');
 ?>

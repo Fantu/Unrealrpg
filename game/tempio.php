@@ -63,6 +63,4 @@ $pfede=$lang['Pio'];
 $pfede=$lang['Illuminato'];
 }
 $pfede=sprintf($lang['liv_fede'],$pfede);
-
-require('template/int_tempio.php');
 ?>
