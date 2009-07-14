@@ -62,9 +62,7 @@ body{
 #testaperg {
 	position: absolute;
 	width: 630px;
-	height: 1px;
-	top:0;
-	//left: 200px;
+	top: -25px;
 	z-index: 1;
 }
 
@@ -72,9 +70,6 @@ body{
 #fondop {
 	position: absolute;
 	background-color: rgb(62, 69, 69);
-	//margin-left: -10px;
-	//margin-right: -10px;
-	//margin-bottom: -10px;
 }
 	
 #fondoperg {
@@ -92,7 +87,7 @@ body{
 	background-repeat: repeat-y;
 	width: 630px;
 	position: relative;
-	top: 0px;
+	top: 30px;
 	left: 200px;
 	font-family: fantasy, "Century Gothic", Verdana;
 	line-height: 1.2;
@@ -153,8 +148,7 @@ border: groove #ff9977;
 #tempogenpag{
 color: white;
 position: relative;
-margin-bottom: 0;
-bottom:0;
+bottom: -60px;
 text-align: center;
 font-size: small;
 }
