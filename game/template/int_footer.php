@@ -16,6 +16,8 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 				} //fine se plus attivo
 				?>
 <div id=testaperg> <img src="template/immagini/testa.png" />  </div>
+	
+</div>
 <div id="tempogenpag"> 
 	<?php
 	$end_time=time()+microtime();
@@ -23,6 +25,5 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	echo sprintf($lang['tempo_gen_pagina'],$gen_time,$db->nquery);
 	?> 
 	</div>
-</div>
 </body>
 </html>
