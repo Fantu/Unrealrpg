@@ -12,7 +12,6 @@ body{
 	margin-left: 10%;
 	padding: 0;
 	width: 980px;
-	height: 1050px;
 	position: relative;
 }
 
@@ -52,7 +51,6 @@ body{
 
 #latosx {
 	width: 150px;
-	height: 900px;
 	position: absolute;
 	top: 0px;
 	left: 20px;
@@ -63,20 +61,20 @@ body{
 
 #testaperg {
 	position: absolute;
-	width: 615px;
+	width: 630px;
 	height: 1px;
 	top:0;
-	left: 200px;
-	margin: 5px;
+	//left: 200px;
 	z-index: 1;
 }
 
 
 #fondop {
+	position: absolute;
 	background-color: rgb(62, 69, 69);
-	margin-left: -10px;
-	margin-right: -10px;
-	margin-bottom: -10px;
+	//margin-left: -10px;
+	//margin-right: -10px;
+	//margin-bottom: -10px;
 }
 	
 #fondoperg {
@@ -92,17 +90,16 @@ body{
 #corpocentrale {
 	background-image: url(immagini/corpo.png);
 	background-repeat: repeat-y;
-	width: 615px;
-	position: absolute;
+	width: 630px;
+	position: relative;
 	top: 0px;
 	left: 200px;
 	font-family: fantasy, "Century Gothic", Verdana;
 	line-height: 1.2;
-	margin-top: 28px;
-	margin-left: 5px;
-	padding: 10px;
+	margin-top: 5px;
+	margin-bottom: 30px;
 	text-align: left;
-}	
+}
 #banner {
 	font-family: "Century Gothic", Verdana;	
 	background-color: green;
@@ -111,7 +108,9 @@ body{
 	top: 0;
 	right: 0;
 }
-
+#contenuto{
+padding: 10px;
+}
 .titolo {
 	font-size: 150%;
 	font-weight: 600;
@@ -154,7 +153,8 @@ border: groove #ff9977;
 #tempogenpag{
 color: white;
 position: relative;
-margin-top: 20px;
+margin-bottom: 0;
+bottom:0;
 text-align: center;
 font-size: small;
 }

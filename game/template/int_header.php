@@ -18,4 +18,5 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
     <?php include('inclusi/menu.php'); ?>
 	</div>
 	<div id=corpocentrale> 
+	<div id=testaperg> <img src="template/immagini/testa.png" />  </div>
 		<div id="contenuto">
