@@ -26,6 +26,7 @@ class Menu{
 		if(is_array($elemento)){
 		foreach($elemento as $el2){
 		$this->sezioni[]=$el2;
+		$this->inmenu[]=$el2;
 		}//per ogni elemento dell'array
 		}else{//se è un array
 		$this->sezioni[]=$el;
