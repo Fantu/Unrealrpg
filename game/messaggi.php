@@ -194,7 +194,7 @@ if($do!="scrivi" AND $do!="risp"){
 	while($mess=$db->QueryCicloResult($a)){
 	$cachemsg[]=$mess;
 	}//per ogni messaggio
-	
+
 	function Visualizzacategoria($cachemsg,$letti,$nomecat,$num){
 	global $lang;
 	if($cachemsg!=0)
@@ -260,12 +260,12 @@ if($do!="scrivi" AND $do!="risp"){
 	}//per ogni msg
 	if(!$msgsistema){$msgsistema=0;}
 	Visualizzacategoria($msgsistema,$letti,$lang['messaggi_dal_sistema'],2);
-	
+
 	if($user['plus']==0){$scaduto=$adesso-172800;}else{$scaduto=$adesso-432000;}
 	$db->QueryMod("DELETE FROM messaggi WHERE userid='".$user['userid']."' AND letto='1' AND data<'".$scaduto."'");//cancello messaggi vecchi
 	$db->QueryMod("UPDATE messaggi SET letto=1 WHERE userid='".$user['userid']."'");
 	}else{echo $lang['nessun_messaggio']."<br /><br /><br />";}
-	
+
 	if($user['plus']>0){
 	$semsg=$db->QuerySelect("SELECT count(id) AS numero FROM msginviati WHERE userid='".$user['userid']."'");
 	if($semsg['numero']>0){
@@ -273,7 +273,7 @@ if($do!="scrivi" AND $do!="risp"){
 	while($mess=$db->QueryCicloResult($a)){
 	$cachemsgi[]=$mess;
 	}//per ogni messaggio
-	
+
 	$num=9;
 	$conti.=count($cachemsgi)." ".$lang['totali'];
 	echo "<a href=\"javascript:;\" onclick=\"Cambiavista('cat".$num."')\">".$lang['messaggi_inviati']." (".$conti.")</a>";
@@ -300,7 +300,7 @@ if($do!="scrivi" AND $do!="risp"){
     ."<td align=\"center\"><input name=\"contatore\" type=\"hidden\" value=\"".$i."\" /><input name=\"catp\" type=\"hidden\" value=\"".$num."\" /><input name=\"tipo\" type=\"hidden\" value=\"2\" /><input type=\"checkbox\" name=\"tuttimsg\" id=\"selezionatutti".$num."\" onclick=\"cambiaseltuttimsg(this.form, this.form.tuttimsg.checked);\" /> ".$lang['sel_desel_tutti']." <input name=\"cms\" type=\"submit\" value=\"".$lang['cancella_selezionati']."\" /></td>"
 	."</tr></table></form>";
 	echo "</div><br />";
-	
+
 	}else{//fine se ha msg inviati
 	echo $lang['nessun_messaggio_inviato']."<br />";
 	}//se nn ha msg inviati
