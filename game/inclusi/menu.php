@@ -22,9 +22,9 @@ class Menu{
 	public $inmenu;
 	
 	function __construct() {
-		foreach($this->dati as $chiave=>$el){
-		if(is_array($elemento)){
-		foreach($elemento as $el2){
+		foreach($this->dati as $el){
+		if(is_array($el)){
+		foreach($el as $el2){
 		$this->sezioni[]=$el2;
 		$this->inmenu[]=$el2;
 		}//per ogni elemento dell'array
