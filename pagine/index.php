@@ -4,10 +4,6 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	exit();
 }
 require('game/language/'.$language.'/lang_esterno.php');
-require('game/inclusi/funzioni_db.php');
-require('game/inclusi/funzioni.php');
-$db=new ConnessioniMySQL();
-$adesso=strtotime("now");
 if(!empty($_GET['refer'])){
 $refer=htmlspecialchars($_GET['refer'],ENT_QUOTES);
 $server=htmlspecialchars($_GET['server'],ENT_QUOTES);

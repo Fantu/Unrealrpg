@@ -1,11 +1,8 @@
 <?php
 $start_time=time()+microtime();
 require('inclusi/valori.php');
-require_once('inclusi/funzioni.php');
 if($_COOKIE['userlogin'] AND preg_match("/[a-z0-9]{32}(-)[a-z0-9]{32}(-)[a-z0-9]{32}(-)[a-z0-9]{32}/",$_COOKIE['userlogin']) AND strlen($_COOKIE['userlogin'])==131)
 	{$uc=explode("-",$_COOKIE['userlogin']);}else{header("Location: ../index.php?error=3"); exit();}
-require_once('inclusi/funzioni_db.php');
-$db=new ConnessioniMySQL();
 $esistenza=0;
 foreach($game_server as $chiave=>$elemento){
 if(md5($chiave)==$uc[2]){$esistenza=1; $db->Setdb($chiave);}

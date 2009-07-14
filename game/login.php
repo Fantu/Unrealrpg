@@ -1,8 +1,5 @@
 <?php
 require_once('inclusi/valori.php');
-require_once('inclusi/funzioni_db.php');
-require_once('inclusi/funzioni.php');
-$db=new ConnessioniMySQL();
 $server=(int)$_POST['login_server'];
 if(isset($game_server[$server])){$db->Setdb($server);}else{header("Location: ../index.php?error=3"); exit();}
 if($_COOKIE['userloginc']){$loginfalliti=(int)$_COOKIE['userloginc'];}else{$loginfalliti=0;}

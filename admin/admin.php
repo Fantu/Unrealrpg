@@ -1,8 +1,5 @@
 <?php
 require('../game/inclusi/valori.php');
-require('../game/inclusi/funzioni_db.php');
-require('../game/inclusi/funzioni.php');
-$db=new ConnessioniMySQL();
 $db->Setdb(1000);
 $int_security=$game_se_code;
 if($_COOKIE['urbglanguage']){
@@ -17,7 +14,7 @@ $user=htmlspecialchars($accesso[0],ENT_QUOTES);
 $pass=htmlspecialchars($accesso[1],ENT_QUOTES);
 $op=$db->QuerySelect("SELECT * FROM utenti WHERE password='".$pass."'");
 
-if(md5($op['username'])!=$user){		
+if(md5($op['username'])!=$user){
 	header("Location: index.php");
 	exit();
 }else{
@@ -63,7 +60,7 @@ function CambiaImg(id,bool) {
 		</tr>
 	  </tbody>
 	</table>
-<?php include('footer.php'); ?>	
+<?php include('footer.php'); ?>
 </body>
 </html>
 <?php

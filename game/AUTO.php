@@ -1,9 +1,6 @@
 <?php
 if($_GET['code']!='autourbg'){header("Location: index.php?error=16"); exit();}
 require('inclusi/valori.php');
-require_once('inclusi/funzioni.php');
-require('inclusi/funzioni_db.php');
-$db=new ConnessioniMySQL();
 $int_security=$game_se_code;
 $optimize=0;
 foreach($game_language as $chiavel=>$elementol){

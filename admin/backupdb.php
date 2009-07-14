@@ -1,7 +1,5 @@
 <?php
 require('../game/inclusi/valori.php');
-require('../game/inclusi/funzioni_db.php');
-$db=new ConnessioniMySQL();
 
 $path=MAIN_PATH."/admin/cache/";
 

@@ -1,7 +1,5 @@
 <?php
 require('game/inclusi/valori.php');
-require('game/inclusi/funzioni_db.php');
-$db=new ConnessioniMySQL();
 $indb=(int)$_GET['t'];
 if(isset($game_server[$indb])){$db->Setdb($indb);}else{header("Location: index.php?error=5"); exit();}
 if(!$_GET['cod']){
