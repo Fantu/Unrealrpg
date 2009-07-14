@@ -154,7 +154,7 @@ border: groove #ff9977;
 }
 #tempogenpag{
 color: white;
-position: absolute;
+position: relative;
 margin-top: 20px;
 text-align: center;
 font-size: small;
