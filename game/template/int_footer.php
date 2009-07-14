@@ -24,6 +24,6 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	$gen_time=number_format($end_time-$start_time, 4, '.', '');
 	echo sprintf($lang['tempo_gen_pagina'],$gen_time,$db->nquery);
 	?> 
-	</div>
+</div>
 </body>
 </html>

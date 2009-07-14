@@ -63,7 +63,7 @@ body{
 
 #testaperg {
 	position: absolute;
-	width: 615px:
+	width: 615px;
 	height: 1px;
 	top:0;
 	left: 200px;
@@ -82,7 +82,7 @@ body{
 #fondoperg {
 	background-color: rgb(62, 69, 69);
 	position: absolute;
-	width: 615px:
+	width: 615px;
 	height: 20px;
 	top: 900px;
 	left: 160px;
@@ -93,7 +93,6 @@ body{
 	background-image: url(immagini/corpo.png);
 	background-repeat: repeat-y;
 	width: 615px;
-	//height: 900px;
 	position: absolute;
 	top: 0px;
 	left: 200px;
