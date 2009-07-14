@@ -10,9 +10,9 @@ $menu->View('m','citta');
 $menu->View('m','lavori');
 $menu->View('m','magia');
 $menu->View('m','regno'); ?>
-<a href="index.php?loc=combact"><?php if(($evento['tipo']==4 AND $evento['type']==2) OR $evento['tipo']==5){echo "<strong>";} echo $lang['Combattimenti']; if(($evento['tipo']==4 AND $evento['type']==2) OR $evento['tipo']==5){echo "</strong>";} ?></a>
+<a href="index.php?loc=combact"><?php if(($evento['tipo']==4 AND $evento['type']==2) OR $evento['tipo']==5){echo "<strong>";} echo $lang['combact']; if(($evento['tipo']==4 AND $evento['type']==2) OR $evento['tipo']==5){echo "</strong>";} ?></a>
 <?php $menu->View('m','oggetti'); ?>
-<a href="index.php?loc=messaggi"><?php if($snm['id']>0){echo "<strong>";} echo $lang['Messaggi']; if($snm['id']>0){echo "</strong>";} ?></a>
+<a href="index.php?loc=messaggi"><?php if($snm['id']>0){echo "<strong>";} echo $lang['messaggi']; if($snm['id']>0){echo "</strong>";} ?></a>
 <?php
 $menu->View('v','utenti');
 $menu->View('m','info');
