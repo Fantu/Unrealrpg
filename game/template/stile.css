@@ -1,5 +1,6 @@
 body{
 	background-color: rgb(62, 69, 69);
+	background-image: url(immagini/base2.png);
 	margin: 0;
 	padding: 0;
 	font-family: fantasy, "Century Gothic", Verdana;
@@ -7,7 +8,6 @@ body{
 }
 
 #contenitore {
-	background-color: rgb(62, 69, 69);
 	font-family: fantasy, "Century Gothic", Verdana;
 	padding: 0;
 	width: 980px;
@@ -17,6 +17,7 @@ body{
 
 #cont_est {
 	background-color: rgb(62, 69, 69);
+	background-image: url(immagini/base2.png);
 	font-family: fantasy, "Century Gothic", Verdana;
 	margin-left: 20%;
 	padding: 0;
@@ -69,7 +70,7 @@ body{
 
 #fondop {
 	position: absolute;
-	background-color: rgb(62, 69, 69);
+	backgroung-image: url(immagini/base2.png);
 }
 #corpocentrale {
 	background-image: url(immagini/corpo.png);
