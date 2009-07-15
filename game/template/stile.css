@@ -71,17 +71,6 @@ body{
 	position: absolute;
 	background-color: rgb(62, 69, 69);
 }
-	
-#fondoperg {
-	background-color: rgb(62, 69, 69);
-	position: absolute;
-	width: 615px;
-	height: 20px;
-	top: 900px;
-	left: 160px;
-	margin: 5px;
-	z-index: 1;
-}
 #corpocentrale {
 	background-image: url(immagini/corpo.png);
 	background-repeat: repeat-y;
@@ -112,12 +101,6 @@ padding: 10px;
 	text-align: center;
 }
 
-#messaggi {
-	width: 600px;
-	height: 70px;
-	overflow: auto;
-}
-
 .sfondoverde {background-color: #008000;  height: 5px;}
 .sfondorosso {background-color: #FF0000;  height: 5px;}
 
@@ -146,9 +129,7 @@ background-color: #ff9977;
 border: groove #ff9977;
 }
 #tempogenpag{
-color: white;
 position: relative;
-bottom: -60px;
 text-align: center;
 font-size: small;
 }
