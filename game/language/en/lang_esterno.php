@@ -43,21 +43,30 @@ $lang['reg_error10']='- You must enter username or code.<br />';
 $lang['reg_error11']='- The username you entered does not exist!<br />';
 $lang['reg_error12']='- The code you entered is not valid!<br />';
 $lang['reg_error13']='- The password does not match its repetition<br />';
-$lang['reg_error14']='- Questo account è già attivo<br />';
-$lang['reg_error15']='- L`indirizzo e-mail non corrisponde alla sua ripetizione<br />';
+$lang['reg_error14']='- This account is already active<br />';
+$lang['reg_error15']='- The e-mail does not correspond to its repetition<br />';
 
-$lang['ext_error1']='Login fallito\\nUsername inesistente!';
-$lang['ext_error2']='Login fallito\\nQuesto account non è ancora stato confermato.';
-$lang['ext_error3']='Autentificazione non valida o scaduta\nNecessario nuovo login.';
-$lang['ext_error4']='Login fallito\\nPassword errata!';
-$lang['ext_error5']='Impossibile confermare questo account!\\nLink errato, controlla e riprova.';
-$lang['ext_error6']='Impossibile confermare questo account!\\nQuesto account è già stato confermato.';
-$lang['ext_error7']='Account confermato!\\nAdesso puoi entrare e iniziare a giocare.';
+$lang['ext_error1']='Login failed\
+Username doesn\'t exist!';
+$lang['ext_error2']='Login failed\
+This account has not yet been confirmed.';
+$lang['ext_error3']='Authentication invalid or expired\
+Need new login.';
+$lang['ext_error4']='Login failed\
+Password wrong!';
+$lang['ext_error5']='Unable to confirm this account!\
+Link wrong, check and try again.';
+$lang['ext_error6']='Unable to confirm this account!\
+This account has been already confirmed.';
+$lang['ext_error7']='Account confirmed!\
+Now you can login and play.';
 $lang['ext_error8']='You have been blocked for an hour after 5 login attempts failed.';
 $lang['ext_error12']='Server temporarily closed for installation upgrades or maintenance. Please try again later. Thank you.';
-$lang['ext_error13']='Accesso negato!\\nHai tentato di entrare in una pagina riservata agli utenti loggati.';
-$lang['ext_error16']='Link errato!\\nPer favore, segui i link del gioco.';
-$lang['error_unknown']='Si è verificato un errore sconosciuto';
+$lang['ext_error13']='Access Denied!\
+You tried to enter a page reserved for users logged.';
+$lang['ext_error16']='Link broken!\
+Please follow the link of the game.';
+$lang['error_unknown']='Encountered an unknown error';
 
 $lang['help1']='Repeat your password to avoid signing up with an incorrect password';
 $lang['help2']='Ripeti l`indirizzo e-mail per evitare di sbagliarlo';

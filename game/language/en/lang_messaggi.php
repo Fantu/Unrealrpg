@@ -1,9 +1,9 @@
 <?php
 $lang['messaggi_error1']='You didn`t write the message you want to send!';
-$lang['messaggi_error2']='Impossibile inviare il messaggio! Riprova o contatta l`admin.';
-$lang['messaggi_error3']='Non puoi inviare messaggi superiori ai 500 caratteri.';
+$lang['messaggi_error2']='Could`t send the message! Try again or contact the administrator';
+$lang['messaggi_error3']='You can`t send messages longer than 500 characters';
 $lang['messaggi_error4']='You didn`t write the message title!';
-$lang['messaggi_error5']='Non puoi inviare messaggi superiori ai 10000 caratteri.';
+$lang['messaggi_error5']='You can`t send messages longer than 10000 characters.';
 $lang['messaggi_error6']='Wrong user.';
 $lang['messaggi_error7']='Wrong message.';
 $lang['istruzioni_scrivi_msg']='Write the message and press the button ';

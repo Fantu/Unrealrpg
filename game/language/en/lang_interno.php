@@ -1,35 +1,35 @@
 <?php
 //inizio menu
-$lang['Situazione']='Situation';
-$lang['Banca']='Bank';
-$lang['Miniera']='Mine';
-$lang['Laboratorio']='Laboratory';
-$lang['Changelog']='Changelog';
-$lang['Tempio']='Temple';
-$lang['Opzioni']='Options';
-$lang['Logout']='Logout';
-$lang['Messaggi']='Messages';
-$lang['Guida']='Guide';
-$lang['Lista_utenti']='Characters list';
-$lang['Mercato']='Market';
-$lang['Inventario']='Inventory';
-$lang['Fucina']='Forge';
-$lang['Rocca_arcano']='Mage tower';
-$lang['Libro_incantesimi']='Spellbook';
-$lang['Combattimenti']='Fightings';
-$lang['Equipaggiamento']='Equipment';
+$lang['situazione']='Situation';
+$lang['banca']='Bank';
+$lang['miniera']='Mine';
+$lang['laboratorio']='Laboratory';
+$lang['changelog']='Changelog';
+$lang['tempio']='Temple';
+$lang['opzioni']='Options';
+$lang['logout']='Logout';
+$lang['messaggi']='Messages';
+$lang['guida']='Guide';
+$lang['utenti']='Characters list';
+$lang['mercato']='Market';
+$lang['inventario']='Inventory';
+$lang['fucina']='Forge';
+$lang['rocca']='Mage tower';
+$lang['libro']='Spellbook';
+$lang['combact']='Fightings';
+$lang['equipaggiamento']='Equipment';
 $lang['lavori']='Work';
 $lang['magia']='Magic';
 $lang['info']='Information';
 $lang['oggetti']='Objects';
 $lang['citta']='City';
-$lang['Locanda']='Inn';
-$lang['Confini']='Borders';
-$lang['Municipio']='City Hall';
+$lang['locanda']='Inn';
+$lang['confini']='Borders';
+$lang['municipio']='City Hall';
 $lang['regno']='Kingdom';
-$lang['Link']='Collegamenti';
-$lang['Traduzione']='Traduzione';
-$lang['Bugtracker']='Errori/Richieste';
+$lang['Link']='Links';
+$lang['Traduzione']='Translation';
+$lang['Bugtracker']='Errors/Request';
 //fine menu
 
 //inizio razze
@@ -61,7 +61,7 @@ $lang['desc_berserk']='Berserk description';
 //fine classi
 
 //inizio caratteristiche
-$lang['Nome']='Nome';
+$lang['Nome']='Name';
 $lang['Razza']='Race';
 $lang['Classe']='Class';
 $lang['Livello']='Level';
