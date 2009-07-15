@@ -15,39 +15,40 @@ body{
 	margin:auto;
 }
 
-#cont_est {
+/*#cont_est {
 	background-color: rgb(62, 69, 69);
 	background-image: url(immagini/base2.png);
 	font-family: fantasy, "Century Gothic", Verdana;
-	margin-left: 20%;
+	//margin: auto;
 	padding: 0;
-}
+}*/
 
 #login_est {
 	font-family: fantasy, "Century Gothic", Verdana;
 	width: 750px;
-	height: 650px;
-	position:relative;
-	margin-left: 0px;
+	//height: 650px;
+	//position:relative;
+	//margin-left: 0px;
+	margin: auto;
 }
 
 #reg_est {
 	font-family: fantasy, "Century Gothic", Verdana;
 	text-align: center;
 	width: 570px;
-	height: 230px;
+	//height: 230px;
 	overflow: auto;
-	position: absolute;
-	left: 170px;
-	top: 120px;
+	//position: absolute;
+	//left: 170px;
+	//top: 120px;
 }
 
 #vis_utenza {
 	font-family: fantasy, "Century Gothic", Verdana;
 	text-align: center;
-	overflow: auto;
-	position: absolute;
-	top: 480px;
+	//overflow: auto;
+	//position: absolute;
+	//top: 50px;
 }	
 
 #latosx {

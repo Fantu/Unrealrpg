@@ -17,8 +17,7 @@ echo $lang['Informazioni_sui_server']; ?>
 <br /><br />
 <?php echo sprintf($lang['altre_lingue'],$game_name); foreach($lingue as $chiave=>$elemento) echo $lingue[$chiave]; ?>
 <br /><br />
-</div>
-</div>
+
 </div>
 <div align="center">
 <?php echo $game_name; ?> &copy; 2007 Powered by <a href="http://www.lostgames.net" target="_blank">Lostgames.net</a>
