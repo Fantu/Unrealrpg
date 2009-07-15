@@ -9,10 +9,10 @@ body{
 #contenitore {
 	background-color: rgb(62, 69, 69);
 	font-family: fantasy, "Century Gothic", Verdana;
-	margin-left: 10%;
 	padding: 0;
 	width: 980px;
 	position: relative;
+	margin:auto;
 }
 
 #cont_est {
