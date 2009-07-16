@@ -24,7 +24,7 @@ function CambiaImg(id,bool) {
 </script>
 </head>
 <body>
-<div id=cont_est>
+
 <?php
 if(preg_match("/MSIE/",$_SERVER['HTTP_USER_AGENT']) AND ($pagina=="home")){ ?>
 <?php echo $lang['desc_firefox']; ?><br />

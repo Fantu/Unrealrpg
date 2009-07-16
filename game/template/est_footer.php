@@ -38,6 +38,6 @@ echo $lang['Informazioni_sui_server']; ?>
 <?php echo $page_gen; ?>
 </p><br />
 </div>
-</div>
+
 </body>
 </html>

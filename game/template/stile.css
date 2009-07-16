@@ -14,14 +14,14 @@ body{
 	margin:auto;
 }
 
-#cont_est {
+/*#cont_est {
 	background-color: rgb(48, 106, 187);
 	background-image: url(immagini/sfondo.jpg);
 	background-repeat: no-repeat;
 	font-family: fantasy, "Century Gothic", Verdana;
 	margin-top: -20px;
 	padding: 0;
-}
+}*/
 
 #login_est {
 	font-family: fantasy, "Century Gothic", Verdana;
