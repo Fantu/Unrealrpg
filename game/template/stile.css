@@ -1,5 +1,5 @@
 body{
-	background-color: rgb(62, 69, 69);
+	background-color: rgb(48, 106, 187);
 	margin: 0;
 	padding: 0;
 	font-family: fantasy, "Century Gothic", Verdana;
@@ -15,7 +15,7 @@ body{
 }
 
 #cont_est {
-	background-color: rgb(62, 69, 69);
+	background-color: rgb(48, 106, 187);
 	background-image: url(immagini/sfondo.jpg);
 	background-repeat: no-repeat;
 	font-family: fantasy, "Century Gothic", Verdana;
@@ -71,7 +71,7 @@ body{
 
 #fondop {
 	position: absolute;
-	background-color: rgb(62, 69, 69);
+	background-color: rgb(48, 106, 187);
 }
 #corpocentrale {
 	background-image: url(immagini/corpo.png);
