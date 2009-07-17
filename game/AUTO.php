@@ -1,5 +1,6 @@
 <?php
 if($_GET['code']!='autourbg'){header("Location: index.php?error=16"); exit();}
+$start_time=time()+microtime();//PER DEBUG EFFICENZA
 require('inclusi/valori.php');
 $int_security=$game_se_code;
 $optimize=0;
@@ -112,4 +113,12 @@ foreach($game_language as $chiavel=>$elementol){
 		}//fine se è di quella lingua
 	}//fine ogni server
 }//fine per ogni lingua
+
+//PER DEBUG EFFICENZA
+$end_time=time()+microtime();
+$gen_time=number_format($end_time-$start_time, 4, '.', '');
+if($gen_time>1 OR $db->nquery>100){
+$db->Setdb(1000);
+$log->Sistema("Debug AUTO ".date("d/m/y - H:i")." - Tempo di esecuzione:".$gen_time." secondi - Query eseguite:".$db->nquery);
+}
 ?>

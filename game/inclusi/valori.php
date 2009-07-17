@@ -22,4 +22,6 @@ $banner1=array(
 require_once(INC_PATH.'funzioni_db.php');
 $db=new ConnessioniMySQL();
 require(INC_PATH.'funzioni.php');
+require_once(INC_PATH.'funzioni_log.php');
+$log=new Logdb();
 ?>
