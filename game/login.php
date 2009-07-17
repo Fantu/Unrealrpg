@@ -40,7 +40,6 @@ if($config['chiuso']==1){
 	else
 	$db->QueryMod("INSERT INTO sessione (id,userid,password,ip,time) VALUES ('".md5($user['userid'])."','".$user['userid']."','".$user['password']."','".$_SERVER['REMOTE_ADDR']."','".$adesso."')");
 	$language=$config['language'];
-	require_once('inclusi/cancellazione.php');
 	header("Location: index.php?loc=situazione");
 	exit();
 }

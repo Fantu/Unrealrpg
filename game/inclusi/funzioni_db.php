@@ -19,6 +19,7 @@ class ConnessioniMySQL{
 	}
 	
 	function __destruct(){
+		if($this->database!=-1)
 		mysql_close($this->connect);
 	}
 	
