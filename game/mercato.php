@@ -75,6 +75,8 @@ else{
 $outputerrori=sprintf($lang['report_compera'],$quanti,$lang['oggetto'.$oggselect.'_nome'],$prezzo);
 $db->QueryMod("UPDATE utenti SET monete=monete-'".$prezzo."' WHERE userid='".$user['userid']."'");
 $db->QueryMod("UPDATE config SET banca=banca+'".$prezzo."'");
+$parlog=array(0=>$quanti,1=>'$lang["oggetto".$oggselect."_nome"]',2=>$prezzo);
+$log->Utenti($user['userid'],10,$parlog);
 for($i=1; $i<=$quanti; $i++){
 $db->QueryMod("INSERT INTO inoggetti (oggid,userid) VALUES ('".$oggselect."','".$user['userid']."')");
 }//per ogni pezzo

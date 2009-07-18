@@ -21,6 +21,8 @@ if($errore){
 	$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
 else{
 $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,ore) VALUES ('".$user['userid']."','".$adesso."','3600','3','2','".$ore."')");	
+$parlog=array(0=>$ore);
+$log->Utenti($user['userid'],8,$parlog);
 echo "<script language=\"javascript\">window.location.href='index.php?loc=situazione'</script>";
 exit();
 }
@@ -40,6 +42,8 @@ else{
 $db->QueryMod("UPDATE utenti SET monete=monete-'".$paga."',resuscita='1' WHERE userid='".$user['userid']."'");
 $db->QueryMod("UPDATE config SET banca=banca+'".$paga."'");
 $resuscita=1;
+$parlog=array(0=>$paga);
+$log->Utenti($user['userid'],9,$parlog);
 }
 }//fine chierici
 

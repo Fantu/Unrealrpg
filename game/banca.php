@@ -19,6 +19,8 @@ $vincitore=$db->QuerySelect("SELECT userid FROM banca WHERE lotteria>0 LIMIT ".$
 $db->QueryMod("UPDATE config SET lotteria='".$adesso."'");
 $db->QueryMod("UPDATE banca SET lotteria='0',vincitore='0'");
 $db->QueryMod("UPDATE banca SET conto=conto+'".$vincita."',vincitore='1' WHERE userid='".$vincitore['userid']."'");
+$parlog=array(0=>$vincita);
+$log->Utenti($user['userid'],7,$parlog);
 $testo=sprintf($lang['hai_vinto_lotteria'],$vincita);
 $vdata=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$vincitore['userid']."'");
 inbacheca(sprintf($lang['ha_vinto_alla_lotteria'],$vdata['username'],$vincita));
@@ -48,17 +50,17 @@ $db->QueryMod("UPDATE banca SET incprestito=incprestito+'1',dataincprestito='".$
 }//fine controllo prestito
 }//fine se ci sono prestiti
 $infointeressi=$lang['info_interessi']." ".date($lang['dataora'],($userbank['interessi']+86400));
-if (isset($_POST['deposita'])){
+if(isset($_POST['deposita'])){
 $errore="";
 $dadepositare=(int)$_POST['dadepositare'];
-if (!is_numeric($dadepositare)){
+if(!is_numeric($dadepositare)){
 $errore.=$lang['banca_errore1'];}
 else{
-if ($eventi['id']>0)
+if($eventi['id']>0)
 $errore.=$lang['global_errore1'];
-if ($dadepositare<1)
+if($dadepositare<1)
 $errore.=$lang['banca_errore2'];
-if ($dadepositare>$user['monete'])
+if($dadepositare>$user['monete'])
 $errore.=$lang['banca_errore3'];
 }
 if($errore){
@@ -66,6 +68,8 @@ if($errore){
 else{
 $db->QueryMod("UPDATE banca t1 JOIN utenti t2 on t1.userid=t2.userid JOIN caratteristiche t3 on t2.userid=t3.userid SET t1.conto=t1.conto+'".$dadepositare."',t1.interessi='".$adesso."',t2.monete=t2.monete-'".$dadepositare."',t3.energia=t3.energia-'1' WHERE t1.userid='".$user['userid']."'");
 $db->QueryMod("UPDATE config SET banca=banca+'".$dadepositare."'");
+$parlog=array(0=>$dadepositare);
+$log->Utenti($user['userid'],2,$parlog);
 }
 }//fine deposita
 if (isset($_POST['preleva'])){
@@ -89,6 +93,8 @@ if($errore){
 else{
 $db->QueryMod("UPDATE banca t1 JOIN utenti t2 on t1.userid=t2.userid JOIN caratteristiche t3 on t2.userid=t3.userid SET t1.conto=t1.conto-'".$daprelevare."',t2.monete=t2.monete+'".$daprelevare."',t3.energia=t3.energia-'1' WHERE t1.userid='".$user['userid']."'");
 $db->QueryMod("UPDATE config SET banca=banca-'".$daprelevare."'");
+$parlog=array(0=>$daprelevare);
+$log->Utenti($user['userid'],3,$parlog);
 }
 }//fine preleva
 if(isset($_POST['chiediprestito'])){
@@ -113,6 +119,8 @@ if($errore){
 else{
 $db->QueryMod("UPDATE banca t1 JOIN utenti t2 on t1.userid=t2.userid JOIN caratteristiche t3 on t2.userid=t3.userid SET t1.prestito=t1.prestito+'".$prestito."',t1.incprestito='1',t2.monete=t2.monete+'".$prestito."',t1.dataincprestito='".$adesso."',t3.energia=t3.energia-'1' WHERE t1.userid='".$user['userid']."'");
 $db->QueryMod("UPDATE config SET banca=banca-'".$prestito."'");
+$parlog=array(0=>$prestito);
+$log->Utenti($user['userid'],4,$parlog);
 }
 }//fine chiedi prestito
 if(isset($_POST['restituisciprestito'])){
@@ -125,6 +133,8 @@ if($errore){
 else{
 $db->QueryMod("UPDATE banca t1 JOIN utenti t2 on t1.userid=t2.userid JOIN caratteristiche t3 on t2.userid=t3.userid SET t1.prestito='0',t1.incprestito='0',t1.dataincprestito='0',t2.monete=t2.monete-'".$prestito."',t3.energia=t3.energia-'1' WHERE t1.userid='".$user['userid']."'");
 $db->QueryMod("UPDATE config SET banca=banca+'".$prestito."'");
+$parlog=array(0=>$prestito);
+$log->Utenti($user['userid'],5,$parlog);
 }
 }//fine restituisci prestito
 if(isset($_POST['comprabiglietto'])){
@@ -138,6 +148,7 @@ $errore.=$lang['banca_errore10'];
 if($errore){$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";}
 else{
 $db->QueryMod("UPDATE banca t1 JOIN caratteristiche t3 on t1.userid=t3.userid SET t1.conto=t1.conto-'1',t1.lotteria='1',t3.energia=t3.energia-'1' WHERE t1.userid='".$user['userid']."'");
+$log->Utenti($user['userid'],6);
 }
 }//fine compra biglietto lotteria
 $partecipanti=$db->QuerySelect("SELECT COUNT(userid) AS num FROM banca WHERE lotteria>0");

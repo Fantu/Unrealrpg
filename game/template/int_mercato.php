@@ -10,7 +10,6 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <?php echo $linkindietro; ?>
 <br />
 <br />
-<br />
 <?php
 if($mostraogg==1){
 	if ($seoggetti['id']==0){
@@ -33,3 +32,4 @@ foreach($catoggetti as $chiave=>$elemento){
 echo $catoggetti[$chiave]."<br />";}
 }?>
 </div>
+<br /><br />
