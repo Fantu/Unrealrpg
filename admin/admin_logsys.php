@@ -3,7 +3,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	header("Location: ../index.php?error=16");
 	exit();
 }
-if(isset(isset($_POST["view"]))){
+if(isset($_POST["view"])){
 	$srv=(int)$_POST['db'];
 	if(!isset($game_server[$srv]) AND $srv!=1000)//se non è un server ne amministrazione
 		$errore.=$lang['log_errore1']."<br />";
