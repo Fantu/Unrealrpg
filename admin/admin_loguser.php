@@ -39,7 +39,7 @@ if(isset($_POST["view"])){
 		require_once(LANG_PATH.'it/lang_gamelog.php');//METTERE MULTILINGUA
 		$where="userid='".$idu."'";
 		$u=$db->QuerySelect("SELECT userid,username FROM utenti WHERE ".$where." LIMIT 1");
-		$output=$u['username']." (".$srv.":".$id.")<br /><br />";
+		$output=$u['username']." (".$srv.":".$idu.")<br /><br />";
 		if($dagiorno){
 			$dagiorno=$dagiorno[1].'/'.$dagiorno[0].'/'.$dagiorno[2];
 			$timedag=strtotime($dagiorno);

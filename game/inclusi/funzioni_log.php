@@ -35,7 +35,7 @@ class Logdb{
 		global $db,$adesso,$lang;
 		$record=$db->QuerySelect("SELECT * from logutenti where id='".$id."' LIMIT 1");
 		$msg=$lang['msglog'.$record['msg']];
-		if($record['parametri']!=0){$msg=$this->InParInMsgUtente($msg,$record['parametri']);}
+		if($record['parametri']!="0"){$msg=$this->InParInMsgUtente($msg,$record['parametri']);}
 		return $msg;
 	}
 
