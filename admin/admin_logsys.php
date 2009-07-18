@@ -55,11 +55,11 @@ if(isset($_POST["view"])){
 		<td width="60%">
 			<select name="db">
 			<option value="1000" selected="selected"><?php echo $lang['Amministrazione']; ?></option>
-				<?php 
+				<?php
 				foreach($game_server as $chiave=>$elemento){
 					echo "<option value=\"$chiave\">$elemento</option>";
 				}//per ogni server presente
-				?>					
+				?>
 		  </select>
 		</td>
 	  </tr>
@@ -76,7 +76,7 @@ if(isset($_POST["view"])){
 	  <tr>
 	  	<td colspan="2" align="center"><input type="submit" name="view" value="<?php echo $lang['visualizza']; ?>" /></td>
 	  </tr>
-	</table>	 	
+	</table>
 	</form>
 	<br><hr width="300" align="center" noshade="noshade" /><br>
 	<?php echo $output; ?>
