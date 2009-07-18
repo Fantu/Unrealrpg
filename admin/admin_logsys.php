@@ -32,11 +32,16 @@ if(isset($_POST["view"])){
 		}
 		if($sempre==0)
 			$where.=" WHERE data>'".$data."'";
+			$c=$db->QuerySelect("SELECT COUNT(id) AS n FROM logsistema".$where);
+			if($c['n']!=0){
 			$l=$db->QueryCiclo("SELECT * FROM logsistema".$where);
 			while($el=$db->QueryCicloResult($l)){
 				$output.=date("d/m/y - H:i",$el['data'])."<br />";
 				$output.=$el['msg']."<br /><br />";
 				$output.="-------------------------------------<br /><br />";
+			}//fine per ogni log trovato
+			}else{
+			$output.=$lang['nessun_risultato'];
 			}
 	}//fine se non ci sono errori
 }//fine visualizza log

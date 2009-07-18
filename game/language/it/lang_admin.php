@@ -34,6 +34,6 @@ $lang['Sempre']='Sempre';
 $lang['visualizza']='Visualizza';
 $lang['outputerrori']='Si sono verificati i seguenti errori:';
 $lang['log_errore1']='- Database inesistente';
-$lang['']='';
+$lang['nessun_risultato']='Nessun log trovato';
 $lang['']='';
 ?>
