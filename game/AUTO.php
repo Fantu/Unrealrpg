@@ -62,7 +62,8 @@ foreach($game_language as $chiavel=>$elementol){
 				if($config['cancellazioni']<$adesso){
 				$db->QueryMod("UPDATE config SET cancellazioni='".($adesso+86400)."'");//prossimo controllo cancellazioni fra 1 giorno
 				$tempo=$adesso-172800;//2 giorni
-				$dacanc=$db->QuerySelect("SELECT count(userid) AS id FROM utenti WHERE dataiscrizione<'".$tempo."' AND conferma='0'");
+				$dacanc=$db->QuerySelect("SELECT count(userid) AS n FROM utenti WHERE dataiscrizione<'".$tempo."' AND conferma='0'");
+				if($dacanc['n']>0){
 				$dacanc=$db->QueryCiclo("SELECT * FROM utenti WHERE dataiscrizione<'".$tempo."' AND conferma='0'");
 				while($chi=$db->QueryCicloResult($dacanc)){//cancellazione non confermati
 					$messaggio=sprintf($lang['mail_cancellato_noconferma'],$chi['username'],$game_name,$game_server[$db->database]);
@@ -70,8 +71,10 @@ foreach($game_language as $chiavel=>$elementol){
 					$db->QueryMod("DELETE FROM utenti WHERE userid='".$chi['userid']."'");
 					$db->QueryMod("INSERT INTO cacheuserid (userid,data) VALUES ('".$chi['userid']."','".$adesso."')");
 				}//fine cancellazione non confermati
+				}
 				$tempo=$adesso-259200;//3 giorni
-				$dacanc=$db->QuerySelect("SELECT count(userid) AS id FROM utenti WHERE dataiscrizione<'".$tempo."' AND personaggio='0'");
+				$dacanc=$db->QuerySelect("SELECT count(userid) AS n FROM utenti WHERE dataiscrizione<'".$tempo."' AND personaggio='0'");
+				if($dacanc['n']>0){
 				$dacanc=$db->QueryCiclo("SELECT * FROM utenti WHERE dataiscrizione<'".$tempo."' AND personaggio='0'");
 				while($chi=$db->QueryCicloResult($dacanc)){//cancellazione senza personaggio
 					$messaggio=sprintf($lang['mail_cancellato_nopersonaggio'],$chi['username'],$game_name,$game_server[$db->database]);
@@ -80,8 +83,10 @@ foreach($game_language as $chiavel=>$elementol){
 					$db->QueryMod("INSERT INTO cacheuserid (userid,data) VALUES ('".$chi['userid']."','".$adesso."')");
 					$db->QueryMod("UPDATE config SET utenti=utenti-'1' LIMIT 1");
 				}//fine cancellazione senza personaggio
+				}
 				$tempo=$adesso-1209600;//14 giorni
-				$dacanc=$db->QuerySelect("SELECT count(userid) AS id FROM utenti WHERE ultimologin<'".$tempo."' AND avvinattivo<'".$adesso."' AND vacanza<'1'");
+				$dacanc=$db->QuerySelect("SELECT count(userid) AS n FROM utenti WHERE ultimologin<'".$tempo."' AND avvinattivo<'".$adesso."' AND vacanza<'1'");
+				if($dacanc['n']>0){
 				$dacanc=$db->QueryCiclo("SELECT * FROM utenti WHERE ultimologin<'".$tempo."' AND avvinattivo<'".$adesso."' AND vacanza<'1'");
 				while($chi=$db->QueryCicloResult($dacanc)){//avviso inattività
 					$messaggio=sprintf($lang['mail_avviso_inattivita'],$chi['username'],$game_name,$game_server[$db->database]);
@@ -89,8 +94,10 @@ foreach($game_language as $chiavel=>$elementol){
 					$avviso=$adesso+604800;
 					$db->QueryMod("UPDATE utenti SET avvinattivo='".$avviso."' WHERE userid='".$chi['userid']."'");
 				}//fine avviso inattività
+				}
 				$tempo=$adesso-2592000;//30 giorni
-				$dacanc=$db->QuerySelect("SELECT count(userid) AS id FROM utenti WHERE ultimologin<'".$tempo."' AND vacanza='0'");
+				$dacanc=$db->QuerySelect("SELECT count(userid) AS n FROM utenti WHERE ultimologin<'".$tempo."' AND vacanza='0'");
+				if($dacanc['n']>0){
 				$dacanc=$db->QueryCiclo("SELECT * FROM utenti WHERE ultimologin<'".$tempo."' AND vacanza='0'");
 				while($chi=$db->QueryCicloResult($dacanc)){//cancellazione inattivi senza vacanza attiva
 					$eventi=$db->QuerySelect("SELECT count(id) AS n FROM eventi WHERE userid='".$chi['userid']."'");
@@ -108,6 +115,7 @@ foreach($game_language as $chiavel=>$elementol){
 						$db->QueryMod("DELETE FROM equipaggiamento WHERE userid='".$chi['userid']."'");
 					}//fine se non ha eventi in corso
 				}//fine cancellazione inattivi senza vacanza attiva
+				}
 				}//fine controllo cancellazioni
 				}//fine se il server non è chiuso
 		}//fine se è di quella lingua
