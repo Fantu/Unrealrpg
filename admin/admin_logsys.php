@@ -43,7 +43,7 @@ if(isset($_POST["view"])){
 ?>
 	<?php echo $outputerrori; ?><br />
 	<?php echo $lang['visualizza_log_di_sistema']; ?><br /><br />
-	<form action="admin.php?sez=logsys&amp;s=1" method="POST">
+	<form action="" method="POST">
 	<table width="90%" border="0" cellspacing="2" cellpadding="2">
 	  <tr>
 		<td width="40%" align="right">Database</td>
