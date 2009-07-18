@@ -3,13 +3,14 @@ $game_name="Unreal Rpg - Browser game";
 $game_state="DEV";
 $game_version="0.8.0";
 $game_link="http://unrealff.it/rpgdev";
-$game_server=array(999=>"DEV",998=>"DEV");
+$game_server=array(999=>"DEV-IT",998=>"DEV-EN");
 $game_language=array("it"=>"Italiano","en"=>"English");
 $game_server_lang=array(999=>"it",998=>"en");
 $game_se_code="f87d5gf945fhut";
 define('MAIN_PATH', realpath(dirname(__FILE__).'/../../'));
 define('TPL_PATH', MAIN_PATH.'/game/template/');
 define('INC_PATH', MAIN_PATH.'/game/inclusi/');
+define('LANG_PATH', MAIN_PATH.'/game/language/');
 $game_mail="server@lostage.it";
 $adesso=strtotime("now");
 
