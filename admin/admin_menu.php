@@ -12,5 +12,8 @@
 <tr>
 	<td class="tabmenutd"><a href="admin.php?loc=server">- <?php echo $lang['gestione_server']; ?></a></td>
 </tr>
+<tr>
+	<td class="tabmenutd"><a href="admin.php?loc=logsys">- <?php echo $lang['mostra_log_sistema']; ?></a></td>
+</tr>
 <?php } ?>
 </table>
