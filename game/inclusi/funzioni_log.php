@@ -2,9 +2,14 @@
 class Logdb{
 
 	private function InParInMsgUtente($msg,$parametri){
+		global $lang;
 		$parametri=explode("|",$parametri);
 		foreach($parametri AS $el){
 		$p=explode("#",$el);
+		if(strstr($p[1], "$")){
+		$p[1]=substr($p[1],1);
+		$p[1]=$lang[$p[1]];
+		}
 		$msg=str_replace("{".$p[0]."}",$p[1],$msg);
 		}
 		return $msg;

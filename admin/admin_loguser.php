@@ -37,6 +37,7 @@ if(isset($_POST["view"])){
 				$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";
 		}else{
 		require_once(LANG_PATH.'it/lang_gamelog.php');//METTERE MULTILINGUA
+		require_once(LANG_PATH.'it/lang_oggetti_nomi.php');//METTERE MULTILINGUA
 		$where="userid='".$idu."'";
 		$u=$db->QuerySelect("SELECT userid,username FROM utenti WHERE ".$where." LIMIT 1");
 		$output=$u['username']." (".$srv.":".$idu.")<br /><br />";
