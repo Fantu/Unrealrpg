@@ -15,5 +15,8 @@
 <tr>
 	<td class="tabmenutd"><a href="admin.php?loc=logsys">- <?php echo $lang['mostra_log_sistema']; ?></a></td>
 </tr>
+<tr>
+	<td class="tabmenutd"><a href="admin.php?loc=loguser">- <?php echo $lang['mostra_log_utenti']; ?></a></td>
+</tr>
 <?php } ?>
 </table>
