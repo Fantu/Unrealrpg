@@ -13,7 +13,8 @@ Legenda:<br />
 + Rifatta la struttura grafica di base da tabelle a css<br />
 + Migliorata la grafica interna<br />
 + Rifatto controllo cancellazione, non più nel login da parte di utenti ma controllo giornaliero da parte del server in automatico<br />
-+ Aggiornati i testi in inglese, traduzione al 66% (636 stringhe su 768)<br />
++ Inseriti nei log: login; deposito, prelievo, prestiti e lotteria in Banca; inizio preghera e pagamento chierici in Tempio; acquisti al Mercato<br />
++ Aggiornati i testi in inglese, traduzione al 64% (636 stringhe su 804)<br />
 + Vari miglioramenti di sistema a sistema di base esterno, sistema di base interno, changelog, menu, sistema query, script ad esecuzione automatica<br />
 </p>
 <p><strong>0.7.18</strong> [R.2022] (28/06/09 - Beta)<br />
