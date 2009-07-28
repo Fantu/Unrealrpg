@@ -8,6 +8,11 @@ $username=htmlspecialchars($_POST['login_username'],ENT_QUOTES);
 $password=htmlspecialchars($_POST['login_password'],ENT_QUOTES);
 $user=$db->QuerySelect("SELECT count(userid) AS n FROM utenti WHERE username='".$username."' LIMIT 1");
 if($user['n']>0){
+	header("Location: ../index.php?error=1");
+	$loginfalliti++;
+	setcookie ("userloginc",$loginfalliti,time()+3600);
+	exit();
+}//se username inesistente
 $user=$db->QuerySelect("SELECT * FROM utenti WHERE username='".$username."' LIMIT 1");
 if($user['password']!=md5($password)){
 	header("Location: ../index.php?error=4");
@@ -15,12 +20,6 @@ if($user['password']!=md5($password)){
 	setcookie ("userloginc",$loginfalliti,time()+3600);
 	exit();
 }//se password errata
-}else{
-	header("Location: ../index.php?error=1");
-	$loginfalliti++;
-	setcookie ("userloginc",$loginfalliti,time()+3600);
-	exit();
-}//se username inesistente
 
 if($user['conferma']==0){
 	header("Location: ../index.php?error=2");

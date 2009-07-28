@@ -6,6 +6,8 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 setcookie ("userlogin", "", time() - 10800);
 $db->QueryMod("UPDATE utenti SET ultimazione=ultimazione-'600' WHERE userid='".$user['userid']."'");
 $db->QueryMod("DELETE FROM sessione WHERE id='".md5($user['userid'])."' LIMIT 1");
+$parlog=array(0=>$_SERVER['REMOTE_ADDR']);
+$log->Utenti($user['userid'],11,$parlog);
 echo "<script language=\"javascript\">window.location.href='../index.php'</script>";
 exit();
 ?>
