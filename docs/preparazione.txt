@@ -1,0 +1,12 @@
+/game/inclusi/log/mysql.log creare e permessi 777
+/game/inclusi/log/report/N/ creare cartella N dove N è il numero del server e permessi 777
+
+creare cron...
+#1 AUTO dev
+* * * * * /usr/bin/lynx > /dev/null -dump http://unrealff.it/rpgdev/game/AUTO.php?code=autourbg
+#2 AUTO beta
+* * * * * /usr/bin/lynx > /dev/null -dump http://unrealff.it/rpgbeta/game/AUTO.php?code=autourbg
+#3 BACKUPDB dev
+32 3 * * * /usr/bin/lynx > /dev/null -dump http://unrealff.it/rpgdev/admin/backupdb.php
+#4 BACKUPDB beta
+36 3 * * * /usr/bin/lynx > /dev/null -dump http://unrealff.it/rpgbeta/admin/backupdb.php
