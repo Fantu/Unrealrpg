@@ -7,7 +7,7 @@ if($loginfalliti>4){header("Location: ../index.php?error=8"); exit();}
 $username=htmlspecialchars($_POST['login_username'],ENT_QUOTES);
 $password=htmlspecialchars($_POST['login_password'],ENT_QUOTES);
 $user=$db->QuerySelect("SELECT count(userid) AS n FROM utenti WHERE username='".$username."' LIMIT 1");
-if($user['n']>0){
+if($user['n']==0){
 	header("Location: ../index.php?error=1");
 	$loginfalliti++;
 	setcookie ("userloginc",$loginfalliti,time()+3600);
