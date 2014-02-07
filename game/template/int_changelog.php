@@ -6,5 +6,5 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 <div>
 <?php echo sprintf($lang['leggi_changelog_interi'],"<a href=\"index.php?loc=changelog&amp;completa=1\">","</a>"); ?><br/>
 <br/>
-<?php if($_GET['completa']==1){include('/var/www/web2/web/rpgdev/game/language/'.$language.'/versioni.txt');}else{include('language/'.$language.'/versioni.txt');} ?>
+<?php if($_GET['completa']==1){include(MAIN_PATH.'/game/language/'.$language.'/versioni.txt');}else{include('language/'.$language.'/versioni.txt');} ?>
 </div>
