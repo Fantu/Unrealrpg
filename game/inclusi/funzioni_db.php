@@ -2,33 +2,35 @@
 class ConnessioniMySQL{
 
 	public $database;
-	private $suffix="unrealff_rpg";
+	private $suffix="unrealrpg_";
 	private $dbname;
 	private $server="localhost";
-	private $dbuser="rpg";
-	private $dbpass="3sWBVeNJN4YbB5MQ";
+	private $dbuser;
+	private $dbpass;
 	private $errorlog="/game/inclusi/log/mysql.log";//path da quella base per il file log errori query
 	public $nquery;
 	private $connect;
 	private $dbold;
-	
-	function __construct(){
+
+	function __construct($user,$pass){
        $this->nquery=0;
 	   $this->database=-1;
 	   $this->dbold=-1;
+       $this->dbuser=$user;
+       $this->dbpass=$pass;
 	}
-	
+
 	function __destruct(){
 		if($this->database!=-1)
 		mysql_close($this->connect);
 	}
-	
+
 	public function Setdb($d){//$db->Setdb(1); impostare il db da utilizzare se -1 si imposta il precedente
 		if($d==-1){$this->database=$this->dbold;}else{$this->dbold=$this->database; $this->database=$d;}
 		$this->dbname=$this->suffix.$this->database;
 		if($this->dbold==-1){$this->connect=mysql_connect($this->server,$this->dbuser,$this->dbpass);}
 		mysql_select_db($this->dbname,$this->connect);
-		
+
 	}
 
 	private function StampaErroreMysql($query,$err,$mess){
