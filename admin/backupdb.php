@@ -1,4 +1,6 @@
 <?php
+if($_GET['code']!='autourbg'){header("Location: ../index.php?error=16"); exit();}
+
 require('../game/inclusi/valori.php');
 
 $path=MAIN_PATH."/admin/cache/";
@@ -25,7 +27,6 @@ unlink($sqlfile);
 error_reporting(E_ALL);
 
 $oggetto=$game_name." - ".$game_state." DB Backup ".date('d/m/Y');
-$mail="server@lostage.it";
 $contenuto="Backup db:".$dbsalvati;
 
 $tipofile=filetype($pallegato);
@@ -33,7 +34,7 @@ $dimfile=filesize($pallegato);
 
 $mail_boundary = md5(uniqid(microtime()));
 
-$mail_headers="From: ".$mail."\n";
+$mail_headers="From: ".$game_mail."\n";
 $mail_headers.="MIME-Version: 1.0\r\n";
 $mail_headers.="Content-type: multipart/mixed; boundary=\"".$mail_boundary."\"";
 $mail_headers.="\r\n\r\n";
@@ -44,7 +45,7 @@ $file=fread(fopen($pallegato, "r"), $dimfile);
 $file=chunk_split(base64_encode($file));
 
 $mail_body="--".$mail_boundary."\n";
-$mail_body.="Content-type:text/plain; charset=iso-8859-1\r\n";
+$mail_body.="Content-type:text/plain; charset=utf8\r\n";
 $mail_body.="Content-transfer-encoding:8 bit\r\n\r\n";
 $mail_body.="".$contenuto."\n\n\n\n";
 $mail_body.="--".$mail_boundary."\n";
@@ -53,10 +54,10 @@ $mail_body.="Content-type:application/octet-stream; name=".$filename."\r\n";
 $mail_body.="Content-transfer-encoding:base64\r\n\r\n";
 $mail_body.=$file."\r\n\r\n";
 $mail_body.="--".$mail_boundary."--\r\n";
-	
+
 // INVIO DELLA MAIL
-if(@mail("fantuf@gmail.com",$oggetto,$mail_body,$mail_headers)){// SE L'INVIO E' ANDATO A BUON FINE...
-echo "<p>La mail è stata inoltrata con successo.</p>";
+if(@mail($game_mail,$oggetto,$mail_body,$mail_headers)){// SE L'INVIO E' ANDATO A BUON FINE...
+echo "<p>La mail Ã¨ stata inoltrata con successo.</p>";
 }else{// ALTRIMENTI...
 echo "<p>Si sono verificati dei problemi nell'invio della mail.</p>";
 }
