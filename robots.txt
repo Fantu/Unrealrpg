@@ -4,3 +4,4 @@ Disallow: /fix/
 Disallow: /game/
 Disallow: /pagine/
 Disallow: /conferma.php
+Disallow: /README.md
