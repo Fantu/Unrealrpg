@@ -1,4 +1,13 @@
 <?php
+
+/**
+*
+* Unrealrpg - browser game
+* Copyright (c) 2014 Fabio Fantoni. This software is licensed under the
+* GNU Affero General Public License version 3 (see the file LICENSE.txt).
+*
+*/
+
 // put here a random string
 $game_se_code="476etfydugto84";
 // game state: DEV for developing, BETA for testing

@@ -1,4 +1,13 @@
 <?php
+
+/**
+*
+* Unrealrpg - browser game
+* Copyright (c) 2014 Fabio Fantoni. This software is licensed under the
+* GNU Affero General Public License version 3 (see the file LICENSE.txt).
+*
+*/
+
 $game_name="Unrealrpg - Browser game";
 $game_version="0.8.1";
 $game_language=array("it"=>"Italiano","en"=>"English");
