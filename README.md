@@ -17,8 +17,8 @@ I noticed the excellent quality of open source projects, the better chance
 to survive and improve, so I decided to release this project as open source.
 
 
-More information
-----------------
+More informations
+-----------------
 
 Was developed with comments and main language in italian.
 Only when I decided to make it opensource I start to write in english
@@ -27,6 +27,8 @@ There is a partial game english translation under docs/locale did with
 Pootle and translate toolkit.
 If someone want help this project can do a pull request or "open an issue"
 on github for make a question, make a report or open a discussion.
+A testing game server updated from repository is available here:
+http://fantu.info/rpgdev
 
 
 License
