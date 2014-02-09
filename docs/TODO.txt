@@ -1,0 +1,14 @@
+- choose a good coding style and specify it on docs/CODING
+- improve all source code following coding style when defined:
+  for example do always indentation on php code and use 4 space, remove trailing whitespce ecc.
+- convert all files to same character encoding, probably UTF8 without boom
+- migliorare morte.php, come funzione usabile in AUTO senza l'uscita e anche durante la navigazione dell'utente (con reload pagina se necessario)
+- add multilanguage support on admin panel
+- change the font and make it automatically downloadable/loadable by browser:
+  http://stackoverflow.com/questions/2566179/how-can-i-make-my-users-automatically-download-the-font-i-use-for-my-website-if
+- make create user of admin panel and send massive mail news possible only if is admin
+- improve/redo graphic
+- add favicon
+- $game_se_code instead of autourbg to use on script called with cron or manual
+- probably is good increase size of userid field on all tables that use it and remove cacheuserid
+
