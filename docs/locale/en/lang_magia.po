@@ -1,0 +1,143 @@
+#. extracted from /var/www/web2/web/rpgdev/game/language/it/lang_magia.php
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-07-18 18:57+0200\n"
+"PO-Revision-Date: 2009-07-28 11:30+0200\n"
+"Last-Translator: Fabio Fantoni <fantuf@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Translate Toolkit 1.4.0-beta1\n"
+
+#: $lang['Acqua']
+msgid "ACQUA"
+msgstr "WATER"
+
+#: $lang['Aria']
+msgid "ARIA"
+msgstr "WIND"
+
+#: $lang['Terra']
+msgid "TERRA"
+msgstr "EARTH"
+
+#: $lang['Fuoco']
+msgid "FUOCO"
+msgstr "FIRE"
+
+#: $lang['Offensivi']
+msgid "Offensivi"
+msgstr "Offensive"
+
+#: $lang['Difensivi']
+msgid "Difensivi"
+msgstr "Defensive"
+
+#: $lang['magia1']
+msgid "VAPORE"
+msgstr "STEAM"
+
+#: $lang['magia2']
+msgid "BOLLA"
+msgstr "BUBBLE"
+
+#: $lang['magia3']
+msgid "COLPO DI VENTO"
+msgstr "WIND SHOT"
+
+#: $lang['magia4']
+msgid "MURO DI VENTO"
+msgstr "WIND WALL"
+
+#: $lang['magia5']
+msgid "TREMORI"
+msgstr "TREMBLING"
+
+#: $lang['magia6']
+msgid "FANGO"
+msgstr "MUD"
+
+#: $lang['magia7']
+msgid "FIAMMATA"
+msgstr "FLAME BURST"
+
+#: $lang['magia8']
+msgid "FUOCO DIFENSIVO"
+msgstr "DEFENSIVE FIRE"
+
+#: $lang['dmagia1']
+msgid ""
+"Il mago getta dell`acqua ai piedi dell`avversario, il quale, inconsapevole "
+"di ciò che stia accadendo, presto si ritrova immerso in una nube di vapore "
+"che lo indebolisce leggermente."
+msgstr ""
+"The wizard throws some water underneath the enemy, unconscious of what`s "
+"happening. Soon he finds himself inside a steam cloud that weakens him."
+
+#: $lang['dmagia2']
+msgid ""
+"Una grande bolla d`acqua ingloba il mago, fungendo da lieve barriera "
+"difensiva contro gli attacchi nemici."
+msgstr ""
+"A big water bubble wraps the wizard, protecting him from enemies weak "
+"attacks."
+
+#: $lang['dmagia3']
+msgid ""
+"Un forte colpo di vento colpisce l`avversario, scaraventandolo al suolo e "
+"stordendolo leggermente."
+msgstr ""
+"A strong wind shot hits the enemy, throwing him at the ground and stunning "
+"him for a while."
+
+#: $lang['dmagia4']
+msgid ""
+"Un muro di vento attorno al mago rende più difficile l`attacco "
+"dell`avversario."
+msgstr "A wind wall around the wizard makes the enemy attacks more difficult."
+
+#: $lang['dmagia5']
+msgid ""
+"La terra sotto l`avversario inizia a tremare e, facendogli perdere "
+"l'equilibrio, cade al suolo."
+msgstr ""
+"Earth starts shaking under the feet of the enemy who, overbalanced, falls on "
+"the ground."
+
+#: $lang['dmagia6']
+msgid ""
+"Il terreno ai piedi dell`avversario diventa fanghiglia, rendendo più "
+"difficili i suoi movimenti."
+msgstr ""
+"The ground under the enemy`s feet becomes mud, making his movements harder."
+
+#: $lang['dmagia7']
+msgid ""
+"Il mago lancia una fiammata contro l`avversario, provocandogli lievi "
+"ustioni."
+msgstr "The wizard throws a fire burst against the enemy, burning him slightly."
+
+#: $lang['dmagia8']
+msgid ""
+"Il mago viene ricoperto da un lieve strato infuocato, difendendolo da "
+"determinati attacchi da parte dell'avversario."
+msgstr ""
+"A thin fire shield covers the wizard, defending him from certain enemy "
+"attacks."
+
+#~ msgid "Acqua"
+#~ msgstr "Water"
+
+#~ msgid "Aria"
+#~ msgstr "Air"
+
+#~ msgid "Terra"
+#~ msgstr "Earth"
+
+#~ msgid "Fuoco"
+#~ msgstr "Fire"

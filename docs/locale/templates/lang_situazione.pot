@@ -1,0 +1,91 @@
+#. extracted from /var/www/web2/web/rpgdev/game/language/it/lang_situazione.php
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-07-18 18:57+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 1.4.0-beta1\n"
+
+#: $lang['nessun_nuovo_msg']
+msgid "Non hai nuovi messaggi"
+msgstr ""
+
+#: $lang['un_nuovo_msg']
+msgid "Hai 1 nuovo messaggio"
+msgstr ""
+
+#: $lang['nuovi_msg']
+msgid "Hai %s nuovi messaggi"
+msgstr ""
+
+#: $lang['prossimo_lavoro']
+msgid "Il prossimo lavoro lo potrai svolgere: "
+msgstr ""
+
+#: $lang['stai_gia_lavorando']
+msgid "Stai già lavorando."
+msgstr ""
+
+#: $lang['news']
+msgid "Novità: "
+msgstr ""
+
+#: $lang['comunicazione']
+msgid "Comunicazioni: "
+msgstr ""
+
+#: $lang['Levelup']
+msgid "Aumento di livello"
+msgstr ""
+
+#: $lang['uplevel']
+msgid "Sali di livello"
+msgstr ""
+
+#: $lang['caratteristica']
+msgid "Caratteristica"
+msgstr ""
+
+#: $lang['valore_attuale']
+msgid "Valore attuale"
+msgstr ""
+
+#: $lang['perc_scelta']
+msgid "Percentuale di incremento"
+msgstr ""
+
+#: $lang['desc_tablevup1']
+msgid ""
+"Hai 10 punti di percentuale di incremento che puoi distribuire fra salute, "
+"energia e mana; puoi fare anche tutti e 10 in uno."
+msgstr ""
+
+#: $lang['desc_tablevup2']
+msgid ""
+"Hai 4 punti di incremento che puoi distribuire fra le caratteristiche; non "
+"puoi fare più di 2 per caratteristica, ogni punto aumenterà la "
+"caratteristica di 5 se essa è minore di 200 altrimenti di 10."
+msgstr ""
+
+#: $lang['levelup_errore1']
+msgid ""
+"- Salute mana ed energia devono avere in totale 10 punti di percentuale di "
+"incremento.<br />"
+msgstr ""
+
+#: $lang['levelup_errore2']
+msgid ""
+"- Hai selezionato più di 2 punti incremento per una o più "
+"caratteristiche.<br />"
+msgstr ""
+
+#: $lang['levelup_errore3']
+msgid "- Le caratteristiche in totale non hanno 4 punti incremento.<br />"
+msgstr ""

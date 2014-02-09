@@ -1,0 +1,46 @@
+#. extracted from /var/www/web2/web/rpgdev/game/language/it/lang_mercato.php
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-07-18 18:57+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 1.4.0-beta1\n"
+
+#: $lang['nessun_oggetto_esistente']
+msgid "Nessun oggetto è presente, attualmente."
+msgstr ""
+
+#: $lang['Costo']
+msgid "Costo"
+msgstr ""
+
+#: $lang['Compra']
+msgid "Acquista"
+msgstr ""
+
+#: $lang['Quanti']
+msgid "Quantità"
+msgstr ""
+
+#: $lang['mercato_errore1']
+msgid "- Non hai abbastanza monete per effettuare l`acquisto.<br />"
+msgstr ""
+
+#: $lang['mercato_errore2']
+msgid "- Non hai selezionato l`oggetto da acquistare.<br />"
+msgstr ""
+
+#: $lang['mercato_errore3']
+msgid "- Non hai selezionato la quantità<br />"
+msgstr ""
+
+#: $lang['report_compera']
+msgid "Hai acquistato %s %s, spendendo in totale %s monete."
+msgstr ""

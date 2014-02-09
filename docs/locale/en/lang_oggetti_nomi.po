@@ -1,0 +1,429 @@
+#. extracted from /var/www/web2/web/rpgdev/game/language/it/lang_oggetti_nomi.php
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-07-18 18:57+0200\n"
+"PO-Revision-Date: 2008-12-12 08:33+0100\n"
+"Last-Translator: Fabio Fantoni <fantonifabio@tiscali.it>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 1.4.0-beta1\n"
+
+#: $lang['oggetto1_nome']
+msgid "Torcia"
+msgstr "Torch"
+
+#: $lang['oggetto2_nome']
+msgid "Carbone"
+msgstr "Coal"
+
+#: $lang['oggetto3_nome']
+msgid "Rame"
+msgstr "Copper"
+
+#: $lang['oggetto4_nome']
+msgid "Ferro"
+msgstr "Iron"
+
+#: $lang['oggetto5_nome']
+msgid "Argento"
+msgstr "Silver"
+
+#: $lang['oggetto6_nome']
+msgid "Oro"
+msgstr "Gold"
+
+#: $lang['oggetto7_nome']
+msgid "Rubini"
+msgstr "Ruby"
+
+#: $lang['oggetto8_nome']
+msgid "Smeraldi"
+msgstr "Emerald"
+
+#: $lang['oggetto9_nome']
+msgid "Diamanti"
+msgstr "Diamond"
+
+#: $lang['oggetto10_nome']
+msgid "Mithrill"
+msgstr "Mithrill"
+
+#: $lang['oggetto12_nome']
+msgid "Piccone di rame scadente"
+msgstr "Low quality copper pickaxe"
+
+#: $lang['oggetto13_nome']
+msgid "Piccone di rame discreto"
+msgstr "Medium quality copper pickaxe"
+
+#: $lang['oggetto15_nome']
+msgid "Piccone di ferro mediocre"
+msgstr "Medium quality iron pickaxe"
+
+#: $lang['oggetto16_nome']
+msgid "Piccone di ferro discreto"
+msgstr "Cheap iron pickaxe"
+
+#: $lang['oggetto17_nome']
+msgid "Piccone di rame buono"
+msgstr "Good copper pickaxe"
+
+#: $lang['oggetto18_nome']
+msgid "Piccone di ferro buono"
+msgstr "Good iron pickaxe"
+
+#: $lang['oggetto20_nome']
+msgid "Piccone di acciaio mediocre"
+msgstr "Mediocre steel pickaxe"
+
+#: $lang['oggetto21_nome']
+msgid "Piccone di acciaio discreto"
+msgstr "Fair steel pickaxe"
+
+#: $lang['oggetto22_nome']
+msgid "Piccone di acciaio buono"
+msgstr "Good steel pickaxe"
+
+#: $lang['oggetto23_nome']
+msgid "Piccone di rame eccellente"
+msgstr "Excellent copper pickaxe"
+
+#: $lang['oggetto24_nome']
+msgid "Piccone di ferro eccellente"
+msgstr "Excellent iron pickaxe"
+
+#: $lang['oggetto25_nome']
+msgid "Piccone di acciaio eccellente"
+msgstr "Excellent steel pickaxe"
+
+#: $lang['oggetto26_nome']
+msgid "Pozione curativa per ferite superficiali"
+msgstr "Healing potion for minor wounds"
+
+#: $lang['oggetto27_nome']
+msgid "Pozione curativa per ferite medie"
+msgstr "Healing potion for medium-sized wounds"
+
+#: $lang['oggetto28_nome']
+msgid "Pozione curativa per ferite profonde"
+msgstr "Healing potion for deep wounds"
+
+#: $lang['oggetto29_nome']
+msgid "Pozione curativa per ferite gravi"
+msgstr "Healing potion for serious wounds"
+
+#: $lang['oggetto30_nome']
+msgid "Pozione curativa per ferite critiche"
+msgstr "Healing potion for deadly wounds"
+
+#: $lang['oggetto31_nome']
+msgid "Pozione energetica minima"
+msgstr "Minor energetic potion"
+
+#: $lang['oggetto32_nome']
+msgid "Pozione energetica media"
+msgstr "Medium energetic potion"
+
+#: $lang['oggetto33_nome']
+msgid "Pozione energetica forte"
+msgstr "Strong energetic potion"
+
+#: $lang['oggetto34_nome']
+msgid "Pozione energetica intensa"
+msgstr "Intense energetic potion"
+
+#: $lang['oggetto35_nome']
+msgid "Pozione energetica pura"
+msgstr "Pure energetic potion"
+
+#: $lang['oggetto36_nome']
+msgid "Ampolla"
+msgstr "Vial"
+
+#: $lang['oggetto37_nome']
+msgid "Pugnale di rame scadente"
+msgstr "Low quality copper dagger"
+
+#: $lang['oggetto38_nome']
+msgid "Pugnale di rame discreto"
+msgstr "Medium quality copper dagger"
+
+#: $lang['oggetto39_nome']
+msgid "Pugnale di rame buono"
+msgstr "Good copper dagger"
+
+#: $lang['oggetto40_nome']
+msgid "Pugnale di ferro scadente"
+msgstr "Low quality copper dagger"
+
+#: $lang['oggetto41_nome']
+msgid "Pugnale di ferro discreto"
+msgstr "Medium quality iron dagger"
+
+#: $lang['oggetto42_nome']
+msgid "Pugnale di ferro buono"
+msgstr "Good iron dagger"
+
+#: $lang['oggetto43_nome']
+msgid "Pugnale di acciaio scadente"
+msgstr "Low quality copper dagger"
+
+#: $lang['oggetto44_nome']
+msgid "Pugnale di acciaio discreto"
+msgstr "Medium quality steel dagger"
+
+#: $lang['oggetto45_nome']
+msgid "Pugnale di acciaio buono"
+msgstr "Good steel dagger"
+
+#: $lang['oggetto46_nome']
+msgid "Daga di rame scadente"
+msgstr "Low quality copper short sword"
+
+#: $lang['oggetto47_nome']
+msgid "Daga di rame discreto"
+msgstr "Medium quality copper short sword"
+
+#: $lang['oggetto48_nome']
+msgid "Daga di rame buono"
+msgstr "Good copper short sword"
+
+#: $lang['oggetto49_nome']
+msgid "Daga di ferro scadente"
+msgstr "Low quality copper short sword"
+
+#: $lang['oggetto50_nome']
+msgid "Daga di ferro discreto"
+msgstr "Medium quality iron short sword"
+
+#: $lang['oggetto51_nome']
+msgid "Daga di ferro buono"
+msgstr "Good iron short sword"
+
+#: $lang['oggetto52_nome']
+msgid "Daga di acciaio scadente"
+msgstr "Low quality copper short sword"
+
+#: $lang['oggetto53_nome']
+msgid "Daga di acciaio discreto"
+msgstr "Medium quality steel short sword"
+
+#: $lang['oggetto54_nome']
+msgid "Daga di acciaio buono"
+msgstr "Good steel short sword"
+
+#: $lang['oggetto55_nome']
+msgid "Armatura di cuoio"
+msgstr "Leather armor"
+
+#: $lang['oggetto56_nome']
+msgid "Armatura di cuoio rinforzato"
+msgstr "Reinforced leather armor"
+
+#: $lang['oggetto57_nome']
+msgid "Scudo di legno"
+msgstr "Wooden shield"
+
+#: $lang['oggetto58_nome']
+msgid "Scudo di legno rinforzato"
+msgstr "Reinforced wooden shield"
+
+#: $lang['oggetto59_nome']
+msgid "Spada di rame scadente"
+msgstr "Low quality copper sword"
+
+#: $lang['oggetto60_nome']
+msgid "Spada di rame buona"
+msgstr "Good copper sword"
+
+#: $lang['oggetto61_nome']
+msgid "Spada di rame eccellente"
+msgstr "Excellent copper sword"
+
+#: $lang['oggetto62_nome']
+msgid "Ascia di rame scadente"
+msgstr "Low quality copper axe"
+
+#: $lang['oggetto63_nome']
+msgid "Ascia di rame buona"
+msgstr "Good copper axe"
+
+#: $lang['oggetto64_nome']
+msgid "Ascia di rame eccellente"
+msgstr "Excellent copper axe"
+
+#: $lang['oggetto65_nome']
+msgid "Mazza di rame scadente"
+msgstr "Low quality copper mace"
+
+#: $lang['oggetto66_nome']
+msgid "Mazza di rame buona"
+msgstr "Good copper mace"
+
+#: $lang['oggetto67_nome']
+msgid "Mazza di rame eccellente"
+msgstr "Excellent copper mace"
+
+#: $lang['oggetto68_nome']
+msgid "Piccone di mithrill"
+msgstr "Mithril pickaxe"
+
+#: $lang['oggetto69_nome']
+msgid "Piccone di mithrill superbo"
+msgstr "Excellent mithril pickaxe"
+
+#: $lang['oggetto70_nome']
+msgid "Pugnale di mithrill"
+msgstr "Mithril dagger"
+
+#: $lang['oggetto71_nome']
+msgid "Pugnale di mithrill superbo"
+msgstr "Excellent mithril dagger"
+
+#: $lang['oggetto72_nome']
+msgid "Armatura di rame scadente"
+msgstr "Low quality copper armor"
+
+#: $lang['oggetto73_nome']
+msgid "Armatura di ferro scadente"
+msgstr "Low quality iron armor"
+
+#: $lang['oggetto74_nome']
+msgid "Armatura di acciaio scadente"
+msgstr "Low quality steel armor"
+
+#: $lang['oggetto75_nome']
+msgid "Scudo di rame scadente"
+msgstr "Low quality copper shield"
+
+#: $lang['oggetto76_nome']
+msgid "Scudo di ferro scadente"
+msgstr "Low quality iron shield"
+
+#: $lang['oggetto77_nome']
+msgid "Scudo di acciaio scadente"
+msgstr "Low quality steel shield"
+
+#: $lang['oggetto78_nome']
+msgid "Daga di mithrill"
+msgstr "Mithril short sword"
+
+#: $lang['oggetto79_nome']
+msgid "Daga di mithrill superbo"
+msgstr "Excellent mithril short sword"
+
+#: $lang['oggetto80_nome']
+msgid "Coltelli di rame"
+msgstr "Copper knives"
+
+#: $lang['oggetto81_nome']
+msgid "Coltelli di ferro"
+msgstr "Iron knives"
+
+#: $lang['oggetto82_nome']
+msgid "Coltelli di acciaio"
+msgstr "Steel knives"
+
+#: $lang['oggetto83_nome']
+msgid "Coltelli di mithrill"
+msgstr "Mithril knives"
+
+#: $lang['oggetto84_nome']
+msgid "Armatura di rame buona"
+msgstr "Good copper armor"
+
+#: $lang['oggetto85_nome']
+msgid "Armatura di ferro buona"
+msgstr "Good iron armor"
+
+#: $lang['oggetto86_nome']
+msgid "Armatura di acciaio buona"
+msgstr "Good steel armor"
+
+#: $lang['oggetto87_nome']
+msgid "Scudo di rame buono"
+msgstr "Good copper shield"
+
+#: $lang['oggetto88_nome']
+msgid "Scudo di ferro buono"
+msgstr "Good iron shield"
+
+#: $lang['oggetto89_nome']
+msgid "Scudo di acciaio buono"
+msgstr "Good steel shield"
+
+#: $lang['oggetto90_nome']
+msgid "Spada di ferro scadente"
+msgstr "Low quality iron sword"
+
+#: $lang['oggetto91_nome']
+msgid "Spada di ferro buona"
+msgstr "Good iron sword"
+
+#: $lang['oggetto92_nome']
+msgid "Spada di ferro eccellente"
+msgstr "Excellent iron sword"
+
+#: $lang['oggetto93_nome']
+msgid "Ascia di ferro scadente"
+msgstr "Low quality iron axe"
+
+#: $lang['oggetto94_nome']
+msgid "Ascia di ferro buona"
+msgstr "Good iron axe"
+
+#: $lang['oggetto95_nome']
+msgid "Ascia di ferro eccellente"
+msgstr "Excellent iron axe"
+
+#: $lang['oggetto96_nome']
+msgid "Mazza di ferro scadente"
+msgstr "Low quality iron mace"
+
+#: $lang['oggetto97_nome']
+msgid "Mazza di ferro buona"
+msgstr "Good iron mace"
+
+#: $lang['oggetto98_nome']
+msgid "Mazza di ferro eccellente"
+msgstr "Excellent iron mace"
+
+#: $lang['oggetto99_nome']
+msgid "Armatura di rame eccellente"
+msgstr "Excellent copper armour"
+
+#: $lang['oggetto100_nome']
+msgid "Armatura di ferro eccellente"
+msgstr "Excellent iron armour"
+
+#: $lang['oggetto101_nome']
+msgid "Armatura di acciaio eccellente"
+msgstr "Excellent steel armour"
+
+#: $lang['oggetto102_nome']
+msgid "Scudo di rame eccellente"
+msgstr "Excellent copper shield"
+
+#: $lang['oggetto103_nome']
+msgid "Scudo di ferro eccellente"
+msgstr "Excellent iron shield"
+
+#: $lang['oggetto104_nome']
+msgid "Scudo di acciaio eccellente"
+msgstr "Excellent steel shield"
+
+#~ msgid "Piccone di rame ossidato"
+#~ msgstr "Oxidized copper pickaxe"
+
+#~ msgid "Piccone di ferro arrugginito"
+#~ msgstr "Rusty iron pickaxe"
+
+#~ msgid "Piccone di acciaio arrugginito"
+#~ msgstr "Rusty steel pickaxe"
+
+#~ msgid "Pozione energetica debole"
+#~ msgstr "Weak energetic potion"

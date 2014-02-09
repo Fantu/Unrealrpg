@@ -1,0 +1,134 @@
+#. extracted from /var/www/web2/web/rpgdev/game/language/it/lang_opzioni.php
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-07-18 18:57+0200\n"
+"PO-Revision-Date: 2009-07-28 11:29+0200\n"
+"Last-Translator: Fabio Fantoni <fantuf@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Translate Toolkit 1.4.0-beta1\n"
+
+#: $lang['Cambia_sesso']
+msgid "Cambia sesso:"
+msgstr "Change gender:"
+
+#: $lang['sesso_modificato']
+msgid "Sesso modificato correttamente."
+msgstr "Gender changed succesfully."
+
+#: $lang['opzioni_error1']
+msgid "- Sesso: valore immesso non valido!"
+msgstr "- Gender: invalid input value!"
+
+#: $lang['opzioni_error2']
+msgid "- Non hai abbastanza punti Plus."
+msgstr "- You don`t have enough points Plus."
+
+#: $lang['opzioni_error3']
+msgid "- Vecchia password errata."
+msgstr "- Old password wrong."
+
+#: $lang['opzioni_error4']
+msgid "- La nuova password e la sua ripetizione non coincidono."
+msgstr "- The new password and its repetition don`t match."
+
+#: $lang['opzioni_error5']
+msgid "- La password deve essere lunga almeno 6 caratteri e massimo 20."
+msgstr "- The password must be from 6 to 20 characters long."
+
+#: $lang['plus_fino_a']
+msgid "Account plus attivo fino a: "
+msgstr "Account plus active until: "
+
+#: $lang['plus_non_attivo']
+msgid "Account plus non attivo."
+msgstr "Account plus not active."
+
+#: $lang['quanti_punti_plus']
+msgid "Hai %s punti Plus."
+msgstr "You have %s plus points."
+
+#: $lang['desc_attivare_plus_con_punti']
+#, fuzzy
+msgid ""
+"I punti Plus, servono per poter avere un Account Plus per tot. tempo: 3 "
+"punti= 1 settimana; 10 punti= 1 mese; 100 punti= 1 anno."
+msgstr ""
+"The points are used to activate a Plus Account for a precise amount of time: "
+"3 points= 1 week, 10 points= 1 month, 100 points= 1 year"
+
+#: $lang['non_puoi_attivare_nessun_plus']
+msgid "Non hai abbastanza punti per attivare nessun tipo di Account Plus."
+msgstr "You don`t have enough points plus to activate any Plus Account."
+
+#: $lang['attiva_plus_con_punti1']
+msgid "Attiva Account Plus di 1 settimana"
+msgstr "Activate Account Plus 1 week"
+
+#: $lang['attiva_plus_con_punti2']
+msgid "<br />Attiva Account Plus di 1 mese"
+msgstr "<br />Activate Account Plus 1 month"
+
+#: $lang['attiva_plus_con_punti3']
+msgid "<br />Attiva Account Plus di 1 anno"
+msgstr "<br />Activate Account Plus 1 year"
+
+#: $lang['desc_link_refer']
+#, fuzzy
+msgid ""
+"Gli utenti che visiteranno %s attraverso il tuo link sottostante ed entro "
+"una settimana si iscriveranno e saranno ben attivi, ti faranno guadagnare 1 "
+"punto Plus e, se continueranno a giocare attivamente, guadagnerai 2 punti "
+"Plus ogni mese. Attualmente, tale sistema è valido solo per l`iscrizione "
+"allo stesso regno. Nel tuo caso è il regno: %s"
+msgstr ""
+"The users that will visit %s, register in a week and be active,will give you "
+"1 Plus point and, if they will continue to play normally,you will receive 1 "
+"Plus point every month. Currently,this sistem works only for a registration "
+"in the same server as yours.In your situation it is the %s server"
+
+#: $lang['newsletter_disattiva']
+msgid "Attualmente non ricevi le newsletter"
+msgstr "Currently you are not receveing any newsletter"
+
+#: $lang['newsletter_attiva']
+msgid "Attualmente ricevi le newsletter"
+msgstr "Currently you are receiveng newsletter"
+
+#: $lang['disattiva']
+msgid "Disattiva"
+msgstr "Disable"
+
+#: $lang['attiva']
+msgid "Attiva"
+msgstr "Enable"
+
+#: $lang['cambia_password']
+msgid "Cambia Password"
+msgstr "Change Password"
+
+#: $lang['vecchia_password']
+msgid "Vecchia Password"
+msgstr "Old Password"
+
+#: $lang['nuova_password']
+msgid "Nuova Password"
+msgstr "New Password"
+
+#: $lang['ripeti_password']
+msgid "Ripeti Password"
+msgstr "Re-write Password"
+
+#: $lang['vacanza_disattiva']
+msgid "Modalità vacanza disattiva"
+msgstr "Holiday mode disabled"
+
+#: $lang['vacanza_attiva']
+msgid "Modalità vacanza attiva"
+msgstr "Holiday mode enabled"

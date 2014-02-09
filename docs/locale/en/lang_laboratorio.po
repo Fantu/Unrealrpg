@@ -1,0 +1,178 @@
+#. extracted from /var/www/web2/web/rpgdev/game/language/it/lang_laboratorio.php
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-07-18 18:57+0200\n"
+"PO-Revision-Date: 2009-02-02 08:47+0100\n"
+"Last-Translator: Fabio Fantoni <fantonifabio@tiscali.it>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 1.4.0-beta1\n"
+
+#: $lang['lav_apprendista']
+msgid "Lavora come apprendista"
+msgstr "Work as an apprentice"
+
+#: $lang['desc_lav_apprendista']
+#, fuzzy
+msgid ""
+"Puoi lavorare in Laboratorio come apprendista, avendo una retribuzione fissa "
+"di 7 monete ad ora e guadagnare esperienza per l'abilità di alchimista, "
+"utile per avere risultati migliori con meno fatica e meno danni."
+msgstr ""
+"You can work at the Laboratory as an apprentice, beeing paid 6 gold per "
+"hour, earning experience as an alchemist. This allows you to have better "
+"results with less effort and avoid beeing hurt."
+
+#: $lang['lab_errore1']
+msgid "- Non hai sufficienti energie per poter lavorare in Laboratorio.<br />"
+msgstr ""
+
+#: $lang['lab_errore2']
+msgid ""
+"- Attualmente il tuo fisico non può reggere il lavoro in Laboratorio.<br />"
+msgstr ""
+
+#: $lang['lab_errore4']
+msgid "- Hai troppo poco mana!<br />"
+msgstr "- You don`t have enough mana<br />"
+
+#: $lang['lab_errore5']
+msgid ""
+"- Non hai abbastanza ampolle per poter effettuare esperimenti o distillare "
+"pozioni.<br />"
+msgstr ""
+
+#: $lang['lab_errore6']
+#, fuzzy
+msgid ""
+"- Non hai abbastanza monete per comprare gli ingredienti necessari.<br />"
+msgstr "- You don`t have enough money  to buy the necessary ingredients<br />"
+
+#: $lang['lab_errore7']
+#, fuzzy
+msgid "- Non sei abbastanza abile per poter creare questa pozione.<br />"
+msgstr "- You`re not able enough to prepare this potion<br />"
+
+#: $lang['lab_errore8']
+msgid "- Non hai selezionato la pozione da creare!<br />"
+msgstr ""
+
+#: $lang['report_lavlabapp']
+#, fuzzy
+msgid ""
+"Hai lavorato in Laboratorio come apprendista per 1 ora, guadagnando %s "
+"monete e %s di esperienza. Il lavoro ti ha stancato (hai perso %s di "
+"energia), il tuo fisico ne ha risentito (hai perso %s di salute) e hai "
+"consumato %s di mana."
+msgstr ""
+"You have worked at the Laboratory for an hour, earning %s gold and %s "
+"experience as alchemist. The job has weakened you (you have lost %s energy) "
+"and your body needs rest (you have lost %s health)"
+
+#: $lang['report_lavoro_labapp']
+#, fuzzy
+msgid "Completato lavoro in Laboratorio come apprendista."
+msgstr "You have completed your job as an apprentice at the Laboratory"
+
+#: $lang['report_esplosione_laboratorio']
+#, fuzzy
+msgid "Imprevisto durante il lavoro in Laboratorio!"
+msgstr "Something unexpected has happened while working at the Laboratory"
+
+#: $lang['report_esplosione_lab1']
+#, fuzzy
+msgid ""
+"Durante il tuo lavoro in Laboratorio è esplosa una pozione ma sei riuscito "
+"ad allontanarti in tempo e non ferirti."
+msgstr ""
+"A potion exploded while working at the Laboratory, but you managed to escape "
+"without beeing hurt"
+
+#: $lang['report_esplosione_lab2']
+#, fuzzy
+msgid ""
+"Durante il tuo lavoro in Laboratorio è esplosa una pozione, non sei riuscito "
+"ad allontanarti in tempo e ti sei ferito (%s di salute persa)."
+msgstr ""
+"A potion exploded while working at the Laboratory: you couldn`t get away in "
+"time, and got hurt (you lost %s health)"
+
+#: $lang['lav_alchimista']
+msgid "Lavora come alchimista"
+msgstr "Work as an alchemist"
+
+#: $lang['desc_lav_alchimista']
+#, fuzzy
+msgid ""
+"Puoi lavorare in Laboratorio come alchimista cercando di distillare delle "
+"pozioni, alcune delle quali, potranno essere create solo in base alla tua "
+"abilità, non avendo però sicurezza circa la loro riuscita."
+msgstr ""
+"You can work at the Laboratory as an alchemist trying to distil some "
+"potions.Some potions may be created depending on your ability,without "
+"certainty of success."
+
+#: $lang['nessuna_pozione_poss']
+#, fuzzy
+msgid "Non sei abbastanza esperto per distillare nessuna pozione."
+msgstr "You are not expert enough to prepare any potion"
+
+#: $lang['report_lavlabalc']
+#, fuzzy
+msgid ""
+"Hai lavorato in Laboratorio come alchimista per 1 ora, guadagnando %s di "
+"esperienza. Il lavoro ti ha stancato (hai perso %s di energia), il tuo "
+"fisico ne ha risentito (hai perso %s di salute) e hai consumato %s di "
+"mana.<br />Hai speso %s monete per comprare gli ingredienti necessari."
+msgstr ""
+"You have worked at the Laboratory as an alchemist for an hour, earning %s "
+"experience. The job has weakened you (you have lost %s energy) and your body "
+"needs rest (you have lost %s health). You also spent %s gold to buy the "
+"necessary ingredients."
+
+#: $lang['report_lavoro_labalc']
+#, fuzzy
+msgid "Completato il lavoro in Laboratorio come alchimista."
+msgstr "You have completed your job as an alchemist at the Laboratory"
+
+#: $lang['report_lavlab_pozione_no']
+#, fuzzy
+msgid "Non sei riuscito a distillare %s."
+msgstr "You managed to prepare %s."
+
+#: $lang['report_lavlab_pozione_si']
+msgid "Sei riuscito a distillare %s."
+msgstr "You managed to prepare %s."
+
+#: $lang['seleziona_pozione']
+msgid "Seleziona quale pozione:"
+msgstr ""
+
+#, fuzzy
+#~ msgid ""
+#~ "- Devono passare 3 ore per ogni ora di lavoro dall`ultimo effettuato.<br />"
+#~ msgstr ""
+#~ "- You have to wait 3 hours per each working hour, starting from your last "
+#~ "job<br />"
+
+#~ msgid "Non sei riuscito a distillare la pozione voluta."
+#~ msgstr "You didn`t manage to prepare the chosen potion."
+
+#~ msgid "- Sei troppo stanco per poter lavorare in Laboratorio<br />"
+#~ msgstr "- You are too weak to work at the Laboratory<br />"
+
+#~ msgid ""
+#~ "- Il tuo fisico non pu&ograve; reggere il lavoro in Laboratorio "
+#~ "attualmente<br />"
+#~ msgstr ""
+#~ "- Your body can`t withstand working at the Laboratory at the moment<br />"
+
+#~ msgid "- Non ha una ampolla<br />"
+#~ msgstr "- You don't have any capsule<br />"
+
+#~ msgid "- Pozione non selezionata<br />"
+#~ msgstr "- No selected potion<br />"

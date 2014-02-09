@@ -1,0 +1,345 @@
+# extracted from orig-php/lang_combact.php
+#. extracted from /var/www/web2/web/rpgdev/game/language/it/lang_combact.php
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-07-18 18:57+0200\n"
+"PO-Revision-Date: 2009-07-28 11:35+0200\n"
+"Last-Translator: Fabio Fantoni <fantuf@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Translate Toolkit 1.4.0-beta1\n"
+
+#: $lang['combact_errore1']
+msgid "- Il personaggio che vuoi sfidare sta facendo altro.<br />"
+msgstr "- The character you want to challenge is doing something else.<br />"
+
+#: $lang['combact_errore2']
+msgid "- Non puoi sfidare te stesso.<br />"
+msgstr "- You can`t challenge yourself.<br />"
+
+#: $lang['combact_errore3']
+msgid "- Report non esistente.<br />"
+msgstr "- The report doesn`t exists.<br />"
+
+#: $lang['combact_errore4']
+msgid ""
+"- Il personaggio che vuoi sfidare non è in condizioni abbastanza buone per "
+"affrontare un combattimento.<br />"
+msgstr ""
+"- The character you want to challenge is not in the condition to engage in a "
+"fight.<br />"
+
+#: $lang['combact_errore5']
+msgid ""
+"- Non sei in condizioni abbastanza buone per affrontare un combattimento.<br "
+"/>"
+msgstr "- Your condition doesn`t allow you to engage in a fight.<br/>"
+
+#: $lang['combact_errore6']
+msgid ""
+"- Puoi salire di livello, non puoi lanciare una sfida finchè non lo "
+"farai.<br />"
+msgstr "- Before challenging someone, you have to increase your level.<br />"
+
+#: $lang['combact_errore7']
+msgid ""
+"- Il personaggio che vuoi sfidare può salire di livello, non puoi lanciargli "
+"una sfida finchè non lo farà.<br />"
+msgstr ""
+"- The character you want to challenge has to increase his level before "
+"engaging in a fight.<br />"
+
+#: $lang['combact_errore8']
+msgid "- Questo report non è tuo.<br />"
+msgstr "- This report is not yours.<br />"
+
+#: $lang['outputerrorisfida']
+msgid "Impossibile lanciare la sfida per i seguenti motivi:"
+msgstr "You can`t challenge for the following reasons:"
+
+#: $lang['sfida_annullata']
+msgid "Sfida annullata"
+msgstr "Challenge canceled"
+
+#: $lang['report_sfida_annullata1']
+msgid ""
+"La sfida che hai lanciato a %s è stata annullata per mancata risposta entro "
+"i 10 minuti."
+msgstr ""
+"The challenge you issued to %s has been canceled due to missing response in "
+"10 minutes."
+
+#: $lang['report_sfida_annullata2']
+#, fuzzy
+msgid ""
+"La sfida che ti ha lanciato %s è stata annullata per mancata risposta entro "
+"i 10 minuti."
+msgstr ""
+"The challenge you issued to %s has been canceled due to missing response in "
+"10 minutes."
+
+#: $lang['nessuna_sfida']
+msgid "Nessuna richiesta di sfida presente"
+msgstr "No challenge request"
+
+#: $lang['rispondi_sfida']
+msgid "%s ti vuole sfidare"
+msgstr "%s challenges you"
+
+#: $lang['sfida_lanciata']
+msgid "Hai lanciato una sfida a %s"
+msgstr "You issued a challenge to %s"
+
+#: $lang['sfida_rifiutata']
+msgid "Sfida rifiutata"
+msgstr "Challenge refused"
+
+#: $lang['report_sfida_rifiutata']
+msgid "La sfida è stata rifiutata."
+msgstr "The challenge has been refused."
+
+#: $lang['aggiorna']
+msgid "Aggiorna"
+msgstr "Refresh"
+
+#: $lang['secondi_prox_round']
+msgid "Questo \"round\" finirà tra %s secondi."
+msgstr "This round will end in %s seconds."
+
+#: $lang['danno_att_vicino']
+msgid "%s attacca con %s e colpisce"
+msgstr "%s attacks with %s and strikes"
+
+#: $lang['niente_att_vicino']
+#, fuzzy
+msgid "%s attacca %s con %s senza riuscire a colpire."
+msgstr "%s attacks with %s unsuccessfully."
+
+#: $lang['pugno']
+msgid "pugno"
+msgstr "fist"
+
+#: $lang['troppo_stanco_per_attacco']
+msgid "%s non attacca in quanto esausto."
+msgstr "%s is too exhaust to attack."
+
+#: $lang['resta_in_difesa']
+msgid "%s non attacca in quanto resta sulla difensiva."
+msgstr "%s doesn`t attack because he is on the defensive."
+
+#: $lang['finito_entrambi_esausti']
+msgid ""
+"Il combattimento finisce in parità in quanto entrambi i combattenti sono "
+"esausti."
+msgstr "The fight/duel ends in a draw because both fighters are exhausted."
+
+#: $lang['finito_entrambi_arresi']
+msgid ""
+"Il combattimento finisce in parità in quanto entrambi i combattenti si sono "
+"arresi."
+msgstr "The fight/duel ends in a draw because both fighters gave up."
+
+#: $lang['finito_resa']
+msgid "%s si arrende e %s vince il combattimento."
+msgstr "%s gives up and %s wins."
+
+#: $lang['vincitore_combattimento']
+msgid "%s vince il combattimento."
+msgstr "%s wins."
+
+#: $lang['combattimento_troppo_lungo']
+msgid ""
+"Il combattimento è durato a lungo e nessun combattente ha avuto la meglio, "
+"finisce quindi in parità"
+msgstr "The fight has been very long, no one has prevailed so it`s a draw"
+
+#: $lang['exp_guadagnata']
+msgid "%s guadagna %s punti esperienza."
+msgstr "%s earns %s experience points."
+
+#: $lang['titolo_report_combattimento1']
+msgid "Report di combattimento"
+msgstr "Fight report"
+
+#: $lang['titolo_report_combattimento2']
+msgid "Combattimento in corso"
+msgstr "Still fighting"
+
+#: $lang['seleziona_tattica']
+msgid "Scegli la tattica"
+msgstr "Choose the tactics"
+
+#: $lang['tattica_attacco']
+msgid "Attacco"
+msgstr "Attack"
+
+#: $lang['tattica_difesa']
+msgid "Difesa"
+msgstr "Defense"
+
+#: $lang['tattica_resa']
+msgid "Resa"
+msgstr "Surrender"
+
+#: $lang['tattica_pozione']
+msgid "Usa pozione"
+msgstr "Use potion"
+
+#: $lang['tattica_attacco_cac']
+msgid "corpo a corpo"
+msgstr "hand to hand"
+
+#: $lang['tattica_attacco_adi']
+msgid "a distanza"
+msgstr ""
+
+#: $lang['nessuna']
+msgid "Nessuna"
+msgstr ""
+
+#: $lang['tattica_selezionata']
+msgid "Tattica selezionata: %s"
+msgstr "Chosen tactics: %s"
+
+#: $lang['equip_di']
+msgid "%s di livello %s, equipaggiamento: %s"
+msgstr ""
+
+#: $lang['parata_con_scudo']
+msgid "si para con lo scudo"
+msgstr ""
+
+#: $lang['colpo_potente']
+msgid "riceve un colpo potente"
+msgstr ""
+
+#: $lang['colpo_molto_potente']
+msgid "riceve un colpo molto potente"
+msgstr ""
+
+#: $lang['danni_subiti']
+msgid "%s subisce %s danni."
+msgstr ""
+
+#: $lang['c_vince_monete']
+msgid "%s prende %s monete."
+msgstr ""
+
+#: $lang['c_perde_monete']
+msgid "%s perde %s monete."
+msgstr ""
+
+#: $lang['Pozione']
+msgid "Pozione"
+msgstr ""
+
+#: $lang['sasso']
+msgid "sasso"
+msgstr ""
+
+#: $lang['non_riuscito_ad_allontanarsi']
+msgid ""
+"%s non è riuscito ad allontanarsi a sufficenza per un attacco a distanza"
+msgstr ""
+
+#: $lang['outputerroriquest']
+msgid "Impossibile effettuare una quest per i seguenti motivi:"
+msgstr ""
+
+#: $lang['quest_error1']
+msgid ""
+"- Non sei in condizioni abbastanza buone per affrontare una quest.<br />"
+msgstr "- Your condition doesn`t allow you to engage a fight.<br/>"
+
+#: $lang['quest_error2']
+#, fuzzy
+msgid ""
+"- Puoi salire di livello, non puoi fare una quest finchè non lo farai.<br />"
+msgstr "- Before challenging someone, you have to increase your level.<br />"
+
+#: $lang['quest_error3']
+msgid "- Direzione non valida.<br />"
+msgstr ""
+
+#: $lang['vai_verso']
+msgid "Vai verso"
+msgstr ""
+
+#: $lang['Parti']
+msgid "Parti"
+msgstr ""
+
+#: $lang['Nord']
+msgid "Nord"
+msgstr ""
+
+#: $lang['Sud']
+msgid "Sud"
+msgstr ""
+
+#: $lang['Ovest']
+msgid "Ovest"
+msgstr ""
+
+#: $lang['Est']
+msgid "Est"
+msgstr ""
+
+#: $lang['le_montagne']
+msgid "Le Montagne"
+msgstr ""
+
+#: $lang['tempo_previsto_per_destinazione']
+msgid "Per giungere a destinazione ci metterai circa %s minuti"
+msgstr ""
+
+#: $lang['oconfini_trovato_tesoro']
+msgid "Hai trovato un piccolo tesoro dal valore di %s monete"
+msgstr ""
+
+#: $lang['oconfini_trovato_nulla']
+msgid "Non hai trovato niente e nessuno"
+msgstr ""
+
+#: $lang['ocnord_desc']
+msgid ""
+"Tempo stimato di arrivo: %s minuti - Probabilità di incontrare nemici: media"
+msgstr ""
+
+#: $lang['nomepcpu1']
+msgid "CpuProva"
+msgstr ""
+
+#: $lang['nomepcpu2']
+msgid "Bandito giovane"
+msgstr ""
+
+#: $lang['nomepcpu3']
+msgid "Bandito"
+msgstr ""
+
+#: $lang['nomepcpu4']
+msgid "Bandito esperto"
+msgstr ""
+
+#: $lang['nomepcpu5']
+msgid "Goblin"
+msgstr ""
+
+#: $lang['nomepcpu6']
+msgid "Vorg"
+msgstr ""
+
+#: $lang['nomepcpu7']
+msgid "Kazam"
+msgstr ""
+
+#: $lang['nomepcpu8']
+msgid "Rapinatore"
+msgstr ""

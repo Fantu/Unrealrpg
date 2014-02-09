@@ -1,0 +1,231 @@
+#. extracted from /var/www/web2/web/rpgdev/game/language/it/lang_banca.php
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-07-18 18:57+0200\n"
+"PO-Revision-Date: 2009-07-28 11:34+0200\n"
+"Last-Translator: Fabio Fantoni <fantuf@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Translate Toolkit 1.4.0-beta1\n"
+
+#: $lang['depositare']
+msgid "Puoi depositare le tue monete in Banca dove saranno al sicuro"
+msgstr "You can deposit your money in Bank where they`ll be in safety"
+
+#: $lang['prelevare']
+msgid "Puoi prelevare le monete dal tuo conto in Banca"
+msgstr "You can draw money from your Bank account"
+
+#: $lang['quanto_depositare']
+#, fuzzy
+msgid "Inserisci il numero di monete che vuoi depositare:"
+msgstr "Insert the number of money (that) you will deposit"
+
+#: $lang['Deposita']
+msgid "Deposita"
+msgstr "Deposit"
+
+#: $lang['quanto_prelevare']
+msgid "Inserisci il numero di monete che vuoi prelevare:"
+msgstr "Insert the number of coins you want to withdraw"
+
+#: $lang['Preleva']
+msgid "Preleva"
+msgstr "Withdraw"
+
+#: $lang['banca_errore1']
+msgid "- Devi chiedere almeno 10 monete!<br />"
+msgstr "- You`ve got to withdraw at least 10 pieces<br />"
+
+#: $lang['banca_errore2']
+#, fuzzy
+msgid "- Devi depositare almeno 1 moneta!<br />"
+msgstr "- You`ve got to deposit at least 1 piece<br />"
+
+#: $lang['banca_errore3']
+msgid "- Non hai abbastanza monete!<br />"
+msgstr "- You haven`t got enough coins!<br />"
+
+#: $lang['banca_errore4']
+msgid "- Devi prelevare almeno 1 moneta!<br />"
+msgstr "- You`ve got to withdraw at least 1 piece<br />"
+
+#: $lang['banca_errore5']
+#, fuzzy
+msgid "- Non hai abbastanza monete sul conto!<br />"
+msgstr "- You haven`t enough money in account<br />"
+
+#: $lang['banca_errore6']
+msgid ""
+"- Attualmente la Banca non dispone di un sufficiente quantitativo di "
+"monete!<br />"
+msgstr ""
+"- Actually bank cannot afford a demand of that kind due to a lack of "
+"cash!<br />"
+
+#: $lang['banca_errore7']
+#, fuzzy
+msgid "- Devi chiedere in prestito almeno 1 moneta!<br />"
+msgstr "- You`ve got to ask for a loan at least 1 piece<br />"
+
+#: $lang['banca_errore8']
+msgid ""
+"- Non puoi chiedere una così elevata quantità di monete ma al massimo: %s<br "
+"/>"
+msgstr "- You can`t ask a so high quantity of coins but max: %s<br />"
+
+#: $lang['banca_errore9']
+msgid ""
+"- Non hai monete a sufficienza sul conto per poter acquistare un "
+"biglietto!<br />"
+msgstr ""
+"- You haven`t enought coins on your deposit account to buy a ticket!<br />"
+
+#: $lang['banca_errore10']
+#, fuzzy
+msgid "- Possiedi già un biglietto!"
+msgstr "- You already have a ticket"
+
+#: $lang['saldo_conto']
+#, fuzzy
+msgid "Il saldo attuale del tuo conto corrisponde a:"
+msgstr "The present settlement of your account is:"
+
+#: $lang['saldo_utente']
+#, fuzzy
+msgid "Le monete che hai con te sono:"
+msgstr "The pieces (that) you have with you are:"
+
+#: $lang['info_interessi']
+#, fuzzy
+msgid ""
+"La Banca paga gli interessi sulle monete depositate sul conto del 2% al "
+"giorno fino ad un massimo di 50 monete, la prossima volta sarà "
+msgstr ""
+"This bank account gives you 0,5% interests every day, the next time will be "
+
+#: $lang['desc_prestito']
+msgid ""
+"Puoi chiedere un prestito alla Banca per un massimo di 100 monete per ogni "
+"livello del personaggio. L'interesse sul prestito è fisso al 10% più 10% "
+"ogni settimana che passa dalla richiesta del prestito."
+msgstr ""
+"You can ask a loan from the bank for a max of 100 coins for every level of "
+"the characters. The interest on the loan is fixed to 10% more 10% every week "
+"that pass from the asking of the loan."
+
+#: $lang['quanto_prestito_chiedere']
+msgid "Inserisci quante monete vuoi chiedere in prestito:"
+msgstr "Insert here the amount of money you want to ask for:"
+
+#: $lang['restituzione_prestito']
+msgid "Le monete che devi restituire alla Banca, interessi inclusi, sono %s"
+msgstr "The amount of coins you owe to the bank, interests enclosed, is %s"
+
+#: $lang['Restituisci_prestito']
+msgid "Restituisci prestito"
+msgstr "Pay back the loan"
+
+#: $lang['Chiedi_prestito']
+msgid "Chiedi prestito"
+msgstr "Ask for a loan"
+
+#: $lang['Lotteria']
+#, fuzzy
+msgid "Lotterìa"
+msgstr "Lottery"
+
+#: $lang['desc_lotteria']
+#, fuzzy
+msgid ""
+"La Lotteria è organizzata dalla Banca, dove è possibile acquistare un "
+"singolo biglietto per ogni estrazione. Il biglietto ha il costo di 1 moneta, "
+"che viene prelevata direttamente dal tuo conto. L`estrazione avviene 1 "
+"volta ogni 3 giorni e maggiore è il numero di partecipanti, maggiore sarà il "
+"numero di monete in palio,  fino ad un massimo di 100 monete ad estrazione. "
+"Il restante montepremi resterà alla Banca a copertura spese."
+msgstr ""
+"Lottery is organized by the Bank, where you can buy only a ticket per "
+"extraction. Ticket costs 1 coin, it'll be withdrawn from your bank count. "
+"Extraction is once every 3 days, the more players are partecipating, more "
+"will be the prize. Maximum prize is 100 coins per extraction. The Bank will "
+" hold back the rest to cover any expenses."
+
+#: $lang['Compra_biglietto']
+msgid "Acquista un biglietto"
+msgstr "Buy a ticket"
+
+#: $lang['hai_gia_biglietto']
+msgid "Possiedi già un biglietto"
+msgstr "You already have a ticket"
+
+#: $lang['info_partecipanti']
+#, fuzzy
+msgid "L`attuale numero di partecipanti è %s"
+msgstr "Actually the number of participants is %s"
+
+#: $lang['info_vincitore']
+#, fuzzy
+msgid "Il vincitore della scorsa estrazione è %s"
+msgstr "The winner of the last round is: %s"
+
+#: $lang['data_estrazione']
+msgid "La prossima estrazione della Lotteria sarà  "
+msgstr "Next extraction will be  "
+
+#: $lang['hai_vinto_lotteria']
+msgid "Sei il vincitore della lotteria! Il premio in palio è di %s monete."
+msgstr "You are the winner! Your prize is %s coins."
+
+#. %1$s=nome del vincitore %2$s=monete vinte
+#: $lang['ha_vinto_alla_lotteria']
+msgid "%1$s vince %2$s monete alla lotteria."
+msgstr "%1$s win %2$s coins from the lottery."
+
+#, fuzzy
+#~ msgid "- Devi inserire un numero intero!<br />"
+#~ msgstr "- You`ve got to insert a integer<br />"
+
+#, fuzzy
+#~ msgid ""
+#~ "Puoi chiedere un prestito alla Banca per un massimo di 100 monete per ogni "
+#~ "livello del personaggio. L'interesse sul prestito &egrave; fisso al 10%."
+#~ msgstr ""
+#~ "You can ask the Bank for a loan with a 10% interest rate (max loan = 100 "
+#~ "coin every level)."
+
+#~ msgid "Hai gi&agrave; un biglietto"
+#~ msgstr "You already have a ticket"
+
+#~ msgid "- La banca non ha abbastanza monete attualmente<br />"
+#~ msgstr "- The bank haven`t got enough money for the time being<br />"
+
+#~ msgid "- Non puoi chiedere cos&igrave; tante monete ma massimo"
+#~ msgstr "- You can`t ask so much pieces but at most"
+
+#~ msgid ""
+#~ "- Non hai abbastanza monete sul conto per poter comprare un biglietto<br />"
+#~ msgstr "- You don`t have enough money on your account to buy a ticket<br />"
+
+#~ msgid ""
+#~ "La lotteria &egrave; organizzata dalla banca, puoi comprare un biglietto "
+#~ "ogni estrazione pagando 1 moneta dal conto e l`estrazione avviene 1 volta a "
+#~ "settimana, maggiori sono i partecipanti e maggiore sono le monete in palio "
+#~ "fino ad un massimo di 100"
+#~ msgstr ""
+#~ "The lottery is organised by the bank, you can buy a ticket for every round  "
+#~ "by paying 1 coin from your account. The extraction happens one time every "
+#~ "week and the more are the players, the more are the coins that can be won ( "
+#~ "for a maximum of 100)"
+
+#~ msgid "Compra un biglietto"
+#~ msgstr "Buy a ticket"
+
+#~ msgid "Ci sono %s partecipanti"
+#~ msgstr "There are %s participants"

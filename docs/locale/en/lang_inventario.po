@@ -1,0 +1,65 @@
+#. extracted from /var/www/web2/web/rpgdev/game/language/it/lang_inventario.php
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-07-18 18:57+0200\n"
+"PO-Revision-Date: 2008-12-08 09:51+0100\n"
+"Last-Translator: Fabio Fantoni <fantonifabio@tiscali.it>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 1.4.0-beta1\n"
+
+#: $lang['nessun_oggetto_posseduto']
+msgid "Non hai nessun oggetto attualmente"
+msgstr "You do not possess any object at the moment"
+
+#: $lang['Vendi']
+msgid "Vendi"
+msgstr "Sell"
+
+#: $lang['Usa']
+msgid "Usa"
+msgstr "Use"
+
+#: $lang['Quanti']
+msgid "Quantità:"
+msgstr "Amount:"
+
+#: $lang['inventario_errore1']
+#, fuzzy
+msgid "- Non hai selezionato l`oggetto da utilizzare!<br />"
+msgstr "- You didn`t select the object you wish to use<br />"
+
+#: $lang['inventario_errore2']
+#, fuzzy
+msgid "- Non hai selezionato la quantità<br />"
+msgstr "- You didn`t select the quantity<br />"
+
+#: $lang['inventario_errore3']
+msgid "- Non hai abbastanza oggetti<br />"
+msgstr "- You don`t have enough objects<br />"
+
+#: $lang['inventario_errore4']
+#, fuzzy
+msgid "- Non hai selezionato l`oggetto da vendere!<br />"
+msgstr "- You didn`t select the object you want to sell<br />"
+
+#: $lang['inventario_errore5']
+msgid "- Non hai questo oggetto!<br />"
+msgstr "- You have not this item!<br />"
+
+#: $lang['report_vendita']
+#, fuzzy
+msgid "Hai venduto %s di %s, ricavando in totale %s monete."
+msgstr "You sold %s %s, earning %s gold"
+
+#: $lang['impossibile_usare_oggetto']
+#, fuzzy
+msgid "Impossibile utilizzare %s!"
+msgstr "Cannot use %s"
+
+#~ msgid "Quantit&agrave;"
+#~ msgstr "Quantity"

@@ -1,0 +1,418 @@
+#. extracted from /var/www/web2/web/rpgdev/game/language/it/lang_oggetti_nomi.php
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-07-18 18:57+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 1.4.0-beta1\n"
+
+#: $lang['oggetto1_nome']
+msgid "Torcia"
+msgstr ""
+
+#: $lang['oggetto2_nome']
+msgid "Carbone"
+msgstr ""
+
+#: $lang['oggetto3_nome']
+msgid "Rame"
+msgstr ""
+
+#: $lang['oggetto4_nome']
+msgid "Ferro"
+msgstr ""
+
+#: $lang['oggetto5_nome']
+msgid "Argento"
+msgstr ""
+
+#: $lang['oggetto6_nome']
+msgid "Oro"
+msgstr ""
+
+#: $lang['oggetto7_nome']
+msgid "Rubini"
+msgstr ""
+
+#: $lang['oggetto8_nome']
+msgid "Smeraldi"
+msgstr ""
+
+#: $lang['oggetto9_nome']
+msgid "Diamanti"
+msgstr ""
+
+#: $lang['oggetto10_nome']
+msgid "Mithrill"
+msgstr ""
+
+#: $lang['oggetto12_nome']
+msgid "Piccone di rame scadente"
+msgstr ""
+
+#: $lang['oggetto13_nome']
+msgid "Piccone di rame discreto"
+msgstr ""
+
+#: $lang['oggetto15_nome']
+msgid "Piccone di ferro mediocre"
+msgstr ""
+
+#: $lang['oggetto16_nome']
+msgid "Piccone di ferro discreto"
+msgstr ""
+
+#: $lang['oggetto17_nome']
+msgid "Piccone di rame buono"
+msgstr ""
+
+#: $lang['oggetto18_nome']
+msgid "Piccone di ferro buono"
+msgstr ""
+
+#: $lang['oggetto20_nome']
+msgid "Piccone di acciaio mediocre"
+msgstr ""
+
+#: $lang['oggetto21_nome']
+msgid "Piccone di acciaio discreto"
+msgstr ""
+
+#: $lang['oggetto22_nome']
+msgid "Piccone di acciaio buono"
+msgstr ""
+
+#: $lang['oggetto23_nome']
+msgid "Piccone di rame eccellente"
+msgstr ""
+
+#: $lang['oggetto24_nome']
+msgid "Piccone di ferro eccellente"
+msgstr ""
+
+#: $lang['oggetto25_nome']
+msgid "Piccone di acciaio eccellente"
+msgstr ""
+
+#: $lang['oggetto26_nome']
+msgid "Pozione curativa per ferite superficiali"
+msgstr ""
+
+#: $lang['oggetto27_nome']
+msgid "Pozione curativa per ferite medie"
+msgstr ""
+
+#: $lang['oggetto28_nome']
+msgid "Pozione curativa per ferite profonde"
+msgstr ""
+
+#: $lang['oggetto29_nome']
+msgid "Pozione curativa per ferite gravi"
+msgstr ""
+
+#: $lang['oggetto30_nome']
+msgid "Pozione curativa per ferite critiche"
+msgstr ""
+
+#: $lang['oggetto31_nome']
+msgid "Pozione energetica minima"
+msgstr ""
+
+#: $lang['oggetto32_nome']
+msgid "Pozione energetica media"
+msgstr ""
+
+#: $lang['oggetto33_nome']
+msgid "Pozione energetica forte"
+msgstr ""
+
+#: $lang['oggetto34_nome']
+msgid "Pozione energetica intensa"
+msgstr ""
+
+#: $lang['oggetto35_nome']
+msgid "Pozione energetica pura"
+msgstr ""
+
+#: $lang['oggetto36_nome']
+msgid "Ampolla"
+msgstr ""
+
+#: $lang['oggetto37_nome']
+msgid "Pugnale di rame scadente"
+msgstr ""
+
+#: $lang['oggetto38_nome']
+msgid "Pugnale di rame discreto"
+msgstr ""
+
+#: $lang['oggetto39_nome']
+msgid "Pugnale di rame buono"
+msgstr ""
+
+#: $lang['oggetto40_nome']
+msgid "Pugnale di ferro scadente"
+msgstr ""
+
+#: $lang['oggetto41_nome']
+msgid "Pugnale di ferro discreto"
+msgstr ""
+
+#: $lang['oggetto42_nome']
+msgid "Pugnale di ferro buono"
+msgstr ""
+
+#: $lang['oggetto43_nome']
+msgid "Pugnale di acciaio scadente"
+msgstr ""
+
+#: $lang['oggetto44_nome']
+msgid "Pugnale di acciaio discreto"
+msgstr ""
+
+#: $lang['oggetto45_nome']
+msgid "Pugnale di acciaio buono"
+msgstr ""
+
+#: $lang['oggetto46_nome']
+msgid "Daga di rame scadente"
+msgstr ""
+
+#: $lang['oggetto47_nome']
+msgid "Daga di rame discreto"
+msgstr ""
+
+#: $lang['oggetto48_nome']
+msgid "Daga di rame buono"
+msgstr ""
+
+#: $lang['oggetto49_nome']
+msgid "Daga di ferro scadente"
+msgstr ""
+
+#: $lang['oggetto50_nome']
+msgid "Daga di ferro discreto"
+msgstr ""
+
+#: $lang['oggetto51_nome']
+msgid "Daga di ferro buono"
+msgstr ""
+
+#: $lang['oggetto52_nome']
+msgid "Daga di acciaio scadente"
+msgstr ""
+
+#: $lang['oggetto53_nome']
+msgid "Daga di acciaio discreto"
+msgstr ""
+
+#: $lang['oggetto54_nome']
+msgid "Daga di acciaio buono"
+msgstr ""
+
+#: $lang['oggetto55_nome']
+msgid "Armatura di cuoio"
+msgstr ""
+
+#: $lang['oggetto56_nome']
+msgid "Armatura di cuoio rinforzato"
+msgstr ""
+
+#: $lang['oggetto57_nome']
+msgid "Scudo di legno"
+msgstr ""
+
+#: $lang['oggetto58_nome']
+msgid "Scudo di legno rinforzato"
+msgstr ""
+
+#: $lang['oggetto59_nome']
+msgid "Spada di rame scadente"
+msgstr ""
+
+#: $lang['oggetto60_nome']
+msgid "Spada di rame buona"
+msgstr ""
+
+#: $lang['oggetto61_nome']
+msgid "Spada di rame eccellente"
+msgstr ""
+
+#: $lang['oggetto62_nome']
+msgid "Ascia di rame scadente"
+msgstr ""
+
+#: $lang['oggetto63_nome']
+msgid "Ascia di rame buona"
+msgstr ""
+
+#: $lang['oggetto64_nome']
+msgid "Ascia di rame eccellente"
+msgstr ""
+
+#: $lang['oggetto65_nome']
+msgid "Mazza di rame scadente"
+msgstr ""
+
+#: $lang['oggetto66_nome']
+msgid "Mazza di rame buona"
+msgstr ""
+
+#: $lang['oggetto67_nome']
+msgid "Mazza di rame eccellente"
+msgstr ""
+
+#: $lang['oggetto68_nome']
+msgid "Piccone di mithrill"
+msgstr ""
+
+#: $lang['oggetto69_nome']
+msgid "Piccone di mithrill superbo"
+msgstr ""
+
+#: $lang['oggetto70_nome']
+msgid "Pugnale di mithrill"
+msgstr ""
+
+#: $lang['oggetto71_nome']
+msgid "Pugnale di mithrill superbo"
+msgstr ""
+
+#: $lang['oggetto72_nome']
+msgid "Armatura di rame scadente"
+msgstr ""
+
+#: $lang['oggetto73_nome']
+msgid "Armatura di ferro scadente"
+msgstr ""
+
+#: $lang['oggetto74_nome']
+msgid "Armatura di acciaio scadente"
+msgstr ""
+
+#: $lang['oggetto75_nome']
+msgid "Scudo di rame scadente"
+msgstr ""
+
+#: $lang['oggetto76_nome']
+msgid "Scudo di ferro scadente"
+msgstr ""
+
+#: $lang['oggetto77_nome']
+msgid "Scudo di acciaio scadente"
+msgstr ""
+
+#: $lang['oggetto78_nome']
+msgid "Daga di mithrill"
+msgstr ""
+
+#: $lang['oggetto79_nome']
+msgid "Daga di mithrill superbo"
+msgstr ""
+
+#: $lang['oggetto80_nome']
+msgid "Coltelli di rame"
+msgstr ""
+
+#: $lang['oggetto81_nome']
+msgid "Coltelli di ferro"
+msgstr ""
+
+#: $lang['oggetto82_nome']
+msgid "Coltelli di acciaio"
+msgstr ""
+
+#: $lang['oggetto83_nome']
+msgid "Coltelli di mithrill"
+msgstr ""
+
+#: $lang['oggetto84_nome']
+msgid "Armatura di rame buona"
+msgstr ""
+
+#: $lang['oggetto85_nome']
+msgid "Armatura di ferro buona"
+msgstr ""
+
+#: $lang['oggetto86_nome']
+msgid "Armatura di acciaio buona"
+msgstr ""
+
+#: $lang['oggetto87_nome']
+msgid "Scudo di rame buono"
+msgstr ""
+
+#: $lang['oggetto88_nome']
+msgid "Scudo di ferro buono"
+msgstr ""
+
+#: $lang['oggetto89_nome']
+msgid "Scudo di acciaio buono"
+msgstr ""
+
+#: $lang['oggetto90_nome']
+msgid "Spada di ferro scadente"
+msgstr ""
+
+#: $lang['oggetto91_nome']
+msgid "Spada di ferro buona"
+msgstr ""
+
+#: $lang['oggetto92_nome']
+msgid "Spada di ferro eccellente"
+msgstr ""
+
+#: $lang['oggetto93_nome']
+msgid "Ascia di ferro scadente"
+msgstr ""
+
+#: $lang['oggetto94_nome']
+msgid "Ascia di ferro buona"
+msgstr ""
+
+#: $lang['oggetto95_nome']
+msgid "Ascia di ferro eccellente"
+msgstr ""
+
+#: $lang['oggetto96_nome']
+msgid "Mazza di ferro scadente"
+msgstr ""
+
+#: $lang['oggetto97_nome']
+msgid "Mazza di ferro buona"
+msgstr ""
+
+#: $lang['oggetto98_nome']
+msgid "Mazza di ferro eccellente"
+msgstr ""
+
+#: $lang['oggetto99_nome']
+msgid "Armatura di rame eccellente"
+msgstr ""
+
+#: $lang['oggetto100_nome']
+msgid "Armatura di ferro eccellente"
+msgstr ""
+
+#: $lang['oggetto101_nome']
+msgid "Armatura di acciaio eccellente"
+msgstr ""
+
+#: $lang['oggetto102_nome']
+msgid "Scudo di rame eccellente"
+msgstr ""
+
+#: $lang['oggetto103_nome']
+msgid "Scudo di ferro eccellente"
+msgstr ""
+
+#: $lang['oggetto104_nome']
+msgid "Scudo di acciaio eccellente"
+msgstr ""

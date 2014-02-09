@@ -1,0 +1,38 @@
+#. extracted from /var/www/web2/web/rpgdev/game/language/it/lang_locanda.php
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-07-18 18:57+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 1.4.0-beta1\n"
+
+#: $lang['dormi']
+msgid "Dormi"
+msgstr ""
+
+#: $lang['locanda_errore1']
+msgid ""
+"- Le ore di affitto di una stanza per dormire sono da un minimo di 1 ad un "
+"massimo di 8.<br />"
+msgstr ""
+
+#: $lang['locanda_errore2']
+msgid "- Non hai abbastanza monete, per %s ore servono %s monete.<br />"
+msgstr ""
+
+#: $lang['prendi_stanza']
+msgid "Prendi una stanza"
+msgstr ""
+
+#: $lang['desc_prendi_stanza']
+msgid ""
+"Puoi prendere in affitto una stanza per dormire, da 1 a 8 ore, pagando una "
+"moneta ogni 2 ore; dormendo recupererai salute ed energia più velocemente."
+msgstr ""

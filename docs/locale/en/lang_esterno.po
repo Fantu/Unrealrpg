@@ -1,0 +1,357 @@
+#. extracted from /var/www/web2/web/rpgdev/game/language/it/lang_esterno.php
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-07-18 18:57+0200\n"
+"PO-Revision-Date: 2009-07-28 11:32+0200\n"
+"Last-Translator: Fabio Fantoni <fantuf@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Translate Toolkit 1.4.0-beta1\n"
+
+#: $lang['tempo_gen_pagina']
+msgid "Tempo di generazione della pagina: %s secondi - Query eseguite: %s"
+msgstr "Page loaded in: %s seconds - Queries done: %s"
+
+#: $lang['Login']
+msgid "Login"
+msgstr "Login"
+
+#: $lang['Username']
+msgid "Username"
+msgstr "Username"
+
+#: $lang['Server']
+msgid "Regno"
+msgstr "Kingdom"
+
+#: $lang['Password']
+msgid "Password"
+msgstr "Password"
+
+#: $lang['Email']
+msgid "Email"
+msgstr "Email"
+
+#: $lang['Informazioni_sui_server']
+msgid "Informazioni sui regni:"
+msgstr "About kingdoms:"
+
+#: $lang['Nome']
+msgid "Nome"
+msgstr "Name"
+
+#: $lang['Utenti_registrati']
+msgid "Utenti registrati"
+msgstr "Registered users"
+
+#: $lang['Ultima_settimana']
+msgid "Ultima settimana"
+msgstr "Last week"
+
+#: $lang['Utenti_online']
+msgid "Utenti online"
+msgstr "Online users"
+
+#: $lang['Ultimo_giorno']
+msgid "Ultimo giorno"
+msgstr "Last day"
+
+#: $lang['Entra']
+msgid "Entra"
+msgstr "Enter"
+
+#: $lang['Registrazione']
+msgid "Registrazione"
+msgstr "Registration"
+
+#: $lang['Registrati']
+msgid "Registrati"
+msgstr "Register"
+
+#: $lang['outputerrori']
+msgid "Si sono verificati i seguenti errori:"
+msgstr "The following errors have occured:"
+
+#: $lang['account_creato_ok']
+msgid ""
+"<strong>Account creato con successo!!</strong><br />Prima di poter iniziare "
+"a giocare, dovrai confermare l`iscrizione visitando il link contenuto nella "
+"mail che ti è stata inviata all`indirizzo di posta inserito.<br />Se non "
+"trovi la mail, controlla nelle cartelle Posta indesiderata, Antispam o "
+"simili.<br /><br />"
+msgstr ""
+"<strong>Account created succesfully!!</strong><br />Before playing you have "
+"to confirm the registration by opening the link contained in the email that "
+"has been sent to the email address you have inserted.<br />If you can`t find "
+"the email try looking in the unwanted mail folder or similar.<br /><br />"
+
+#: $lang['Conferma_account']
+msgid "Conferma account "
+msgstr "Confirm account "
+
+#. %1$s=username %2$s=nome del gioco %3$s=link base %4$s=regno %5$s=codice %6$s=nome regno
+#: $lang['testo_mail_conferma']
+msgid ""
+"Ciao %1$s,<br />Per confermare l`iscrizione a %2$s, nel regno %6$s devi "
+"visitare il link sottostante:<br /> <a href=\"%3$s/conferma.php?t=%4$s&cod=%"
+"5$s\">Conferma account</a> <br /><br />Finchè l`account non verrà confermato, "
+"non potrai accedere al gioco.<br />Saluti,<br />%2$s Staff"
+msgstr ""
+"Hi %1$s,<br />To confirm your registration at %2$s, in the realm %6$s you "
+"must open the link below:<br /> <a href=\"%3$s/conferma.php?t=%4$s&cod=%"
+"5$s\">Conferma account</a> <br /><br />Until the account will not be "
+"confirmed, you can not access the game.<br />Greetings,<br />%2$s Staff"
+
+#: $lang['altre_lingue']
+msgid "%s è disponibile anche nelle seguenti lingue: "
+msgstr "%s is also available in the following languages: "
+
+#: $lang['disattiva']
+msgid "Disattiva"
+msgstr "Disable"
+
+#: $lang['attiva']
+msgid "Attiva"
+msgstr "Enable"
+
+#: $lang['Newsletter']
+msgid "Newsletter"
+msgstr "Newsletter"
+
+#: $lang['scarica_firefox']
+msgid "Scarica Firefox"
+msgstr "Download Firefox"
+
+#: $lang['desc_firefox']
+msgid ""
+"Stai utilizzando Internet Explorer che purtroppo, attualmente, neppure "
+"nell`ultima versione non supporta appieno gli standard web, in particolare i "
+"css. Ti consigliamo di utilizzare Firefox, browser gratuito, più sicuro, "
+"efficiente e con maggiore rispetto degli standard. Per scaricare l`ultima "
+"versione ufficiale clicca sul banner sottostante."
+msgstr ""
+"You are using Internet Explorer that, actually, the last version doesn`t "
+"support fully the web`s standards, particulary the css. We recommend using "
+"Mozilla Firefox, free browser, more secure, powerful and with more respect "
+"of the standards. To download the last ufficial version click on the banner "
+"below."
+
+#: $lang['Attivazione_manuale']
+msgid "Attivazione manuale"
+msgstr "Manual activation"
+
+#: $lang['Codice']
+msgid "Codice"
+msgstr "Code"
+
+#: $lang['Desc_attivazione_manuale']
+msgid ""
+"Inserisci username, seleziona il regno e clicca su attivazione manuale, ti "
+"verrà spedita una mail di solo testo contenente un codice alfanumerico, "
+"copialo qui sotto, riseleziona il regno, riclicca su attivazione e l`account "
+"verrà attivato senza problemi di link separati o modificati dal client di "
+"posta e la mail di solo testo senza link arriverà sicuramente e senza finire "
+"in altre cartelle quali antispam e simili."
+msgstr ""
+"Enter username, select the kingdom and click on manual activation, you`ll be "
+"sent an text-only email containing an alphanumeric code, copy it below, "
+"select the kingdom, click on manual activation and will be activated without "
+"problems of links separated or modified by the client email and mail a "
+"text-only link will come without doubt and without ending up in other "
+"folders such as spam and the like."
+
+#: $lang['codice_spedito']
+msgid ""
+"Il codice per la conferma ti è stato spedito in una mail di solo testo e "
+"senza link che come tale sarà leggibile da qualsiasi client di posta senza "
+"problemi e non sarà ostacolata da antispam o simili.<br /><br />"
+msgstr ""
+"The confirmation code has been sended in a text-only e-mail (without any "
+"link) to prevent it from being junked by anti-spam programs, and to be "
+"readable by any e-mail client.<br /><br />"
+
+#. %1$s=nome del gioco %2$s=codice %3$s=username
+#: $lang['testo_mail_codice_conferma']
+msgid ""
+"Ciao %3$s, Per confermare manualmente l`iscrizione a %1$s utilizza il codice "
+"seguente: %2$s Saluti, %1$s Staff"
+msgstr ""
+"Hello%3$s, To confirm manually %1$s registration use the following code: %"
+"2$s Redards, %1$s Staff"
+
+#: $lang['reg_error1']
+msgid "- Non hai selezionato il regno!<br />"
+msgstr "- You haven`t selected the kingdom!<br />"
+
+#: $lang['reg_error2']
+msgid "- Non hai scritto il tuo username!<br />"
+msgstr "- You haven`t written your username!<br />"
+
+#: $lang['reg_error3']
+msgid "- L`username deve essere almeno di 3 caratteri e massimo 20.<br />"
+msgstr "- The username must be from 3 to 20 characters long.<br />"
+
+#: $lang['reg_error4']
+msgid "- Non hai scritto la password!<br />"
+msgstr "- You haven`t written the password!<br />"
+
+#: $lang['reg_error5']
+msgid "- La password deve essere lunga almeno 6 caratteri e massimo 20.<br />"
+msgstr "- The password has to be from 6 to 20 characters long.<br />"
+
+#: $lang['reg_error6']
+msgid "- Non hai inserito l`indirizzo e-mail!<br />"
+msgstr "- You haven`t entered your e-mail!<br />"
+
+#: $lang['reg_error7']
+msgid "- L`indirizzo e-mail inserito non sembra essere corretto.<br />"
+msgstr "- The e-mail address does not appear to be correct.<br />"
+
+#: $lang['reg_error8']
+msgid "- L`username che hai scelto è già stato utilizzato!<br />"
+msgstr "- The username you have chosen is already in use!<br />"
+
+#: $lang['reg_error9']
+msgid "- Questo regno è al momento troppo affollato, scegline un altro.<br />"
+msgstr ""
+"- This kingdom is full at the moment, please choose another kingdom.<br />"
+
+#: $lang['reg_error10']
+msgid "- Devi inserire username o codice.<br />"
+msgstr "- You must enter username or code.<br />"
+
+#: $lang['reg_error11']
+msgid "- L`username che hai inserito è inesistente!<br />"
+msgstr "- The username you entered does not exist!<br />"
+
+#: $lang['reg_error12']
+msgid "- Il codice che hai inserito non è valido!<br />"
+msgstr "- The code you entered is not valid!<br />"
+
+#: $lang['reg_error13']
+msgid "- La password non corrisponde alla sua ripetizione<br />"
+msgstr "- The password does not match its repetition<br />"
+
+#: $lang['reg_error14']
+msgid "- Questo account è già attivo<br />"
+msgstr "- This account is already active<br />"
+
+#: $lang['reg_error15']
+msgid "- L`indirizzo e-mail non corrisponde alla sua ripetizione<br />"
+msgstr "- The e-mail does not correspond to its repetition<br />"
+
+#: $lang['ext_error1']
+msgid "Login fallito\\nUsername inesistente!"
+msgstr ""
+"Login failed\\\n"
+"Username doesn`t exist!"
+
+#: $lang['ext_error2']
+msgid "Login fallito\\nQuesto account non è ancora stato confermato."
+msgstr ""
+"Login failed\\\n"
+"This account has not yet been confirmed."
+
+#: $lang['ext_error3']
+msgid "Autentificazione non valida o scaduta\\nNecessario nuovo login."
+msgstr ""
+"Authentication invalid or expired\\\n"
+"Need new login."
+
+#: $lang['ext_error4']
+msgid "Login fallito\\nPassword errata!"
+msgstr ""
+"Login failed\\\n"
+"Password wrong!"
+
+#: $lang['ext_error5']
+msgid ""
+"Impossibile confermare questo account!\\nLink errato, controlla e riprova."
+msgstr ""
+"Unable to confirm this account!\\\n"
+"Link wrong, check and try again."
+
+#: $lang['ext_error6']
+msgid ""
+"Impossibile confermare questo account!\\nQuesto account è già stato "
+"confermato."
+msgstr ""
+"Unable to confirm this account!\\\n"
+"This account has been already confirmed."
+
+#: $lang['ext_error7']
+msgid "Account confermato!\\nAdesso puoi entrare e iniziare a giocare."
+msgstr ""
+"Account confirmed!\\\n"
+"Now you can login and play."
+
+#: $lang['ext_error8']
+msgid ""
+"Sei stato bloccato per un ora in seguito a 5 tentativi di login falliti."
+msgstr "You have been blocked for an hour after 5 login attempts failed."
+
+#: $lang['ext_error12']
+msgid ""
+"Server momentaneamente chiuso per installazione aggiornamenti o "
+"manutenzione. Riprova più tardi. Grazie."
+msgstr ""
+"Server temporarily closed for installation upgrades or maintenance. Please "
+"try again later. Thank you."
+
+#: $lang['ext_error13']
+msgid ""
+"Accesso negato!\\nHai tentato di entrare in una pagina riservata agli utenti "
+"loggati."
+msgstr ""
+"Access Denied!\\\n"
+"You tried to enter a page reserved for users logged."
+
+#: $lang['ext_error16']
+msgid "Link errato!\\nPer favore, segui i link del gioco."
+msgstr ""
+"Link broken!\\\n"
+"Please follow the link of the game."
+
+#: $lang['error_unknown']
+msgid "Si è verificato un errore sconosciuto"
+msgstr "Encountered an unknown error"
+
+#: $lang['help1']
+msgid "Ripeti la password per evitare di registrarti con una password errata"
+msgstr "Repeat your password to avoid signing up with an incorrect password"
+
+#: $lang['help2']
+msgid "Ripeti l`indirizzo e-mail per evitare di sbagliarlo"
+msgstr ""
+
+#~ msgid ""
+#~ "Tempo limite scaduto!\\\n"
+#~ "Nuovo login necessario."
+#~ msgstr ""
+#~ "Time limit expired!\\\n"
+#~ "New login required."
+
+#~ msgid ""
+#~ "Accesso negato!\\\n"
+#~ "Il tuo IP è cambiato dal momento del login.\\\n"
+#~ "Loggati nuovamente."
+#~ msgstr ""
+#~ "Access Denied!\\\n"
+#~ "Your IP address has changed since the time of login.\\\n"
+#~ "Logged again."
+
+#~ msgid "Server"
+#~ msgstr "Server"
+
+#, fuzzy
+#~ msgid "Le altre lingue in cui è disponibile %s sono: "
+#~ msgstr "The other languages in which it is available %s are: "
+
+#~ msgid "- Non hai scritto l'email.<br />"
+#~ msgstr "- You didn`t write the email (address).<br />"

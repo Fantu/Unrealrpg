@@ -1,0 +1,164 @@
+#. extracted from /var/www/web2/web/rpgdev/game/language/it/lang_miniera.php
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-07-18 18:57+0200\n"
+"PO-Revision-Date: 2009-07-28 11:34+0200\n"
+"Last-Translator: Fabio Fantoni <fantuf@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Translate Toolkit 1.4.0-beta1\n"
+
+#: $lang['miniera_nuova']
+msgid "Miniera nuova"
+msgstr "New mine"
+
+#: $lang['miniera_vecchia']
+msgid "Miniera vecchia"
+msgstr "Old Mine"
+
+#: $lang['desc_miniera_nuova']
+#, fuzzy
+msgid ""
+"Puoi lavorare in Miniera nuova avendo una retribuzione fissa di 7 monete per "
+"ogni ora di lavoro, e guadagnare Esperienza per l`abilità di minatore, "
+"utile per avere risultati migliori con meno fatica e meno danni."
+msgstr ""
+"You can work at the new mine, gaining 6 gold per hour, earning experience as "
+"a miner. This allows you to have better results with less effort and avoid "
+"being hurt."
+
+#: $lang['desc_miniera_vecchia']
+#, fuzzy
+msgid ""
+"Puoi lavorare in Miniera vecchia cercando di trovare minerali. Per fare ciò, "
+"sono necessari un piccone ed una torcia."
+msgstr ""
+"You can work in the old mine for an hour, trying to look for minerals. For "
+"doing that, you need a pickaxe and a torch."
+
+#: $lang['lavora_miniera']
+msgid "Lavora in miniera"
+msgstr "Work in the mine"
+
+#: $lang['miniera_errore1']
+#, fuzzy
+msgid "- Sei troppo stanco per poter lavorare in miniera.<br />"
+msgstr "- You`re too tired to work in the mine<br />"
+
+#: $lang['miniera_errore2']
+msgid ""
+"- Attualmente, il tuo fisico non può reggere il lavoro in miniera.<br />"
+msgstr ""
+
+#: $lang['miniera_errore4']
+msgid "- Non hai abbastanza torce per poter lavorare in Miniera!<br />"
+msgstr ""
+
+#: $lang['miniera_errore5']
+#, fuzzy
+msgid "- Non hai un piccone o non l`hai selezionato<br />"
+msgstr "- You don`t have a pickaxe or you haven`t selected it<br />"
+
+#: $lang['miniera_errore6']
+#, fuzzy
+msgid ""
+"- Non hai abbastanza forza fisica per poter utilizzare questo piccone.<br />"
+msgstr "- You haven`t enough strength to use this pickaxe<br />"
+
+#: $lang['miniera_errore7']
+#, fuzzy
+msgid ""
+"- Sei troppo inesperto! Devi lavorare in Miniera nuova per aumentare la tua "
+"esperienza.<br />"
+msgstr ""
+"- You are too unexperienced, work in the New mine to gain some experience<br "
+"/>"
+
+#: $lang['report_lavminieranuova']
+#, fuzzy
+msgid ""
+"Hai lavorato in Miniera nuova per 1 ora, guadagnando %s monete e %s di "
+"Esperienza come minatore. Il duro lavoro ti ha stancato (hai perso %s di "
+"energia) ed il tuo fisico ne ha risentito (hai perso %s di salute)."
+msgstr ""
+"You have worked in the new mine for 1 hour, gaining %s gold and %s "
+"experience as a miner. The hard work tired you ( you lost %s energy) and "
+"your body was weakened ( you lost %s health)."
+
+#: $lang['report_lavminieravecchia']
+#, fuzzy
+msgid ""
+"Hai lavorato in Miniera vecchia per 1 ora, guadagnando %s di esperienza come "
+"minatore. Il duro lavoro ti ha stancato (hai perso %s di energia) ed il tuo "
+"fisico ne ha risentito (hai perso %s di salute)."
+msgstr ""
+"You have worked in the old mine for 1 hour, gaining %s gold and %s "
+"experience as a miner. The hard work tired you ( you lost %s energy ) and "
+"your body was weakened ( you lost %s health )."
+
+#: $lang['report_lavoro_nuova']
+#, fuzzy
+msgid "Completato il lavoro in Miniera nuova."
+msgstr "Completed the work at the New mine"
+
+#: $lang['report_lavoro_vecchia']
+#, fuzzy
+msgid "Completato il lavoro in Miniera vecchia"
+msgstr "Completed the work at the Old mine"
+
+#: $lang['report_incidente_miniera']
+#, fuzzy
+msgid "Imprevisto durante il lavoro in miniera!"
+msgstr "An unexpected event happened while working at the mine"
+
+#: $lang['report_incidente_min1']
+#, fuzzy
+msgid ""
+"Durante il tuo lavoro in miniera, si è verificato un incidente, ma sei "
+"riuscito ad allontanarti in tempo e non ferirti."
+msgstr ""
+"While working at the mine an accident occurred, but you were able to escape "
+"and to save yourself"
+
+#: $lang['report_incidente_min2']
+#, fuzzy
+msgid ""
+"Durante il tuo lavoro in Miniera si è verificato un incidente! Non sei "
+"riuscito ad allontanarti in tempo e ti sei ferito (%s di salute persa)."
+msgstr ""
+"While working at the mine an accident occurred, but you weren`t able to "
+"escape and you were hurt ( you lost %s health)"
+
+#: $lang['report_lavminieravecchia_materiali_no']
+msgid "Non hai trovato minerali."
+msgstr "You haven`t found any minerals"
+
+#: $lang['report_lavminieravecchia_materiali_si']
+#, fuzzy
+msgid "Hai trovato %s di %s!"
+msgstr "You have fount %s of %s"
+
+#: $lang['seleziona_piccone']
+#, fuzzy
+msgid "Seleziona un piccone:"
+msgstr "Choose a pickaxe"
+
+#, fuzzy
+#~ msgid ""
+#~ "- Devono trascorrere 3 ore per ogni ora di lavoro dall`ultimo effettuato.<br "
+#~ "/>"
+#~ msgstr "- 3 hours,for every hour of work, must pass from the last job<br />"
+
+#~ msgid ""
+#~ "- Il tuo fisico non pu&ograve; reggere il lavoro in miniera attualmente<br "
+#~ "/>"
+#~ msgstr "- Your body can`t sustain the work in the mine<br />"
+
+#~ msgid "- Non hai una torcia<br />"
+#~ msgstr "- You don`t have a torch<br />"

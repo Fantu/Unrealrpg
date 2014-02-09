@@ -1,0 +1,682 @@
+#. extracted from /var/www/web2/web/rpgdev/game/language/it/lang_interno.php
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-07-18 18:57+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 1.4.0-beta1\n"
+
+#: $lang['situazione']
+msgid "Situazione"
+msgstr ""
+
+#: $lang['banca']
+msgid "Banca"
+msgstr ""
+
+#: $lang['miniera']
+msgid "Miniera"
+msgstr ""
+
+#: $lang['laboratorio']
+msgid "Laboratorio"
+msgstr ""
+
+#: $lang['changelog']
+msgid "Info versione"
+msgstr ""
+
+#: $lang['tempio']
+msgid "Tempio"
+msgstr ""
+
+#: $lang['opzioni']
+msgid "Opzioni"
+msgstr ""
+
+#: $lang['logout']
+msgid "Esci"
+msgstr ""
+
+#: $lang['messaggi']
+msgid "Messaggi"
+msgstr ""
+
+#: $lang['guida']
+msgid "Guida"
+msgstr ""
+
+#: $lang['utenti']
+msgid "Elenco personaggi"
+msgstr ""
+
+#: $lang['mercato']
+msgid "Mercato"
+msgstr ""
+
+#: $lang['inventario']
+msgid "Inventario"
+msgstr ""
+
+#: $lang['fucina']
+msgid "Fucina"
+msgstr ""
+
+#: $lang['rocca']
+msgid "Rocca dell`Arcano"
+msgstr ""
+
+#: $lang['libro']
+msgid "Libro degli incantesimi"
+msgstr ""
+
+#: $lang['combact']
+msgid "Combattimenti"
+msgstr ""
+
+#: $lang['equipaggiamento']
+msgid "Equipaggiamento"
+msgstr ""
+
+#: $lang['lavori']
+msgid "Lavori"
+msgstr ""
+
+#: $lang['magia']
+msgid "Magia"
+msgstr ""
+
+#: $lang['info']
+msgid "Informazioni"
+msgstr ""
+
+#: $lang['oggetti']
+msgid "Oggetti"
+msgstr ""
+
+#: $lang['citta']
+msgid "Città"
+msgstr ""
+
+#: $lang['locanda']
+msgid "Locanda"
+msgstr ""
+
+#: $lang['confini']
+msgid "Confini"
+msgstr ""
+
+#: $lang['municipio']
+msgid "Municipio"
+msgstr ""
+
+#: $lang['regno']
+msgid "Regno"
+msgstr ""
+
+#: $lang['Link']
+msgid "Collegamenti"
+msgstr ""
+
+#: $lang['Traduzione']
+msgid "Traduzione"
+msgstr ""
+
+#: $lang['Bugtracker']
+msgid "Errori/Richieste"
+msgstr ""
+
+#: $lang['Umani']
+msgid "Umano"
+msgstr ""
+
+#: $lang['Elfi']
+msgid "Elfo"
+msgstr ""
+
+#: $lang['Non_morti']
+msgid "Non morto"
+msgstr ""
+
+#: $lang['Orchi']
+msgid "Orco"
+msgstr ""
+
+#: $lang['Nani']
+msgid "Nano"
+msgstr ""
+
+#: $lang['desc_umani']
+msgid "Descrizione Umani"
+msgstr ""
+
+#: $lang['desc_elfi']
+msgid "Descrizione Elfi"
+msgstr ""
+
+#: $lang['desc_non_morti']
+msgid "Descrizione Non morti"
+msgstr ""
+
+#: $lang['desc_orchi']
+msgid "Descrizione Orchi"
+msgstr ""
+
+#: $lang['desc_nani']
+msgid "Descrizione Nani"
+msgstr ""
+
+#: $lang['Guerriero']
+msgid "Guerriero"
+msgstr ""
+
+#: $lang['Mago']
+msgid "Mago"
+msgstr ""
+
+#: $lang['Ladro']
+msgid "Ladro"
+msgstr ""
+
+#: $lang['Ranger']
+msgid "Ranger"
+msgstr ""
+
+#: $lang['Ninja']
+msgid "Ninja"
+msgstr ""
+
+#: $lang['Berserk']
+msgid "Berserk"
+msgstr ""
+
+#: $lang['desc_guerriero']
+msgid "Descrizione Guerriero"
+msgstr ""
+
+#: $lang['desc_mago']
+msgid "Descrizione Mago"
+msgstr ""
+
+#: $lang['desc_ladro']
+msgid "Descrizione Ladro"
+msgstr ""
+
+#: $lang['desc_ranger']
+msgid "Descrizione Ranger"
+msgstr ""
+
+#: $lang['desc_ninja']
+msgid "Descrizione Ninja"
+msgstr ""
+
+#: $lang['desc_berserk']
+msgid "Descrizione Berserk"
+msgstr ""
+
+#: $lang['Nome']
+msgid "Nome"
+msgstr ""
+
+#: $lang['Razza']
+msgid "Razza"
+msgstr ""
+
+#: $lang['Classe']
+msgid "Classe"
+msgstr ""
+
+#: $lang['Livello']
+msgid "Livello"
+msgstr ""
+
+#: $lang['Esperienza']
+msgid "Esperienza"
+msgstr ""
+
+#: $lang['Salute']
+msgid "Salute"
+msgstr ""
+
+#: $lang['Energia']
+msgid "Energia"
+msgstr ""
+
+#: $lang['Agilita']
+msgid "Agilità"
+msgstr ""
+
+#: $lang['Attfisico']
+msgid "Forza fisica"
+msgstr ""
+
+#: $lang['Attmagico']
+msgid "Forza magica"
+msgstr ""
+
+#: $lang['Diffisica']
+msgid "Resistenza fisica"
+msgstr ""
+
+#: $lang['Difmagica']
+msgid "Resistenza magica"
+msgstr ""
+
+#: $lang['Velocita']
+msgid "Velocità"
+msgstr ""
+
+#: $lang['Intelligenza']
+msgid "Intelligenza"
+msgstr ""
+
+#: $lang['Destrezza']
+msgid "Destrezza"
+msgstr ""
+
+#: $lang['Mana']
+msgid "Mana"
+msgstr ""
+
+#: $lang['Non_definito']
+msgid "Non definito"
+msgstr ""
+
+#: $lang['Maschio']
+msgid "Maschio"
+msgstr ""
+
+#: $lang['Femmina']
+msgid "Femmina"
+msgstr ""
+
+#: $lang['Sesso']
+msgid "Sesso"
+msgstr ""
+
+#: $lang['elenco_ab']
+msgid "Abilità"
+msgstr ""
+
+#: $lang['ab_minatore']
+msgid "Minatore"
+msgstr ""
+
+#: $lang['ab_alchimista']
+msgid "Alchimista"
+msgstr ""
+
+#: $lang['ab_fabbro']
+msgid "Fabbro"
+msgstr ""
+
+#: $lang['ab_magica']
+msgid "Sapienza magica"
+msgstr ""
+
+#: $lang['Monete']
+msgid "Monete"
+msgstr ""
+
+#: $lang['Reputazione']
+msgid "Reputazione"
+msgstr ""
+
+#: $lang['eventi_dettagli1']
+msgid "Stai lavorando in Miniera nuova e finirai "
+msgstr ""
+
+#: $lang['eventi_dettagli2']
+msgid "Stai lavorando in Laboratorio come apprendista e finirai "
+msgstr ""
+
+#: $lang['eventi_dettagli3']
+msgid "Sei nel Tempio a pregare e finirai "
+msgstr ""
+
+#: $lang['eventi_dettagli4']
+msgid "Sei morto. Tornerai in vita "
+msgstr ""
+
+#: $lang['eventi_dettagli5']
+msgid "Stai lavorando in Miniera vecchia e finirai "
+msgstr ""
+
+#: $lang['eventi_dettagli6']
+msgid "Stai lavorando in Fucina come apprendista e finirai "
+msgstr ""
+
+#: $lang['eventi_dettagli7']
+msgid "Stai lavorando in Laboratorio come alchimista e finirai "
+msgstr ""
+
+#: $lang['eventi_dettagli8']
+msgid "Stai studiando in Rocca dell`Arcano e finirai "
+msgstr ""
+
+#: $lang['eventi_dettagli9']
+msgid "Stai lavorando in Fucina come fabbro e finirai "
+msgstr ""
+
+#: $lang['eventi_dettagli10']
+msgid "Stai facendo pratica in Rocca dell`Arcano e finirai "
+msgstr ""
+
+#: $lang['eventi_dettagli11']
+msgid "Hai lanciato una sfida e stai aspettando una risposta entro "
+msgstr ""
+
+#: $lang['eventi_dettagli12']
+msgid "Ti hanno sfidato e devi dare una risposta entro "
+msgstr ""
+
+#: $lang['eventi_dettagli13']
+msgid "Stai combattendo"
+msgstr ""
+
+#: $lang['eventi_dettagli14']
+msgid "Stai dormendo e finirai "
+msgstr ""
+
+#: $lang['eventi_dettagli15']
+msgid "Stai andando oltre confine"
+msgstr ""
+
+#: $lang['eventi_dettagli16']
+msgid "Stai tornando a casa, arriverai "
+msgstr ""
+
+#: $lang['eventi_dettagli17']
+msgid "Stai facendo la guardia e finirai "
+msgstr ""
+
+#: $lang['pessima']
+msgid "Pessima"
+msgstr ""
+
+#: $lang['molto_bassa']
+msgid "Molto bassa"
+msgstr ""
+
+#: $lang['bassa']
+msgid "Bassa"
+msgstr ""
+
+#: $lang['media']
+msgid "Media"
+msgstr ""
+
+#: $lang['alta']
+msgid "Alta"
+msgstr ""
+
+#: $lang['molto_alta']
+msgid "Molto alta"
+msgstr ""
+
+#: $lang['ottima']
+msgid "Ottima"
+msgstr ""
+
+#: $lang['perfetta']
+msgid "Perfetta"
+msgstr ""
+
+#: $lang['morto']
+msgid "Morto"
+msgstr ""
+
+#: $lang['esausto']
+msgid "Esausto"
+msgstr ""
+
+#: $lang['utente_inesistente']
+msgid "Utente inesistente"
+msgstr ""
+
+#: $lang['oggetto_usurato']
+msgid "%s, oggetto usurato o esaurito."
+msgstr ""
+
+#: $lang['oggetto_rotto']
+msgid "%s, oggetto rotto."
+msgstr ""
+
+#: $lang['nessuno_gettato']
+msgid "Nessuno oggetto gettato."
+msgstr ""
+
+#: $lang['errore_sistema_utilizzo_ogg']
+msgid "Errore di sistema: impossibile utilizzare %s!"
+msgstr ""
+
+#: $lang['utilizzato_4_1']
+msgid "Utilizzato %s e recuperato %s di salute"
+msgstr ""
+
+#: $lang['utilizzato_4_2']
+msgid "Utilizzato %s e recuperato %s di energia"
+msgstr ""
+
+#: $lang['Rame']
+msgid "Rame"
+msgstr ""
+
+#: $lang['Ferro']
+msgid "Ferro"
+msgstr ""
+
+#: $lang['Acciaio']
+msgid "Acciaio"
+msgstr ""
+
+#: $lang['Mithrill']
+msgid "Mithrill"
+msgstr ""
+
+#: $lang['Piccone']
+msgid "Piccone"
+msgstr ""
+
+#: $lang['Pugnale']
+msgid "Pugnale"
+msgstr ""
+
+#: $lang['Daga']
+msgid "Daga"
+msgstr ""
+
+#: $lang['Spada']
+msgid "Spada"
+msgstr ""
+
+#: $lang['Ascia']
+msgid "Ascia"
+msgstr ""
+
+#: $lang['Mazza']
+msgid "Mazza"
+msgstr ""
+
+#: $lang['Armatura']
+msgid "Armatura"
+msgstr ""
+
+#: $lang['Scudo']
+msgid "Scudo"
+msgstr ""
+
+#: $lang['global_errore1']
+msgid "- Stai facendo altro!<br />"
+msgstr ""
+
+#: $lang['global_errore2']
+msgid "- Le ore di lavoro devono essere minimo di 1 e massimo di 5!<br />"
+msgstr ""
+
+#: $lang['global_errore3']
+msgid "- Economia del regno in crisi<br />"
+msgstr ""
+
+#: $lang['Account_cancellato']
+msgid "Account cancellato"
+msgstr ""
+
+#: $lang['Account_inutilizzato']
+msgid "Account inutilizzato"
+msgstr ""
+
+#. %1$s=username %2$s=nome del gioco %3$s=regno
+#: $lang['mail_cancellato_noconferma']
+msgid ""
+"Ciao %1$s,<br />Siamo spiacenti di informarti che il tuo account su %2$s, "
+"nel regno %3$s è stato cancellato perchè non confermato entro le 48 ore.<br "
+"/> Saluti,<br />%2$s Staff."
+msgstr ""
+
+#. %1$s=username %2$s=nome del gioco %3$s=regno
+#: $lang['mail_cancellato_nopersonaggio']
+msgid ""
+"Ciao %1$s,<br />Siamo spiacenti di informarti che il tuo account su %2$s, "
+"nel regno %3$s è stato cancellato perchè non è stato creato un personaggio "
+"entro le 72 ore.<br /> Saluti,<br />%2$s Staff."
+msgstr ""
+
+#. %1$s=username %2$s=nome del gioco %3$s=regno
+#: $lang['mail_avviso_inattivita']
+msgid ""
+"Ciao %1$s,<br />Ti scriviamo per informarti che il tuo account su %2$s, nel "
+"regno %3$s risulta inattivo da più di 2 settimane.<br />Se questa inattività "
+"dovesse raggiungere i 30 giorni, l`account verrà automaticamente cancellato "
+"dal sistema.<br />Saluti,<br />%2$s Staff."
+msgstr ""
+
+#. %1$s=username %2$s=nome del gioco %3$s=regno
+#: $lang['mail_cancellato_inattivita']
+msgid ""
+"Ciao %1$s,<br />Siamo spiacenti di informarti che il tuo account su %2$s, "
+"nel regno %3$s è stato cancellato perchè inattivo da oltre 30 giorni.<br "
+"/>Saluti,<br />%2$s Staff."
+msgstr ""
+
+#: $lang['nessuna_magia_presente']
+msgid "Non conosci nessun incantesimo"
+msgstr ""
+
+#: $lang['appreso']
+msgid "Appreso"
+msgstr ""
+
+#: $lang['archivio_report']
+msgid "Archivio report"
+msgstr ""
+
+#: $lang['desc_archivio_report']
+msgid ""
+"Qui sono presente tutti i report dei tuoi combattimenti attualmente presenti "
+"in archivio (degli ultimi 7 giorni)."
+msgstr ""
+
+#: $lang['nessun_report_presente']
+msgid "Nessun report presente attualmente."
+msgstr ""
+
+#: $lang['combact_avvenuto']
+msgid "Combattimento contro %s avvenuto "
+msgstr ""
+
+#: $lang['outputerrori']
+msgid "Si sono verificati i seguenti errori:"
+msgstr ""
+
+#: $lang['outputerrori_continualav']
+msgid "Non è stato possibile continuare a lavorare per i seguenti motivi:"
+msgstr ""
+
+#: $lang['Impossibile_lavorare_ancora']
+msgid "Impossibile lavorare ancora!"
+msgstr ""
+
+#: $lang['nessun_evento']
+msgid "Nessun evento in corso."
+msgstr ""
+
+#: $lang['Stato']
+msgid "Stato"
+msgstr ""
+
+#: $lang['Adesso']
+msgid "Adesso"
+msgstr ""
+
+#: $lang['Indietro']
+msgid "Indietro"
+msgstr ""
+
+#. vedere  http://php.net/date
+#: $lang['dataora']
+msgid "\\i\\l \\g\\i\\o\\r\\n\\o d/m/y \\a\\l\\l\\e \\o\\r\\e H:i"
+msgstr ""
+
+#. %1$s=secondi %2$s=query
+#: $lang['tempo_gen_pagina']
+msgid "Tempo di generazione della pagina: %1$s secondi - Query eseguite: %2$s"
+msgstr ""
+
+#: $lang['Annulla']
+msgid "Annulla"
+msgstr ""
+
+#: $lang['seleziona_ore_lavoro']
+msgid "Seleziona quante ore:"
+msgstr ""
+
+#: $lang['ore_in_coda']
+msgid "(%s ore in coda)"
+msgstr ""
+
+#: $lang['nessuno']
+msgid "Nessuno"
+msgstr ""
+
+#: $lang['sfida']
+msgid "Sfida"
+msgstr ""
+
+#: $lang['Accetta']
+msgid "Accetta"
+msgstr ""
+
+#: $lang['Rifiuta']
+msgid "Rifiuta"
+msgstr ""
+
+#: $lang['usura_attuale']
+msgid "Usura attuale: "
+msgstr ""
+
+#. %s=nome della guardia
+#: $lang['criminale_attacca_guardia']
+msgid "%s durante la ronda avvista un criminale e lo attacca"
+msgstr ""
+
+#: $lang['criminale_attacca_utente']
+msgid "Un criminale attacca %s"
+msgstr ""
+
+#: $lang['criminale_attacca_regno']
+msgid "Un criminale fa danni/saccheggi nel regno per un totale di %s monete"
+msgstr ""
+
+#: $lang['leggi_changelog_interi']
+msgid ""
+"Per leggere i changelog completi più aggiornati dell`intero progetto clicca "
+"%s qui %s"
+msgstr ""

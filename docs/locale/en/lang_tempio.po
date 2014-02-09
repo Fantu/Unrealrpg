@@ -1,0 +1,138 @@
+#. extracted from /var/www/web2/web/rpgdev/game/language/it/lang_tempio.php
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-07-18 18:57+0200\n"
+"PO-Revision-Date: 2009-03-15 10:05+0200\n"
+"Last-Translator: Fabio Fantoni <fantuf@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Translate Toolkit 1.4.0-beta1\n"
+
+#: $lang['Prega']
+msgid "Prega"
+msgstr "Pray"
+
+#: $lang['desc_tempio_prega']
+msgid ""
+"Puoi pregare nel Tempio per aumentare la tua fede e recuperare parte del tuo "
+"mana."
+msgstr ""
+"You can pray in the Temple, improving your faith and recovering part of your "
+"mana."
+
+#: $lang['tempio_errore1']
+msgid "- Sei troppo stanco per poter pregare.<br />"
+msgstr "- You are too tired to pray.<br />"
+
+#: $lang['tempio_errore2']
+#, fuzzy
+msgid "- Non hai abbastanza monete da poter offrire.<br />"
+msgstr "- You don`t have enough money to offer<br />"
+
+#: $lang['report_tempio_preghiera']
+msgid "Conclusa preghiera nel Tempio."
+msgstr "Your pray is over."
+
+#: $lang['report_manifestazione_divina']
+msgid ""
+"Hai pregato un ora nel Tempio e hai donato 1 moneta come offerta. Durante la "
+"preghiera hai visto una intensa luce tutto attorno a te che ti ha "
+"rinvigorito (salute, energia e mana sono al massimo)."
+msgstr ""
+"You have prayed in the Temple for an hour and offered 1 coin. During your "
+"prayer you felt a strong healing aura around you (health, energy and mana at "
+"max level)."
+
+#: $lang['report_preghiera_normale']
+msgid ""
+"Hai pregato per un ora, dato %s monete come donazione e ti sei leggermente "
+"stancato (hai perso %s di energia); inoltre la tua fede è cresciuta e il tuo "
+"mana è stato in parte recuperato."
+msgstr ""
+"You have prayed for an hour, offering %s coins and you got tired  (you lost "
+"%s energy); your faith has improved and part of your mana has been "
+"recovered."
+
+#: $lang['Chierici']
+msgid "Chierici"
+msgstr "Clerics"
+
+#: $lang['desc_tempio_chierici']
+msgid ""
+"Pagando loro 100 monete, in qualunque momento, alla successiva morte "
+"inizieranno automaticamente i riti per la resurrezione ed entro 3 ore "
+"tornerai in vita. Se non pagherai i chierici, la resurrezione avrà luogo "
+"comunque ma, con tempi maggiori. Saranno minori solo nel caso in cui la tua "
+"fede risulterà altissima."
+msgstr ""
+
+#: $lang['Paga_chierici']
+msgid "Paga i chierici"
+msgstr "Pay the clerics"
+
+#: $lang['tempio_errore3']
+msgid "- Non hai abbastanza monete per pagare i chierici.<br />"
+msgstr "- You don`t have enough coins to pay the clerics.<br />"
+
+#: $lang['tempio_errore4']
+msgid "- I chierici hanno gi&agrave; in programma una tua resurrezione.<br />"
+msgstr "- You have already payed for a resurrection.<br />"
+
+#: $lang['liv_fede']
+msgid "Attualmente sei %s"
+msgstr "Currently you are %s"
+
+#: $lang['Eretico']
+msgid "Eretico"
+msgstr "Heretic"
+
+#: $lang['Infedele']
+msgid "Infedele"
+msgstr "Infedel"
+
+#: $lang['Ateo']
+msgid "Ateo"
+msgstr "Atheist"
+
+#: $lang['Praticante']
+msgid "Praticante"
+msgstr "Churchgoer"
+
+#: $lang['Credente']
+msgid "Credente"
+msgstr "Believer"
+
+#: $lang['Fedele']
+msgid "Fedele"
+msgstr "Faithful"
+
+#: $lang['Devoto']
+msgid "Devoto"
+msgstr "Devout"
+
+#: $lang['Illuminato']
+msgid "Illuminato"
+msgstr "Enlightened"
+
+#: $lang['Pio']
+msgid "Pio"
+msgstr "Pious"
+
+#~ msgid ""
+#~ "I chierici possono resuscitare i morti. Pagando loro 100 monete, appena "
+#~ "morirai, inizieranno i riti per la resurrezione, ed entro 10 ore dalla morte "
+#~ "tornerai in vita. Se non pagherai i chierici, la resurrezione avr&agrave; "
+#~ "luogo comunque ma, con tempi maggiori. Saranno minori solo nel caso in cui "
+#~ "la tua fede risulter&agrave; altissima."
+#~ msgstr ""
+#~ "The clerics are able to revive the dead. By paying 100 coins,once you "
+#~ "die,they will start the resurrection rites, and in 10 hours from your death "
+#~ "you will be revived. If you won`t pay the clerics, you will be resurrected "
+#~ "anyway,but with longer times. They will be shorter only when your faith is "
+#~ "near his maximum."

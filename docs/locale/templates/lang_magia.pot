@@ -1,0 +1,119 @@
+#. extracted from /var/www/web2/web/rpgdev/game/language/it/lang_magia.php
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-07-18 18:57+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 1.4.0-beta1\n"
+
+#: $lang['Acqua']
+msgid "ACQUA"
+msgstr ""
+
+#: $lang['Aria']
+msgid "ARIA"
+msgstr ""
+
+#: $lang['Terra']
+msgid "TERRA"
+msgstr ""
+
+#: $lang['Fuoco']
+msgid "FUOCO"
+msgstr ""
+
+#: $lang['Offensivi']
+msgid "Offensivi"
+msgstr ""
+
+#: $lang['Difensivi']
+msgid "Difensivi"
+msgstr ""
+
+#: $lang['magia1']
+msgid "VAPORE"
+msgstr ""
+
+#: $lang['magia2']
+msgid "BOLLA"
+msgstr ""
+
+#: $lang['magia3']
+msgid "COLPO DI VENTO"
+msgstr ""
+
+#: $lang['magia4']
+msgid "MURO DI VENTO"
+msgstr ""
+
+#: $lang['magia5']
+msgid "TREMORI"
+msgstr ""
+
+#: $lang['magia6']
+msgid "FANGO"
+msgstr ""
+
+#: $lang['magia7']
+msgid "FIAMMATA"
+msgstr ""
+
+#: $lang['magia8']
+msgid "FUOCO DIFENSIVO"
+msgstr ""
+
+#: $lang['dmagia1']
+msgid ""
+"Il mago getta dell`acqua ai piedi dell`avversario, il quale, inconsapevole "
+"di ciò che stia accadendo, presto si ritrova immerso in una nube di vapore "
+"che lo indebolisce leggermente."
+msgstr ""
+
+#: $lang['dmagia2']
+msgid ""
+"Una grande bolla d`acqua ingloba il mago, fungendo da lieve barriera "
+"difensiva contro gli attacchi nemici."
+msgstr ""
+
+#: $lang['dmagia3']
+msgid ""
+"Un forte colpo di vento colpisce l`avversario, scaraventandolo al suolo e "
+"stordendolo leggermente."
+msgstr ""
+
+#: $lang['dmagia4']
+msgid ""
+"Un muro di vento attorno al mago rende più difficile l`attacco "
+"dell`avversario."
+msgstr ""
+
+#: $lang['dmagia5']
+msgid ""
+"La terra sotto l`avversario inizia a tremare e, facendogli perdere "
+"l'equilibrio, cade al suolo."
+msgstr ""
+
+#: $lang['dmagia6']
+msgid ""
+"Il terreno ai piedi dell`avversario diventa fanghiglia, rendendo più "
+"difficili i suoi movimenti."
+msgstr ""
+
+#: $lang['dmagia7']
+msgid ""
+"Il mago lancia una fiammata contro l`avversario, provocandogli lievi "
+"ustioni."
+msgstr ""
+
+#: $lang['dmagia8']
+msgid ""
+"Il mago viene ricoperto da un lieve strato infuocato, difendendolo da "
+"determinati attacchi da parte dell'avversario."
+msgstr ""

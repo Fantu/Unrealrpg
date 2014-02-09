@@ -1,0 +1,107 @@
+#. extracted from /var/www/web2/web/rpgdev/game/language/it/lang_equipaggiamento.php
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-07-18 18:57+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 1.4.0-beta1\n"
+
+#: $lang['Armi']
+msgid "Armi"
+msgstr ""
+
+#: $lang['seleziona_cac']
+msgid "Seleziona arma corpo a corpo"
+msgstr ""
+
+#: $lang['armacacimpo']
+msgid "La tua arma corpo a corpo è %s"
+msgstr ""
+
+#: $lang['noarmacacimpo']
+msgid "Non hai un arma corpo a corpo nell`equipaggiamento."
+msgstr ""
+
+#: $lang['seleziona_adi']
+msgid "Seleziona arma a distanza"
+msgstr ""
+
+#: $lang['armaadiimpo']
+msgid "La tua arma a distanza è %s"
+msgstr ""
+
+#: $lang['noarmaadiimpo']
+msgid "Non hai un arma a distanza nell`equipaggiamento."
+msgstr ""
+
+#: $lang['Imposta']
+msgid "Imposta"
+msgstr ""
+
+#: $lang['equip_errore1']
+msgid "- Nessuna selezione<br />"
+msgstr ""
+
+#: $lang['equip_errore2']
+msgid "- Non sei abbastanza forte per equipaggiarti con questo oggetto.<br />"
+msgstr ""
+
+#: $lang['equip_errore3']
+msgid ""
+"- Non hai abbastanza destrezza per equipaggiarti con questo oggetto.<br />"
+msgstr ""
+
+#: $lang['Niente']
+msgid "Niente"
+msgstr ""
+
+#: $lang['Equipdifensivo']
+msgid "Equipaggiamento difensivo"
+msgstr ""
+
+#: $lang['seleziona_arm']
+msgid "Seleziona armatura"
+msgstr ""
+
+#: $lang['armimpo']
+msgid "La tua armatura è %s"
+msgstr ""
+
+#: $lang['noarmimpo']
+msgid "Non hai un armatura nell`equipaggiamento."
+msgstr ""
+
+#: $lang['seleziona_scu']
+msgid "Seleziona scudo"
+msgstr ""
+
+#: $lang['scuimpo']
+msgid "Il tuo scudo è %s"
+msgstr ""
+
+#: $lang['noscuimpo']
+msgid "Non hai uno scudo nell`equipaggiamento."
+msgstr ""
+
+#: $lang['Pozioni']
+msgid "Pozioni"
+msgstr ""
+
+#: $lang['seleziona_poz']
+msgid "Seleziona pozione"
+msgstr ""
+
+#: $lang['pozimpo']
+msgid "La tua pozione è %s"
+msgstr ""
+
+#: $lang['nopozimpo']
+msgid "Non hai una pozione nell`equipaggiamento."
+msgstr ""

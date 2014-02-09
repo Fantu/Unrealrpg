@@ -1,0 +1,105 @@
+#. extracted from /var/www/web2/web/rpgdev/game/language/it/lang_situazione.php
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-07-18 18:57+0200\n"
+"PO-Revision-Date: 2008-11-30 23:02+0100\n"
+"Last-Translator: Fabio Fantoni <fantonifabio@tiscali.it>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 1.4.0-beta1\n"
+
+#: $lang['nessun_nuovo_msg']
+msgid "Non hai nuovi messaggi"
+msgstr "You don`t have any new messages."
+
+#: $lang['un_nuovo_msg']
+msgid "Hai 1 nuovo messaggio"
+msgstr "You have 1 new message"
+
+#: $lang['nuovi_msg']
+msgid "Hai %s nuovi messaggi"
+msgstr "You have %s new messages"
+
+#: $lang['prossimo_lavoro']
+msgid "Il prossimo lavoro lo potrai svolgere: "
+msgstr "You will be able to work at: "
+
+#: $lang['stai_gia_lavorando']
+msgid "Stai già lavorando."
+msgstr "You are already working."
+
+#: $lang['news']
+msgid "Novità: "
+msgstr "News: "
+
+#: $lang['comunicazione']
+msgid "Comunicazioni: "
+msgstr "Communications: "
+
+#: $lang['Levelup']
+msgid "Aumento di livello"
+msgstr "Increase your level"
+
+#: $lang['uplevel']
+msgid "Sali di livello"
+msgstr "Level upgrade"
+
+#: $lang['caratteristica']
+msgid "Caratteristica"
+msgstr "Characteristic"
+
+#: $lang['valore_attuale']
+msgid "Valore attuale"
+msgstr "Current value"
+
+#: $lang['perc_scelta']
+msgid "Percentuale di incremento"
+msgstr "Increasing percentage"
+
+#: $lang['desc_tablevup1']
+msgid ""
+"Hai 10 punti di percentuale di incremento che puoi distribuire fra salute, "
+"energia e mana; puoi fare anche tutti e 10 in uno."
+msgstr ""
+"You have got 10 percentage points to dispense among health, energy and mana; "
+"you can also assign all of them to one"
+
+#: $lang['desc_tablevup2']
+msgid ""
+"Hai 4 punti di incremento che puoi distribuire fra le caratteristiche; non "
+"puoi fare più di 2 per caratteristica, ogni punto aumenterà la "
+"caratteristica di 5 se essa è minore di 200 altrimenti di 10."
+msgstr ""
+"You have got 4 increasing points to dispense among your stats; you cannot "
+"increase one stat more than twice, each point will increase it of 5 points "
+"(if it's lower than 200), or 10."
+
+#: $lang['levelup_errore1']
+msgid ""
+"- Salute mana ed energia devono avere in totale 10 punti di percentuale di "
+"incremento.<br />"
+msgstr ""
+"- You can assign just 10 percentage points among health mana and energy.<br "
+"/>"
+
+#: $lang['levelup_errore2']
+msgid ""
+"- Hai selezionato più di 2 punti incremento per una o più "
+"caratteristiche.<br />"
+msgstr ""
+"- You assigned more than 2 increasing points for one or more stats.<br />"
+
+#: $lang['levelup_errore3']
+msgid "- Le caratteristiche in totale non hanno 4 punti incremento.<br />"
+msgstr "- You have to assign 4 increasing points to your stats.<br />"
+
+#, fuzzy
+#~ msgid "Stai gi&agrave; lavorando."
+#~ msgstr "You are already working"
+
+#~ msgid "Novit&agrave;: "
+#~ msgstr "News: "

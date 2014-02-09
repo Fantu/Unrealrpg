@@ -1,0 +1,227 @@
+# extracted from orig-php/lang_admin.php
+#. extracted from /var/www/web2/web/rpgdev/game/language/it/lang_admin.php
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-07-18 18:57+0200\n"
+"PO-Revision-Date: 2009-07-28 11:34+0200\n"
+"Last-Translator: Fabio Fantoni <fantuf@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Translate Toolkit 1.4.0-beta1\n"
+
+#: $lang['pannello_amministrazione']
+msgid "Pannello di amministrazione"
+msgstr "Administration Panel"
+
+#: $lang['gestione_utenti']
+msgid "Gestione utenti"
+msgstr "Users management"
+
+#: $lang['gestione_server']
+msgid "Gestione regni"
+msgstr "Kingdoms management"
+
+#: $lang['Accesso_negato']
+msgid "Accesso negato"
+msgstr "Access Denied"
+
+#: $lang['Username_esistente']
+msgid "Username già esistente"
+msgstr "Username already exists"
+
+#: $lang['Utente_creato']
+msgid "Utente creato"
+msgstr "User created"
+
+#: $lang['crea_nuovo_utente']
+msgid "Crea nuovo utente"
+msgstr "Create new user"
+
+#: $lang['server_chiuso']
+msgid "Regno %s chiuso"
+msgstr "Kingdom %s closed"
+
+#: $lang['chiudi_tutti_server']
+msgid "Chiudi tutti i regni"
+msgstr "Close all kingdoms"
+
+#: $lang['server_aperto']
+msgid "Regno %s aperto"
+msgstr "Kingdom %s opened"
+
+#: $lang['apri_tutti_server']
+msgid "Apri tutti i regni"
+msgstr "Open all kingdoms"
+
+#: $lang['aggiornato_db_server']
+msgid "Aggiornato db del regno %s alla versione %s"
+msgstr "Upgraded kingdom %s`s db to version %s"
+
+#: $lang['non_aggiornato_db_server']
+msgid "Il db del regno %s è già aggiornato"
+msgstr "The kingdom %s`s db has been upgraded"
+
+#: $lang['aggiorna_db']
+msgid "Aggiorna database alla versione corrente"
+msgstr "Upgrade database to the actual version"
+
+#: $lang['controlla_file_log']
+msgid "Controlla i file log di sistema"
+msgstr "Check system`s log files"
+
+#: $lang['creato_log_query']
+msgid "Creato file log delle query"
+msgstr "Queries log file created"
+
+#: $lang['controllo_file_log_eseguito']
+msgid "Controllo file log eseguito"
+msgstr "Control log file done"
+
+#: $lang['dir_report_mancante']
+msgid "Cartella report dei regni %s mancante"
+msgstr "Kingdoms report folder %s missing"
+
+#: $lang['creazione_dir_nonriuscita']
+msgid "Creazione cartella report dei regni %s non riuscita"
+msgstr "Kingdoms report folder %s creation failed"
+
+#: $lang['Titolo']
+msgid "Titolo"
+msgstr "Title"
+
+#: $lang['Messaggio']
+msgid "Messaggio"
+msgstr "Message"
+
+#: $lang['Regno']
+msgid "Regno"
+msgstr "Kingdom"
+
+#: $lang['regno_errato']
+msgid "Non hai selezionato correttamente un regno"
+msgstr "You don`t have select correct kingdom"
+
+#: $lang['mostra_log_sistema']
+msgid "Mostra log di sistema"
+msgstr ""
+
+#: $lang['mostra_log_utenti']
+msgid "Mostra log utenti"
+msgstr ""
+
+#: $lang['visualizza_log_di_sistema']
+msgid "Visualizzazione log di sistema"
+msgstr ""
+
+#: $lang['Amministrazione']
+msgid "Amministrazione"
+msgstr ""
+
+#: $lang['Range_temporale']
+msgid "Range temporale"
+msgstr ""
+
+#: $lang['Ultime_24_ore']
+msgid "Ultime 24 ore"
+msgstr ""
+
+#: $lang['Ultime_48_ore']
+msgid "Ultime 48 ore"
+msgstr ""
+
+#: $lang['Ultima_settimana']
+msgid "Ultima settimana"
+msgstr ""
+
+#: $lang['Ultimo_mese']
+msgid "Ultimo mese"
+msgstr ""
+
+#: $lang['Sempre']
+msgid "Sempre"
+msgstr ""
+
+#: $lang['visualizza']
+msgid "Visualizza"
+msgstr ""
+
+#: $lang['outputerrori']
+msgid "Si sono verificati i seguenti errori:"
+msgstr ""
+
+#: $lang['log_errore1']
+msgid "- Database inesistente"
+msgstr ""
+
+#: $lang['log_errore2']
+msgid "- Regno inesistente"
+msgstr ""
+
+#: $lang['log_errore3']
+msgid "- Id non inserito"
+msgstr ""
+
+#: $lang['log_errore4']
+msgid "- Giorno iniziale inserito errato, deve essere gg-mm-aaaa"
+msgstr ""
+
+#: $lang['log_errore5']
+msgid "- Giorno finale inserito errato, deve essere gg-mm-aaaa"
+msgstr ""
+
+#: $lang['log_errore6']
+msgid ""
+"- Nessun utente presente a queste coordinate o nessun log per tale utente"
+msgstr ""
+
+#: $lang['log_errore7']
+msgid "- Giorno iniziale inserito è una data errata"
+msgstr ""
+
+#: $lang['log_errore8']
+msgid "- Giorno finale inserito è una data errata"
+msgstr ""
+
+#: $lang['log_errore9']
+msgid "- "
+msgstr ""
+
+#: $lang['nessun_risultato']
+msgid "Nessun log trovato"
+msgstr ""
+
+#: $lang['visualizza_log_utenti']
+msgid "Scrivi l`id dell`utente da visualizzare:"
+msgstr ""
+
+#: $lang['Da']
+msgid "Da"
+msgstr ""
+
+#: $lang['A']
+msgid "A"
+msgstr ""
+
+#: $lang['desc_range_tempo']
+msgid ""
+"Per il range temporale si seleziona ultimi tot, sempre o si inserisce il "
+"giorno iniziale e finale sotto in formato gg-mm-aaaa"
+msgstr ""
+
+#~ msgid "Gestione server"
+#~ msgstr "Server Administration"
+
+#~ msgid "Server %s chiuso"
+#~ msgstr "Server %s close"
+
+#~ msgid "Server %s aperto"
+#~ msgstr "Server %s open"
+
+#~ msgid "Apri tutti i server"
+#~ msgstr "Open all servers"
