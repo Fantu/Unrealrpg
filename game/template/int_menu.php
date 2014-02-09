@@ -17,6 +17,6 @@ $menu->View('m','regno'); ?>
 $menu->View('v','utenti');
 $menu->View('m','info');
 $menu->View('v','opzioni'); ?>
-<ul><li><a href="#"><?php echo $lang['Link']; ?></a><ul><li><a href="http://fantu.it:8000" target="_blank"><?php echo $lang['Traduzione']; ?></a></li><!-- <li><a href="http://fantu.eu/bugtracker/index.php?project=2" target="_blank"><?php echo $lang['Bugtracker']; ?></a></li> --></ul></li></ul>
+<ul><li><a href="#"><?php echo $lang['Link']; ?></a><ul><li><a href="https://github.com/Fantu/Unrealrpg/issues" target="_blank"><?php echo $lang['Bugtracker']; ?></a></li></ul></li></ul>
 <?php $menu->View('v','logout'); ?>
 </div>
