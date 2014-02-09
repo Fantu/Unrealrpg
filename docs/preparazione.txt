@@ -1,12 +1,36 @@
-/game/inclusi/log/mysql.log creare e permessi 777
-/game/inclusi/log/report/N/ creare cartella N dove N è il numero del server e permessi 777
+Set config.php in game/inclusi using config-example.php
 
-creare cron...
-#1 AUTO dev
-* * * * * /usr/bin/lynx > /dev/null -dump http://unrealff.it/rpgdev/game/AUTO.php?code=autourbg
-#2 AUTO beta
-* * * * * /usr/bin/lynx > /dev/null -dump http://unrealff.it/rpgbeta/game/AUTO.php?code=autourbg
-#3 BACKUPDB dev
-32 3 * * * /usr/bin/lynx > /dev/null -dump http://unrealff.it/rpgdev/admin/backupdb.php
-#4 BACKUPDB beta
-36 3 * * * /usr/bin/lynx > /dev/null -dump http://unrealff.it/rpgbeta/admin/backupdb.php
+Give full permissions to log, cache and report folders (chmod 777) to make possible on both ftp and webserver:
+game/inclusi/log/
+game/inclusi/log/report/
+admin/cache/
+Create log files and subfolders needed from command "Controlla i file log di sistema" in admin panel.
+These folders are not accessible from web (deny with htaccess).
+
+Create cronjobs:
+# AUTO (needed for many game functions)
+* * * * * /usr/bin/lynx > /dev/null -dump http://<website>/<subfolder>/game/AUTO.php?code=autourbg
+# BACKUPDB (optional, data setting may be changed, backup of db with this script or in other way is highly recommended)
+32 3 * * * /usr/bin/lynx > /dev/null -dump http://<website>/<subfolder>/admin/backupdb.php?code=autourbg
+
+Create administration database (unique)
+- create unrealrpg_1000 db with utf8_unicode_ci collation
+- load docs/sql/admin.sql in it
+- create first admin record:
+INSERT INTO `unrealrpg_1000`.`utenti` ( `id` , `username` , `password` , `email` , `admin` , `language` )
+VALUES ( NULL , '<username>', '<password>', '<mail>', '1', '<language>' );
+# change <username> and <mail>, <language> is 'it' or 'en' and password is md5sum of password
+
+Create game db with utf8_unicode_ci collation (one for each reign)
+- create unrealrpg_<id> db, where <id> must be the same of $game_server array in config.php for selected reign
+- load docs/sql/reign.sql in it
+- change the values of config table record:
+UPDATE `config` SET `id` = '<id>', `maxutenti` = '<maxusers>', `language` = '<language>' WHERE `config`.`id` =0;
+# change <id>, <maxusers> and <language> is 'it' or 'en'
+# I do not think this browser game is ready for massive use, advice for now most a few hundred users for 
+# development and testing.
+# For massive use is good wait to have more contents, features and better graphic.
+# I'll probably increase version to 1.0 where ready for massive use.
+# Thousands or more users may require a powerful web server or a cluster, further optimizations
+# in the code and sql tables to improve performances.
+
