@@ -146,7 +146,7 @@ CREATE TABLE IF NOT EXISTS `config` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 INSERT INTO `config` (`id`, `maxutenti`, `utenti`, `chiuso`, `banca`, `news`, `comunicazione`, `language`, `lotteria`, `version`, `crimine`, `atticriminali`, `ottimizzazioni`, `cancellazioni`) VALUES
-(0, 100, 0, 1, 1000, NULL, NULL, 'it', 0, '0.8.1', 0, 0, 0, 0);
+(0, 100, 0, 1, 1000, NULL, NULL, 'it', 0, '0.8.1', 10, 0, 0, 0);
 
 CREATE TABLE IF NOT EXISTS `equip` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
