@@ -173,7 +173,7 @@ $lang['combact_avvenuto']='Combat against %s occurred ';
 //fine archivio report
 
 $lang['outputerrori']='The following errors have occurred:';
-$lang['outputerrori_continualav']='You weren\'t able to go on working due to the following reasons:';
+$lang['outputerrori_continualav']='You weren`t able to go on working due to the following reasons:';
 $lang['Impossibile_lavorare_ancora']='It is impossible to work another time!';
 $lang['nessun_evento']='No events in progress.';
 $lang['Stato']='Status';

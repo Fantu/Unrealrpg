@@ -11,4 +11,5 @@
 - add favicon
 - $game_se_code instead of autourbg to use on script called with cron or manual
 - probably is good increase size of userid field on all tables that use it and remove cacheuserid
+- find a good way to not cause sintax errors with query of game internal messagges from system that contain language string for example with ' character (now the workaround for ' is `)
 
