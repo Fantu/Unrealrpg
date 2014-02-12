@@ -614,14 +614,14 @@ global $db,$adesso,$lang,$language;
 require_once('language/'.$language.'/lang_locanda.php');
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");
 if($usercar['saluteattuale']<=$usercar['salute']){
-    // recover 10% of health
-    $salute=$usercar['saluteattuale']+round($usercar['salute']/100*10);
+    // recover 5% of health
+    $salute=$usercar['saluteattuale']+round($usercar['salute']/100*5);
     if($salute>$usercar['salute'])
         $salute=$usercar['salute'];
 }else{$salute=$usercar['salute'];}
 if($usercar['energia']<=$usercar['energiamax']){
-    // recover 20% of energy
-    $energia=$usercar['energia']+round($usercar['energiamax']/100*20);
+    // recover 15% of energy
+    $energia=$usercar['energia']+round($usercar['energiamax']/100*15);
     if($energia>$usercar['energiamax'])
         $energia=$usercar['energiamax'];
 }else{$energia=$usercar['energiamax'];}

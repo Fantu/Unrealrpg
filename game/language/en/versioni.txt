@@ -12,7 +12,7 @@ Legenda:<br />
 <p><strong>0.8.1</strong> (Non disponibile - In sviluppo)<br />
 + Rifatto il blocco per tot tempo in caso di più password errate in modo che non sia aggirabile in nessun modo<br />
 + Inseriti nei log: logout<br />
-# Changed health recovery from 2% to 10% when sleeping one hour in the inn<br />
+# Changed health recovery from 2% to 5% and energy recovery from 20% to 15% when sleeping one hour in the inn<br />
 + Vari miglioramenti di sistema a sistema query<br />
 </p>
 <p><strong>0.8.0</strong> [R.2131] (18/07/09 - Beta)<br />
