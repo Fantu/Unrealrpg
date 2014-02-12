@@ -10,7 +10,7 @@ require_once('inclusi/funzioni_oggetti.php');
 $step=(int)$_GET['step'];
 switch($_GET['step']){
 case 1:
-$linkindietro="<a href=\"index.php?loc=mercato\">".$lang['Mercato']."</a>";
+$linkindietro="<a href=\"index.php?loc=mercato\">".$lang['mercato']."</a>";
 $categoria=(int)$_GET['categoria'];
 if(is_array($catoggetti_nome[$categoria])){
 foreach($catoggetti_nome[$categoria] as $chiave=>$elemento){
@@ -27,7 +27,7 @@ break;
 case 2:
 $categoria=(int)$_GET['categoria'];
 $sottocat=(int)$_GET['sottocategoria'];
-$linkindietro="<a href=\"index.php?loc=mercato\">".$lang['Mercato']."</a> - <a href=\"index.php?loc=mercato&amp;step=1&amp;categoria=".$categoria."\">".$lang['tipo'.$categoria]."</a>";
+$linkindietro="<a href=\"index.php?loc=mercato\">".$lang['mercato']."</a> - <a href=\"index.php?loc=mercato&amp;step=1&amp;categoria=".$categoria."\">".$lang['tipo'.$categoria]."</a>";
 $mostraogg=1;
 break;
 default:
