@@ -1,4 +1,23 @@
 <?php
+
+function Dead($user,$usercar){
+    global $db,$adesso;
+    // the basic time to resurrect is one day less a minute every faith point
+    // or 3 hours with the intervention of the clergy
+    if($user['resuscita']=='0'){
+        $tempor=86400-$usercar['fede'];
+    }else{
+        $tempor=10800;
+    }
+    // with the account plus an hour in less
+    if($user['plus']!=0)
+        $tempor-=3600;
+    // the time of the resurrection must be minimum 1 hour
+    if($tempor<3600)
+        $tempor=3600;
+    $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo) VALUES ('".$user['userid']."','".$adesso."','".$tempor."','4','3')");
+}//end Dead
+
 function testosalute($percsalute){
 global $lang;
 if ($percsalute<=0){
@@ -96,7 +115,7 @@ class Email{
 		$this->header.="Message-ID: <".time()."-".$game_mail.">\n";
 		$this->header.="X-Mailer: PHP v".phpversion()."\n";
 	}
-	public function Email($tipo,$destinatario,$titolo,$messaggio){ //$email=new Email(1,$destinatario,$titolo,$messaggio); primo parametro è se mail html (1=sì e 0=no)
+	public function Email($tipo,$destinatario,$titolo,$messaggio){ //$email=new Email(1,$destinatario,$titolo,$messaggio); primo parametro Ã¨ se mail html (1=sÃ¬ e 0=no)
 		$this->Config();
 		if($tipo==1){
 		$this->header.="MIME-Version: 1.0\n";

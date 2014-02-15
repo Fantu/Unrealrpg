@@ -24,7 +24,7 @@ if(($user['refertime']!=0) AND ($user['refertime']<$adesso)){
 	}else{//fine se referente esiste
 	$db->QueryMod("UPDATE utenti SET refertime='0',refer='0' WHERE userid='".$user['userid']."'");
 	}//se non esiste annullamento refer
-	}//fine se server è lo stesso
+	}//fine se server Ã¨ lo stesso
 }//fine se ora del controllo ref
 if($user['plus']<$adesso){
 $db->QueryMod("UPDATE utenti SET plus='0' WHERE userid='".$user['userid']."'");
@@ -33,7 +33,9 @@ $user=$db->QuerySelect("SELECT * FROM utenti WHERE userid='".$user['userid']."' 
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$user['userid']."' LIMIT 1");
 if($eventi['id']==0){
 if ($usercar['saluteattuale']<1){
-require('inclusi/morte.php');
+    Dead($user,$usercar);
+    header("Location: index.php?loc=situazione");
+    exit();
 }//se morto
 if ($adesso>($usercar['decfede']+3600)){
 	if ($usercar['fede']>0){

@@ -25,32 +25,32 @@ foreach($game_language as $chiavel=>$elementol){
 								if($eventi['id']==0){
 									$user=$db->QuerySelect("SELECT * FROM utenti WHERE userid='".$morto['userid']."' LIMIT 1");
 									$usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$morto['userid']."' LIMIT 1");
-									require('inclusi/morte.php');
-								}//se non ha eventi, e quindi resurrezione già in corso
+									Dead($user,$usercar);
+								}//se non ha eventi, e quindi resurrezione giÃ  in corso
 							}//per ogni morto
 						}//se ci sono morti
-						$db->QueryMod("DELETE FROM sessione WHERE time<'".($adesso-10800)."'");// cancellazione di tutte le sessioni più vecchie di 3 ore
-						$db->QueryMod("DELETE FROM msginviati WHERE data<'".($adesso-172800)."'");// cancellazione di tutti i msg inviati del regno più vecchi di 2 giorni
+						$db->QueryMod("DELETE FROM sessione WHERE time<'".($adesso-10800)."'");// cancellazione di tutte le sessioni piÃ¹ vecchie di 3 ore
+						$db->QueryMod("DELETE FROM msginviati WHERE data<'".($adesso-172800)."'");// cancellazione di tutti i msg inviati del regno piÃ¹ vecchi di 2 giorni
 						$scaduto=$adesso-2592000;
 						$quantimess=$db->QuerySelect("SELECT COUNT(id) AS n FROM messaggi WHERE data<'".$scaduto."'");
 						if($quantimess['n']>0){
 							$db->QueryMod("DELETE FROM messaggi WHERE data<'".$scaduto."'");
-						}//eliminazione di tutti i msg del regno più vecchi di 30 giorni
+						}//eliminazione di tutti i msg del regno piÃ¹ vecchi di 30 giorni
 						$scaduto=$adesso-604800;
 						$quantimess=$db->QuerySelect("SELECT COUNT(id) AS n FROM messaggi WHERE data<'".$scaduto."' AND letto='1'");
 						if($quantimess['n']>0){
 							$db->QueryMod("DELETE FROM messaggi WHERE data<'".$scaduto."' AND letto='1'");
-						}//eliminazione di tutti i msg letti del regno più vecchi di 7 giorni
+						}//eliminazione di tutti i msg letti del regno piÃ¹ vecchi di 7 giorni
 						$quantirep=$db->QuerySelect("SELECT COUNT(id) AS n FROM battlereport WHERE data<'".$scaduto."'");
 						if($quantirep['n']>0){
 							$repscaduti=$db->QueryCiclo("SELECT id FROM battlereport WHERE data<'".$scaduto."'");
 							while($reps=$db->QueryCicloResult($repscaduti)){
 								$db->QueryMod("DELETE FROM battlereport WHERE id='".$reps['id']."' LIMIT 1");
 								unlink("inclusi/log/report/".$config['id']."/".$reps['id'].".log");
-							}//eliminazione di tutti i report del regno più vecchi di 7 giorni
-						}//se ci sono report più vecchi di 7 giorni nel regno
+							}//eliminazione di tutti i report del regno piÃ¹ vecchi di 7 giorni
+						}//se ci sono report piÃ¹ vecchi di 7 giorni nel regno
 						$optimize=1;
-					}//se bisogna ottimizzare e nn è stato fatto in altri regni durante questa sessione
+					}//se bisogna ottimizzare e nn Ã¨ stato fatto in altri regni durante questa sessione
 				if($config['atticriminali']<$adesso){
 					$prob=rand(1,500);
 					if($prob<=$config['crimine'])
@@ -88,12 +88,12 @@ foreach($game_language as $chiavel=>$elementol){
 				$dacanc=$db->QuerySelect("SELECT count(userid) AS n FROM utenti WHERE ultimologin<'".$tempo."' AND avvinattivo<'".$adesso."' AND vacanza<'1'");
 				if($dacanc['n']>0){
 				$dacanc=$db->QueryCiclo("SELECT * FROM utenti WHERE ultimologin<'".$tempo."' AND avvinattivo<'".$adesso."' AND vacanza<'1'");
-				while($chi=$db->QueryCicloResult($dacanc)){//avviso inattività
+				while($chi=$db->QueryCicloResult($dacanc)){//avviso inattivitÃ 
 					$messaggio=sprintf($lang['mail_avviso_inattivita'],$chi['username'],$game_name,$game_server[$db->database]);
 					$email=new Email(1,$chi['email'],$lang['Account_inutilizzato'],$messaggio);
 					$avviso=$adesso+604800;
 					$db->QueryMod("UPDATE utenti SET avvinattivo='".$avviso."' WHERE userid='".$chi['userid']."'");
-				}//fine avviso inattività
+				}//fine avviso inattivitÃ 
 				}
 				$tempo=$adesso-2592000;//30 giorni
 				$dacanc=$db->QuerySelect("SELECT count(userid) AS n FROM utenti WHERE ultimologin<'".$tempo."' AND vacanza='0'");
@@ -117,8 +117,8 @@ foreach($game_language as $chiavel=>$elementol){
 				}//fine cancellazione inattivi senza vacanza attiva
 				}
 				}//fine controllo cancellazioni
-				}//fine se il server non è chiuso
-		}//fine se è di quella lingua
+				}//fine se il server non Ã¨ chiuso
+		}//fine se Ã¨ di quella lingua
 	}//fine ogni server
 }//fine per ogni lingua
 
