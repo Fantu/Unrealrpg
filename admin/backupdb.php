@@ -1,5 +1,5 @@
 <?php
-if($_GET['code']!='autourbg'){header("Location: ../index.php?error=16"); exit();}
+if($_GET['code']!=$scripts_se_code){header("Location: ../index.php?error=16"); exit();}
 
 require('../game/inclusi/valori.php');
 

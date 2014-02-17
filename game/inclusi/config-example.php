@@ -8,8 +8,10 @@
 *
 */
 
-// put here a random string
+// put here a random string, used on game pages
 $game_se_code="476etfydugto84";
+// put here a random string, used on fix, manual and cron scripts
+$scripts_se_code="47rytguw6twe";
 // game state: DEV for developing, BETA for testing
 $game_state="DEV";
 // mail sent from server have this as sender
