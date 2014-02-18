@@ -12,7 +12,7 @@ Legenda:<br />
 <p><strong>0.8.1</strong> (Non disponibile - In sviluppo)<br />
 + Rifatto il blocco per tot tempo in caso di più password errate in modo che non sia aggirabile in nessun modo<br />
 + Inseriti nei log: logout<br />
-# Modificato il recupero di salute dormendo un ora in locanda da 2% a 10% e di energia dal 20% al 15%<br />
+# Modificato il recupero di salute dormendo un ora in locanda da 2% a 5% e di energia dal 20% al 15%<br />
 + Vari miglioramenti di sistema a sistema query<br />
 </p>
 <p><strong>0.8.0</strong> [R.2131] (18/07/09 - Beta)<br />

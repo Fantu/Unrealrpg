@@ -4,26 +4,37 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 	exit();
 }
 if(isset($_POST["view"])){
-	$srv=(int)$_POST['db'];
-	$idu=(int)$_POST['id'];
-		if(!isset($game_server[$srv]))
-			$errore.=$lang['log_errore2']."<br />";
-		if($idu<1)
+    $srv=(int)$_POST['db'];
+    $idu=(int)$_POST['id'];
+    $username=htmlspecialchars($_POST['username'],ENT_QUOTES);
+    if(!isset($game_server[$srv]))
+        $errore.=$lang['log_errore2']."<br />";
+    if($idu<1 AND $username=="")
 			$errore.=$lang['log_errore3']."<br />";
-		if($_POST['dagiorno'] OR $_POST['agiorno']){
-		$dagiorno=$_POST['dagiorno'];
-		$agiorno=$_POST['agiorno'];
-		if(!preg_match("/^([0-9]{2})-([0-9]{2})-([0-9]{4})$/",$dagiorno))
-			$errore.=$lang['log_errore4']."<br />";
-		if(!preg_match("/^([0-9]{2})-([0-9]{2})-([0-9]{4})$/",$agiorno))
-			$errore.=$lang['log_errore5']."<br />";
-		}//fine se giorni per range
-		if(empty($errore)){
-		$rtemp=(int)$_POST['rtemp'];
-		$db->Setdb($srv);
-		$n=$db->QuerySelect("SELECT COUNT(id) AS n FROM logutenti WHERE userid='".$idu."'");
-		if($n['n']==0)
-			$errore.=$lang['log_errore6']."<br />";
+    if($_POST['dagiorno'] OR $_POST['agiorno']){
+        $dagiorno=$_POST['dagiorno'];
+        $agiorno=$_POST['agiorno'];
+        if(!preg_match("/^([0-9]{2})-([0-9]{2})-([0-9]{4})$/",$dagiorno))
+            $errore.=$lang['log_errore4']."<br />";
+        if(!preg_match("/^([0-9]{2})-([0-9]{2})-([0-9]{4})$/",$agiorno))
+            $errore.=$lang['log_errore5']."<br />";
+    }//fine se giorni per range
+    if(empty($errore)){
+        $rtemp=(int)$_POST['rtemp'];
+        $db->Setdb($srv);
+        if($username!="")
+            $where="username='".$username."'";
+        else
+            $where="userid='".$idu."'";
+        $n=$db->QuerySelect("SELECT COUNT(userid) AS n FROM utenti WHERE ".$where);
+        if($n['n']==0){
+            $errore.=$lang['log_errore6']."<br />";
+        }else{
+            $u=$db->QuerySelect("SELECT userid,username FROM utenti WHERE ".$where." LIMIT 1");
+            $n=$db->QuerySelect("SELECT COUNT(id) AS n FROM logutenti WHERE userid='".$u['userid']."'");
+            if($n['n']==0)
+                $errore.=$lang['log_errore9']."<br />";
+        }
 		if($dagiorno){
 		$dagiorno=explode('-',$dagiorno);
 		$agiorno=explode('-',$agiorno);
@@ -36,40 +47,38 @@ if(isset($_POST["view"])){
 		if($errore){
 				$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";
 		}else{
-		require_once(LANG_PATH.'it/lang_gamelog.php');//METTERE MULTILINGUA
-		require_once(LANG_PATH.'it/lang_oggetti_nomi.php');//METTERE MULTILINGUA
-		$where="userid='".$idu."'";
-		$u=$db->QuerySelect("SELECT userid,username FROM utenti WHERE ".$where." LIMIT 1");
-		$output=$u['username']." (".$srv.":".$idu.")<br /><br />";
+		require_once(LANG_PATH.$op['language'].'/lang_gamelog.php');
+		require_once(LANG_PATH.$op['language'].'/lang_oggetti_nomi.php');
+		$output=$u['username']." (".$srv.":".$u['userid'].")<br /><br />";
 		if($dagiorno){
 			$dagiorno=$dagiorno[1].'/'.$dagiorno[0].'/'.$dagiorno[2];
 			$timedag=strtotime($dagiorno);
 			$agiorno=$agiorno[1].'/'.$agiorno[0].'/'.$agiorno[2];
 			$timeag=strtotime($agiorno);
-			$where.=" AND data>'".$timedag."' AND data<'".$timeag."'";
+			$where=" AND data>'".$timedag."' AND data<'".$timeag."'";
 		}else{
 			$sempre=0;
 			switch($rtemp){
 			case 2:
-				$data=$ora-172800;
+				$data=$adesso-172800;
 				break;
 			case 3:
-				$data=$ora-604800;
+				$data=$adesso-604800;
 				break;
 			case 4:
-				$data=$ora-2592000;
+				$data=$adesso-2592000;
 				break;
 			case 5:
 				$sempre=1;
 				break;
 			default:
-				$data=$ora-86400;
+				$data=$adesso-86400;
 				break;
 			}
 			if($sempre==0)
-			$where.=" AND data>'".$data."'";
+			$where=" AND data>'".$data."'";
 		}
-			$l=$db->QueryCiclo("SELECT * FROM logutenti WHERE ".$where);
+			$l=$db->QueryCiclo("SELECT * FROM logutenti WHERE userid='".$u['userid']."'".$where." order by id desc");
 			while($el=$db->QueryCicloResult($l)){
 			$output.=date("d/m/y - H:i",$el['data'])."<br />";
 			$output.=$log->VisualizzaMsgUtente($el['id'])."<br /><br />";
@@ -91,13 +100,17 @@ if(isset($_POST["view"])){
 				foreach($game_server as $chiave=>$elemento){
 					echo "<option value=\"$chiave\">$elemento</option>";
 				}//per ogni regno presente
-				?>				
+				?>
 		  </select>
 		</td>
 	  </tr>
 	  <tr>
 		<td align="right">Id</td>
 		<td><input type="text" name="id" size="3" maxlength="4" class="textmedium" /></td>
+	  </tr>
+      <tr>
+		<td align="right">Username</td>
+		<td><input type="text" name="username" size="25" maxlength="25" class="textmedium" <?php if($username!="") echo "value=\"".$username."\""; ?> /></td>
 	  </tr>
 	  <tr>
 		<td align="right"><?php echo $lang['Range_temporale']; ?></td>
@@ -121,7 +134,7 @@ if(isset($_POST["view"])){
 	  <tr>
 	  	<td colspan="2" align="center"><input type="submit" name="view" value="<?php echo $lang['visualizza']; ?>" /></td>
 	  </tr>
-	</table>	 	
+	</table>
 	</form>
 	<br><hr width="300" align="center" noshade="noshade" /><br>
 	<?php echo $output; ?>

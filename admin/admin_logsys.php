@@ -5,7 +5,7 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 }
 if(isset($_POST["view"])){
 	$srv=(int)$_POST['db'];
-	if(!isset($game_server[$srv]) AND $srv!=1000)//se non è un server ne amministrazione
+	if(!isset($game_server[$srv]) AND $srv!=1000)// if is not administration or game database
 		$errore.=$lang['log_errore1']."<br />";
 	if($errore){
 		$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";
@@ -15,19 +15,19 @@ if(isset($_POST["view"])){
 		$sempre=0;
 		switch($rtemp){
 			case 2:
-				$data=$ora-172800;
+				$data=$adesso-172800;
 				break;
 			case 3:
-				$data=$ora-604800;
+				$data=$adesso-604800;
 				break;
 			case 4:
-				$data=$ora-2592000;
+				$data=$adesso-2592000;
 				break;
 			case 5:
 				$sempre=1;
 				break;
 			default:
-				$data=$ora-86400;
+				$data=$adesso-86400;
 				break;
 		}
 		if($sempre==0)
