@@ -1,7 +1,8 @@
 <?php
-if($_GET['code']!=$scripts_se_code){header("Location: ../index.php?error=16"); exit();}
 
 require('../game/inclusi/valori.php');
+
+if($_GET['code']!=$scripts_se_code){header("Location: ../index.php?error=16"); exit();}
 
 $path=MAIN_PATH."/admin/cache/";
 

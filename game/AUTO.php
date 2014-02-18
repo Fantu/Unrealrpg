@@ -1,7 +1,9 @@
 <?php
-if($_GET['code']!=$scripts_se_code){header("Location: index.php?error=16"); exit();}
 $start_time=time()+microtime();//PER DEBUG EFFICENZA
 require('inclusi/valori.php');
+
+if($_GET['code']!=$scripts_se_code){header("Location: index.php?error=16"); exit();}
+
 $int_security=$game_se_code;
 $optimize=0;
 foreach($game_language as $chiavel=>$elementol){

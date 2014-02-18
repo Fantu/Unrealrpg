@@ -9,9 +9,9 @@ These folders are not accessible from web (deny with htaccess).
 
 Create cronjobs:
 # AUTO (needed for many game functions)
-* * * * * /usr/bin/lynx > /dev/null -dump http://<website>/<subfolder>/game/AUTO.php?code=autourbg
+* * * * * /usr/bin/lynx > /dev/null -dump http://<website>/<subfolder>/game/AUTO.php?code=<$scripts_se_code>
 # BACKUPDB (optional, data setting may be changed, backup of db with this script or in other way is highly recommended)
-32 3 * * * /usr/bin/lynx > /dev/null -dump http://<website>/<subfolder>/admin/backupdb.php?code=autourbg
+32 3 * * * /usr/bin/lynx > /dev/null -dump http://<website>/<subfolder>/admin/backupdb.php?code=<$scripts_se_code>
 
 Create administration database (unique)
 - create unrealrpg_1000 db with utf8_unicode_ci collation
