@@ -245,7 +245,7 @@ $trovare=rand(0,9999)-$efficenza;
 $oggminerali=$db->QueryCiclo("SELECT * FROM oggetti WHERE tipo='1' AND categoria='1' AND probtrovare>'".$trovare."'");
 while($oggminerale=$db->QueryCicloResult($oggminerali)) {
 $minerali[]=$oggminerale['id'];
-}//per ogni minerale che può trovare
+}//per ogni minerale che puÃ² trovare
 shuffle($minerali);
 $minerale=$lang['oggetto'.$minerali[0].'_nome'];
 $quantimin=rand(1,2+floor($usercar['minatore']/3));
@@ -542,7 +542,7 @@ $trovato=1;
 $magiasel=$elemento;
 }//se stesso elemento
 }//mostra ogni magia
-}//se nn ha già trovato
+}//se nn ha giÃ  trovato
 }//fine se ci sono magie
 if($trovato==1){
 $magia=$db->QueryCiclo("SELECT * FROM magia WHERE id='".$magiasel."'");
@@ -610,27 +610,27 @@ $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES
 }//fine Completasfida
 
 function Completadormire($userid,$ore){
-global $db,$adesso,$lang,$language;
-require_once('language/'.$language.'/lang_locanda.php');
-$usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");
-if($usercar['saluteattuale']<=$usercar['salute']){
-    // recover 5% of health
-    $salute=$usercar['saluteattuale']+round($usercar['salute']/100*5);
-    if($salute>$usercar['salute'])
-        $salute=$usercar['salute'];
-}else{$salute=$usercar['salute'];}
-if($usercar['energia']<=$usercar['energiamax']){
-    // recover 15% of energy
-    $energia=$usercar['energia']+round($usercar['energiamax']/100*15);
-    if($energia>$usercar['energiamax'])
-        $energia=$usercar['energiamax'];
-}else{$energia=$usercar['energiamax'];}
-$db->QueryMod("UPDATE caratteristiche SET energia='".$energia."',saluteattuale='".$salute."',recuperosalute='".$adesso."',recuperoenergia='".$adesso."' WHERE userid='".$userid."'");
-if($ore>1){
-$ore--;
-$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,ore) VALUES ('".$userid."','".$adesso."','3600','14','7','".$ore."')");
-}//fine se la coda ha almeno un altra ora
-} //fine Completadormire
+    global $db,$adesso,$lang,$language;
+    require_once('language/'.$language.'/lang_locanda.php');
+    $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");
+    if($usercar['saluteattuale']<=$usercar['salute']){
+        // recover 5% of health
+        $salute=$usercar['saluteattuale']+round($usercar['salute']/100*5);
+        if($salute>$usercar['salute'])
+            $salute=$usercar['salute'];
+    }else{$salute=$usercar['salute'];}
+    if($usercar['energia']<=$usercar['energiamax']){
+        // recover 15% of energy
+        $energia=$usercar['energia']+round($usercar['energiamax']/100*15);
+        if($energia>$usercar['energiamax'])
+            $energia=$usercar['energiamax'];
+    }else{$energia=$usercar['energiamax'];}
+    $db->QueryMod("UPDATE utenti t2 JOIN caratteristiche t3 on t2.userid=t3.userid SET t2.monete=t2.monete-'1',t3.energia='".$energia."',t3.saluteattuale='".$salute."',t3.recuperosalute='".$adesso."',t3.recuperoenergia='".$adesso."' WHERE t2.userid='".$userid."'");
+    if($ore>1){ /* if at least another hour to do */
+        $ore--;
+        $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,ore) VALUES ('".$userid."','".$adesso."','3600','14','7','".$ore."')");
+    }
+} //end Completadormire
 
 function Completaquest($userid,$qid,$secondi){
 global $db,$adesso,$lang;

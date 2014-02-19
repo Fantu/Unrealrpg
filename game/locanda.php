@@ -12,7 +12,7 @@ if($ore<1 OR $ore>8)
 $errore.=$lang['locanda_errore1'];
 if($eventi['id']>0)
 $errore .=$lang['global_errore1'];
-$monete=ceil($ore/2);
+$monete=$ore;
 if($user['monete']<$monete)
 $errore.=sprintf($lang['locanda_errore2'],$ore,$monete);
 if($errore){
