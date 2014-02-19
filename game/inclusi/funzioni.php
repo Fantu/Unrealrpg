@@ -5,7 +5,7 @@ function Dead($user,$usercar){
     // the basic time to resurrect is one day less a minute every faith point
     // or 3 hours with the intervention of the clergy
     if($user['resuscita']=='0'){
-        $tempor=86400-$usercar['fede'];
+        $tempor=43200-$usercar['fede'];
     }else{
         $tempor=10800;
     }
