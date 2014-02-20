@@ -87,7 +87,7 @@ CREATE TABLE IF NOT EXISTS `caratteristiche` (
   `expalchimista` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `sesso` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `manarimasto` mediumint(8) unsigned NOT NULL,
-  `fede` mediumint(8) unsigned NOT NULL DEFAULT '0',
+  `fede` mediumint(8) unsigned NOT NULL DEFAULT '1000',
   `decfede` int(13) unsigned NOT NULL,
   `velocita` mediumint(8) unsigned NOT NULL,
   `intelligenza` mediumint(8) unsigned NOT NULL,
