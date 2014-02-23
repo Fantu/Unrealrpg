@@ -12,8 +12,8 @@ Legenda:<br />
 <p><strong>0.8.1</strong> (Non disponibile - In sviluppo)<br />
 + Rifatto il blocco per tot tempo in caso di più password errate in modo che non sia aggirabile in nessun modo<br />
 + Inseriti nei log: logout<br />
-# Modificato il recupero di salute dormendo un ora in locanda da 2% a 5% e di energia dal 20% al 15%<br />
-# Modificato il costo della locanda da mezza a 1 moneta per ora<br />
+# Modificato il recupero di energia dormendo un ora in locanda da 20% al 12%<br />
+# Modificato il costo della locanda da mezza a 1 moneta per ora e massimo ore da 8 a 10<br />
 # Modificato tempo di base per la resurrezione da 24 a 12 ore<br />
 # Modificata la fede iniziale da 0 (eretico) a 1000 (credente)<br />
 + Vari miglioramenti di sistema a sistema query<br />

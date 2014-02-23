@@ -8,10 +8,10 @@ require_once('language/'.$language.'/lang_locanda.php');
 if(isset($_POST['dormi'])){
 $errore="";
 $ore=(int)$_POST['ore'];
-if($ore<1 OR $ore>8)
+if($ore<1 OR $ore>10)
 $errore.=$lang['locanda_errore1'];
 if($eventi['id']>0)
-$errore .=$lang['global_errore1'];
+$errore.=$lang['global_errore1'];
 $monete=$ore;
 if($user['monete']<$monete)
 $errore.=sprintf($lang['locanda_errore2'],$ore,$monete);

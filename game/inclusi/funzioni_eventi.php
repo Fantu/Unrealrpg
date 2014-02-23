@@ -614,14 +614,14 @@ function Completadormire($userid,$ore){
     require_once('language/'.$language.'/lang_locanda.php');
     $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");
     if($usercar['saluteattuale']<=$usercar['salute']){
-        // recover 5% of health
-        $salute=$usercar['saluteattuale']+round($usercar['salute']/100*5);
+        // recover 2% of health
+        $salute=$usercar['saluteattuale']+round($usercar['salute']/100*2);
         if($salute>$usercar['salute'])
             $salute=$usercar['salute'];
     }else{$salute=$usercar['salute'];}
     if($usercar['energia']<=$usercar['energiamax']){
-        // recover 15% of energy
-        $energia=$usercar['energia']+round($usercar['energiamax']/100*15);
+        // recover 12% of energy
+        $energia=$usercar['energia']+round($usercar['energiamax']/100*12);
         if($energia>$usercar['energiamax'])
             $energia=$usercar['energiamax'];
     }else{$energia=$usercar['energiamax'];}

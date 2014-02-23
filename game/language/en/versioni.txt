@@ -12,8 +12,8 @@ Legenda:<br />
 <p><strong>0.8.1</strong> (Non disponibile - In sviluppo)<br />
 + Rifatto il blocco per tot tempo in caso di più password errate in modo che non sia aggirabile in nessun modo<br />
 + Inseriti nei log: logout<br />
-# Changed health recovery from 2% to 5% and energy recovery from 20% to 15% when sleeping one hour in the inn<br />
-# Changed the cost of the inn from a half to 1 coin per hour<br />
+# Changed energy recovery from 20% to 12% when sleeping one hour in the inn<br />
+# Changed the cost of the inn from a half to 1 coin per hour and the maximum hours from 8 to 10<br />
 # Modified basic time for the resurrection from 24 to 12 hours<br />
 # Changed initial faith from 0 (heretic) to 1000 (believer)<br />
 + Vari miglioramenti di sistema a sistema query<br />
