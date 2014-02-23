@@ -47,9 +47,11 @@ if(isset($_POST["view"])){
 		if($errore){
 				$outputerrori="<span>".$lang['outputerrori']."</span><br /><span>".$errore."</span><br /><br />";
 		}else{
-		require_once(LANG_PATH.$op['language'].'/lang_gamelog.php');
-		require_once(LANG_PATH.$op['language'].'/lang_oggetti_nomi.php');
-		$output=$u['username']." (".$srv.":".$u['userid'].")<br /><br />";
+            $username=$u['username'];
+            $server=$srv;
+            require_once(LANG_PATH.$op['language'].'/lang_gamelog.php');
+            require_once(LANG_PATH.$op['language'].'/lang_oggetti_nomi.php');
+            $output=$u['username']." (".$srv.":".$u['userid'].")<br /><br />";
 		if($dagiorno){
 			$dagiorno=$dagiorno[1].'/'.$dagiorno[0].'/'.$dagiorno[2];
 			$timedag=strtotime($dagiorno);
@@ -95,10 +97,13 @@ if(isset($_POST["view"])){
 		<td width="40%" align="right"><?php echo $lang['Regno']; ?></td>
 		<td width="60%">
 			<select name="db">
-			<option value="-1" selected="selected">-----</option>
+			<option value="-1" <?php if(!isset($server)) echo "selected=\"selected\""; ?> >-----</option>
 				<?php
 				foreach($game_server as $chiave=>$elemento){
-					echo "<option value=\"$chiave\">$elemento</option>";
+					echo "<option value=\"$chiave\" ";
+                    if($server==$chiave)
+                        echo "selected=\"selected\"";
+                    echo " >".$elemento."</option>";
 				}//per ogni regno presente
 				?>
 		  </select>
