@@ -104,7 +104,7 @@ if(!is_numeric($prestito) OR $prestito<10){
 $errore.=$lang['banca_errore1'];}
 else{
 $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$user['userid']."' LIMIT 1");
-$prestitopossibile=($usercar['livello']*100)-$userbank['prestito'];
+$prestitopossibile=80+($usercar['livello']*20)-$userbank['prestito'];
 if($eventi['id']>0)
 $errore.=$lang['global_errore1'];
 if($prestito<1)
