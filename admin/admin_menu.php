@@ -18,5 +18,8 @@
 <tr>
 	<td class="tabmenutd"><a href="admin.php?loc=loguser">- <?php echo $lang['mostra_log_utenti']; ?></a></td>
 </tr>
+<tr>
+	<td class="tabmenutd"><a href="admin.php?loc=viewbattle">- <?php echo $lang['show_battle_report']; ?></a></td>
+</tr>
 <?php } ?>
 </table>
