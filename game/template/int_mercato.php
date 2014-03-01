@@ -27,7 +27,9 @@ if($mostraogg==1){
 	<?php echo $lang['Quanti']; ?> <input name="quanti" type="text" maxlength="2" size="3" value="1" />
 	<input type="submit" name="compra" value="<?php echo $lang['Compra']; ?>" />
 	</form>
-	<?php }//fine mostra oggetti
+    <br />
+    <?php echo $lang['Monete'].": ".$user['monete']."<br />";
+    }//fine mostra oggetti
 }else{
 foreach($catoggetti as $chiave=>$elemento){
 echo $catoggetti[$chiave]."<br />";}

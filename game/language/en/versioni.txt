@@ -12,6 +12,7 @@ Legenda:<br />
 <p><strong>0.8.1</strong> (Non disponibile - In sviluppo)<br />
 + Rifatto il blocco per tot tempo in caso di più password errate in modo che non sia aggirabile in nessun modo<br />
 + Inseriti nei log: logout<br />
++ Added the display of the current coins in the market<br />
 # Changed energy recovery from 20% to 12% when sleeping one hour in the inn<br />
 # Changed the cost of the inn from a half to 1 coin per hour and the maximum hours from 8 to 10<br />
 # Modified basic time for the resurrection from 24 to 12 hours<br />

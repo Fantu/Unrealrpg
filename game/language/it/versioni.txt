@@ -12,6 +12,7 @@ Legenda:<br />
 <p><strong>0.8.1</strong> (Non disponibile - In sviluppo)<br />
 + Rifatto il blocco per tot tempo in caso di più password errate in modo che non sia aggirabile in nessun modo<br />
 + Inseriti nei log: logout<br />
++ Aggiunta la visualizzazione delle monete attuali nel mercato<br />
 # Modificato il recupero di energia dormendo un ora in locanda da 20% al 12%<br />
 # Modificato il costo della locanda da mezza a 1 moneta per ora e massimo ore da 8 a 10<br />
 # Modificato tempo di base per la resurrezione da 24 a 12 ore<br />
