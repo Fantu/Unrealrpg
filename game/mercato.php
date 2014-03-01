@@ -74,6 +74,7 @@ if($errore){
 else{
 $outputerrori=sprintf($lang['report_compera'],$quanti,$lang['oggetto'.$oggselect.'_nome'],$prezzo);
 $db->QueryMod("UPDATE utenti SET monete=monete-'".$prezzo."' WHERE userid='".$user['userid']."'");
+$user['monete']-=$prezzo;
 $db->QueryMod("UPDATE config SET banca=banca+'".$prezzo."'");
 $noggc="oggetto".$oggselect."_nome";
 $parlog=array(0=>$quanti,1=>'$'.$noggc,2=>$prezzo);
