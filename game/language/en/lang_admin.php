@@ -1,5 +1,6 @@
 <?php
 $lang['pannello_amministrazione']='Administration Panel';
+$lang['kingdoms_summary']='Summary of the kingdoms';
 $lang['gestione_utenti']='Users management';
 $lang['gestione_server']='Kingdoms management';
 $lang['Accesso_negato']='Access Denied';

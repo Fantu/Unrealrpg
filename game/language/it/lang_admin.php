@@ -1,5 +1,6 @@
 <?php
 $lang['pannello_amministrazione']='Pannello di amministrazione';
+$lang['kingdoms_summary']='Situazione regni';
 $lang['gestione_utenti']='Gestione utenti';
 $lang['gestione_server']='Gestione regni';
 $lang['Accesso_negato']='Accesso negato';
