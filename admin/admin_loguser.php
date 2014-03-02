@@ -77,8 +77,10 @@ if(isset($_POST["view"])){
 				$data=$adesso-86400;
 				break;
 			}
-			if($sempre==0)
-			$where=" AND data>'".$data."'";
+            if($sempre==0)
+                $where=" AND data>'".$data."'";
+            else
+                $where="";
 		}
 			$l=$db->QueryCiclo("SELECT * FROM logutenti WHERE userid='".$u['userid']."'".$where." order by id desc");
 			while($el=$db->QueryCicloResult($l)){
