@@ -26,23 +26,23 @@ $vdata=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$vincitore[
 inbacheca(sprintf($lang['ha_vinto_alla_lotteria'],$vdata['username'],$vincita));
 $titolo=$lang['Lotteria'];
 $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$vincitore['userid']."','".$titolo."','".$testo."','0','".$adesso."')");
-}//se c'è almeno un partecipante
+}//se c'Ã¨ almeno un partecipante
 }//fine estrazione
 }//fine controllo se estrazione
 $userbank=$db->QuerySelect("SELECT * FROM banca WHERE userid='".$user['userid']."' LIMIT 1");
 if(($userbank['interessi']+86400)<$adesso){
-	$differenzaora=$adesso-$userbank['interessi'];
-	$giorni=floor($differenzaora/86400);
-	$interessi=floor(($userbank['conto']/100)*2);
-	if($interessi>50)
-	$interessi=50;
-	if($interessi>0)
-	$interessi=$interessi*$giorni;
-	if ($interessi>0){
-	$db->QueryMod("UPDATE banca SET conto=conto+'".$interessi."',interessi=interessi+'".(86400*$giorni)."' WHERE userid='".$user['userid']."'");
-	}
-	else{$db->QueryMod("UPDATE banca SET interessi='".$adesso."' WHERE userid='".$user['userid']."'");}
-	$userbank=$db->QuerySelect("SELECT * FROM banca WHERE userid='".$user['userid']."' LIMIT 1");
+    $differenzaora=$adesso-$userbank['interessi'];
+    $giorni=floor($differenzaora/86400);
+    $interessi=floor(($userbank['conto']/100)*2);
+    if($interessi>10)
+        $interessi=10;
+    if($interessi>0)
+        $interessi=$interessi*$giorni;
+    if ($interessi>0)
+        $db->QueryMod("UPDATE banca SET conto=conto+'".$interessi."',interessi=interessi+'".(86400*$giorni)."' WHERE userid='".$user['userid']."'");
+	else
+        $db->QueryMod("UPDATE banca SET interessi='".$adesso."' WHERE userid='".$user['userid']."'");
+    $userbank=$db->QuerySelect("SELECT * FROM banca WHERE userid='".$user['userid']."' LIMIT 1");
 }//fine controllo interessi
 if($userbank['dataincprestito']>0){
 if(($userbank['dataincprestito']+604800)<$adesso){

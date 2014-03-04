@@ -15,6 +15,7 @@ Legend:<br />
 # Modified basic time for the resurrection from 24 to 12 hours<br />
 # Changed initial faith from 0 (heretic) to 1000 (believer)<br />
 # Changed the limit of the loan granted by the bank from 100 coins for each level of the character to 80 plus 20 coins for each level<br />
+# Changed the limit of coins received by the interests in the bank daily from 50 to 10<br />
 + Vari miglioramenti di sistema a sistema query<br />
 </p>
 <p><strong>0.8.0</strong> [R.2131] (18/07/09 - Beta)<br />
