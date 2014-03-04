@@ -27,4 +27,5 @@ break;
 $oggid=(int)$_GET['ogg'];
 $oggetto=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$oggid."' LIMIT 1");
 $nomeoggetto=$lang['oggetto'.$oggetto['id'].'_nome'];
+$percbreakdown=100/10000*$oggetto['probrottura'];
 ?>
