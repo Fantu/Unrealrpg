@@ -32,7 +32,7 @@ foreach($game_language as $chiavel=>$elementol){
 							}//per ogni morto
 						}//se ci sono morti
 						$db->QueryMod("DELETE FROM sessione WHERE time<'".($adesso-10800)."'");// cancellazione di tutte le sessioni più vecchie di 3 ore
-						$db->QueryMod("DELETE FROM msginviati WHERE data<'".($adesso-172800)."'");// cancellazione di tutti i msg inviati del regno più vecchi di 2 giorni
+						$db->QueryMod("DELETE FROM msginviati WHERE data<'".($adesso-259200)."'");// delete of all messages sent older than 3 days
 						$scaduto=$adesso-2592000;
 						$quantimess=$db->QuerySelect("SELECT COUNT(id) AS n FROM messaggi WHERE data<'".$scaduto."'");
 						if($quantimess['n']>0){
@@ -43,14 +43,16 @@ foreach($game_language as $chiavel=>$elementol){
 						if($quantimess['n']>0){
 							$db->QueryMod("DELETE FROM messaggi WHERE data<'".$scaduto."' AND letto='1'");
 						}//eliminazione di tutti i msg letti del regno più vecchi di 7 giorni
+                        $scaduto=$adesso-864000;
 						$quantirep=$db->QuerySelect("SELECT COUNT(id) AS n FROM battlereport WHERE data<'".$scaduto."'");
 						if($quantirep['n']>0){
 							$repscaduti=$db->QueryCiclo("SELECT id FROM battlereport WHERE data<'".$scaduto."'");
 							while($reps=$db->QueryCicloResult($repscaduti)){
+                                // delete of all reports of combat older than 10 days
 								$db->QueryMod("DELETE FROM battlereport WHERE id='".$reps['id']."' LIMIT 1");
 								unlink("inclusi/log/report/".$config['id']."/".$reps['id'].".log");
-							}//eliminazione di tutti i report del regno più vecchi di 7 giorni
-						}//se ci sono report più vecchi di 7 giorni nel regno
+							}
+						}
 						$optimize=1;
 					}//se bisogna ottimizzare e nn è stato fatto in altri regni durante questa sessione
 				if($config['atticriminali']<$adesso){

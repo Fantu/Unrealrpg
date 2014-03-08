@@ -20,7 +20,7 @@ if($m['n']>0){
 $m=$db->QuerySelect("SELECT userid FROM ".$tab." WHERE id='".$id."'");
 if($m['userid']==$user['userid']){
 $db->QueryMod("DELETE FROM ".$tab." WHERE id='".$id."'");
-}//se è un proprio messaggio
+}//se Ã¨ un proprio messaggio
 }//se esiste
 }//fine Cancellamsg
 
@@ -261,9 +261,13 @@ if($do!="scrivi" AND $do!="risp"){
 	if(!$msgsistema){$msgsistema=0;}
 	Visualizzacategoria($msgsistema,$letti,$lang['messaggi_dal_sistema'],2);
 
-	if($user['plus']==0){$scaduto=$adesso-172800;}else{$scaduto=$adesso-432000;}
+	if($user['plus']==0)
+        $scaduto=$adesso-259200; // without plus 3 days
+    else
+        $scaduto=$adesso-432000; // with plus 5 days
 	$db->QueryMod("DELETE FROM messaggi WHERE userid='".$user['userid']."' AND letto='1' AND data<'".$scaduto."'");//cancello messaggi vecchi
 	$db->QueryMod("UPDATE messaggi SET letto=1 WHERE userid='".$user['userid']."'");
+
 	}else{echo $lang['nessun_messaggio']."<br /><br /><br />";}
 
 	if($user['plus']>0){

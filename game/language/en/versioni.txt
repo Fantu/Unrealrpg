@@ -17,6 +17,9 @@ Legend:<br />
 # Changed the limit of the loan granted by the bank from 100 coins for each level of the character to 80 plus 20 coins for each level<br />
 # Changed the limit of coins received by the interests in the bank daily from 50 to 10<br />
 # Displaying the maximum probability of rupture of the objects in percentage<br />
+# Delete reports of fighting older than 10 days instead of 7<br />
+# Delete messages sent older than 3 days instead of 2<br />
+# Delete read messages older than 3 days instead of 2 without plus<br />
 + Vari miglioramenti di sistema a sistema query<br />
 </p>
 <p><strong>0.8.0</strong> [R.2131] (18/07/09 - Beta)<br />

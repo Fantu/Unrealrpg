@@ -17,6 +17,9 @@ Legenda:<br />
 # Modificato il limite massimo di prestito concesso dalla banca da 100 monete per livello del personaggio a 80 monete più 20 ogni livello<br />
 # Modificate le monete massime di interesse giornaliero ricevuto da 50 a 10<br />
 # Visualizzazione della probabilità massima di rottura degli oggetti in percentuale<br />
+# Cancellazione report dei combattimenti più vecchi di 10 giorni al posto di 7<br />
+# Cancellazione messaggi inviati più vecchi di 3 giorni al posto di 2<br />
+# Cancellazione messaggi letti più vecchi di 3 giorni al posto di 2 senza plus<br />
 + Vari miglioramenti di sistema a sistema query<br />
 </p>
 <p><strong>0.8.0</strong> [R.2131] (18/07/09 - Beta)<br />
