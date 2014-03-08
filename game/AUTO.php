@@ -127,8 +127,8 @@ foreach($game_language as $chiavel=>$elementol){
 //PER DEBUG EFFICENZA
 $end_time=time()+microtime();
 $gen_time=number_format($end_time-$start_time, 4, '.', '');
-if($gen_time>1 OR $db->nquery>100){
-$db->Setdb(1000);
-$log->Sistema("Debug AUTO ".date("d/m/y - H:i")." - Tempo di esecuzione:".$gen_time." secondi - Query eseguite:".$db->nquery);
+if($gen_time>2 OR $db->nquery>100){
+    $db->Setdb(1000);
+    $log->Sistema("Debug AUTO ".date("d/m/y - H:i")." - Tempo di esecuzione:".$gen_time." secondi - Query eseguite:".$db->nquery);
 }
 ?>

@@ -3,6 +3,7 @@
 <br/>
 <br/>
 <strong><?php echo $lang['kingdoms_summary']; ?></strong><br/>
+<br/>
 <?php foreach($game_server as $chiave=>$elemento){
     echo $elemento." - ".$game_language[$game_server_lang[$chiave]]."<br/>";
     $db->Setdb($chiave);
