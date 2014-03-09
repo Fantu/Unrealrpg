@@ -356,9 +356,9 @@ class Dati{
 	$nomearma=$lang['oggetto'.$this->equip($att,'cac').'_nome'];
 	$this->Ogginuso($att,'cac');
 	}else{
-	$danno=rand(1,2)+round($this->car($att,'attfisico')/80);
+	$danno=rand(1,3)+round($this->car($att,'attfisico')/80);
 	$nomearma=$lang['pugno'];
-	$energia=50;
+	$energia=40;
 	}
 	if($this->equip($dif,'arm')!=0){
 	$armatura=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$this->equip($dif,'arm')."' LIMIT 1");
@@ -493,7 +493,7 @@ class Dati{
 	}else{
 	$danno=rand(2,4)+round($this->car($att,'attfisico')/80);
 	$nomearma=$lang['sasso'];
-	$energia=50;
+	$energia=30;
 	}//se nn ha l'arma
 	if($this->equip($dif,'arm')!=0){
 	$armatura=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$this->equip($dif,'arm')."' LIMIT 1");

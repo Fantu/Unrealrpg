@@ -20,6 +20,9 @@ Legenda:<br />
 # Cancellazione report dei combattimenti più vecchi di 10 giorni al posto di 7<br />
 # Cancellazione messaggi inviati più vecchi di 3 giorni al posto di 2<br />
 # Cancellazione messaggi letti più vecchi di 3 giorni al posto di 2 senza plus<br />
+# Leggermente aumentato il danno causato dagli attacchi con pugni<br />
+# Energia consumata dagli attacchi con pugni da 50 a 40<br />
+# Energia consumata dagli attacchi con sassi da 50 a 30<br />
 + Vari miglioramenti di sistema a sistema query<br />
 </p>
 <p><strong>0.8.0</strong> [R.2131] (18/07/09 - Beta)<br />
