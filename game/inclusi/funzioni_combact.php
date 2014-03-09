@@ -215,11 +215,11 @@ class Dati{
 	$tattp[3]+=40;}
 	if($percenergia2>10 AND $percsalute<30 AND $percsalute2>40){//difesa
 	$tattp[3]+=40;}
-	if($this->equip($chi,'cac')==0 AND $this->equip($chi2,'cac')!=0){//se nessuna arma mentre avversario sÏ difesa
+	if($this->equip($chi,'cac')==0 AND $this->equip($chi2,'cac')!=0){//se nessuna arma mentre avversario s√¨ difesa
 	$tattp[3]+=18;}
-	if($percenergia2<5){//se l'avversario Ë esausto attacco
+	if($percenergia2<5){//se l'avversario √® esausto attacco
 	$tattp[1]+=90;}
-	if($percsalute<15){//se la salute Ë pessima resa
+	if($percsalute<15){//se la salute √® pessima resa
 	$tattp[2]+=181;}
 	if($percenergia<5){//se esausto resa
 	$tattp[2]+=200;}
@@ -296,9 +296,9 @@ class Dati{
 	if($liv<=2){
 	$rep[0]=0;//pari
 	}elseif($level<0){
-	$rep[0]=1;//pi˘ debole
+	$rep[0]=1;//pi√π debole
 	}elseif($level>0){
-	$rep[0]=2;//pi˘ forte
+	$rep[0]=2;//pi√π forte
 	}
 	return $rep;
 	}//fine Checkrep
@@ -371,8 +371,8 @@ class Dati{
 	$this->Ogginuso($dif,'scu');
 	$scudo=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$this->equip($dif,'scu')."' LIMIT 1");
 	$this->Modenergia($dif,$scudo['energia']);
-	}//se il difensore ha scudo e non Ë esausto
-	$casuale=rand(1,10);if($casuale<2){$colpisci=100;}elseif($casuale>9){$colpisci=0;}else{//casualit‡ totale per minima prob colpire o non colpire cmq
+	}//se il difensore ha scudo e non √® esausto
+	$casuale=rand(1,10);if($casuale<2){$colpisci=100;}elseif($casuale>9){$colpisci=0;}else{//casualit√† totale per minima prob colpire o non colpire cmq
 	$colpisci=rand(1,100)+($this->car($att,'agilita')/8-$this->car($dif,'agilita')/8)+($this->car($att,'intelligenza')/25-$this->car($dif,'intelligenza')/25)+($this->car($att,'velocita')/20-$this->car($dif,'velocita')/20)+((20/$this->car($att,'energiamax')*$this->car($att,'energia'))-(20/$this->car($dif,'energiamax')*$this->car($dif,'energia')));
 	if($this->equip($att,'cac')!=0 AND $arma['bonuseff']!=0)
 	$colpisci+=$colpisci/100*$arma['bonuseff'];
@@ -408,7 +408,7 @@ class Dati{
 	$prob=50;
 	$difesa+=round(rand($scudo['difesafisica']/100*$prob,$scudo['difesafisica']));
 	}
-	}//se il difensore ha scudo e non Ë esausto
+	}//se il difensore ha scudo e non √® esausto
 	$potente="";
 	$probpot=rand(10,100);
 	if((100/$this->car($att,'energiamax')*$this->car($att,'energia'))<20)
@@ -478,7 +478,7 @@ class Dati{
 	}//se usato
 	return $output;
 	}//fine Usapozione
-	
+
 	public function Attaccolontano($att,$dif){
 	global $db,$lang;
 	if($this->equip($att,'adi')!=0){
@@ -506,8 +506,8 @@ class Dati{
 	$this->Ogginuso($dif,'scu');
 	$scudo=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$this->equip($dif,'scu')."' LIMIT 1");
 	$this->Modenergia($dif,$scudo['energia']);
-	}//se il difensore ha scudo e non Ë esausto
-	$casuale=rand(1,10);if($casuale<2){$colpisci=100;}elseif($casuale>9){$colpisci=0;}else{//casualit‡ totale per minima prob colpire o non colpire cmq
+	}//se il difensore ha scudo e non √® esausto
+	$casuale=rand(1,10);if($casuale<2){$colpisci=100;}elseif($casuale>9){$colpisci=0;}else{//casualit√† totale per minima prob colpire o non colpire cmq
 	$colpisci=rand(1,100)+($this->car($att,'agilita')/10-$this->car($dif,'agilita')/9)+($this->car($att,'intelligenza')/25-$this->car($dif,'intelligenza')/25)+($this->car($att,'destrezza')/5-$this->car($dif,'destrezza')/6)+((20/$this->car($att,'energiamax')*$this->car($att,'energia'))-(20/$this->car($dif,'energiamax')*$this->car($dif,'energia')));
 	if($this->equip($att,'adi')!=0 AND $arma['bonuseff']!=0)
 	$colpisci+=$colpisci/100*$arma['bonuseff'];
@@ -541,7 +541,7 @@ class Dati{
 	$prob=50;
 	$difesa+=round(rand($scudo['difesafisica']/100*$prob,$scudo['difesafisica']));
 	}
-	}//se il difensore ha scudo e non Ë esausto
+	}//se il difensore ha scudo e non √® esausto
 	$potente="";
 	$probpot=rand(10,100);
 	if((100/$this->car($att,'energiamax')*$this->car($att,'energia'))<20)
@@ -571,7 +571,7 @@ class Dati{
 	$this->Modenergia($att,$energia);
 	return $input;
 	}//fine Attaccolontano
-	
+
 	public function Allontanamento($chi){
 	global $db,$lang;
 	if($chi==1){$chi2=2;}else{$chi2=1;}
@@ -687,7 +687,7 @@ $input.=sprintf($lang['finito_resa'],$dc->nome(2),$dc->nome(1))."<br/>";
 $rep=$dc->Checkrep(2);
 if($rep[0]==2){
 if($dc->cpu(2)==0){$db->QueryMod("UPDATE caratteristiche SET reputazione=reputazione-'".$rep[1]."' WHERE userid='".$dc->id(2)."' LIMIT 1");}}
-}elseif($turni==30 AND $battle['difcpu']==0){//se dura troppo e non Ë contro cpu
+}elseif($turni==30 AND $battle['difcpu']==0){//se dura troppo e non √® contro cpu
 $input=$lang['combattimento_troppo_lungo']."<br/>";
 }else{$finito=0;}
 $db->QueryMod("UPDATE battle SET tatatt='0',tatatt2='0',tatdif='0',tatdif2='0' WHERE id='".$battleid."' LIMIT 1");
@@ -695,7 +695,7 @@ if($finito==1){
 if($turni>1){
 if($dc->cpu(1)==0){$input.=$dc->Guadagnaexp(1,$turni,$expb,$vincitore);}
 if($dc->cpu(2)==0){$input.=$dc->Guadagnaexp(2,$turni,$expb,$vincitore);}
-}//se pi˘ di un turno
+}//se pi√π di un turno
 
 //$input.="1=".$dc->nome(1)."2=".$dc->nome(2)."<br/>";
 //$input.="Prima vincitore=".$vincitore."<br/>";
@@ -734,7 +734,7 @@ if($cq['secondi']>0){
 $caruser=$db->QuerySelect("SELECT saluteattuale FROM caratteristiche WHERE userid='".$att."'");
 if($caruser['saluteattuale']>0){
 Ritornoacasa($att,$cq['secondi']);
-}//se non Ë morto
+}//se non √® morto
 }//se esplorazione oltre confine
 if($cq['questid']==5){
 if($vincitore==1){
