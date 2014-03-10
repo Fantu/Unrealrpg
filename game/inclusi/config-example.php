@@ -17,7 +17,9 @@ $game_state="DEV";
 // mail sent from server have this as sender
 $game_mail="mail@site";
 // public site where is installed and folder if is on site subfolder
-$game_link="http://site/rpgdev";
+$game_link="http://domain/folder";
+// optional forum link, comment it for disable
+$game_forum="http://unrealrpg-browser-game.1107165.n5.nabble.com";
 // for each game reign id=>name where id is also same is also used as db id
 $game_server=array(999=>"DEV-IT",998=>"DEV-EN");
 // for each game reign id=>language
