@@ -7,9 +7,12 @@ if($_GET['code']!=$scripts_se_code){header("Location: index.php?error=16"); exit
 $int_security=$game_se_code;
 $optimize=0;
 foreach($game_language as $chiavel=>$elementol){
-		$language=$chiavel;
-		require('language/'.$language.'/lang_interno.php');
-		require('language/'.$language.'/lang_oggetti_nomi.php');
+    $language=$chiavel;
+    // Load/reload of some language files in AUTO to solve some errors of wrong language
+    require('language/'.$language.'/lang_interno.php');
+    require('language/'.$language.'/lang_oggetti_nomi.php');
+    require('language/'.$language.'/lang_combact.php');
+    require('language/'.$language.'/lang_interno.php');
 	foreach($game_server as $chiave=>$elemento){
 		if($game_server_lang[$chiave]==$chiavel){
 			$db->Setdb($chiave);
