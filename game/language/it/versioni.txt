@@ -6,6 +6,8 @@ Legenda:<br />
 # Modifiche<br />
 - Correzione bug e patch di situazioni non previste<br />
 </p>
+<p><strong>0.8.2</strong> (Non disponibile - In sviluppo)<br />
+</p>
 <p><strong>0.8.1</strong> (15/03/14 - Beta)<br />
 + Rifatto il blocco per tot tempo in caso di più password errate in modo che non sia aggirabile in nessun modo<br />
 + Inseriti nei log: logout<br />
