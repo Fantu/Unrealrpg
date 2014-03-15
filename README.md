@@ -27,8 +27,8 @@ There is a partial game english translation under docs/locale did with
 Pootle and translate toolkit.  
 If someone want help this project can do a pull request or "open an issue"
 on github for make a question, make a report or open a discussion.  
-A testing game server updated from repository is available here:  
-http://fantu.info/rpgdev
+A testing game server with latest beta version is available here:  
+http://fantu.info/rpgbeta
 
 
 Contribute
