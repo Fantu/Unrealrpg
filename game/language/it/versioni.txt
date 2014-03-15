@@ -6,7 +6,7 @@ Legenda:<br />
 # Modifiche<br />
 - Correzione bug e patch di situazioni non previste<br />
 </p>
-<p><strong>0.8.1</strong> (Non disponibile - In sviluppo)<br />
+<p><strong>0.8.1</strong> (15/03/14 - Beta)<br />
 + Rifatto il blocco per tot tempo in caso di più password errate in modo che non sia aggirabile in nessun modo<br />
 + Inseriti nei log: logout<br />
 + Aggiunta la visualizzazione delle monete attuali nel mercato<br />
@@ -23,7 +23,8 @@ Legenda:<br />
 # Leggermente aumentato il danno causato dagli attacchi con pugni<br />
 # Energia consumata dagli attacchi con pugni da 50 a 40<br />
 # Energia consumata dagli attacchi con sassi da 50 a 30<br />
-+ Vari miglioramenti di sistema a sistema query<br />
++ Vari miglioramenti di sistema e codice<br />
+- Corretti alcuni bug<br />
 </p>
 <p><strong>0.8.0</strong> [R.2131] (18/07/09 - Beta)<br />
 + Aggiunto sistema log degli utenti<br />

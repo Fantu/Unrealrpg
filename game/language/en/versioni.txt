@@ -6,9 +6,9 @@ Legend:<br />
 # Changes<br />
 - Fix bugs and patches to unforeseen situations<br />
 </p>
-<p><strong>0.8.1</strong> (Unavailable - In development)<br />
-+ Rifatto il blocco per tot tempo in caso di più password errate in modo che non sia aggirabile in nessun modo<br />
-+ Inseriti nei log: logout<br />
+<p><strong>0.8.1</strong> (15/03/14 - Beta)<br />
++ Redone the block for tot time in case of more bad password so that it is not avoidable in no way<br />
++ Added to logs: logout<br />
 + Added the display of the current coins in the market<br />
 # Changed energy recovery from 20% to 12% when sleeping one hour in the inn<br />
 # Changed the cost of the inn from a half to 1 coin per hour and the maximum hours from 8 to 10<br />
@@ -23,7 +23,8 @@ Legend:<br />
 # Slightly increased the damage caused by an attack with punches<br />
 # Energy consumed by attacking with punches from 50 to 40<br />
 # Energy consumed by attacking with stones from 50 to 30<br />
-+ Vari miglioramenti di sistema a sistema query<br />
++ Various system improvements and code<br />
+- Fixed some bugs<br />
 </p>
 <p><strong>0.8.0</strong> [R.2131] (18/07/09 - Beta)<br />
 + Aggiunto sistema log degli utenti<br />
