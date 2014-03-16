@@ -663,20 +663,20 @@ Ritornoacasa($userid,$secondi);
 } //fine Completaquest
 
 function Ritornoacasa($userid,$secondi){
-global $db,$adesso;
-$energia=$secondi/100*3;
-$usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");
-if($usercar['energia']<(50+$energia)){
-$energiam=($energia+50)-$usercar['energia'];
-$secondi2=100+($energia*60);
-$energia=50;
-}else{
-$secondi2=$secondi;
-$energia=$usercar['energia']-$energia;
-}
-$db->QueryMod("UPDATE caratteristiche SET energia='".$energia."',recuperosalute='".($adesso+$secondi)."',recuperoenergia='".($adesso+$secondi)."' WHERE userid='".$userid."'");
-$db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo) VALUES ('".$userid."','".$adesso."','".$secondi2."','16','9')");
-} //fine Ritornoacasa
+    global $db,$adesso;
+    $energia=$secondi/100*3;
+    $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");
+    if($usercar['energia']<(50+$energia)){
+        $energymissed=($energia+50)-$usercar['energia'];
+        $secondi2=$secondi+($energymissed*60);
+        $energia=50;
+    }else{
+        $secondi2=$secondi;
+        $energia=$usercar['energia']-$energia;
+    }
+    $db->QueryMod("UPDATE caratteristiche SET energia='".$energia."',recuperosalute='".($adesso+$secondi2)."',recuperoenergia='".($adesso+$secondi2)."' WHERE userid='".$userid."'");
+    $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo) VALUES ('".$userid."','".$adesso."','".$secondi2."','16','9')");
+} // end Ritornoacasa
 
 function Completaguardia($userid,$ore){
 global $db,$adesso,$lang,$language;
