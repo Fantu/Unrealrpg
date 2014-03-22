@@ -7,6 +7,7 @@ Legend:<br />
 - Fix bugs and patches to unforeseen situations<br />
 </p>
 <p><strong>0.8.2</strong> (Unavailable - In development)<br />
+# Modified energy and health required for quest over the border from 60% to 80%<br />
 - Fixed return to home from quest over border<br />
 </p>
 <p><strong>0.8.1</strong> (15/03/14 - Beta)<br />
