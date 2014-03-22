@@ -22,6 +22,7 @@ $lang['creazione_dir_nonriuscita']='Creazione cartella report dei regni %s non r
 $lang['Titolo']='Titolo';
 $lang['Messaggio']='Messaggio';
 $lang['Regno']='Regno';
+$lang['closed']='CHIUSO';
 $lang['regno_errato']='Non hai selezionato correttamente un regno';
 $lang['mostra_log_sistema']='Mostra log di sistema';
 $lang['mostra_log_utenti']='Mostra log utenti';

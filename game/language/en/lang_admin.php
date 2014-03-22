@@ -22,6 +22,7 @@ $lang['creazione_dir_nonriuscita']='Kingdoms report folder %s creation failed';
 $lang['Titolo']='Title';
 $lang['Messaggio']='Message';
 $lang['Regno']='Kingdom';
+$lang['closed']='CLOSED';
 $lang['regno_errato']='You don`t have select correct kingdom';
 $lang['mostra_log_sistema']='Mostra log di sistema';
 $lang['mostra_log_utenti']='Mostra log utenti';

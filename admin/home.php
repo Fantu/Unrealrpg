@@ -5,8 +5,12 @@
 <strong><?php echo $lang['kingdoms_summary']; ?></strong><br/>
 <br/>
 <?php foreach($game_server as $chiave=>$elemento){
-    echo $elemento." - ".$game_language[$game_server_lang[$chiave]]."<br/>";
+    echo $elemento." - ".$game_language[$game_server_lang[$chiave]];
     $db->Setdb($chiave);
+    $config=$db->QuerySelect("SELECT * FROM config");
+    if($config['chiuso']==1)
+        echo " - ".$lang['closed'];
+    echo "<br/>";
     $utenti=$db->QuerySelect("SELECT COUNT(*) AS id FROM utenti");
     echo "Utenti registrati: ".$utenti['id'].", ";
     $seonline=$adesso-600;

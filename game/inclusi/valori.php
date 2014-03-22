@@ -9,7 +9,7 @@
 */
 
 $game_name="Unrealrpg - Browser game";
-$game_version="0.8.1";
+$game_version="0.8.2";
 $game_language=array("it"=>"Italiano","en"=>"English");
 define('MAIN_PATH', realpath(dirname(__FILE__).'/../../'));
 define('TPL_PATH', MAIN_PATH.'/game/template/');
