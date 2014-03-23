@@ -52,81 +52,66 @@ $oggdf_num=array(
 );
 
 function Checkusurarottura($userid,$cpu) {
-global $db,$lang;
-$check=0;
-if($cpu==0){
-$oggusati=$db->QuerySelect("SELECT count(id) AS numero FROM inoggetti WHERE userid='".$userid."' AND inuso='1'");
-if($oggusati['numero']>0){
-$check=1;
-$oggusati=$db->QueryCiclo("SELECT * FROM inoggetti WHERE userid='".$userid."' AND inuso='1'");
-while($ogg=$db->QueryCicloResult($oggusati)) {
-$oggetto=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$ogg['oggid']."' LIMIT 1");
-$rotto=0;
-$usura=$ogg['usura']+1;
-if($usura>=$oggetto['usura']){
-$rotto=1;
-$oggpersi.=sprintf($lang['oggetto_usurato'],$lang['oggetto'.$ogg['oggid'].'_nome'])."<br />";
-}else{
-if($oggetto['probrottura']!=0){
-$rottura=floor($oggetto['probrottura']/$oggetto['usura']*$usura);
-$prob=rand(1,10000);
-if($prob<$rottura){
-$rotto=1;
-$oggpersi.=sprintf($lang['oggetto_rotto'],$lang['oggetto'.$ogg['oggid'].'_nome'])."<br />";
-}//se si rompe
-}//se può rompersi
-}
-if($rotto==1){
-$db->QueryMod("DELETE FROM inoggetti WHERE id='".$ogg['id']."'");
-}else{
-$db->QueryMod("UPDATE inoggetti SET usura=usura+'1',inuso='0' WHERE id='".$ogg['id']."' LIMIT 1");
-}
-}//fine per ogni oggetto usato
-}/*fine se ci sono oggetti usati*/
-}//fine se nn è cpu
-if($cpu==0){$oggusati=$db->QuerySelect("SELECT count(id) AS numero FROM equip WHERE userid='".$userid."' AND inuso='1'");
-}else{$oggusati=$db->QuerySelect("SELECT count(id) AS numero FROM equipcpu WHERE cpuid='".$userid."' AND inuso='1'");}
-if($oggusati['numero']>0){
-$check=1;
-if($cpu==0){$oggusati=$db->QueryCiclo("SELECT * FROM equip WHERE userid='".$userid."' AND inuso='1'");
-}else{$oggusati=$db->QueryCiclo("SELECT * FROM equipcpu WHERE cpuid='".$userid."' AND inuso='1'");}
-while($ogg=$db->QueryCicloResult($oggusati)) {
-$oggetto=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$ogg['oggid']."' LIMIT 1");
-$rotto=0;
-$usura=$ogg['usura']+1;
-if($usura>=$oggetto['usura']){
-$rotto=1;
-$oggpersi.=sprintf($lang['oggetto_usurato'],$lang['oggetto'.$ogg['oggid'].'_nome'])."<br />";
-}else{
-$rottura=floor($oggetto['probrottura']/$oggetto['usura']*$usura);
-$prob=rand(1,10000);
-if($prob<$rottura){
-$rotto=1;
-$oggpersi.=sprintf($lang['oggetto_rotto'],$lang['oggetto'.$ogg['oggid'].'_nome'])."<br />";
-}
-}
-if($rotto==1){
-if($cpu==0){$db->QueryMod("DELETE FROM equip WHERE id='".$ogg['id']."'");$oggineq=$db->QuerySelect("SELECT * FROM equipaggiamento WHERE userid='".$userid."' LIMIT 1");
-}else{$db->QueryMod("DELETE FROM equipcpu WHERE id='".$ogg['id']."'");$oggineq=$db->QuerySelect("SELECT * FROM equipagcpu WHERE cpuid='".$userid."' LIMIT 1");}
-foreach($oggineq as $chiave=>$elemento){
-if($chiave!="userid"){
-if($elemento==$ogg['oggid']){
-$campo=$chiave;
-}//se corrisponde
-}//se non è l'id
-}//per ogni equip
-if($cpu==0){$db->QueryMod("UPDATE equipaggiamento SET ".$campo."='0' WHERE userid='".$userid."' LIMIT 1");
-}else{$db->QueryMod("UPDATE equipagcpu SET ".$campo."='0' WHERE cpuid='".$userid."' LIMIT 1");}
-}else{
-if($cpu==0){$db->QueryMod("UPDATE equip SET usura=usura+'1',inuso='0' WHERE id='".$ogg['id']."' LIMIT 1");
-}else{$db->QueryMod("UPDATE equipcpu SET usura=usura+'1',inuso='0' WHERE id='".$ogg['id']."' LIMIT 1");}
-}
-}//fine per ogni oggetto usato
-}/*fine se ci sono oggetti usati*/
-if($check==0)
-$oggpersi=$lang['nessuno_gettato']."<br />";
-return $oggpersi;
-}/*fine Checkusurarottura*/
+    global $db,$lang;
+    $check=0;
+    if($cpu==0)
+        $oggusati=$db->QuerySelect("SELECT count(id) AS numero FROM equip WHERE userid='".$userid."' AND inuso='1'");
+    else
+        $oggusati=$db->QuerySelect("SELECT count(id) AS numero FROM equipcpu WHERE cpuid='".$userid."' AND inuso='1'");
+    if($oggusati['numero']>0){/* if there are object used */
+        $check=1;
+        if($cpu==0)
+            $oggusati=$db->QueryCiclo("SELECT * FROM equip WHERE userid='".$userid."' AND inuso='1'");
+        else
+            $oggusati=$db->QueryCiclo("SELECT * FROM equipcpu WHERE cpuid='".$userid."' AND inuso='1'");
+    while($ogg=$db->QueryCicloResult($oggusati)) {
+        $oggetto=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$ogg['oggid']."' LIMIT 1");
+        $rotto=0;
+        $usura=$ogg['usura']+1;
+        if($usura>=$oggetto['usura']){// if it has reached the maximum wear
+            $rotto=1;
+            $oggpersi.=sprintf($lang['oggetto_usurato'],$lang['oggetto'.$ogg['oggid'].'_nome'])."<br />";
+        }else{
+            if($oggetto['probrottura']!=0){// if the object can break
+                $rottura=floor($oggetto['probrottura']/$oggetto['usura']*($usura-1));
+                $prob=rand(0,10000);
+                if($prob<$rottura){// if it breaks
+                    $rotto=1;
+                    $oggpersi.=sprintf($lang['oggetto_rotto'],$lang['oggetto'.$ogg['oggid'].'_nome'])."<br />";
+                }
+            }
+        }
+        if($rotto==1){
+            if($cpu==0){
+                $db->QueryMod("DELETE FROM equip WHERE id='".$ogg['id']."'");
+                $oggineq=$db->QuerySelect("SELECT * FROM equipaggiamento WHERE userid='".$userid."' LIMIT 1");
+            }else{
+                $db->QueryMod("DELETE FROM equipcpu WHERE id='".$ogg['id']."'");
+                $oggineq=$db->QuerySelect("SELECT * FROM equipagcpu WHERE cpuid='".$userid."' LIMIT 1");
+            }
+            // search the field of equipment to be reset
+            foreach($oggineq as $chiave=>$elemento){
+                if($chiave!="userid"){
+                    if($elemento==$ogg['oggid'])
+                        $campo=$chiave;
+                }// if is not the id
+            }// for each equip
+            if($cpu==0)
+                $db->QueryMod("UPDATE equipaggiamento SET ".$campo."='0' WHERE userid='".$userid."' LIMIT 1");
+            else
+                $db->QueryMod("UPDATE equipagcpu SET ".$campo."='0' WHERE cpuid='".$userid."' LIMIT 1");
+        }else{
+            if($cpu==0)
+                $db->QueryMod("UPDATE equip SET usura=usura+'1',inuso='0' WHERE id='".$ogg['id']."' LIMIT 1");
+            else
+                $db->QueryMod("UPDATE equipcpu SET usura=usura+'1',inuso='0' WHERE id='".$ogg['id']."' LIMIT 1");
+        }
+    }// end for each object used
+    }/* end if there are object used*/
+    if($check==0)
+        $oggpersi=$lang['nessuno_gettato']."<br />";
+    return $oggpersi;
+}/* end Checkusurarottura*/
 
 function Usaoggetto($userid,$oggid) {
 global $db,$lang;
