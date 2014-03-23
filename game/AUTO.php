@@ -20,20 +20,20 @@ foreach($game_language as $chiavel=>$elementol){
 				if($config['chiuso']==0){
 					require_once('inclusi/controllo_eventi.php');
 					Controllaeventi(3);
+                    if($semorti['id']>0){// if there are dead
+                        $morti=$db->QueryCiclo("SELECT * FROM caratteristiche WHERE saluteattuale<'1'");
+                            while($morto=$db->QueryCicloResult($morti)){// for each dead
+                            $eventi=$db->QuerySelect("SELECT COUNT(*) AS id FROM eventi WHERE userid='".$morto['userid']."'");
+                            if($eventi['id']==0){// if it has no event (to check if the resurrection is already in progress)
+                                $user=$db->QuerySelect("SELECT * FROM utenti WHERE userid='".$morto['userid']."' LIMIT 1");
+                                $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$morto['userid']."' LIMIT 1");
+                                Dead($user,$usercar);
+                            }
+                        }
+                    }// end if there are dead
 					if($config['ottimizzazioni']<$adesso AND $optimize==0){
 						$db->QueryMod("UPDATE config SET ottimizzazioni='".($adesso+3600)."'");//prossima "ottimizzazione" fra 1 ora
 						$semorti=$db->QuerySelect("SELECT COUNT(userid) AS id FROM caratteristiche WHERE saluteattuale<'1'");
-						if($semorti['id']>0){//se ci sono morti
-							$morti=$db->QueryCiclo("SELECT * FROM caratteristiche WHERE saluteattuale<'1'");
-							while($morto=$db->QueryCicloResult($morti)){
-							$eventi=$db->QuerySelect("SELECT COUNT(*) AS id FROM eventi WHERE userid='".$morto['userid']."'");
-								if($eventi['id']==0){
-									$user=$db->QuerySelect("SELECT * FROM utenti WHERE userid='".$morto['userid']."' LIMIT 1");
-									$usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$morto['userid']."' LIMIT 1");
-									Dead($user,$usercar);
-								}//se non ha eventi, e quindi resurrezione già in corso
-							}//per ogni morto
-						}//se ci sono morti
 						$db->QueryMod("DELETE FROM sessione WHERE time<'".($adesso-10800)."'");// cancellazione di tutte le sessioni più vecchie di 3 ore
 						$db->QueryMod("DELETE FROM msginviati WHERE data<'".($adesso-259200)."'");// delete of all messages sent older than 3 days
 						$scaduto=$adesso-2592000;
