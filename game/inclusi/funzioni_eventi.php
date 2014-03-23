@@ -706,46 +706,52 @@ $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,lavor
 }//fine Completaguardia
 
 function Controllacrimine($config){
-global $db,$adesso,$lang;
-$g=$db->QuerySelect("SELECT COUNT(id) AS n FROM eventi WHERE lavoro='9'");
-$combact=0;
-if($g['n']==0){//se non ci sono guardie
-if($config['crimine']<100)
-$db->QueryMod("UPDATE config SET crimine=crimine+'1'");
-$utenti=$db->QueryCiclo("SELECT userid FROM utenti WHERE personaggio='1'");
-while($utente=$db->QueryCicloResult($utenti)){
-$u[]=$utente['userid'];
-}//per ogni utente
-$quale=array_rand($u);
-$userid=$u[$quale];
-$eu=$db->QuerySelect("SELECT COUNT(id) AS n FROM eventi WHERE userid='".$userid."'");
-if($eu['n']==0){
-$combact=1;
-recenergiasalute($userid,0);
-$eu=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$userid."'");
-inbacheca(sprintf($lang['criminale_attacca_utente'],$eu['username']));
-}else{//fine attacca utente
-$danni=rand(10,100);
-$db->QueryMod("UPDATE config SET banca=banca-'".$danni."'");
-inbacheca(sprintf($lang['criminale_attacca_regno'],$danni));
-}//fine attacca regno
-}else{//se ci sono guardie
-$combact=1;
-$g=$db->QuerySelect("SELECT userid FROM eventi WHERE lavoro='9' LIMIT 1");
-$userid=$g['userid'];
-$db->QueryMod("INSERT INTO cachequest (userid,questid) VALUES ('".$userid."','5')");
-$db->QueryMod("UPDATE caratteristiche SET reputazione=reputazione+'1' WHERE userid='".$userid."' LIMIT 1");
-$db->QueryMod("DELETE FROM eventi WHERE userid='".$userid."'");
-$eu=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$userid."'");
-inbacheca(sprintf($lang['criminale_attacca_guardia'],$eu['username']));
-}//fine se ci sono guardie
-if($combact==1){
-$prs=array(2,3,8);
-$quale=array_rand($prs);
-$pcpuid=$prs[$quale];
-$npcid=Npcesistente($pcpuid);
-if($npcid==0){$npcid=Inizializzanpc($pcpuid);}
-Startcombact($userid,$npcid,1);
-}//fine se criminale ingaggia battaglia
-}//fine Controllacrimine
+    global $db,$adesso,$lang;
+    $g=$db->QuerySelect("SELECT COUNT(id) AS n FROM eventi WHERE lavoro='9'");
+    $combact=0;
+    if($g['n']==0){// if there are no guards
+        if($config['crimine']<100)
+            $db->QueryMod("UPDATE config SET crimine=crimine+'1'");
+        $utenti=$db->QueryCiclo("SELECT userid FROM utenti WHERE personaggio='1' and vacanza='0'");
+        while($utente=$db->QueryCicloResult($utenti)){
+            $u[]=$utente['userid'];
+        }
+        $quale=array_rand($u);
+        $userid=$u[$quale];
+        $eu=$db->QuerySelect("SELECT COUNT(id) AS n FROM eventi WHERE userid='".$userid."'");
+        if($eu['n']==0){// if the character is not doing anything is attacked
+            $combact=1;
+            recenergiasalute($userid,0);
+            $eu=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$userid."'");
+            inbacheca(sprintf($lang['criminale_attacca_utente'],$eu['username']));
+        }else{// otherwise it is damaged the kingdom
+            $danni=rand(10,100);
+            $db->QueryMod("UPDATE config SET banca=banca-'".$danni."'");
+            inbacheca(sprintf($lang['criminale_attacca_regno'],$danni));
+        }
+    }else{// if there are guards one attacks the criminal
+        $combact=1;
+        $g=$db->QuerySelect("SELECT userid FROM eventi WHERE lavoro='9' LIMIT 1");
+        $utenti=$db->QueryCiclo("SELECT userid FROM eventi WHERE lavoro='9'");
+        while($utente=$db->QueryCicloResult($utenti)){
+            $u[]=$utente['userid'];
+        }
+        $quale=array_rand($u);
+        $userid=$u[$quale];
+        $db->QueryMod("INSERT INTO cachequest (userid,questid) VALUES ('".$userid."','5')");
+        $db->QueryMod("UPDATE caratteristiche SET reputazione=reputazione+'1' WHERE userid='".$userid."' LIMIT 1");
+        $db->QueryMod("DELETE FROM eventi WHERE userid='".$userid."'");
+        $eu=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$userid."'");
+        inbacheca(sprintf($lang['criminale_attacca_guardia'],$eu['username']));
+    }
+    if($combact==1){// if criminal engages battle
+        $prs=array(2,3,8);
+        $quale=array_rand($prs);
+        $pcpuid=$prs[$quale];
+        $npcid=Npcesistente($pcpuid);
+        if($npcid==0)
+            $npcid=Inizializzanpc($pcpuid);
+        Startcombact($userid,$npcid,1);
+    }
+}// end Controllacrimine
 ?>

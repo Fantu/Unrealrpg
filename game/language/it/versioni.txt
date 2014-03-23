@@ -9,6 +9,8 @@ Legenda:<br />
 <p><strong>0.8.2</strong> (Non disponibile - In sviluppo)<br />
 # Modificati energia e salute richiesta per l'esplorazione oltre confine da 60% a 80%<br />
 - Corretto il ritorno a casa dall'esplorazione oltre confine<br />
+- I criminali ora non attaccano più personaggi in modalità vacanza<br />
++ Vari miglioramenti di sistema e codice<br />
 </p>
 <p><strong>0.8.1</strong> (15/03/14 - Beta)<br />
 + Rifatto il blocco per tot tempo in caso di più password errate in modo che non sia aggirabile in nessun modo<br />
