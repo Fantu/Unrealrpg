@@ -15,7 +15,13 @@ echo $lang['Informazioni_sui_server']; ?>
 <?php }/* fine per ogni server*/ ?>
 </table>
 <br /><br />
-<?php echo sprintf($lang['altre_lingue'],$game_name); foreach($lingue as $chiave=>$elemento) echo $lingue[$chiave]; ?>
+<?php
+if ($olangsfound>0){// if there are reigns with different language
+    echo sprintf($lang['altre_lingue'],$game_name);
+    foreach($lingue as $chiave=>$elemento)
+    echo $lingue[$chiave];
+}
+?>
 <br /><br />
 
 </div>

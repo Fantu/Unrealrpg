@@ -1,21 +1,35 @@
 <?php
 require('game/inclusi/valori.php');
 if(!empty($_GET['refer'])){
-$refer=htmlspecialchars($_GET['refer'],ENT_QUOTES);
-$server=htmlspecialchars($_GET['server'],ENT_QUOTES);
-if(is_numeric($refer) AND is_numeric($server))
-setcookie ("urbgrefer", $refer."|".$server,time()+604800);
+    $refer=htmlspecialchars($_GET['refer'],ENT_QUOTES);
+    $server=htmlspecialchars($_GET['server'],ENT_QUOTES);
+    if(is_numeric($refer) AND is_numeric($server))
+    setcookie ("urbgrefer", $refer."|".$server,time()+604800);
 }
 if($_COOKIE['urbglanguage']){
-$language=htmlspecialchars($_COOKIE['urbglanguage'],ENT_QUOTES);
-$link="index_".$language.".php";
-if($_GET['error']){
-$errore=(int)$_GET['error'];
-$errore="?error=".$errore;
-}
-if(file_exists($link)){
-header("Location: ".$link.$errore);
-exit();}
+    $language=htmlspecialchars($_COOKIE['urbglanguage'],ENT_QUOTES);
+    $link="index_".$language.".php";
+    if($_GET['error']){
+        $errore=(int)$_GET['error'];
+        $errore="?error=".$errore;
+    }
+    if(file_exists($link)){
+        header("Location: ".$link.$errore);
+        exit();
+    }
+}else{// check if there are reign with only one language
+    $langsfound=0;
+    foreach($game_language as $chiave=>$elemento){// for each language
+        if (in_array($chiave, $game_server_lang)){// if there are reigns with selected language
+            $langsfound+=1;
+            $langsel=$chiave;
+        }
+    }
+    if($langsfound==1 AND isset($langsel)){// if there reigns with same and only language redirect to it
+        $link="index_".$langsel.".php";
+        header("Location: ".$link);
+        exit();
+    }
 }
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -46,8 +60,12 @@ function CambiaImg(id,bool) {
 <h1>
 <?php echo $game_name." ".$game_state." ".$game_version; ?>
 <br />
-<?php foreach($game_language as $chiave=>$elemento) 
-echo "<br /><br /><a href=\"index_".$chiave.".php\">".$elemento."</a>" ?>
+<?php
+foreach($game_language as $chiave=>$elemento){// for each language
+    if (in_array($chiave, $game_server_lang))// if there are reigns with selected language
+        echo "<br /><br /><a href=\"index_".$chiave.".php\">".$elemento."</a>";
+}
+?>
 </h1>
 <br /><br />
 &copy; 2007-2014 <?php echo $game_name; ?> developers

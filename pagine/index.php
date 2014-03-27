@@ -36,14 +36,18 @@ $online=$db->QuerySelect("SELECT COUNT(*) AS id FROM utenti WHERE ultimazione>'"
 $infoserver['online24'][$chiave]=$online['id'];
 }
 }//fine info server
-foreach($game_language as $chiave=>$elemento){
-if($chiave!=$language)
-$lingue[$chiave]="<a href=\"index_".$chiave.".php\">".$elemento."</a> ";
-}//fine per ogni lingua
+$olangsfound=0;
+foreach($game_language as $chiave=>$elemento){// for each language
+    if($chiave!=$language AND in_array($chiave, $game_server_lang)){
+        // if the language is different from selected and exists reign with it
+        $lingue[$chiave]="<a href=\"index_".$chiave.".php\">".$elemento."</a> ";
+        $olangsfound+=1;
+    }
+}
 $end_time=time()+microtime();
 $gen_time=number_format($end_time-$start_time, 4, '.', '');
 $page_gen=sprintf($lang['tempo_gen_pagina'],$gen_time,$db->nquery);
 require('game/template/est_footer.php');
-if($_GET['error']){
-require("game/inclusi/errori.php");}
+if($_GET['error'])
+    require("game/inclusi/errori.php");
 ?>
