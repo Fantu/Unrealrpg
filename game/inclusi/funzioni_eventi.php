@@ -633,34 +633,35 @@ function Completadormire($userid,$ore){
 } //end Completadormire
 
 function Completaquest($userid,$qid,$secondi){
-global $db,$adesso,$lang;
-$prob=rand(1,100);
-$titolo=$lang['le_montagne'];
-$energia=$secondi/100*3;
-$db->QueryMod("UPDATE caratteristiche SET energia=energia-'".$energia."' WHERE userid='".$userid."'");
-if($prob==100){
-$monete=rand(5,100);
-$testo=sprintf($lang['oconfini_trovato_tesoro'],$monete)."<br />";
-$db->QueryMod("UPDATE utenti SET monete=monete+'".$monete."' WHERE userid='".$userid."'");
-}elseif($prob<40){
-$pq=$db->QueryCiclo("SELECT id FROM pcpudata WHERE quest='1'");
-while($ps=$db->QueryCicloResult($pq)) {
-$prs[]=$ps['id'];
-}
-shuffle($prs);
-$pcpuid=$prs[0];
-$npcid=Npcesistente($pcpuid);
-if($npcid==0){$npcid=Inizializzanpc($pcpuid);}
-Startcombact($userid,$npcid,1);
-$db->QueryMod("INSERT INTO cachequest (userid,secondi) VALUES ('".$userid."','".$secondi."')");
-}else{
-$testo=$lang['oconfini_trovato_nulla']."<br />";
-}
-if($prob>=40){
-$db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");
-Ritornoacasa($userid,$secondi);
-}
-} //fine Completaquest
+    global $db,$adesso,$lang;
+    $prob=rand(1,100);
+    $titolo=$lang['le_montagne'];
+    $energia=$secondi/100*3;
+    $db->QueryMod("UPDATE caratteristiche SET energia=energia-'".$energia."' WHERE userid='".$userid."'");
+    if($prob>=98){// 2% of probability to find a treasure
+        $monete=rand(40,120);
+        $testo=sprintf($lang['oconfini_trovato_tesoro'],$monete)."<br />";
+        $db->QueryMod("UPDATE utenti SET monete=monete+'".$monete."' WHERE userid='".$userid."'");
+    }elseif($prob<40){// 40% of probability to find an enemy
+        $pq=$db->QueryCiclo("SELECT id FROM pcpudata WHERE quest='1'");
+        while($ps=$db->QueryCicloResult($pq)) {
+            $prs[]=$ps['id'];
+        }
+        shuffle($prs);
+        $pcpuid=$prs[0];
+        $npcid=Npcesistente($pcpuid);
+        if($npcid==0)
+            $npcid=Inizializzanpc($pcpuid);
+        Startcombact($userid,$npcid,1);
+        $db->QueryMod("INSERT INTO cachequest (userid,secondi) VALUES ('".$userid."','".$secondi."')");
+    }else{// found nothing and noone
+        $testo=$lang['oconfini_trovato_nulla']."<br />";
+    }
+    if($prob>=40){// if not find enemies send message and make return
+        $db->QueryMod("INSERT INTO messaggi (userid,titolo,testo,mittenteid,data) VALUES ('".$userid."','".$titolo."','".$testo."','0','".$adesso."')");
+        Ritornoacasa($userid,$secondi);
+    }
+}//end Completaquest
 
 function Ritornoacasa($userid,$secondi){
     global $db,$adesso;
