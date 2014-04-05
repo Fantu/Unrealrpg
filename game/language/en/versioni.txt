@@ -9,6 +9,7 @@ Legend:<br />
 <p><strong>0.8.2</strong> (Unavailable - In development)<br />
 # Modified energy and health required for quest over the border from 60% to 80%<br />
 # Changed the probability of finding treasures across the border from 1% to 2% and the coins found from 10<->100 to 40<->120<br />
+# Modificati i danni massimi inflitti al regno da un attacco criminale da 100 a 40 monete<br />
 - Fixed return to home from quest over border<br />
 - The criminals now do not attack anymore characters in holiday mode<br />
 + Various system improvements and code<br />

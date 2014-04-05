@@ -9,6 +9,7 @@ Legenda:<br />
 <p><strong>0.8.2</strong> (Non disponibile - In sviluppo)<br />
 # Modificati energia e salute richiesta per l'esplorazione oltre confine da 60% a 80%<br />
 # Modificata la probabilità di trovare tesori oltre confine da 1% a 2% e le monete trovate da 10<->100 a 40<->120<br />
+# Modificati i danni massimi inflitti al regno da un attacco criminale da 100 a 40 monete<br />
 - Corretto il ritorno a casa dall'esplorazione oltre confine<br />
 - I criminali ora non attaccano più personaggi in modalità vacanza<br />
 + Vari miglioramenti di sistema e codice<br />

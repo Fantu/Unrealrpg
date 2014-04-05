@@ -726,7 +726,7 @@ function Controllacrimine($config){
             $eu=$db->QuerySelect("SELECT username FROM utenti WHERE userid='".$userid."'");
             inbacheca(sprintf($lang['criminale_attacca_utente'],$eu['username']));
         }else{// otherwise it is damaged the kingdom
-            $danni=rand(10,100);
+            $danni=rand(10,40);
             $db->QueryMod("UPDATE config SET banca=banca-'".$danni."'");
             inbacheca(sprintf($lang['criminale_attacca_regno'],$danni));
         }
