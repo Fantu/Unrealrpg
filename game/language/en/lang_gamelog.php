@@ -10,4 +10,5 @@ $lang['msglog8']="Iniziata preghiera nel tempio per {0} ore";//0=ore
 $lang['msglog9']="Pagate {0} monete ai chierici per la resurrezione";//0=monete
 $lang['msglog10']="Comprati {0} di {1} per un totale di {2} monete";//0=quantità 1=oggetto 2=totale monete pagate
 $lang['msglog11']="Logout effettuato con ip {0}";//0=ip
+$lang['msglog12']="Start battle {1} versus {0}";//0=name opponent 1=battle id
 ?>
