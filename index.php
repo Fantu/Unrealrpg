@@ -85,6 +85,9 @@ foreach($game_language as $chiave=>$elemento){// for each language
 <a href="http://www.gnu.org/licenses/agpl-3.0.html" target="_blank">
 	<img id="agplv3" src="game/template/immagini/agplv3_grigio.gif" alt="" border="0" onmouseover="CambiaImg('agplv3', true);" onmouseout="CambiaImg('agplv3', false);" />
 </a>
+<a href="http://ipv6-test.com/validate.php?url=referer" target="_blank">
+	<img id="ipv6" src="game/template/immagini/ipv6_grigio.gif" alt="" border="0" onmouseover="CambiaImg('ipv6', true);" onmouseout="CambiaImg('ipv6', false);" />
+</a>
 <br /><br />
 </div>
 </body>

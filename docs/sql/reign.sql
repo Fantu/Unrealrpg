@@ -439,7 +439,7 @@ CREATE TABLE IF NOT EXISTS `sessione` (
   `id` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
   `userid` smallint(5) unsigned NOT NULL,
   `password` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
-  `ip` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
+  `ip` varchar(39) COLLATE utf8_unicode_ci NOT NULL,
   `time` int(10) unsigned NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -451,7 +451,7 @@ CREATE TABLE IF NOT EXISTS `utenti` (
   `codice` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `dataiscrizione` int(13) unsigned NOT NULL,
-  `ipreg` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
+  `ipreg` varchar(39) COLLATE utf8_unicode_ci NOT NULL,
   `conferma` tinyint(1) NOT NULL DEFAULT '0',
   `ultimologin` int(13) unsigned NOT NULL DEFAULT '0',
   `personaggio` tinyint(1) NOT NULL DEFAULT '0',

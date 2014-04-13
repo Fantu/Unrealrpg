@@ -7,6 +7,7 @@ Legend:<br />
 - Fix bugs and patches to unforeseen situations<br />
 </p>
 <p><strong>0.8.2</strong> (Unavailable - In development)<br />
++ Added ipv6 support<br />
 + Added to logs: battle start<br />
 # Modified energy and health required for quest over the border from 60% to 80%<br />
 # Changed the probability of finding treasures across the border from 1% to 2% and the coins found from 10<->100 to 40<->120<br />
