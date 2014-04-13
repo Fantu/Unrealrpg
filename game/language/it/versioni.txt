@@ -13,6 +13,7 @@ Legenda:<br />
 # Modificata la probabilità di trovare tesori oltre confine da 1% a 2% e le monete trovate da 10<->100 a 40<->120<br />
 # Modificati i danni massimi inflitti al regno da un attacco criminale da 100 a 40 monete<br />
 # Modificato il danno di daga di mithrill da 18 a 19<br />
+# Maggiore probabilità di dare un colpo potente se l'avversario è esausto<br />
 - Corretto il ritorno a casa dall'esplorazione oltre confine<br />
 - I criminali ora non attaccano più personaggi in modalità vacanza<br />
 + Vari miglioramenti di sistema e codice<br />

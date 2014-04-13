@@ -13,6 +13,7 @@ Legend:<br />
 # Changed the probability of finding treasures across the border from 1% to 2% and the coins found from 10<->100 to 40<->120<br />
 # Modified the maximum damage inflicted on the kingdom by a criminal attack from 100 to 40 coins<br />
 # Modified the damage of mithrill short sword from 18 to 19<br />
+# Greater chance of giving a powerful shot if the opponent is exhausted<br />
 - Fixed return to home from quest over border<br />
 - The criminals now do not attack anymore characters in holiday mode<br />
 + Various system improvements and code<br />

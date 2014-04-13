@@ -423,6 +423,8 @@ class Dati{
             $probpot-=50;
         if((100/$this->car($dif,'energiamax')*$this->car($dif,'energia'))<20 AND (100/$this->car($att,'energiamax')*$this->car($att,'energia'))>40)
             $probpot+=30;
+        if($this->esausto($dif)==1)
+            $probpot+=30;
         if($this->equip($att,'cac')!=0 AND $arma['bonuseff']!=0)
             $probpot+=$probpot/100*$arma['bonuseff'];
         if($probpot>=100){// if powerful blow
@@ -563,6 +565,8 @@ class Dati{
         if((100/$this->car($att,'energiamax')*$this->car($att,'energia'))<20)
             $probpot-=50;
         if((100/$this->car($dif,'energiamax')*$this->car($dif,'energia'))<20 AND (100/$this->car($att,'energiamax')*$this->car($att,'energia'))>40)
+            $probpot+=30;
+        if($this->esausto($dif)==1)
             $probpot+=30;
         if($this->equip($att,'adi')!=0 AND $arma['bonuseff']!=0)
             $probpot+=$probpot/100*$arma['bonuseff'];
