@@ -344,100 +344,108 @@ class Dati{
 	return $expb;
 	}//fine Checkturnexp
 
-	public function Attaccovicino($att,$dif){
-	global $db,$lang;
-	if($this->equip($att,'cac')!=0){
-	$arma=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$this->equip($att,'cac')."' LIMIT 1");
-	$energia=$arma['energia'];
-	}
-	if($this->equip($att,'cac')!=0 AND $this->car($att,'energia')>$energia){
-	$danno=$arma['danno'];
-	if($danno>4){$danno=round(rand(($danno/100*80),$danno));}
-	$nomearma=$lang['oggetto'.$this->equip($att,'cac').'_nome'];
-	$this->Ogginuso($att,'cac');
-	}else{
-	$danno=rand(1,3)+round($this->car($att,'attfisico')/80);
-	$nomearma=$lang['pugno'];
-	$energia=40;
-	}
-	if($this->equip($dif,'arm')!=0){
-	$armatura=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$this->equip($dif,'arm')."' LIMIT 1");
-	if($armatura['energia']<=$this->car($dif,'energia')){
-	$this->Modenergia($dif,$armatura['energia']);
-	$this->Ogginuso($dif,'arm');
-	}
-	}//se il difensore ha armatura
-	if($this->esausto($dif)==0 AND $this->equip($dif,'scu')!=0){
-	$this->Ogginuso($dif,'scu');
-	$scudo=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$this->equip($dif,'scu')."' LIMIT 1");
-	$this->Modenergia($dif,$scudo['energia']);
-	}//se il difensore ha scudo e non è esausto
-	$casuale=rand(1,10);if($casuale<2){$colpisci=100;}elseif($casuale>9){$colpisci=0;}else{//casualità totale per minima prob colpire o non colpire cmq
-	$colpisci=rand(1,100)+($this->car($att,'agilita')/8-$this->car($dif,'agilita')/8)+($this->car($att,'intelligenza')/25-$this->car($dif,'intelligenza')/25)+($this->car($att,'velocita')/20-$this->car($dif,'velocita')/20)+((20/$this->car($att,'energiamax')*$this->car($att,'energia'))-(20/$this->car($dif,'energiamax')*$this->car($dif,'energia')));
-	if($this->equip($att,'cac')!=0 AND $arma['bonuseff']!=0)
-	$colpisci+=$colpisci/100*$arma['bonuseff'];
-	if($this->tattica($dif,1)==3 AND $this->esausto($dif)==0)
-	$colpisci-=rand(10,20);
-	if((100/$this->car($att,'energiamax')*$this->car($att,'energia'))<20)
-	$colpisci-=20;
-	if((100/$this->car($dif,'energiamax')*$this->car($dif,'energia'))<20)
-	$colpisci+=20;
-	if((100/$this->car($att,'salute')*$this->car($att,'saluteattuale'))<10)
-	$colpisci-=20;
-	if((100/$this->car($dif,'salute')*$this->car($dif,'saluteattuale'))<10)
-	$colpisci+=20;
-	if($dif==1 AND ($this->tattica($dif,1)==1 AND $this->tattica($dif,2)==2))
-	$colpisci-=10;
-	}//se colpire o no non sicuro
-	if($colpisci>50 OR $this->esausto($dif)==1){
-	$difesamax=round($this->car($dif,'diffisica')/100);
-	$difesa=rand(0,$difesamax);
-	if($this->equip($dif,'arm')!=0){
-	if($armatura['energia']<=$this->car($dif,'energia')){
-	$difesa+=round(rand(0,$armatura['difesafisica']));
-	}
-	}//se il difensore ha armatura
-	$pscudo="";
-	if($this->tattica($dif,1)==3){
-	$probps=rand(0,35);}else{$probps=rand(0,100);}
-	if($this->equip($dif,'scu')!=0 AND $probps<20 AND $this->esausto($dif)==0){
-	if($scudo['energia']<=$this->car($dif,'energia')){
-	$pscudo=" ".$lang['parata_con_scudo'].", ";
-	$prob=10;
-	if($this->tattica($dif,1)==3)
-	$prob=50;
-	$difesa+=round(rand($scudo['difesafisica']/100*$prob,$scudo['difesafisica']));
-	}
-	}//se il difensore ha scudo e non è esausto
-	$potente="";
-	$probpot=rand(10,100);
-	if((100/$this->car($att,'energiamax')*$this->car($att,'energia'))<20)
-	$probpot-=50;
-	if((100/$this->car($dif,'energiamax')*$this->car($dif,'energia'))<20 AND (100/$this->car($att,'energiamax')*$this->car($att,'energia'))>40)
-	$probpot+=30;
-	if($this->equip($att,'cac')!=0 AND $arma['bonuseff']!=0)
-	$probpot+=$probpot/100*$arma['bonuseff'];
-	if($probpot>=100){
-	$probmpot=rand(1,10);
-	if($probmpot==10){
-	$danno+=$danno;
-	$potente=" ".$lang['colpo_molto_potente'].", ";
-	}else{
-	$danno+=round($danno/2);
-	$potente=" ".$lang['colpo_potente'].", ";
-	}
-	}//se colpo potente
-	$danno-=$difesa;
-	if($danno<1)
-	$danno=1;
-	$input=sprintf($lang['danno_att_vicino'],$this->nome($att),$nomearma).", ".sprintf($lang['danni_subiti'],($this->nome($dif).$potente.$pscudo),$danno)."<br/>";
-	$this->Modsalute($dif,$danno);
-	}else{
-	$input=sprintf($lang['niente_att_vicino'],$this->nome($att),$this->nome($dif),$nomearma)."<br/>";
-	}
-	$this->Modenergia($att,$energia);
-	return $input;
-	}//fine Attaccovicino
+    public function Attaccovicino($att,$dif){
+    global $db,$lang;
+    if($this->equip($att,'cac')!=0){// if he has a melee weapon
+        $arma=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$this->equip($att,'cac')."' LIMIT 1");
+        $energia=$arma['energia'];
+    }
+    // if he has a melee weapon and energy enough to use it
+    if($this->equip($att,'cac')!=0 AND $this->car($att,'energia')>$energia){
+        $danno=$arma['danno'];
+        if($danno>4)
+            $danno=round(rand(($danno/100*80),$danno));
+        $nomearma=$lang['oggetto'.$this->equip($att,'cac').'_nome'];
+        $this->Ogginuso($att,'cac');
+    }else{// if he do not have enough energy weapon uses a punches
+        $danno=rand(1,3)+round($this->car($att,'attfisico')/80);
+        $nomearma=$lang['pugno'];
+        $energia=40;
+    }
+    if($this->equip($dif,'arm')!=0){// if the defender has an armor
+        $armatura=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$this->equip($dif,'arm')."' LIMIT 1");
+        if($armatura['energia']<=$this->car($dif,'energia')){
+            $this->Modenergia($dif,$armatura['energia']);
+            $this->Ogginuso($dif,'arm');
+        }
+    }
+	if($this->esausto($dif)==0 AND $this->equip($dif,'scu')!=0){// if the defender shield and is not exhausted
+        $this->Ogginuso($dif,'scu');
+        $scudo=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$this->equip($dif,'scu')."' LIMIT 1");
+        $this->Modenergia($dif,$scudo['energia']);
+    }
+	$casuale=rand(1,10);
+    if($casuale<2){// 10% chance of hitting always
+        $colpisci=100;
+    }elseif($casuale>9){// 10% chance of hitting never
+        $colpisci=0;
+    }else{// 80% chance of hitting on the basis of values, objects, and tactics of the characters
+        $colpisci=rand(1,100)+($this->car($att,'agilita')/8-$this->car($dif,'agilita')/8)+($this->car($att,'intelligenza')/25-$this->car($dif,'intelligenza')/25)+($this->car($att,'velocita')/20-$this->car($dif,'velocita')/20)+((20/$this->car($att,'energiamax')*$this->car($att,'energia'))-(20/$this->car($dif,'energiamax')*$this->car($dif,'energia')));
+        if($this->equip($att,'cac')!=0 AND $arma['bonuseff']!=0)
+            $colpisci+=$colpisci/100*$arma['bonuseff'];
+        if($this->tattica($dif,1)==3 AND $this->esausto($dif)==0)
+            $colpisci-=rand(10,20);
+        if((100/$this->car($att,'energiamax')*$this->car($att,'energia'))<20)
+            $colpisci-=20;
+        if((100/$this->car($dif,'energiamax')*$this->car($dif,'energia'))<20)
+            $colpisci+=20;
+        if((100/$this->car($att,'salute')*$this->car($att,'saluteattuale'))<10)
+            $colpisci-=20;
+        if((100/$this->car($dif,'salute')*$this->car($dif,'saluteattuale'))<10)
+            $colpisci+=20;
+        if($dif==1 AND ($this->tattica($dif,1)==1 AND $this->tattica($dif,2)==2))
+            $colpisci-=10;
+    }
+    if($colpisci>50 OR $this->esausto($dif)==1){
+        $difesamax=round($this->car($dif,'diffisica')/100);
+        $difesa=rand(0,$difesamax);
+        if($this->equip($dif,'arm')!=0){
+            if($armatura['energia']<=$this->car($dif,'energia'))
+                $difesa+=round(rand(0,$armatura['difesafisica']));
+        }
+        $pscudo="";
+        if($this->tattica($dif,1)==3)// if the opponent is in defensive tactics
+            $probps=rand(0,35);
+        else
+            $probps=rand(0,100);
+        if($this->equip($dif,'scu')!=0 AND $probps<20 AND $this->esausto($dif)==0){
+            if($scudo['energia']<=$this->car($dif,'energia')){
+                $pscudo=" ".$lang['parata_con_scudo'].", ";
+                $prob=10;
+                if($this->tattica($dif,1)==3)// if the opponent is in defensive tactics
+                    $prob=50;
+                $difesa+=round(rand($scudo['difesafisica']/100*$prob,$scudo['difesafisica']));
+            }
+        }
+        $potente="";
+        $probpot=rand(10,100);
+        if((100/$this->car($att,'energiamax')*$this->car($att,'energia'))<20)
+            $probpot-=50;
+        if((100/$this->car($dif,'energiamax')*$this->car($dif,'energia'))<20 AND (100/$this->car($att,'energiamax')*$this->car($att,'energia'))>40)
+            $probpot+=30;
+        if($this->equip($att,'cac')!=0 AND $arma['bonuseff']!=0)
+            $probpot+=$probpot/100*$arma['bonuseff'];
+        if($probpot>=100){// if powerful blow
+            $probmpot=rand(1,10);
+            if($probmpot==10){
+                $danno+=$danno;
+                $potente=" ".$lang['colpo_molto_potente'].", ";
+            }else{
+                $danno+=round($danno/2);
+                $potente=" ".$lang['colpo_potente'].", ";
+            }
+        }
+        $danno-=$difesa;
+        if($danno<1)
+            $danno=1;
+        $input=sprintf($lang['danno_att_vicino'],$this->nome($att),$nomearma).", ".sprintf($lang['danni_subiti'],($this->nome($dif).$potente.$pscudo),$danno)."<br/>";
+        $this->Modsalute($dif,$danno);
+    }else{// if he doesn't hit
+        $input=sprintf($lang['niente_att_vicino'],$this->nome($att),$this->nome($dif),$nomearma)."<br/>";
+    }
+    $this->Modenergia($att,$energia);
+    return $input;
+    }// end Attaccovicino
 
 	public function Usapozione($chi){
 	global $db,$lang;
@@ -479,98 +487,106 @@ class Dati{
 	return $output;
 	}//fine Usapozione
 
-	public function Attaccolontano($att,$dif){
-	global $db,$lang;
-	if($this->equip($att,'adi')!=0){
-	$arma=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$this->equip($att,'adi')."' LIMIT 1");
-	$energia=$arma['energia'];
-	}//se ha l'arma a distanza
-	if($this->equip($att,'adi')!=0 AND $this->car($att,'energia')>$energia){
-	$danno=$arma['danno'];
-	if($danno>4){$danno=round(rand(($danno/100*80),$danno));}
-	$nomearma=$lang['oggetto'.$this->equip($att,'adi').'_nome'];
-	$this->Ogginuso($att,'adi');
-	}else{
-	$danno=rand(2,4)+round($this->car($att,'attfisico')/80);
-	$nomearma=$lang['sasso'];
-	$energia=30;
-	}//se nn ha l'arma
-	if($this->equip($dif,'arm')!=0){
-	$armatura=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$this->equip($dif,'arm')."' LIMIT 1");
-	if($armatura['energia']<=$this->car($dif,'energia')){
-	$this->Modenergia($dif,$armatura['energia']);
-	$this->Ogginuso($dif,'arm');
-	}//se il difensore ha abbastanza energia
-	}//se il difensore ha armatura
-	if($this->esausto($dif)==0 AND $this->equip($dif,'scu')!=0){
-	$this->Ogginuso($dif,'scu');
-	$scudo=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$this->equip($dif,'scu')."' LIMIT 1");
-	$this->Modenergia($dif,$scudo['energia']);
-	}//se il difensore ha scudo e non è esausto
-	$casuale=rand(1,10);if($casuale<2){$colpisci=100;}elseif($casuale>9){$colpisci=0;}else{//casualità totale per minima prob colpire o non colpire cmq
+    public function Attaccolontano($att,$dif){
+    global $db,$lang;
+    if($this->equip($att,'adi')!=0){// if he has a weapon at a distance
+        $arma=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$this->equip($att,'adi')."' LIMIT 1");
+        $energia=$arma['energia'];
+	}
+    // if he has a weapon at a distance and energy enough to use it
+    if($this->equip($att,'adi')!=0 AND $this->car($att,'energia')>$energia){
+        $danno=$arma['danno'];
+        if($danno>4)
+            $danno=round(rand(($danno/100*80),$danno));
+        $nomearma=$lang['oggetto'.$this->equip($att,'adi').'_nome'];
+        $this->Ogginuso($att,'adi');
+	}else{// if you do not have enough energy weapon uses a stone
+        $danno=rand(2,4)+round($this->car($att,'attfisico')/80);
+        $nomearma=$lang['sasso'];
+        $energia=30;
+    }
+    if($this->equip($dif,'arm')!=0){// if the defender has an armor
+        $armatura=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$this->equip($dif,'arm')."' LIMIT 1");
+        if($armatura['energia']<=$this->car($dif,'energia')){// if the defender has enough energy
+            $this->Modenergia($dif,$armatura['energia']);
+            $this->Ogginuso($dif,'arm');
+        }
+    }
+    if($this->esausto($dif)==0 AND $this->equip($dif,'scu')!=0){// if the defender shield and is not exhausted
+        $this->Ogginuso($dif,'scu');
+        $scudo=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$this->equip($dif,'scu')."' LIMIT 1");
+        $this->Modenergia($dif,$scudo['energia']);
+    }
+    $casuale=rand(1,10);
+    if($casuale<2){// 10% chance of hitting always
+        $colpisci=100;
+    }elseif($casuale>9){// 10% chance of hitting never
+        $colpisci=0;
+    }else{// 80% chance of hitting on the basis of values, objects, and tactics of the characters
 	$colpisci=rand(1,100)+($this->car($att,'agilita')/10-$this->car($dif,'agilita')/9)+($this->car($att,'intelligenza')/25-$this->car($dif,'intelligenza')/25)+($this->car($att,'destrezza')/5-$this->car($dif,'destrezza')/6)+((20/$this->car($att,'energiamax')*$this->car($att,'energia'))-(20/$this->car($dif,'energiamax')*$this->car($dif,'energia')));
-	if($this->equip($att,'adi')!=0 AND $arma['bonuseff']!=0)
-	$colpisci+=$colpisci/100*$arma['bonuseff'];
-	if($this->tattica($dif,1)==3 AND $this->esausto($dif)==0)
-	$colpisci-=rand(10,20);
-	if((100/$this->car($att,'energiamax')*$this->car($att,'energia'))<20)
-	$colpisci-=20;
-	if((100/$this->car($dif,'energiamax')*$this->car($dif,'energia'))<20)
-	$colpisci+=20;
-	if((100/$this->car($att,'salute')*$this->car($att,'saluteattuale'))<10)
-	$colpisci-=20;
-	if((100/$this->car($dif,'salute')*$this->car($dif,'saluteattuale'))<10)
-	$colpisci+=20;
-	}//se colpire o no non sicuro
-	if($colpisci>50 OR $this->esausto($dif)==1){
-	$difesamax=round($this->car($dif,'diffisica')/100);
-	$difesa=rand(0,$difesamax);
-	if($this->equip($dif,'arm')!=0){
-	if($armatura['energia']<=$this->car($dif,'energia')){
-	$difesa+=round(rand(0,$armatura['difesafisica']));
-	}//se ha sufficente energia
-	}//se il difensore ha armatura
-	$pscudo="";
-	if($this->tattica($dif,1)==3){
-	$probps=rand(0,35);}else{$probps=rand(0,100);}
-	if($this->equip($dif,'scu')!=0 AND $probps<20 AND $this->esausto($dif)==0){
-	if($scudo['energia']<=$this->car($dif,'energia')){
-	$pscudo=" ".$lang['parata_con_scudo'].", ";
-	$prob=10;
-	if($this->tattica($dif,1)==3)
-	$prob=50;
-	$difesa+=round(rand($scudo['difesafisica']/100*$prob,$scudo['difesafisica']));
-	}
-	}//se il difensore ha scudo e non è esausto
-	$potente="";
-	$probpot=rand(10,100);
-	if((100/$this->car($att,'energiamax')*$this->car($att,'energia'))<20)
-	$probpot-=50;
-	if((100/$this->car($dif,'energiamax')*$this->car($dif,'energia'))<20 AND (100/$this->car($att,'energiamax')*$this->car($att,'energia'))>40)
-	$probpot+=30;
-	if($this->equip($att,'adi')!=0 AND $arma['bonuseff']!=0)
-	$probpot+=$probpot/100*$arma['bonuseff'];
-	if($probpot>=100){
-	$probmpot=rand(1,10);
-	if($probmpot==10){
-	$danno+=$danno;
-	$potente=" ".$lang['colpo_molto_potente'].", ";
-	}else{
-	$danno+=round($danno/2);
-	$potente=" ".$lang['colpo_potente'].", ";
-	}
-	}//se colpo potente
-	$danno-=$difesa;
-	if($danno<1)
-	$danno=1;
-	$input=sprintf($lang['danno_att_vicino'],$this->nome($att),$nomearma).", ".sprintf($lang['danni_subiti'],($this->nome($dif).$potente.$pscudo),$danno)."<br/>";
-	$this->Modsalute($dif,$danno);
-	}else{//fine colpisce
-	$input=sprintf($lang['niente_att_vicino'],$this->nome($att),$this->nome($dif),$nomearma)."<br/>";
-	}//nn colpisce
-	$this->Modenergia($att,$energia);
-	return $input;
-	}//fine Attaccolontano
+    if($this->equip($att,'adi')!=0 AND $arma['bonuseff']!=0)
+        $colpisci+=$colpisci/100*$arma['bonuseff'];
+    if($this->tattica($dif,1)==3 AND $this->esausto($dif)==0)
+        $colpisci-=rand(10,20);
+    if((100/$this->car($att,'energiamax')*$this->car($att,'energia'))<20)
+        $colpisci-=20;
+    if((100/$this->car($dif,'energiamax')*$this->car($dif,'energia'))<20)
+        $colpisci+=20;
+    if((100/$this->car($att,'salute')*$this->car($att,'saluteattuale'))<10)
+        $colpisci-=20;
+    if((100/$this->car($dif,'salute')*$this->car($dif,'saluteattuale'))<10)
+        $colpisci+=20;
+    }
+    if($colpisci>50 OR $this->esausto($dif)==1){// if it hits
+        $difesamax=round($this->car($dif,'diffisica')/100);
+        $difesa=rand(0,$difesamax);
+        if($this->equip($dif,'arm')!=0){
+            if($armatura['energia']<=$this->car($dif,'energia'))
+                $difesa+=round(rand(0,$armatura['difesafisica']));
+        }
+        $pscudo="";
+        if($this->tattica($dif,1)==3)// if the opponent is in defensive tactics
+            $probps=rand(0,35);
+        else
+            $probps=rand(0,100);
+        if($this->equip($dif,'scu')!=0 AND $probps<20 AND $this->esausto($dif)==0){
+            if($scudo['energia']<=$this->car($dif,'energia')){
+                $pscudo=" ".$lang['parata_con_scudo'].", ";
+                $prob=10;
+                if($this->tattica($dif,1)==3)// if the opponent is in defensive tactics
+                    $prob=50;
+                $difesa+=round(rand($scudo['difesafisica']/100*$prob,$scudo['difesafisica']));
+            }
+        }
+        $potente="";
+        $probpot=rand(10,100);
+        if((100/$this->car($att,'energiamax')*$this->car($att,'energia'))<20)
+            $probpot-=50;
+        if((100/$this->car($dif,'energiamax')*$this->car($dif,'energia'))<20 AND (100/$this->car($att,'energiamax')*$this->car($att,'energia'))>40)
+            $probpot+=30;
+        if($this->equip($att,'adi')!=0 AND $arma['bonuseff']!=0)
+            $probpot+=$probpot/100*$arma['bonuseff'];
+        if($probpot>=100){// if powerful blow
+            $probmpot=rand(1,10);
+            if($probmpot==10){
+                $danno+=$danno;
+                $potente=" ".$lang['colpo_molto_potente'].", ";
+            }else{
+                $danno+=round($danno/2);
+                $potente=" ".$lang['colpo_potente'].", ";
+            }
+        }
+        $danno-=$difesa;
+        if($danno<1)
+            $danno=1;
+        $input=sprintf($lang['danno_att_vicino'],$this->nome($att),$nomearma).", ".sprintf($lang['danni_subiti'],($this->nome($dif).$potente.$pscudo),$danno)."<br/>";
+        $this->Modsalute($dif,$danno);
+    }else{// if he doesn't hit
+        $input=sprintf($lang['niente_att_vicino'],$this->nome($att),$this->nome($dif),$nomearma)."<br/>";
+    }
+    $this->Modenergia($att,$energia);
+    return $input;
+    }// end Attaccolontano
 
 	public function Allontanamento($chi){
 	global $db,$lang;
