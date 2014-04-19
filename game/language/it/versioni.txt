@@ -15,6 +15,7 @@ Legenda:<br />
 # Modificato il danno di daga di mithrill da 18 a 19<br />
 # Maggiore probabilità di dare un colpo potente se l'avversario è esausto<br />
 - Corretto il ritorno a casa dall'esplorazione oltre confine<br />
+- Corretto i valori salute ed energia dopo la resurrezione con fede molto alta<br />
 - I criminali ora non attaccano più personaggi in modalità vacanza<br />
 + Vari miglioramenti di sistema e codice<br />
 </p>

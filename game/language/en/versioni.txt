@@ -15,6 +15,7 @@ Legend:<br />
 # Modified the damage of mithrill short sword from 18 to 19<br />
 # Greater chance of giving a powerful shot if the opponent is exhausted<br />
 - Fixed return to home from quest over border<br />
+- Fixed the values ​​of health and energy after the resurrection with very high faith<br />
 - The criminals now do not attack anymore characters in holiday mode<br />
 + Various system improvements and code<br />
 </p>
