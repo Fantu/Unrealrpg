@@ -54,6 +54,38 @@ $oggdf_num=array(
 function Checkusurarottura($userid,$cpu) {
     global $db,$lang;
     $check=0;
+    // check inventory (only for player)
+    if($cpu==0){
+        $oggusati=$db->QuerySelect("SELECT count(id) AS numero FROM inoggetti WHERE userid='".$userid."' AND inuso='1'");
+        if($oggusati['numero']>0){/* if there are object used */
+            $check=1;
+            $oggusati=$db->QueryCiclo("SELECT * FROM inoggetti WHERE userid='".$userid."' AND inuso='1'");
+            while($ogg=$db->QueryCicloResult($oggusati)) {
+                $oggetto=$db->QuerySelect("SELECT * FROM oggetti WHERE id='".$ogg['oggid']."' LIMIT 1");
+                $rotto=0;
+                $usura=$ogg['usura']+1;
+                if($usura>=$oggetto['usura']){
+                    $rotto=1;
+                    $oggpersi.=sprintf($lang['oggetto_usurato'],$lang['oggetto'.$ogg['oggid'].'_nome'])."<br />";
+                }else{
+                    if($oggetto['probrottura']!=0){// if it breaks
+                        $rottura=floor($oggetto['probrottura']/$oggetto['usura']*($usura-1));
+                        $prob=rand(0,10000);
+                        if($prob<$rottura){// if it breaks
+                            $rotto=1;
+                            $oggpersi.=sprintf($lang['oggetto_rotto'],$lang['oggetto'.$ogg['oggid'].'_nome'])."<br />";
+                        }
+                    }
+                }
+                if($rotto==1){
+                    $db->QueryMod("DELETE FROM inoggetti WHERE id='".$ogg['id']."'");
+                }else{
+                    $db->QueryMod("UPDATE inoggetti SET usura=usura+'1',inuso='0' WHERE id='".$ogg['id']."' LIMIT 1");
+                }
+            }// end for each object used
+        }/* end if there are object used */
+    }
+    // check equipment
     if($cpu==0)
         $oggusati=$db->QuerySelect("SELECT count(id) AS numero FROM equip WHERE userid='".$userid."' AND inuso='1'");
     else
@@ -107,7 +139,7 @@ function Checkusurarottura($userid,$cpu) {
                 $db->QueryMod("UPDATE equipcpu SET usura=usura+'1',inuso='0' WHERE id='".$ogg['id']."' LIMIT 1");
         }
     }// end for each object used
-    }/* end if there are object used*/
+    }/* end if there are object used */
     if($check==0)
         $oggpersi=$lang['nessuno_gettato']."<br />";
     return $oggpersi;
