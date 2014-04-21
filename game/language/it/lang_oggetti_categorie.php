@@ -18,4 +18,5 @@ $lang['categoria5-5']='Mazze';
 $lang['categoria6-1']='Armature';
 $lang['categoria6-2']='Scudi';
 $lang['categoria7-1']='Coltelli';
+$lang['categoria7-2']='Archi';
 ?>

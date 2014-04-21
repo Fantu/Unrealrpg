@@ -10,12 +10,13 @@ $lang['categoria1-1']='Minerals';
 $lang['categoria2-1']='Picks';
 $lang['categoria4-1']='Healing potions';
 $lang['categoria4-2']='Energy potions';
-$lang['categoria5-1']='Short swords';
-$lang['categoria5-2']='Daggers';
+$lang['categoria5-1']='Daggers';
+$lang['categoria5-2']='Short swords';
 $lang['categoria5-3']='Swords';
 $lang['categoria5-4']='Axes';
 $lang['categoria5-5']='Maces';
 $lang['categoria6-1']='Armors';
 $lang['categoria6-2']='Shields';
 $lang['categoria7-1']='Knives';
+$lang['categoria7-2']='Bows';
 ?>

@@ -5,14 +5,15 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
 }
 require_once('language/'.$language.'/lang_oggetti_nomi.php');
 
+// categories and subcategories of the market
 $catoggetti_nome=array(
-1=>array(1),
-2=>array(1),
-3,
-4=>array(1,2),
-5=>array(1,2,3,4,5),
-7=>array(1),
-6=>array(1,2)
+    1=>array(1),// Raw materials with subcategories: 1=>Minerals
+    2=>array(1),// Tools with subcategories: 1=>Picks
+    3,// Miscellaneous
+    4=>array(1,2),// Generic potions with subcategories: 1=>Heling potions, 2=>Energy potions
+    5=>array(1,2,3,4,5),// Hand to hand weapons with subcategories: 1=>Daggers, 2=>Short swords, 3=>Swords , 4=>Axes , 5=>Maces
+    6=>array(1,2),// Defensive equip with subcategories: 1=>Armors, 2=>Shields
+    7=>array(1,2)// Long distance weapons with subcategories: 1=>Knives, 2=>Bows
 );
 
 $materiali_nome=array(
