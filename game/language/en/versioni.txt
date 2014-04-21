@@ -6,7 +6,7 @@ Legend:<br />
 # Changes<br />
 - Fix bugs and patches to unforeseen situations<br />
 </p>
-<p><strong>0.8.2</strong> (Unavailable - In development)<br />
+<p><strong>0.8.2</strong> (21/04/14 - Beta)<br />
 + Added ipv6 support<br />
 + Added bows on the market in the category of ranged weapons<br />
 + Added simple bow, first bow experimental and usable without buying additional arrows, the complete and good bows with also arrows will be added in 0.9<br />
@@ -20,7 +20,7 @@ Legend:<br />
 - Fixed return to home from quest over border<br />
 - Fixed the values ​​of health and energy after the resurrection with very high faith<br />
 - The criminals now do not attack anymore characters in holiday mode<br />
-+ Various system improvements and code<br />
++ Various system and code improvements<br />
 </p>
 <p><strong>0.8.1</strong> (15/03/14 - Beta)<br />
 + Redone the block for tot time in case of more bad password so that it is not avoidable in no way<br />
@@ -39,7 +39,7 @@ Legend:<br />
 # Slightly increased the damage caused by an attack with punches<br />
 # Energy consumed by attacking with punches from 50 to 40<br />
 # Energy consumed by attacking with stones from 50 to 30<br />
-+ Various system improvements and code<br />
++ Various system and code improvements<br />
 - Fixed some bugs<br />
 </p>
 <p><strong>0.8.0</strong> [R.2131] (18/07/09 - Beta)<br />
