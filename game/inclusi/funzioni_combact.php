@@ -813,14 +813,14 @@ function Startcombact($attaccante,$dif,$cpu){
         $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo,oggid,battleid) VALUES ('".$dif."','".$adesso."','84600','13','5','".$attaccante."','".$battle['id']."')");
         // create log record of start battle for defender
         $parlog=array(0=>$attn['username'],1=>$battle['id']);
-        $log->Utenti($attaccante,12,$parlog);
+        $log->Utenti($dif,12,$parlog);
     }else{
         $db->QueryMod("INSERT INTO battlereport (id,data,attid,cpuid) VALUES ('".$battle['id']."','".$adesso."','".$attaccante."','".$difensore."')");
         $difname=$lang['nomepcpu'.$difensore];
     }
     // create log record of start battle for attacker
     $parlog=array(0=>$difname,1=>$battle['id']);
-    $log->Utenti($dif,12,$parlog);
+    $log->Utenti($attaccante,12,$parlog);
     Docombactstats($battle['id'],$attn['username'],$difname,$attcar,$difcar);
 } //fine Startcombact
 
