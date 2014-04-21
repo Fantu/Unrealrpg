@@ -9,6 +9,7 @@ Legend:<br />
 <p><strong>0.8.2</strong> (Unavailable - In development)<br />
 + Added ipv6 support<br />
 + Added bows on the market in the category of ranged weapons<br />
++ Added simple bow, first bow experimental and usable without buying additional arrows, the complete and good bows with also arrows will be added in 0.9<br />
 + Added to logs: battle start<br />
 # Modified energy and health required for quest over the border from 60% to 80%<br />
 # Changed the probability of finding treasures across the border from 1% to 2% and the coins found from 10<->100 to 40<->120<br />

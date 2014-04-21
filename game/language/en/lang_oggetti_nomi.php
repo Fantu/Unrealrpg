@@ -100,4 +100,5 @@ $lang['oggetto101_nome']='Excellent steel armour';
 $lang['oggetto102_nome']='Excellent copper shield';
 $lang['oggetto103_nome']='Excellent iron shield';
 $lang['oggetto104_nome']='Excellent steel shield';
+$lang['oggetto105_nome']='Simple bow';
 ?>

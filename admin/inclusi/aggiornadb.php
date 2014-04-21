@@ -18,6 +18,8 @@ foreach($game_server as $chiave=>$elemento){
         // Modified the leather armors
         $db->QueryMod("UPDATE `oggetti` SET `probrottura` = '300',`costo` = '8',`energia` = '3',`difesafisica` = '3' WHERE `oggetti`.`id` =55;");
         $db->QueryMod("UPDATE `oggetti` SET `probrottura` = '200',`costo` = '16',`energia` = '4',`forzafisica` = '15',`difesafisica` = '5' WHERE `oggetti`.`id` =56;");
+        // Added simple bow
+        $db->QueryMod("INSERT INTO `oggetti` (`id` ,`tipo` ,`categoria` ,`probrottura` ,`costo` ,`energia` ,`usura` ,`bonuseff` ,`forzafisica` ,`destrezza` ,`probtrovare` ,`recsalute` ,`recenergia` ,`abilitanec` ,`materiale` ,`danno` ,`difesafisica`) VALUES ('105', '7', '2', '100', '20', '20', '60', '0', '30', '50', '0', '0', '0', '0', '0', '8', '0');");
         // Add ipv6 support
         $db->QueryMod("ALTER TABLE `sessione` CHANGE `ip` `ip` VARCHAR( 39 ) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL ;");
         $db->QueryMod("ALTER TABLE `utenti` CHANGE `ipreg` `ipreg` VARCHAR( 39 ) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL ;");
