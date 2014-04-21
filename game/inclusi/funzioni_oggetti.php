@@ -12,8 +12,8 @@ $catoggetti_nome=array(
     3,// Miscellaneous
     4=>array(1,2),// Generic potions with subcategories: 1=>Heling potions, 2=>Energy potions
     5=>array(1,2,3,4,5),// Hand to hand weapons with subcategories: 1=>Daggers, 2=>Short swords, 3=>Swords , 4=>Axes , 5=>Maces
-    6=>array(1,2),// Defensive equip with subcategories: 1=>Armors, 2=>Shields
-    7=>array(1,2)// Long distance weapons with subcategories: 1=>Knives, 2=>Bows
+    7=>array(1,2),// Long distance weapons with subcategories: 1=>Knives, 2=>Bows
+    6=>array(1,2)// Defensive equip with subcategories: 1=>Armors, 2=>Shields
 );
 
 $materiali_nome=array(
