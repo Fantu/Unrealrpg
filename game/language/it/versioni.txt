@@ -14,6 +14,7 @@ Legenda:<br />
 # Modificati i danni massimi inflitti al regno da un attacco criminale da 100 a 40 monete<br />
 # Modificato il danno di daga di mithrill da 18 a 19<br />
 # Maggiore probabilità di dare un colpo potente se l'avversario è esausto<br />
+# Modificati scudi di legno e armature di cuoio, resi più equilibrati, meno costosi, che richiedono più forza e meno energia nell'utilizzarli, abbassato il danno massimo assorbito e aumentata la probabilità di rottura massima.<br />
 - Corretto il ritorno a casa dall'esplorazione oltre confine<br />
 - Corretto i valori salute ed energia dopo la resurrezione con fede molto alta<br />
 - I criminali ora non attaccano più personaggi in modalità vacanza<br />
