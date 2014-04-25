@@ -259,31 +259,38 @@ class Dati{
 	}//se si attacca
 	}//fine Autotattic
 
-	public function Guadagnaexp($chi,$turni,$expb,$vincitore) {
-	global $db,$lang;
-	if($chi==1){$chi2=2;}else{$chi2=1;}
-	$exp=5+$expb;
-	$exp=round(rand(($exp/100*95),$exp));
-	if($vincitore==$chi2){
-	$exp-=6;
-	}elseif($vincitore==$chi){
-	$exp+=6;}elseif($vincitore==0){
-	$exp+=5;}
-	$level=$this->car($chi,'livello')-$this->car($chi2,'livello');
-	if($level<0){
-	$liv=abs($level);
-	if($liv>10)
-	$liv=10;
-	$exp+=round($exp/10*$liv);
-	}elseif($level>0){
-	if($liv>9)
-	$liv=9;
-	$exp-=round($exp/10*$liv);
-	}
-	$db->QueryMod("UPDATE caratteristiche SET exp=exp+'".$exp."' WHERE userid='".$this->id($chi)."' LIMIT 1");
-	$input=sprintf($lang['exp_guadagnata'],$this->nome($chi),$exp)."<br/>";
-	return $input;
-	} //fine Guadagnaexp
+    public function Guadagnaexp($chi,$turni,$expb,$vincitore){
+        global $db,$lang;
+        if($chi==1)
+            $chi2=2;
+        else
+            $chi2=1;
+        $exp=5+$expb;
+        $exp=round(rand(($exp/100*95),$exp));
+        if($vincitore==$chi2){
+            $exp-=6;
+        }elseif($vincitore==$chi){
+            $exp+=6;
+        }elseif($vincitore==0){
+            $exp+=5;
+        }
+        $level=$this->car($chi,'livello')-$this->car($chi2,'livello');
+        if($level<0){
+            $liv=abs($level);
+            if($liv>10)
+                $liv=10;
+            $exp+=round($exp/10*$liv);
+        }elseif($level>0){
+            if($liv>9)
+                $liv=9;
+            $exp-=round($exp/10*$liv);
+        }
+        if($exp<0)
+            $exp=0;
+        $db->QueryMod("UPDATE caratteristiche SET exp=exp+'".$exp."' WHERE userid='".$this->id($chi)."' LIMIT 1");
+        $input=sprintf($lang['exp_guadagnata'],$this->nome($chi),$exp)."<br/>";
+        return $input;
+    }// end Guadagnaexp
 
 	public function Checkrep($chi){
 	if($chi==1)
