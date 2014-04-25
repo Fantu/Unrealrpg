@@ -7,6 +7,7 @@ Legenda:<br />
 - Correzione bug e patch di situazioni non previste<br />
 </p>
 <p><strong>0.8.3</strong> (Non disponibile - In sviluppo)<br />
+# Modificata la resurrezione senza chierici, tolto il caso "fede<5000", non si conta più l'energia rimasta in precedenza mentre il mana rimane come prima la morte più il bonus di 2% ogni 1000 di fede<br />
 </p>
 <p><strong>0.8.2</strong> (21/04/14 - Beta)<br />
 + Aggiunto supporto ipv6<br />

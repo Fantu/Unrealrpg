@@ -167,22 +167,16 @@ function Completaresurrezione($userid){
         $db->QueryMod("UPDATE utenti t2 JOIN caratteristiche t3 on t2.userid=t3.userid SET t2.resuscita='0',t3.energia=t3.energiamax,t3.saluteattuale=t3.salute,t3.recuperoenergia='".$adesso."',t3.recuperosalute='".$adesso."',t3.decfede='".$adesso."',t3.manarimasto=t3.mana WHERE t2.userid='".$userid."'");
     }else{
         $usercar=$db->QuerySelect("SELECT * FROM caratteristiche WHERE userid='".$userid."' LIMIT 1");
-        if($usercar['fede']<5000){
-            $mana=$usercar['manarimasto'];
-            $salute=round($usercar['salute']/2);
-            $energia=round($usercar['energiamax']/2);
-        }else{
-            $bonus=2*($usercar['fede']/1000);
-            $mana=$usercar['manarimasto']+round($usercar['mana']/100*(50+$bonus));
-            if($mana>$usercar['mana'])
-                $mana=$usercar['mana'];
-            $salute=$usercar['saluteattuale']+round($usercar['salute']/(50+$bonus));
-            if($salute>$usercar['salute'])
-                $salute=$usercar['salute'];
-            $energia=$usercar['energia']+round($usercar['energiamax']/100*(50+$bonus));
-            if($energia>$usercar['energiamax'])
-                $energia=$usercar['energiamax'];
-        }
+        $bonus=2*($usercar['fede']/1000);
+        $mana=$usercar['manarimasto']+round($usercar['mana']/100*$bonus);
+        if($mana>$usercar['mana'])
+            $mana=$usercar['mana'];
+        $salute=round($usercar['salute']/100*(50+$bonus));
+        if($salute>$usercar['salute'])
+            $salute=$usercar['salute'];
+        $energia=round($usercar['energiamax']/100*(50+$bonus));
+        if($energia>$usercar['energiamax'])
+            $energia=$usercar['energiamax'];
         $db->QueryMod("UPDATE caratteristiche SET energia='".$energia."',saluteattuale='".$salute."',recuperoenergia='".$adesso."',recuperosalute='".$adesso."',decfede='".$adesso."',manarimasto='".$mana."' WHERE userid='".$userid."'");
     }
 }//end Completaresurrezione
