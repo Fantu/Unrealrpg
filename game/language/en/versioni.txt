@@ -6,6 +6,8 @@ Legend:<br />
 # Changes<br />
 - Fix bugs and patches to unforeseen situations<br />
 </p>
+<p><strong>0.8.4</strong> (Unavailable - In development)<br />
+</p>
 <p><strong>0.8.3</strong> (27/04/14 - Beta)<br />
 + Added to logs: beginning resurrection<br />
 # Changed the resurrection without clerics, taken off the case of "faith <5000", doesn't count anymore the remaining energy, while the mana remains as before death plus the bonus of 2% per 1,000 of faith<br />

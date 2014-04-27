@@ -3,8 +3,8 @@ if((empty($int_security)) OR ($int_security!=$game_se_code)){
     header("Location: ../../index.php?error=16");
     exit();
 }
-$oldversion="0.8.2";
-$newversion="0.8.3";
+$oldversion="0.8.3";
+$newversion="0.8.4";
 foreach($game_server as $chiave=>$elemento){
     $db->Setdb($chiave);
     $check=$db->QuerySelect("SELECT version FROM config WHERE id=".$chiave);
