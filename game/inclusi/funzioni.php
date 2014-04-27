@@ -1,7 +1,7 @@
 <?php
 
 function Dead($user,$usercar){
-    global $db,$adesso;
+    global $db,$adesso,$log;
     // the basic time to resurrect is one day less a minute every faith point
     // or 3 hours with the intervention of the clergy
     if($user['resuscita']=='0'){
@@ -16,6 +16,8 @@ function Dead($user,$usercar){
     if($tempor<3600)
         $tempor=3600;
     $db->QueryMod("INSERT INTO eventi (userid,datainizio,secondi,dettagli,tipo) VALUES ('".$user['userid']."','".$adesso."','".$tempor."','4','3')");
+    // create log record of beginning resurrection
+    $log->Utenti($user['userid'],13);
 }//end Dead
 
 function testosalute($percsalute){
