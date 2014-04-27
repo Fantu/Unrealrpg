@@ -20,6 +20,7 @@ foreach($game_language as $chiavel=>$elementol){
 				if($config['chiuso']==0){
 					require_once('inclusi/controllo_eventi.php');
 					Controllaeventi(3);
+                    $semorti=$db->QuerySelect("SELECT COUNT(userid) AS id FROM caratteristiche WHERE saluteattuale<'1'");
                     if($semorti['id']>0){// if there are dead
                         $morti=$db->QueryCiclo("SELECT * FROM caratteristiche WHERE saluteattuale<'1'");
                             while($morto=$db->QueryCicloResult($morti)){// for each dead
@@ -33,7 +34,6 @@ foreach($game_language as $chiavel=>$elementol){
                     }// end if there are dead
 					if($config['ottimizzazioni']<$adesso AND $optimize==0){
 						$db->QueryMod("UPDATE config SET ottimizzazioni='".($adesso+3600)."'");//prossima "ottimizzazione" fra 1 ora
-						$semorti=$db->QuerySelect("SELECT COUNT(userid) AS id FROM caratteristiche WHERE saluteattuale<'1'");
 						$db->QueryMod("DELETE FROM sessione WHERE time<'".($adesso-10800)."'");// cancellazione di tutte le sessioni più vecchie di 3 ore
 						$db->QueryMod("DELETE FROM msginviati WHERE data<'".($adesso-259200)."'");// delete of all messages sent older than 3 days
 						$scaduto=$adesso-2592000;
